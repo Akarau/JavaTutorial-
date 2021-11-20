@@ -1,7 +1,7 @@
 import java.awt.Color;
 import java.awt.Font;
 
-
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -28,12 +28,13 @@ JButton startname;
         fenster.setExtendedState(JFrame.MAXIMIZED_BOTH);
         // Entfernt den oberen Rahmen
         fenster.setUndecorated(true);
-
-
         fenster.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        fenster.getContentPane().setBackground(Color.green);
-        fenster.setLayout(null);
-        fenster.getContentPane();
+
+
+       // fenster.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+       // fenster.getContentPane().setBackground(Color.green);
+       // fenster.setLayout(null);
+       // fenster.getContentPane();
        
          
         titelbildschirm = new JPanel(); 
@@ -47,11 +48,11 @@ JButton startname;
         startbuttonhintergrund.setBounds(800, 350, 350, 100); 
         startbuttonhintergrund.setBackground(Color.BLACK);
         startbuttonhintergrund.setForeground(Color.black);
-        startname = new JButton("Spielen");
+        startname = new JButton("     Spielen     ");
         startname.setFont(startschrift);
-        startname.setBorderPainted(true);
+        startname.setBorderPainted(false);
         startname.setBackground(Color.BLACK);
-        startname.setForeground(Color.white);
+        //startname.setForeground(Color.white);
         startbuttonhintergrund.add(startname);
 
 
@@ -65,9 +66,16 @@ JButton startname;
         
 
 
-
+            
 
         
+        }
+        
+
+        public void GUI(){
+            JPanel F = new JPanel();
+            F.setBorder(BorderFactory.createEmptyBorder(30, 30, 30, 30));
+            
         }
     }
       
