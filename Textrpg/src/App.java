@@ -10,10 +10,10 @@ import javax.swing.JPanel;
 public class App {
    
 JLabel titelname;  
-JFrame Fenster;
-JPanel titelbildschirm,Startbuttonhintergrund;
+JFrame fenster;
+JPanel titelbildschirm,startbuttonhintergrund;
 Font titelgröße= new Font("Times new Roman", Font.PLAIN,80);
-Font Startschrift= new Font("Times new Roman", Font.PLAIN,30); 
+Font startschrift= new Font("Times new Roman", Font.PLAIN,30); 
 JButton startname; 
     public static void main(String[] args) {
 
@@ -21,12 +21,19 @@ JButton startname;
         };
         public App(){
 
-        Fenster = new JFrame(); 
-        Fenster.setSize(1920, 1080);
-        Fenster.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        Fenster.getContentPane().setBackground(Color.green);
-        Fenster.setLayout(null);
-        Fenster.getContentPane();
+        fenster = new JFrame(); 
+        //fenster.setSize(1920, 1080);
+
+        // Setzt das Fenster immer auf Fullscreen
+        fenster.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        // Entfernt den oberen Rahmen
+        fenster.setUndecorated(true);
+
+
+        fenster.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        fenster.getContentPane().setBackground(Color.green);
+        fenster.setLayout(null);
+        fenster.getContentPane();
        
          
         titelbildschirm = new JPanel(); 
@@ -36,24 +43,24 @@ JButton startname;
         titelname.setForeground(Color.white);
         titelname.setFont(titelgröße);
 
-        Startbuttonhintergrund = new JPanel(); 
-        Startbuttonhintergrund.setBounds(800, 350, 350, 100); 
-        Startbuttonhintergrund.setBackground(Color.BLACK);
-        Startbuttonhintergrund.setForeground(Color.black);
+        startbuttonhintergrund = new JPanel(); 
+        startbuttonhintergrund.setBounds(800, 350, 350, 100); 
+        startbuttonhintergrund.setBackground(Color.BLACK);
+        startbuttonhintergrund.setForeground(Color.black);
         startname = new JButton("Spielen");
-        startname.setFont(Startschrift);
+        startname.setFont(startschrift);
         startname.setBorderPainted(true);
         startname.setBackground(Color.BLACK);
         startname.setForeground(Color.white);
-        Startbuttonhintergrund.add(startname);
+        startbuttonhintergrund.add(startname);
 
 
 
      
-        Fenster.add(Startbuttonhintergrund); 
+        fenster.add(startbuttonhintergrund); 
         titelbildschirm.add(titelname);
-        Fenster.add(titelbildschirm);
-        Fenster.setVisible(true);
+        fenster.add(titelbildschirm);
+        fenster.setVisible(true);
     
         
 
