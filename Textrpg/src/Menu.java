@@ -21,6 +21,10 @@ public class Menu implements ActionListener {
 
     JLabel tn;
     static JLabel l;
+    static JButton Option1;
+    static JButton Option2;
+    static JButton Option3;
+
     JFrame frame;
     static JProgressBar button1;
 
@@ -88,9 +92,41 @@ public class Menu implements ActionListener {
         l.setVisible(false);
         l.setFocusable(false);
 
+
+        Option1 = new JButton("   Start   ");
+        Option1.setForeground(Color.white);
+        Option1.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+        Option1.setBounds(500, 300, 350, 350);
+        Option1.setSize(300, 70);
+        Option1.setBackground(Color.black);
+        Option1.setVisible(false);
+        Option1.setFocusable(false);
+
+        Option2 = new JButton("   Options   ");
+        Option2.setForeground(Color.white);
+        Option2.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+        Option2.setBounds(500, 400, 350, 350);
+        Option2.setSize(300, 70);
+        Option2.setBackground(Color.black);
+        Option2.setVisible(false);
+        Option2.setFocusable(false);
+
+        Option3 = new JButton("   Exit   ");
+        Option3.setForeground(Color.white);
+        Option3.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+        Option3.setBounds(500, 500, 350, 350);
+        Option3.setSize(300, 70);
+        Option3.setBackground(Color.black);
+        Option3.setVisible(false);
+        Option3.setFocusable(false);
+       //   Option1.setBackground(Color.white);
+      //  Option1 = startname.clone
         frame.add(panel2);
         panel1.add(tn);
         frame.add(l);
+        frame.add(Option1);
+        frame.add(Option2);
+        frame.add(Option3);
         frame.add(panel1);
         frame.setVisible(true);
 
@@ -183,7 +219,14 @@ public class Menu implements ActionListener {
                     Thread.sleep(80);
                     l.setText("          Dialog");
                     Thread.sleep(80);
+                    Option1.setVisible(true);
+                    Thread.sleep(200);
+                    Option2.setVisible(true);
+                    Thread.sleep(200);
+                    Option3.setVisible(true);
+
                     
+
                     for (n1 = 0;; n1++){
                        // System.out.println(t.charAt(0-n1));
                         System.out.println(t.copyValueOf(null, 1, n1));
