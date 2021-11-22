@@ -147,9 +147,32 @@ Thread.sleep(2000);
                 L.setText("Loading: " + i + "%");
                 Thread.sleep(i + 24);
     
-                   if (i >= 100 && i <= 100){
+                   if (i >= 99 && i <= 99){
+                       Thread.sleep(500);
+                       L.setText("Loading: 99%.");
+                       Thread.sleep(500);
+                       L.setText("Loading: 99%..");
+                       Thread.sleep(500);
+                       L.setText("Loading: 99%...");
+                       Thread.sleep(500);
+                       L.setText("Loading: 99%.");
+                       Thread.sleep(500);
+                       L.setText("Loading: 99%..");
+                       Thread.sleep(500);
+                       L.setText("Loading: 99%...");
+                       Thread.sleep(500);
+                       L.setText("Loading: 99%.");
+                       Thread.sleep(500);
+                       L.setText("Loading: 99%");
+                       Thread.sleep(500);
+                       L.setText("Loading: 99%...");
                        Thread.sleep(2000);
-                    L.setText("Loading completed");
+                       L.setText("Loading: 100%");
+
+                   // L.setText("Loading completed");
+                 //  L.setText("Loading: 100%");
+                   Thread.sleep(1000);
+                   L.setText("Loading completed");
                     break;
                 }
                 }
