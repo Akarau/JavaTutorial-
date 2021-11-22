@@ -18,198 +18,199 @@ import javax.swing.JProgressBar;
 import org.w3c.dom.css.RGBColor;
 
 public class Menu implements ActionListener {
-   
-JLabel TN;  
-static JLabel L;
-JFrame F;
-static JProgressBar B1;
 
-JPanel F1,F2;
+    JLabel tn;
+    static JLabel l;
+    JFrame frame;
+    static JProgressBar button1;
 
-JFrame Loading;
-Font titelgröße= new Font("Times new Roman", Font.PLAIN,80);
-Font startschrift= new Font("Times new Roman", Font.PLAIN,60); 
-JButton startname; 
-    public static void main(String[] args) throws InterruptedException{
+    JPanel panel1, panel2;
 
-       // public Menu() throws InterruptedException{
-        new Menu();
-        };
-        public Menu() throws InterruptedException {
+    JFrame frameLoading;
+    Font titelgröße = new Font("Times new Roman", Font.PLAIN, 80);
+    Font startschrift = new Font("Times new Roman", Font.PLAIN, 60);
+    JButton startname;
 
-        F = new JFrame(); 
-        //fenster.setSize(1920, 1080);
+    public Menu() throws InterruptedException {
+
+        frame = new JFrame();
+        // fenster.setSize(1920, 1080);
 
         // Setzt das Fenster immer auf Fullscreen
-        F.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
         // Entfernt den oberen Rahmen
-        F.setUndecorated(false);
-        F.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setUndecorated(false);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        // fenster.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        // fenster.getContentPane().setBackground(Color.green);
+        // fenster.setLayout(null);
+        // fenster.getContentPane();
 
-       // fenster.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-       // fenster.getContentPane().setBackground(Color.green);
-       // fenster.setLayout(null);
-       // fenster.getContentPane();
-       
-         byte RG = 127;
-        F1 = new JPanel(); 
-        F1.setBounds(800, 200, 350, 100); 
-        F1.setBackground(Color.black);
-        TN = new JLabel("The Day");
-        TN.setForeground(Color.white);
-        TN.setFont(titelgröße);
-        TN.setBackground(Color.WHITE);
+        byte RG = 127;
+        panel1 = new JPanel();
+        panel1.setBounds(800, 200, 350, 100);
+        panel1.setBackground(Color.black);
+        tn = new JLabel("The Day");
+        tn.setForeground(Color.white);
+        tn.setFont(titelgröße);
+        tn.setBackground(Color.WHITE);
 
-
-        F2 = new JPanel(); 
-        F2.setBounds(460, 600, 350, 800); 
-        F2.setBackground(Color.BLACK);
-        F2.setForeground(Color.black);
+        panel2 = new JPanel();
+        panel2.setBounds(460, 600, 350, 800);
+        panel2.setBackground(Color.BLACK);
+        panel2.setForeground(Color.black);
         startname = new JButton("     Spielen     ");
-        //startname.setFont(startschrift);
+        // startname.setFont(startschrift);
         startname.setBorderPainted(false);
         startname.setBackground(Color.BLACK);
         startname.setSize(400, 400);
         startname.setFont(startschrift);
         startname.setForeground(Color.WHITE);
-       // startname.setFocusable(false);
-       startname.addActionListener(this);
+        // startname.setFocusable(false);
+        startname.addActionListener(this);
 
-        B1 = new JProgressBar();
-        B1.setBorderPainted(false);
-B1.setBackground(Color.black);
-B1.setForeground(Color.white);
-B1.setBounds(460,300,350,500);
-B1.setVisible(true);
-        F2.add(startname);
-F2.add(B1);
+        button1 = new JProgressBar();
+        button1.setBorderPainted(false);
+        button1.setBackground(Color.black);
+        button1.setForeground(Color.white);
+        button1.setBounds(460, 300, 350, 500);
+        button1.setVisible(true);
+        panel2.add(startname);
+        panel2.add(button1);
 
+        l = new JLabel("Loading: ");
+        l.setForeground(Color.white);
+        l.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+        l.setBounds(540, 30, 400, 0);
+        l.setSize(500, 500);
+        l.setBackground(Color.WHITE);
+        l.setVisible(false);
+        l.setFocusable(false);
 
+        frame.add(panel2);
+        panel1.add(tn);
+        frame.add(l);
+        frame.add(panel1);
+        frame.setVisible(true);
 
-
-L = new JLabel("Loading: ");
-L.setForeground(Color.white);
-L.setFont(new Font("Times new Roman", Font.PLAIN,30));
-L.setBounds(540, 30, 400, 0);
-L.setSize(500, 500);
-L.setBackground(Color.WHITE);
-L.setVisible(false);
-L.setFocusable(false);
-     
-        F.add(F2);
-        F1.add(TN);
-        F.add(L);
-        F.add(F1);
-        F.setVisible(true);
-
-
-        
-while (L.isVisible() == false){
-    Loading();
-    Thread TH = new Thread();
-    TH.sleep(1000);
-    System.out.println("x");
-     if(L.isVisible() == true){
-         Loading();
-     }
-}
-
-
-       // addActionListener((ActionListener) new ActionListiner());{
-            
+        while (l.isVisible() == false) {
+            Loading();
+            Thread TH = new Thread();
+            TH.sleep(1000);
+            System.out.println("x");
+            if (l.isVisible() == true) {
+                Loading();
+            }
         }
 
-        int i;
-        public void actionPerformed(java.awt.event.ActionEvent e) {
-            L.setVisible(!L.isVisible());
-  }
-        
-        
+        // addActionListener((ActionListener) new ActionListiner());{
 
+    }
 
-            
-         //   Ren();
+    int i;
 
-            
-        
-           
-    
+    public void actionPerformed(java.awt.event.ActionEvent e) {
+        l.setVisible(!l.isVisible());
+
+    }
+
+    // Ren();
+
     public void Loading() throws InterruptedException {
         System.out.println("not Vis");
-        if (L.isVisible()==true){
+        if (l.isVisible() == true) {
             System.out.println("Visible");
-Thread.sleep(2000);
-                L.setVisible(true);
-            L.setText("LoadingC");
+            // Thread.sleep(2000);
+            l.setVisible(true);
+            l.setText("LoadingC");
             int i;
-            for(i=1;;i++) {
-                L.setText("Loading: " + i + "%");
-                Thread.sleep(i + 24);
-    
-                   if (i >= 99 && i <= 99){
-                       Thread.sleep(500);
-                       L.setText("Loading: 99%.");
-                       Thread.sleep(500);
-                       L.setText("Loading: 99%..");
-                       Thread.sleep(500);
-                       L.setText("Loading: 99%...");
-                       Thread.sleep(500);
-                       L.setText("Loading: 99%.");
-                       Thread.sleep(500);
-                       L.setText("Loading: 99%..");
-                       Thread.sleep(500);
-                       L.setText("Loading: 99%...");
-                       Thread.sleep(500);
-                       L.setText("Loading: 99%.");
-                       Thread.sleep(500);
-                       L.setText("Loading: 99%");
-                       Thread.sleep(500);
-                       L.setText("Loading: 99%...");
-                       Thread.sleep(2000);
-                       L.setText("Loading: 100%");
+            for (i = 1;; i++) {
+                l.setText("Loading: " + i + "%");
+                Thread.sleep(i - 1);
 
-                   // L.setText("Loading completed");
-                 //  L.setText("Loading: 100%");
-                   Thread.sleep(1000);
-                   L.setText("Loading completed");
+                if (i >= 99 && i <= 99) {
+                    // Thread.sleep(500);
+                    l.setText("Loading: 99%.");
+                    // Thread.sleep(500);
+                    l.setText("Loading: 99%..");
+                    // Thread.sleep(500);
+                    l.setText("Loading: 99%...");
+                    // Thread.sleep(500);
+                    l.setText("Loading: 99%.");
+                    // Thread.sleep(500);
+                    l.setText("Loading: 99%..");
+                    // Thread.sleep(500);
+                    l.setText("Loading: 99%...");
+                    // Thread.sleep(500);
+                    l.setText("Loading: 99%.");
+                    // Thread.sleep(500);
+                    l.setText("Loading: 99%");
+                    // Thread.sleep(500);
+                    l.setText("Loading: 99%...");
+                    // Thread.sleep(2000);
+                    l.setText("Loading: 100%");
+
+                    // L.setText("Loading completed");
+                    // L.setText("Loading: 100%");
+                    Thread.sleep(1000);
+                    l.setText("Loading completed");
+                    startname.setVisible(!startname.isVisible());
+                    tn.setVisible(false);
+                    System.out.println(l.getBounds());
                     break;
                 }
+            }
+
+            for (i = 1; i <= 100; i++) {
+                System.out.println(l.getBounds());
+                Thread.sleep(3);
+                l.setBounds(540, 30 - i - 5, 500, 500);
+                if (i >= 100) {
+                    l.setText("D");
+                    Thread.sleep(100);
+                    l.setText("Di");
+                    Thread.sleep(100);
+                    l.setText("Dia");
+                    Thread.sleep(100);
+                    l.setText("Dial");
+                    Thread.sleep(100);
+                    l.setText("Dialo");
+                    Thread.sleep(100);
+                    l.setText("Dialog");
+                    Thread.sleep(100);
                 }
-    }
-    }
 
-
-        private void notify(int i) {
-        }
-        private Color RGBColor(int i, int j, int k) {
-            return null;
+            }
         }
 
-        public static void Ren(){
-            B1.setValue(10);
+    }
+
+    private void notify(int i) {
+    }
+
+    private Color RGBColor(int i, int j, int k) {
+        return null;
+    }
+
+    public static void Ren() {
+        button1.setValue(10);
 
     }
-    
-        public void GUI(){
-            JPanel F = new JPanel();
-            F.setBorder(BorderFactory.createEmptyBorder(30, 30, 30, 30));
-            
-        }
 
-        public <ActionEvent> void CL(ActionEvent e) throws InterruptedException{
-               // if(((EventObject) e).getSource()==startname){
-                if (((EventObject) e).getSource()==this.startname){
-                    Loading();
-System.out.print("D");
-                }
-        }
-       // @Override
-        
-
-        
-        
+    public void GUI() {
+        JPanel F = new JPanel();
+        F.setBorder(BorderFactory.createEmptyBorder(30, 30, 30, 30));
 
     }
-      
-    
+
+    public <ActionEvent> void CL(ActionEvent e) throws InterruptedException {
+        // if(((EventObject) e).getSource()==startname){
+        if (((EventObject) e).getSource() == this.startname) {
+            Loading();
+            System.out.print("D");
+        }
+    }
+    // @Override
+
+}
