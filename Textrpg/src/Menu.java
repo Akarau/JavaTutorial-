@@ -109,6 +109,9 @@ public class Menu implements ActionListener {
     }
 
     int i;
+    int n1;
+    char c;
+    String t = "loading:";
 
     public void actionPerformed(java.awt.event.ActionEvent e) {
         l.setVisible(!l.isVisible());
@@ -167,18 +170,25 @@ public class Menu implements ActionListener {
                 Thread.sleep(3);
                 l.setBounds(540, 30 - i - 5, 500, 500);
                 if (i >= 100) {
-                    l.setText("D");
-                    Thread.sleep(100);
-                    l.setText("Di");
-                    Thread.sleep(100);
-                    l.setText("Dia");
-                    Thread.sleep(100);
-                    l.setText("Dial");
-                    Thread.sleep(100);
-                    l.setText("Dialo");
-                    Thread.sleep(100);
-                    l.setText("Dialog");
-                    Thread.sleep(100);
+                    Thread.sleep(500);
+                    l.setText("               D");
+                    Thread.sleep(80);
+                    l.setText("              Di");
+                    Thread.sleep(80);
+                    l.setText("             Dia");
+                    Thread.sleep(80);
+                    l.setText("            Dial");
+                    Thread.sleep(80);
+                    l.setText("           Dialo");
+                    Thread.sleep(80);
+                    l.setText("          Dialog");
+                    Thread.sleep(80);
+                    
+                    for (n1 = 0;; n1++){
+                       // System.out.println(t.charAt(0-n1));
+                        System.out.println(t.copyValueOf(null, 1, n1));
+                       // l.setText(t.charAt(0-n1));
+                        }
                 }
 
             }
@@ -186,8 +196,12 @@ public class Menu implements ActionListener {
 
     }
 
+    
+
     private void notify(int i) {
     }
+
+    
 
     private Color RGBColor(int i, int j, int k) {
         return null;
@@ -213,4 +227,5 @@ public class Menu implements ActionListener {
     }
     // @Override
 
+    
 }
