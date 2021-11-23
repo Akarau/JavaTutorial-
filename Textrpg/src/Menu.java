@@ -3,6 +3,7 @@ import java.awt.Component;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.beans.PropertyChangeListener;
+import java.lang.StackWalker.Option;
 import java.util.EventObject;
 import java.awt.*;
 import java.awt.event.*;
@@ -73,6 +74,7 @@ public class Menu implements ActionListener {
         startname.setForeground(Color.WHITE);
         // startname.setFocusable(false);
         startname.addActionListener(this);
+        startname.setActionCommand("startname ");
 
         button1 = new JProgressBar();
         button1.setBorderPainted(false);
@@ -101,6 +103,8 @@ public class Menu implements ActionListener {
         Option1.setBackground(Color.black);
         Option1.setVisible(false);
         Option1.setFocusable(false);
+        Option1.addActionListener(this);
+        Option1.setActionCommand("Option1");
 
         Option2 = new JButton("   Options   ");
         Option2.setForeground(Color.white);
@@ -110,6 +114,8 @@ public class Menu implements ActionListener {
         Option2.setBackground(Color.black);
         Option2.setVisible(false);
         Option2.setFocusable(false);
+        Option2.addActionListener(this);
+        Option2.setActionCommand("Option2");
 
         Option3 = new JButton("   Exit   ");
         Option3.setForeground(Color.white);
@@ -119,6 +125,8 @@ public class Menu implements ActionListener {
         Option3.setBackground(Color.black);
         Option3.setVisible(false);
         Option3.setFocusable(false);
+        Option3.addActionListener(this);
+        Option3.setActionCommand("Option3");
        //   Option1.setBackground(Color.white);
       //  Option1 = startname.clone
         frame.add(panel2);
@@ -148,10 +156,30 @@ public class Menu implements ActionListener {
     int n1;
     char c;
     String t = "loading:";
-
     public void actionPerformed(java.awt.event.ActionEvent e) {
-        l.setVisible(!l.isVisible());
+        System.out.println(e.getSource());
+     //   if (e.getSource()==l){
+       //     l.setVisible(!l.isVisible());
+        //}
 
+       // System.out.println(e.getActionCommand());;
+
+        if (e.getActionCommand()=="startname"){
+            System.out.println("startname");
+            l.setVisible(!l.isVisible());
+
+        }
+
+        if (e.getActionCommand()=="Option2"){
+            System.out.println("Option2");
+
+        }
+
+        if (e.getActionCommand()=="Option3"){
+            System.out.println("Option3");
+            System.out.println("Dsalkgbw");
+
+        }
     }
 
     // Ren();
@@ -267,6 +295,12 @@ public class Menu implements ActionListener {
             Loading();
             System.out.print("D");
         }
+
+        if (((EventObject) e).getSource() == this.Option1) {
+          //  Loading();
+            System.out.print("Start");
+        }
+
     }
     // @Override
 
