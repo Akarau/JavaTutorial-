@@ -74,7 +74,7 @@ public class Menu implements ActionListener {
         startname.setForeground(Color.WHITE);
         // startname.setFocusable(false);
         startname.addActionListener(this);
-        startname.setActionCommand("startname ");
+        startname.setActionCommand("startname");
 
         button1 = new JProgressBar();
         button1.setBorderPainted(false);
@@ -168,18 +168,25 @@ public class Menu implements ActionListener {
             System.out.println("startname");
             l.setVisible(!l.isVisible());
 
+
+        }
+        if (e.getActionCommand()=="Option1"){
+            System.out.println("Option1");
         }
 
         if (e.getActionCommand()=="Option2"){
             System.out.println("Option2");
+            //Bild von Durchlauf hinzufügen
 
         }
 
         if (e.getActionCommand()=="Option3"){
             System.out.println("Option3");
             System.out.println("Dsalkgbw");
+            frame.setVisible(false);
 
         }
+        
     }
 
     // Ren();
@@ -231,9 +238,10 @@ public class Menu implements ActionListener {
 
             for (i = 1; i <= 100; i++) {
                 System.out.println(l.getBounds());
-                Thread.sleep(3);
+                Thread.sleep(3); 
                 l.setBounds(540, 30 - i - 5, 500, 500);
                 if (i >= 100) {
+                    
                     Thread.sleep(500);
                     l.setText("               D");
                     Thread.sleep(80);
