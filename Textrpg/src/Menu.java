@@ -180,18 +180,35 @@ optionsmenu.setForeground(Color.white);
             System.out.println("startname");
             l.setVisible(!l.isVisible());
 
+
+        }
+        if (e.getActionCommand()=="Option1"){
+            System.out.println("Option1");
         }
 
+<<<<<<< HEAD
         if (e.getActionCommand()=="option2"){
             System.out.println("option2");
 optionsmenu.setVisible(true);
+=======
+        if (e.getActionCommand()=="Option2"){
+            System.out.println("Option2");
+            //Bild von Durchlauf hinzufügen
+
+>>>>>>> b1766dd74ef906358ec27e2b473ffd8b6da022e4
         }
 
         if (e.getActionCommand()=="option3"){
             System.out.println("option3");
             System.out.println("Dsalkgbw");
+<<<<<<< HEAD
 frame.setVisible(false);
+=======
+            frame.setVisible(false);
+
+>>>>>>> b1766dd74ef906358ec27e2b473ffd8b6da022e4
         }
+        
     }
 
     // Ren();
@@ -243,9 +260,15 @@ frame.setVisible(false);
 
             for (i = 1; i <= 100; i++) {
                 System.out.println(l.getBounds());
-                Thread.sleep(3);
+                Thread.sleep(3); 
                 l.setBounds(540, 30 - i - 5, 500, 500);
                 if (i >= 100) {
+<<<<<<< HEAD
+=======
+                    
+                    Thread.sleep(500);
+                    l.setText("               D");
+>>>>>>> b1766dd74ef906358ec27e2b473ffd8b6da022e4
                     Thread.sleep(80);
                     option1.setVisible(true);
                     Thread.sleep(200);
