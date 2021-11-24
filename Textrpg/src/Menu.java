@@ -7,7 +7,6 @@ import java.lang.StackWalker.Option;
 import java.util.EventObject;
 import java.awt.*;
 import java.awt.event.*;
-
 import javax.swing.AbstractButton;
 import javax.swing.Action;
 import javax.swing.BorderFactory;
@@ -16,9 +15,11 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JProgressBar;
+import javax.swing.border.Border;
 import javax.swing.text.AttributeSet.ColorAttribute;
 
 import org.w3c.dom.css.RGBColor;
+import java.awt.GridLayout;
 
 public class Menu implements ActionListener {
 
@@ -30,11 +31,11 @@ public class Menu implements ActionListener {
 
     JFrame frame;
     static JProgressBar button1;
-
     JPanel panel1, panel2;
 
     JFrame frameLoading;
-   static JLabel optionsmenu;
+   static JPanel optionsmenu;
+   JButton Optionsmenu1;
     Font titelgröße = new Font("Times new Roman", Font.PLAIN, 80);
     Font startschrift = new Font("Times new Roman", Font.PLAIN, 60);
     JButton startname;
@@ -130,13 +131,29 @@ public class Menu implements ActionListener {
         option3.setFocusable(false);
         option3.addActionListener(this);
         option3.setActionCommand("option3");
+        
 
-        optionsmenu= new JLabel();
-        optionsmenu.setBounds(500,500,600,600);
+        optionsmenu= new JPanel();
+        optionsmenu.setBounds(50,100,400,600);
         optionsmenu.setVisible(false);
-        optionsmenu.setBackground(Color.red);
+        optionsmenu.setBackground(Color.GRAY);
         optionsmenu.setFocusable(false);
 optionsmenu.setForeground(Color.white);
+
+GridLayout grid = new GridLayout(2,1);
+
+
+
+Optionsmenu1 = new JButton("   Settings   ");
+Optionsmenu1.setForeground(Color.white);
+Optionsmenu1.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+Optionsmenu1.setBounds(200, 200, 800, 350);
+Optionsmenu1.setSize(80, 50);
+Optionsmenu1.setBackground(Color.black);
+Optionsmenu1.setVisible(false);
+Optionsmenu1.setFocusable(false);
+Optionsmenu1.addActionListener(this);
+Optionsmenu1.setActionCommand("option3");
        //   Option1.setBackground(Color.white);
       //  Option1 = startname.clone
         frame.add(panel2);
@@ -147,6 +164,7 @@ optionsmenu.setForeground(Color.white);
         frame.add(option2);
         frame.add(option3);
         frame.add(panel1);
+        optionsmenu.add(Optionsmenu1);
       //  tn.add(optionsmenu);
         frame.setVisible(true);
 
@@ -180,35 +198,20 @@ optionsmenu.setForeground(Color.white);
             System.out.println("startname");
             l.setVisible(!l.isVisible());
 
-
-        }
-        if (e.getActionCommand()=="Option1"){
-            System.out.println("Option1");
         }
 
-<<<<<<< HEAD
         if (e.getActionCommand()=="option2"){
             System.out.println("option2");
-optionsmenu.setVisible(true);
-=======
-        if (e.getActionCommand()=="Option2"){
-            System.out.println("Option2");
-            //Bild von Durchlauf hinzufügen
+optionsmenu.setVisible(!optionsmenu.isVisible());
+Optionsmenu1.setVisible(!Optionsmenu1.isVisible());
 
->>>>>>> b1766dd74ef906358ec27e2b473ffd8b6da022e4
         }
 
         if (e.getActionCommand()=="option3"){
             System.out.println("option3");
             System.out.println("Dsalkgbw");
-<<<<<<< HEAD
 frame.setVisible(false);
-=======
-            frame.setVisible(false);
-
->>>>>>> b1766dd74ef906358ec27e2b473ffd8b6da022e4
         }
-        
     }
 
     // Ren();
@@ -260,16 +263,10 @@ frame.setVisible(false);
 
             for (i = 1; i <= 100; i++) {
                 System.out.println(l.getBounds());
-                Thread.sleep(3); 
+                Thread.sleep(3);
                 l.setBounds(540, 30 - i - 5, 500, 500);
                 if (i >= 100) {
-<<<<<<< HEAD
-=======
-                    
                     Thread.sleep(500);
-                    l.setText("               D");
->>>>>>> b1766dd74ef906358ec27e2b473ffd8b6da022e4
-                    Thread.sleep(80);
                     option1.setVisible(true);
                     Thread.sleep(200);
                     option2.setVisible(true);
