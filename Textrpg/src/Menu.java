@@ -4,7 +4,9 @@ import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.beans.PropertyChangeListener;
 import java.lang.StackWalker.Option;
+import java.lang.reflect.Array;
 import java.util.EventObject;
+import java.util.Timer;
 import java.awt.*;
 import java.awt.event.*;
 
@@ -16,28 +18,43 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JProgressBar;
+import javax.swing.border.LineBorder;
+import javax.swing.plaf.synth.ColorType;
 import javax.swing.text.AttributeSet.ColorAttribute;
+import javax.swing.border.LineBorder;
 
 import org.w3c.dom.css.RGBColor;
 
 public class Menu implements ActionListener {
 
+    private static final Component JButton = null;
     JLabel tn;
     static JLabel l;
     static JButton option1;
     static JButton option2;
     static JButton option3;
+    static JButton options_c;
+    static JButton options_ts;
+    JButton tex;
+    JButton b;
 
     JFrame frame;
     static JProgressBar button1;
 
     JPanel panel1, panel2;
+    static JPanel optionsmenu;
+    static JPanel optionsmenu_colors;
+    static JPanel optionsmenu_colorsoutlines;
+    static JPanel optionsmenu_options;
 
+JPanel colors_R;
     JFrame frameLoading;
-   static JLabel optionsmenu;
     Font titelgröße = new Font("Times new Roman", Font.PLAIN, 80);
     Font startschrift = new Font("Times new Roman", Font.PLAIN, 60);
     JButton startname;
+
+    String[] colors = {"Weiß","Dunkel Grau","Rot","Gelb","Grün","Hell Blau","Blau","Rosa","Dunkel Rosa"};
+Color[] colors2 = {Color.white,Color.darkGray,Color.red,Color.yellow,Color.green,new Color(25,255,255),new Color(25,105,255),new Color(255,0,255),new Color(255,0,80)};
 
     public Menu() throws InterruptedException {
 
@@ -70,7 +87,6 @@ public class Menu implements ActionListener {
         panel2.setForeground(Color.black);
         startname = new JButton("     Spielen     ");
         // startname.setFont(startschrift);
-        startname.setBorderPainted(false);
         startname.setBackground(Color.BLACK);
         startname.setSize(400, 400);
         startname.setFont(startschrift);
@@ -78,6 +94,7 @@ public class Menu implements ActionListener {
         // startname.setFocusable(false);
         startname.addActionListener(this);
         startname.setActionCommand("startname");
+        startname.setBorder(new LineBorder(Color.white));
 
         button1 = new JProgressBar();
         button1.setBorderPainted(false);
@@ -96,6 +113,7 @@ public class Menu implements ActionListener {
         l.setBackground(Color.WHITE);
         l.setVisible(false);
         l.setFocusable(false);
+        
 
 
         option1 = new JButton("   Start   ");
@@ -107,7 +125,8 @@ public class Menu implements ActionListener {
         option1.setVisible(false);
         option1.setFocusable(false);
         option1.addActionListener(this);
-        option1.setActionCommand("Option1");
+        option1.setActionCommand("startb");
+        option1.setBorder(new LineBorder(Color.white));
 
         option2 = new JButton("   Options   ");
         option2.setForeground(Color.white);
@@ -119,6 +138,7 @@ public class Menu implements ActionListener {
         option2.setFocusable(false);
         option2.addActionListener(this);
         option2.setActionCommand("option2");
+        option2.setBorder(new LineBorder(Color.white));
 
         option3 = new JButton("   Exit   ");
         option3.setForeground(Color.white);
@@ -130,16 +150,152 @@ public class Menu implements ActionListener {
         option3.setFocusable(false);
         option3.addActionListener(this);
         option3.setActionCommand("option3");
+        option3.setBorder(new LineBorder(Color.white));
 
-        optionsmenu= new JLabel();
-        optionsmenu.setBounds(500,500,600,600);
+
+        options_ts = new JButton("   Speed   ");
+        options_ts.setForeground(Color.white);
+        options_ts.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+        options_ts.setBounds(500, 500, 350, 350);
+        options_ts.setSize(300, 70);
+        options_ts.setBackground(Color.black);
+        options_ts.setVisible(false);
+        options_ts.setFocusable(false);
+        options_ts.addActionListener(this);
+        options_ts.setActionCommand("option");
+        options_ts.setBorder(new LineBorder(Color.white));
+
+        optionsmenu= new JPanel();
+        optionsmenu.setBounds(900,200,500,650);
         optionsmenu.setVisible(false);
-        optionsmenu.setBackground(Color.red);
+        optionsmenu.setBackground(Color.BLACK);
         optionsmenu.setFocusable(false);
-optionsmenu.setForeground(Color.white);
+//optionsmenu.setForeground(Color.BLACK);
+optionsmenu.setBorder(new LineBorder(Color.white));
+
+
+options_c = new JButton("   Colors   ");
+options_c.setForeground(Color.white);
+options_c.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+options_c.setBounds(150, 150, 0, 0);
+options_c.setBackground(Color.black);
+options_c.setVisible(false);
+options_c.setFocusable(false);
+options_c.addActionListener(this);
+options_c.setActionCommand("c#1");
+options_c.setBorder(new LineBorder(Color.white));
+
+colors_R = new JPanel();
+colors_R.setBounds(60,120,30,30);
+colors_R.setVisible(false);
+colors_R.setBackground(RGBColor(30, 30, 30));
+colors_R.setFocusable(false);
+//colors_R.setForeground(Color.white);
+
+optionsmenu_options = new JPanel();
+//optionsmenu_colors.setBounds(1.x, 1.y, );
+optionsmenu_options.setVisible(false);
+optionsmenu_options.setBackground(Color.BLACK);
+optionsmenu_options.setFocusable(false);
+optionsmenu_options.setBounds(830,300,70,160);
+optionsmenu_options.setBorder(new LineBorder(Color.white));
+
+
+
+tex = new JButton("T");
+tex.setForeground(Color.white);
+tex.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+tex.setBounds(150, 150, 0, 0);
+tex.setBackground(Color.black);
+tex.setVisible(false);
+tex.setFocusable(false);
+tex.addActionListener(this);
+tex.setActionCommand("t#1");
+
+
+b = new JButton("□");
+b.setForeground(Color.WHITE);
+b.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+b.setBounds(150, 150, 0, 0);
+b.setBackground(Color.black);
+b.setVisible(false);
+b.setFocusable(false);
+b.addActionListener(this);
+b.setActionCommand("b#1");
+optionsmenu_options.setBorder(new LineBorder(Color.white));
+
+optionsmenu_options.add(tex);
+optionsmenu_options.add(b);
+
+optionsmenu_colors = new JPanel();
+//optionsmenu_colors.setBounds(1.x, 1.y, );
+optionsmenu_colors.setVisible(false);
+optionsmenu_colors.setBackground(Color.BLACK);
+optionsmenu_colors.setFocusable(false);
+optionsmenu_colors.setBounds(900,300,500,570);
+optionsmenu_colors.setBorder(new LineBorder(Color.white));
+
+optionsmenu_colorsoutlines = new JPanel();
+//optionsmenu_colors.setBounds(1.x, 1.y, );
+optionsmenu_colorsoutlines.setVisible(false);
+optionsmenu_colorsoutlines.setBackground(Color.BLACK);
+optionsmenu_colorsoutlines.setFocusable(false);
+optionsmenu_colorsoutlines.setBounds(900,300,500,570);
+optionsmenu_colorsoutlines.setBorder(new LineBorder(Color.white));
+
+//optionsmenu_colors.setForeground(Color.white);
        //   Option1.setBackground(Color.white);
       //  Option1 = startname.clone
+
+      JButton color;
+
+    for (int c = 0; c< colors.length ;c++){
+      //  System.out.println(c);
+      //  System.out.println(colors[c]);
+
+       color = new JButton("   " + colors[c] + "   ");
+       color.setForeground(colors2[c]);
+       color.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+    //   color.setBounds(500, 500, 350, 350);
+       color.setSize(800, 80);
+       color.setBackground(null);
+       color.setVisible(true);
+       color.setFocusable(false);
+       color.addActionListener(this);
+       color.setActionCommand(colors[c]);
+       color.setBorder(new LineBorder(colors2[c]));
+       color.setActionCommand(colors[c]);
+       //color.setBorder(BorderFactory.createBevelBorder(200, Color.white, Color.BLACK));
+
+       optionsmenu_colors.add(color);
+
+    }
+
+    for (int c = 0; c< colors.length ;c++){
+        //  System.out.println(c);
+        //  System.out.println(colors[c]);
+  
+         color = new JButton("  " + "□" + "  ");
+         color.setForeground(colors2[c]);
+         color.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+      //   color.setBounds(500, 500, 350, 350);
+         color.setSize(400, 80);
+         color.setBackground(null);
+         color.setVisible(true);
+         color.setFocusable(false);
+         color.addActionListener(this);
+         color.setActionCommand("B" + colors[c]);
+         color.setBorder(new LineBorder(colors2[c]));
+         //color.setBorder(BorderFactory.createBevelBorder(200, Color.white, Color.BLACK));
+  
+         optionsmenu_colorsoutlines.add(color);
+  
+      }
+
         frame.add(panel2);
+        frame.add(optionsmenu_colors);
+        frame.add(optionsmenu_options);
+        frame.add(optionsmenu_colorsoutlines);
         panel1.add(tn);
         frame.add(l);
         frame.add(optionsmenu);
@@ -147,6 +303,9 @@ optionsmenu.setForeground(Color.white);
         frame.add(option2);
         frame.add(option3);
         frame.add(panel1);
+        optionsmenu.add(options_c);
+        optionsmenu.add(options_ts);
+      //  options_c.add(colors_R);
       //  tn.add(optionsmenu);
         frame.setVisible(true);
 
@@ -154,7 +313,7 @@ optionsmenu.setForeground(Color.white);
             Loading();
             Thread TH = new Thread();
             TH.sleep(1000);
-            System.out.println("x");
+       //     System.out.println("x");
             if (l.isVisible() == true) {
                 Loading();
             }
@@ -169,8 +328,9 @@ optionsmenu.setForeground(Color.white);
     int n1;
     char c;
     String t = "loading:";
+    
     public void actionPerformed(java.awt.event.ActionEvent e) {
-        System.out.println(e.getSource());
+      //  System.out.println(e.getSource());
      //   if (e.getSource()==l){
        //     l.setVisible(!l.isVisible());
         //}
@@ -183,14 +343,24 @@ optionsmenu.setForeground(Color.white);
 
 
         }
-        if (e.getActionCommand()=="Option1"){
-            System.out.println("Option1");
+        if (e.getActionCommand()=="startb"){
+            Thread TH2 = new Thread();
+            Timer t = new Timer();
+
         }
 
 
         if (e.getActionCommand()=="option2"){
             System.out.println("option2");
-optionsmenu.setVisible(true);
+optionsmenu.setVisible(!optionsmenu.isVisible());
+options_c.setVisible(!options_c.isVisible());
+colors_R.setVisible(!colors_R.isVisible());
+options_ts.setVisible(!options_ts.isVisible());
+optionsmenu_options.setVisible(false);
+optionsmenu_colors.setVisible(false);
+optionsmenu_colorsoutlines.setVisible(false);
+b.setVisible(false);
+tex.setVisible(false);
         }
 
         if (e.getActionCommand()=="option3"){
@@ -200,22 +370,93 @@ optionsmenu.setVisible(true);
             frame.setVisible(false);
 
         }
+
+
+        if (e.getActionCommand().equals("options_c")){
+            System.out.println("options_c");
+            System.out.println("Dsalkgbw");
+
+            frame.setVisible(false);
+
+        }
+
+        if (e.getActionCommand().equals("c#1")){
+           tex.setVisible(!tex.isVisible());
+           b.setVisible(!b.isVisible());
+           optionsmenu_options.setVisible(!optionsmenu_options.isVisible());
+
+        }
+        if (e.getActionCommand().equals("t#1")){
+            optionsmenu_colorsoutlines.setVisible(false);
+            optionsmenu_colors.setVisible(!optionsmenu_colors.isVisible());
+            b.setForeground(Color.darkGray);
+            tex.setForeground(Color.WHITE);
+         }
+
+         if (e.getActionCommand().equals("b#1")){
+            optionsmenu_colors.setVisible(false);
+            optionsmenu_colorsoutlines.setVisible(!optionsmenu_colorsoutlines.isVisible());
+           tex.setForeground(Color.darkGray);
+           b.setForeground(Color.WHITE);
+
+         }
+
+
+         Byte v;
+
+         for (v = 0; v<colors.length;v++){
+            if (e.getActionCommand().equals(colors[v])){
+                    startname.setForeground(colors2[v]);
+                    tn.setForeground(colors2[v]);
+                    tex.setForeground(colors2[v]);
+                    option1.setForeground(colors2[v]);
+                    option2.setForeground(colors2[v]);
+                    option3.setForeground(colors2[v]);
+                    options_c.setForeground(colors2[v]);
+                    options_ts.setForeground(colors2[v]);
+                    optionsmenu_colors.setForeground(colors2[v]);
+                    optionsmenu_colorsoutlines.setForeground(colors2[v]);
+                    optionsmenu_options.setForeground(colors2[v]);
+                    l.setForeground(colors2[v]);
+                    
+            }
+         }
+
+         for (v = 0; v<colors.length;v++){
+            if (e.getActionCommand().equals("B" + colors[v])){
+                startname.setBorder(new LineBorder(colors2[v]));
+                optionsmenu_colors.setBorder(new LineBorder(colors2[v]));
+                option1.setBorder(new LineBorder(colors2[v]));
+                option2.setBorder(new LineBorder(colors2[v]));
+                option3.setBorder(new LineBorder(colors2[v]));
+                options_c.setBorder(new LineBorder(colors2[v]));
+                options_ts.setBorder(new LineBorder(colors2[v]));
+                optionsmenu.setBorder(new LineBorder(colors2[v]));
+                optionsmenu_colors.setBorder(new LineBorder(colors2[v]));
+                optionsmenu_colorsoutlines.setBorder(new LineBorder(colors2[v]));
+                optionsmenu_options.setBorder(new LineBorder(colors2[v]));
+                    
+            }
+         }
+
         
     }
 
+    
+
     // Ren();
 
-    public void Loading() throws InterruptedException {
-        System.out.println("not Vis");
+    public void Loading() throws InterruptedException  {
+      //  System.out.println("not Vis");
         if (l.isVisible() == true) {
-            System.out.println("Visible");
+        //    System.out.println("Visible");
             // Thread.sleep(2000);
             l.setVisible(true);
             l.setText("LoadingC");
             int i;
             for (i = 1;; i++) {
                 l.setText("Loading: " + i + "%");
-                Thread.sleep(i - 1);
+                Thread.sleep(i / i);
 
                 if (i >= 99 && i <= 99) {
                     // Thread.sleep(500);
@@ -233,7 +474,7 @@ optionsmenu.setVisible(true);
                     // Thread.sleep(500);
                     l.setText("Loading: 99%.");
                     // Thread.sleep(500);
-                    l.setText("Loading: 99%");
+                    l.setText("Loading: 99%..");
                     // Thread.sleep(500);
                     l.setText("Loading: 99%...");
                     // Thread.sleep(2000);
@@ -245,13 +486,13 @@ optionsmenu.setVisible(true);
                     l.setText("Loading completed");
                     startname.setVisible(!startname.isVisible());
                     tn.setVisible(false);
-                    System.out.println(l.getBounds());
+                 //   System.out.println(l.getBounds());
                     break;
                 }
             }
 
             for (i = 1; i <= 100; i++) {
-                System.out.println(l.getBounds());
+              //  System.out.println(l.getBounds());
                 Thread.sleep(3); 
                 l.setBounds(540, 30 - i - 5, 500, 500);
                 if (i >= 100) {
@@ -269,7 +510,7 @@ System.out.println(message.toCharArray());
 //System.out.println(message.length());
 Thread.sleep(1000);
 l.setText("");
-                    for (Byte m1 = 0;m1<message.length();m1++){
+                    for (Byte m1 = 8;m1<message.length();m1++){
                     System.out.print(message.charAt(m1));
                    // Option1.setText(message.charAt(m1));
                     Thread.sleep(28);
@@ -291,6 +532,21 @@ l.setText("");
             }
         }
 
+    }
+
+
+    public void startb() throws InterruptedException {
+    
+        System.out.println("startb");
+        int v;
+        for (v = 0; v< 255 ;v++){     
+            Thread TH32 = new Thread();    
+            TH32.sleep(200);  
+            option2.setBackground(new Color(v,v,v));
+            System.out.println("02");
+
+        }
+    
     }
 
     
