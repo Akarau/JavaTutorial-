@@ -10,18 +10,18 @@ import java.util.Timer;
 import java.awt.*;
 import java.awt.event.*;
 
+import javax.imageio.ImageIO;
 import javax.swing.AbstractButton;
 import javax.swing.Action;
 import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JProgressBar;
-<<<<<<< HEAD
 import javax.swing.JTextArea;
-=======
->>>>>>> e1d92af15008928b7798ee4abb7f827b4ebf0052
+import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 import javax.swing.plaf.synth.ColorType;
 import javax.swing.text.AttributeSet.ColorAttribute;
@@ -48,36 +48,25 @@ public class Menu implements ActionListener {
     static JProgressBar button1;
 
     JPanel panel1, panel2;
-<<<<<<< HEAD
     JPanel panel3;
-=======
->>>>>>> e1d92af15008928b7798ee4abb7f827b4ebf0052
     static JPanel optionsmenu;
     static JPanel optionsmenu_colors;
     static JPanel optionsmenu_colorsoutlines;
     static JPanel optionsmenu_options;
 
-<<<<<<< HEAD
     JPanel colors_R;
-=======
-JPanel colors_R;
->>>>>>> e1d92af15008928b7798ee4abb7f827b4ebf0052
     JFrame frameLoading;
     Font titelgröße = new Font("Times new Roman", Font.PLAIN, 80);
     Font startschrift = new Font("Times new Roman", Font.PLAIN, 60);
     JButton startname;
 
-<<<<<<< HEAD
     String[] colors = { "Weiß", "Dunkel Grau", "Rot", "Gelb", "Grün", "Hell Blau", "Blau", "Rosa", "Dunkel Rosa" };
     Color[] colors2 = { Color.white, Color.darkGray, Color.red, Color.yellow, Color.green, new Color(25, 255, 255),
             new Color(25, 105, 255), new Color(255, 0, 255), new Color(255, 0, 80) };
-=======
-    String[] colors = {"Weiß","Dunkel Grau","Rot","Gelb","Grün","Hell Blau","Blau","Rosa","Dunkel Rosa"};
-Color[] colors2 = {Color.white,Color.darkGray,Color.red,Color.yellow,Color.green,new Color(25,255,255),new Color(25,105,255),new Color(255,0,255),new Color(255,0,80)};
->>>>>>> e1d92af15008928b7798ee4abb7f827b4ebf0052
 
     public Menu() throws InterruptedException {
 
+        
         frame = new JFrame();
         // fenster.setSize(1920, 1080);
 
@@ -172,10 +161,6 @@ Color[] colors2 = {Color.white,Color.darkGray,Color.red,Color.yellow,Color.green
         option3.setActionCommand("option3");
         option3.setBorder(new LineBorder(Color.white));
 
-<<<<<<< HEAD
-=======
-
->>>>>>> e1d92af15008928b7798ee4abb7f827b4ebf0052
         options_ts = new JButton("   Speed   ");
         options_ts.setForeground(Color.white);
         options_ts.setFont(new Font("Times new Roman", Font.PLAIN, 30));
@@ -188,7 +173,6 @@ Color[] colors2 = {Color.white,Color.darkGray,Color.red,Color.yellow,Color.green
         options_ts.setActionCommand("option");
         options_ts.setBorder(new LineBorder(Color.white));
 
-<<<<<<< HEAD
         optionsmenu = new JPanel();
         optionsmenu.setBounds(900, 200, 500, 650);
         optionsmenu.setVisible(false);
@@ -270,18 +254,18 @@ Color[] colors2 = {Color.white,Color.darkGray,Color.red,Color.yellow,Color.green
         frame.add(panel3);
 
         commbox = new JTextArea("");
-        commbox.setForeground(Color.white);
+        commbox.setForeground( new Color(60,60,60));
         commbox.setFont(new Font("Times new Roman", Font.PLAIN, 30));
         commbox.setBounds(200, 550, 700, 100);
         commbox.setSize(850, 200);
-        commbox.setBackground(Color.black);
+        commbox.setBackground( new Color(200,200,200));
         commbox.setLineWrap(true);
-        commbox.setVisible(true);
+        commbox.setVisible(false);
         commbox.setFocusable(false);
-        commbox.setBorder(new LineBorder(Color.white));
+        commbox.setBorder(new LineBorder(Color.darkGray));
 
         commboxtex = new JLabel("Welcome to The Day");
-        commboxtex.setForeground(Color.white);
+        commboxtex.setForeground(Color.black);
         commboxtex.setFont(new Font("Times new Roman", Font.PLAIN, 30));
         commboxtex.setBounds(540, 30, 400, 0);
         commboxtex.setSize(850, 200);
@@ -317,6 +301,7 @@ Color[] colors2 = {Color.white,Color.darkGray,Color.red,Color.yellow,Color.green
             optionsmenu_colors.add(color);
 
             frame.add(commbox);
+
         }
 
         for (int c = 0; c < colors.length; c++) {
@@ -339,134 +324,6 @@ Color[] colors2 = {Color.white,Color.darkGray,Color.red,Color.yellow,Color.green
             optionsmenu_colorsoutlines.add(color);
 
         }
-=======
-        optionsmenu= new JPanel();
-        optionsmenu.setBounds(900,200,500,650);
-        optionsmenu.setVisible(false);
-        optionsmenu.setBackground(Color.BLACK);
-        optionsmenu.setFocusable(false);
-//optionsmenu.setForeground(Color.BLACK);
-optionsmenu.setBorder(new LineBorder(Color.white));
-
-
-options_c = new JButton("   Colors   ");
-options_c.setForeground(Color.white);
-options_c.setFont(new Font("Times new Roman", Font.PLAIN, 30));
-options_c.setBounds(150, 150, 0, 0);
-options_c.setBackground(Color.black);
-options_c.setVisible(false);
-options_c.setFocusable(false);
-options_c.addActionListener(this);
-options_c.setActionCommand("c#1");
-options_c.setBorder(new LineBorder(Color.white));
-
-colors_R = new JPanel();
-colors_R.setBounds(60,120,30,30);
-colors_R.setVisible(false);
-colors_R.setBackground(RGBColor(30, 30, 30));
-colors_R.setFocusable(false);
-//colors_R.setForeground(Color.white);
-
-optionsmenu_options = new JPanel();
-//optionsmenu_colors.setBounds(1.x, 1.y, );
-optionsmenu_options.setVisible(false);
-optionsmenu_options.setBackground(Color.BLACK);
-optionsmenu_options.setFocusable(false);
-optionsmenu_options.setBounds(830,300,70,160);
-optionsmenu_options.setBorder(new LineBorder(Color.white));
-
-
-
-tex = new JButton("T");
-tex.setForeground(Color.white);
-tex.setFont(new Font("Times new Roman", Font.PLAIN, 30));
-tex.setBounds(150, 150, 0, 0);
-tex.setBackground(Color.black);
-tex.setVisible(false);
-tex.setFocusable(false);
-tex.addActionListener(this);
-tex.setActionCommand("t#1");
-
-
-b = new JButton("□");
-b.setForeground(Color.WHITE);
-b.setFont(new Font("Times new Roman", Font.PLAIN, 30));
-b.setBounds(150, 150, 0, 0);
-b.setBackground(Color.black);
-b.setVisible(false);
-b.setFocusable(false);
-b.addActionListener(this);
-b.setActionCommand("b#1");
-optionsmenu_options.setBorder(new LineBorder(Color.white));
-
-optionsmenu_options.add(tex);
-optionsmenu_options.add(b);
-
-optionsmenu_colors = new JPanel();
-//optionsmenu_colors.setBounds(1.x, 1.y, );
-optionsmenu_colors.setVisible(false);
-optionsmenu_colors.setBackground(Color.BLACK);
-optionsmenu_colors.setFocusable(false);
-optionsmenu_colors.setBounds(900,300,500,570);
-optionsmenu_colors.setBorder(new LineBorder(Color.white));
-
-optionsmenu_colorsoutlines = new JPanel();
-//optionsmenu_colors.setBounds(1.x, 1.y, );
-optionsmenu_colorsoutlines.setVisible(false);
-optionsmenu_colorsoutlines.setBackground(Color.BLACK);
-optionsmenu_colorsoutlines.setFocusable(false);
-optionsmenu_colorsoutlines.setBounds(900,300,500,570);
-optionsmenu_colorsoutlines.setBorder(new LineBorder(Color.white));
-
-//optionsmenu_colors.setForeground(Color.white);
-       //   Option1.setBackground(Color.white);
-      //  Option1 = startname.clone
-
-      JButton color;
-
-    for (int c = 0; c< colors.length ;c++){
-      //  System.out.println(c);
-      //  System.out.println(colors[c]);
-
-       color = new JButton("   " + colors[c] + "   ");
-       color.setForeground(colors2[c]);
-       color.setFont(new Font("Times new Roman", Font.PLAIN, 30));
-    //   color.setBounds(500, 500, 350, 350);
-       color.setSize(800, 80);
-       color.setBackground(null);
-       color.setVisible(true);
-       color.setFocusable(false);
-       color.addActionListener(this);
-       color.setActionCommand(colors[c]);
-       color.setBorder(new LineBorder(colors2[c]));
-       color.setActionCommand(colors[c]);
-       //color.setBorder(BorderFactory.createBevelBorder(200, Color.white, Color.BLACK));
-
-       optionsmenu_colors.add(color);
-
-    }
-
-    for (int c = 0; c< colors.length ;c++){
-        //  System.out.println(c);
-        //  System.out.println(colors[c]);
-  
-         color = new JButton("  " + "□" + "  ");
-         color.setForeground(colors2[c]);
-         color.setFont(new Font("Times new Roman", Font.PLAIN, 30));
-      //   color.setBounds(500, 500, 350, 350);
-         color.setSize(400, 80);
-         color.setBackground(null);
-         color.setVisible(true);
-         color.setFocusable(false);
-         color.addActionListener(this);
-         color.setActionCommand("B" + colors[c]);
-         color.setBorder(new LineBorder(colors2[c]));
-         //color.setBorder(BorderFactory.createBevelBorder(200, Color.white, Color.BLACK));
-  
-         optionsmenu_colorsoutlines.add(color);
-  
-      }
->>>>>>> e1d92af15008928b7798ee4abb7f827b4ebf0052
 
         frame.add(panel2);
         frame.add(optionsmenu_colors);
@@ -481,24 +338,15 @@ optionsmenu_colorsoutlines.setBorder(new LineBorder(Color.white));
         frame.add(panel1);
         optionsmenu.add(options_c);
         optionsmenu.add(options_ts);
-<<<<<<< HEAD
         // options_c.add(colors_R);
         // tn.add(optionsmenu);
-=======
-      //  options_c.add(colors_R);
-      //  tn.add(optionsmenu);
->>>>>>> e1d92af15008928b7798ee4abb7f827b4ebf0052
         frame.setVisible(true);
 
         while (l.isVisible() == false) {
             Loading();
             Thread TH = new Thread();
             TH.sleep(1000);
-<<<<<<< HEAD
             // System.out.println("x");
-=======
-       //     System.out.println("x");
->>>>>>> e1d92af15008928b7798ee4abb7f827b4ebf0052
             if (l.isVisible() == true) {
                 Loading();
             }
@@ -513,21 +361,12 @@ optionsmenu_colorsoutlines.setBorder(new LineBorder(Color.white));
     int n1;
     char c;
     String t = "loading:";
-<<<<<<< HEAD
 
     public void actionPerformed(java.awt.event.ActionEvent e) {
         // System.out.println(e.getSource());
         // if (e.getSource()==l){
         // l.setVisible(!l.isVisible());
         // }
-=======
-    
-    public void actionPerformed(java.awt.event.ActionEvent e) {
-      //  System.out.println(e.getSource());
-     //   if (e.getSource()==l){
-       //     l.setVisible(!l.isVisible());
-        //}
->>>>>>> e1d92af15008928b7798ee4abb7f827b4ebf0052
 
         // System.out.println(e.getActionCommand());;
 
@@ -536,7 +375,6 @@ optionsmenu_colorsoutlines.setBorder(new LineBorder(Color.white));
             l.setVisible(!l.isVisible());
 
         }
-<<<<<<< HEAD
         if (e.getActionCommand() == "startb") {
             l.setVisible(!l.isVisible());
 
@@ -551,17 +389,10 @@ optionsmenu_colorsoutlines.setBorder(new LineBorder(Color.white));
             optionsmenu_colors.setVisible(false);
             optionsmenu_colorsoutlines.setVisible(false);
             optionsmenu_options.setVisible(false);
-=======
-        if (e.getActionCommand()=="startb"){
-            Thread TH2 = new Thread();
-            Timer t = new Timer();
-
->>>>>>> e1d92af15008928b7798ee4abb7f827b4ebf0052
         }
 
         if (e.getActionCommand() == "option2") {
             System.out.println("option2");
-<<<<<<< HEAD
             optionsmenu.setVisible(!optionsmenu.isVisible());
             options_c.setVisible(!options_c.isVisible());
             colors_R.setVisible(!colors_R.isVisible());
@@ -571,17 +402,6 @@ optionsmenu_colorsoutlines.setBorder(new LineBorder(Color.white));
             optionsmenu_colorsoutlines.setVisible(false);
             b.setVisible(false);
             tex.setVisible(false);
-=======
-optionsmenu.setVisible(!optionsmenu.isVisible());
-options_c.setVisible(!options_c.isVisible());
-colors_R.setVisible(!colors_R.isVisible());
-options_ts.setVisible(!options_ts.isVisible());
-optionsmenu_options.setVisible(false);
-optionsmenu_colors.setVisible(false);
-optionsmenu_colorsoutlines.setVisible(false);
-b.setVisible(false);
-tex.setVisible(false);
->>>>>>> e1d92af15008928b7798ee4abb7f827b4ebf0052
         }
 
         if (e.getActionCommand() == "option3") {
@@ -592,12 +412,7 @@ tex.setVisible(false);
 
         }
 
-<<<<<<< HEAD
         if (e.getActionCommand().equals("options_c")) {
-=======
-
-        if (e.getActionCommand().equals("options_c")){
->>>>>>> e1d92af15008928b7798ee4abb7f827b4ebf0052
             System.out.println("options_c");
             System.out.println("Dsalkgbw");
 
@@ -605,7 +420,6 @@ tex.setVisible(false);
 
         }
 
-<<<<<<< HEAD
         if (e.getActionCommand().equals("c#1")) {
             tex.setVisible(!tex.isVisible());
             b.setVisible(!b.isVisible());
@@ -613,20 +427,10 @@ tex.setVisible(false);
 
         }
         if (e.getActionCommand().equals("t#1")) {
-=======
-        if (e.getActionCommand().equals("c#1")){
-           tex.setVisible(!tex.isVisible());
-           b.setVisible(!b.isVisible());
-           optionsmenu_options.setVisible(!optionsmenu_options.isVisible());
-
-        }
-        if (e.getActionCommand().equals("t#1")){
->>>>>>> e1d92af15008928b7798ee4abb7f827b4ebf0052
             optionsmenu_colorsoutlines.setVisible(false);
             optionsmenu_colors.setVisible(!optionsmenu_colors.isVisible());
             b.setForeground(Color.darkGray);
             tex.setForeground(Color.WHITE);
-<<<<<<< HEAD
         }
 
         if (e.getActionCommand().equals("b#1")) {
@@ -659,41 +463,6 @@ tex.setVisible(false);
 
         for (v = 0; v < colors.length; v++) {
             if (e.getActionCommand().equals("B" + colors[v])) {
-=======
-         }
-
-         if (e.getActionCommand().equals("b#1")){
-            optionsmenu_colors.setVisible(false);
-            optionsmenu_colorsoutlines.setVisible(!optionsmenu_colorsoutlines.isVisible());
-           tex.setForeground(Color.darkGray);
-           b.setForeground(Color.WHITE);
-
-         }
-
-
-         Byte v;
-
-         for (v = 0; v<colors.length;v++){
-            if (e.getActionCommand().equals(colors[v])){
-                    startname.setForeground(colors2[v]);
-                    tn.setForeground(colors2[v]);
-                    tex.setForeground(colors2[v]);
-                    option1.setForeground(colors2[v]);
-                    option2.setForeground(colors2[v]);
-                    option3.setForeground(colors2[v]);
-                    options_c.setForeground(colors2[v]);
-                    options_ts.setForeground(colors2[v]);
-                    optionsmenu_colors.setForeground(colors2[v]);
-                    optionsmenu_colorsoutlines.setForeground(colors2[v]);
-                    optionsmenu_options.setForeground(colors2[v]);
-                    l.setForeground(colors2[v]);
-                    
-            }
-         }
-
-         for (v = 0; v<colors.length;v++){
-            if (e.getActionCommand().equals("B" + colors[v])){
->>>>>>> e1d92af15008928b7798ee4abb7f827b4ebf0052
                 startname.setBorder(new LineBorder(colors2[v]));
                 optionsmenu_colors.setBorder(new LineBorder(colors2[v]));
                 option1.setBorder(new LineBorder(colors2[v]));
@@ -705,35 +474,20 @@ tex.setVisible(false);
                 optionsmenu_colors.setBorder(new LineBorder(colors2[v]));
                 optionsmenu_colorsoutlines.setBorder(new LineBorder(colors2[v]));
                 optionsmenu_options.setBorder(new LineBorder(colors2[v]));
-<<<<<<< HEAD
 
             }
         }
 
-=======
-                    
-            }
-         }
-
-        
->>>>>>> e1d92af15008928b7798ee4abb7f827b4ebf0052
     }
 
     
 
     // Ren();
 
-<<<<<<< HEAD
     public void Loading() throws InterruptedException {
         // System.out.println("not Vis");
         if (l.isVisible() == true) {
             // System.out.println("Visible");
-=======
-    public void Loading() throws InterruptedException  {
-      //  System.out.println("not Vis");
-        if (l.isVisible() == true) {
-        //    System.out.println("Visible");
->>>>>>> e1d92af15008928b7798ee4abb7f827b4ebf0052
             // Thread.sleep(2000);
             l.setVisible(true);
             l.setText("LoadingC");
@@ -768,28 +522,19 @@ tex.setVisible(false);
                     // L.setText("Loading: 100%");
                     Thread.sleep(1000);
                     l.setText("Loading completed");
+                    
                     // startname.setVisible(!startname.isVisible());
                     tn.setVisible(false);
-<<<<<<< HEAD
                     // System.out.println(l.getBounds());
 
-=======
-                 //   System.out.println(l.getBounds());
->>>>>>> e1d92af15008928b7798ee4abb7f827b4ebf0052
                     break;
                 }
+                
 
             }
-
-            startb();
             for (i = 1; i <= 100; i++) {
-<<<<<<< HEAD
                 // System.out.println(l.getBounds());
                 Thread.sleep(3);
-=======
-              //  System.out.println(l.getBounds());
-                Thread.sleep(3); 
->>>>>>> e1d92af15008928b7798ee4abb7f827b4ebf0052
                 l.setBounds(540, 30 - i - 5, 500, 500);
                 if (i >= 100) {
                     Thread.sleep(80);
@@ -802,7 +547,6 @@ tex.setVisible(false);
                     String message;
 
                     message = "        The Day";
-<<<<<<< HEAD
                     System.out.println(message.toCharArray());
                     // System.out.println(message.length());
                     Thread.sleep(1000);
@@ -814,39 +558,32 @@ tex.setVisible(false);
 
                         l.setText(l.getText() + message.charAt(m1));
                         // commbox.setText(l.getText() + message.charAt(m1));
-=======
-System.out.println(message.toCharArray());
-//System.out.println(message.length());
-Thread.sleep(1000);
-l.setText("");
-                    for (Byte m1 = 8;m1<message.length();m1++){
-                    System.out.print(message.charAt(m1));
-                   // Option1.setText(message.charAt(m1));
-                    Thread.sleep(28);
-                    
-                    l.setText(l.getText() + message.charAt(m1));
->>>>>>> e1d92af15008928b7798ee4abb7f827b4ebf0052
                     }
 
                     Thread.sleep(1000);
 
                     // TEST
 
+
                 }
 
             }
+
+            startb();
+
+            
         }
 
        // animateText("E", l);
 
         // startb();
-        animateText("Welcome to The Dayewggggggggggggggggggggggggggggggggggggggg", null,commbox, 9); // Text in String ist die Nachricht, zweites Wort ist die JLabel, die deren Text geändert sein muss, die Zahl am Ende ist die Geschwindigkeit; je weniger desto schneller
-        animateText("Welcome to The Dayewggggggggggggggggggggggggggggggggggggggg", tn,null, 80); // Text in String ist die Nachricht, zweites Wort ist die JLabel, die deren Text geändert sein muss, die Zahl am Ende ist die Geschwindigkeit; je weniger desto schneller
 
+        
 
     }
 
-    public void animateText(String message, JLabel tex, JTextArea a, int w) throws InterruptedException  {
+
+    public void animateText(String message, JLabel tex, JTextArea a, int w, String standardText) throws InterruptedException  {
 
    
         System.out.println(message.toCharArray());
@@ -854,6 +591,9 @@ l.setText("");
         Thread.sleep(1000);
         if (tex!= null){
             tex.setText("");
+            if (standardText != null){
+                tex.setText(standardText);
+            }
         for (Byte m1 = 0; m1 < message.length(); m1++) {
             System.out.print(message.charAt(m1));
             // Option1.setText(message.charAt(m1));
@@ -867,6 +607,9 @@ l.setText("");
 
         if (a!= null){
             a.setText("");
+            if (standardText != null){
+                a.setText(standardText);
+            }
             for (Byte m1 = 0; m1 < message.length(); m1++) {
                 System.out.print(message.charAt(m1));
                 // Option1.setText(message.charAt(m1));
@@ -880,19 +623,6 @@ l.setText("");
     }
 
 
-    public void startb() throws InterruptedException {
-    
-        System.out.println("startb");
-        int v;
-        for (v = 0; v< 255 ;v++){     
-            Thread TH32 = new Thread();    
-            TH32.sleep(200);  
-            option2.setBackground(new Color(v,v,v));
-            System.out.println("02");
-
-        }
-    
-    }
 
     
 
@@ -912,8 +642,21 @@ l.setText("");
         Thread.sleep(1500);
 
         System.out.println("D");
+commbox.setText("                                                                                                                                                                                                                            ");
+        commbox.setVisible(true);
 
-        panel3.add(commbox);
+        
+
+        animateText("Welcome to The Day.", null,commbox, 12, null); // Text in String ist die Nachricht, zweites Wort ist die JLabel, die deren Text geändert sein muss, die Zahl am Ende ist die Geschwindigkeit; je weniger desto schneller
+        Thread.sleep(2000);
+        animateText(" Look like you are new here", null,commbox, 12, "Welcome to The Day."); // Text in String ist die Nachricht, zweites Wort ist die JLabel, die deren Text geändert sein muss, die Zahl am Ende ist die Geschwindigkeit; je weniger desto schneller
+        animateText(" We are going to learn about this game with the tutorial", null,commbox, 15, "Welcome to The Day. Look like you are new here."); // Text in String ist die Nachricht, zweites Wort ist die JLabel, die deren Text geändert sein muss, die Zahl am Ende ist die Geschwindigkeit; je weniger desto schneller
+        animateText(" ....", null,commbox, 350, "Welcome to The Day. Look like you are new here. We are going to learn about this game with the tutorial."); // Text in String ist die Nachricht, zweites Wort ist die JLabel, die deren Text geändert sein muss, die Zahl am Ende ist die Geschwindigkeit; je weniger desto schneller
+
+        animateText(" So let's begin with the basics", null,commbox, 12, "Welcome to The Day. Look like you are new here. We are going to learn about this game with the tutorial. ....");
+
+        Thread.sleep(2000);
+      //  panel3.add(commbox);
 
         for (i = 1; i < 235; i++) {
             Thread.sleep(i / i * 1, 3);
@@ -928,6 +671,23 @@ l.setText("");
         frame.setBackground(new Color(20, 20, 20));
         // panel3.setVisible(false);
         panel3.setVisible(false);
+        commbox.setVisible(false);
+
+        Thread.sleep(1500);
+        commbox.setText("");
+        commbox.setVisible(true);
+        commbox.setBackground(Color.black);
+        commbox.setForeground(Color.white);
+        commbox.setBorder(new LineBorder(Color.white));
+        animateText(" The first thing you need to know is to never trust anyone in this world. ", null,commbox, 12, null);
+
+        Thread.sleep(3000);
+        animateText(" During your adventure you are going to be meeting many enemies. ", null,commbox, 12, " The first thing you need to know is to never trust anyone in this world. ");
+        Thread.sleep(2000);
+        animateText("        Their main goal is to protect their bosses as long as they can. ", null,commbox, 12, " The first thing you need to know is to never trust anyone in this world.  During your adventure you are going to be meeting many enemies.");
+        Thread.sleep(2000);
+        animateText("               every enemy has different stats such as Speed, HP, Power,etc...", null,commbox, 12, " The first thing you need to know is to never trust anyone in this world.  During your adventure you are going to be meeting many enemies.        Their main goal is to protect their bosses as long as they can.  ");
+
     }
 
     private void notify(int i) {
