@@ -39,7 +39,7 @@ public class Enemy {
 
         public Enemy() {
 
-            System.out.println("D326");
+       //     System.out.println("D326");
 
 
             for (int v32= 0;v32 == elements.length;v32++){
@@ -47,8 +47,8 @@ public class Enemy {
 
             }
 
-        System.out.println(enemies[1]);
-        System.out.print(" " + enemiesHP[1]);
+       // System.out.println(enemies[1]);
+      //  System.out.print(" " + enemiesHP[1]);
 
       //  Menu.l.setText(enemies[0]);
     }

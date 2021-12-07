@@ -21,6 +21,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 import javax.swing.JTextArea;
+import javax.swing.JTextField;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 import javax.swing.plaf.synth.ColorType;
@@ -34,6 +35,9 @@ public class Menu implements ActionListener {
     private static final Component JButton = null;
     JLabel tn;
     JTextArea commbox;
+    JTextArea namebox;
+    ImageIcon imageI = new ImageIcon("Erde.png");
+
     JLabel commboxtex;
     static JLabel l;
     static JButton option1;
@@ -263,12 +267,30 @@ public class Menu implements ActionListener {
         commbox.setVisible(false);
         commbox.setFocusable(false);
         commbox.setBorder(new LineBorder(Color.darkGray));
+      //  commbox.setWrapStyleWord(true);
 
-        commboxtex = new JLabel("Welcome to The Day");
+
+      
+      namebox = new JTextArea("D");
+      namebox.setForeground( new Color(60,60,60));
+      namebox.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+      namebox.setBounds(200, 300, 700, 100);
+      namebox.setPreferredSize(new Dimension(200,80));
+      namebox.setBackground(Color.BLACK);
+  //    namebox.setLineWrap(true);
+      namebox.setVisible(false);
+      namebox.setFocusable(false);
+      namebox.setBorder(new LineBorder(Color.darkGray));
+      namebox.setWrapStyleWord(true);
+   // namebox.setEditable(true);
+    //namebox.setEnabled(true);
+
+        commboxtex = new JLabel(imageI);
+        commboxtex.setIcon(new ImageIcon("Cosmic.png"));
         commboxtex.setForeground(Color.black);
         commboxtex.setFont(new Font("Times new Roman", Font.PLAIN, 30));
-        commboxtex.setBounds(540, 30, 400, 0);
-        commboxtex.setSize(850, 200);
+        commboxtex.setBounds(200, 30, 400, 0);
+        commboxtex.setSize(200, 200);
         commboxtex.setBackground(Color.WHITE);
         commboxtex.setVisible(true);
         commboxtex.setFocusable(false);
@@ -276,6 +298,8 @@ public class Menu implements ActionListener {
         // optionsmenu_colors.setForeground(Color.white);
         // Option1.setBackground(Color.white);
         // Option1 = startname.clone
+
+        frame.add(commboxtex);
 
         JButton color;
 
@@ -301,6 +325,7 @@ public class Menu implements ActionListener {
             optionsmenu_colors.add(color);
 
             frame.add(commbox);
+            frame.add(namebox);
 
         }
 
@@ -647,23 +672,23 @@ commbox.setText("                                                               
 
         
 
-        animateText("Welcome to The Day.", null,commbox, 12, null); // Text in String ist die Nachricht, zweites Wort ist die JLabel, die deren Text geändert sein muss, die Zahl am Ende ist die Geschwindigkeit; je weniger desto schneller
-        Thread.sleep(2000);
-        animateText(" Look like you are new here", null,commbox, 12, "Welcome to The Day."); // Text in String ist die Nachricht, zweites Wort ist die JLabel, die deren Text geändert sein muss, die Zahl am Ende ist die Geschwindigkeit; je weniger desto schneller
-        animateText(" We are going to learn about this game with the tutorial", null,commbox, 15, "Welcome to The Day. Look like you are new here."); // Text in String ist die Nachricht, zweites Wort ist die JLabel, die deren Text geändert sein muss, die Zahl am Ende ist die Geschwindigkeit; je weniger desto schneller
-        animateText(" ....", null,commbox, 350, "Welcome to The Day. Look like you are new here. We are going to learn about this game with the tutorial."); // Text in String ist die Nachricht, zweites Wort ist die JLabel, die deren Text geändert sein muss, die Zahl am Ende ist die Geschwindigkeit; je weniger desto schneller
+     //   animateText("Welcome to The Day.", null,commbox, 12, null); // Text in String ist die Nachricht, zweites Wort ist die JLabel, die deren Text geändert sein muss, die Zahl am Ende ist die Geschwindigkeit; je weniger desto schneller
+       // Thread.sleep(2000);
+        //animateText(" Look like you are new here", null,commbox, 12, "Welcome to The Day."); // Text in String ist die Nachricht, zweites Wort ist die JLabel, die deren Text geändert sein muss, die Zahl am Ende ist die Geschwindigkeit; je weniger desto schneller
+        //animateText(" We are going to learn about this game with the tutorial", null,commbox, 15, "Welcome to The Day. Look like you are new here."); // Text in String ist die Nachricht, zweites Wort ist die JLabel, die deren Text geändert sein muss, die Zahl am Ende ist die Geschwindigkeit; je weniger desto schneller
+        //animateText(" ....", null,commbox, 350, "Welcome to The Day. Look like you are new here. We are going to learn about this game with the tutorial."); // Text in String ist die Nachricht, zweites Wort ist die JLabel, die deren Text geändert sein muss, die Zahl am Ende ist die Geschwindigkeit; je weniger desto schneller
 
-        animateText(" So let's begin with the basics", null,commbox, 12, "Welcome to The Day. Look like you are new here. We are going to learn about this game with the tutorial. ....");
+     //   animateText(" So let's begin with the basics", null,commbox, 12, "Welcome to The Day. Look like you are new here. We are going to learn about this game with the tutorial. ....");
 
-        Thread.sleep(2000);
+    //    Thread.sleep(2000);
       //  panel3.add(commbox);
 
-        for (i = 1; i < 235; i++) {
-            Thread.sleep(i / i * 1, 3);
-            panel3.setBackground(new Color(255 - i, 255 - i, 255 - i));
-            System.out.println("i: " + i);
+     //   for (i = 1; i < 235; i++) {
+       //     Thread.sleep(i / i * 1, 3);
+         //   panel3.setBackground(new Color(255 - i, 255 - i, 255 - i));
+           // System.out.println("i: " + i);
 
-        }
+ //       }
 
         // Thread.sleep(1000);
 
@@ -679,14 +704,24 @@ commbox.setText("                                                               
         commbox.setBackground(Color.black);
         commbox.setForeground(Color.white);
         commbox.setBorder(new LineBorder(Color.white));
-        animateText(" The first thing you need to know is to never trust anyone in this world. ", null,commbox, 12, null);
+   //     animateText(" The first thing you need to know is to never trust anyone in this world. ", null,commbox, 12, null);
 
-        Thread.sleep(3000);
-        animateText(" During your adventure you are going to be meeting many enemies. ", null,commbox, 12, " The first thing you need to know is to never trust anyone in this world. ");
-        Thread.sleep(2000);
-        animateText("        Their main goal is to protect their bosses as long as they can. ", null,commbox, 12, " The first thing you need to know is to never trust anyone in this world.  During your adventure you are going to be meeting many enemies.");
-        Thread.sleep(2000);
-        animateText("               every enemy has different stats such as Speed, HP, Power,etc...", null,commbox, 12, " The first thing you need to know is to never trust anyone in this world.  During your adventure you are going to be meeting many enemies.        Their main goal is to protect their bosses as long as they can.  ");
+     //   Thread.sleep(3000);
+       // animateText(" During your adventure you are going to be meeting many enemies. ", null,commbox, 12, " The first thing you need to know is to never trust anyone in this world. ");
+        //Thread.sleep(2000);
+        //animateText("        Their main goal is to protect their bosses as long as they can. ", null,commbox, 12, " The first thing you need to know is to never trust anyone in this world.  During your adventure you are going to be meeting many enemies.");
+        //Thread.sleep(2000);
+        //animateText("               every enemy has different stats such as Speed, HP, Power,etc...", null,commbox, 12, " The first thing you need to know is to never trust anyone in this world.  During your adventure you are going to be meeting many enemies.        Their main goal is to protect their bosses as long as they can.  ");
+
+        //Thread.sleep(2500);
+
+        //animateText("You have to kill every enemy you meet and at the end you will start       fighting strong bosses and you have to kill them.", null,commbox, 12,null);
+        //animateText("Or you can just activate the secret ending ......" , null,commbox, 12,"You have to kill every enemy you meet and at the end you will start       fighting strong bosses and you have to kill them.");
+//Thread.sleep(1500);
+//animateText("First, enter your name" , null,commbox, 12,null);
+
+namebox.setVisible(true);
+
 
     }
 

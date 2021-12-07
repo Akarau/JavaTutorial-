@@ -1,9 +1,10 @@
 public class Game {
     Menu menu;
 
-
  Enemy enemy = new Enemy();
+Elemente elemente = new Elemente();
 
+ 
     Game (){
         try {
             menu = new Menu();
