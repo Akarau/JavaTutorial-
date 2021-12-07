@@ -401,31 +401,14 @@ public class Menu implements ActionListener {
         commboxtex.setVisible(true);
       //  commboxtex.setFocusable(false);
 
+      JButton color;
 
 
-        inf = new JLabel();
-        inf.setText("Ddwt3");
-        inf.setForeground( new Color(180,180,180));
-        inf.setFont(new Font("Times new Roman", Font.PLAIN, 25));
-        inf.setBounds(0, 0, 255, 255);
-        inf.setSize(255, 255);
-        inf.setBackground( new Color(255,255,255));
-        inf.setVisible(true);
-        inf.setFocusable(false);
-        inf.setBorder(new LineBorder(Color.white));
-      ImageIcon icone = new ImageIcon("Fire2.png");
-
-        inf.setIcon(icone);
-
-
-        frame.add(inf);
 
      //   commbox.add(commboxtex);
         // optionsmenu_colors.setForeground(Color.white);
         // Option1.setBackground(Color.white);
         // Option1 = startname.clone
-
-        JButton color;
 
         for (int c = 0; c < colors.length; c++) {
             // System.out.println(c);
