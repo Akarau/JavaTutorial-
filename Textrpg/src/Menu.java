@@ -33,10 +33,11 @@ import org.w3c.dom.css.RGBColor;
 public class Menu implements ActionListener {
 
     private static final Component JButton = null;
-    ImageIcon imageW = new ImageIcon("W.png");
+    static ImageIcon imageW = new ImageIcon("W.png");
     JLabel tn;
     JTextArea commbox;
     JLabel commboxtex;
+    JLabel inf;
 
     static JLabel l;
     static JButton option1;
@@ -46,12 +47,20 @@ public class Menu implements ActionListener {
     static JButton options_ts;
     JButton tex;
     JButton b;
+    JPanel b1;
+    JPanel b2;
+    JPanel b3;
+    JPanel b4;
+    JButton e1;
+
+
 
     static JFrame frame;
     static JProgressBar button1;
 
     JPanel panel1, panel2;
     JPanel panel3;
+    JPanel fighting_options;
     static JPanel optionsmenu;
     static JPanel optionsmenu_colors;
     static JPanel optionsmenu_colorsoutlines;
@@ -213,6 +222,119 @@ public class Menu implements ActionListener {
         optionsmenu_options.setBounds(830, 300, 70, 160);
         optionsmenu_options.setBorder(new LineBorder(Color.white));
 
+        fighting_options = new JPanel();
+        // optionsmenu_colors.setBounds(1.x, 1.y, );
+        fighting_options.setVisible(true);
+        fighting_options.setBackground(Color.BLACK);
+        fighting_options.setFocusable(false);
+        fighting_options.setBounds(200, 720, 1500, 300);
+        fighting_options.setBorder(new LineBorder(Color.white));
+
+        ImageIcon url = new ImageIcon("W.png");
+
+        b1 = new JPanel();
+        b1.setForeground(new Color(255,0,150));
+        b1.setFont(new Font("Times new Roman", Font.PLAIN, 60));
+        b1.setBounds(150, 150, 240, 2540);
+        b1.setBackground(Color.black);
+        b1.setVisible(true);
+        b1.setFocusable(false);
+        tn.setIcon(url);
+        tn.setText("text");
+    //    e1.addActionListener(this);
+     //   e1.setActionCommand("E");
+        optionsmenu_options.setBorder(new LineBorder(Color.white));
+
+        b2 = new JPanel();
+        b2.setForeground(new Color(200,255,80));
+        b2.setFont(new Font("Times new Roman", Font.PLAIN, 60));
+        b2.setBounds(150, 150, 240, 2540);
+        b2.setBackground(Color.black);
+        b2.setVisible(true);
+        b2.setFocusable(false);
+     //   e2.addActionListener(this);
+     //   e2.setActionCommand("E");
+        optionsmenu_options.setBorder(new LineBorder(Color.white));
+
+
+        b3 = new JPanel();
+        b3.setForeground(new Color(255,0,150));
+        b3.setFont(new Font("Times new Roman", Font.PLAIN, 60));
+        b3.setBounds(150, 150, 240, 2540);
+        b3.setBackground(Color.black);
+        b3.setVisible(true);
+        b3.setFocusable(false);
+    //    e3.addActionListener(this);
+    //    e3.setActionCommand("E");
+        optionsmenu_options.setBorder(new LineBorder(Color.white));
+
+
+        b4 = new JPanel();
+        b4.setForeground(new Color(255,255,255));
+        b4.setFont(new Font("Times new Roman", Font.PLAIN, 60));
+        b4.setBounds(150, 150, 240, 2540);
+        b4.setBackground(Color.black);
+        b4.setVisible(true);
+        b4.setFocusable(false);
+     //   e4.addActionListener(this);
+     //   e4.setActionCommand("E");
+        optionsmenu_options.setBorder(new LineBorder(Color.white));
+
+        e1 = new JButton("         Ancient          ");
+        e1.setForeground(new Color(255,0,140));
+        e1.setFont(new Font("Times new Roman", Font.PLAIN, 60));
+        e1.setBounds(0, 0, 0, 0);
+        e1.setBackground(Color.black);
+        e1.setVisible(true);
+        e1.setFocusable(false);
+        e1.addActionListener(this);
+        e1.setActionCommand("E");
+
+        javax.swing.JButton e2 = new JButton("    Meteor Attack     ");
+        e2.setForeground(new Color(80,0,255));
+        e2.setFont(new Font("Times new Roman", Font.PLAIN, 60));
+        e2.setBounds(0, 0, 0, 0);
+        e2.setBackground(Color.black);
+        e2.setVisible(true);
+        e2.setFocusable(false);
+        e2.addActionListener(this);
+        e2.setActionCommand("E");
+        optionsmenu_options.setBorder(new LineBorder(Color.white));
+
+        javax.swing.JButton e3 = new JButton("              T               ");
+        e3.setForeground(new Color(255,255,255));
+        e3.setFont(new Font("Times new Roman", Font.PLAIN, 60));
+        e3.setBounds(0, 0, 0, 0);
+        e3.setBackground(Color.black);
+        e3.setVisible(true);
+        e3.setFocusable(false);
+        e3.addActionListener(this);
+        e3.setActionCommand("E");
+        optionsmenu_options.setBorder(new LineBorder(Color.white));
+
+        javax.swing.JButton e4 = new JButton("              T               ");
+        e4.setForeground(new Color(255,255,255));
+        e4.setFont(new Font("Times new Roman", Font.PLAIN, 60));
+        e4.setBounds(0, 0, 0, 0);
+        e4.setBackground(Color.black);
+        e4.setVisible(true);
+        e4.setFocusable(false);
+        e4.addActionListener(this);
+        e4.setActionCommand("E");
+        optionsmenu_options.setBorder(new LineBorder(Color.white));
+
+
+        frame.add(fighting_options);
+        fighting_options.add(b1);
+        fighting_options.add(b2);
+        fighting_options.add(b3);
+        fighting_options.add(b4);
+        b1.add(e1);
+        b2.add(e2);
+        b3.add(e3);
+        b4.add(e4);
+
+
         tex = new JButton("T");
         tex.setForeground(Color.white);
         tex.setFont(new Font("Times new Roman", Font.PLAIN, 30));
@@ -273,11 +395,31 @@ public class Menu implements ActionListener {
         commboxtex = new JLabel("Welcome to The Day");
         commboxtex.setForeground(Color.black);
         commboxtex.setFont(new Font("Times new Roman", Font.PLAIN, 30));
-        commboxtex.setBounds(540, 30, 400, 0);
-        commboxtex.setSize(850, 200);
+        commboxtex.setBounds(300, 30, 400, 0);
+        commboxtex.setSize(400, 400);
         commboxtex.setBackground(Color.WHITE);
         commboxtex.setVisible(true);
-        commboxtex.setFocusable(false);
+      //  commboxtex.setFocusable(false);
+
+
+
+        inf = new JLabel();
+        inf.setText("Ddwt3");
+        inf.setForeground( new Color(180,180,180));
+        inf.setFont(new Font("Times new Roman", Font.PLAIN, 25));
+        inf.setBounds(0, 0, 255, 255);
+        inf.setSize(255, 255);
+        inf.setBackground( new Color(255,255,255));
+        inf.setVisible(true);
+        inf.setFocusable(false);
+        inf.setBorder(new LineBorder(Color.white));
+      ImageIcon icone = new ImageIcon("Fire2.png");
+
+        inf.setIcon(icone);
+
+
+        frame.add(inf);
+
      //   commbox.add(commboxtex);
         // optionsmenu_colors.setForeground(Color.white);
         // Option1.setBackground(Color.white);
@@ -382,13 +524,17 @@ public class Menu implements ActionListener {
 
         }
         if (e.getActionCommand() == "startb") {
-            l.setVisible(!l.isVisible());
+            System.out.println(CuPower.Power);
+            CuPower.Power++;
+            option3.setText("Your power is: " + CuPower.Power);
+            
+        //    l.setVisible(!l.isVisible());
 
             // panel3.setVisible(true);
             startname.setVisible(false);
-            option1.setVisible(false);
+        //    option1.setVisible(false);
             option2.setVisible(false);
-            option3.setVisible(false);
+         //   option3.setVisible(false);
             options_c.setVisible(false);
             options_ts.setVisible(false);
             optionsmenu.setVisible(false);
