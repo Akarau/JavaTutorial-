@@ -75,6 +75,18 @@ public class Menu implements ActionListener {
 
     // upgrades //
 
+    // Elements_Main_Menu //
+
+    static JPanel elementsMenu;
+    static JPanel chosen_Main_Element;
+   static JLabel chosen_Main_Element_Picture;
+   static JLabel chosen_Main_Element_Name;
+static JTextArea chosen_Main_Element_Description;
+static JButton choose_Element;
+
+    // Elements_Main_Menu //
+
+
     static JFrame frame;
     static JProgressBar button1;
 
@@ -290,7 +302,7 @@ public class Menu implements ActionListener {
 
         fighting_options = new JPanel();
         // optionsmenu_colors.setBounds(1.x, 1.y, );
-        fighting_options.setVisible(true);
+        fighting_options.setVisible(false);
         fighting_options.setBackground(Color.BLACK);
         fighting_options.setFocusable(false);
         fighting_options.setBounds(38, 480, 1200, 300);
@@ -476,7 +488,7 @@ public class Menu implements ActionListener {
       upgradeMenu.setFont(new Font("Times new Roman", Font.PLAIN, 60));
       upgradeMenu.setBounds(680, 150, 400, 400);
       upgradeMenu.setBackground(Color.black);
-      upgradeMenu.setVisible(true);
+      upgradeMenu.setVisible(false);
       upgradeMenu.setFocusable(false);
       upgradeMenu.setBorder(new LineBorder(Color.white));
       
@@ -591,6 +603,139 @@ upgradeMenu.add(healthUpgradeButton);
 upgradeMenu.add(goldUpgradeButton);
 
 
+
+elementsMenu = new JPanel();
+elementsMenu.setBounds(200, 80, 750, 455);
+elementsMenu.setVisible(false);
+elementsMenu.setBackground(Color.BLACK);
+elementsMenu.setFocusable(false);
+        // optionsmenu.setForeground(Color.BLACK);
+        elementsMenu.setBorder(new LineBorder(Color.white));
+
+
+        frame.add(elementsMenu);
+
+
+
+        chosen_Main_Element = new JPanel();
+        chosen_Main_Element.setForeground(new Color(255,0,150));
+        chosen_Main_Element.setFont(new Font("Times new Roman", Font.PLAIN, 60));
+        chosen_Main_Element.setBounds(960, 80, 310, 455);
+        chosen_Main_Element.setBackground(Color.black);
+        chosen_Main_Element.setVisible(false);
+        chosen_Main_Element.setFocusable(false);
+        chosen_Main_Element.setBorder(new LineBorder(Color.white));
+
+
+       chosen_Main_Element_Picture = new JLabel();
+       chosen_Main_Element_Picture.setForeground(new Color(255,255,255));
+       chosen_Main_Element_Picture.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+       chosen_Main_Element_Picture.setBounds(280, 0, 60, 80);
+       chosen_Main_Element_Picture.setBackground(Color.black);
+       chosen_Main_Element_Picture.setVisible(false);
+       chosen_Main_Element_Picture.setFocusable(false);
+       chosen_Main_Element_Picture.setAlignmentX(80);
+       // upgrade1.addActionListener(this);
+       // upgrade1.setActionCommand("E");
+       chosen_Main_Element_Picture.setBorder(new LineBorder(Color.white));
+
+
+       chosen_Main_Element_Name = new JLabel("Ancient");
+       chosen_Main_Element_Name.setForeground(new Color(255,255,255));
+       chosen_Main_Element_Name.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+       chosen_Main_Element_Name.setBounds(280, 0, 140, 80);
+       chosen_Main_Element_Name.setBackground(Color.black);
+       chosen_Main_Element_Name.setVisible(false);
+       chosen_Main_Element_Name.setFocusable(false);
+       chosen_Main_Element_Name.setAlignmentX(80);
+       // upgrade1.addActionListener(this);
+       // upgrade1.setActionCommand("E");
+       chosen_Main_Element_Name.setBorder(new LineBorder(Color.white));
+
+
+       chosen_Main_Element_Description = new JTextArea(" Feuer: Strong against Heal and Crystal | weak agains Erde and Wasser");
+       chosen_Main_Element_Description.setForeground(new Color(255,255,255));
+       chosen_Main_Element_Description.setFont(new Font("Times new Roman", Font.PLAIN, 20));
+       chosen_Main_Element_Description.setBounds(280, 0, 290, 180);
+       chosen_Main_Element_Description.setBackground(Color.black);
+       chosen_Main_Element_Description.setVisible(false);
+       chosen_Main_Element_Description.setFocusable(false);
+       chosen_Main_Element_Description.setAlignmentX(80);
+       chosen_Main_Element_Description.setLineWrap(true);
+       // upgrade1.addActionListener(this);
+       // upgrade1.setActionCommand("E");
+
+       choose_Element = new JButton(" Wählen ");
+       choose_Element.setForeground(new Color(0,255,80));
+       choose_Element.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+       choose_Element.setBounds(50, 50, 350, 350);
+       choose_Element.setSize(80, 50);
+       choose_Element.setBackground(Color.black);
+       choose_Element.setVisible(false);
+       choose_Element.setFocusable(false);
+       choose_Element.addActionListener(this);
+       choose_Element.setActionCommand("choose_Element");
+       choose_Element.setBorder(new LineBorder(Color.white));
+
+       chosen_Main_Element_Description.setBorder(new LineBorder(Color.white));
+
+
+       chosen_Main_Element.add(chosen_Main_Element_Picture);
+       chosen_Main_Element.add(chosen_Main_Element_Name);
+       chosen_Main_Element.add(chosen_Main_Element_Description);
+       chosen_Main_Element.add(choose_Element);
+
+        frame.add(chosen_Main_Element);
+        JLabel ei;
+
+        for (int e = 0; e < Elemente.elements.length;e++) {
+            // System.out.println(c);
+            // System.out.println(colors[c]);
+
+          //  if (Elemente.elements[e] != null){
+
+            javax.swing.JButton elemB = new JButton();
+            elemB.setForeground(new Color(80,0,255));
+            elemB.setFont(new Font("Times new Roman", Font.PLAIN, 60));
+            elemB.setBounds(0, 0, 0, 0);
+            elemB.setBackground(Color.black);
+            elemB.setVisible(true);
+            elemB.setFocusable(false);
+            elemB.addActionListener(this);
+            elemB.setActionCommand(Elemente.elements[e]);
+            elemB.setBorder(new LineBorder(Color.white));
+
+            ei = new JLabel();
+            ei.setForeground(colors2[c]);
+            ei.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+            // color.setBounds(500, 500, 350, 350);
+            ei.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\" + Elemente.elements[e] + ".png").getImage().getScaledInstance(140, 135, Image.SCALE_AREA_AVERAGING)));
+            ei.setSize(800, 800);
+            ei.setBackground(Color.white);
+            ei.setVisible(true);
+            ei.setFocusable(false);
+          //  ei.addActionListener(this);
+            //ei.setActionCommand(colors[c]);
+            ei.setBorder(new LineBorder(Color.white));
+            //ei.setActionCommand(colors[c]);
+            // color.setBorder(BorderFactory.createBevelBorder(200, Color.white,
+            // Color.BLACK));
+
+        //    elementsMenu.add(ei);
+            elementsMenu.add(elemB);
+elemB.add(ei);
+           // commbox.setVisible(true);
+
+           // if (Elemente.elements[e] == null) {
+             //   break;
+            //} else {
+                
+           // }
+      //  }
+
+
+        }
+
       JButton color;
 
 
@@ -621,10 +766,11 @@ upgradeMenu.add(goldUpgradeButton);
 
             optionsmenu_colors.add(color);
 
-            frame.add(commbox);
-            frame.add(upgradeMenuButton);
-frame.add(upgradeMenu);
         }
+
+        frame.add(commbox);
+        frame.add(upgradeMenuButton);
+frame.add(upgradeMenu);
 
         for (int c = 0; c < colors.length; c++) {
             // System.out.println(c);
@@ -854,6 +1000,22 @@ frame.add(upgradeMenu);
             }
         }
 
+        for (v = 0; v < Elemente.elements.length ; v++) {
+            if (e.getActionCommand().equals(Elemente.elements[v])) {
+
+                chosen_Main_Element_Name.setVisible(true);
+                chosen_Main_Element_Description.setVisible(true);
+                chosen_Main_Element_Picture.setVisible(true);
+                choose_Element.setVisible(true);
+
+                chosen_Main_Element_Picture.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\" + Elemente.elements[v] + ".png").getImage().getScaledInstance(200, 195, Image.SCALE_AREA_AVERAGING)));
+chosen_Main_Element_Name.setText("  " + Elemente.elements[v] + "  ");
+chosen_Main_Element_Name.setForeground(Elemente.elemetColors[v]);
+chosen_Main_Element_Description.setText("           " + Elemente.elements[v] + " effective agains                      | " + Elemente.elementsPowers[v] + " |");
+
+            }
+        }
+
     }
 
     
@@ -1023,15 +1185,15 @@ commbox.setText("                                                               
 
         
 
-        animateText("Welcome to The Day.", null,commbox, 0, null); // Text in String ist die Nachricht, zweites Wort ist die JLabel, die deren Text geändert sein muss, die Zahl am Ende ist die Geschwindigkeit; je weniger desto schneller
-    //    Thread.sleep(2000);
-        animateText(" Looks like you are new here", null,commbox, 0, "Welcome to The Day."); // Text in String ist die Nachricht, zweites Wort ist die JLabel, die deren Text geändert sein muss, die Zahl am Ende ist die Geschwindigkeit; je weniger desto schneller
-        animateText(" We are going to learn about this game with the tutorial", null,commbox, 15, "Welcome to The Day. Looks like you are new here."); // Text in String ist die Nachricht, zweites Wort ist die JLabel, die deren Text geändert sein muss, die Zahl am Ende ist die Geschwindigkeit; je weniger desto schneller
-        animateText(" ....", null,commbox, 0, "Welcome to The Day. Looks like you are new here. We are going to learn about this game with the tutorial."); // Text in String ist die Nachricht, zweites Wort ist die JLabel, die deren Text geändert sein muss, die Zahl am Ende ist die Geschwindigkeit; je weniger desto schneller
+        animateText("Welcome to The Day.", null,commbox, 12, null); // Text in String ist die Nachricht, zweites Wort ist die JLabel, die deren Text geändert sein muss, die Zahl am Ende ist die Geschwindigkeit; je weniger desto schneller
+        Thread.sleep(2000);
+        animateText(" Looks like you are new here", null,commbox, 12, "Welcome to The Day."); // Text in String ist die Nachricht, zweites Wort ist die JLabel, die deren Text geändert sein muss, die Zahl am Ende ist die Geschwindigkeit; je weniger desto schneller
+        animateText(" We are going to learn about this game with the tutorial", null,commbox, 12, "Welcome to The Day. Looks like you are new here."); // Text in String ist die Nachricht, zweites Wort ist die JLabel, die deren Text geändert sein muss, die Zahl am Ende ist die Geschwindigkeit; je weniger desto schneller
+        animateText(" ....", null,commbox, 350, "Welcome to The Day. Looks like you are new here. We are going to learn about this game with the tutorial."); // Text in String ist die Nachricht, zweites Wort ist die JLabel, die deren Text geändert sein muss, die Zahl am Ende ist die Geschwindigkeit; je weniger desto schneller
 
-        animateText(" So let's begin with the basics", null,commbox, 0, "Welcome to The Day. Looks like you are new here. We are going to learn about this game with the tutorial. ....");
+        animateText(" So let's begin with the basics", null,commbox, 12, "Welcome to The Day. Looks like you are new here. We are going to learn about this game with the tutorial. ....");
 
-     //   Thread.sleep(2000);
+       Thread.sleep(2000);
       //  panel3.add(commbox);
 
         for (i = 1; i < 235; i++) {
@@ -1055,23 +1217,25 @@ commbox.setText("                                                               
         commbox.setBackground(Color.black);
         commbox.setForeground(Color.white);
         commbox.setBorder(new LineBorder(Color.white));
-        animateText(" The first thing you need to know is to never trust anyone in this world. ", null,commbox, 0, null);
+        animateText(" The first thing you need to know is to never trust anyone in this world. ", null,commbox, 12, null);
 
         Thread.sleep(3000);
-        animateText(" During your adventure you are going to be meeting many enemies. ", null,commbox, 0, " The first thing you need to know is to never trust anyone in this world. ");
+        animateText(" During your adventure you are going to be meeting many enemies. ", null,commbox, 12, " The first thing you need to know is to never trust anyone in this world. ");
         Thread.sleep(2000);
-        animateText("        Their main goal is to protect their bosses as long as they can. ", null,commbox, 0, " The first thing you need to know is to never trust anyone in this world.  During your adventure you are going to be meeting many enemies.");
+        animateText("        Their main goal is to protect their bosses as long as they can. ", null,commbox, 12, " The first thing you need to know is to never trust anyone in this world.  During your adventure you are going to be meeting many enemies.");
         Thread.sleep(2000);
-        animateText("               every enemy has different stats such as Speed, HP, Power,etc...", null,commbox, 0, " The first thing you need to know is to never trust anyone in this world.  During your adventure you are going to be meeting many enemies.        Their main goal is to protect their bosses as long as they can.  ");
+        animateText("               every enemy has different stats such as Speed, HP, Power,etc...", null,commbox, 12, " The first thing you need to know is to never trust anyone in this world.  During your adventure you are going to be meeting many enemies.        Their main goal is to protect their bosses as long as they can.  ");
 
 
         Thread.sleep(3000);
-        animateText("Now choose your main element. Your main element is strongest         element you will get.", null,commbox, 12, null);
+        animateText(" Now choose your main element. Your main element is strongest             element you will get.", null,commbox, 12, null);
 
-        Thread.sleep(1500);
-        animateText(" Each element has positive and negative things. For         example Crystal is weak against 'Fire' but strong against 'Earth' ", null,commbox, 12, "Now choose your main element. Your main element is strongest         element you will get.");
+        Thread.sleep(1000);
 
-         
+        elementsMenu.setVisible(true);
+
+        Thread.sleep(500);
+        animateText(" Each element has positive and negative things.     For example Crystal is weak against 'Fire' but strong against 'Earth' ", null,commbox, 12, " Now choose your main element. Your main element is strongest             element you will get.");
     }
 
     private void notify(int i) {

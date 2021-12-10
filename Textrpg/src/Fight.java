@@ -38,7 +38,7 @@ public class Fight {
 
 
 
-public Fight(){
+public void Dswet(){
     JLabel inf2 = new JLabel();
     inf2.setText(null);
     inf2.setForeground( new Color(180,180,180));
@@ -51,5 +51,42 @@ public Fight(){
   //  inf2.setBorder(new LineBorder(Color.white));
     //Menu.frame.add(inf2);
     //Menu.frame.setVisible(false);
+}
+
+public static void fight(String element){
+
+  System.out.println(element);
+
+  int power = CuPower.Power;
+
+  String elements[] = {
+    "Dark",
+    "Fire",
+    "Light",
+    "Earth",
+    "Health",
+    "Water",
+    "Wind",
+    "Magic",
+    "Blitz",
+};
+
+String currentenemy = null;
+
+currentenemy = "FuerFlamme";
+
+
+
+/*for (int n = 0 ;; n++){
+if (Enemy.enemies[n] != null){
+ // System.out.println(Enemy.enemies[n]);
+  if (Enemy.enemy_Main_Materias[n] != null){
+
+  }
+}
+}
+
+}*/
+
 }
 }

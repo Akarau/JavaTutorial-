@@ -17,7 +17,7 @@ public class Enemy {
     };
 
    static String enemies[] = {
-        "Darkour",
+        "FeuerFlamme",
         "Balrog",
     };
 
@@ -26,7 +26,7 @@ public class Enemy {
         200,
     };
 
-    String enemy_Main_Materias[] = {
+    static String enemy_Main_Materias[] = {
         "Dark",
         "Fire",
     };
