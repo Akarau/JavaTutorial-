@@ -3,6 +3,7 @@ import java.awt.Component;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.beans.PropertyChangeListener;
+import java.io.IOException;
 import java.lang.StackWalker.Option;
 import java.lang.reflect.Array;
 import java.util.EventObject;
@@ -33,13 +34,17 @@ import org.w3c.dom.css.RGBColor;
 public class Menu implements ActionListener {
 
     private static final Component JButton = null;
-    static ImageIcon imageW = new ImageIcon("W.png");
+    static ImageIcon imageW = new ImageIcon("C:\\Users\\manha\\Documents\\Visual Studio\\JavaTutorial-\\Textrpg\\Images\\Crystal.png");
     JLabel tn;
     JTextArea commbox;
     JLabel commboxtex;
     JLabel inf;
 
     static JLabel l;
+    static JLabel i1;
+    static JLabel i2;
+    static JLabel i3;
+    static JLabel i4;
     static JButton option1;
     static JButton option2;
     static JButton option3;
@@ -51,9 +56,24 @@ public class Menu implements ActionListener {
     JPanel b2;
     JPanel b3;
     JPanel b4;
+
     JButton e1;
 
 
+     // upgrades //
+
+    JPanel upgradeMenu;
+    JButton upgradeMenuButton;
+    static JLabel i5;
+    static JLabel i6;
+    static JLabel i7;
+    static JButton powerUpgradeButton;
+    static JButton healthUpgradeButton;
+    static JButton goldUpgradeButton;
+    static JLabel pointsText;
+
+
+    // upgrades //
 
     static JFrame frame;
     static JProgressBar button1;
@@ -138,7 +158,53 @@ public class Menu implements ActionListener {
         l.setBackground(Color.WHITE);
         l.setVisible(false);
         l.setFocusable(false);
-        
+
+
+
+        i1 = new JLabel();
+        i1.setForeground(new Color(255,0,160));
+        i1.setFont(new Font("Times new Roman", Font.PLAIN, 60));
+     //   i1.setBounds(200, 400, 400, 0);
+        i1.setSize(20, 20);
+        i1.setBackground(Color.WHITE);
+        i1.setVisible(true);
+        i1.setFocusable(false);
+        i1.setIcon(new ImageIcon(new ImageIcon("C:\\Users\\manha\\Documents\\Visual Studio\\JavaTutorial-\\Textrpg\\Images\\Elemente\\Ancient2.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+        i1.setText("        Ancient         ");
+
+        i2 = new JLabel();
+        i2.setForeground(new Color(160,0,255));
+        i2.setFont(new Font("Times new Roman", Font.PLAIN, 60));
+        i2.setBounds(200, 400, 400, 0);
+        i2.setSize(20, 20);
+        i2.setBackground(Color.WHITE);
+        i2.setVisible(true);
+        i2.setFocusable(false);
+        i2.setIcon(new ImageIcon(new ImageIcon("C:\\Users\\manha\\Documents\\Visual Studio\\JavaTutorial-\\Textrpg\\Images\\Elemente\\Cosmic.png").getImage().getScaledInstance(80, 60, Image.SCALE_AREA_AVERAGING)));
+        i2.setText("    Meteor Attack     ");
+
+        i3 = new JLabel();
+        i3.setForeground(new Color(160,0,255));
+        i3.setFont(new Font("Times new Roman", Font.PLAIN, 60));
+      //  i3.setBounds(200, 400, 400, 0);
+        i3.setSize(20, 20);
+        i3.setBackground(Color.WHITE);
+        i3.setVisible(true);
+        i3.setFocusable(false);
+        i3.setIcon(new ImageIcon(new ImageIcon("C:\\Users\\manha\\Documents\\Visual Studio\\JavaTutorial-\\Textrpg\\Images\\Elemente\\Void.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
+        i3.setText("        Void         ");
+
+        i4 = new JLabel();
+        i4.setForeground(new Color(0,220,255));
+        i4.setFont(new Font("Times new Roman", Font.PLAIN, 60));
+      //  i3.setBounds(200, 400, 400, 0);
+      i4.setSize(20, 20);
+      i4.setBackground(Color.WHITE);
+      i4.setVisible(true);
+      i4.setFocusable(false);
+      i4.setIcon(new ImageIcon(new ImageIcon("C:\\Users\\manha\\Documents\\Visual Studio\\JavaTutorial-\\Textrpg\\Images\\Elemente\\Crystal2.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
+      i4.setText("        Crysral         ");
+
 
         option1 = new JButton("   Start   ");
         option1.setForeground(Color.white);
@@ -280,7 +346,7 @@ public class Menu implements ActionListener {
      //   e4.setActionCommand("E");
         optionsmenu_options.setBorder(new LineBorder(Color.white));
 
-        e1 = new JButton("         Ancient          ");
+        e1 = new JButton();
         e1.setForeground(new Color(255,0,140));
         e1.setFont(new Font("Times new Roman", Font.PLAIN, 60));
         e1.setBounds(0, 0, 0, 0);
@@ -290,7 +356,7 @@ public class Menu implements ActionListener {
         e1.addActionListener(this);
         e1.setActionCommand("E");
 
-        javax.swing.JButton e2 = new JButton("    Meteor Attack     ");
+        javax.swing.JButton e2 = new JButton();
         e2.setForeground(new Color(80,0,255));
         e2.setFont(new Font("Times new Roman", Font.PLAIN, 60));
         e2.setBounds(0, 0, 0, 0);
@@ -301,7 +367,7 @@ public class Menu implements ActionListener {
         e2.setActionCommand("E");
         optionsmenu_options.setBorder(new LineBorder(Color.white));
 
-        javax.swing.JButton e3 = new JButton("              T               ");
+        javax.swing.JButton e3 = new JButton();
         e3.setForeground(new Color(255,255,255));
         e3.setFont(new Font("Times new Roman", Font.PLAIN, 60));
         e3.setBounds(0, 0, 0, 0);
@@ -312,7 +378,7 @@ public class Menu implements ActionListener {
         e3.setActionCommand("E");
         optionsmenu_options.setBorder(new LineBorder(Color.white));
 
-        javax.swing.JButton e4 = new JButton("              T               ");
+        javax.swing.JButton e4 = new JButton();
         e4.setForeground(new Color(255,255,255));
         e4.setFont(new Font("Times new Roman", Font.PLAIN, 60));
         e4.setBounds(0, 0, 0, 0);
@@ -401,6 +467,130 @@ public class Menu implements ActionListener {
         commboxtex.setVisible(true);
       //  commboxtex.setFocusable(false);
 
+
+
+
+
+      upgradeMenu = new JPanel();
+      upgradeMenu.setForeground(new Color(255,0,150));
+      upgradeMenu.setFont(new Font("Times new Roman", Font.PLAIN, 60));
+      upgradeMenu.setBounds(680, 150, 400, 400);
+      upgradeMenu.setBackground(Color.black);
+      upgradeMenu.setVisible(true);
+      upgradeMenu.setFocusable(false);
+      upgradeMenu.setBorder(new LineBorder(Color.white));
+      
+      powerUpgradeButton = new JButton();
+      powerUpgradeButton.setForeground(new Color(255,255,255));
+      powerUpgradeButton.setFont(new Font("Times new Roman", Font.PLAIN, 60));
+      powerUpgradeButton.setBounds(0, 0, 0, 0);
+      powerUpgradeButton.setBackground(Color.black);
+      powerUpgradeButton.setVisible(true);
+      powerUpgradeButton.setFocusable(false);
+      powerUpgradeButton.setAlignmentX(80);
+      powerUpgradeButton.addActionListener(this);
+      powerUpgradeButton.setActionCommand("PowerUpgrade");
+      powerUpgradeButton.setBorder(new LineBorder(Color.white));
+
+      healthUpgradeButton = new JButton();
+      healthUpgradeButton.setForeground(new Color(255,255,255));
+      healthUpgradeButton.setFont(new Font("Times new Roman", Font.PLAIN, 60));
+      healthUpgradeButton.setBounds(0, 0, 0, 0);
+      healthUpgradeButton.setBackground(Color.black);
+      healthUpgradeButton.setVisible(true);
+      healthUpgradeButton.setFocusable(false);
+      healthUpgradeButton.setAlignmentX(80);
+      healthUpgradeButton.addActionListener(this);
+      healthUpgradeButton.setActionCommand("HealthUpgrade");
+      healthUpgradeButton.setBorder(new LineBorder(Color.white));
+
+
+
+      goldUpgradeButton = new JButton();
+      goldUpgradeButton.setForeground(new Color(255,255,255));
+      goldUpgradeButton.setFont(new Font("Times new Roman", Font.PLAIN, 60));
+      goldUpgradeButton.setBounds(0, 0, 0, 0);
+      goldUpgradeButton.setBackground(Color.black);
+      goldUpgradeButton.setVisible(true);
+      goldUpgradeButton.setFocusable(false);
+      goldUpgradeButton.setAlignmentX(80);
+      goldUpgradeButton.addActionListener(this);
+      goldUpgradeButton.setActionCommand("GoldUpgrade");
+      goldUpgradeButton.setBorder(new LineBorder(Color.white));
+
+      pointsText = new JLabel(" Points:  " + CuPower.Points);
+      pointsText.setForeground(new Color(255,255,255));
+      pointsText.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+      pointsText.setBounds(280, 0, 60, 80);
+      pointsText.setBackground(Color.black);
+      pointsText.setVisible(true);
+      pointsText.setFocusable(false);
+      pointsText.setAlignmentX(80);
+     // upgrade1.addActionListener(this);
+     // upgrade1.setActionCommand("E");
+     pointsText.setBorder(new LineBorder(Color.black));
+
+
+      upgradeMenuButton = new JButton("+");
+      upgradeMenuButton.setForeground(Color.white);
+      upgradeMenuButton.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+      upgradeMenuButton.setBounds(50, 50, 350, 350);
+      upgradeMenuButton.setSize(80, 50);
+      upgradeMenuButton.setBackground(Color.black);
+      upgradeMenuButton.setVisible(true);
+      upgradeMenuButton.setFocusable(false);
+      upgradeMenuButton.addActionListener(this);
+      upgradeMenuButton.setActionCommand("+");
+      upgradeMenuButton.setBorder(new LineBorder(Color.white));
+
+
+
+      i5 = new JLabel();
+      i5.setForeground(Color.white);
+      i5.setFont(new Font("Times new Roman", Font.PLAIN, 50));
+    //  i3.setBounds(200, 400, 400, 0);
+    i5.setSize(80, 80);
+  //  i5.setBackground(Color.WHITE);
+    i5.setVisible(true);
+    i5.setFocusable(false);
+    i5.setIcon(new ImageIcon(new ImageIcon("C:\\Users\\manha\\Documents\\Visual Studio\\JavaTutorial-\\Textrpg\\Images\\Others\\Damage.png").getImage().getScaledInstance(55, 50, Image.SCALE_AREA_AVERAGING)));
+    i5.setText("    Power: " + CuPower.Power + " ");
+    powerUpgradeButton.add(i5);
+
+    i6 = new JLabel();
+    i6.setForeground(Color.white);
+    i6.setFont(new Font("Times new Roman", Font.PLAIN, 50));
+  //  i3.setBounds(200, 400, 400, 0);
+  i6.setSize(80, 80);
+//  i5.setBackground(Color.WHITE);
+i6.setVisible(true);
+i6.setFocusable(false);
+i6.setIcon(new ImageIcon(new ImageIcon("C:\\Users\\manha\\Documents\\Visual Studio\\JavaTutorial-\\Textrpg\\Images\\Others\\HealI.png").getImage().getScaledInstance(55, 50, Image.SCALE_AREA_AVERAGING)));
+i6.setText("  Health: " + CuPower.Health + " ");
+  
+
+i7 = new JLabel();
+i7.setForeground(Color.white);
+i7.setFont(new Font("Times new Roman", Font.PLAIN, 50));
+//  i3.setBounds(200, 400, 400, 0);
+i7.setSize(80, 80);
+//  i5.setBackground(Color.WHITE);
+i7.setVisible(true);
+i7.setFocusable(false);
+i7.setIcon(new ImageIcon(new ImageIcon("C:\\Users\\manha\\Documents\\Visual Studio\\JavaTutorial-\\Textrpg\\Images\\Others\\Coin.png").getImage().getScaledInstance(55, 50, Image.SCALE_AREA_AVERAGING)));
+i7.setText("   Gold: " + CuPower.GoldEarn + "x  ");
+
+powerUpgradeButton.add(i5);
+healthUpgradeButton.add(i6);
+goldUpgradeButton.add(i7);
+
+
+upgradeMenu.add(pointsText);
+upgradeMenu.add(powerUpgradeButton);
+upgradeMenu.add(healthUpgradeButton);
+upgradeMenu.add(goldUpgradeButton);
+
+
       JButton color;
 
 
@@ -432,7 +622,8 @@ public class Menu implements ActionListener {
             optionsmenu_colors.add(color);
 
             frame.add(commbox);
-
+            frame.add(upgradeMenuButton);
+frame.add(upgradeMenu);
         }
 
         for (int c = 0; c < colors.length; c++) {
@@ -462,6 +653,10 @@ public class Menu implements ActionListener {
         frame.add(optionsmenu_colorsoutlines);
         panel1.add(tn);
         frame.add(l);
+        e1.add(i1);
+        e2.add(i2);
+        e3.add(i3);
+        e4.add(i4);
         frame.add(optionsmenu);
         frame.add(option1);
         frame.add(option2);
@@ -506,6 +701,44 @@ public class Menu implements ActionListener {
             l.setVisible(!l.isVisible());
 
         }
+
+
+        if (e.getActionCommand() == "+") {
+            upgradeMenu.setVisible(!upgradeMenu.isVisible());
+        }
+
+
+        if (e.getActionCommand() == "PowerUpgrade") {
+            System.out.println("PowerUpgrade");
+            if (CuPower.Points >= 1){
+                CuPower.Power++;
+                i5.setText("    Power: " + CuPower.Power + " ");
+                CuPower.Points--;
+               pointsText.setText(" Points:  " + CuPower.Points);
+            }
+        }
+
+
+        if (e.getActionCommand() == "HealthUpgrade") {
+            System.out.println("HealthUpgrade");
+            if (CuPower.Points >= 1){
+                CuPower.Health++;
+                i6.setText("  Health: " + CuPower.Health + " ");
+                CuPower.Points--;
+               pointsText.setText(" Points:  " + CuPower.Points);
+            }
+        }
+
+
+        if (e.getActionCommand() == "GoldUpgrade") {
+            if (CuPower.Points >= 1){
+                CuPower.GoldEarn = (float) (CuPower.GoldEarn + 0.5);
+                i7.setText("   Gold: " + CuPower.GoldEarn + "x  ");
+                CuPower.Points--;
+               pointsText.setText(" Points:  " + CuPower.Points);
+            }
+        }
+
         if (e.getActionCommand() == "startb") {
             System.out.println(CuPower.Power);
             CuPower.Power++;
