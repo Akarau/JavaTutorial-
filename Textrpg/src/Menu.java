@@ -34,7 +34,7 @@ import org.w3c.dom.css.RGBColor;
 public class Menu implements ActionListener {
 
     private static final Component JButton = null;
-    static ImageIcon imageW = new ImageIcon("C:\\Users\\manha\\Documents\\Visual Studio\\JavaTutorial-\\Textrpg\\Images\\Crystal.png");
+    static ImageIcon imageW = new ImageIcon("Textrpg\\Images\\Crystal.png");
     JLabel tn;
     JTextArea commbox;
     JLabel commboxtex;
@@ -169,7 +169,7 @@ public class Menu implements ActionListener {
         i1.setBackground(Color.WHITE);
         i1.setVisible(true);
         i1.setFocusable(false);
-        i1.setIcon(new ImageIcon(new ImageIcon("C:\\Users\\manha\\Documents\\Visual Studio\\JavaTutorial-\\Textrpg\\Images\\Elemente\\Ancient2.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+        i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Ancient2.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
         i1.setText("        Ancient         ");
 
         i2 = new JLabel();
@@ -180,7 +180,7 @@ public class Menu implements ActionListener {
         i2.setBackground(Color.WHITE);
         i2.setVisible(true);
         i2.setFocusable(false);
-        i2.setIcon(new ImageIcon(new ImageIcon("C:\\Users\\manha\\Documents\\Visual Studio\\JavaTutorial-\\Textrpg\\Images\\Elemente\\Cosmic.png").getImage().getScaledInstance(80, 60, Image.SCALE_AREA_AVERAGING)));
+        i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Cosmic.png").getImage().getScaledInstance(80, 60, Image.SCALE_AREA_AVERAGING)));
         i2.setText("    Meteor Attack     ");
 
         i3 = new JLabel();
@@ -191,7 +191,7 @@ public class Menu implements ActionListener {
         i3.setBackground(Color.WHITE);
         i3.setVisible(true);
         i3.setFocusable(false);
-        i3.setIcon(new ImageIcon(new ImageIcon("C:\\Users\\manha\\Documents\\Visual Studio\\JavaTutorial-\\Textrpg\\Images\\Elemente\\Void.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
+        i3.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Void.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
         i3.setText("        Void         ");
 
         i4 = new JLabel();
@@ -202,7 +202,7 @@ public class Menu implements ActionListener {
       i4.setBackground(Color.WHITE);
       i4.setVisible(true);
       i4.setFocusable(false);
-      i4.setIcon(new ImageIcon(new ImageIcon("C:\\Users\\manha\\Documents\\Visual Studio\\JavaTutorial-\\Textrpg\\Images\\Elemente\\Crystal2.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
+      i4.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Crystal2.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
       i4.setText("        Crysral         ");
 
 
@@ -293,7 +293,7 @@ public class Menu implements ActionListener {
         fighting_options.setVisible(true);
         fighting_options.setBackground(Color.BLACK);
         fighting_options.setFocusable(false);
-        fighting_options.setBounds(200, 720, 1500, 300);
+        fighting_options.setBounds(38, 480, 1200, 300);
         fighting_options.setBorder(new LineBorder(Color.white));
 
         ImageIcon url = new ImageIcon("W.png");
@@ -553,7 +553,7 @@ public class Menu implements ActionListener {
   //  i5.setBackground(Color.WHITE);
     i5.setVisible(true);
     i5.setFocusable(false);
-    i5.setIcon(new ImageIcon(new ImageIcon("C:\\Users\\manha\\Documents\\Visual Studio\\JavaTutorial-\\Textrpg\\Images\\Others\\Damage.png").getImage().getScaledInstance(55, 50, Image.SCALE_AREA_AVERAGING)));
+    i5.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Others\\Damage.png").getImage().getScaledInstance(55, 50, Image.SCALE_AREA_AVERAGING)));
     i5.setText("    Power: " + CuPower.Power + " ");
     powerUpgradeButton.add(i5);
 
@@ -565,7 +565,7 @@ public class Menu implements ActionListener {
 //  i5.setBackground(Color.WHITE);
 i6.setVisible(true);
 i6.setFocusable(false);
-i6.setIcon(new ImageIcon(new ImageIcon("C:\\Users\\manha\\Documents\\Visual Studio\\JavaTutorial-\\Textrpg\\Images\\Others\\HealI.png").getImage().getScaledInstance(55, 50, Image.SCALE_AREA_AVERAGING)));
+i6.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Others\\HealI.png").getImage().getScaledInstance(55, 50, Image.SCALE_AREA_AVERAGING)));
 i6.setText("  Health: " + CuPower.Health + " ");
   
 
@@ -577,7 +577,7 @@ i7.setSize(80, 80);
 //  i5.setBackground(Color.WHITE);
 i7.setVisible(true);
 i7.setFocusable(false);
-i7.setIcon(new ImageIcon(new ImageIcon("C:\\Users\\manha\\Documents\\Visual Studio\\JavaTutorial-\\Textrpg\\Images\\Others\\Coin.png").getImage().getScaledInstance(55, 50, Image.SCALE_AREA_AVERAGING)));
+i7.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Others\\Coin.png").getImage().getScaledInstance(55, 50, Image.SCALE_AREA_AVERAGING)));
 i7.setText("   Gold: " + CuPower.GoldEarn + "x  ");
 
 powerUpgradeButton.add(i5);
@@ -722,7 +722,7 @@ frame.add(upgradeMenu);
         if (e.getActionCommand() == "HealthUpgrade") {
             System.out.println("HealthUpgrade");
             if (CuPower.Points >= 1){
-                CuPower.Health++;
+                CuPower.Health = CuPower.Health +5;
                 i6.setText("  Health: " + CuPower.Health + " ");
                 CuPower.Points--;
                pointsText.setText(" Points:  " + CuPower.Points);
@@ -742,9 +742,9 @@ frame.add(upgradeMenu);
         if (e.getActionCommand() == "startb") {
             System.out.println(CuPower.Power);
             CuPower.Power++;
-            option3.setText("Your power is: " + CuPower.Power);
+          //  option3.setText("Your power is: " + CuPower.Power);
             
-        //    l.setVisible(!l.isVisible());
+            l.setVisible(!l.isVisible());
 
             // panel3.setVisible(true);
             startname.setVisible(false);
@@ -757,6 +757,9 @@ frame.add(upgradeMenu);
             optionsmenu_colors.setVisible(false);
             optionsmenu_colorsoutlines.setVisible(false);
             optionsmenu_options.setVisible(false);
+            fighting_options.setVisible(false);
+            upgradeMenu.setVisible(false);
+            option3.setVisible(false);
         }
 
         if (e.getActionCommand() == "option2") {
@@ -774,14 +777,14 @@ frame.add(upgradeMenu);
 
         if (e.getActionCommand() == "option3") {
             System.out.println("option3");
-            System.out.println("Dsalkgbw");
-            frame.add(commboxtex);
-            l.setVisible(true);
-            l.setIcon(imageW);
+          //  System.out.println("Dsalkgbw");
+         //   frame.add(commboxtex);
+        //    l.setVisible(true);
+         //   l.setIcon(imageW);
 
-            commboxtex.setVisible(true);
-           // frame.setVisible(false);
-           commboxtex.setIcon(imageW);
+           // commboxtex.setVisible(true);
+            frame.setVisible(false);
+        //   commboxtex.setIcon(imageW);
 
         }
 
@@ -1020,15 +1023,15 @@ commbox.setText("                                                               
 
         
 
-        animateText("Welcome to The Day.", null,commbox, 12, null); // Text in String ist die Nachricht, zweites Wort ist die JLabel, die deren Text geändert sein muss, die Zahl am Ende ist die Geschwindigkeit; je weniger desto schneller
-        Thread.sleep(2000);
-        animateText(" Look like you are new here", null,commbox, 12, "Welcome to The Day."); // Text in String ist die Nachricht, zweites Wort ist die JLabel, die deren Text geändert sein muss, die Zahl am Ende ist die Geschwindigkeit; je weniger desto schneller
-        animateText(" We are going to learn about this game with the tutorial", null,commbox, 15, "Welcome to The Day. Look like you are new here."); // Text in String ist die Nachricht, zweites Wort ist die JLabel, die deren Text geändert sein muss, die Zahl am Ende ist die Geschwindigkeit; je weniger desto schneller
-        animateText(" ....", null,commbox, 350, "Welcome to The Day. Look like you are new here. We are going to learn about this game with the tutorial."); // Text in String ist die Nachricht, zweites Wort ist die JLabel, die deren Text geändert sein muss, die Zahl am Ende ist die Geschwindigkeit; je weniger desto schneller
+        animateText("Welcome to The Day.", null,commbox, 0, null); // Text in String ist die Nachricht, zweites Wort ist die JLabel, die deren Text geändert sein muss, die Zahl am Ende ist die Geschwindigkeit; je weniger desto schneller
+    //    Thread.sleep(2000);
+        animateText(" Looks like you are new here", null,commbox, 0, "Welcome to The Day."); // Text in String ist die Nachricht, zweites Wort ist die JLabel, die deren Text geändert sein muss, die Zahl am Ende ist die Geschwindigkeit; je weniger desto schneller
+        animateText(" We are going to learn about this game with the tutorial", null,commbox, 15, "Welcome to The Day. Looks like you are new here."); // Text in String ist die Nachricht, zweites Wort ist die JLabel, die deren Text geändert sein muss, die Zahl am Ende ist die Geschwindigkeit; je weniger desto schneller
+        animateText(" ....", null,commbox, 0, "Welcome to The Day. Looks like you are new here. We are going to learn about this game with the tutorial."); // Text in String ist die Nachricht, zweites Wort ist die JLabel, die deren Text geändert sein muss, die Zahl am Ende ist die Geschwindigkeit; je weniger desto schneller
 
-        animateText(" So let's begin with the basics", null,commbox, 12, "Welcome to The Day. Look like you are new here. We are going to learn about this game with the tutorial. ....");
+        animateText(" So let's begin with the basics", null,commbox, 0, "Welcome to The Day. Looks like you are new here. We are going to learn about this game with the tutorial. ....");
 
-        Thread.sleep(2000);
+     //   Thread.sleep(2000);
       //  panel3.add(commbox);
 
         for (i = 1; i < 235; i++) {
@@ -1052,15 +1055,23 @@ commbox.setText("                                                               
         commbox.setBackground(Color.black);
         commbox.setForeground(Color.white);
         commbox.setBorder(new LineBorder(Color.white));
-        animateText(" The first thing you need to know is to never trust anyone in this world. ", null,commbox, 12, null);
+        animateText(" The first thing you need to know is to never trust anyone in this world. ", null,commbox, 0, null);
 
         Thread.sleep(3000);
-        animateText(" During your adventure you are going to be meeting many enemies. ", null,commbox, 12, " The first thing you need to know is to never trust anyone in this world. ");
+        animateText(" During your adventure you are going to be meeting many enemies. ", null,commbox, 0, " The first thing you need to know is to never trust anyone in this world. ");
         Thread.sleep(2000);
-        animateText("        Their main goal is to protect their bosses as long as they can. ", null,commbox, 12, " The first thing you need to know is to never trust anyone in this world.  During your adventure you are going to be meeting many enemies.");
+        animateText("        Their main goal is to protect their bosses as long as they can. ", null,commbox, 0, " The first thing you need to know is to never trust anyone in this world.  During your adventure you are going to be meeting many enemies.");
         Thread.sleep(2000);
-        animateText("               every enemy has different stats such as Speed, HP, Power,etc...", null,commbox, 12, " The first thing you need to know is to never trust anyone in this world.  During your adventure you are going to be meeting many enemies.        Their main goal is to protect their bosses as long as they can.  ");
+        animateText("               every enemy has different stats such as Speed, HP, Power,etc...", null,commbox, 0, " The first thing you need to know is to never trust anyone in this world.  During your adventure you are going to be meeting many enemies.        Their main goal is to protect their bosses as long as they can.  ");
 
+
+        Thread.sleep(3000);
+        animateText("Now choose your main element. Your main element is strongest         element you will get.", null,commbox, 12, null);
+
+        Thread.sleep(1500);
+        animateText(" Each element has positive and negative things. For         example Crystal is weak against 'Fire' but strong against 'Earth' ", null,commbox, 12, "Now choose your main element. Your main element is strongest         element you will get.");
+
+         
     }
 
     private void notify(int i) {
