@@ -50,6 +50,7 @@ public class Menu implements ActionListener {
     static JButton option3;
     static JButton options_c;
     static JButton options_ts;
+    static JButton commboxnext;
     JButton tex;
     JButton b;
     JPanel b1;
@@ -556,6 +557,9 @@ static JButton choose_Element;
       upgradeMenuButton.setBorder(new LineBorder(Color.white));
 
 
+      
+
+
 
       i5 = new JLabel();
       i5.setForeground(Color.white);
@@ -674,7 +678,7 @@ elementsMenu.setFocusable(false);
        choose_Element.setVisible(false);
        choose_Element.setFocusable(false);
        choose_Element.addActionListener(this);
-       choose_Element.setActionCommand("choose_Element");
+      // choose_Element.setActionCommand("choose_Element");
        choose_Element.setBorder(new LineBorder(Color.white));
 
        chosen_Main_Element_Description.setBorder(new LineBorder(Color.white));
@@ -737,6 +741,23 @@ elemB.add(ei);
         }
 
       JButton color;
+
+
+      commboxnext = new JButton(">");
+      commboxnext.setForeground(new Color(255,255,255));
+      commboxnext.setFont(new Font("Arial", Font.PLAIN, 25));
+      commboxnext.setBounds(700, 500, 75, 35);
+      commboxnext.setBackground(Color.black);
+      commboxnext.setVisible(true);
+      commboxnext.setFocusable(false);
+      commboxnext.setAlignmentX(80);
+      commboxnext.addActionListener(this);
+      commboxnext.setActionCommand("commboxnext1");
+      commboxnext.setBorder(new LineBorder(Color.white));
+
+
+      frame.add(commboxnext);
+
 
 
 
@@ -886,8 +907,8 @@ frame.add(upgradeMenu);
         }
 
         if (e.getActionCommand() == "startb") {
-            System.out.println(CuPower.Power);
-            CuPower.Power++;
+         //   System.out.println(CuPower.Power);
+          //  CuPower.Power++;
           //  option3.setText("Your power is: " + CuPower.Power);
             
             l.setVisible(!l.isVisible());
@@ -942,6 +963,49 @@ frame.add(upgradeMenu);
 
         }
 
+        if (e.getActionCommand().equals("Main_Choose")) {
+            System.out.println("Main_Choose");
+            //System.out.println("Dsalkgbw");
+            
+
+           // frame.setVisible(false);
+           try {
+               
+            animateText(" du hast"+ "  '"+chosen_Main_Element_Name.getText()+"'  " +"als Haupt Element gewählt", null,commbox, 12, "");
+        } catch (InterruptedException e1) {
+            // TODO Auto-generated catch block
+          //  e1.printStackTrace();
+        }
+        CuPower.Main_Element = chosen_Main_Element_Name.getText();
+        choose_Element.setActionCommand("Second_Choose");
+
+        try {
+               
+            animateText(" Now choose your second Element. Your second Element is weaker than your main Element. But it's still affective", null,commbox, 12, "");
+        } catch (InterruptedException e1) {
+            // TODO Auto-generated catch block
+          //  e1.printStackTrace();
+        }
+
+        for (int t = 0;t<Elemente.elements.length; t++){
+        //    System.out.println(Elemente.elements[t]+":"+CuPower.Main_Element);
+System.out.println(Elemente.elements[t].charAt(0) + " element");
+System.out.println(CuPower.Main_Element.charAt(2) + " Main");
+System.out.println(Elemente.elements[t].charAt(1));
+System.out.println(CuPower.Main_Element.charAt(3) + " Main");
+System.out.println(Elemente.elements[t].charAt(2));
+System.out.println(CuPower.Main_Element.charAt(4) + " Main");
+            if (Elemente.elements[t].charAt(0) == CuPower.Main_Element.charAt(2) && Elemente.elements[t].charAt(1) == CuPower.Main_Element.charAt(3) && Elemente.elements[t].charAt(2) == CuPower.Main_Element.charAt(4) && Elemente.elements[t].charAt(3) == CuPower.Main_Element.charAt(5)){
+                System.out.println("PowerReached");
+elementsMenu.getComponent(t).setEnabled(false);
+            }
+        }
+
+    }
+        
+
+        
+
         if (e.getActionCommand().equals("c#1")) {
             tex.setVisible(!tex.isVisible());
             b.setVisible(!b.isVisible());
@@ -961,6 +1025,16 @@ frame.add(upgradeMenu);
             tex.setForeground(Color.darkGray);
             b.setForeground(Color.WHITE);
 
+        }
+
+        if (e.getActionCommand().equals("commboxnext1")) {
+
+            try {
+                commbox2();
+            } catch (InterruptedException e1) {
+                // TODO Auto-generated catch block
+                e1.printStackTrace();
+            }
         }
 
         Byte v;
@@ -1012,14 +1086,12 @@ frame.add(upgradeMenu);
 chosen_Main_Element_Name.setText("  " + Elemente.elements[v] + "  ");
 chosen_Main_Element_Name.setForeground(Elemente.elemetColors[v]);
 chosen_Main_Element_Description.setText("           " + Elemente.elements[v] + " effective agains                      | " + Elemente.elementsPowers[v] + " |");
+commbox.setText(Elemente.elements[v] + " " + Elemente.elementsWeaks[v]);
 
             }
         }
 
     }
-
-    
-
     // Ren();
 
     public void Loading() throws InterruptedException {
@@ -1124,7 +1196,7 @@ chosen_Main_Element_Description.setText("           " + Elemente.elements[v] + "
     public void animateText(String message, JLabel tex, JTextArea a, int w, String standardText) throws InterruptedException  {
 
    
-        System.out.println(message.toCharArray());
+     //   System.out.println(message.toCharArray());
         // System.out.println(message.length());
         Thread.sleep(1000);
         if (tex!= null){
@@ -1133,7 +1205,7 @@ chosen_Main_Element_Description.setText("           " + Elemente.elements[v] + "
                 tex.setText(standardText);
             }
         for (Byte m1 = 0; m1 < message.length(); m1++) {
-            System.out.print(message.charAt(m1));
+          //  System.out.print(message.charAt(m1));
             // Option1.setText(message.charAt(m1));
             tex.setText(tex.getText() + message.charAt(m1));
             Thread.sleep(w);
@@ -1217,6 +1289,8 @@ commbox.setText("                                                               
         commbox.setBackground(Color.black);
         commbox.setForeground(Color.white);
         commbox.setBorder(new LineBorder(Color.white));
+
+
         animateText(" The first thing you need to know is to never trust anyone in this world. ", null,commbox, 12, null);
 
         Thread.sleep(3000);
@@ -1234,6 +1308,8 @@ commbox.setText("                                                               
 
         elementsMenu.setVisible(true);
 
+        chosen_Main_Element.setVisible(true);
+choose_Element.setActionCommand("Main_Choose");
         Thread.sleep(500);
         animateText(" Each element has positive and negative things.     For example Crystal is weak against 'Fire' but strong against 'Earth' ", null,commbox, 12, " Now choose your main element. Your main element is strongest             element you will get.");
     }
@@ -1254,6 +1330,31 @@ commbox.setText("                                                               
         JPanel F = new JPanel();
         F.setBorder(BorderFactory.createEmptyBorder(30, 30, 30, 30));
 
+    }
+
+    public void commbox2() throws InterruptedException{
+        Thread.sleep(2000);
+        animateText(" The first thing you need to know is to never trust anyone in this world. ", null,commbox, 12, null);
+
+        Thread.sleep(3000);
+        animateText(" During your adventure you are going to be meeting many enemies. ", null,commbox, 12, " The first thing you need to know is to never trust anyone in this world. ");
+        Thread.sleep(2000);
+        animateText("        Their main goal is to protect their bosses as long as they can. ", null,commbox, 12, " The first thing you need to know is to never trust anyone in this world.  During your adventure you are going to be meeting many enemies.");
+        Thread.sleep(2000);
+        animateText("               every enemy has different stats such as Speed, HP, Power,etc...", null,commbox, 12, " The first thing you need to know is to never trust anyone in this world.  During your adventure you are going to be meeting many enemies.        Their main goal is to protect their bosses as long as they can.  ");
+
+
+        Thread.sleep(3000);
+        animateText(" Now choose your main element. Your main element is strongest             element you will get.", null,commbox, 12, null);
+
+        Thread.sleep(1000);
+
+        elementsMenu.setVisible(true);
+
+        chosen_Main_Element.setVisible(true);
+choose_Element.setActionCommand("Main_Choose");
+        Thread.sleep(500);
+        animateText(" Each element has positive and negative things.     For example Crystal is weak against 'Fire' but strong against 'Earth' ", null,commbox, 12, " Now choose your main element. Your main element is strongest             element you will get.");
     }
 
 

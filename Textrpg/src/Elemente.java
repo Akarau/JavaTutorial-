@@ -55,6 +55,24 @@ public class Elemente {
 
     };
 
+
+    static String elementsWeaks[] = {
+        "is weak against Crystal", // Ancient Weak dagegen
+        "is weak against Ancient + Gravity + Void", // Cosmic Weak dagegen
+        "is weka against Feuer + Wasser", // Crystal Weak dagegen
+        "is weak against Cosmic + Crystal + Gravity", // Erde Weak dagegen
+        "is weak against Erde + Wasser", // Feuer Weak dagegen
+        "is weak against Cosmic + Void", // Gravity Weak dagegen
+        "is a support Element. It heals you and it has an upgrade", // Heal Weak dagegen
+        "is effective against Lunar, but Lunar is very effective against it, because only Lunar can damage Light much", // Licht Weak dagegen
+        "is a support Element, it gives you more Gold and less damage", // Luck Weak dagegen
+        "is weak against Ancient and very affective against Light. Licht is also affective against Lunar", // Lunar Weak dagegen
+        "is weak against Cosmic + Licht", // Void Weak dagegen
+        "is very weak against Lunar", // Wasser sehr Weak dagegen
+
+
+    };
+
     
     String[] CosmicSkills = {
         "    Meteor attack     ",
