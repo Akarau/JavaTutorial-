@@ -1,7 +1,7 @@
 public class Game {
     Menu menu;
 
- Enemy enemy = new Enemy();
+ Enemy enemy = new Enemy(null);
 Elemente elemente = new Elemente();
 Fight fight = new Fight();
 //Fight fight = new Fight();

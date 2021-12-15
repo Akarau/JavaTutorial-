@@ -17,6 +17,7 @@ import javax.swing.Action;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -123,7 +124,7 @@ static JButton choose_Element;
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 
-        r = new Enemy();
+   //     r = new Enemy();
         // fenster.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         // fenster.getContentPane().setBackground(Color.green);
         // fenster.setLayout(null);
@@ -197,15 +198,16 @@ static JButton choose_Element;
         i2.setText("    Meteor Attack     ");
 
         i3 = new JLabel();
-        i3.setForeground(new Color(160,0,255));
+        i3.setForeground(new Color(255,255,255));
         i3.setFont(new Font("Times new Roman", Font.PLAIN, 60));
       //  i3.setBounds(200, 400, 400, 0);
         i3.setSize(20, 20);
         i3.setBackground(Color.WHITE);
         i3.setVisible(true);
         i3.setFocusable(false);
-        i3.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Void.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
-        i3.setText("        Void         ");
+        i3.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Others\\Damage.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
+        i3.setText("        Angriff        ");
+
 
         i4 = new JLabel();
         i4.setForeground(new Color(0,220,255));
@@ -610,7 +612,7 @@ upgradeMenu.add(goldUpgradeButton);
 
 elementsMenu = new JPanel();
 elementsMenu.setBounds(200, 80, 750, 455);
-elementsMenu.setVisible(false);
+elementsMenu.setVisible(true);
 elementsMenu.setBackground(Color.BLACK);
 elementsMenu.setFocusable(false);
         // optionsmenu.setForeground(Color.BLACK);
@@ -626,7 +628,7 @@ elementsMenu.setFocusable(false);
         chosen_Main_Element.setFont(new Font("Times new Roman", Font.PLAIN, 60));
         chosen_Main_Element.setBounds(960, 80, 310, 455);
         chosen_Main_Element.setBackground(Color.black);
-        chosen_Main_Element.setVisible(false);
+        chosen_Main_Element.setVisible(true);
         chosen_Main_Element.setFocusable(false);
         chosen_Main_Element.setBorder(new LineBorder(Color.white));
 
@@ -636,7 +638,7 @@ elementsMenu.setFocusable(false);
        chosen_Main_Element_Picture.setFont(new Font("Times new Roman", Font.PLAIN, 40));
        chosen_Main_Element_Picture.setBounds(280, 0, 60, 80);
        chosen_Main_Element_Picture.setBackground(Color.black);
-       chosen_Main_Element_Picture.setVisible(false);
+       chosen_Main_Element_Picture.setVisible(true);
        chosen_Main_Element_Picture.setFocusable(false);
        chosen_Main_Element_Picture.setAlignmentX(80);
        // upgrade1.addActionListener(this);
@@ -649,7 +651,7 @@ elementsMenu.setFocusable(false);
        chosen_Main_Element_Name.setFont(new Font("Times new Roman", Font.PLAIN, 40));
        chosen_Main_Element_Name.setBounds(280, 0, 140, 80);
        chosen_Main_Element_Name.setBackground(Color.black);
-       chosen_Main_Element_Name.setVisible(false);
+       chosen_Main_Element_Name.setVisible(true);
        chosen_Main_Element_Name.setFocusable(false);
        chosen_Main_Element_Name.setAlignmentX(80);
        // upgrade1.addActionListener(this);
@@ -662,7 +664,7 @@ elementsMenu.setFocusable(false);
        chosen_Main_Element_Description.setFont(new Font("Times new Roman", Font.PLAIN, 20));
        chosen_Main_Element_Description.setBounds(280, 0, 290, 180);
        chosen_Main_Element_Description.setBackground(Color.black);
-       chosen_Main_Element_Description.setVisible(false);
+       chosen_Main_Element_Description.setVisible(true);
        chosen_Main_Element_Description.setFocusable(false);
        chosen_Main_Element_Description.setAlignmentX(80);
        chosen_Main_Element_Description.setLineWrap(true);
@@ -675,7 +677,7 @@ elementsMenu.setFocusable(false);
        choose_Element.setBounds(50, 50, 350, 350);
        choose_Element.setSize(80, 50);
        choose_Element.setBackground(Color.black);
-       choose_Element.setVisible(false);
+       choose_Element.setVisible(true);
        choose_Element.setFocusable(false);
        choose_Element.addActionListener(this);
       // choose_Element.setActionCommand("choose_Element");
@@ -707,6 +709,7 @@ elementsMenu.setFocusable(false);
             elemB.setFocusable(false);
             elemB.addActionListener(this);
             elemB.setActionCommand(Elemente.elements[e]);
+            choose_Element.setActionCommand("Main_Choose");
             elemB.setBorder(new LineBorder(Color.white));
 
             ei = new JLabel();
@@ -850,6 +853,9 @@ frame.add(upgradeMenu);
 
     }
 
+
+    
+
     int i;
     int n1;
     char c;
@@ -924,7 +930,7 @@ frame.add(upgradeMenu);
             optionsmenu_colors.setVisible(false);
             optionsmenu_colorsoutlines.setVisible(false);
             optionsmenu_options.setVisible(false);
-            fighting_options.setVisible(false);
+            fighting_options.setVisible(true);
             upgradeMenu.setVisible(false);
             option3.setVisible(false);
         }
@@ -997,12 +1003,68 @@ System.out.println(Elemente.elements[t].charAt(2));
 System.out.println(CuPower.Main_Element.charAt(4) + " Main");
             if (Elemente.elements[t].charAt(0) == CuPower.Main_Element.charAt(2) && Elemente.elements[t].charAt(1) == CuPower.Main_Element.charAt(3) && Elemente.elements[t].charAt(2) == CuPower.Main_Element.charAt(4) && Elemente.elements[t].charAt(3) == CuPower.Main_Element.charAt(5)){
                 System.out.println("PowerReached");
-elementsMenu.getComponent(t).setEnabled(false);
+             //   chosen_Main_Element.setVisible(false);
+                i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\"+Elemente.elements[t]+".png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+                i1.setText(Elemente.elementsName[t]);
+                i1.setForeground(Elemente.elemetColors[t]);
+                elementsMenu.getComponent(t).setEnabled(false);
+
             }
         }
 
     }
+
+    fighting_options.setVisible(true);
+
         
+
+
+    if (e.getActionCommand().equals("Second_Choose")) {
+        System.out.println("Second_Choose");
+        //System.out.println("Dsalkgbw");
+        
+
+       // frame.setVisible(false);
+       try {
+           
+        animateText(" du hast"+ "  '"+chosen_Main_Element_Name.getText()+"'  " +"als Second Element gewählt", null,commbox, 12, "");
+    } catch (InterruptedException e1) {
+        // TODO Auto-generated catch block
+      //  e1.printStackTrace();
+    }
+    CuPower.Second_Element = chosen_Main_Element_Name.getText();
+    choose_Element.setActionCommand("/");
+
+
+    for (int t = 0;t<Elemente.elements.length; t++){
+    //    System.out.println(Elemente.elements[t]+":"+CuPower.Main_Element);
+//System.out.println(Elemente.elements[t].charAt(0) + " element");
+//System.out.println(CuPower.Main_Element.charAt(2) + " Main");
+//System.out.println(Elemente.elements[t].charAt(1));
+//System.out.println(CuPower.Main_Element.charAt(3) + " Main");
+//System.out.println(Elemente.elements[t].charAt(2));
+//System.out.println(CuPower.Main_Element.charAt(4) + " Main");
+        if (Elemente.elements[t].charAt(0) == CuPower.Second_Element.charAt(2) && Elemente.elements[t].charAt(1) == CuPower.Second_Element.charAt(3) && Elemente.elements[t].charAt(2) == CuPower.Second_Element.charAt(4) && Elemente.elements[t].charAt(3) == CuPower.Second_Element.charAt(5)){
+          //  System.out.println("PowerReached");
+            System.out.println(Elemente.elements[t]);
+            i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\"+ Elemente.elements[t]+".png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+            i2.setText(Elemente.elementsName[t]);
+            i2.setForeground(Elemente.elemetColors[t]);
+            chosen_Main_Element.setVisible(false);
+elementsMenu.getComponent(t).setEnabled(false);
+
+    try {
+           
+        animateText(" You have chosen" + CuPower.Main_Element + "as the main element and " +CuPower.Second_Element + "as the second element" , null,commbox, 12, "");
+    } catch (InterruptedException e1) {
+        // TODO Auto-generated catch block
+      //  e1.printStackTrace();
+    }
+
+        }
+    }
+
+}
 
         
 
@@ -1259,7 +1321,7 @@ commbox.setText("                                                               
 
         animateText("Welcome to The Day.", null,commbox, 12, null); // Text in String ist die Nachricht, zweites Wort ist die JLabel, die deren Text geändert sein muss, die Zahl am Ende ist die Geschwindigkeit; je weniger desto schneller
         Thread.sleep(2000);
-        animateText(" Looks like you are new here", null,commbox, 12, "Welcome to The Day."); // Text in String ist die Nachricht, zweites Wort ist die JLabel, die deren Text geändert sein muss, die Zahl am Ende ist die Geschwindigkeit; je weniger desto schneller
+        animateText(" Looks like you are new here", l,null, 12, "Welcome to The Day."); // Text in String ist die Nachricht, zweites Wort ist die JLabel, die deren Text geändert sein muss, die Zahl am Ende ist die Geschwindigkeit; je weniger desto schneller
         animateText(" We are going to learn about this game with the tutorial", null,commbox, 12, "Welcome to The Day. Looks like you are new here."); // Text in String ist die Nachricht, zweites Wort ist die JLabel, die deren Text geändert sein muss, die Zahl am Ende ist die Geschwindigkeit; je weniger desto schneller
         animateText(" ....", null,commbox, 350, "Welcome to The Day. Looks like you are new here. We are going to learn about this game with the tutorial."); // Text in String ist die Nachricht, zweites Wort ist die JLabel, die deren Text geändert sein muss, die Zahl am Ende ist die Geschwindigkeit; je weniger desto schneller
 

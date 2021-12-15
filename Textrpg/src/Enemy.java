@@ -1,20 +1,12 @@
 import javax.swing.event.AncestorEvent;
 import javax.swing.event.AncestorListener;
 
+
+
 public class Enemy {
 
 
-    String elements[] = {
-        "Dark",
-        "Fire",
-        "Light",
-        "Earth",
-        "Health",
-        "Water",
-        "Wind",
-        "Magic",
-        "Blitz",
-    };
+    Elements elements;
 
    static String enemies[] = {
         "FeuerFlamme",
@@ -37,15 +29,14 @@ public class Enemy {
         "Fire",
     };
 
-        public Enemy() {
 
+        // Enemy gegner = new Enemy(Elements.HEALTH);
+        public Enemy(Elements pElement) {
+            
        //     System.out.println("D326");
 
 
-            for (int v32= 0;v32 == elements.length;v32++){
-                System.out.println(elements[v32]);
-
-            }
+            
 
           //  System.out.println("Fight2");
        // System.out.println(enemies[1]);
