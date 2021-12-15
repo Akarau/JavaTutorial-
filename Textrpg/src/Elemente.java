@@ -73,6 +73,22 @@ public class Elemente {
 
     };
 
+
+    static String[] elementsName = {
+        "        Ancient        ",
+        "        Cosmic         ",
+        "        Crystal        ",
+        "        Erde           ",
+        "        Feuer          ",
+        "        Gravity        ",
+        "        Heal           ",
+        "        Licht          ",
+        "        Luck           ",
+        "        Lunar          ",
+        "        Void           ",
+        "        Wasser         ",
+        
+    };
     
     String[] CosmicSkills = {
         "    Meteor attack     ",
