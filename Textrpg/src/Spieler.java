@@ -3,13 +3,14 @@ import java.awt.Color;
 import javax.swing.JPanel;
 
 public class Spieler {
- int playerMaxhealth=100;
- int playerHealth=100;
- int playerHealthresult;
+ public int playerMaxhealth=100;
+ public int playerHealth=100;
+ public int playerHealthresult;
 
-public  void playerhealdamageanimation(JPanel pPanel) throws InterruptedException{
+public void playerhealdamageanimation(JPanel pPanel) throws InterruptedException{
 
     playerhealdamageanimation(pPanel);
+    pPanel.setBounds(200,200,200,150);
 
     pPanel.setVisible(true);
     while(playerHealth!=playerHealthresult){ 
@@ -30,6 +31,7 @@ public  void playerhealdamageanimation(JPanel pPanel) throws InterruptedExceptio
         
     }
     pPanel.setBackground(Color.red);
+    Menu.frame.add(pPanel);
     
 }
 }
