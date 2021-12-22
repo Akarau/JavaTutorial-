@@ -122,7 +122,7 @@ public class Menu implements ActionListener {
     Color[] colors2 = { Color.white, Color.darkGray, Color.red, Color.yellow, Color.green, new Color(25, 255, 255),
             new Color(25, 105, 255), new Color(255, 0, 255), new Color(255, 0, 80) };
 
-    public Menu(Game pGame) throws InterruptedException {
+    public Menu(Game game) throws InterruptedException {
         //pGame.cuPower.playerhealdamageanimation(pPanel);
        // Enemy r;
         
@@ -606,7 +606,7 @@ public class Menu implements ActionListener {
 
         elementsMenu = new JPanel();
         elementsMenu.setBounds(200, 80, 750, 455);
-        elementsMenu.setVisible(true);
+        elementsMenu.setVisible(false);
         elementsMenu.setBackground(Color.BLACK);
         elementsMenu.setFocusable(false);
         // optionsmenu.setForeground(Color.BLACK);
@@ -619,7 +619,7 @@ public class Menu implements ActionListener {
         chosen_Main_Element.setFont(new Font("Times new Roman", Font.PLAIN, 60));
         chosen_Main_Element.setBounds(960, 80, 310, 455);
         chosen_Main_Element.setBackground(Color.black);
-        chosen_Main_Element.setVisible(true);
+        chosen_Main_Element.setVisible(false);
         chosen_Main_Element.setFocusable(false);
         chosen_Main_Element.setBorder(new LineBorder(Color.white));
 
@@ -694,6 +694,118 @@ texarea.setBorder(new LineBorder(Color.white));
 texarea.setEditable(false);
 
 
+
+
+
+JPanel enemyInfo = new JPanel();
+
+enemyInfo.setVisible(true);
+
+enemyInfo.setOpaque(false);
+
+enemyInfo.setFocusable(false);
+
+enemyInfo.setBounds(0, 110, 500, 150);
+
+enemyInfo.setBorder(new LineBorder(Color.white));
+
+ 
+
+Enemy en = new Enemy(null);
+
+ 
+
+JLabel enemyInfoImage = new JLabel();
+
+enemyInfoImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Enemies\\DunkleFlamme.png").getImage().getScaledInstance(140, 135, Image.SCALE_AREA_AVERAGING)));
+
+enemyInfoImage.setBounds(20,120,140,120);
+
+enemyInfoImage.setForeground(en.enemyColors[0]);
+
+enemyInfoImage.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+
+enemyInfoImage.setBorder(new LineBorder(en.enemyColors[1]));
+
+ 
+
+JLabel enemyInfoName = new JLabel("  DunkleFlamme  ");
+
+enemyInfoName.setBounds(175,120,300,40);
+
+enemyInfoName.setForeground(en.enemyColors[0]);
+
+enemyInfoName.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+
+enemyInfoName.setBorder(new LineBorder(en.enemyColors[1]));
+
+ 
+
+JLabel enemyInfoHP = new JLabel("          " +en.enemiesHP[1]);
+
+enemyInfoHP.setBounds(175,170,220,40);
+
+enemyInfoHP.setForeground(Color.red);
+
+enemyInfoHP.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+
+enemyInfoHP.setBorder(new LineBorder(Color.red));
+
+ 
+
+JLabel enemyInfoMainElement = new JLabel();
+
+enemyInfoMainElement.setBounds(175,215,40,40);
+
+enemyInfoMainElement.setForeground(Color.red);
+
+enemyInfoMainElement.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+
+//enemyInfoMainElement.setBorder(new LineBorder(Color.red));
+
+enemyInfoMainElement.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\" + en.enemy_Main_Materias[0] +".png").getImage().getScaledInstance(35, 30, Image.SCALE_AREA_AVERAGING)));
+
+ 
+
+JLabel enemyInfoSecondElement = new JLabel();
+
+enemyInfoSecondElement.setBounds(225,215,40,40);
+
+enemyInfoSecondElement.setForeground(Color.red);
+
+enemyInfoSecondElement.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+
+//enemyInfoMainElement.setBorder(new LineBorder(Color.red));
+
+enemyInfoSecondElement.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\" + en.enemy_Second_Materias[0] +".png").getImage().getScaledInstance(35, 30, Image.SCALE_AREA_AVERAGING)));
+
+ 
+
+JLabel enemyInfoDifficulty = new JLabel(en.enemyDifficulty[0]);
+
+enemyInfoDifficulty.setBounds(450,220,40,40);
+
+enemyInfoDifficulty.setForeground(en.difficultyColors[0]);
+
+enemyInfoDifficulty.setFont(new Font("Times new Roman", Font.PLAIN, 20));
+
+//enemyInfoMainElement.setBorder(new LineBorder(Color.red));
+
+frame.add(enemyInfoDifficulty);
+
+frame.add(enemyInfoMainElement);
+
+frame.add(enemyInfoSecondElement);
+
+frame.add(enemyInfoName);
+
+frame.add(enemyInfoHP);
+
+frame.add(enemyInfo);
+
+frame.add(enemyInfoImage);
+
+
 JButton confirmName = new JButton("/");
 confirmName.setForeground(new Color(255, 255, 255));
 confirmName.setFont(new Font("Times new Roman", Font.PLAIN, 60));
@@ -704,6 +816,21 @@ confirmName.setFocusable(false);
 confirmName.addActionListener(this);
 confirmName.setActionCommand("ConfirmName");
 confirmName.setBorder(new LineBorder(Color.white));
+
+
+
+JLabel enemyImage = new JLabel();
+
+enemyImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Enemies\\DunkleFlamme.png").getImage().getScaledInstance(370, 365, Image.SCALE_AREA_AVERAGING)));
+
+enemyImage.setBounds(500,280,400,400);
+
+enemyImage.setForeground(en.enemyColors[0]);
+
+enemyImage.setVisible(true);
+
+
+frame.add(enemyImage);
 
 frame.add(texarea);
 frame.add(confirmName);
@@ -851,6 +978,34 @@ frame.add(confirmName);
         // tn.add(optionsmenu);
         frame.setVisible(true);
 
+
+        for (int t = 1; t<50000; t++){
+         //   enemyImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Ancient2.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+            for (int a = 1; a<80; a++){
+        enemyImage.setBounds(480+a,280,400,400);
+            Thread.sleep(3);
+                     }
+        
+                     for (int a = 1; a<80; a++){
+                        enemyImage.setBounds(560-a,280,400,400);
+                            Thread.sleep(3);
+                                     }
+           
+            
+           
+                   }
+
+
+        while (l.isVisible() == false) {
+            Loading();
+            Thread TH = new Thread();
+            TH.sleep(1000);
+             System.out.println("x");
+            if (l.isVisible() == true) {
+                Loading();
+            }
+        }
+
         i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Ancient2.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
 
         for (int t = 1; t<50; t++){
@@ -864,15 +1019,7 @@ frame.add(confirmName);
            
                    }
 
-        while (l.isVisible() == false) {
-            Loading();
-            Thread TH = new Thread();
-            TH.sleep(1000);
-            // System.out.println("x");
-            if (l.isVisible() == true) {
-                Loading();
-            }
-        }
+
 
         // addActionListener((ActionListener) new ActionListiner());{
         // kann gelöscht werden delete comment after
@@ -938,20 +1085,20 @@ frame.add(confirmName);
             // CuPower.Power++;
             // option3.setText("Your power is: " + CuPower.Power);
 
-            l.setVisible(!l.isVisible());
+        //    l.setVisible(!l.isVisible());
 
             // panel3.setVisible(true);
             startname.setVisible(false);
-            // option1.setVisible(false);
+             option1.setVisible(false);
             option2.setVisible(false);
-            // option3.setVisible(false);
+             option3.setVisible(false);
             options_c.setVisible(false);
             options_ts.setVisible(false);
             optionsmenu.setVisible(false);
             optionsmenu_colors.setVisible(false);
             optionsmenu_colorsoutlines.setVisible(false);
             optionsmenu_options.setVisible(false);
-        //    fighting_options.setVisible(true);
+            fighting_options.setVisible(false);
             upgradeMenu.setVisible(false);
             option3.setVisible(false);
         }
@@ -1533,6 +1680,9 @@ option1.setVisible(false);
             System.out.print("Start");
         }
 
+    }
+
+    public static void add(JLabel tutorialEnemy) {
     }
 
     // @Override

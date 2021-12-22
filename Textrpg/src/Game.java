@@ -5,6 +5,7 @@ public class Game {
 Elemente elemente = new Elemente();
 Fight fight = new Fight();
 CuPower cuPower = new CuPower();
+Story story = new Story();
 //Fight fight = new Fight();
 
  
