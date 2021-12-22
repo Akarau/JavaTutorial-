@@ -1,21 +1,10 @@
-<<<<<<< HEAD
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.beans.PropertyChangeListener;
-import java.io.File;
 import java.io.IOException;
 import java.lang.StackWalker.Option;
-import java.lang.annotation.Repeatable;
-=======
-import javax.swing.JLabel;
-
-import java.awt.event.ActionListener;
-import java.beans.PropertyChangeListener;
-import java.io.IOException;
-import java.lang.StackWalker.Option;
->>>>>>> 45aac735882bfc5cc0e73af88aebb371d62e2213
 import java.lang.reflect.Array;
 import java.util.EventObject;
 import java.util.Timer;
@@ -45,10 +34,7 @@ import javax.swing.ImageIcon;
 
 import org.w3c.dom.css.RGBColor;
 
-<<<<<<< HEAD
-public class Story implements ActionListener {
-
-    CuPower spieler = new CuPower();
+public class Menu implements ActionListener {
 
     private static final Component JButton = null;
     static ImageIcon imageW = new ImageIcon("Textrpg\\Images\\Crystal.png");
@@ -115,29 +101,6 @@ public class Story implements ActionListener {
 
     // Name //
 
-    // EnemyStats //
-
-    static JLabel enemyImage;
-
-    // EnemyStats //
-
-
-// EnemyInfo //
-
-JLabel enemyInfoName;
-JLabel enemyInfoDifficulty;
-JLabel enemyInfoMainElement;
-JLabel enemyInfoImage;
-JLabel enemyInfoSecondElement;
-JLabel enemyInfoHP;
-JLabel enemyInfoThirdElement;
-JLabel enemyInfoLastElement;
-
-// EnemyInfo
-
-    Enemy en;
-
-
     static JFrame frame;
     static JProgressBar button1;
 
@@ -159,7 +122,7 @@ JLabel enemyInfoLastElement;
     Color[] colors2 = { Color.white, Color.darkGray, Color.red, Color.yellow, Color.green, new Color(25, 255, 255),
             new Color(25, 105, 255), new Color(255, 0, 255), new Color(255, 0, 80) };
 
-    public Story(Game game) throws InterruptedException {
+    public Menu(Game game) throws InterruptedException {
         //pGame.cuPower.playerhealdamageanimation(pPanel);
        // Enemy r;
         
@@ -229,7 +192,7 @@ JLabel enemyInfoLastElement;
         i1.setBackground(Color.WHITE);
         i1.setVisible(true);
         i1.setFocusable(false);
-        i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Ancient.png").getImage()
+        i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Ancient2.png").getImage()
                 .getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
         i1.setText("        Ancient         ");
 
@@ -241,7 +204,7 @@ JLabel enemyInfoLastElement;
         i2.setBackground(Color.WHITE);
         i2.setVisible(true);
         i2.setFocusable(false);
-        i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Cosmic.png").getImage().getScaledInstance(60,
+        i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Cosmic.png").getImage().getScaledInstance(80,
                 60, Image.SCALE_AREA_AVERAGING)));
         i2.setText("    Meteor Attack     ");
 
@@ -571,7 +534,7 @@ JLabel enemyInfoLastElement;
         goldUpgradeButton.setActionCommand("GoldUpgrade");
         goldUpgradeButton.setBorder(new LineBorder(Color.white));
 
-        pointsText = new JLabel(" Points:  " + spieler.Points);
+        pointsText = new JLabel(" Points:  " + CuPower.Points);
         pointsText.setForeground(new Color(255, 255, 255));
         pointsText.setFont(new Font("Times new Roman", Font.PLAIN, 40));
         pointsText.setBounds(280, 0, 60, 80);
@@ -605,7 +568,7 @@ JLabel enemyInfoLastElement;
         i5.setFocusable(false);
         i5.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Others\\Damage.png").getImage().getScaledInstance(55,
                 50, Image.SCALE_AREA_AVERAGING)));
-        i5.setText("    Power: " + spieler.Power + " ");
+        i5.setText("    Power: " + CuPower.Power + " ");
         powerUpgradeButton.add(i5);
 
         i6 = new JLabel();
@@ -618,7 +581,7 @@ JLabel enemyInfoLastElement;
         i6.setFocusable(false);
         i6.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Others\\HealI.png").getImage().getScaledInstance(55,
                 50, Image.SCALE_AREA_AVERAGING)));
-        i6.setText("  Health: " + spieler.Health + " ");
+        i6.setText("  Health: " + CuPower.Health + " ");
 
         i7 = new JLabel();
         i7.setForeground(Color.white);
@@ -630,7 +593,7 @@ JLabel enemyInfoLastElement;
         i7.setFocusable(false);
         i7.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Others\\Coin.png").getImage().getScaledInstance(55, 50,
                 Image.SCALE_AREA_AVERAGING)));
-        i7.setText("   Gold: " + spieler.GoldEarn + "x  ");
+        i7.setText("   Gold: " + CuPower.GoldEarn + "x  ");
 
         powerUpgradeButton.add(i5);
         healthUpgradeButton.add(i6);
@@ -643,7 +606,7 @@ JLabel enemyInfoLastElement;
 
         elementsMenu = new JPanel();
         elementsMenu.setBounds(200, 80, 750, 455);
-        elementsMenu.setVisible(true);
+        elementsMenu.setVisible(false);
         elementsMenu.setBackground(Color.BLACK);
         elementsMenu.setFocusable(false);
         // optionsmenu.setForeground(Color.BLACK);
@@ -748,11 +711,11 @@ enemyInfo.setBorder(new LineBorder(Color.white));
 
  
 
-en = new Enemy(null);
+Enemy en = new Enemy(null);
 
  
 
-enemyInfoImage = new JLabel();
+JLabel enemyInfoImage = new JLabel();
 
 enemyInfoImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Enemies\\DunkleFlamme.png").getImage().getScaledInstance(140, 135, Image.SCALE_AREA_AVERAGING)));
 
@@ -766,7 +729,7 @@ enemyInfoImage.setBorder(new LineBorder(en.enemyColors[1]));
 
  
 
-enemyInfoName = new JLabel("  DunkleFlamme  ");
+JLabel enemyInfoName = new JLabel("  DunkleFlamme  ");
 
 enemyInfoName.setBounds(175,120,300,40);
 
@@ -778,7 +741,7 @@ enemyInfoName.setBorder(new LineBorder(en.enemyColors[1]));
 
  
 
-enemyInfoHP = new JLabel("          " +en.enemiesHP[1]);
+JLabel enemyInfoHP = new JLabel("          " +en.enemiesHP[1]);
 
 enemyInfoHP.setBounds(175,170,220,40);
 
@@ -790,7 +753,7 @@ enemyInfoHP.setBorder(new LineBorder(Color.red));
 
  
 
-enemyInfoMainElement = new JLabel();
+JLabel enemyInfoMainElement = new JLabel();
 
 enemyInfoMainElement.setBounds(175,215,40,40);
 
@@ -800,12 +763,13 @@ enemyInfoMainElement.setFont(new Font("Times new Roman", Font.PLAIN, 30));
 
 //enemyInfoMainElement.setBorder(new LineBorder(Color.red));
 
-enemyInfoMainElement.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\" + en.enemy_Main_Materias[0] +".png").getImage().getScaledInstance(40, 40, Image.SCALE_AREA_AVERAGING)));
+enemyInfoMainElement.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\" + en.enemy_Main_Materias[0] +".png").getImage().getScaledInstance(35, 30, Image.SCALE_AREA_AVERAGING)));
+
  
 
-enemyInfoSecondElement = new JLabel();
+JLabel enemyInfoSecondElement = new JLabel();
 
-enemyInfoSecondElement.setBounds(220,215,40,40);
+enemyInfoSecondElement.setBounds(225,215,40,40);
 
 enemyInfoSecondElement.setForeground(Color.red);
 
@@ -813,37 +777,11 @@ enemyInfoSecondElement.setFont(new Font("Times new Roman", Font.PLAIN, 30));
 
 //enemyInfoMainElement.setBorder(new LineBorder(Color.red));
 
-enemyInfoSecondElement.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\" + en.enemy_Second_Materias[0] +".png").getImage().getScaledInstance(40, 40, Image.SCALE_AREA_AVERAGING)));
+enemyInfoSecondElement.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\" + en.enemy_Second_Materias[0] +".png").getImage().getScaledInstance(35, 30, Image.SCALE_AREA_AVERAGING)));
 
-enemyInfoThirdElement = new JLabel();
+ 
 
-enemyInfoThirdElement.setBounds(265,215,40,40);
-
-enemyInfoThirdElement.setForeground(Color.red);
-
-enemyInfoThirdElement.setFont(new Font("Times new Roman", Font.PLAIN, 30));
-
-//enemyInfoMainElement.setBorder(new LineBorder(Color.red));
-
-enemyInfoThirdElement.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\" + en.enemy_Third_Materias[0] +".png").getImage().getScaledInstance(40, 40, Image.SCALE_AREA_AVERAGING)));
-
-
-enemyInfoLastElement = new JLabel();
-
-enemyInfoLastElement.setBounds(310,215,40,40);
-
-enemyInfoLastElement.setForeground(Color.red);
-
-enemyInfoLastElement.setFont(new Font("Times new Roman", Font.PLAIN, 30));
-
-//enemyInfoMainElement.setBorder(new LineBorder(Color.red));
-
-enemyInfoLastElement.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\" + en.enemy_Last_Materias[0] +".png").getImage().getScaledInstance(40, 40, Image.SCALE_AREA_AVERAGING)));
-
-
-
-
-enemyInfoDifficulty = new JLabel(en.enemyDifficulty[0]);
+JLabel enemyInfoDifficulty = new JLabel(en.enemyDifficulty[0]);
 
 enemyInfoDifficulty.setBounds(450,220,40,40);
 
@@ -858,10 +796,6 @@ frame.add(enemyInfoDifficulty);
 frame.add(enemyInfoMainElement);
 
 frame.add(enemyInfoSecondElement);
-
-frame.add(enemyInfoThirdElement);
-
-frame.add(enemyInfoLastElement);
 
 frame.add(enemyInfoName);
 
@@ -885,7 +819,7 @@ confirmName.setBorder(new LineBorder(Color.white));
 
 
 
- enemyImage = new JLabel();
+JLabel enemyImage = new JLabel();
 
 enemyImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Enemies\\DunkleFlamme.png").getImage().getScaledInstance(370, 365, Image.SCALE_AREA_AVERAGING)));
 
@@ -1045,16 +979,6 @@ frame.add(confirmName);
         frame.setVisible(true);
 
 
-        while (l.isVisible() == false) {
-            Loading();
-            Thread TH = new Thread();
-            TH.sleep(1000);
-             System.out.println("x");
-            if (l.isVisible() == true) {
-                Loading();
-            }
-        }
-
         for (int t = 1; t<50000; t++){
          //   enemyImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Ancient2.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
             for (int a = 1; a<80; a++){
@@ -1072,6 +996,15 @@ frame.add(confirmName);
                    }
 
 
+        while (l.isVisible() == false) {
+            Loading();
+            Thread TH = new Thread();
+            TH.sleep(1000);
+             System.out.println("x");
+            if (l.isVisible() == true) {
+                Loading();
+            }
+        }
 
         i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Ancient2.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
 
@@ -1114,37 +1047,36 @@ frame.add(confirmName);
 
         if (e.getActionCommand() == "+") {
             upgradeMenu.setVisible(!upgradeMenu.isVisible());
-        //    texarea.setEditable(false);
-          //  texarea.setText("D");
-          spawnEnemy("Bosses", 0, 0, 0);
+            texarea.setEditable(false);
+            texarea.setText("D");
         }
 
         if (e.getActionCommand() == "PowerUpgrade") {
             System.out.println("PowerUpgrade");
-            if (spieler.Points >= 1) {
-                spieler.Power++;
-                i5.setText("    Power: " + spieler.Power + " ");
-                spieler.Points--;
-                pointsText.setText(" Points:  " + spieler.Points);
+            if (CuPower.Points >= 1) {
+                CuPower.Power++;
+                i5.setText("    Power: " + CuPower.Power + " ");
+                CuPower.Points--;
+                pointsText.setText(" Points:  " + CuPower.Points);
             }
         }
 
         if (e.getActionCommand() == "HealthUpgrade") {
             System.out.println("HealthUpgrade");
-            if (spieler.Points >= 1) {
-                spieler.Health = spieler.Health + 5;
-                i6.setText("  Health: " + spieler.Health + " ");
-                spieler.Points--;
-                pointsText.setText(" Points:  " + spieler.Points);
+            if (CuPower.Points >= 1) {
+                CuPower.Health = CuPower.Health + 5;
+                i6.setText("  Health: " + CuPower.Health + " ");
+                CuPower.Points--;
+                pointsText.setText(" Points:  " + CuPower.Points);
             }
         }
 
         if (e.getActionCommand() == "GoldUpgrade") {
-            if (spieler.Points >= 1) {
-                spieler.GoldEarn = (float) (spieler.GoldEarn + 0.5);
-                i7.setText("   Gold: " + spieler.GoldEarn + "x  ");
-                spieler.Points--;
-                pointsText.setText(" Points:  " + spieler.Points);
+            if (CuPower.Points >= 1) {
+                CuPower.GoldEarn = (float) (CuPower.GoldEarn + 0.5);
+                i7.setText("   Gold: " + CuPower.GoldEarn + "x  ");
+                CuPower.Points--;
+                pointsText.setText(" Points:  " + CuPower.Points);
             }
         }
 
@@ -1153,7 +1085,7 @@ frame.add(confirmName);
             // CuPower.Power++;
             // option3.setText("Your power is: " + CuPower.Power);
 
-            l.setVisible(!l.isVisible());
+        //    l.setVisible(!l.isVisible());
 
             // panel3.setVisible(true);
             startname.setVisible(false);
@@ -1200,8 +1132,8 @@ frame.add(confirmName);
 
         if (e.getActionCommand() == "ConfirmName") {
            // texarea.setEditable(false);
-           spieler.playerName = texarea.getText();
-           System.out.println(spieler.playerName);
+           CuPower.playerName = texarea.getText();
+           System.out.println(CuPower.playerName);
            System.out.println(texarea.getText());
 
 texarea.setVisible(false);
@@ -1234,7 +1166,7 @@ option1.setVisible(false);
                 // TODO Auto-generated catch block
                 // e1.printStackTrace();
             }
-            spieler.Main_Element = chosen_Main_Element_Name.getText();
+            CuPower.Main_Element = chosen_Main_Element_Name.getText();
             choose_Element.setActionCommand("Second_Choose");
 
             try {
@@ -1250,15 +1182,15 @@ option1.setVisible(false);
             for (int t = 0; t < Elemente.elements.length; t++) {
                 // System.out.println(Elemente.elements[t]+":"+CuPower.Main_Element);
                 System.out.println(Elemente.elements[t].charAt(0) + " element");
-                System.out.println(spieler.Main_Element.charAt(2) + " Main");
+                System.out.println(CuPower.Main_Element.charAt(2) + " Main");
                 System.out.println(Elemente.elements[t].charAt(1));
-                System.out.println(spieler.Main_Element.charAt(3) + " Main");
+                System.out.println(CuPower.Main_Element.charAt(3) + " Main");
                 System.out.println(Elemente.elements[t].charAt(2));
-                System.out.println(spieler.Main_Element.charAt(4) + " Main");
-                if (Elemente.elements[t].charAt(0) == spieler.Main_Element.charAt(2)
-                        && Elemente.elements[t].charAt(1) == spieler.Main_Element.charAt(3)
-                        && Elemente.elements[t].charAt(2) == spieler.Main_Element.charAt(4)
-                        && Elemente.elements[t].charAt(3) == spieler.Main_Element.charAt(5)) {
+                System.out.println(CuPower.Main_Element.charAt(4) + " Main");
+                if (Elemente.elements[t].charAt(0) == CuPower.Main_Element.charAt(2)
+                        && Elemente.elements[t].charAt(1) == CuPower.Main_Element.charAt(3)
+                        && Elemente.elements[t].charAt(2) == CuPower.Main_Element.charAt(4)
+                        && Elemente.elements[t].charAt(3) == CuPower.Main_Element.charAt(5)) {
                     System.out.println("PowerReached");
                     // chosen_Main_Element.setVisible(false);
                     i1.setIcon(
@@ -1270,8 +1202,6 @@ option1.setVisible(false);
 
                 }
             }
-
-
 
         }
 
@@ -1291,7 +1221,7 @@ option1.setVisible(false);
                 // TODO Auto-generated catch block
                 // e1.printStackTrace();
             }
-            spieler.Second_Element = chosen_Main_Element_Name.getText();
+            CuPower.Second_Element = chosen_Main_Element_Name.getText();
             choose_Element.setActionCommand("/");
 
             for (int t = 0; t < Elemente.elements.length; t++) {
@@ -1302,10 +1232,10 @@ option1.setVisible(false);
                 // System.out.println(CuPower.Main_Element.charAt(3) + " Main");
                 // System.out.println(Elemente.elements[t].charAt(2));
                 // System.out.println(CuPower.Main_Element.charAt(4) + " Main");
-                if (Elemente.elements[t].charAt(0) == spieler.Second_Element.charAt(2)
-                        && Elemente.elements[t].charAt(1) == spieler.Second_Element.charAt(3)
-                        && Elemente.elements[t].charAt(2) == spieler.Second_Element.charAt(4)
-                        && Elemente.elements[t].charAt(3) == spieler.Second_Element.charAt(5)) {
+                if (Elemente.elements[t].charAt(0) == CuPower.Second_Element.charAt(2)
+                        && Elemente.elements[t].charAt(1) == CuPower.Second_Element.charAt(3)
+                        && Elemente.elements[t].charAt(2) == CuPower.Second_Element.charAt(4)
+                        && Elemente.elements[t].charAt(3) == CuPower.Second_Element.charAt(5)) {
                     // System.out.println("PowerReached");
                     System.out.println(Elemente.elements[t]);
                     i2.setIcon(
@@ -1318,8 +1248,8 @@ option1.setVisible(false);
 
                     try {
 
-                        animateText(" You have chosen" + spieler.Main_Element + "as the main element and "
-                                + spieler.Second_Element + "as the second element", null, commbox, 12, "");
+                        animateText(" You have chosen" + CuPower.Main_Element + "as the main element and "
+                                + CuPower.Second_Element + "as the second element", null, commbox, 12, "");
                     } catch (InterruptedException e1) {
                         // TODO Auto-generated catch block
                         // e1.printStackTrace();
@@ -1333,8 +1263,7 @@ option1.setVisible(false);
 
 
         if (e.getActionCommand().equals("Attack#1")) {
-       //  Fight.fightAnimation(CuPower.Main_Element);
-       System.out.println(spieler.Main_Element);
+         Fight.fightAnimation(CuPower.Main_Element);
 
         }
 
@@ -1739,80 +1668,6 @@ option1.setVisible(false);
                 " Now choose your main element. Your main element is strongest             element you will get.");
     }
 
-
-    
-
-
-
-    public void spawnEnemy(String File, int Index, int HP, int Power) {
-
-        
-        if (File == "Enemies"){
-            enemyImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Enemies\\" + en.enemies[Index] + ".png").getImage().getScaledInstance(370, 365, Image.SCALE_AREA_AVERAGING)));
-            enemyInfoImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Enemies\\" + en.enemies[Index] + ".png").getImage().getScaledInstance(140, 120, Image.SCALE_AREA_AVERAGING)));
-HP = en.enemiesHP[Index];
-Power = en.enemiesPower[Index];
-enemyInfoName.setText("  "+en.enemies[Index]+"  ");
-enemyInfoHP.setText("          " +en.enemiesHP[Index]);
-enemyInfoName.setBorder(new LineBorder(en.enemyColors[Index]));
-enemyInfoName.setForeground(en.enemyColors[Index]);
-enemyInfoImage.setBorder(new LineBorder(en.enemyColors[Index]));
-enemyInfoMainElement.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\" + en.enemy_Main_Materias[Index] +".png").getImage().getScaledInstance(40, 40, Image.SCALE_AREA_AVERAGING)));
-if (en.enemy_Second_Materias[Index]!= null){
-    enemyInfoSecondElement.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\" + en.boss_Second_Materias[Index] +".png").getImage().getScaledInstance(40, 40, Image.SCALE_AREA_AVERAGING)));
-
-}
-
-
-enemyImage.setBounds(500,280,400,400);
-
-enemyImage.setForeground(en.enemyColors[0]);
-
-enemyImage.setVisible(true);
-
-        }
-
-        if (File == "Bosses"){
-            enemyImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Bosses\\" + en.bosses[Index] + ".png").getImage().getScaledInstance(370, 365, Image.SCALE_AREA_AVERAGING)));
-            enemyInfoImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Bosses\\" + en.bosses[Index] + ".png").getImage().getScaledInstance(100, 100, Image.SCALE_AREA_AVERAGING)));
-            HP = en.bossesHP[Index];
-Power = en.bossesPower[Index];
-enemyInfoName.setBorder(new LineBorder(en.bossesColors[Index]));
-enemyInfoName.setForeground(en.bossesColors[Index]);
-enemyInfoImage.setBorder(new LineBorder(en.bossesColors[Index]));
-enemyInfoDifficulty.setForeground(en.bossdifficultyColors[Index]);
-enemyInfoDifficulty.setText(en.bossDifficulty[Index]);
-enemyInfoMainElement.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\" + en.boss_Main_Materias[Index] +".png").getImage().getScaledInstance(40, 40, Image.SCALE_AREA_AVERAGING)));
-if (en.boss_Second_Materias[Index]!= null){
-    enemyInfoSecondElement.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\" + en.boss_Second_Materias[Index] +".png").getImage().getScaledInstance(40, 40, Image.SCALE_AREA_AVERAGING)));
-
-}
-
-if (en.boss_Third_Materias[Index]!= null){
-    enemyInfoThirdElement.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\" + en.boss_Third_Materias[Index] +".png").getImage().getScaledInstance(40, 40, Image.SCALE_AREA_AVERAGING)));
-
-}
-
-if (en.boss_Last_Materias[Index]!= null){
-    enemyInfoLastElement.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\" + en.boss_Last_Materias[Index] +".png").getImage().getScaledInstance(40, 40, Image.SCALE_AREA_AVERAGING)));
-
-}
-
-enemyImage.setBounds(500,280,400,400);
-
-enemyImage.setForeground(en.enemyColors[0]);
-
-enemyImage.setVisible(true);
-
-enemyInfoName.setText("  "+en.bosses[Index]+"  ");
-
-enemyInfoHP.setText("          " +en.bossesHP[Index]);
-
-        }
-
-
-    }
-
     public <ActionEvent> void CL(ActionEvent e) throws InterruptedException {
         // if(((EventObject) e).getSource()==startname){
         if (((EventObject) e).getSource() == this.startname) {
@@ -1832,45 +1687,4 @@ enemyInfoHP.setText("          " +en.bossesHP[Index]);
 
     // @Override
 
-=======
-
-public class Story {
-    String tutorialEnemy = "DarkFlame";
-     String enemies[] = {
-        "FeuerFlamme", // 1
-        "Balrog", // 2
-    };
-
-    int enemiesHP[] = {
-        100, // 1
-        200, // 2
-    };
-    
-
-
-    public Story(){
-        System.out.println("1");
-        System.out.println("2");
-
-        JLabel tutorialEnemy= new JLabel();
-        tutorialEnemy.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Others\\Damage.png").getImage().getScaledInstance(60,72,Image.SCALE_AREA_AVERAGING)));
-        tutorialEnemy.setVisible(true);
-tutorialEnemy.setBackground(Color.black);
-tutorialEnemy.setBorder(new LineBorder(Color.white));
-tutorialEnemy.setBounds(200, 200, 400, 200);
-
-
-        JLabel tutorialEnemyHealth = new JLabel();
-        tutorialEnemyHealth.setText("100");
-        tutorialEnemyHealth.setVisible(true);
-        tutorialEnemyHealth.setBackground(Color.black);
-        tutorialEnemyHealth.setBorder(new LineBorder(Color.white));
-
-
-   //     Menu.frame.add(tutorialEnemy);
-       // Menu.frame.add(tutorialEnemyHealth);
-
-        
-    }
->>>>>>> 45aac735882bfc5cc0e73af88aebb371d62e2213
 }

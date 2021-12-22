@@ -61,8 +61,13 @@ public class Fight {
           60, Image.SCALE_AREA_AVERAGING)));
 
 
+<<<<<<< HEAD
           Story.frame.add(e2);
           Story.frame.add(i3);
+=======
+          Menu.frame.add(e2);
+          Menu.frame.add(i3);
+>>>>>>> 45aac735882bfc5cc0e73af88aebb371d62e2213
   }
  static String elements[];
 
@@ -71,7 +76,11 @@ public class Fight {
 
     System.out.println(element);
 
+<<<<<<< HEAD
   //  int power = CuPower.Power;
+=======
+    int power = CuPower.Power;
+>>>>>>> 45aac735882bfc5cc0e73af88aebb371d62e2213
 
   String elements[] = {
     "Ancient",
@@ -123,8 +132,13 @@ i23.setFocusable(false);
   }
   
 
+<<<<<<< HEAD
  /* public static void fightAnimation(String element) {
  // if (element.charAt(2) == 'W' && element.charAt(3) == 'a' && element.charAt(4) == 's' && element.charAt(5) == 's'){
+=======
+  public static void fightAnimation(String element) {
+  if (element.charAt(2) == 'W' && element.charAt(3) == 'a' && element.charAt(4) == 's' && element.charAt(5) == 's'){
+>>>>>>> 45aac735882bfc5cc0e73af88aebb371d62e2213
 System.out.println("W");
 
 
@@ -139,6 +153,7 @@ i24.setVisible(true);
 i24.setFocusable(false);
 i24.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Wasser.png").getImage()
                 .getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+<<<<<<< HEAD
 Story.choose_Element.setVisible(false);
 Story.elementsMenu.setVisible(false);
 Story.chosen_Main_Element.setVisible(false);
@@ -146,4 +161,12 @@ Story.chosen_Main_Element.setVisible(false);
   }
   }
   */
+=======
+Menu.choose_Element.setVisible(false);
+Menu.elementsMenu.setVisible(false);
+Menu.chosen_Main_Element.setVisible(false);
+       // i23.add(i24);
+  }
+  }
+>>>>>>> 45aac735882bfc5cc0e73af88aebb371d62e2213
 }
