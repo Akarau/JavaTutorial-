@@ -10,7 +10,7 @@ public class CuPower {
     public  int playerHealthResult = 10;
      int MaxHealth;
       float GoldEarn = 1F;
-     String Main_Element = "  Ancient  ";
+     String Main_Element = "  Cosmic  ";
      String Second_Element;
      String playerName;
      String currentEnemy;

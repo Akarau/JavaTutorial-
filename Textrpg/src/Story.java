@@ -1596,11 +1596,38 @@ fight.fight("Anc", enemyImage);
                    enemyImage.setVisible(true);
                   
                           }
+
+
                }
 
 
                // Ancient //
         System.out.println("animateElement");
+
+
+        if (main_element == "  Cosmic  "){
+            enemyImage.setVisible(true);
+
+            System.out.println("Cosmic=Main");
+            enemyImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Cosmic.png").getImage().getScaledInstance(200, 195, Image.SCALE_AREA_AVERAGING)));
+           
+            enemyImage.setBounds(enemyImage.getBounds().x + 200, enemyImage.getBounds().y - 200, 400, 400);
+
+            enemyImage.setEnabled(true);
+            for (int t = 0; t<100; t++){
+                enemyImage.setBounds(enemyImage.getBounds().x - 1, enemyImage.getBounds().y + 1, 400, 400);
+Thread.sleep(15);
+            }
+
+            enemyImage.setEnabled(true);
+            for (int t = 1; t<30; t++){
+                enemyImage.setBounds(enemyImage.getBounds().x - t, enemyImage.getBounds().y + t, 400, 400);
+Thread.sleep(9);
+            }
+          }
+
+          enemyImage.setVisible(false);
+
     
     }
 
