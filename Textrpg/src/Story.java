@@ -1035,13 +1035,17 @@ frame.add(confirmName);
         frame.setVisible(true);
 
 
-        while (l.isVisible() == false) {
+        while (startname.isVisible() == false) {
             Loading();
             Thread TH = new Thread();
             TH.sleep(1000);
              System.out.println("x");
             if (l.isVisible() == true) {
                 Loading();
+                break;
+            }
+            if (enemyImage.isVisible()==true){
+animateElement(spieler.Main_Element);
             }
         }
 
@@ -1348,10 +1352,8 @@ fighting_options.setVisible(false);
         if (e.getActionCommand().equals("Attack#1")) {
        //  Fight.fightAnimation(CuPower.Main_Element);
        System.out.println(spieler.Main_Element);
-try {
-    damage("Anc", "D");
-} catch (InterruptedException e1) {
-}
+       b1.setEnabled(false);
+       damage("Anc", "D");
         }
 
 
@@ -1452,14 +1454,15 @@ spieler.thread3 = (Integer) null;
     // Ren();
 
 
-    public void damage(String element, String enemyMainElement) throws InterruptedException{
+    public void damage(String element, String enemyMainElement){
 
         if (element == "Anc"){
 
-            for(int d = 0;d<spieler.Power;d++){
-Thread.sleep(0);
-option1.setText(""+d+"");
-            }
+        //    for(int d = 0;d<spieler.Power;d++){
+//option1.setText(""+d+"");
+Fight fight = new Fight();
+fight.fight("Anc", enemyImage);
+    //        }
         }
     }
 
@@ -1554,6 +1557,51 @@ option1.setText(""+d+"");
 
         // startb();
 
+    }
+
+
+    public void animateElement(String main_element) throws InterruptedException {
+
+
+        // Ancient //
+
+        if (main_element == "  Ancient  "){
+            enemyImage.setVisible(false);
+
+            System.out.println("Ancient=Main");
+            for (int t = 1; t<30; t++){
+                enemyImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Ancient.png").getImage().getScaledInstance(370, 365, Image.SCALE_AREA_AVERAGING)));
+
+                //   enemyImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Ancient2.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+                   for (int a = 1; a<18; a++){
+                    enemyImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Animation_Ancient\\" + a + ".png").getImage().getScaledInstance(370, 365, Image.SCALE_AREA_AVERAGING)));
+
+                   Thread.sleep(0);
+                   if (a >= 17){
+                    enemyImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Ancient.png").getImage().getScaledInstance(370, 365, Image.SCALE_AREA_AVERAGING)));
+
+                }
+                            }
+               
+                            for (int a = 1; a<18; a++){
+                                enemyImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Animation_Ancient\\" + a + ".png").getImage().getScaledInstance(370, 365, Image.SCALE_AREA_AVERAGING)));
+
+                                Thread.sleep(0);
+                                if (a >= 17){
+                                    enemyImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Ancient.png").getImage().getScaledInstance(370, 365, Image.SCALE_AREA_AVERAGING)));
+
+                                }
+                                            }
+                  
+                   enemyImage.setVisible(true);
+                  
+                          }
+               }
+
+
+               // Ancient //
+        System.out.println("animateElement");
+    
     }
 
     String animateTextphases[] = {

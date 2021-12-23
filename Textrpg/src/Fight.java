@@ -67,7 +67,14 @@ public class Fight {
  static String elements[];
 
 
-  public static void fight(String element) {
+  public static void fight(String element, JLabel elementImage) {
+
+    do
+    {
+    System.out.println(elementImage.getIcon());
+    elementImage.setVisible(false);
+    }
+    while (elementImage.isVisible()==true);
 
     System.out.println(element);
 
@@ -121,14 +128,35 @@ i23.setFocusable(false);
      */
 
   }
+
   
 
- /* public static void fightAnimation(String element) {
- // if (element.charAt(2) == 'W' && element.charAt(3) == 'a' && element.charAt(4) == 's' && element.charAt(5) == 's'){
-System.out.println("W");
 
+  public static void fightAnimation(String element, JLabel ei) throws InterruptedException {
+    
+    Thread th = new Thread();
+    ei.setVisible(true);
 
+    while (ei.isVisible() == true){
+      System.out.println("Feap");
+      for (int anc = 1; anc<2; anc++){
+        //   enemyImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Ancient2.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+           for (int a = 1; a<1; a++){
+     ei.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Animation_Ancient\\" + anc + ".png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+  
+           th.sleep(3);
+                    }
+       
+                    for (int a = 1; a<1; a++){
+                      ei.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Animation_Ancient\\" + anc + ".png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+                      th.sleep(3);
+                                    }
+    }
 
+ }
+ ei.setVisible(false);
+  }
+/*
 javax.swing.JLabel i24 = new JLabel();
 i24.setForeground(Color.white);
 i24.setFont(new Font("Times new Roman", Font.PLAIN, 30));
