@@ -40,11 +40,7 @@ import org.w3c.dom.css.RGBColor;
 public class Enemy {
 
 
-<<<<<<< HEAD
     Elemente elements;
-=======
-    Elements elements;
->>>>>>> 45aac735882bfc5cc0e73af88aebb371d62e2213
 
     String enemies[] = {
         "FeuerFlamme",
@@ -56,7 +52,6 @@ public class Enemy {
         200,
     };
 
-<<<<<<< HEAD
     String enemiesHPString[] = {
         "100",
         "200",
@@ -69,10 +64,6 @@ public class Enemy {
 
     static String enemy_Main_Materias[] = {
         "Feuer",
-=======
-    static String enemy_Main_Materias[] = {
-        "Dark",
->>>>>>> 45aac735882bfc5cc0e73af88aebb371d62e2213
         "Fire",
     };
 
@@ -82,7 +73,6 @@ public class Enemy {
         "Fire",
     };
 
-<<<<<<< HEAD
     static String enemy_Third_Materias[] = {
         "D",
         "Fire",
@@ -95,9 +85,6 @@ public class Enemy {
     };
 
 
-=======
-
->>>>>>> 45aac735882bfc5cc0e73af88aebb371d62e2213
     String enemyDifficulty[] = {
         "Easy",
         "Fire",
@@ -129,7 +116,6 @@ public class Enemy {
     };
 
 
-<<<<<<< HEAD
     String bosses[] = {
         "Medusa",
         "Balrog",
@@ -187,10 +173,6 @@ public class Enemy {
 
         // Enemy gegner = new Enemy(Elements.HEALTH);
         public Enemy(Elemente pElement) {
-=======
-        // Enemy gegner = new Enemy(Elements.HEALTH);
-        public Enemy(Elements pElement) {
->>>>>>> 45aac735882bfc5cc0e73af88aebb371d62e2213
             
        //     System.out.println("D326");
 

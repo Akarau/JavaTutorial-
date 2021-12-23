@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Font;
@@ -8,14 +7,6 @@ import java.io.File;
 import java.io.IOException;
 import java.lang.StackWalker.Option;
 import java.lang.annotation.Repeatable;
-=======
-import javax.swing.JLabel;
-
-import java.awt.event.ActionListener;
-import java.beans.PropertyChangeListener;
-import java.io.IOException;
-import java.lang.StackWalker.Option;
->>>>>>> 45aac735882bfc5cc0e73af88aebb371d62e2213
 import java.lang.reflect.Array;
 import java.util.EventObject;
 import java.util.Timer;
@@ -45,7 +36,6 @@ import javax.swing.ImageIcon;
 
 import org.w3c.dom.css.RGBColor;
 
-<<<<<<< HEAD
 public class Story implements ActionListener {
 
     CuPower spieler = new CuPower();
@@ -643,7 +633,7 @@ JLabel enemyInfoLastElement;
 
         elementsMenu = new JPanel();
         elementsMenu.setBounds(200, 80, 750, 455);
-        elementsMenu.setVisible(true);
+        elementsMenu.setVisible(false);
         elementsMenu.setBackground(Color.BLACK);
         elementsMenu.setFocusable(false);
         // optionsmenu.setForeground(Color.BLACK);
@@ -656,7 +646,7 @@ JLabel enemyInfoLastElement;
         chosen_Main_Element.setFont(new Font("Times new Roman", Font.PLAIN, 60));
         chosen_Main_Element.setBounds(960, 80, 310, 455);
         chosen_Main_Element.setBackground(Color.black);
-        chosen_Main_Element.setVisible(false);
+        chosen_Main_Element.setVisible(true);
         chosen_Main_Element.setFocusable(false);
         chosen_Main_Element.setBorder(new LineBorder(Color.white));
 
@@ -719,16 +709,16 @@ JLabel enemyInfoLastElement;
         frame.add(chosen_Main_Element);
 
 
-JTextArea texarea = new JTextArea();
+texarea = new JTextField(10);
 texarea.setBounds(520,400,200,60);
 //texarea.setLineWrap(true);
 //texarea.setWrapStyleWord(true);
-texarea.setVisible(false);
+texarea.setVisible(true);
 texarea.setBackground(Color.BLACK);
 texarea.setForeground(Color.WHITE);
 texarea.setFont(new Font("Arial",Font.BOLD,20));
 texarea.setBorder(new LineBorder(Color.white));
-texarea.setEditable(false);
+//texarea.setEditable(true);
 
 
 
@@ -872,12 +862,12 @@ frame.add(enemyInfo);
 frame.add(enemyInfoImage);
 
 
-JButton confirmName = new JButton("/");
+confirmName = new JButton("/");
 confirmName.setForeground(new Color(255, 255, 255));
 confirmName.setFont(new Font("Times new Roman", Font.PLAIN, 60));
 confirmName.setBounds(740, 400, 60, 60);
 confirmName.setBackground(Color.black);
-confirmName.setVisible(false);
+confirmName.setVisible(true);
 confirmName.setFocusable(false);
 confirmName.addActionListener(this);
 confirmName.setActionCommand("ConfirmName");
@@ -893,7 +883,7 @@ enemyImage.setBounds(500,280,400,400);
 
 enemyImage.setForeground(en.enemyColors[0]);
 
-enemyImage.setVisible(true);
+enemyImage.setVisible(false);
 
 
 frame.add(enemyImage);
@@ -1098,6 +1088,14 @@ frame.add(confirmName);
     char c;
     String t = "loading:";
 
+    java.awt.event.ActionEvent e;
+
+    public void clickEvenet(java.awt.event.ActionEvent d) throws InterruptedException {
+        if (d.getSource() == this.option3) {
+            damage("Anc", "E");
+            System.out.print("D");
+        }
+    }
     public void actionPerformed(java.awt.event.ActionEvent e) {
         // System.out.println(e.getSource());
         // if (e.getSource()==l){
@@ -1184,7 +1182,7 @@ frame.add(confirmName);
             tex.setVisible(false);
         }
 
-        if (e.getActionCommand() == "option3") {
+   /*     if (e.getActionCommand() == "option3") {
             System.out.println("option3");
             // System.out.println("Dsalkgbw");
             // frame.add(commboxtex);
@@ -1196,7 +1194,7 @@ frame.add(confirmName);
             // commboxtex.setIcon(imageW);
 
         }
-
+*/
 
         if (e.getActionCommand() == "ConfirmName") {
            // texarea.setEditable(false);
@@ -1205,11 +1203,26 @@ frame.add(confirmName);
            System.out.println(texarea.getText());
 
 texarea.setVisible(false);
-confirmName.setVisible(true);
+confirmName.setVisible(false);
+texarea.setEditable(false);
 commbox.setVisible(true);
 option1.setVisible(false);
-           commbox.setText("Welcome" + texarea.getText() + ", your name is terrible ");
+fighting_options.setVisible(false);
 
+
+
+
+
+           commbox.setText(" Welcome " + "'"+texarea.getText()+"'" + ", your name is terrible.                                                    Now choose your main element. Your main element is strongest             element you will get.  Each element has positive and negative things.     For example Crystal is weak against 'Fire' but strong against 'Earth' ");
+
+         //  Thread.sleep(spieler.thread1);
+          // spieler.thread1 = 1000;
+   
+   
+           elementsMenu.setVisible(true);
+   
+           chosen_Main_Element.setVisible(true);
+           choose_Element.setActionCommand("Main_Choose");
         }
 
         if (e.getActionCommand().equals("options_c")) {
@@ -1229,7 +1242,7 @@ option1.setVisible(false);
 
                 animateText(
                         " du hast" + "  '" + chosen_Main_Element_Name.getText() + "'  " + "als Haupt Element gewählt",
-                        null, commbox, 12, "");
+                        null, commbox, spieler.textSpeed, "");
             } catch (InterruptedException e1) {
                 // TODO Auto-generated catch block
                 // e1.printStackTrace();
@@ -1241,7 +1254,7 @@ option1.setVisible(false);
 
                 animateText(
                         " Now choose your second Element. Your second Element is weaker than your main Element. But it's still affective",
-                        null, commbox, 12, "");
+                        null, commbox, spieler.textSpeed, "");
             } catch (InterruptedException e1) {
                 // TODO Auto-generated catch block
                 // e1.printStackTrace();
@@ -1286,7 +1299,7 @@ option1.setVisible(false);
 
                 animateText(
                         " du hast" + "  '" + chosen_Main_Element_Name.getText() + "'  " + "als Second Element gewählt",
-                        null, commbox, 12, "");
+                        null, commbox, spieler.textSpeed, "");
             } catch (InterruptedException e1) {
                 // TODO Auto-generated catch block
                 // e1.printStackTrace();
@@ -1319,7 +1332,7 @@ option1.setVisible(false);
                     try {
 
                         animateText(" You have chosen" + spieler.Main_Element + "as the main element and "
-                                + spieler.Second_Element + "as the second element", null, commbox, 12, "");
+                                + spieler.Second_Element + "as the second element", null, commbox, spieler.textSpeed, "");
                     } catch (InterruptedException e1) {
                         // TODO Auto-generated catch block
                         // e1.printStackTrace();
@@ -1335,8 +1348,12 @@ option1.setVisible(false);
         if (e.getActionCommand().equals("Attack#1")) {
        //  Fight.fightAnimation(CuPower.Main_Element);
        System.out.println(spieler.Main_Element);
-
+try {
+    damage("Anc", "D");
+} catch (InterruptedException e1) {
+}
         }
+
 
         if (e.getActionCommand().equals("c#1")) {
             tex.setVisible(!tex.isVisible());
@@ -1360,13 +1377,18 @@ option1.setVisible(false);
         }
 
         if (e.getActionCommand().equals("commboxnext1")) {
+            uit++;
+spieler.textSpeed = 0;
+spieler.thread1 = 0;
+spieler.thread2 = 0;
+spieler.thread3 = 0;
+spieler.thread1 = (Integer) null;
 
-            try {
-                commbox2();
-            } catch (InterruptedException e1) {
-                // TODO Auto-generated catch block
-                e1.printStackTrace();
-            }
+spieler.thread2 = (Integer) null;
+
+spieler.thread3 = (Integer) null;
+
+
         }
 
         Byte v;
@@ -1428,6 +1450,18 @@ option1.setVisible(false);
 
     }
     // Ren();
+
+
+    public void damage(String element, String enemyMainElement) throws InterruptedException{
+
+        if (element == "Anc"){
+
+            for(int d = 0;d<spieler.Power;d++){
+Thread.sleep(0);
+option1.setText(""+d+"");
+            }
+        }
+    }
 
     public void Loading() throws InterruptedException {
         // System.out.println("not Vis");
@@ -1522,6 +1556,40 @@ option1.setVisible(false);
 
     }
 
+    String animateTextphases[] = {
+        "Welcome to The Day.",
+        " Looks like you are new here",
+        " We are going to learn about this game with the tutorial",
+        " ....",
+        " So let's begin with the basics",
+        " The first thing you need to know is to never trust anyone in this world. ",
+        " During your adventure you are going to be meeting many enemies. ",
+        "        Their main goal is to protect their bosses as long as they can. ",
+        "               every enemy has different stats such as Speed, HP, Power,etc...",
+    };
+
+
+
+
+
+    String animateTextphasesdef[] = {
+        null,
+        "Welcome to The Day.",
+        "Welcome to The Day. Looks like you are new here.",
+        "Welcome to The Day. Looks like you are new here. We are going to learn about this game with the tutorial.",
+        "Welcome to The Day. Looks like you are new here. We are going to learn about this game with the tutorial. ....",
+        null,
+        " The first thing you need to know is to never trust anyone in this world. ",
+        " The first thing you need to know is to never trust anyone in this world.  During your adventure you are going to be meeting many enemies.",
+        " The first thing you need to know is to never trust anyone in this world.  During your adventure you are going to be meeting many enemies.        Their main goal is to protect their bosses as long as they can.  ",
+    }; 
+
+
+
+
+
+    int uit;
+
     public void animateText(String message, JLabel tex, JTextArea a, int w, String standardText)
             throws InterruptedException {
 
@@ -1572,34 +1640,52 @@ option1.setVisible(false);
             // }
         }
 
-        Thread.sleep(1500);
+        Thread.sleep(spieler.thread1);
 
         System.out.println("D");
         commbox.setText(
                 "                                                                                                                                                                                                                            ");
         commbox.setVisible(true);
-
-        animateText("Welcome to The Day.", null, commbox, 12, null); // Text in String ist die Nachricht, zweites Wort
+if (uit == 0){
+        animateText(animateTextphases[0], null, commbox, spieler.textSpeed, animateTextphasesdef[0]); // Text in String ist die Nachricht, zweites Wort
                                                                      // ist die JLabel, die deren Text geändert sein
                                                                      // muss, die Zahl am Ende ist die Geschwindigkeit;
                                                                      // je weniger desto schneller
-        Thread.sleep(2000);
-        animateText(" Looks like you are new here", l, null, 12, "Welcome to The Day."); // Text in String ist die
+                                                                     spieler.textSpeed = 14;
+                                                                     uit++;
+}
+if (uit == 1){
+
+        animateText(animateTextphases[1], l, null, spieler.textSpeed, animateTextphasesdef[1]); // Text in String ist die
                                                                                          // Nachricht, zweites Wort ist
                                                                                          // die JLabel, die deren Text
                                                                                          // geändert sein muss, die Zahl
                                                                                          // am Ende ist die
                                                                                          // Geschwindigkeit; je weniger
                                                                                          // desto schneller
-        animateText(" We are going to learn about this game with the tutorial", null, commbox, 12,
+                                                                                         uit++;
+                                                                                         Thread.sleep(spieler.thread2);
+                                                                                         spieler.thread2 = 2000;
+                                                                                         
+}
+
+if (uit == 2){
+    uit++;
+
+        animateText(" We are going to learn about this game with the tutorial", null, commbox, spieler.textSpeed,
                 "Welcome to The Day. Looks like you are new here."); // Text in String ist die Nachricht, zweites Wort
                                                                      // ist die JLabel, die deren Text geändert sein
                                                                      // muss, die Zahl am Ende ist die Geschwindigkeit;
                                                                      // je weniger desto schneller
-        animateText(" ....", null, commbox, 350,
+}
+if (uit == 3){
+    uit++;
+
+        animateText(" ....", null, commbox, spieler.textSpeed *20,
                 "Welcome to The Day. Looks like you are new here. We are going to learn about this game with the tutorial."); // Text
-                                                                                                                              // in
-                                                                                                                              // String
+                                 spieler.textSpeed = 14;
+                                                                                                     // in
+                                                                                           }                                                                                           // String
                                                                                                                               // ist
                                                                                                                               // die
                                                                                                                               // Nachricht,
@@ -1625,11 +1711,19 @@ option1.setVisible(false);
                                                                                                                               // weniger
                                                                                                                               // desto
                                                                                                                               // schneller
+if (uit == 4){
+    uit++;
 
-        animateText(" So let's begin with the basics", null, commbox, 12,
+        animateText(" So let's begin with the basics", null, commbox, spieler.textSpeed,
                 "Welcome to The Day. Looks like you are new here. We are going to learn about this game with the tutorial. ....");
+                spieler.textSpeed = 14;
 
-        Thread.sleep(2000);
+Thread.sleep(spieler.thread2);
+spieler.thread2 = 2000;
+}
+
+
+
         // panel3.add(commbox);
 
         for (i = 1; i < 235; i++) {
@@ -1647,48 +1741,90 @@ option1.setVisible(false);
         panel3.setVisible(false);
         commbox.setVisible(false);
 
-        Thread.sleep(1500);
+        Thread.sleep(spieler.thread1);
         commbox.setText("");
         commbox.setVisible(true);
         commbox.setBackground(Color.black);
         commbox.setForeground(Color.white);
         commbox.setBorder(new LineBorder(Color.white));
+        if (uit == 5){
+            uit++;
 
-        animateText(" The first thing you need to know is to never trust anyone in this world. ", null, commbox, 12,
+        animateText(" The first thing you need to know is to never trust anyone in this world. ", null, commbox, spieler.textSpeed,
                 null);
+                spieler.textSpeed = 14;
+        
 
-        Thread.sleep(3000);
-        animateText(" During your adventure you are going to be meeting many enemies. ", null, commbox, 12,
+        Thread.sleep(spieler.thread3);
+        spieler.thread3 = 3000;
+        }
+
+
+        if (uit == 6){
+            uit++;
+
+        animateText(" During your adventure you are going to be meeting many enemies. ", null, commbox, spieler.textSpeed,
                 " The first thing you need to know is to never trust anyone in this world. ");
-        Thread.sleep(2000);
-        animateText("        Their main goal is to protect their bosses as long as they can. ", null, commbox, 12,
-                " The first thing you need to know is to never trust anyone in this world.  During your adventure you are going to be meeting many enemies.");
-        Thread.sleep(2000);
-        animateText("               every enemy has different stats such as Speed, HP, Power,etc...", null, commbox, 12,
+                spieler.textSpeed = 14;
+
+        Thread.sleep(spieler.thread2);
+        spieler.thread2 = 2000;
+        }
+
+        
+        if (uit == 7){
+
+        animateText("        Their main goal is to protect their bosses as long as they can. ", null, commbox, spieler.textSpeed,
+           
+        " The first thing you need to know is to never trust anyone in this world.  During your adventure you are going to be meeting many enemies.");
+        spieler.textSpeed = 14;
+
+        Thread.sleep(spieler.thread2);
+        spieler.thread2 = 2000;
+        }
+
+        if (uit == 8){
+uit++;
+
+        animateText("               every enemy has different stats such as Speed, HP, Power,etc...", null, commbox, spieler.textSpeed,
                 " The first thing you need to know is to never trust anyone in this world.  During your adventure you are going to be meeting many enemies.        Their main goal is to protect their bosses as long as they can.  ");
 
+                spieler.textSpeed = 14;
+        }
 
              //   Thread.sleep(3000);
-                animateText(" First, enter your name.", null, commbox, 12, null);
+                animateText(" First, enter your name.", null, commbox, spieler.textSpeed, null);
+                spieler.textSpeed = 14;
+
 
         texarea.setVisible(true);
         confirmName.setVisible(true);
-        Thread.sleep(3000);
-        animateText(" Now choose your main element. Your main element is strongest             element you will get.", null, commbox, 12, null);
+        Thread.sleep(spieler.thread3);
+        spieler.thread3 = 3000;
+/*
+        if (uit == 14){
 
-        Thread.sleep(1000);
+
+        animateText(" Now choose your main element. Your main element is strongest             element you will get.", null, commbox, spieler.textSpeed, null);
+
+        Thread.sleep(spieler.thread1);
+        spieler.thread1 = 1000;
+
 
         elementsMenu.setVisible(true);
 
         chosen_Main_Element.setVisible(true);
         choose_Element.setActionCommand("Main_Choose");
-        Thread.sleep(500);
+        Thread.sleep(spieler.thread1 / 2);
         animateText(
                 " Each element has positive and negative things.     For example Crystal is weak against 'Fire' but strong against 'Earth' ",
-                null, commbox, 12,
+                null, commbox, spieler.textSpeed,
                 " Now choose your main element. Your main element is strongest             element you will get.");
+        }
+        */
     }
 
+    
     private void notify(int i) {
     }
 
@@ -1708,34 +1844,43 @@ option1.setVisible(false);
     }
 
     public void commbox2() throws InterruptedException {
-        Thread.sleep(2000);
-        animateText(" The first thing you need to know is to never trust anyone in this world. ", null, commbox, 12,
+        Thread.sleep(spieler.thread2);
+        animateText(" The first thing you need to know is to never trust anyone in this world. ", null, commbox, spieler.textSpeed,
                 null);
 
-        Thread.sleep(3000);
-        animateText(" During your adventure you are going to be meeting many enemies. ", null, commbox, 12,
+        Thread.sleep(spieler.thread3);
+        spieler.thread3 = 3000;
+
+        animateText(" During your adventure you are going to be meeting many enemies. ", null, commbox, spieler.textSpeed,
                 " The first thing you need to know is to never trust anyone in this world. ");
-        Thread.sleep(2000);
-        animateText("        Their main goal is to protect their bosses as long as they can. ", null, commbox, 12,
+        Thread.sleep(spieler.thread2);
+        spieler.thread2 = 2000;
+
+        animateText("        Their main goal is to protect their bosses as long as they can. ", null, commbox, spieler.textSpeed,
                 " The first thing you need to know is to never trust anyone in this world.  During your adventure you are going to be meeting many enemies.");
-        Thread.sleep(2000);
-        animateText("               every enemy has different stats such as Speed, HP, Power,etc...", null, commbox, 12,
+        Thread.sleep(spieler.thread2);
+        spieler.thread2 = 2000;
+
+        animateText("               every enemy has different stats such as Speed, HP, Power,etc...", null, commbox, spieler.textSpeed,
                 " The first thing you need to know is to never trust anyone in this world.  During your adventure you are going to be meeting many enemies.        Their main goal is to protect their bosses as long as they can.  ");
 
-        Thread.sleep(3000);
-        animateText(" Now choose your main element. Your main element is strongest             element you will get.",
-                null, commbox, 12, null);
+        Thread.sleep(spieler.thread3);
+        spieler.thread3 = 3000;
 
-        Thread.sleep(1000);
+        animateText(" Now choose your main element. Your main element is strongest             element you will get.",
+                null, commbox, spieler.textSpeed, null);
+
+        Thread.sleep(spieler.thread1);
+        spieler.thread1 = 1000;
 
         elementsMenu.setVisible(true);
 
         chosen_Main_Element.setVisible(true);
         choose_Element.setActionCommand("Main_Choose");
-        Thread.sleep(500);
+        Thread.sleep(spieler.thread1/2);
         animateText(
                 " Each element has positive and negative things.     For example Crystal is weak against 'Fire' but strong against 'Earth' ",
-                null, commbox, 12,
+                null, commbox, spieler.textSpeed,
                 " Now choose your main element. Your main element is strongest             element you will get.");
     }
 
@@ -1832,45 +1977,4 @@ enemyInfoHP.setText("          " +en.bossesHP[Index]);
 
     // @Override
 
-=======
-
-public class Story {
-    String tutorialEnemy = "DarkFlame";
-     String enemies[] = {
-        "FeuerFlamme", // 1
-        "Balrog", // 2
-    };
-
-    int enemiesHP[] = {
-        100, // 1
-        200, // 2
-    };
-    
-
-
-    public Story(){
-        System.out.println("1");
-        System.out.println("2");
-
-        JLabel tutorialEnemy= new JLabel();
-        tutorialEnemy.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Others\\Damage.png").getImage().getScaledInstance(60,72,Image.SCALE_AREA_AVERAGING)));
-        tutorialEnemy.setVisible(true);
-tutorialEnemy.setBackground(Color.black);
-tutorialEnemy.setBorder(new LineBorder(Color.white));
-tutorialEnemy.setBounds(200, 200, 400, 200);
-
-
-        JLabel tutorialEnemyHealth = new JLabel();
-        tutorialEnemyHealth.setText("100");
-        tutorialEnemyHealth.setVisible(true);
-        tutorialEnemyHealth.setBackground(Color.black);
-        tutorialEnemyHealth.setBorder(new LineBorder(Color.white));
-
-
-   //     Menu.frame.add(tutorialEnemy);
-       // Menu.frame.add(tutorialEnemyHealth);
-
-        
-    }
->>>>>>> 45aac735882bfc5cc0e73af88aebb371d62e2213
 }

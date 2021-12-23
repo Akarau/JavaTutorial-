@@ -3,7 +3,6 @@ import java.awt.Color;
 import javax.swing.JPanel;
 
 public class CuPower {
-<<<<<<< HEAD
       int Gold = 0;
       int Power = 50;
       int Points = 50;
@@ -15,18 +14,11 @@ public class CuPower {
      String Second_Element;
      String playerName;
      String currentEnemy;
-=======
-    static  int Gold = 0;
-    static  int Power = 50;
-    static  int Points = 50;
-    static  int Health = 100;
-    public static int playerHealthResult = 10;
-    static int MaxHealth;
-    static  float GoldEarn = 1F;
-    static String Main_Element;
-    static String Second_Element;
-    static String playerName;
->>>>>>> 45aac735882bfc5cc0e73af88aebb371d62e2213
+     byte textSpeed = 14;
+     int thread1 = 1000;
+     int thread2 = 1000;
+     int thread3 = 1000;
+
     public CuPower() {
 
 
@@ -57,11 +49,7 @@ public class CuPower {
             
         }
         pPanel.setBackground(Color.red);
-<<<<<<< HEAD
-        Story.frame.add(pPanel);
-=======
-        Menu.frame.add(pPanel);
->>>>>>> 45aac735882bfc5cc0e73af88aebb371d62e2213
+     //   Story.frame.add(pPanel);
         
     }
     }

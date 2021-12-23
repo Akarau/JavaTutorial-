@@ -31,7 +31,7 @@ public void playerhealdamageanimation(JPanel pPanel) throws InterruptedException
         
     }
     pPanel.setBackground(Color.red);
-    Menu.frame.add(pPanel);
+   // Menu.frame.add(pPanel);
     
 }
 }
