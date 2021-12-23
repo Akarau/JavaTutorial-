@@ -1626,6 +1626,41 @@ Thread.sleep(9);
             }
           }
 
+
+          if (main_element == "  Crystal  "){
+            enemyImage.setVisible(true);
+
+            System.out.println("Crystal=Main");
+
+          enemyImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Crystal.png").getImage().getScaledInstance(200, 195, Image.SCALE_AREA_AVERAGING)));
+           
+          enemyImage.setBounds(enemyImage.getBounds().x, enemyImage.getBounds().y, 100, 100);
+          for (int t = 0; t<2; t++){
+              enemyImage.setBounds(500,280,0,0);
+
+              enemyImage.setBounds(enemyImage.getBounds().x - 50, enemyImage.getBounds().y,200,200);
+              enemyImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Crystal.png").getImage().getScaledInstance(160, 155, Image.SCALE_AREA_AVERAGING)));
+
+Thread.sleep(40);
+enemyImage.setBounds(enemyImage.getBounds().x + 100, enemyImage.getBounds().y, 120, 120);
+enemyImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Crystal.png").getImage().getScaledInstance(120, 115, Image.SCALE_AREA_AVERAGING)));
+
+Thread.sleep(40);
+enemyImage.setBounds(enemyImage.getBounds().x, enemyImage.getBounds().y+100, 110, 110);
+enemyImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Crystal.png").getImage().getScaledInstance(110, 105, Image.SCALE_AREA_AVERAGING)));
+
+Thread.sleep(40);
+enemyImage.setBounds(enemyImage.getBounds().x - 50, enemyImage.getBounds().y, 140, 140);
+enemyImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Crystal.png").getImage().getScaledInstance(140, 135, Image.SCALE_AREA_AVERAGING)));
+
+Thread.sleep(40);
+
+          }
+
+          Thread.sleep(80);
+
+          }
+
           enemyImage.setVisible(false);
 
     
