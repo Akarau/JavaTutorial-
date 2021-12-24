@@ -1569,7 +1569,7 @@ fight.fight("Anc", enemyImage);
             enemyImage.setVisible(false);
 
             System.out.println("Ancient=Main");
-            for (int t = 1; t<30; t++){
+            for (int t = 1; t<4; t++){
                 enemyImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Ancient.png").getImage().getScaledInstance(370, 365, Image.SCALE_AREA_AVERAGING)));
 
                 //   enemyImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Ancient2.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
