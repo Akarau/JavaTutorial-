@@ -13,7 +13,14 @@ public class CuPower {
      String Main_Element = "  Ancient  ";
      String Second_Element;
      String playerName;
+     // Enemy //
      String currentEnemy;
+     int enemyPower;
+     String enemyMain_Element;
+     String enemySecond_Element;
+     String enemyThird_Element;
+     String enemyLast_Element;
+     // Enemy //
      byte textSpeed = 14;
      int thread1 = 1000;
      int thread2 = 1000;

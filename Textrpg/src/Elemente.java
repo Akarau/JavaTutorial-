@@ -55,6 +55,23 @@ public class Elemente {
 
     };
 
+    static String elementsPowers2[] = {
+        "-Affective against Cosmic + Lunar                                   -No element is affective against ", // Ancient stark dagegen
+        "Erde + Gravity + Void", // Cosmic sehr stark dagegen
+        "Erde + Ancient", // Crystal stark dagegen
+        "Feuer + Luck + ''", // Erde sehr stark dagegen
+        "Heal + Crystal", // Feuer stark dagegen
+        "Cosmic + Erde", // Gravity stark dagegen
+        "", // Heal stark dagegen
+        "Lunar + Void", // Licht stark dagegen
+        "", // Luck stark dagegen
+        "Licht + Wasser + ''", // Lunar sehr stark dagegen
+        "Cosmic + Gravity", // Void stark dagegen
+        "Feuer + Crystal", // Wasser stark dagegen
+
+
+    };
+
 
     static String elementsWeaks[] = {
         "is weak against Crystal", // Ancient Weak dagegen

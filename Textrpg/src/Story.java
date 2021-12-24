@@ -111,6 +111,12 @@ public class Story implements ActionListener {
 
     // EnemyStats //
 
+    // element //
+
+    static JLabel elementImage;
+
+    // element //
+
 
 // EnemyInfo //
 
@@ -873,6 +879,17 @@ confirmName.addActionListener(this);
 confirmName.setActionCommand("ConfirmName");
 confirmName.setBorder(new LineBorder(Color.white));
 
+elementImage = new JLabel();
+
+elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Cosmic.png").getImage().getScaledInstance(370, 365, Image.SCALE_AREA_AVERAGING)));
+
+elementImage.setBounds(500,280,400,400);
+
+elementImage.setForeground(en.enemyColors[0]);
+
+elementImage.setVisible(true);
+
+frame.add(elementImage);
 
 
  enemyImage = new JLabel();
@@ -1044,7 +1061,8 @@ frame.add(confirmName);
                 Loading();
                 break;
             }
-            if (enemyImage.isVisible()==true){
+            if (elementImage.isVisible()==true){
+                System.out.println("Ddfgwiopg");
 animateElement(spieler.Main_Element);
             }
         }
@@ -1096,7 +1114,7 @@ animateElement(spieler.Main_Element);
 
     public void clickEvenet(java.awt.event.ActionEvent d) throws InterruptedException {
         if (d.getSource() == this.option3) {
-            damage("Anc", "E");
+        //    damage("Anc", "E");
             System.out.print("D");
         }
     }
@@ -1351,9 +1369,13 @@ fighting_options.setVisible(false);
 
         if (e.getActionCommand().equals("Attack#1")) {
        //  Fight.fightAnimation(CuPower.Main_Element);
-       System.out.println(spieler.Main_Element);
+       elementImage.setBounds(5000,280,400,400);
+
        b1.setEnabled(false);
-       damage("Anc", "D");
+       elementImage.setVisible(true);
+       System.out.println(elementImage.isVisible());
+
+     //  damage("Anc", "D");
         }
 
 
@@ -1454,18 +1476,18 @@ spieler.thread3 = (Integer) null;
     // Ren();
 
 
-    public void damage(String element, String enemyMainElement){
+  //  public void damage(String element, String enemyMainElement){
 
-        if (element == "Anc"){
+   //     if (element == "Anc"){
 
         //    for(int d = 0;d<spieler.Power;d++){
 //option1.setText(""+d+"");
-Fight fight = new Fight();
-fight.fight("Anc", enemyImage);
+//Fight fight = new Fight();
+//fight.fight("Anc", elementImage);
     //        }
-        }
-    }
-
+     //   }
+  //  }
+//
     public void Loading() throws InterruptedException {
         // System.out.println("not Vis");
         if (l.isVisible() == true) {
@@ -1565,42 +1587,137 @@ fight.fight("Anc", enemyImage);
 
         // Ancient //
 
+/*
+        for (int xi = 0; xi<= 14; xi++){
+            fighting_options.setBounds(38, 480 - xi*5, 1200, 300);
+            Thread.sleep(2);
+                }
+
+                Thread.sleep(40);
+*/
+        for (int xi = 0; xi<= 120; xi++){
+            fighting_options.setBounds(38, 480 + xi*5, 1200, 300);
+            Thread.sleep(4);
+                }
+
+                Thread.sleep(200);
+
         if (main_element == "  Ancient  "){
-            enemyImage.setVisible(false);
+            elementImage.setBounds(500,280,400,400);
+
+            elementImage.setVisible(false);
 
             System.out.println("Ancient=Main");
-            for (int t = 1; t<30; t++){
-                enemyImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Ancient.png").getImage().getScaledInstance(370, 365, Image.SCALE_AREA_AVERAGING)));
+            for (int t = 1; t<4; t++){
+                elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Ancient.png").getImage().getScaledInstance(370, 365, Image.SCALE_AREA_AVERAGING)));
 
                 //   enemyImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Ancient2.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
                    for (int a = 1; a<18; a++){
-                    enemyImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Animation_Ancient\\" + a + ".png").getImage().getScaledInstance(370, 365, Image.SCALE_AREA_AVERAGING)));
+                    elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Animation_Ancient\\" + a + ".png").getImage().getScaledInstance(370, 365, Image.SCALE_AREA_AVERAGING)));
 
                    Thread.sleep(0);
                    if (a >= 17){
-                    enemyImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Ancient.png").getImage().getScaledInstance(370, 365, Image.SCALE_AREA_AVERAGING)));
+                    elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Ancient.png").getImage().getScaledInstance(370, 365, Image.SCALE_AREA_AVERAGING)));
 
                 }
                             }
                
                             for (int a = 1; a<18; a++){
-                                enemyImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Animation_Ancient\\" + a + ".png").getImage().getScaledInstance(370, 365, Image.SCALE_AREA_AVERAGING)));
+                                elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Animation_Ancient\\" + a + ".png").getImage().getScaledInstance(370, 365, Image.SCALE_AREA_AVERAGING)));
 
                                 Thread.sleep(0);
                                 if (a >= 17){
-                                    enemyImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Ancient.png").getImage().getScaledInstance(370, 365, Image.SCALE_AREA_AVERAGING)));
+                                    elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Ancient.png").getImage().getScaledInstance(370, 365, Image.SCALE_AREA_AVERAGING)));
 
                                 }
                                             }
                   
-                   enemyImage.setVisible(true);
+                                            elementImage.setVisible(true);
                   
                           }
+
+                          elementImage.setVisible(false);
+
+
                }
 
 
                // Ancient //
         System.out.println("animateElement");
+
+
+        if (main_element == "  Cosmic  "){
+            elementImage.setBounds(700,80,400,400);
+
+            elementImage.setVisible(true);
+
+            System.out.println("Cosmic=Main");
+            elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Cosmic.png").getImage().getScaledInstance(200, 195, Image.SCALE_AREA_AVERAGING)));
+           
+        //    elementImage.setBounds(elementImage.getBounds().x + 200, elementImage.getBounds().y - 200, 400, 400);
+
+            elementImage.setEnabled(true);
+            for (int t = 0; t<100; t++){
+                elementImage.setBounds(elementImage.getBounds().x - 1, elementImage.getBounds().y + 1, 400, 400);
+Thread.sleep(15);
+            }
+
+            elementImage.setEnabled(true);
+            for (int t = 1; t<30; t++){
+                elementImage.setBounds(elementImage.getBounds().x - t, elementImage.getBounds().y + t, 400, 400);
+Thread.sleep(9);
+            }
+          }
+
+
+          if (main_element == "  Crystal  "){
+            elementImage.setVisible(true);
+
+            System.out.println("Crystal=Main");
+
+            elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Crystal.png").getImage().getScaledInstance(200, 195, Image.SCALE_AREA_AVERAGING)));
+           
+            elementImage.setBounds(elementImage.getBounds().x, elementImage.getBounds().y, 100, 100);
+          for (int t = 0; t<2; t++){
+            elementImage.setBounds(500,280,0,0);
+
+            elementImage.setBounds(elementImage.getBounds().x - 50, elementImage.getBounds().y,200,200);
+            elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Crystal.png").getImage().getScaledInstance(160, 155, Image.SCALE_AREA_AVERAGING)));
+
+Thread.sleep(40);
+elementImage.setBounds(elementImage.getBounds().x + 100, elementImage.getBounds().y, 120, 120);
+elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Crystal.png").getImage().getScaledInstance(120, 115, Image.SCALE_AREA_AVERAGING)));
+
+Thread.sleep(40);
+elementImage.setBounds(elementImage.getBounds().x, elementImage.getBounds().y+100, 110, 110);
+elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Crystal.png").getImage().getScaledInstance(110, 105, Image.SCALE_AREA_AVERAGING)));
+
+Thread.sleep(40);
+elementImage.setBounds(elementImage.getBounds().x - 50, elementImage.getBounds().y, 140, 140);
+elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Crystal.png").getImage().getScaledInstance(140, 135, Image.SCALE_AREA_AVERAGING)));
+
+Thread.sleep(40);
+
+          }
+
+          Thread.sleep(80);
+
+          }
+
+          Thread.sleep(40);
+
+          for (int xi = 0; xi<= 120; xi++){
+              fighting_options.setBounds(38, 1080 - xi*5, 1200, 300);
+              Thread.sleep(4);
+                  }
+/*
+          elementImage.setVisible(false);
+          for (int xi = 0; xi<= 14; xi++){
+            fighting_options.setBounds(38, 480 + xi*5, 1200, 300);
+            Thread.sleep(2);
+                }
+*/
+
     
     }
 
