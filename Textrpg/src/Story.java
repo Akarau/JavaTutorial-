@@ -66,6 +66,7 @@ public class Story implements ActionListener {
     JPanel b4;
 
     JButton e1;
+    JButton e2;
 
     // upgrades //
 
@@ -116,6 +117,8 @@ public class Story implements ActionListener {
     static JLabel elementImage;
 
     // element //
+
+    byte at;
 
 
 // EnemyInfo //
@@ -351,7 +354,7 @@ JLabel enemyInfoLastElement;
         // optionsmenu_colors.setBounds(1.x, 1.y, );
         fighting_options.setVisible(true);
         fighting_options.setBackground(Color.BLACK);
-        fighting_options.setFocusable(false);
+        fighting_options.setFocusable(true);
         fighting_options.setBounds(38, 480, 1200, 300);
         fighting_options.setBorder(new LineBorder(Color.white));
 
@@ -413,7 +416,7 @@ JLabel enemyInfoLastElement;
         e1.addActionListener(this);
         e1.setActionCommand("Attack#1");
 
-        javax.swing.JButton e2 = new JButton();
+        e2 = new JButton();
         e2.setForeground(new Color(80, 0, 255));
         e2.setFont(new Font("Times new Roman", Font.PLAIN, 60));
         e2.setBounds(0, 0, 0, 0);
@@ -421,7 +424,7 @@ JLabel enemyInfoLastElement;
         e2.setVisible(true);
         e2.setFocusable(false);
         e2.addActionListener(this);
-        e2.setActionCommand("E");
+        e2.setActionCommand("Attack#2");
         optionsmenu_options.setBorder(new LineBorder(Color.white));
 
         javax.swing.JButton e3 = new JButton();
@@ -887,7 +890,7 @@ elementImage.setBounds(500,280,400,400);
 
 elementImage.setForeground(en.enemyColors[0]);
 
-elementImage.setVisible(true);
+elementImage.setVisible(false);
 
 frame.add(elementImage);
 
@@ -1059,11 +1062,18 @@ frame.add(confirmName);
              System.out.println("x");
             if (l.isVisible() == true) {
                 Loading();
-                break;
+                l.setVisible(false);
+            //    break;
             }
             if (elementImage.isVisible()==true){
                 System.out.println("Ddfgwiopg");
-animateElement(spieler.Main_Element);
+                if (at == 1){
+                    animateElement(spieler.Main_Element,null,(byte) 1);
+                }
+                if (at == 2){
+                    System.out.println("at = 2");;
+                    animateElement(null,spieler.Second_Element,(byte) 2);
+                }
             }
         }
 
@@ -1229,7 +1239,7 @@ confirmName.setVisible(false);
 texarea.setEditable(false);
 commbox.setVisible(true);
 option1.setVisible(false);
-fighting_options.setVisible(false);
+fighting_options.setVisible(true);
 
 
 
@@ -1370,13 +1380,28 @@ fighting_options.setVisible(false);
         if (e.getActionCommand().equals("Attack#1")) {
        //  Fight.fightAnimation(CuPower.Main_Element);
        elementImage.setBounds(5000,280,400,400);
-
-       b1.setEnabled(false);
+//spieler.Main_Element = "  " +"Cosmic"+ "  ";
+       e2.setEnabled(false);
        elementImage.setVisible(true);
        System.out.println(elementImage.isVisible());
-
+       e2.setEnabled(true);
+at = 1;
      //  damage("Anc", "D");
         }
+
+
+        if (e.getActionCommand().equals("Attack#2")) {
+            //  Fight.fightAnimation(CuPower.Main_Element);
+            elementImage.setBounds(5000,280,400,400);
+     //spieler.Main_Element = "  " +"Cosmic"+ "  ";
+            e1.setEnabled(false);
+            elementImage.setVisible(true);
+            System.out.println(elementImage.isVisible());
+            at = 2;
+            e1.setEnabled(true);
+
+          //  damage("Anc", "D");
+             }
 
 
         if (e.getActionCommand().equals("c#1")) {
@@ -1582,7 +1607,7 @@ spieler.thread3 = (Integer) null;
     }
 
 
-    public void animateElement(String main_element) throws InterruptedException {
+    public void animateElement(String main_element, String second_element, byte n) throws InterruptedException {
 
 
         // Ancient //
@@ -1595,14 +1620,15 @@ spieler.thread3 = (Integer) null;
 
                 Thread.sleep(40);
 */
-        for (int xi = 0; xi<= 120; xi++){
-            fighting_options.setBounds(38, 480 + xi*5, 1200, 300);
-            Thread.sleep(4);
-                }
-
-                Thread.sleep(200);
-
-        if (main_element == "  Ancient  "){
+    
+        if (main_element!= null && main_element.charAt(2) == 'A' && main_element.charAt(3) == 'n' && main_element.charAt(4) == 'c' && n== 1 || second_element != null && spieler.Second_Element.charAt(2) == 'A' && spieler.Second_Element.charAt(3) == 'n' && spieler.Second_Element.charAt(4) == 'c' && n== 2){
+            for (int xi = 0; xi<= 120; xi++){
+                fighting_options.setBounds(38, 480 + xi*5, 1200, 300);
+                Thread.sleep(4);
+                    }
+    
+                    Thread.sleep(200);
+    
             elementImage.setBounds(500,280,400,400);
 
             elementImage.setVisible(false);
@@ -1637,6 +1663,10 @@ spieler.thread3 = (Integer) null;
                           }
 
                           elementImage.setVisible(false);
+                          for (int xi = 0; xi<= 120; xi++){
+                            fighting_options.setBounds(38, 1080 - xi*5, 1200, 300);
+                            Thread.sleep(4);
+                                }
 
 
                }
@@ -1646,7 +1676,14 @@ spieler.thread3 = (Integer) null;
         System.out.println("animateElement");
 
 
-        if (main_element == "  Cosmic  "){
+        if (main_element!= null && main_element.charAt(2) == 'C' && main_element.charAt(3) == 'o' && main_element.charAt(4) == 's' && main_element.charAt(5) == 'm' && main_element.charAt(6) == 'i' && main_element.charAt(7) == 'c' || second_element != null && second_element.charAt(4) == 's' && second_element.charAt(5) == 'm' && second_element.charAt(6) == 'i' && second_element.charAt(7) == 'c' && n==2){
+            for (int xi = 0; xi<= 120; xi++){
+                fighting_options.setBounds(38, 480 + xi*5, 1200, 300);
+                Thread.sleep(4);
+                    }
+    
+                    Thread.sleep(200);
+    
             elementImage.setBounds(700,80,400,400);
 
             elementImage.setVisible(true);
@@ -1667,10 +1704,23 @@ Thread.sleep(15);
                 elementImage.setBounds(elementImage.getBounds().x - t, elementImage.getBounds().y + t, 400, 400);
 Thread.sleep(9);
             }
+
+            elementImage.setVisible(false);
+            for (int xi = 0; xi<= 120; xi++){
+                fighting_options.setBounds(38, 1080 - xi*5, 1200, 300);
+                Thread.sleep(4);
+                    }
           }
 
 
-          if (main_element == "  Crystal  "){
+          if (main_element != null && main_element.charAt(2) == 'C' && main_element.charAt(3) == 'r' && main_element.charAt(4) == 'y' && main_element.charAt(5) == 's' && main_element.charAt(6) == 't' && main_element.charAt(7) == 'a' && main_element.charAt(8) == 'l'){
+            for (int xi = 0; xi<= 120; xi++){
+                fighting_options.setBounds(38, 480 + xi*5, 1200, 300);
+                Thread.sleep(4);
+                    }
+    
+                    Thread.sleep(200);
+    
             elementImage.setVisible(true);
 
             System.out.println("Crystal=Main");
@@ -1702,14 +1752,154 @@ Thread.sleep(40);
 
           Thread.sleep(80);
 
+          for (int xi = 0; xi<= 120; xi++){
+            fighting_options.setBounds(38, 1080 - xi*5, 1200, 300);
+            Thread.sleep(4);
+                }
+
+          elementImage.setVisible(false);
+
           }
+
+
+
+          if (main_element != null && main_element.charAt(2) == 'E' && main_element.charAt(3) == 'r' && main_element.charAt(4) == 'd' && main_element.charAt(5) == 'e'){
+            for (int xi = 0; xi<= 120; xi++){
+                fighting_options.setBounds(38, 480 + xi*5, 1200, 300);
+                Thread.sleep(4);
+                    }
+    
+                    Thread.sleep(200);
+    
+            elementImage.setBounds(500,-100,400,400);
+
+            elementImage.setVisible(true);
+            elementsMenu.setVisible(false);
+
+            System.out.println("Earth=Main");
+           
+                elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Erde.png").getImage().getScaledInstance(370, 365, Image.SCALE_AREA_AVERAGING)));
+
+                //   enemyImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Ancient2.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+                   for (int a = 1; a<95; a++){
+                    elementImage.setBounds(500,-100 + a*4,400,400);
+
+                   Thread.sleep(5);
+                
+                            }
+               
+                            Thread.sleep(300);
+                  
+
+                          elementImage.setVisible(false);
+                          for (int xi = 0; xi<= 120; xi++){
+                            fighting_options.setBounds(38, 1080 - xi*5, 1200, 300);
+                            Thread.sleep(4);
+                                }
+
+
+               }
+
+
+
+               if (main_element != null && main_element.charAt(2) == 'F' && main_element.charAt(3) == 'e' && main_element.charAt(4) == 'u' && main_element.charAt(5) == 'e' && main_element.charAt(6) == 'r'){
+                for (int xi = 0; xi<= 120; xi++){
+                    fighting_options.setBounds(38, 480 + xi*5, 1200, 300);
+                    Thread.sleep(4);
+                        }
+        
+                        Thread.sleep(200);
+        
+                elementImage.setBounds(500,50,400,400);
+    
+                elementImage.setVisible(true);
+                elementsMenu.setVisible(false);
+    
+                System.out.println("Feuer=Main");
+               
+                    elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Feuer.png").getImage().getScaledInstance(300, 295, Image.SCALE_AREA_AVERAGING)));
+    
+                    //   enemyImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Ancient2.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+                       for (int a = 1; a<100; a++){
+                        elementImage.setBounds(500,100 + a*2,400,400);
+    
+                       Thread.sleep(8);
+                    
+                                }
+                   
+                                Thread.sleep(50);
+                      
+    
+                              elementImage.setVisible(false);
+                              for (int xi = 0; xi<= 120; xi++){
+                                fighting_options.setBounds(38, 1080 - xi*5, 1200, 300);
+                                Thread.sleep(4);
+                                    }
+    
+    
+                   }
+    
+
+
+
+                   if (main_element != null && main_element.charAt(2) == 'G' && main_element.charAt(3) == 'r' && main_element.charAt(4) == 'a'){
+                    for (int xi = 0; xi<= 120; xi++){
+                        fighting_options.setBounds(38, 480 + xi*5, 1200, 300);
+                        Thread.sleep(4);
+                            }
+            
+                            Thread.sleep(200);
+            
+                    elementImage.setBounds(500,280,400,400);
+        
+                    elementImage.setVisible(false);
+                    elementsMenu.setVisible(false);
+        
+                    System.out.println("Gravity=Main");
+
+                 //   for (int a = 1; a<37; a++){
+                        elementImage.setVisible(true);
+
+                    //    elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Animation_Gravity\\" + a + ".png").getImage().getScaledInstance(370, 50, Image.SCALE_AREA_AVERAGING)));
+    
+                   //    Thread.sleep(0);
+
+                   //             }
+
+                    for (int t = 1; t<5; t++){
+                    //    elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Gravity.png").getImage().getScaledInstance(370, 365, Image.SCALE_AREA_AVERAGING)));
+        
+                        //   enemyImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Ancient2.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+                           for (int a = 1; a<37; a++){
+                            elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Animation_Gravity\\" + a + ".png").getImage().getScaledInstance(370, 50, Image.SCALE_AREA_AVERAGING)));
+        
+                           Thread.sleep(0);
+
+                                    }
+
+
+
+                                   
+                       
+                          
+                                                    elementImage.setVisible(true);
+                          
+                                  }
+        
+                                  elementImage.setVisible(false);
+                                  for (int xi = 0; xi<= 120; xi++){
+                                    fighting_options.setBounds(38, 1080 - xi*5, 1200, 300);
+                                    Thread.sleep(4);
+                                        }
+        
+        
+                       }
+
+
 
           Thread.sleep(40);
 
-          for (int xi = 0; xi<= 120; xi++){
-              fighting_options.setBounds(38, 1080 - xi*5, 1200, 300);
-              Thread.sleep(4);
-                  }
+
 /*
           elementImage.setVisible(false);
           for (int xi = 0; xi<= 14; xi++){
@@ -1959,6 +2149,8 @@ uit++;
 
              //   Thread.sleep(3000);
                 animateText(" First, enter your name.", null, commbox, spieler.textSpeed, null);
+                elementImage.setVisible(true);
+
                 spieler.textSpeed = 14;
 
 
@@ -2039,7 +2231,6 @@ uit++;
         spieler.thread1 = 1000;
 
         elementsMenu.setVisible(true);
-
         chosen_Main_Element.setVisible(true);
         choose_Element.setActionCommand("Main_Choose");
         Thread.sleep(spieler.thread1/2);
