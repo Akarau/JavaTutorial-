@@ -13,9 +13,9 @@ public class Elemente {
         "Erde",
         "Feuer",
         "Gravity",
-        "Heal",
+      //  "Heal",
         "Licht",
-        "Luck",
+    //    "Luck",
         "Lunar",
         "Void",
         "Wasser",
@@ -29,9 +29,9 @@ public class Elemente {
         new Color(60,0,53),
         new Color(255,100,0),
         new Color(255,125,34),
-        new Color(255,255,255),
+    //    new Color(255,255,255),
         new Color(255,255,0),
-        new Color(0,255,80),
+     //   new Color(0,255,80),
         new Color(40,40,40),
         new Color(100,0,255),
         new Color(0,150,255),
@@ -45,9 +45,9 @@ public class Elemente {
         "Feuer + Luck + ''", // Erde sehr stark dagegen
         "Heal + Crystal", // Feuer stark dagegen
         "Cosmic + Erde", // Gravity stark dagegen
-        "", // Heal stark dagegen
+    //    "", // Heal stark dagegen
         "Lunar + Void", // Licht stark dagegen
-        "", // Luck stark dagegen
+     //   "", // Luck stark dagegen
         "Licht + Wasser + ''", // Lunar sehr stark dagegen
         "Cosmic + Gravity", // Void stark dagegen
         "Feuer + Crystal", // Wasser stark dagegen
@@ -62,9 +62,9 @@ public class Elemente {
         "Feuer + Luck + ''", // Erde sehr stark dagegen
         "Heal + Crystal", // Feuer stark dagegen
         "Cosmic + Erde", // Gravity stark dagegen
-        "", // Heal stark dagegen
+   //     "", // Heal stark dagegen
         "Lunar + Void", // Licht stark dagegen
-        "", // Luck stark dagegen
+    //    "", // Luck stark dagegen
         "Licht + Wasser + ''", // Lunar sehr stark dagegen
         "Cosmic + Gravity", // Void stark dagegen
         "Feuer + Crystal", // Wasser stark dagegen
@@ -80,9 +80,9 @@ public class Elemente {
         "is weak against Cosmic + Crystal + Gravity", // Erde Weak dagegen
         "is weak against Erde + Wasser", // Feuer Weak dagegen
         "is weak against Cosmic + Void", // Gravity Weak dagegen
-        "is a support Element. It heals you and it has an upgrade", // Heal Weak dagegen
+     //   "is a support Element. It heals you and it has an upgrade", // Heal Weak dagegen
         "is effective against Lunar, but Lunar is very effective against it, because only Lunar can damage Light much", // Licht Weak dagegen
-        "is a support Element, it gives you more Gold and less damage", // Luck Weak dagegen
+     //   "is a support Element, it gives you more Gold and less damage", // Luck Weak dagegen
         "is weak against Ancient and very affective against Light. Licht is also affective against Lunar", // Lunar Weak dagegen
         "is weak against Cosmic + Licht", // Void Weak dagegen
         "is very weak against Lunar", // Wasser sehr Weak dagegen
@@ -98,9 +98,9 @@ public class Elemente {
         "        Erde           ",
         "        Feuer          ",
         "        Gravity        ",
-        "        Heal           ",
+   //     "        Heal           ",
         "        Licht          ",
-        "        Luck           ",
+      //  "        Luck           ",
         "        Lunar          ",
         "        Void           ",
         "        Wasser         ",

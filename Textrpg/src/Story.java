@@ -1619,7 +1619,12 @@ spieler.thread3 = (Integer) null;
                 }
 
                 Thread.sleep(40);
+
+                
 */
+
+
+elementImage.setVisible(false);
     
         if (main_element!= null && main_element.charAt(2) == 'A' && main_element.charAt(3) == 'n' && main_element.charAt(4) == 'c' && n== 1 || second_element != null && spieler.Second_Element.charAt(2) == 'A' && spieler.Second_Element.charAt(3) == 'n' && spieler.Second_Element.charAt(4) == 'c' && n== 2){
             for (int xi = 0; xi<= 120; xi++){
@@ -1627,9 +1632,12 @@ spieler.thread3 = (Integer) null;
                 Thread.sleep(4);
                     }
     
+                    
                     Thread.sleep(200);
     
             elementImage.setBounds(500,280,400,400);
+            elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Ancient.png").getImage().getScaledInstance(370, 365, Image.SCALE_AREA_AVERAGING)));
+
 
             elementImage.setVisible(false);
 
@@ -1685,11 +1693,12 @@ spieler.thread3 = (Integer) null;
                     Thread.sleep(200);
     
             elementImage.setBounds(700,80,400,400);
+            elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Cosmic.png").getImage().getScaledInstance(200, 195, Image.SCALE_AREA_AVERAGING)));
+
 
             elementImage.setVisible(true);
 
             System.out.println("Cosmic=Main");
-            elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Cosmic.png").getImage().getScaledInstance(200, 195, Image.SCALE_AREA_AVERAGING)));
            
         //    elementImage.setBounds(elementImage.getBounds().x + 200, elementImage.getBounds().y - 200, 400, 400);
 
@@ -1713,21 +1722,22 @@ Thread.sleep(9);
           }
 
 
-          if (main_element != null && main_element.charAt(2) == 'C' && main_element.charAt(3) == 'r' && main_element.charAt(4) == 'y' && main_element.charAt(5) == 's' && main_element.charAt(6) == 't' && main_element.charAt(7) == 'a' && main_element.charAt(8) == 'l'){
+          if (main_element != null && main_element.charAt(2) == 'C' && main_element.charAt(3) == 'r' && main_element.charAt(4) == 'y' && main_element.charAt(5) == 's' && main_element.charAt(6) == 't' && main_element.charAt(7) == 'a' && main_element.charAt(8) == 'l' || second_element != null && second_element.charAt(2) == 'C' && second_element.charAt(3) == 'r' && second_element.charAt(4) == 'y' && second_element.charAt(5) == 's' && second_element.charAt(6) == 't' && second_element.charAt(7) == 'a' && second_element.charAt(8) == 'l' && n==2){
+         elementsMenu.setVisible(false);
             for (int xi = 0; xi<= 120; xi++){
                 fighting_options.setBounds(38, 480 + xi*5, 1200, 300);
                 Thread.sleep(4);
                     }
     
+
                     Thread.sleep(200);
-    
+                    elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Crystal.png").getImage().getScaledInstance(200, 195, Image.SCALE_AREA_AVERAGING)));
+                    elementImage.setBounds(elementImage.getBounds().x, elementImage.getBounds().y, 100, 100);
+
             elementImage.setVisible(true);
 
             System.out.println("Crystal=Main");
-
-            elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Crystal.png").getImage().getScaledInstance(200, 195, Image.SCALE_AREA_AVERAGING)));
            
-            elementImage.setBounds(elementImage.getBounds().x, elementImage.getBounds().y, 100, 100);
           for (int t = 0; t<2; t++){
             elementImage.setBounds(500,280,0,0);
 
@@ -1763,13 +1773,15 @@ Thread.sleep(40);
 
 
 
-          if (main_element != null && main_element.charAt(2) == 'E' && main_element.charAt(3) == 'r' && main_element.charAt(4) == 'd' && main_element.charAt(5) == 'e'){
+          if (main_element != null && main_element.charAt(2) == 'E' && main_element.charAt(3) == 'r' && main_element.charAt(4) == 'd' && main_element.charAt(5) == 'e' || second_element != null && second_element.charAt(2) == 'E' && second_element.charAt(3) == 'r' && second_element.charAt(4) == 'd' && second_element.charAt(5) == 'e'){
             for (int xi = 0; xi<= 120; xi++){
                 fighting_options.setBounds(38, 480 + xi*5, 1200, 300);
                 Thread.sleep(4);
                     }
     
                     Thread.sleep(200);
+                    elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Erde.png").getImage().getScaledInstance(370, 365, Image.SCALE_AREA_AVERAGING)));
+
     
             elementImage.setBounds(500,-100,400,400);
 
@@ -1778,7 +1790,6 @@ Thread.sleep(40);
 
             System.out.println("Earth=Main");
            
-                elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Erde.png").getImage().getScaledInstance(370, 365, Image.SCALE_AREA_AVERAGING)));
 
                 //   enemyImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Ancient2.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
                    for (int a = 1; a<95; a++){
@@ -1802,7 +1813,7 @@ Thread.sleep(40);
 
 
 
-               if (main_element != null && main_element.charAt(2) == 'F' && main_element.charAt(3) == 'e' && main_element.charAt(4) == 'u' && main_element.charAt(5) == 'e' && main_element.charAt(6) == 'r'){
+               if (main_element != null && main_element.charAt(2) == 'F' && main_element.charAt(3) == 'e' && main_element.charAt(4) == 'u' && main_element.charAt(5) == 'e' && main_element.charAt(6) == 'r' || second_element != null && second_element.charAt(2) == 'F' && second_element.charAt(3) == 'e' && second_element.charAt(4) == 'u' && second_element.charAt(5) == 'e' && second_element.charAt(6) == 'r'){
                 for (int xi = 0; xi<= 120; xi++){
                     fighting_options.setBounds(38, 480 + xi*5, 1200, 300);
                     Thread.sleep(4);
@@ -1842,7 +1853,7 @@ Thread.sleep(40);
 
 
 
-                   if (main_element != null && main_element.charAt(2) == 'G' && main_element.charAt(3) == 'r' && main_element.charAt(4) == 'a'){
+                   if (main_element != null && main_element.charAt(2) == 'G' && main_element.charAt(3) == 'r' && main_element.charAt(4) == 'a' || second_element != null && second_element.charAt(2) == 'G' && second_element.charAt(3) == 'r' && second_element.charAt(4) == 'a'){
                     for (int xi = 0; xi<= 120; xi++){
                         fighting_options.setBounds(38, 480 + xi*5, 1200, 300);
                         Thread.sleep(4);
@@ -1850,9 +1861,10 @@ Thread.sleep(40);
             
                             Thread.sleep(200);
             
-                    elementImage.setBounds(500,280,400,400);
+                            elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Gravity.png").getImage().getScaledInstance(370, 50, Image.SCALE_AREA_AVERAGING)));
+
+                    elementImage.setBounds(500,480,400,400);
         
-                    elementImage.setVisible(false);
                     elementsMenu.setVisible(false);
         
                     System.out.println("Gravity=Main");
@@ -1892,9 +1904,49 @@ Thread.sleep(40);
                                     Thread.sleep(4);
                                         }
         
+
+
         
                        }
 
+
+
+                       if (main_element != null && main_element.charAt(2) == 'L' && main_element.charAt(3) == 'i' && main_element.charAt(4) == 'c' || second_element != null && second_element.charAt(2) == 'L' && second_element.charAt(3) == 'i' && second_element.charAt(4) == 'c'){
+                        for (int xi = 0; xi<= 120; xi++){
+                            fighting_options.setBounds(38, 480 + xi*5, 1200, 300);
+                            Thread.sleep(4);
+                                }
+                
+                                Thread.sleep(200);
+                
+                                elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Licht.png").getImage().getScaledInstance(370, 50, Image.SCALE_AREA_AVERAGING)));
+    
+                        elementImage.setBounds(500,280,400,400);
+            
+                        elementsMenu.setVisible(false);
+            
+                        System.out.println("Gravity=Main");
+    
+                     //   for (int a = 1; a<37; a++){
+                            elementImage.setVisible(true);
+
+
+                            for (int a = 1; a<13; a++){
+                                elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Animation_Licht\\" + a + ".png").getImage().getScaledInstance(370, 365, Image.SCALE_AREA_AVERAGING)));
+            
+                               Thread.sleep(20);
+    
+                                        }
+
+                                   
+                                                    elementImage.setVisible(false);
+                                                    for (int xi = 0; xi<= 120; xi++){
+                                                      fighting_options.setBounds(38, 1080 - xi*5, 1200, 300);
+                                                      Thread.sleep(4);
+                                                          }
+                       }
+                    
+                 
 
 
           Thread.sleep(40);
