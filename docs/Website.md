@@ -9,8 +9,8 @@ Die Folge von Anweisungen findet sich häufig in Software wieder und liegt im Qu
 
  [Quelle Nr.16](https://de.wikipedia.org/w/index.php?title=Algorithmus&oldid=218062723) und 
  [Quelle Nr.17](https://praxistipps.chip.de/was-ist-ein-algorithmus-einfach-erklaert_41355)
+ <br>
 
- 
 ### Eigenschaften 
 
 - Eindeutigkeit: ein Algorithmus darf keine widersprüchliche Beschreibung haben. Diese muss eindeutig sein. 
