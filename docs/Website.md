@@ -1,6 +1,8 @@
 # Java Tutorial
 
 ## Allgemeiner Teil:
+<br>
+<br>
 
 ### Definition Algorithmus 
 
@@ -9,7 +11,8 @@ Die Folge von Anweisungen findet sich häufig in Software wieder und liegt im Qu
 
  [Quelle Nr.16](https://de.wikipedia.org/w/index.php?title=Algorithmus&oldid=218062723) und 
  [Quelle Nr.17](https://praxistipps.chip.de/was-ist-ein-algorithmus-einfach-erklaert_41355)
- <br>
+<br>
+<br>
 
 ### Eigenschaften 
 
@@ -22,7 +25,9 @@ Die Folge von Anweisungen findet sich häufig in Software wieder und liegt im Qu
 
  [Quelle Nr.19](https://datasolut.com/wiki/was-ist-ein-algorithmus/) und 
  [Quelle Nr.20](https://www.dr-datenschutz.de/was-ist-ein-algorithmus-definition-und-beispiele/)
-
+<br>
+<br>
+ 
  ### Algorithmus im Alltag 
 
 Algorithmen prägen den modernen Alltag tatsächlich in vielen unterschiedlichen Lebensbereichen. … Selbst beim Bau von Gebäuden und Brücken kommen mittlerweile Algorithmen zum Einsatz, um entsprechende Simulationen je nach Wetter, Temperatur, Belastung & Co zu erstellen. 
@@ -31,6 +36,8 @@ Beispiel
 -> Hinter jeder Ampel steckt ein Algorithmus, der das genaue Schaltverhalten definiert.  
 
 [Quelle Nr.17](https://praxistipps.chip.de/was-ist-ein-algorithmus-einfach-erklaert_41355)
+<br>
+<br>
 
 ### Syntax:  
 
@@ -38,17 +45,22 @@ Ein Algorithmus wird - wie jeder andere Programmcode - nach einer strikten Synta
 Syntax ist ein Teilgebiet der Grammatik und bezeichnet die Lehre vom Satzbau. Sie legt fest, wie aus einzelnen Komponenten - den Wörtern - sinnvolle Sätze entstehen. 
 
 [Quelle Nr.18](https://praxistipps.chip.de/was-ist-syntax-einfach-erklaert_41262) 
+<br>
+<br>
 
 ### EVA: 
 
 #### - Definition: 
 Das sogenannte EVA-Prinzip stellt das grundlegende Prinzip der Datenverarbeitung dar. 
+<br>
 
 #### - Abkürzung: 
 Steht für: Eingabe, Verarbeitung und Ausgabe von Informationen - EVA 
 Hier findet die Verarbeitung von Daten statt.  
 
 [Quelle Nr.24](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiJlMeDqJ_0AhVT8LsIHVrOChoQFnoECBIQAw&url=https%3A%2F%2Fwww.printer4you.com%2Fde%2Fdrucker-ratgeber%2Feva-prinzip&usg=AOvVaw0iZgr96XghLtksgzNAbC1F)
+<br>
+<br>
 
 ### Compiler und Interpreter: 
 
@@ -59,14 +71,17 @@ Ein Interpreter verarbeitet den Quellcode eines Projekts zur Laufzeit. Dazu geht
 #### - Compiler: 
 
 Ein Compiler wandelt Quellcode in Maschinensprache um, übersetzt also das gesamte Programm von einer Programmiersprache in Maschinencode. Der Code wird vollständig übersetzt, bevor das Programm ausgeführt wird. 
-
-Häufig passiert noch ein Zwischenschritt, bevor das Programm in Maschinensprache übersetzt wird: Der Quellcode wird zunächst in einen Zwischencode umgewandelt, zum Beispiel Objektcode. 
-
-Der Zwischencode hat den Vorteil, dass er in der Regel auf verschiedenen Plattformen funktioniert und oft auch von einem Interpreter verwendet werden kann. Aus diesem Zwischenergebnis übersetzt der Compiler bzw. Assembler dann Maschinencode, der vom jeweiligen Zielsystem verstanden wird. Schließlich wird per Linker eine ausführbare Datei generiert. Moderne Programmiersprachen arbeiten häufig mit Bytecode statt Maschinencode, eine Art Pseudocode für Maschinen, der intern in speziellen virtuellen Maschinen ausgeführt wird. 
+Häufig passiert noch ein Zwischenschritt, bevor das Programm in Maschinensprache übersetzt wird: Der Quellcode wird zunächst in einen Zwischencode umgewandelt, zum Beispiel Objektcode. Der Zwischencode hat den Vorteil, dass er in der Regel auf verschiedenen Plattformen funktioniert und oft auch von einem Interpreter verwendet werden kann. Aus diesem Zwischenergebnis übersetzt der Compiler bzw. Assembler dann Maschinencode, der vom jeweiligen Zielsystem verstanden wird. Schließlich wird per Linker eine ausführbare Datei generiert. Moderne Programmiersprachen arbeiten häufig mit Bytecode statt Maschinencode, eine Art Pseudocode für Maschinen, der intern in speziellen virtuellen Maschinen ausgeführt wird. 
 
  
 
 [Quelle Nr.25](https://www.dev-insider.de/der-unterschied-von-compiler-und-interpreter-a-742282/#:~:text=Definition%20%E2%80%9ECompiler%2C%20Interpreter%2C%20Compreter%E2%80%9C%20Der%20Unterschied%20von%20Compiler,Programmiersprache%20in%20Maschinencode.%203%20Just-in-time-Compiler%3A%20die%20Hybridl%C3%B6sung.%20)
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 ## Einführung in die Programmierung (Kontrollstrukturen):
 
@@ -75,18 +90,24 @@ Der Zwischencode hat den Vorteil, dass er in der Regel auf verschiedenen Plattfo
 Basierend auf einer bestimmten Programmiersprache legen Programmierer alle Regeln für eine vom Computer ausführbare Anwendung fest. Sollte der Verfasser einen unbemerkten Fehler in seine Arbeit einbauen, der gegen die Vorgaben der Programmiersprache verstößt, wird das Programm gar nicht erst funktionieren oder bei bestimmten Prozessen abstürzen. 
 
 [Quelle Nr.21](https://www.ionos.de/digitalguide/websites/web-entwicklung/quellcode/)
+<br>
+<br>
 
 ### Struktogramm: 
 
 Durch Struktogramme kann man den Code grafisch veranschaulichen. 
 
 [Quelle Nr.22](http://dhika.de/index.php?id=grundlagen-struktogramm-strukturierte-programmierung)
+<br>
+<br>
 
 ### Programmablaufplan: 
 
 Der Programmablaufplan wird auch als Programmstrukturplan oder Flussdiagramm bezeichnet. Ziel ist es, die Operationen zur Lösung von Aufgaben bzw. Problemen zu visualisieren. 
 
 [Quelle Nr.23](https://www.dev-insider.de/was-ist-ein-programmablaufplan-a-888106/) 
+<br>
+<br>
 
 ### Variabel: 
 
@@ -95,12 +116,14 @@ Jedes Computerprogramm verarbeitet Daten. Diese Daten können unterschiedliche T
 Die Daten stellen das 'Material' dar, das ein Programm verarbeitet. Im Rahmen dieser Verarbeitung müssen die Werte natürlich (zwischen-)gespeichert werden, um bei Bedarf auf sie zugreifen zu können. Variablen sind dabei eine Art 'Lesezeichen', das auf den Speicherort verweist und angibt, wie dieser angesprochen werden kann. Darüber hinaus enthält sie Informationen über den gespeicherten Datentyp. 
 
 [Quelle Nr.1](https://javabeginners.de/Grundlagen/Variablen.php) 
+<br>
+<br>
 
 ### Wertezuweisung: 
 
 In Java werden Variablen mittels Zuweisungsoperatoren Werte zugewiesen. Der wichtigste Zuweisungsoperator ist die „Einfache Wertzuweisung“, bspw. a = b. 
 
-[Quelle Nr.2](https://www.programmierenlernenhq.de/java-grundlagen-zuweisungsoperatoren-in-java/)
+[Quelle Nr.2](https://www.programmierenlernenhq.de/java-grundlagen-zuweisungsoperatoren-in-java/)<br>
 
 #### Inkrement/- und Dekrement Operatoren: 
 
@@ -109,14 +132,14 @@ Und dementsprechend bedeutet Dekrementieren: Die schrittweise Verminderung einer
 Das kann z.B. beim zählen einer List mit Namen genutzt werden. 
 
 [Quelle Nr.3](https://mein-javablog.de/java-operatoren-inkrement-dekrement/)
-
- 
-
- 
+<br>
+<br>
 
 ### Datentypen: 
 
 Aber was ist überhaupt ein Java Datentyp? Um Java Datentypen zu verstehen, musst du wissen, dass ein Computerspeicher beliebig viele Bitmuster enthält. Bitmuster stellen die Informationen, die ein Computer trägt, mithilfe verschiedener Kombinationen der Zahlen null und eins dar. Ein Datentyp ist ein Schema für die Verwendung von Bit, um Werte darzustellen. Dabei müssen diese Werte nicht aus Zahlen bestehen, sondern können jede Art von Daten, die ein Computer verarbeiten kann, enthalten. 
+<br>
+<br>
 
 ### Primitive Datentypen Java: 
 
@@ -133,6 +156,8 @@ Implizite Typumwandlungen können zu sehr schwerwiegenden Fehlern führen, wenn 
 Bei der Umwandlung eines Datentyps in einen Datentyp mit einem größeren Wertebereich spricht man von einer erweiternden Konvertierung (type Promotion). Wird bei der Typumwandlung der Wertebereich verringert, dann spricht man von einer einschränkenden Konvertierung (type Demotion) bei der gespeicherte Informationen verloren gehen können.  
 
 [Quelle Nr.5](https://www.programmierenlernenhq.de/java-grundlagen-typumwandlung-type-casting-in-java/)
+<br>
+<br>
 
 ### Bedingungen (if und switch): 
 
@@ -154,10 +179,8 @@ Allgemein ist ein Java Switch Case wie eine mehrfach geschachtelte if-Anweisung,
   Mehrere z.B. if-Bedingungen die auf einander folgen. 
   
 [Quelle Nr.8](https://www.informatikzentrale.de/_files/16java/java20_if-else-verzweigung.pdf) 
-
- 
-
- 
+<br>
+<br>
 
 ### Schleifen 
 
@@ -173,7 +196,13 @@ Eine Schleife ist ein Anweisungsblock, dessen Anweisungen mehrfach wiederholt we
 - do-while: 
   Diese Schleife wird benötigt, wenn man eine Austrittsbedingung statt einer Eintrittsbedingung hat, dass heißt, dass die Bedingung am Ende des Schleifendurchlaufs geprüft wird. Hier wird die Anweisung also auf jeden Fall einmal ausgeführt. 
   
-  [Quelle Nr.9](https://www.a-coding-project.de/ratgeber/java/schleifen) 
+  [Quelle Nr.9](https://www.a-coding-project.de/ratgeber/java/schleifen)
+  <br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 ## Einführung in die Projektorientierte Programmierung:
 
@@ -182,12 +211,16 @@ Eine Schleife ist ein Anweisungsblock, dessen Anweisungen mehrfach wiederholt we
 In einer Klasse sind Methoden und Eigenschaften eines Objektes definiert. Die Klasse dient als Vorlage, aus der dann beliebig viele Objekte erzeugt werden können.  
 
  [Quelle Nr.10](https://www.a-coding-project.de/ratgeber/java/klassen-und-objekte)  
+ <br>
+<br>
 
 ### Objekte: 
 
 Objekte sind Instanzen von Klassen, sie werden mit Hilfe des new-Operator erzeugt. Dabei wird zuerst eine Variable vom Typ der Klasse deklariert. Dieser Variablen wird dann das erzeugte Objekt zugewiesen. 
 
  [Quelle Nr.11](https://www.programmierenlernenhq.de/klassen-und-objekte-in-java/)
+ <br>
+<br>
 
 ### Klassendiagramme: 
 
@@ -196,8 +229,8 @@ Mit Klassendiagrammen kann man alle Information eines Objektes, zusammengefasst 
  
 
 [Quelle Nr.12](http://www.codeadventurer.de/?p=2428) 
-
- 
+<br>
+<br>
 
 ### Objektdiagramme: 
 
@@ -206,12 +239,16 @@ Mit Klassendiagrammen kann man alle Information eines Objektes, zusammengefasst 
 Bei den Objekten ist eigentlich klar, welche Methoden sie besitzen, denn das geht ja schon aus dem Klassendiagram hervor. Bei den Objekten interessieren eigentlich die Attributwerte am meisten, da sich die Objekte ein- und derselben Klasse in ihren Attributwerten unterscheiden (nicht zwingend, aber meistens).  
 
 [Quelle Nr.13](http://u-helmich.de/inf/lexikon/M-R/Objektdiagramm.html)  
+<br>
+<br>
 
 ### Konstruktoren: 
 
 In einer Klasse ist der Java Konstruktor eine Methode, die den gleichen Namen wie die Klasse hat. Sie wird dazu verwendet, ein neues Objekt dieser einen Klasse zu erstellen. Das ist der Grund, weshalb jede Klasseninstanz einen Konstruktor haben muss. 
 
 [Quelle Nr.14](https://studyflix.de/informatik/java-konstruktor-1900)
+<br>
+<br>
 
 ### Objektmethoden: 
 
