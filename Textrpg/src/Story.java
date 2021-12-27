@@ -132,9 +132,24 @@ JLabel enemyInfoHP;
 JLabel enemyInfoThirdElement;
 JLabel enemyInfoLastElement;
 
-// EnemyInfo
+// EnemyInfo //
+
+
+// Fight // 
+
+JLabel damageText;
+JLabel boostDamageText;
+JLabel reducedDamgeText;
+JLabel reflectedDamgeText;
+
+
+
+
+// Fight //
+
 
     Enemy en;
+
 
 
     static JFrame frame;
@@ -157,6 +172,12 @@ JLabel enemyInfoLastElement;
     String[] colors = { "Weiß", "Dunkel Grau", "Rot", "Gelb", "Grün", "Hell Blau", "Blau", "Rosa", "Dunkel Rosa" };
     Color[] colors2 = { Color.white, Color.darkGray, Color.red, Color.yellow, Color.green, new Color(25, 255, 255),
             new Color(25, 105, 255), new Color(255, 0, 255), new Color(255, 0, 80) };
+
+
+
+
+
+
 
     public Story(Game game) throws InterruptedException {
         //pGame.cuPower.playerhealdamageanimation(pPanel);
@@ -905,6 +926,21 @@ enemyImage.setForeground(en.enemyColors[0]);
 
 enemyImage.setVisible(false);
 
+
+
+damageText = new JLabel("DamageText");
+damageText.setOpaque(false);
+damageText.setForeground(new Color(250,150,0));
+damageText.setBounds(200, 280, 100, 80);
+
+
+boostDamageText = new JLabel("BoostDamageText");
+boostDamageText.setOpaque(false);
+boostDamageText.setForeground(new Color(25,255,255));
+boostDamageText.setBounds(200, 380, 100, 80);
+
+frame.add(damageText);
+frame.add(boostDamageText);
 
 frame.add(enemyImage);
 
@@ -1666,15 +1702,40 @@ elementImage.setVisible(false);
                                 }
                                             }
                   
+                                            
                                             elementImage.setVisible(true);
                   
                           }
 
+
+                          
+
                           elementImage.setVisible(false);
-                          for (int xi = 0; xi<= 120; xi++){
-                            fighting_options.setBounds(38, 1080 - xi*5, 1200, 300);
-                            Thread.sleep(4);
-                                }
+
+int divide = 20;
+for (int power = 1; power <= divide; power++){
+    damageText.setText(""+ spieler.Power*power/divide + "");
+    Thread.sleep(100/divide);
+    if (100/divide <= 1000){
+        Thread.sleep(35);
+    }
+}
+
+for (int xi = 0; xi<= 120; xi++){
+    fighting_options.setBounds(38, 1080 - xi*5, 1200, 300);
+    Thread.sleep(4);
+        }
+
+Thread.sleep(300);
+
+if (spieler.powerBoost != 1){
+    for (int power = 0; power <=  spieler.Power * spieler.powerBoost - spieler.Power; power++){
+        boostDamageText.setText("+ "+ (spieler.Power * spieler.powerBoost - spieler.Power));
+        Thread.sleep(25);
+    }
+    
+    
+}
 
 
                }
@@ -1715,6 +1776,45 @@ Thread.sleep(9);
             }
 
             elementImage.setVisible(false);
+
+            if (spieler.enemyMain_Element == "Erde" || spieler.enemyMain_Element == "Crystal" ){
+                damageText.setText("" + spieler.Power *2 + "");
+                damageText.setForeground(new Color(255,50,0));
+
+
+                if (spieler.powerBoost != 1){
+                    for (int power = 0; power <=  spieler.Power * spieler.powerBoost - spieler.Power; power++){
+                        boostDamageText.setText("+ "+ (spieler.Power * spieler.powerBoost - spieler.Power) *2);
+                        Thread.sleep(25);
+                    }
+                    
+                    
+                }
+    
+            }
+
+
+            if (spieler.enemyMain_Element == "Cosmic"){
+                damageText.setText("" + spieler.Power /2 + "");
+                damageText.setForeground(new Color(255,200,30));
+
+
+                if (spieler.powerBoost != 1){
+                    for (int power = 0; power <=  spieler.Power * spieler.powerBoost - spieler.Power; power++){
+                        boostDamageText.setText("+ "+ (spieler.Power * spieler.powerBoost - spieler.Power) /2);
+                        Thread.sleep(25);
+                    }
+                    
+                    
+                }
+    
+            }
+
+
+        
+            damageText.setForeground(new Color(255,150,0));
+
+
             for (int xi = 0; xi<= 120; xi++){
                 fighting_options.setBounds(38, 1080 - xi*5, 1200, 300);
                 Thread.sleep(4);

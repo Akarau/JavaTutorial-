@@ -13,13 +13,15 @@ public class CuPower {
      String Main_Element = "  Ancient  ";
      String Second_Element = "  Cosmic  ";
      String playerName;
+     float powerBoost = 1.5f;
      // Enemy //
      String currentEnemy;
      int enemyPower;
-     String enemyMain_Element;
+     String enemyMain_Element = "Cosmic";
      String enemySecond_Element;
      String enemyThird_Element;
      String enemyLast_Element;
+
      // Enemy //
      byte textSpeed = 14;
      int thread1 = 1000;
