@@ -139,7 +139,7 @@ public class Enemy {
 
 
     String boss_Main_Materias[] = {
-        "Licht",
+        "Cosmic",
         "Fire",
     };
 

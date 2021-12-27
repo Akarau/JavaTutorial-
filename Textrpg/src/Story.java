@@ -1781,6 +1781,11 @@ Thread.sleep(9);
                 damageText.setText("" + spieler.Power *2 + "");
                 damageText.setForeground(new Color(255,50,0));
 
+                if (n == 2){
+System.out.println("Cosmic");
+i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Cosmic.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+                }
+
 
                 if (spieler.powerBoost != 1){
                     for (int power = 0; power <=  spieler.Power * spieler.powerBoost - spieler.Power; power++){
@@ -2423,6 +2428,20 @@ enemyImage.setForeground(en.enemyColors[0]);
 
 enemyImage.setVisible(true);
 
+// ||
+
+if (en.enemy_Main_Materias[Index] == "Cosmic"){
+    if (spieler.Main_Element == "  Erde  "){
+i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Erde.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+    }
+    if (spieler.Main_Element == "  Gravity  "){
+        i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Gravity.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+            }
+            if (spieler.Main_Element == "  Void  "){
+                i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Void.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+                    }
+}
+
         }
 
         if (File == "Bosses"){
@@ -2461,7 +2480,161 @@ enemyInfoName.setText("  "+en.bosses[Index]+"  ");
 
 enemyInfoHP.setText("          " +en.bossesHP[Index]);
 
+
+
+
+if (en.boss_Main_Materias[Index] == "Cosmic"){
+
+
+
+
+                            // Strong //
+
+                            if (spieler.Main_Element == "  Gravity  "){
+                                i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Gravity.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+                                i1.setText("        Gravity         ");
+                                i1.setForeground(new Color(155,25,0));
+                             }
+                        
+                        
+                             if (spieler.Second_Element == "  Gravity  "){
+                                i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Gravity.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+                                i2.setText("        Gravity         ");
+                                i2.setForeground(new Color(155,25,0));
+                             }
+                        
+                                    if (spieler.Main_Element == "  Void  "){
+                                        i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Void.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
+                                        i1.setText("        Void         ");
+                                        i1.setForeground(new Color(155,25,0));
+                                            }
+                        
+                        
+                        
+                                            if (spieler.Second_Element == "  Void  "){
+                                                i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Void.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
+                                                i2.setText("        Void         ");
+                                                i2.setForeground(new Color(155,25,0));
+                                                    }
+                        
+
+
+                            // Strong //
+
+
+
+                            // Weak //
+
+
+                            if (spieler.Main_Element == "  Erde  "){
+                                i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Erde.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+                                i1.setText("        Erde         ");
+                                i1.setForeground(new Color(255,215,0));
+                                    }
+                                
+                                    if (spieler.Second_Element == "  Erde  "){
+                                i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Erde.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+                                i2.setText("        Erde         ");
+                                i2.setForeground(new Color(255,215,0));
+                                    }
+                                
+                                    if (spieler.Main_Element == "  Crystal  "){
+                                        i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Crystal.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+                                        i1.setText("        Crystal         ");
+                                        i1.setForeground(new Color(255,215,0));
+                                     }
+                                
+                                
+                                     if (spieler.Second_Element == "  Crystal  "){
+                                        i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Crystal.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+                                        i2.setText("        Crystal         ");
+                                        i2.setForeground(new Color(255,215,0));
+                                     }
+
+                                                                 // Weak //
+
+
+}
+
+
+if (en.boss_Main_Materias[Index] == "Crystal"){
+
+
+    
+
+
+
+                            // Strong //
+
+                            if (spieler.Main_Element == "  Feuer  "){
+                                i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Feuer.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+                                i1.setText("        Feuer         ");
+                                i1.setForeground(new Color(155,25,0));
+                             }
+                        
+                        
+                             if (spieler.Second_Element == "  Feuer  "){
+                                i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Feuer.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+                                i2.setText("        Feuer         ");
+                                i2.setForeground(new Color(155,25,0));
+                             }
+                        
+                                    if (spieler.Main_Element == "  Wasser  "){
+                                        i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Wasser.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
+                                        i1.setText("        Wasser         ");
+                                        i1.setForeground(new Color(155,25,0));
+                                            }
+                        
+                        
+                        
+                                            if (spieler.Second_Element == "  Wasser  "){
+                                                i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Wasser.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
+                                                i2.setText("        Void         ");
+                                                i2.setForeground(new Color(155,25,0));
+                                                    }
+                        
+
+
+                            // Strong //
+
+
+
+                            // Weak //
+
+
+                            if (spieler.Main_Element == "  Erde  "){
+                                i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Erde.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+                                i1.setText("        Erde         ");
+                                i1.setForeground(new Color(255,215,0));
+                                    }
+                                
+                                    if (spieler.Second_Element == "  Erde  "){
+                                i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Erde.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+                                i2.setText("        Erde         ");
+                                i2.setForeground(new Color(255,215,0));
+                                    }
+                                
+                                    if (spieler.Main_Element == "  Crystal  "){
+                                        i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Crystal.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+                                        i1.setText("        Crystal         ");
+                                        i1.setForeground(new Color(255,215,0));
+                                     }
+                                
+                                
+                                     if (spieler.Second_Element == "  Crystal  "){
+                                        i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Crystal.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+                                        i2.setText("        Crystal         ");
+                                        i2.setForeground(new Color(255,215,0));
+                                     }
+
+}
+
+
+
         }
+
+
+        
 
 
     }

@@ -10,14 +10,14 @@ public class CuPower {
     public  int playerHealthResult = 10;
      int MaxHealth;
       float GoldEarn = 1F;
-     String Main_Element = "  Ancient  ";
-     String Second_Element = "  Cosmic  ";
+     String Main_Element = "  Void  ";
+     String Second_Element = "  Erde  ";
      String playerName;
      float powerBoost = 1.5f;
      // Enemy //
      String currentEnemy;
      int enemyPower;
-     String enemyMain_Element = "Cosmic";
+     String enemyMain_Element;
      String enemySecond_Element;
      String enemyThird_Element;
      String enemyLast_Element;
