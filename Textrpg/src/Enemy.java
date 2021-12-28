@@ -43,7 +43,7 @@ public class Enemy {
     Elemente elements;
 
     String enemies[] = {
-        "FeuerFlamme",
+        "DunkleFlamme",
         "Balrog",
     };
 
@@ -139,7 +139,7 @@ public class Enemy {
 
 
     String boss_Main_Materias[] = {
-        "Cosmic",
+        "Wind",
         "Fire",
     };
 

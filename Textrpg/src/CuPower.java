@@ -4,20 +4,22 @@ import javax.swing.JPanel;
 
 public class CuPower {
       int Gold = 0;
-      int Power = 50;
+      int Power = 100;
       int Points = 50;
       int Health = 100;
+      int damg;
     public  int playerHealthResult = 10;
      int MaxHealth;
       float GoldEarn = 1F;
-     String Main_Element = "  Void  ";
-     String Second_Element = "  Erde  ";
+     String Main_Element = "  Ancient  ";
+     String Second_Element = "  Cosmic  ";
      String playerName;
      float powerBoost = 1.5f;
      // Enemy //
      String currentEnemy;
-     int enemyPower;
-     String enemyMain_Element;
+     int CurrentRnemyPower;
+     int currentEnemyHP = 260;
+     String enemyMain_Element = "Erde";
      String enemySecond_Element;
      String enemyThird_Element;
      String enemyLast_Element;

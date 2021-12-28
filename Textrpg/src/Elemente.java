@@ -19,6 +19,7 @@ public class Elemente {
         "Lunar",
         "Void",
         "Wasser",
+        "Wind",
     };
 
 
@@ -35,6 +36,7 @@ public class Elemente {
         new Color(40,40,40),
         new Color(100,0,255),
         new Color(0,150,255),
+        new Color(150,0,255),
     };
 
 
@@ -50,6 +52,7 @@ public class Elemente {
      //   "", // Luck stark dagegen
         "Licht + Wasser + ''", // Lunar sehr stark dagegen
         "Cosmic + Gravity", // Void stark dagegen
+        "Feuer + Crystal", // Wasser stark dagegen
         "Feuer + Crystal", // Wasser stark dagegen
 
 
@@ -68,6 +71,7 @@ public class Elemente {
         "Licht + Wasser + ''", // Lunar sehr stark dagegen
         "Cosmic + Gravity", // Void stark dagegen
         "Feuer + Crystal", // Wasser stark dagegen
+        "Feuer + Crystal", // Wasser stark dagegen
 
 
     };
@@ -76,7 +80,7 @@ public class Elemente {
     static String elementsWeaks[] = {
         "is weak against Crystal", // Ancient Weak dagegen
         "is weak against Ancient + Gravity + Void", // Cosmic Weak dagegen
-        "is weka against Feuer + Wasser", // Crystal Weak dagegen
+        "is weak against Feuer + Wasser", // Crystal Weak dagegen
         "is weak against Cosmic + Crystal + Gravity", // Erde Weak dagegen
         "is weak against Erde + Wasser", // Feuer Weak dagegen
         "is weak against Cosmic + Void", // Gravity Weak dagegen
@@ -86,6 +90,7 @@ public class Elemente {
         "is weak against Ancient and very affective against Light. Licht is also affective against Lunar", // Lunar Weak dagegen
         "is weak against Cosmic + Licht", // Void Weak dagegen
         "is very weak against Lunar", // Wasser sehr Weak dagegen
+        "is very weak against Erde", // Wasser sehr Weak dagegen
 
 
     };
@@ -104,6 +109,8 @@ public class Elemente {
         "        Lunar          ",
         "        Void           ",
         "        Wasser         ",
+        "        Wind         ",
+
         
     };
     

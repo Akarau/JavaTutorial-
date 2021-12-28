@@ -52,6 +52,7 @@ public class Story implements ActionListener {
     static JLabel i2;
     static JLabel i3;
     static JLabel i4;
+    static JLabel iAchievements;
     static JButton option1;
     static JButton option2;
     static JButton option3;
@@ -64,6 +65,7 @@ public class Story implements ActionListener {
     JPanel b2;
     JPanel b3;
     JPanel b4;
+    JPanel achievementsButton;
 
     JButton e1;
     JButton e2;
@@ -119,6 +121,8 @@ public class Story implements ActionListener {
     // element //
 
     byte at;
+    int damg;
+
 
 
 // EnemyInfo //
@@ -149,6 +153,9 @@ JLabel reflectedDamgeText;
 
 
     Enemy en;
+
+    int extradamg;
+
 
 
 
@@ -287,7 +294,7 @@ JLabel reflectedDamgeText;
         i4.setFocusable(false);
         i4.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Crystal2.png").getImage()
                 .getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
-        i4.setText("        Crysral         ");
+        i4.setText("        Crystal         ");
 
         option1 = new JButton("   Start   ");
         option1.setForeground(Color.white);
@@ -427,6 +434,19 @@ JLabel reflectedDamgeText;
         // e4.setActionCommand("E");
         optionsmenu_options.setBorder(new LineBorder(Color.white));
 
+
+        achievementsButton = new JPanel();
+        achievementsButton.setForeground(new Color(255, 0, 150));
+        achievementsButton.setFont(new Font("Times new Roman", Font.PLAIN, 60));
+        achievementsButton.setBounds(150, 150, 240, 2540);
+        achievementsButton.setBackground(Color.black);
+        achievementsButton.setVisible(true);
+        achievementsButton.setFocusable(false);
+        // e1.addActionListener(this);
+        // e1.setActionCommand("E");
+        optionsmenu_options.setBorder(new LineBorder(Color.white));
+
+
         e1 = new JButton();
         e1.setForeground(new Color(255, 0, 140));
         e1.setFont(new Font("Times new Roman", Font.PLAIN, 60));
@@ -470,15 +490,28 @@ JLabel reflectedDamgeText;
         e4.setActionCommand("E");
         optionsmenu_options.setBorder(new LineBorder(Color.white));
 
+        javax.swing.JButton eAchievements = new JButton();
+        eAchievements.setForeground(new Color(255, 255, 255));
+        eAchievements.setFont(new Font("Times new Roman", Font.PLAIN, 60));
+        eAchievements.setBounds(0, 0, 0, 0);
+        eAchievements.setBackground(Color.black);
+        eAchievements.setVisible(true);
+        eAchievements.setFocusable(false);
+        eAchievements.addActionListener(this);
+        eAchievements.setActionCommand("eAchievements");
+        optionsmenu_options.setBorder(new LineBorder(Color.white));
+
         frame.add(fighting_options);
         fighting_options.add(b1);
         fighting_options.add(b2);
         fighting_options.add(b3);
         fighting_options.add(b4);
+        fighting_options.add(achievementsButton);
         b1.add(e1);
         b2.add(e2);
         b3.add(e3);
         b4.add(e4);
+        achievementsButton.add(eAchievements);
 
         tex = new JButton("T");
         tex.setForeground(Color.white);
@@ -651,6 +684,17 @@ JLabel reflectedDamgeText;
         i7.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Others\\Coin.png").getImage().getScaledInstance(55, 50,
                 Image.SCALE_AREA_AVERAGING)));
         i7.setText("   Gold: " + spieler.GoldEarn + "x  ");
+
+        iAchievements = new JLabel();
+        iAchievements.setForeground(Color.white);
+        iAchievements.setFont(new Font("Times new Roman", Font.PLAIN, 50));
+        // i3.setBounds(200, 400, 400, 0);
+        iAchievements.setSize(80, 80);
+        // i5.setBackground(Color.WHITE);
+        iAchievements.setVisible(true);
+        iAchievements.setFocusable(false);
+        iAchievements.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Others\\Badge.png").getImage().getScaledInstance(55, 50,
+                Image.SCALE_AREA_AVERAGING)));
 
         powerUpgradeButton.add(i5);
         healthUpgradeButton.add(i6);
@@ -1079,6 +1123,7 @@ frame.add(confirmName);
         e2.add(i2);
         e3.add(i3);
         e4.add(i4);
+        eAchievements.add(iAchievements);
         frame.add(optionsmenu);
         frame.add(option1);
         frame.add(option2);
@@ -1089,6 +1134,9 @@ frame.add(confirmName);
         // options_c.add(colors_R);
         // tn.add(optionsmenu);
         frame.setVisible(true);
+
+        spawnEnemy("Enemies", 0, 0, 0);
+
 
 
         while (startname.isVisible() == false) {
@@ -1182,7 +1230,7 @@ frame.add(confirmName);
             upgradeMenu.setVisible(!upgradeMenu.isVisible());
         //    texarea.setEditable(false);
           //  texarea.setText("D");
-          spawnEnemy("Bosses", 0, 0, 0);
+          spawnEnemy("Enemies", 0, 0, 0);
         }
 
         if (e.getActionCommand() == "PowerUpgrade") {
@@ -1315,6 +1363,7 @@ fighting_options.setVisible(true);
                 // TODO Auto-generated catch block
                 // e1.printStackTrace();
             }
+
             spieler.Main_Element = chosen_Main_Element_Name.getText();
             choose_Element.setActionCommand("Second_Choose");
 
@@ -1777,28 +1826,105 @@ Thread.sleep(9);
 
             elementImage.setVisible(false);
 
-            if (spieler.enemyMain_Element == "Erde" || spieler.enemyMain_Element == "Crystal" ){
-                damageText.setText("" + spieler.Power *2 + "");
-                damageText.setForeground(new Color(255,50,0));
+           
+                if (spieler.currentEnemyHP > 0){
+                    damg = spieler.Power;
+                 //   spieler.currentEnemyHP -= spieler.Power;
+                 //   enemyInfoHP.setText("           " +spieler.currentEnemyHP);
+                    damageText.setText("" + spieler.Power+ "");
+                    damageText.setForeground(new Color(255,255,255));
+                    enemyImage.setEnabled(false);
+
+
+                    if (spieler.enemyMain_Element == "Erde" || spieler.enemyMain_Element == "Crystal" ){
+                        damageText.setText("" + spieler.Power *2 + "");
+                        damageText.setForeground(new Color(255,50,0));
+                        damg = spieler.Power *2;
+                        enemyImage.setEnabled(false);
+
+                    }
+
+                    if (spieler.enemyMain_Element == "Cosmic"){
+                        damageText.setText("" + spieler.Power /2 + "");
+                        damageText.setForeground(new Color(255,200,30));
+                        damg = spieler.Power /2;
+                        enemyImage.setEnabled(false);
+                    }
+
+
+                Thread.sleep(200);
+                enemyImage.setEnabled(false);
+
+                Thread.sleep(100);
+
+
+                enemyImage.setEnabled(true);
+                System.out.println(damg);
+                System.out.println(extradamg);
+                spieler.currentEnemyHP -= damg;
+                enemyInfoHP.setText(""+spieler.currentEnemyHP);
+Thread.sleep(200);
+                if (spieler.powerBoost != 1 && spieler.currentEnemyHP > 0 ){
+                    for (int power = 0; power <=  damg * spieler.powerBoost - damg; power++){
+                        if (spieler.powerBoost != 1 && spieler.currentEnemyHP >= 0 ){
+                        boostDamageText.setText("+ "+ power);
+                        Thread.sleep((long) (power/1.8));
+                        extradamg++;
+                        spieler.currentEnemyHP -= 1;
+
+                        }
+                  //      extradamg++;
+
+
+                    }
+                    Thread.sleep(300);
+                    extradamg--;
+                    spieler.currentEnemyHP -= extradamg;
+                    enemyInfoHP.setText("         "+spieler.currentEnemyHP);
+                }
+                
+              //  enemyInfoHP.setText("         "+spieler.currentEnemyHP);
+
+
+                    System.out.println(spieler.currentEnemyHP);
+    
+                    if (spieler.currentEnemyHP <= 0){
+                        spieler.currentEnemyHP = 0;
+                        enemyInfoHP.setText("           " +spieler.currentEnemyHP);
+                    
+                
+    
+                    Thread.sleep(600);
+                    enemyImage.setEnabled(true);
+                    
+                }
+
+              
+
+
+
+            }
 
                 if (n == 2){
 System.out.println("Cosmic");
 i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Cosmic.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
                 }
 
-
+/*
                 if (spieler.powerBoost != 1){
-                    for (int power = 0; power <=  spieler.Power * spieler.powerBoost - spieler.Power; power++){
-                        boostDamageText.setText("+ "+ (spieler.Power * spieler.powerBoost - spieler.Power) *2);
+                    for (int power = 0; power <=  damg * spieler.powerBoost - damg; power++){
+                        boostDamageText.setText("+ "+ (damg * spieler.powerBoost - damg) *2);
                         Thread.sleep(25);
                     }
                     
                     
                 }
+*/
+                
     
-            }
+            
 
-
+/*
             if (spieler.enemyMain_Element == "Cosmic"){
                 damageText.setText("" + spieler.Power /2 + "");
                 damageText.setForeground(new Color(255,200,30));
@@ -1815,6 +1941,7 @@ i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Cosmic
     
             }
 
+            */
 
         
             damageText.setForeground(new Color(255,150,0));
@@ -1866,6 +1993,56 @@ Thread.sleep(40);
           }
 
           Thread.sleep(80);
+
+
+
+          if (spieler.currentEnemyHP > 0){
+            damg = spieler.Power;
+          //  spieler.currentEnemyHP -= damg;
+          //  enemyInfoHP.setText("           " +spieler.currentEnemyHP);
+            damageText.setText("" + spieler.Power+ "");
+            damageText.setForeground(new Color(255,255,255));
+
+            if (spieler.enemyMain_Element == "Feuer" || spieler.enemyMain_Element == "Crystal" ){
+                damageText.setText("" + spieler.Power *2 + "");
+                damageText.setForeground(new Color(255,50,0));
+                damg = spieler.Power *2;
+            }
+
+            if (spieler.enemyMain_Element == "Cosmic"){
+                damageText.setText("" + spieler.Power /2 + "");
+                damageText.setForeground(new Color(255,200,30));
+                damg = spieler.Power /2;
+            }
+            if (spieler.currentEnemyHP <= 0){
+                spieler.currentEnemyHP = 0;
+                enemyInfoHP.setText("           " +spieler.currentEnemyHP);
+            
+        }
+
+        Thread.sleep(300);
+
+
+        enemyImage.setEnabled(true);
+        System.out.println(damg);
+        System.out.println(extradamg);
+        spieler.currentEnemyHP -= damg;
+        enemyInfoHP.setText(""+spieler.currentEnemyHP);
+
+        if (spieler.powerBoost != 1){
+            for (int power = 0; power <=  damg * spieler.powerBoost - damg; power++){
+                boostDamageText.setText("+ "+ power);
+                Thread.sleep(5);
+             //   damg += power;
+            }
+            
+            
+        }
+
+    }
+
+
+
 
           for (int xi = 0; xi<= 120; xi++){
             fighting_options.setBounds(38, 1080 - xi*5, 1200, 300);
@@ -2417,7 +2594,7 @@ enemyInfoName.setForeground(en.enemyColors[Index]);
 enemyInfoImage.setBorder(new LineBorder(en.enemyColors[Index]));
 enemyInfoMainElement.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\" + en.enemy_Main_Materias[Index] +".png").getImage().getScaledInstance(40, 40, Image.SCALE_AREA_AVERAGING)));
 if (en.enemy_Second_Materias[Index]!= null){
-    enemyInfoSecondElement.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\" + en.boss_Second_Materias[Index] +".png").getImage().getScaledInstance(40, 40, Image.SCALE_AREA_AVERAGING)));
+    enemyInfoSecondElement.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\" + en.enemy_Second_Materias[Index] +".png").getImage().getScaledInstance(40, 40, Image.SCALE_AREA_AVERAGING)));
 
 }
 
@@ -2430,17 +2607,7 @@ enemyImage.setVisible(true);
 
 // ||
 
-if (en.enemy_Main_Materias[Index] == "Cosmic"){
-    if (spieler.Main_Element == "  Erde  "){
-i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Erde.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
-    }
-    if (spieler.Main_Element == "  Gravity  "){
-        i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Gravity.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
-            }
-            if (spieler.Main_Element == "  Void  "){
-                i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Void.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
-                    }
-}
+
 
         }
 
@@ -2483,155 +2650,843 @@ enemyInfoHP.setText("          " +en.bossesHP[Index]);
 
 
 
-if (en.boss_Main_Materias[Index] == "Cosmic"){
 
-
-
-
-                            // Strong //
-
-                            if (spieler.Main_Element == "  Gravity  "){
-                                i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Gravity.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
-                                i1.setText("        Gravity         ");
-                                i1.setForeground(new Color(155,25,0));
-                             }
-                        
-                        
-                             if (spieler.Second_Element == "  Gravity  "){
-                                i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Gravity.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
-                                i2.setText("        Gravity         ");
-                                i2.setForeground(new Color(155,25,0));
-                             }
-                        
-                                    if (spieler.Main_Element == "  Void  "){
-                                        i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Void.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
-                                        i1.setText("        Void         ");
-                                        i1.setForeground(new Color(155,25,0));
-                                            }
-                        
-                        
-                        
-                                            if (spieler.Second_Element == "  Void  "){
-                                                i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Void.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
-                                                i2.setText("        Void         ");
-                                                i2.setForeground(new Color(155,25,0));
-                                                    }
-                        
-
-
-                            // Strong //
-
-
-
-                            // Weak //
-
-
-                            if (spieler.Main_Element == "  Erde  "){
-                                i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Erde.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
-                                i1.setText("        Erde         ");
-                                i1.setForeground(new Color(255,215,0));
-                                    }
-                                
-                                    if (spieler.Second_Element == "  Erde  "){
-                                i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Erde.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
-                                i2.setText("        Erde         ");
-                                i2.setForeground(new Color(255,215,0));
-                                    }
-                                
-                                    if (spieler.Main_Element == "  Crystal  "){
-                                        i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Crystal.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
-                                        i1.setText("        Crystal         ");
-                                        i1.setForeground(new Color(255,215,0));
-                                     }
-                                
-                                
-                                     if (spieler.Second_Element == "  Crystal  "){
-                                        i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Crystal.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
-                                        i2.setText("        Crystal         ");
-                                        i2.setForeground(new Color(255,215,0));
-                                     }
-
-                                                                 // Weak //
-
-
-}
-
-
-if (en.boss_Main_Materias[Index] == "Crystal"){
-
-
-    
-
-
-
-                            // Strong //
-
-                            if (spieler.Main_Element == "  Feuer  "){
-                                i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Feuer.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
-                                i1.setText("        Feuer         ");
-                                i1.setForeground(new Color(155,25,0));
-                             }
-                        
-                        
-                             if (spieler.Second_Element == "  Feuer  "){
-                                i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Feuer.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
-                                i2.setText("        Feuer         ");
-                                i2.setForeground(new Color(155,25,0));
-                             }
-                        
-                                    if (spieler.Main_Element == "  Wasser  "){
-                                        i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Wasser.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
-                                        i1.setText("        Wasser         ");
-                                        i1.setForeground(new Color(155,25,0));
-                                            }
-                        
-                        
-                        
-                                            if (spieler.Second_Element == "  Wasser  "){
-                                                i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Wasser.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
-                                                i2.setText("        Void         ");
-                                                i2.setForeground(new Color(155,25,0));
-                                                    }
-                        
-
-
-                            // Strong //
-
-
-
-                            // Weak //
-
-
-                            if (spieler.Main_Element == "  Erde  "){
-                                i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Erde.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
-                                i1.setText("        Erde         ");
-                                i1.setForeground(new Color(255,215,0));
-                                    }
-                                
-                                    if (spieler.Second_Element == "  Erde  "){
-                                i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Erde.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
-                                i2.setText("        Erde         ");
-                                i2.setForeground(new Color(255,215,0));
-                                    }
-                                
-                                    if (spieler.Main_Element == "  Crystal  "){
-                                        i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Crystal.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
-                                        i1.setText("        Crystal         ");
-                                        i1.setForeground(new Color(255,215,0));
-                                     }
-                                
-                                
-                                     if (spieler.Second_Element == "  Crystal  "){
-                                        i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Crystal.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
-                                        i2.setText("        Crystal         ");
-                                        i2.setForeground(new Color(255,215,0));
-                                     }
-
-}
 
 
 
         }
+
+
+        if (en.boss_Main_Materias[Index] == "Cosmic" || en.enemy_Main_Materias[Index] == "Cosmic") {
+
+
+
+
+            // Strong //
+
+            if (spieler.Main_Element == "  Gravity  "){
+                i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Gravity.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+                i1.setText("        Gravity         ");
+                i1.setForeground(new Color(155,25,0));
+             }
+        
+        
+             if (spieler.Second_Element == "  Gravity  "){
+                i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Gravity.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+                i2.setText("        Gravity         ");
+                i2.setForeground(new Color(155,25,0));
+             }
+        
+                    if (spieler.Main_Element == "  Void  "){
+                        i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Void.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
+                        i1.setText("        Void         ");
+                        i1.setForeground(new Color(155,25,0));
+                            }
+        
+        
+        
+                            if (spieler.Second_Element == "  Void  "){
+                                i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Void.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
+                                i2.setText("        Void         ");
+                                i2.setForeground(new Color(155,25,0));
+                                    }
+        
+
+
+            // Strong //
+
+
+
+            // Weak //
+
+
+            if (spieler.Main_Element == "  Erde  "){
+                i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Erde.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+                i1.setText("        Erde         ");
+                i1.setForeground(new Color(255,215,0));
+                    }
+                
+                    if (spieler.Second_Element == "  Erde  "){
+                i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Erde.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+                i2.setText("        Erde         ");
+                i2.setForeground(new Color(255,215,0));
+                    }
+                
+                    if (spieler.Main_Element == "  Cosmic  "){
+                        i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Cosmic.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+                        i1.setText("        Cosmic         ");
+                        i1.setForeground(new Color(255,215,0));
+                     }
+                
+                
+                     if (spieler.Second_Element == "  Cosmic  "){
+                        i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Cosmic.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+                        i2.setText("        Cosmic         ");
+                        i2.setForeground(new Color(255,215,0));
+                     }
+
+                                                 // Weak //
+
+
+}
+
+
+if (en.boss_Main_Materias[Index] == "Crystal" || en.enemy_Main_Materias[Index] == "Crystal"){
+
+
+
+
+
+
+            // Strong //
+
+            if (spieler.Main_Element == "  Feuer  "){
+                i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Feuer.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+                i1.setText("        Feuer         ");
+                i1.setForeground(new Color(155,25,0));
+             }
+        
+        
+             if (spieler.Second_Element == "  Feuer  "){
+                i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Feuer.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+                i2.setText("        Feuer         ");
+                i2.setForeground(new Color(155,25,0));
+             }
+        
+                    if (spieler.Main_Element == "  Wasser  "){
+                        i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Wasser.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
+                        i1.setText("        Wasser         ");
+                        i1.setForeground(new Color(155,25,0));
+                            }
+        
+        
+        
+                            if (spieler.Second_Element == "  Wasser  "){
+                                i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Wasser.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
+                                i2.setText("        Void         ");
+                                i2.setForeground(new Color(155,25,0));
+                                    }
+        
+
+
+            // Strong //
+
+
+
+            // Weak //
+
+
+            if (spieler.Main_Element == "  Erde  "){
+                i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Erde.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+                i1.setText("        Erde         ");
+                i1.setForeground(new Color(255,215,0));
+                    }
+                
+                    if (spieler.Second_Element == "  Erde  "){
+                i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Erde.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+                i2.setText("        Erde         ");
+                i2.setForeground(new Color(255,215,0));
+                    }
+                
+                    if (spieler.Main_Element == "  Crystal  "){
+                        i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Crystal.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+                        i1.setText("        Crystal         ");
+                        i1.setForeground(new Color(255,215,0));
+                     }
+                
+                
+                     if (spieler.Second_Element == "  Crystal  "){
+                        i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Crystal.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+                        i2.setText("        Crystal         ");
+                        i2.setForeground(new Color(255,215,0));
+                     }
+
+}
+
+
+if (en.boss_Main_Materias[Index] == "Erde" || en.enemy_Main_Materias[Index] == "Erde"){
+
+
+
+
+
+
+// Strong //
+
+if (spieler.Main_Element == "  Crystal  "){
+i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Crystal.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+i1.setText("        Crystal         ");
+i1.setForeground(new Color(155,25,0));
+}
+
+
+if (spieler.Second_Element == "  Crystal  "){
+i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Crystal.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+i2.setText("        Crystal         ");
+i2.setForeground(new Color(155,25,0));
+}
+
+if (spieler.Main_Element == "  Cosmic  "){
+i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Cosmic.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
+i1.setText("        Cosmic         ");
+i1.setForeground(new Color(155,25,0));
+    }
+
+
+
+    if (spieler.Second_Element == "  Cosmic  "){
+        i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Cosmic.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
+        i2.setText("        Void         ");
+        i2.setForeground(new Color(155,25,0));
+            }
+
+
+
+// Strong //
+
+
+
+// Weak //
+
+
+if (spieler.Main_Element == "  Wind  "){
+i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Wind.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+i1.setText("        Wind         ");
+i1.setForeground(new Color(255,215,0));
+}
+
+if (spieler.Second_Element == "  Wind  "){
+i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Wind.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+i2.setText("        Wind         ");
+i2.setForeground(new Color(255,215,0));
+}
+
+if (spieler.Main_Element == "  Feuer  "){
+i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Feuer.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+i1.setText("        Feuer         ");
+i1.setForeground(new Color(255,215,0));
+}
+
+
+if (spieler.Second_Element == "  Feuer  "){
+i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Feuer.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+i2.setText("        Feuer         ");
+i2.setForeground(new Color(255,215,0));
+}
+
+
+
+if (spieler.Main_Element == "  Erde  "){
+i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Erde.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+i1.setText("        Erde         ");
+i1.setForeground(new Color(255,215,0));
+}
+
+
+if (spieler.Second_Element == "  Erde  "){
+i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Erde.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+i2.setText("        Erde         ");
+i2.setForeground(new Color(255,215,0));
+}
+
+}
+
+
+
+
+
+if (en.boss_Main_Materias[Index] == "Feuer" || en.enemy_Main_Materias[Index] == "Feuer"){
+
+
+
+
+
+
+// Strong //
+
+if (spieler.Main_Element == "  Erde  "){
+i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Crystal.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+i1.setText("        Crystal         ");
+i1.setForeground(new Color(155,25,0));
+}
+
+
+if (spieler.Second_Element == "  Erde  "){
+i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Erde.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+i2.setText("        Erde         ");
+i2.setForeground(new Color(155,25,0));
+}
+
+if (spieler.Main_Element == "  Wasser  "){
+i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Wasser.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
+i1.setText("        Wasser         ");
+i1.setForeground(new Color(155,25,0));
+    }
+
+
+
+    if (spieler.Second_Element == "  Wasser  "){
+        i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Wasser.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
+        i2.setText("        Wasser         ");
+        i2.setForeground(new Color(155,25,0));
+            }
+
+
+
+// Strong //
+
+
+
+// Weak //
+
+
+if (spieler.Main_Element == "  Crystal  "){
+i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Crystal.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+i1.setText("        Crystal         ");
+i1.setForeground(new Color(255,215,0));
+}
+
+if (spieler.Second_Element == "  Crystal  "){
+i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Crystal.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+i2.setText("        Crystal         ");
+i2.setForeground(new Color(255,215,0));
+}
+
+if (spieler.Main_Element == "  Feuer  "){
+i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Feuer.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+i1.setText("        Feuer         ");
+i1.setForeground(new Color(255,215,0));
+}
+
+
+if (spieler.Second_Element == "  Feuer  "){
+i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Feuer.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+i2.setText("        Feuer         ");
+i2.setForeground(new Color(255,215,0));
+}
+
+}
+
+
+
+
+
+if (en.boss_Main_Materias[Index] == "Gravity" || en.enemy_Main_Materias[Index] == "Gtavity"){
+
+
+
+
+
+
+// Strong //
+
+if (spieler.Main_Element == "  Cosmic  "){
+i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Cosmic.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+i1.setText("        Cosmic         ");
+i1.setForeground(new Color(155,25,0));
+}
+
+
+if (spieler.Second_Element == "  Cosmic  "){
+i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Cosmic.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+i2.setText("        Cosmic         ");
+i2.setForeground(new Color(155,25,0));
+}
+
+if (spieler.Main_Element == "  Void  "){
+i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Void.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
+i1.setText("        Void         ");
+i1.setForeground(new Color(155,25,0));
+    }
+
+
+
+    if (spieler.Second_Element == "  Void  "){
+        i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Void.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
+        i2.setText("        Void         ");
+        i2.setForeground(new Color(155,25,0));
+            }
+
+
+
+// Strong //
+
+
+
+// Weak //
+
+
+if (spieler.Main_Element == "  Wind  "){
+i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Wind.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+i1.setText("        Wind         ");
+i1.setForeground(new Color(255,215,0));
+}
+
+if (spieler.Second_Element == "  Wind  "){
+i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Wind.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+i2.setText("        Wind         ");
+i2.setForeground(new Color(255,215,0));
+}
+
+if (spieler.Main_Element == "  Crystal  "){
+i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Crystal.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+i1.setText("        Crystal         ");
+i1.setForeground(new Color(255,215,0));
+}
+
+
+if (spieler.Second_Element == "  Crystal  "){
+i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Crystal.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+i2.setText("        Crystal         ");
+i2.setForeground(new Color(255,215,0));
+}
+
+}
+
+
+
+
+if (en.boss_Main_Materias[Index] == "Licht" || en.enemy_Main_Materias[Index] == "Licht"){
+
+
+
+
+
+
+// Strong //
+
+if (spieler.Main_Element == "  Lunar  "){
+i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Lunar.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+i1.setText("        Lunar         ");
+i1.setForeground(new Color(155,25,0));
+}
+
+
+if (spieler.Second_Element == "  Lunar  "){
+i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Lunar.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+i2.setText("        Lunar         ");
+i2.setForeground(new Color(155,25,0));
+}
+
+if (spieler.Main_Element == "  Void  "){
+i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Void.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
+i1.setText("        Void         ");
+i1.setForeground(new Color(155,25,0));
+    }
+
+
+
+    if (spieler.Second_Element == "  Void  "){
+        i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Void.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
+        i2.setText("        Void         ");
+        i2.setForeground(new Color(155,25,0));
+            }
+
+
+
+// Strong //
+
+
+
+// Weak //
+
+
+if (spieler.Main_Element == "  Gravity  "){
+i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Gravity.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+i1.setText("        Gravity         ");
+i1.setForeground(new Color(255,215,0));
+}
+
+if (spieler.Second_Element == "  Gravity  "){
+i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Gravity.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+i2.setText("        Gravity         ");
+i2.setForeground(new Color(255,215,0));
+}
+
+if (spieler.Main_Element == "  Void  "){
+i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Void.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+i1.setText("        Void         ");
+i1.setForeground(new Color(255,215,0));
+}
+
+
+if (spieler.Second_Element == "  Void  "){
+i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Void.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+i2.setText("        Void         ");
+i2.setForeground(new Color(255,215,0));
+}
+
+}
+
+
+
+
+if (en.boss_Main_Materias[Index] == "Lunar" || en.enemy_Main_Materias[Index] == "Lunar"){
+
+
+
+
+
+
+// Strong //
+
+if (spieler.Main_Element == "  Licht  "){
+i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Licht.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+i1.setText("        Licht         ");
+i1.setForeground(new Color(155,25,0));
+}
+
+
+if (spieler.Second_Element == "  Licht  "){
+i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Licht.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+i2.setText("        Licht         ");
+i2.setForeground(new Color(155,25,0));
+}
+
+/*     if (spieler.Main_Element == "  Void  "){
+i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Void.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
+i1.setText("        Void         ");
+i1.setForeground(new Color(155,25,0));
+    }
+
+
+
+    if (spieler.Second_Element == "  Void  "){
+        i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Void.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
+        i2.setText("        Void         ");
+        i2.setForeground(new Color(155,25,0));
+            }
+*/
+
+
+// Strong //
+
+
+
+// Weak //
+
+/*
+if (spieler.Main_Element == "  Wind  "){
+i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Wind.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+i1.setText("        Wind         ");
+i1.setForeground(new Color(255,215,0));
+}
+
+if (spieler.Second_Element == "  Wind  "){
+i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Wind.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+i2.setText("        Wind         ");
+i2.setForeground(new Color(255,215,0));
+}
+
+if (spieler.Main_Element == "  Crystal  "){
+i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Crystal.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+i1.setText("        Crystal         ");
+i1.setForeground(new Color(255,215,0));
+}
+
+
+if (spieler.Second_Element == "  Crystal  "){
+i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Crystal.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+i2.setText("        Crystal         ");
+i2.setForeground(new Color(255,215,0));
+}
+
+*/
+
+}
+
+
+
+
+if (en.boss_Main_Materias[Index] == "Void" || en.enemy_Main_Materias[Index] == "Void"){
+
+
+
+
+
+
+// Strong //
+
+if (spieler.Main_Element == "  Licht  "){
+i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Licht.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+i1.setText("        Licht         ");
+i1.setForeground(new Color(155,25,0));
+}
+
+
+if (spieler.Second_Element == "  Licht  "){
+i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Licht.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+i2.setText("        Licht         ");
+i2.setForeground(new Color(155,25,0));
+}
+
+
+
+
+if (spieler.Main_Element == "  Cosmic  "){
+i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Cosmic.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
+i1.setText("        Cosmic         ");
+i1.setForeground(new Color(155,25,0));
+}
+
+
+
+if (spieler.Second_Element == "  Cosmic  "){
+i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Cosmic.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
+i2.setText("        Cosmic         ");
+i2.setForeground(new Color(155,25,0));
+    }
+/*
+if (spieler.Main_Element == "  Void  "){
+i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Void.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
+i1.setText("        Void         ");
+i1.setForeground(new Color(155,25,0));
+    }
+
+
+
+    if (spieler.Second_Element == "  Void  "){
+        i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Void.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
+        i2.setText("        Void         ");
+        i2.setForeground(new Color(155,25,0));
+            }
+
+*/
+
+// Strong //
+
+
+
+// Weak //
+
+
+if (spieler.Main_Element == "  Gravity  "){
+i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Gravity.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+i1.setText("        Gravity         ");
+i1.setForeground(new Color(255,215,0));
+}
+
+if (spieler.Second_Element == "  Gravity  "){
+i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Gravity.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+i2.setText("        Gravity         ");
+i2.setForeground(new Color(255,215,0));
+}
+
+if (spieler.Main_Element == "  Void  "){
+i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Void.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+i1.setText("        Void         ");
+i1.setForeground(new Color(255,215,0));
+}
+
+
+if (spieler.Second_Element == "  Void  "){
+i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Void.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+i2.setText("        Void         ");
+i2.setForeground(new Color(255,215,0));
+}
+
+}
+
+
+
+
+
+
+
+if (en.boss_Main_Materias[Index] == "Wasser" || en.enemy_Main_Materias[Index] == "Wasser"){
+
+
+
+
+
+
+// Strong //
+
+if (spieler.Main_Element == "  Erde  "){
+i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Erde.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+i1.setText("        Erde         ");
+i1.setForeground(new Color(155,25,0));
+}
+
+
+if (spieler.Second_Element == "  Erde  "){
+i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Erde.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+i2.setText("        Erde         ");
+i2.setForeground(new Color(155,25,0));
+}
+
+
+
+/*
+if (spieler.Main_Element == "  Cosmic  "){
+i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Cosmic.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
+i1.setText("        Cosmic         ");
+i1.setForeground(new Color(155,25,0));
+}
+
+
+
+if (spieler.Second_Element == "  Cosmic  "){
+i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Cosmic.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
+i2.setText("        Cosmic         ");
+i2.setForeground(new Color(155,25,0));
+    }
+
+if (spieler.Main_Element == "  Void  "){
+i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Void.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
+i1.setText("        Void         ");
+i1.setForeground(new Color(155,25,0));
+    }
+
+
+
+    if (spieler.Second_Element == "  Void  "){
+        i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Void.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
+        i2.setText("        Void         ");
+        i2.setForeground(new Color(155,25,0));
+            }
+
+*/
+
+// Strong //
+
+
+
+// Weak //
+
+
+if (spieler.Main_Element == "  Feuer  "){
+i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Feuer.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+i1.setText("        Feuer         ");
+i1.setForeground(new Color(255,215,0));
+}
+
+if (spieler.Second_Element == "  Feuer  "){
+i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Feuer.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+i2.setText("        Feuer         ");
+i2.setForeground(new Color(255,215,0));
+}
+
+if (spieler.Main_Element == "  Wasser  "){
+i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Wasser.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+i1.setText("        Wasser         ");
+i1.setForeground(new Color(255,215,0));
+}
+
+
+if (spieler.Second_Element == "  Wasser  "){
+i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Wasser.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+i2.setText("        Wasser         ");
+i2.setForeground(new Color(255,215,0));
+}
+
+}
+
+
+
+
+if (en.boss_Main_Materias[Index] == "Wind" || en.enemy_Main_Materias[Index] == "Wind"){
+
+
+
+
+
+
+// Strong //
+
+if (spieler.Main_Element == "  Erde  "){
+i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Erde.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+i1.setText("        Erde         ");
+i1.setForeground(new Color(155,25,0));
+}
+
+
+if (spieler.Second_Element == "  Erde  "){
+i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Erde.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+i2.setText("        Erde         ");
+i2.setForeground(new Color(155,25,0));
+}
+
+
+
+/*
+if (spieler.Main_Element == "  Cosmic  "){
+i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Cosmic.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
+i1.setText("        Cosmic         ");
+i1.setForeground(new Color(155,25,0));
+}
+
+
+
+if (spieler.Second_Element == "  Cosmic  "){
+i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Cosmic.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
+i2.setText("        Cosmic         ");
+i2.setForeground(new Color(155,25,0));
+    }
+
+if (spieler.Main_Element == "  Void  "){
+i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Void.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
+i1.setText("        Void         ");
+i1.setForeground(new Color(155,25,0));
+    }
+
+
+
+    if (spieler.Second_Element == "  Void  "){
+        i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Void.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
+        i2.setText("        Void         ");
+        i2.setForeground(new Color(155,25,0));
+            }
+
+*/
+
+// Strong //
+
+
+
+// Weak //
+
+/*
+if (spieler.Main_Element == "  Feuer  "){
+i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Feuer.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+i1.setText("        Feuer         ");
+i1.setForeground(new Color(255,215,0));
+}
+
+if (spieler.Second_Element == "  Feuer  "){
+i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Feuer.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+i2.setText("        Feuer         ");
+i2.setForeground(new Color(255,215,0));
+}
+
+if (spieler.Main_Element == "  Wasser  "){
+i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Wasser.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+i1.setText("        Wasser         ");
+i1.setForeground(new Color(255,215,0));
+}
+
+
+if (spieler.Second_Element == "  Wasser  "){
+i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Wasser.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+i2.setText("        Wasser         ");
+i2.setForeground(new Color(255,215,0));
+}
+*/
+
+
+if (spieler.Main_Element == "  Wind  "){
+i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Wind.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+i1.setText("        Wind         ");
+i1.setForeground(new Color(255,215,0));
+}
+
+if (spieler.Second_Element == "  Wind  "){
+i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Wind.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+i2.setText("        Wind         ");
+i2.setForeground(new Color(255,215,0));
+}
+
+}
 
 
         
