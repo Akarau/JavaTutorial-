@@ -4,7 +4,7 @@
 <br>
 <br>
 
-### Definition Algorithmus 
+### Definition Algorithmus:
 
 Ein Algorithmus ist eine eindeutige Handlungsvorschrift zur Lösung von Problemen. Algorithmus bestehen aus vielen wohldefinierten Einzelschritte. Das heißt, dass Algorithmus nach endlich vielen Schritten terminieren, also enden muss. 
 Die Folge von Anweisungen findet sich häufig in Software wieder und liegt im Quellcode vor. Ein Algorithmus kann per Definition aber auch die schriftliche Anleitung sein, den Computer korrekt anzuschließen. Damit können sie zur Ausführung in ein Computerprogramm implementiert, aber auch in menschlicher Sprache formuliert werden. 
@@ -16,7 +16,7 @@ Noch fragen? Dann schau dir [Erklärvideo Nr. 1](https://www.youtube.com/watch?v
 <br>
 <br>
 
-### Eigenschaften 
+### Eigenschaften:
 
 - Eindeutigkeit: ein Algorithmus darf keine widersprüchliche Beschreibung haben. Diese muss eindeutig sein. 
 - Ausführbarkeit: jeder Einzelschritt muss ausführbar sein. 
@@ -30,7 +30,7 @@ Noch fragen? Dann schau dir [Erklärvideo Nr. 1](https://www.youtube.com/watch?v
 <br>
 <br>
  
- ### Algorithmus im Alltag 
+ ### Algorithmus im Alltag:
 
 Algorithmen prägen den modernen Alltag tatsächlich in vielen unterschiedlichen Lebensbereichen. … Selbst beim Bau von Gebäuden und Brücken kommen mittlerweile Algorithmen zum Einsatz, um entsprechende Simulationen je nach Wetter, Temperatur, Belastung & Co zu erstellen. 
 
@@ -200,7 +200,7 @@ Noch fragen? Dann schau dir [Erklärvideo Nr. 10](https://www.youtube.com/watch?
 <br>
 <br>
 
-### Schleifen 
+### Schleifen:
 
 Eine Schleife ist ein Anweisungsblock, dessen Anweisungen mehrfach wiederholt werden. Beginn und Ende sind markiert. Wie oft die Schleife wiederholt wird, ist in der Schleifenbedingung festgelegt. 
 
