@@ -12,18 +12,19 @@ public class CuPower {
     public  int playerHealthResult = 10;
      int MaxHealth;
       float GoldEarn = 1F;
-     String Main_Element = "  Ancient  ";
+     String Main_Element = "  Crystal  ";
      String Second_Element = "  Cosmic  ";
      String Support_Element = "  Luck  ";
      String playerName;
      float powerBoost = 1.5f;
+     String powerBoostIcon = "Textrpg\\Images\\Swords\\Double swords.png";
      float hpBoost = 1.5f;
 
      // Enemy //
      String currentEnemy;
      int CurrentEnemyPower = 200;
      int currentEnemyHP = 2600;
-     String enemyMain_Element = "Erde";
+     String enemyMain_Element = "Crystal";
      String enemySecond_Element;
      String enemyThird_Element;
      String enemyLast_Element;
