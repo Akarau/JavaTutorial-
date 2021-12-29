@@ -12,7 +12,7 @@ public class CuPower {
     public  int playerHealthResult = 10;
      int MaxHealth;
       float GoldEarn = 1F;
-     String Main_Element = "  Crystal  ";
+     String Main_Element = "  Erde  ";
      String Second_Element = "  Cosmic  ";
      String Support_Element = "  Luck  ";
      String playerName;
@@ -47,7 +47,7 @@ int ancientAnimation = 2;
 int cosmicAnimation1 = 15;
 int cosmicAnimation2 = 9;
 int damageTextAnimation = 6;
-int boostDamageTextAnimation = 8;
+int boostDamageTextAnimation = 5;
 
 int divide = 20;
 
