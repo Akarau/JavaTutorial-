@@ -8,18 +8,22 @@ public class CuPower {
       int Points = 50;
       int Health = 100;
       int damg;
+
     public  int playerHealthResult = 10;
      int MaxHealth;
       float GoldEarn = 1F;
      String Main_Element = "  Ancient  ";
      String Second_Element = "  Cosmic  ";
+     String Support_Element = "  Luck  ";
      String playerName;
      float powerBoost = 1.5f;
+     float hpBoost = 1.5f;
+
      // Enemy //
      String currentEnemy;
-     int CurrentRnemyPower;
-     int currentEnemyHP = 260;
-     String enemyMain_Element = "Cosmic";
+     int CurrentEnemyPower = 200;
+     int currentEnemyHP = 2600;
+     String enemyMain_Element = "Erde";
      String enemySecond_Element;
      String enemyThird_Element;
      String enemyLast_Element;
@@ -47,6 +51,14 @@ int boostDamageTextAnimation = 8;
 int divide = 20;
 
 // FightWait //
+
+
+// Elemente //
+Boolean healUpgrade1 = true;
+Boolean luckUpgrade1 = false;
+
+
+// Elemente //
 
 
     public CuPower() {

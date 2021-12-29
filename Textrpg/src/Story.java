@@ -123,13 +123,13 @@ JLabel playerInfoSupportElement;
 
     // EnemyStats //
 
-    static JLabel enemyImage;
+     JLabel enemyImage;
 
     // EnemyStats //
 
     // element //
 
-    static JLabel elementImage;
+     JLabel elementImage;
 
     // element //
 
@@ -157,7 +157,9 @@ JLabel enemyInfoLastElement;
 JLabel damageText;
 JLabel boostDamageText;
 JLabel reducedDamgeText;
+JLabel reducedDamgeText2;
 JLabel reflectedDamgeText;
+JLabel self_HealText;
 
 
 
@@ -1084,7 +1086,7 @@ damageText = new JLabel("DamageText");
 damageText.setFont(new Font("Times new Roman", Font.PLAIN, 40));
 damageText.setOpaque(false);
 damageText.setForeground(new Color(250,150,0));
-damageText.setBounds(900, 280, 100, 80);
+damageText.setBounds(900, 280, 600, 80);
 damageText.setVisible(false);
 
 
@@ -1092,11 +1094,37 @@ boostDamageText = new JLabel("BoostDamageText");
 boostDamageText.setFont(new Font("Times new Roman", Font.PLAIN, 40));
 boostDamageText.setOpaque(false);
 boostDamageText.setForeground(new Color(25,255,255));
-boostDamageText.setBounds(900, 380, 100, 80);
+boostDamageText.setBounds(900, 380, 600, 80);
 boostDamageText.setVisible(false);
+
+
+
+self_HealText = new JLabel();
+self_HealText.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+self_HealText.setOpaque(false);
+self_HealText.setForeground(new Color(255,255,255));
+self_HealText.setBounds(250, 280, 100, 80);
+self_HealText.setVisible(false);
+
+reducedDamgeText = new JLabel();
+reducedDamgeText.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+reducedDamgeText.setOpaque(false);
+reducedDamgeText.setForeground(new Color(255,180,0));
+reducedDamgeText.setBounds(250, 280, 100, 80);
+reducedDamgeText.setVisible(false);
+
+reducedDamgeText2 = new JLabel();
+reducedDamgeText2.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+reducedDamgeText2.setOpaque(false);
+reducedDamgeText2.setForeground(new Color(255,180,0));
+reducedDamgeText2.setBounds(250, 340, 100, 80);
+reducedDamgeText2.setVisible(false);
 
 frame.add(damageText);
 frame.add(boostDamageText);
+frame.add(self_HealText);
+frame.add(reducedDamgeText);
+frame.add(reducedDamgeText2);
 
 frame.add(enemyImage);
 
@@ -1436,6 +1464,7 @@ texarea.setEditable(false);
 commbox.setVisible(true);
 option1.setVisible(false);
 fighting_options.setVisible(true);
+//elementsMenu.setVisible(true);
 spieler.t1 = 3/2;
 spieler.t2 = 50;
 spieler.t3 = 100;
@@ -1886,6 +1915,26 @@ elementImage.setVisible(false);
 
                           elementImage.setVisible(false);
 
+                          if (spieler.currentEnemyHP > 0){
+                            Thread.sleep(spieler.t1 * 10);
+                            damageText.setText("Element Schaden");
+                            boostDamageText.setText("BoostDamage");
+                            damageText.setBounds(900, 480, 600, 80);
+                            damageText.setVisible(true);
+        
+                            damg = spieler.Power;
+                            damageText.setForeground(new Color(255,255,255));
+                            enemyImage.setEnabled(false);
+                            damageText.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Ancient.png").getImage().getScaledInstance(40, 35, Image.SCALE_AREA_AVERAGING)));
+
+                            
+
+                            for (int z = 0; z<= 200;z++){
+                                damageText.setBounds(900, 480 - z, 600, 80);
+                                Thread.sleep(spieler.damageTextAnimation);
+                            }
+
+        chosen_Main_Element.setVisible(false);
 int divide = spieler.divide;
 for (int power = 1; power <= divide; power++){
     damageText.setText(""+ spieler.Power*power/divide + "");
@@ -1895,6 +1944,55 @@ for (int power = 1; power <= divide; power++){
     }
 }
 
+enemyImage.setEnabled(true);
+
+
+
+
+                Thread.sleep(spieler.t2);
+                Thread.sleep(spieler.t2/2);
+
+                spieler.currentEnemyHP -= damg;
+                enemyInfoHP.setText(""+spieler.currentEnemyHP);
+Thread.sleep(spieler.t2);
+
+if (spieler.powerBoost != 1 && spieler.currentEnemyHP > 0 ){
+    boostDamageText.setBounds(900,480,600,80);
+    boostDamageText.setText("BoostDamage");
+    boostDamageText.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Swords\\Double swords.png").getImage().getScaledInstance(35, 35, Image.SCALE_AREA_AVERAGING)));
+    boostDamageText.setVisible(true);
+    enemyImage.setEnabled(false);
+    for (int z = 0; z<= 200;z++){
+        boostDamageText.setBounds(900, 480 - z/2, 600, 80);
+        Thread.sleep(spieler.boostDamageTextAnimation);
+    }
+    for (int power = 0; power <=  damg * spieler.powerBoost - damg; power++){
+        if (spieler.powerBoost != 1 && spieler.currentEnemyHP >= 0 ){
+        boostDamageText.setText("+ "+ power);
+        Thread.sleep((long) (power/1.8));
+        extradamg++;
+      //  spieler.currentEnemyHP -= 1;
+
+        }
+
+        
+  //      extradamg++;
+
+
+    }
+    Thread.sleep(spieler.t3);
+    extradamg--;
+    spieler.currentEnemyHP -= extradamg;
+    enemyInfoHP.setText("         "+spieler.currentEnemyHP);
+enemyImage.setEnabled(true);
+
+}
+
+                          }
+
+                          damageText.setVisible(false);
+                          boostDamageText.setVisible(false);
+
 for (int xi = 0; xi<= 120; xi++){
     fighting_options.setBounds(38, 1080 - xi*5, 1200, 300);
     Thread.sleep(spieler.t1);
@@ -1902,14 +2000,7 @@ for (int xi = 0; xi<= 120; xi++){
 
 Thread.sleep(spieler.t3);
 
-if (spieler.powerBoost != 1){
-    for (int power = 0; power <=  spieler.Power * spieler.powerBoost - spieler.Power; power++){
-        boostDamageText.setText("+ "+ (spieler.Power * spieler.powerBoost - spieler.Power));
-        Thread.sleep(spieler.t1 * 5);
-    }
-    
-    
-}
+
 
 
                }
@@ -1950,7 +2041,6 @@ Thread.sleep(spieler.cosmicAnimation2);
             }
 
             elementImage.setVisible(false);
-
             Thread.sleep(spieler.t1 * 10);
 
                 if (spieler.currentEnemyHP > 0){
@@ -1989,9 +2079,11 @@ Thread.sleep(spieler.cosmicAnimation2);
 
                     }
 
-                    damageText.setVisible(true);
+                    Thread.sleep(spieler.t2);
+                   
                     enemyImage.setEnabled(false);
-
+                    damageText.setBounds(900, 480, 600, 80);
+                    damageText.setVisible(true);
 
                     for (int z = 0; z<= 200;z++){
                         damageText.setBounds(900, 480 - z, 600, 80);
@@ -2006,37 +2098,42 @@ Thread.sleep(spieler.cosmicAnimation2);
 
                     Thread.sleep(spieler.t2 * 5);
 
-                    boostDamageText.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Cosmic.png").getImage().getScaledInstance(35, 35, Image.SCALE_AREA_AVERAGING)));
-boostDamageText.setVisible(true);
+
+//reducedDamgeText2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Shields\\Standard shield.png").getImage().getScaledInstance(35, 35, Image.SCALE_AREA_AVERAGING)));
+//reducedDamgeText2.setVisible(true);
+enemyImage.setEnabled(true);
+
+
+
+
+                Thread.sleep(spieler.t2);
+               // enemyImage.setEnabled(true);
+
+                Thread.sleep(spieler.t2/2);
+
+                spieler.currentEnemyHP -= damg;
+                enemyInfoHP.setText(""+spieler.currentEnemyHP);
+Thread.sleep(spieler.t2);
+                if (spieler.powerBoost != 1 && spieler.currentEnemyHP > 0 ){
+                    boostDamageText.setBounds(900,480,600,80);
+                    boostDamageText.setText("BoostDamage");
+                    boostDamageText.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Swords\\Double swords.png").getImage().getScaledInstance(35, 35, Image.SCALE_AREA_AVERAGING)));
+                    boostDamageText.setVisible(true);
+                    enemyImage.setEnabled(false);
                     for (int z = 0; z<= 200;z++){
                         boostDamageText.setBounds(900, 480 - z/2, 600, 80);
                         Thread.sleep(spieler.boostDamageTextAnimation);
                     }
-
-
-                Thread.sleep(spieler.t2);
-                enemyImage.setEnabled(false);
-
-                Thread.sleep(spieler.t2/2);
-
-
-                enemyImage.setEnabled(true);
-                damageText.setVisible(false);
-                boostDamageText.setVisible(false);
-                System.out.println(damg);
-                System.out.println(extradamg);
-                spieler.currentEnemyHP -= damg;
-                enemyInfoHP.setText(""+spieler.currentEnemyHP);
-Thread.sleep(200);
-                if (spieler.powerBoost != 1 && spieler.currentEnemyHP > 0 ){
                     for (int power = 0; power <=  damg * spieler.powerBoost - damg; power++){
                         if (spieler.powerBoost != 1 && spieler.currentEnemyHP >= 0 ){
                         boostDamageText.setText("+ "+ power);
                         Thread.sleep((long) (power/1.8));
                         extradamg++;
-                        spieler.currentEnemyHP -= 1;
+                       // spieler.currentEnemyHP -= 1;
 
                         }
+
+                        
                   //      extradamg++;
 
 
@@ -2045,6 +2142,41 @@ Thread.sleep(200);
                     extradamg--;
                     spieler.currentEnemyHP -= extradamg;
                     enemyInfoHP.setText("         "+spieler.currentEnemyHP);
+enemyImage.setEnabled(true);
+
+                    if (spieler.healUpgrade1 == true && spieler.Support_Element == "  Heal  "){
+
+                        self_HealText.setVisible(true);
+                        int hp = (damg + extradamg)/8;
+                        spieler.Health += hp;
+                        System.out.println(hp);
+                        playerInfoHP.setText("" +spieler.Health);
+                        self_HealText.setText("" + hp);
+                        self_HealText.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Others\\HealI.png").getImage().getScaledInstance(35, 35, Image.SCALE_AREA_AVERAGING)));
+
+
+
+                        Thread.sleep(spieler.t2);
+                    }
+
+/*
+                    if (spieler.Support_Element == "  Luck  "){
+
+                        reducedDamgeText.setVisible(true);
+                        int rd = (spieler.CurrentEnemyPower)/8;
+                        
+                        System.out.println(rd);
+                        reducedDamgeText.setText("-" +rd);
+                      //  self_HealText.setText("" + rd);
+                        reducedDamgeText.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Luck.png").getImage().getScaledInstance(35, 35, Image.SCALE_AREA_AVERAGING)));
+
+
+
+                        Thread.sleep(spieler.t2);
+                    }
+                    */
+
+
                 }
                 
               //  enemyInfoHP.setText("         "+spieler.currentEnemyHP);
@@ -2108,8 +2240,8 @@ i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Cosmic
             */
 
         
-            damageText.setForeground(new Color(255,150,0));
-
+            damageText.setVisible(false);
+boostDamageText.setVisible(false);
 
             for (int xi = 0; xi<= 120; xi++){
                 fighting_options.setBounds(38, 1080 - xi*5, 1200, 300);
