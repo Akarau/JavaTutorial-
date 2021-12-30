@@ -53,6 +53,7 @@ public class Story implements ActionListener {
     static JLabel i3;
     static JLabel i4;
     static JLabel iAchievements;
+    static JLabel ifightPlayButton;
     static JButton option1;
     static JButton option2;
     static JButton option3;
@@ -66,10 +67,11 @@ public class Story implements ActionListener {
     JPanel b3;
     JPanel b4;
     JPanel achievementsButton;
+    JPanel fightPlayButton;
 
     JButton e1;
     JButton e2;
-
+    JButton ePlayButton;
     // upgrades //
 
     JPanel upgradeMenu;
@@ -457,6 +459,9 @@ JLabel self_HealText;
         achievementsButton.setBackground(Color.black);
         achievementsButton.setVisible(true);
         achievementsButton.setFocusable(false);
+
+
+
         // e1.addActionListener(this);
         // e1.setActionCommand("E");
         optionsmenu_options.setBorder(new LineBorder(Color.white));
@@ -516,6 +521,46 @@ JLabel self_HealText;
         eAchievements.setActionCommand("eAchievements");
         optionsmenu_options.setBorder(new LineBorder(Color.white));
 
+
+        ePlayButton = new JButton();
+        ePlayButton.setForeground(new Color(255, 255, 255));
+        ePlayButton.setFont(new Font("Times new Roman", Font.PLAIN, 60));
+        ePlayButton.setBounds(0, 0, 0, 0);
+        ePlayButton.setBackground(Color.black);
+        ePlayButton.setVisible(true);
+        ePlayButton.setFocusable(false);
+        ePlayButton.addActionListener(this);
+        ePlayButton.setActionCommand("ePlayButton2");
+        ePlayButton.setOpaque(false);
+       // optionsmenu_options.setBorder(new LineBorder(Color.white));
+
+       fightPlayButton = new JPanel();
+       fightPlayButton.setForeground(new Color(255, 0, 150));
+       fightPlayButton.setFont(new Font("Times new Roman", Font.PLAIN, 60));
+       fightPlayButton.setBounds(150, 250, 240, 160);
+       fightPlayButton.setBackground(Color.black);
+       fightPlayButton.setVisible(true);
+       fightPlayButton.setOpaque(false);
+       fightPlayButton.setFocusable(false);
+
+
+       ifightPlayButton = new JLabel();
+       ifightPlayButton.setForeground(new Color(255, 255, 255));
+       ifightPlayButton.setFont(new Font("Times new Roman", Font.PLAIN, 35));
+       // i3.setBounds(200, 400, 400, 0);
+       ifightPlayButton.setSize(20, 20);
+       ifightPlayButton.setBackground(Color.WHITE);
+       ifightPlayButton.setVisible(true);
+       ifightPlayButton.setFocusable(false);
+       ifightPlayButton.setOpaque(false);
+       ifightPlayButton.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Others\\Play.png").getImage()
+               .getScaledInstance(35, 35, Image.SCALE_AREA_AVERAGING)));
+               ifightPlayButton.setText("   1x");
+
+
+       ePlayButton.add(ifightPlayButton);
+       frame.add(fightPlayButton);
+       fightPlayButton.add(ePlayButton);
         frame.add(fighting_options);
         fighting_options.add(b1);
         fighting_options.add(b2);
@@ -1465,15 +1510,7 @@ commbox.setVisible(true);
 option1.setVisible(false);
 fighting_options.setVisible(true);
 //elementsMenu.setVisible(true);
-spieler.t1 = 3/2;
-spieler.t2 = 50;
-spieler.t3 = 100;
-spieler.ancientAnimation = 0;
-spieler.cosmicAnimation1 = 15/2;
-spieler.cosmicAnimation2 = 9/2;
-spieler.divide = 5;
-spieler.damageTextAnimation = 2;
-spieler.boostDamageTextAnimation = 1;
+
 
 
 
@@ -1502,6 +1539,53 @@ spieler.boostDamageTextAnimation = 1;
             frame.setVisible(false);
 
         }
+
+        if (e.getActionCommand().equals("ePlayButton1")) {
+
+
+ifightPlayButton.setText("   1x");
+spieler.t1 = 4;
+System.out.println(spieler.t1);
+
+spieler.t2 = 200;
+spieler.t3 = 300;
+spieler.ancientAnimation = 0;
+spieler.cosmicAnimation1 = 15;
+spieler.cosmicAnimation2 = 9;
+spieler.divide = 20;
+spieler.damageTextAnimation = 6;
+spieler.boostDamageTextAnimation = 5;
+ePlayButton.setActionCommand("ePlayButton2");
+
+
+System.out.println("2x");
+
+        }
+
+
+        if (e.getActionCommand().equals("ePlayButton2")) {
+           
+
+            ifightPlayButton.setText("   2x");
+            spieler.t1 = 1;
+            System.out.println(spieler.t1);
+
+spieler.t2 = 50;
+spieler.t3 = 100;
+spieler.ancientAnimation = 0;
+spieler.cosmicAnimation1 = 15/2;
+spieler.cosmicAnimation2 = 9/2;
+spieler.divide = 5;
+spieler.damageTextAnimation = 2;
+spieler.boostDamageTextAnimation = 1;
+
+
+System.out.println("2x");
+ePlayButton.setActionCommand("ePlayButton1");
+
+
+        }
+
 
         if (e.getActionCommand().equals("Main_Choose")) {
             System.out.println("Main_Choose");
