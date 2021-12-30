@@ -1953,7 +1953,7 @@ enemyImage.setEnabled(true);
                 Thread.sleep(spieler.t2/2);
 
                 spieler.currentEnemyHP -= damg;
-                enemyInfoHP.setText(""+spieler.currentEnemyHP);
+                enemyInfoHP.setText("         "+spieler.currentEnemyHP);
 
                 if (spieler.currentEnemyHP < 0){
                     spieler.currentEnemyHP = 0;
@@ -2121,7 +2121,7 @@ enemyImage.setEnabled(true);
                 Thread.sleep(spieler.t2/2);
 
                 spieler.currentEnemyHP -= damg;
-                enemyInfoHP.setText(""+spieler.currentEnemyHP);
+                enemyInfoHP.setText("         "+spieler.currentEnemyHP);
                 if (spieler.currentEnemyHP < 0){
                     spieler.currentEnemyHP = 0;
                    enemyInfoHP.setText("0");
@@ -2416,7 +2416,7 @@ enemyImage.setEnabled(true);
                 extradamg = 0;
 
                 spieler.currentEnemyHP -= damg;
-                enemyInfoHP.setText(""+spieler.currentEnemyHP);
+                enemyInfoHP.setText("         "+spieler.currentEnemyHP);
                 if (spieler.currentEnemyHP < 0){
                     spieler.currentEnemyHP = 0;
                    enemyInfoHP.setText("0");
@@ -2569,7 +2569,7 @@ boostDamageText.setVisible(false);
          
                          spieler.currentEnemyHP -= damg;
 
-                         enemyInfoHP.setText(""+spieler.currentEnemyHP);
+                         enemyInfoHP.setText("         "+spieler.currentEnemyHP);
                          if (spieler.currentEnemyHP < 0){
                             spieler.currentEnemyHP = 0;
                            enemyInfoHP.setText("0");
@@ -2777,7 +2777,7 @@ damageText.setBounds(900, 480, 600, 80);
      
                      spieler.currentEnemyHP -= damg;
 
-                     enemyInfoHP.setText(""+spieler.currentEnemyHP);
+                     enemyInfoHP.setText("         "+spieler.currentEnemyHP);
                      if (spieler.currentEnemyHP < 0){
                         spieler.currentEnemyHP = 0;
                        enemyInfoHP.setText("0");
@@ -2892,7 +2892,7 @@ damageText.setBounds(900, 480, 600, 80);
            
                                        damageText.setText("" + spieler.Power+ "");
                                        damageText.setForeground(new Color(255,255,255));
-                                       damageText.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Feuer.png").getImage().getScaledInstance(35, 35, Image.SCALE_AREA_AVERAGING)));
+                                       damageText.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Gravity.png").getImage().getScaledInstance(35, 35, Image.SCALE_AREA_AVERAGING)));
                    
                    
                    
@@ -2901,7 +2901,7 @@ damageText.setBounds(900, 480, 600, 80);
                                            damageText.setText("" + spieler.Power *2 + "");
                                            damageText.setForeground(new Color(255,50,0));
                                            damg = spieler.Power *2;
-                                        damageText.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Feuer.png").getImage().getScaledInstance(35, 35, Image.SCALE_AREA_AVERAGING)));
+                                        damageText.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Gravity.png").getImage().getScaledInstance(35, 35, Image.SCALE_AREA_AVERAGING)));
                    
                    
                                        }
@@ -2910,7 +2910,7 @@ damageText.setBounds(900, 480, 600, 80);
                                            damageText.setText("" + spieler.Power /2 + "");
                                            damageText.setForeground(new Color(255,200,30));
                                            damg = spieler.Power /2;
-                                           damageText.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Feuer.png").getImage().getScaledInstance(35, 35, Image.SCALE_AREA_AVERAGING)));
+                                           damageText.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Gravity.png").getImage().getScaledInstance(35, 35, Image.SCALE_AREA_AVERAGING)));
                    
                    
                                        
@@ -2983,7 +2983,7 @@ damageText.setBounds(900, 480, 600, 80);
                 
                                 spieler.currentEnemyHP -= damg;
            
-                                enemyInfoHP.setText(""+spieler.currentEnemyHP);
+                                enemyInfoHP.setText("         "+spieler.currentEnemyHP);
                                 if (spieler.currentEnemyHP < 0){
                                    spieler.currentEnemyHP = 0;
                                   enemyInfoHP.setText("0");
@@ -3070,22 +3070,168 @@ damageText.setBounds(900, 480, 600, 80);
                             elementImage.setVisible(true);
 
 
-                            for (int a = 1; a<13; a++){
-                                elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Animation_Licht\\" + a + ".png").getImage().getScaledInstance(370, 365, Image.SCALE_AREA_AVERAGING)));
-            
-                               Thread.sleep(20);
-    
-                                        }
 
+
+                                        if (spieler.currentEnemyHP > 0){
+
+
+
+                                          
+                                                //    elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Gravity.png").getImage().getScaledInstance(370, 365, Image.SCALE_AREA_AVERAGING)));
+                                    
+                                                for (int a = 1; a<13; a++){
+                                                    elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Animation_Licht\\" + a + ".png").getImage().getScaledInstance(370, 365, Image.SCALE_AREA_AVERAGING)));
+                                
+                                                   Thread.sleep(spieler.t1 * 5);
+                        
+                                                            }
+
+                                               damg = spieler.Power;
+                   
+                                               damageText.setText("" + spieler.Power+ "");
+                                               damageText.setForeground(new Color(255,255,255));
+                                               damageText.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Licht.png").getImage().getScaledInstance(35, 35, Image.SCALE_AREA_AVERAGING)));
+                           
+                           
+                           
+                                               if (spieler.enemyMain_Element == "Wind" || spieler.enemyMain_Element == "Crystal" ){
+                           
+                                                   damageText.setText("" + spieler.Power *2 + "");
+                                                   damageText.setForeground(new Color(255,50,0));
+                                                   damg = spieler.Power *2;
+                                                damageText.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Licht.png").getImage().getScaledInstance(35, 35, Image.SCALE_AREA_AVERAGING)));
+                           
+                           
+                                               }
+                           
+                                               if (spieler.enemyMain_Element == "Feuer"){
+                                                   damageText.setText("" + spieler.Power /2 + "");
+                                                   damageText.setForeground(new Color(255,200,30));
+                                                   damg = spieler.Power /2;
+                                                   damageText.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Licht.png").getImage().getScaledInstance(35, 35, Image.SCALE_AREA_AVERAGING)));
+                           
+                           
+                                               
+                                           }
+                                           elementImage.setVisible(false);
+                                           enemyImage.setEnabled(false);
+
+                   chosen_Main_Element.setVisible(false);
+                   damageText.setBounds(900, 480, 600, 80);
+                   
+                                           damageText.setVisible(true);
+                   
+                                               Thread.sleep(spieler.t2);
+                                               for (int z = 0; z<= 200;z++){
+                                                   damageText.setBounds(900, 480 - z, 600, 80);
+                                                   Thread.sleep(spieler.damageTextAnimation);
+                                               }
+                   
+                   
+        
+                   
+                                           Thread.sleep(spieler.t2);
+                           
+                   
+                       
+                                 //  elementImage.setVisible(true);
+                                   enemyImage.setEnabled(true);
+        
+                       
+                                   System.out.println("Feuer=Main");
+                                                 
+                                       //   enemyImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Ancient2.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
                                         
+                                      
+                                                   Thread.sleep(spieler.t1);
+                                         
+                                                   enemyImage.setEnabled(true);
+        
+                                                   Thread.sleep(spieler.t1);
+        
+        
+                                                   enemyImage.setEnabled(false);
+                                                 elementImage.setVisible(false);
+        
+                   
+                                               
+                   
+                   
+                                                           Thread.sleep(spieler.t1);
+                                                           enemyImage.setEnabled(true);
+                                          
+                                                          
+                                                                       damageText.setText("" + damg +  " Element Schaden");
+                   
+                                                                       Thread.sleep(spieler.t1);
+                                         
+                   
+                                            
+                   
+                                           
+                              
+                                       Thread.sleep(spieler.t2);
+                        
+                                        Thread.sleep(spieler.t2/2);
+                        
+                                        spieler.currentEnemyHP -= damg;
+                   
+                                        enemyInfoHP.setText("         "+spieler.currentEnemyHP);
+                                        if (spieler.currentEnemyHP < 0){
+                                           spieler.currentEnemyHP = 0;
+                                          enemyInfoHP.setText("0");
+                   
+                                       }
 
-                                        extradamg = 0;
+                        Thread.sleep(spieler.t2);
+                                        if (spieler.powerBoost != 1 && spieler.currentEnemyHP > 0 ){
+                                            boostDamageText.setBounds(900,480,600,80);
+                                            boostDamageText.setText("BoostDamage");
+                                            boostDamageText.setIcon(new ImageIcon(new ImageIcon(spieler.powerBoostIcon).getImage().getScaledInstance(35, 35, Image.SCALE_AREA_AVERAGING)));
+                                            boostDamageText.setVisible(true);
+                                            enemyImage.setEnabled(false);
+                                            for (int z = 0; z<= 200;z++){
+                                                boostDamageText.setBounds(900, 480 - z/2, 600, 80);
+                                                Thread.sleep(spieler.boostDamageTextAnimation);
+                                            }
+                                            for (int power = 0; power <=  damg * spieler.powerBoost - damg; power++){
+                                                if (spieler.powerBoost != 1 && spieler.currentEnemyHP >= 0 ){
+                                                boostDamageText.setText("+ "+ power);
+                                                Thread.sleep(power/6);
+                                                extradamg++;                        
+                                                }
+                        
+                                                                        
+                        
+                                            }
+                                            Thread.sleep(spieler.t3);
+                                            extradamg--;
+                                            spieler.currentEnemyHP -= extradamg;
+                                            enemyInfoHP.setText("         "+spieler.currentEnemyHP);
+                                            
+                        enemyImage.setEnabled(true);
+                   
+                        if (spieler.currentEnemyHP < 0){
+                           spieler.currentEnemyHP = 0;
+                          enemyInfoHP.setText("0");
+                   
+                       }
+                                 
+                   
+                   
+                                           }
+                                       }
+                                       extradamg = 0;
+        
+                                           elementImage.setVisible(false);
+                                           damageText.setVisible(false);
+                                           boostDamageText.setVisible(false);
+                                           for (int xi = 0; xi<= 120; xi++){
+                                             fighting_options.setBounds(38, 1080 - xi*5, 1200, 300);
+                                             Thread.sleep(spieler.t1);
+                                                 }
 
-                                                    elementImage.setVisible(false);
-                                                    for (int xi = 0; xi<= 120; xi++){
-                                                      fighting_options.setBounds(38, 1080 - xi*5, 1200, 300);
-                                                      Thread.sleep(4);
-                                                          }
+                                
 
 
 
@@ -3302,7 +3448,7 @@ elementImage.setVisible(false);
             
                             spieler.currentEnemyHP -= (damg * 3);
        
-                            enemyInfoHP.setText(""+spieler.currentEnemyHP);
+                            enemyInfoHP.setText("         "+spieler.currentEnemyHP);
                             if (spieler.currentEnemyHP < 0){
                                spieler.currentEnemyHP = 0;
                               enemyInfoHP.setText("0");
@@ -3351,19 +3497,17 @@ elementImage.setVisible(false);
        
                                }
                            }
-       
+                           extradamg = 0;
+
                                elementImage.setVisible(false);
                                damageText.setVisible(false);
                                boostDamageText.setVisible(false);
-                               extradamg = 0;
+                               elementImage.setBounds(400,240,400,400);
                                for (int xi = 0; xi<= 120; xi++){
                                  fighting_options.setBounds(38, 1080 - xi*5, 1200, 300);
                                  Thread.sleep(spieler.t1);
                                      }
        
-
-                            elementImage.setVisible(false);
-                            elementImage.setBounds(400,240,400,400);
 
 
                             Thread.sleep(spieler.t2);
@@ -3374,6 +3518,34 @@ elementImage.setVisible(false);
 
            }
 
+
+           if (main_element != null && main_element.charAt(2) == 'V' && main_element.charAt(3) == 'o' && main_element.charAt(4) == 'i' || second_element != null && second_element.charAt(2) == 'L' && second_element.charAt(3) == 'u' && second_element.charAt(4) == 'n'){
+            for (int xi = 0; xi<= 120; xi++){
+                fighting_options.setBounds(38, 480 + xi*5, 1200, 300);
+                Thread.sleep(spieler.t1);
+                    }
+    
+                    Thread.sleep(spieler.t2);
+    
+                 //   elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Lunar.png").getImage().getScaledInstance(370, 50, Image.SCALE_AREA_AVERAGING)));
+                                     elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Animation_Void\\1.png").getImage().getScaledInstance(370, 50, Image.SCALE_AREA_AVERAGING)));
+
+
+            elementImage.setBounds(500,280,400,400);
+
+        //    elementsMenu.setVisible(true);
+        elementImage.setVisible(true);
+
+            System.out.println("Lunar=Main");
+
+            for (int i = 0; i< 73; i++){
+                elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Animation_Void\\" + i + ".png").getImage().getScaledInstance(370, 365, Image.SCALE_AREA_AVERAGING)));
+                Thread.sleep(spieler.t1);
+            }
+
+            Thread.sleep(spieler.t3);
+            elementImage.setVisible(false);
+
 /*
           elementImage.setVisible(false);
           for (int xi = 0; xi<= 14; xi++){
@@ -3382,7 +3554,11 @@ elementImage.setVisible(false);
                 }
 */
 
-    
+for (int xi = 0; xi<= 120; xi++){
+    fighting_options.setBounds(38, 1080 - xi*5, 1200, 300);
+    Thread.sleep(spieler.t1);
+        }
+            }
     }
 
     String animateTextphases[] = {
