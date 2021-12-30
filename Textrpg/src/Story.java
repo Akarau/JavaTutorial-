@@ -2,39 +2,20 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.Font;
 import java.awt.event.ActionListener;
-import java.beans.PropertyChangeListener;
-import java.io.File;
-import java.io.IOException;
-import java.lang.StackWalker.Option;
-import java.lang.annotation.Repeatable;
-import java.lang.reflect.Array;
 import java.util.EventObject;
-import java.util.Timer;
 import java.awt.*;
 import java.awt.event.*;
-
-import javax.imageio.ImageIO;
-import javax.swing.AbstractButton;
-import javax.swing.Action;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-import javax.swing.GroupLayout.Alignment;
-import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
-import javax.swing.plaf.synth.ColorType;
-import javax.swing.text.AttributeSet.ColorAttribute;
-import javax.swing.border.LineBorder;
-import javax.swing.ImageIcon;
 
-import org.w3c.dom.css.RGBColor;
 
 public class Story implements ActionListener {
 
@@ -1508,7 +1489,8 @@ confirmName.setVisible(false);
 texarea.setEditable(false);
 commbox.setVisible(true);
 option1.setVisible(false);
-fighting_options.setVisible(true);
+elementsMenu.setVisible(true);
+//fighting_options.setVisible(true);
 //elementsMenu.setVisible(true);
 
 
@@ -1520,7 +1502,7 @@ fighting_options.setVisible(true);
 
 
 
-           commbox.setText(" Welcome " + "'"+texarea.getText()+"'" + ", your name is terrible.                                                    Now choose your main element. Your main element is strongest             element you will get.  Each element has positive and negative things.     For example Crystal is weak against 'Fire' but strong against 'Earth' ");
+           commbox.setText(" Welcome " + "'"+texarea.getText()+"'" + ", your name is terrible.                                                      Now choose your main element. Your main element is strongest             element you will get.  Each element has positive and negative things.     For example Crystal is weak against 'Fire' but strong against 'Earth' ");
 
          //  Thread.sleep(spieler.thread1);
           // spieler.thread1 = 1000;
@@ -1567,20 +1549,18 @@ System.out.println("2x");
            
 
             ifightPlayButton.setText("   2x");
-            spieler.t1 = 1;
+            spieler.t1 = 0;
             System.out.println(spieler.t1);
 
-spieler.t2 = 50;
-spieler.t3 = 100;
-spieler.ancientAnimation = 0;
-spieler.cosmicAnimation1 = 15/2;
-spieler.cosmicAnimation2 = 9/2;
-spieler.divide = 5;
-spieler.damageTextAnimation = 2;
-spieler.boostDamageTextAnimation = 1;
-
-
-System.out.println("2x");
+            spieler.t1 = 3/2;
+            spieler.t2 = 50;
+            spieler.t3 = 100;
+            spieler.ancientAnimation = 0;
+            spieler.cosmicAnimation1 = 15/2;
+            spieler.cosmicAnimation2 = 9/2;
+            spieler.divide = 5;
+            spieler.damageTextAnimation = 2;
+            spieler.boostDamageTextAnimation = 1;
 ePlayButton.setActionCommand("ePlayButton1");
 
 
@@ -2778,7 +2758,7 @@ damageText.setBounds(900, 480, 600, 80);
                             elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Feuer.png").getImage().getScaledInstance(300, 295, Image.SCALE_AREA_AVERAGING)));
 
                         elementImage.setBounds(500,100,400,400);
-                        Thread.sleep(200);
+                        Thread.sleep(spieler.t2);
         
 
     
@@ -2788,7 +2768,6 @@ damageText.setBounds(900, 480, 600, 80);
                
                     elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Feuer.png").getImage().getScaledInstance(300, 295, Image.SCALE_AREA_AVERAGING)));
     
-                    //   enemyImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Ancient2.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
                        for (int a = 1; a<100; a++){
                         elementImage.setBounds(500,100 + a*2,400,400);
     
@@ -3339,7 +3318,6 @@ damageText.setBounds(900, 480, 600, 80);
     
                     Thread.sleep(spieler.t2);
     
-                 //   elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Lunar.png").getImage().getScaledInstance(370, 50, Image.SCALE_AREA_AVERAGING)));
                                      elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Animation_Lunar\\1.png").getImage().getScaledInstance(370, 50, Image.SCALE_AREA_AVERAGING)));
 
 
@@ -3349,23 +3327,9 @@ damageText.setBounds(900, 480, 600, 80);
 
             System.out.println("Lunar=Main");
 
-         //   for (int a = 1; a<37; a++){
-               // elementImage.setVisible(true);
-
-
-                
-
-
                 
 
                             if (spieler.currentEnemyHP > 0){
-                            
-                                
-                                
-                                //   damageText.setVisible(true);
-                                //   boostDamageText.setVisible(false);
-                                //   boostDamageText.setBounds(900, 380, 600, 80);
-                                 //  Thread.sleep(spieler.t1 * 10);
                
                                    damg = (spieler.Power)/3;
        
@@ -3488,48 +3452,13 @@ elementImage.setVisible(false);
            
                        System.out.println("Feuer=Main");
                       
-                         //  elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Lunar.png").getImage().getScaledInstance(300, 295, Image.SCALE_AREA_AVERAGING)));
-           
-                           //   enemyImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Ancient2.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
-
-       
-                                       
-       
-                                //     elementImage.setBounds(450,80,400,400);
-                                  //   elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Lunar.png").getImage().getScaledInstance(200, 195, Image.SCALE_AREA_AVERAGING)));
                                      enemyImage.setEnabled(true);
                                      elementImage.setVisible(false);
-       
-                                     
-       
-       
-
-       
-                                               
-       
-                                                           
-                             
-       
-                                   
-       
-                                   
-                          // enemyImage.setEnabled(false);
-                          // damageText.setText(damg + " Element Schaden");
-       
            
-                           Thread.sleep(spieler.t2);
-       
-                           
-                                  
-                          // enemyImage.setEnabled(true);
-       
-       
                                
                   
                            Thread.sleep(spieler.t2);
-            
-                            Thread.sleep(spieler.t2/2);
-            
+                        
                             spieler.currentEnemyHP -= (damg * 3);
        
                             enemyInfoHP.setText("         "+spieler.currentEnemyHP);
