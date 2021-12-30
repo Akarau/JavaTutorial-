@@ -4,7 +4,7 @@ import javax.swing.JPanel;
 
 public class CuPower {
       int Gold = 0;
-      int Power = 100;
+      int Power = 300;
       int Points = 50;
       int Health = 100;
       int damg;
@@ -12,7 +12,7 @@ public class CuPower {
     public  int playerHealthResult = 10;
      int MaxHealth;
       float GoldEarn = 1F;
-     String Main_Element = "  Erde  ";
+     String Main_Element = "  Crystal  ";
      String Second_Element = "  Cosmic  ";
      String Support_Element = "  Luck  ";
      String playerName;
@@ -23,7 +23,7 @@ public class CuPower {
      // Enemy //
      String currentEnemy;
      int CurrentEnemyPower = 200;
-     int currentEnemyHP = 2600;
+     int currentEnemyHP = 260;
      String enemyMain_Element = "Crystal";
      String enemySecond_Element;
      String enemyThird_Element;
