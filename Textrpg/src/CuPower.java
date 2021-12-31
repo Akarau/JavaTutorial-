@@ -12,7 +12,7 @@ public class CuPower {
     public  int playerHealthResult = 10;
      int MaxHealth;
       float GoldEarn = 1F;
-     String Main_Element = "  Void  ";
+     String Main_Element = "  Crystal  ";
      String Second_Element = "  Cosmic  ";
      String Support_Element = "  Luck  ";
      String playerName;
@@ -23,7 +23,7 @@ public class CuPower {
      // Enemy //
      String currentEnemy;
      int CurrentEnemyPower = 200;
-     int currentEnemyHP = 2600;
+     int currentEnemyHP = 250;
      String enemyMain_Element = "Erde";
      String enemySecond_Element;
      String enemyThird_Element;
