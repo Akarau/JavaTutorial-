@@ -20,6 +20,8 @@ import javax.swing.border.LineBorder;
 public class Story implements ActionListener {
 
     CuPower spieler = new CuPower();
+    Shop scl = new Shop();
+
 
     private static final Component JButton = null;
     static ImageIcon imageW = new ImageIcon("Textrpg\\Images\\Crystal.png");
@@ -56,6 +58,9 @@ public class Story implements ActionListener {
     // upgrades //
 
     JPanel upgradeMenu;
+    JPanel shop;
+    JPanel swordsMenu;
+
     JButton upgradeMenuButton;
     static JLabel i5;
     static JLabel i6;
@@ -629,6 +634,8 @@ JLabel self_HealText;
         upgradeMenu.setFocusable(false);
         upgradeMenu.setBorder(new LineBorder(Color.white));
 
+        
+
         powerUpgradeButton = new JButton();
         powerUpgradeButton.setForeground(new Color(255, 255, 255));
         powerUpgradeButton.setFont(new Font("Times new Roman", Font.PLAIN, 60));
@@ -1146,6 +1153,27 @@ reducedDamgeText2.setForeground(new Color(255,180,0));
 reducedDamgeText2.setBounds(250, 340, 100, 80);
 reducedDamgeText2.setVisible(false);
 
+
+shop = new JPanel();
+shop.setForeground(new Color(255, 0, 150));
+shop.setFont(new Font("Times new Roman", Font.PLAIN, 60));
+shop.setBounds(680, 150, 500, 400);
+shop.setBackground(Color.black);
+shop.setVisible(true);
+shop.setFocusable(false);
+shop.setBorder(new LineBorder(Color.white));
+
+swordsMenu = new JPanel();
+swordsMenu.setForeground(new Color(255, 0, 150));
+swordsMenu.setFont(new Font("Times new Roman", Font.PLAIN, 60));
+swordsMenu.setBounds(0, 0, 500, 400);
+swordsMenu.setBackground(Color.black);
+swordsMenu.setVisible(true);
+swordsMenu.setFocusable(false);
+swordsMenu.setOpaque(false);
+swordsMenu.setBorder(new LineBorder(Color.white));
+//shop.add(swordsMenu);
+
 frame.add(damageText);
 frame.add(boostDamageText);
 frame.add(self_HealText);
@@ -1156,6 +1184,7 @@ frame.add(enemyImage);
 
 frame.add(texarea);
 frame.add(confirmName);
+frame.add(shop);
         JLabel ei;
 
         for (int e = 0; e < Elemente.elements.length; e++) {
@@ -1175,6 +1204,7 @@ frame.add(confirmName);
             elemB.setActionCommand(Elemente.elements[e]);
             choose_Element.setActionCommand("Main_Choose");
             elemB.setBorder(new LineBorder(Color.white));
+
 
             ei = new JLabel();
             ei.setForeground(colors2[c]);
@@ -1196,6 +1226,66 @@ frame.add(confirmName);
             // elementsMenu.add(ei);
             elementsMenu.add(elemB);
             elemB.add(ei);
+            // commbox.setVisible(true);
+
+            // if (Elemente.elements[e] == null) {
+            // break;
+            // } else {
+
+            // }
+            // }
+
+        }
+
+        for (int s = 0; s < scl.schwerte.length; s++) {
+            // System.out.println(c);
+            // System.out.println(colors[c]);
+
+            // if (Elemente.elements[e] != null){
+
+            javax.swing.JButton swordB = new JButton();
+            swordB.setForeground(new Color(80, 0, 255));
+            swordB.setFont(new Font("Times new Roman", Font.PLAIN, 60));
+            swordB.setBounds(0, 0, 100, 100);
+            swordB.setBackground(Color.black);
+            swordB.setVisible(true);
+            swordB.setFocusable(false);
+            swordB.addActionListener(this);
+            swordB.setActionCommand(scl.schwerte[s]);
+            choose_Element.setActionCommand("Sword_Buy");
+            swordB.setBorder(new LineBorder(Color.white));
+/*
+            javax.swing.JLabel swordBi = new JLabel("k76");
+            swordBi.setForeground(new Color(80, 0, 255));
+            swordBi.setFont(new Font("Times new Roman", Font.PLAIN, 60));
+            swordBi.setBounds(0, 300, 100, 100);
+            swordBi.setBackground(Color.red);
+            swordBi.setVisible(true);
+            swordBi.setFocusable(false);
+            choose_Element.setActionCommand("Sword_Buy");
+            swordBi.setBorder(new LineBorder(Color.white));
+*/
+            JLabel si = new JLabel();
+            si.setForeground(colors2[c]);
+            si.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+            // color.setBounds(500, 500, 350, 350);
+            si.setIcon(new ImageIcon(new ImageIcon(scl.i[s])
+                    .getImage().getScaledInstance(140, 135, Image.SCALE_AREA_AVERAGING)));
+                    si.setSize(800, 800);
+                    si.setBackground(Color.white);
+                    si.setVisible(true);
+                    si.setFocusable(false);
+            // ei.addActionListener(this);
+            // ei.setActionCommand(colors[c]);
+            si.setBorder(new LineBorder(Color.white));
+            // ei.setActionCommand(colors[c]);
+            // color.setBorder(BorderFactory.createBevelBorder(200, Color.white,
+            // Color.BLACK));
+
+            // elementsMenu.add(ei);
+            this.shop.add(swordB);
+//this.shop.add(swordBi);
+            swordB.add(si);
             // commbox.setVisible(true);
 
             // if (Elemente.elements[e] == null) {
@@ -1607,8 +1697,8 @@ ePlayButton.setActionCommand("ePlayButton1");
                         && Elemente.elements[t].charAt(1) == spieler.Main_Element.charAt(3)
                         && Elemente.elements[t].charAt(2) == spieler.Main_Element.charAt(4)
                         && Elemente.elements[t].charAt(3) == spieler.Main_Element.charAt(5)) {
-                    System.out.println("PowerReached");
                     // chosen_Main_Element.setVisible(false);
+                    chosen_Main_Element.setVisible(false);
                     i1.setIcon(
                             new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\" + Elemente.elements[t] + ".png")
                                     .getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
@@ -1630,6 +1720,8 @@ ePlayButton.setActionCommand("ePlayButton1");
             // System.out.println("Dsalkgbw");
 
             // frame.setVisible(false);
+            chosen_Main_Element.setVisible(false);
+            elementsMenu.setVisible(false);
             try {
 
                 animateText(
@@ -1783,6 +1875,7 @@ spieler.thread3 = (Integer) null;
         for (v = 0; v < Elemente.elements.length; v++) {
             if (e.getActionCommand().equals(Elemente.elements[v])) {
 
+                chosen_Main_Element.setVisible(true);
                 chosen_Main_Element_Name.setVisible(true);
                 chosen_Main_Element_Description.setVisible(true);
                 chosen_Main_Element_Picture.setVisible(true);
@@ -1796,6 +1889,26 @@ spieler.thread3 = (Integer) null;
                 chosen_Main_Element_Description.setText("           " + Elemente.elements[v]
                         + " effective agains                      | " + Elemente.elementsPowers[v] + " |");
                 commbox.setText(Elemente.elements[v] + " " + Elemente.elementsWeaks[v]);
+
+            }
+        }
+
+        for (v = 0; v < scl.schwerte.length; v++) {
+            if (e.getActionCommand().equals(scl.schwerte[v])) {
+
+                chosen_Main_Element.setVisible(true);
+                chosen_Main_Element_Name.setVisible(true);
+                chosen_Main_Element_Description.setVisible(true);
+                chosen_Main_Element_Picture.setVisible(true);
+                choose_Element.setVisible(true);
+
+                chosen_Main_Element_Picture.setIcon(
+                        new ImageIcon(new ImageIcon(scl.i[v])
+                                .getImage().getScaledInstance(200, 195, Image.SCALE_AREA_AVERAGING)));
+                chosen_Main_Element_Name.setText("  " + scl.schwerte[v] + "  ");
+                chosen_Main_Element_Name.setForeground(scl.swordsColor[v]);
+                chosen_Main_Element_Description.setText("Kostet " +  scl.swordsPreis[v] + " coins" );
+                commbox.setText(scl.inf[v]);
 
             }
         }
@@ -4944,6 +5057,7 @@ if (spieler.Second_Element == "  Wind  "){
 i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Wind.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
 i2.setText("        Wind         ");
 i2.setForeground(new Color(255,215,0));
+
 }
 
 }
@@ -4952,7 +5066,7 @@ i2.setForeground(new Color(255,215,0));
         
 
 
-    }
+}
 
     public <ActionEvent> void CL(ActionEvent e) throws InterruptedException {
         // if(((EventObject) e).getSource()==startname){
