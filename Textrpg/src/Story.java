@@ -29,6 +29,7 @@ public class Story implements ActionListener {
     JTextArea commbox;
     JLabel commboxtex;
     JLabel inf;
+    JPanel shop_options;
 
     static JLabel l;
     static JLabel i1;
@@ -37,6 +38,9 @@ public class Story implements ActionListener {
     static JLabel i4;
     static JLabel iAchievements;
     static JLabel ifightPlayButton;
+    static JLabel iShop;
+    static JLabel ishop_swords;
+    static JLabel ishop_shields;
     static JButton option1;
     static JButton option2;
     static JButton option3;
@@ -50,7 +54,10 @@ public class Story implements ActionListener {
     JPanel b3;
     JPanel b4;
     JPanel achievementsButton;
+    JPanel shopButton;
     JPanel fightPlayButton;
+    JPanel shop_swords;
+    JPanel shop_shields;
 
     JButton e1;
     JButton e2;
@@ -59,6 +66,7 @@ public class Story implements ActionListener {
 
     JPanel upgradeMenu;
     JPanel shop;
+    JLabel iPanel;
     JPanel swordsMenu;
 
     JButton upgradeMenuButton;
@@ -381,6 +389,28 @@ JLabel self_HealText;
         optionsmenu_options.setBounds(830, 300, 70, 160);
         optionsmenu_options.setBorder(new LineBorder(Color.white));
 
+        shop_options = new JPanel();
+        // optionsmenu_colors.setBounds(1.x, 1.y, );
+        shop_options.setVisible(true);
+        shop_options.setBackground(Color.BLACK);
+        shop_options.setFocusable(false);
+        shop_options.setBounds(1180, 300, 90, 160);
+        shop_options.setBorder(new LineBorder(null));
+
+
+       
+
+
+       JPanel optionsmenu_colorsoutlines = new JPanel();
+        // optionsmenu_colors.setBounds(1.x, 1.y, );
+        optionsmenu_colorsoutlines.setVisible(false);
+        optionsmenu_colorsoutlines.setBackground(Color.BLACK);
+        optionsmenu_colorsoutlines.setFocusable(false);
+        optionsmenu_colorsoutlines.setBounds(900, 300, 500, 570);
+        optionsmenu_colorsoutlines.setBorder(new LineBorder(Color.white));
+
+        frame.add(shop_options);
+
         fighting_options = new JPanel();
         // optionsmenu_colors.setBounds(1.x, 1.y, );
         fighting_options.setVisible(true);
@@ -446,11 +476,38 @@ JLabel self_HealText;
         achievementsButton.setVisible(true);
         achievementsButton.setFocusable(false);
 
+        shopButton = new JPanel();
+        shopButton.setForeground(new Color(255, 0, 150));
+        shopButton.setFont(new Font("Times new Roman", Font.PLAIN, 60));
+        shopButton.setBounds(150, 150, 240, 2540);
+        shopButton.setBackground(Color.black);
+        shopButton.setVisible(true);
+        shopButton.setFocusable(false);
 
+        shop_swords = new JPanel();
+        shop_swords.setForeground(new Color(255, 0, 150));
+        shop_swords.setFont(new Font("Times new Roman", Font.PLAIN, 60));
+        shop_swords.setBounds(150, 150, 80, 150);
+        shop_swords.setBackground(Color.black);
+        shop_swords.setVisible(true);
+        shop_swords.setFocusable(false);
+        shop_swords.setOpaque(false);
+
+        shop_shields = new JPanel();
+        shop_shields.setForeground(new Color(255, 0, 150));
+        shop_shields.setFont(new Font("Times new Roman", Font.PLAIN, 60));
+        shop_shields.setBounds(150, 150, 80, 150);
+        shop_shields.setBackground(Color.black);
+        shop_shields.setVisible(true);
+        shop_shields.setFocusable(false);
+        shop_shields.setOpaque(false);
+
+
+        shop_options.add(shop_swords);
+        shop_options.add(shop_shields);
 
         // e1.addActionListener(this);
         // e1.setActionCommand("E");
-        optionsmenu_options.setBorder(new LineBorder(Color.white));
 
 
         e1 = new JButton();
@@ -472,7 +529,6 @@ JLabel self_HealText;
         e2.setFocusable(false);
         e2.addActionListener(this);
         e2.setActionCommand("Attack#2");
-        optionsmenu_options.setBorder(new LineBorder(Color.white));
 
         javax.swing.JButton e3 = new JButton();
         e3.setForeground(new Color(255, 255, 255));
@@ -483,7 +539,6 @@ JLabel self_HealText;
         e3.setFocusable(false);
         e3.addActionListener(this);
         e3.setActionCommand("E");
-        optionsmenu_options.setBorder(new LineBorder(Color.white));
 
         javax.swing.JButton e4 = new JButton();
         e4.setForeground(new Color(255, 255, 255));
@@ -494,7 +549,6 @@ JLabel self_HealText;
         e4.setFocusable(false);
         e4.addActionListener(this);
         e4.setActionCommand("E");
-        optionsmenu_options.setBorder(new LineBorder(Color.white));
 
         javax.swing.JButton eAchievements = new JButton();
         eAchievements.setForeground(new Color(255, 255, 255));
@@ -505,7 +559,43 @@ JLabel self_HealText;
         eAchievements.setFocusable(false);
         eAchievements.addActionListener(this);
         eAchievements.setActionCommand("eAchievements");
-        optionsmenu_options.setBorder(new LineBorder(Color.white));
+
+        javax.swing.JButton eShop = new JButton();
+        eShop.setForeground(new Color(255, 255, 255));
+        eShop.setFont(new Font("Times new Roman", Font.PLAIN, 60));
+        eShop.setBounds(0, 0, 0, 0);
+        eShop.setBackground(Color.black);
+        eShop.setVisible(true);
+        eShop.setFocusable(false);
+        eShop.addActionListener(this);
+        eShop.setActionCommand("eShop");
+        eShop.setOpaque(false);
+
+
+        javax.swing.JButton eshop_swords = new JButton();
+        eshop_swords.setForeground(new Color(255, 255, 255));
+        eshop_swords.setFont(new Font("Times new Roman", Font.PLAIN, 60));
+        eshop_swords.setBounds(0, 0, 0, 0);
+        eshop_swords.setBackground(Color.black);
+        eshop_swords.setVisible(true);
+        eshop_swords.setFocusable(false);
+        eshop_swords.addActionListener(this);
+        eshop_swords.setActionCommand("eShop_Swords");
+        eshop_swords.setText("  ");
+        eshop_swords.setBorder(new LineBorder(Color.black));
+
+        javax.swing.JButton eshop_shields = new JButton();
+        eshop_shields.setForeground(new Color(255, 255, 255));
+        eshop_shields.setFont(new Font("Times new Roman", Font.PLAIN, 60));
+        eshop_shields.setBounds(0, 0, 0, 0);
+        eshop_shields.setBackground(Color.black);
+        eshop_shields.setVisible(true);
+        eshop_shields.setFocusable(false);
+        eshop_shields.addActionListener(this);
+        eshop_shields.setActionCommand("eShop_Shields");
+        eshop_shields.setText("  ");
+        eshop_shields.setBorder(new LineBorder(Color.black));
+
 
 
         ePlayButton = new JButton();
@@ -543,6 +633,30 @@ JLabel self_HealText;
                .getScaledInstance(35, 35, Image.SCALE_AREA_AVERAGING)));
                ifightPlayButton.setText("   1x");
 
+               ishop_swords = new JLabel();
+               ishop_swords.setForeground(new Color(255, 255, 255));
+               ishop_swords.setFont(new Font("Times new Roman", Font.PLAIN, 35));
+               // i3.setBounds(200, 400, 400, 0);
+               ishop_swords.setSize(20, 20);
+               ishop_swords.setBackground(Color.WHITE);
+               ishop_swords.setVisible(true);
+               ishop_swords.setFocusable(false);
+               ishop_swords.setOpaque(false);
+               ishop_swords.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Swords\\The Warrior.png").getImage()
+                       .getScaledInstance(65, 60, Image.SCALE_AREA_AVERAGING)));
+
+                       ishop_shields = new JLabel();
+                       ishop_shields.setForeground(new Color(255, 255, 255));
+                       ishop_shields.setFont(new Font("Times new Roman", Font.PLAIN, 35));
+                       // i3.setBounds(200, 400, 400, 0);
+                       ishop_shields.setSize(20, 20);
+                       ishop_shields.setBackground(Color.WHITE);
+                       ishop_shields.setVisible(true);
+                       ishop_shields.setFocusable(false);
+                       ishop_shields.setOpaque(false);
+                       ishop_shields.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Shields\\Aqua shield.png").getImage()
+                               .getScaledInstance(65, 60, Image.SCALE_AREA_AVERAGING)));
+
 
        ePlayButton.add(ifightPlayButton);
        frame.add(fightPlayButton);
@@ -553,11 +667,19 @@ JLabel self_HealText;
         fighting_options.add(b3);
         fighting_options.add(b4);
         fighting_options.add(achievementsButton);
+        fighting_options.add(shopButton);
+        shop_options.add(shop_swords);
+        shop_options.add(shop_shields);
+        shop_swords.add(eshop_swords);
+        shop_shields.add(eshop_shields);
+        eshop_shields.add(ishop_shields);
+        eshop_swords.add(ishop_swords);
         b1.add(e1);
         b2.add(e2);
         b3.add(e3);
         b4.add(e4);
         achievementsButton.add(eAchievements);
+        shopButton.add(eShop);
 
         tex = new JButton("T");
         tex.setForeground(Color.white);
@@ -742,6 +864,17 @@ JLabel self_HealText;
         iAchievements.setVisible(true);
         iAchievements.setFocusable(false);
         iAchievements.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Others\\Badge.png").getImage().getScaledInstance(55, 50,
+                Image.SCALE_AREA_AVERAGING)));
+
+                iShop = new JLabel();
+                iShop.setForeground(Color.white);
+                iShop.setFont(new Font("Times new Roman", Font.PLAIN, 50));
+        // i3.setBounds(200, 400, 400, 0);
+        iShop.setSize(80, 80);
+        // i5.setBackground(Color.WHITE);
+        iShop.setVisible(true);
+        iShop.setFocusable(false);
+        iShop.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Others\\Shop.png").getImage().getScaledInstance(55, 50,
                 Image.SCALE_AREA_AVERAGING)));
 
         powerUpgradeButton.add(i5);
@@ -1163,6 +1296,16 @@ shop.setVisible(true);
 shop.setFocusable(false);
 shop.setBorder(new LineBorder(Color.white));
 
+iPanel = new JLabel("            Shop          ");
+iPanel.setForeground(new Color(255, 255, 255));
+iPanel.setFont(new Font("Times new Roman", Font.PLAIN, 60));
+iPanel.setBounds(680, 50, 500, 92);
+iPanel.setBackground(Color.black);
+iPanel.setVisible(true);
+iPanel.setFocusable(false);
+iPanel.setBorder(new LineBorder(Color.white));
+chosen_Main_Element.setVisible(false);
+
 swordsMenu = new JPanel();
 swordsMenu.setForeground(new Color(255, 0, 150));
 swordsMenu.setFont(new Font("Times new Roman", Font.PLAIN, 60));
@@ -1185,6 +1328,7 @@ frame.add(enemyImage);
 frame.add(texarea);
 frame.add(confirmName);
 frame.add(shop);
+frame.add(iPanel);
         JLabel ei;
 
         for (int e = 0; e < Elemente.elements.length; e++) {
@@ -1248,12 +1392,13 @@ frame.add(shop);
             swordB.setFont(new Font("Times new Roman", Font.PLAIN, 60));
             swordB.setBounds(0, 0, 100, 100);
             swordB.setBackground(Color.black);
-            swordB.setVisible(true);
+            swordB.setVisible(false);
             swordB.setFocusable(false);
             swordB.addActionListener(this);
             swordB.setActionCommand(scl.schwerte[s]);
             choose_Element.setActionCommand("Sword_Buy");
             swordB.setBorder(new LineBorder(Color.white));
+            swordB.setName("Sword");
 /*
             javax.swing.JLabel swordBi = new JLabel("k76");
             swordBi.setForeground(new Color(80, 0, 255));
@@ -1296,6 +1441,68 @@ frame.add(shop);
             // }
 
         }
+
+        for (int s2 = 0; s2 < scl.schilder.length; s2++) {
+            // System.out.println(c);
+            // System.out.println(colors[c]);
+
+            // if (Elemente.elements[e] != null){
+
+            javax.swing.JButton shieldB = new JButton();
+            shieldB.setForeground(new Color(80, 0, 255));
+            shieldB.setFont(new Font("Times new Roman", Font.PLAIN, 60));
+            shieldB.setBounds(0, 0, 100, 100);
+            shieldB.setBackground(Color.black);
+            shieldB.setVisible(true);
+            shieldB.setFocusable(false);
+            shieldB.addActionListener(this);
+            shieldB.setActionCommand(scl.schilder[s2]);
+            choose_Element.setActionCommand("Shield_Buy");
+            shieldB.setBorder(new LineBorder(Color.white));
+            shieldB.setName("Shield");
+/*
+            javax.swing.JLabel swordBi = new JLabel("k76");
+            swordBi.setForeground(new Color(80, 0, 255));
+            swordBi.setFont(new Font("Times new Roman", Font.PLAIN, 60));
+            swordBi.setBounds(0, 300, 100, 100);
+            swordBi.setBackground(Color.red);
+            swordBi.setVisible(true);
+            swordBi.setFocusable(false);
+            choose_Element.setActionCommand("Sword_Buy");
+            swordBi.setBorder(new LineBorder(Color.white));
+*/
+            JLabel si = new JLabel();
+            si.setForeground(colors2[c]);
+            si.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+            // color.setBounds(500, 500, 350, 350);
+            si.setIcon(new ImageIcon(new ImageIcon(scl.i2[s2])
+                    .getImage().getScaledInstance(140, 135, Image.SCALE_AREA_AVERAGING)));
+                    si.setSize(800, 800);
+                    si.setBackground(Color.white);
+                    si.setVisible(true);
+                    si.setFocusable(false);
+            // ei.addActionListener(this);
+            // ei.setActionCommand(colors[c]);
+            si.setBorder(new LineBorder(Color.white));
+            // ei.setActionCommand(colors[c]);
+            // color.setBorder(BorderFactory.createBevelBorder(200, Color.white,
+            // Color.BLACK));
+
+            // elementsMenu.add(ei);
+            this.shop.add(shieldB);
+//this.shop.add(swordBi);
+            shieldB.add(si);
+            // commbox.setVisible(true);
+
+            // if (Elemente.elements[e] == null) {
+            // break;
+            // } else {
+
+            // }
+            // }
+
+        }
+
 
         JButton color;
 
@@ -1380,6 +1587,7 @@ frame.add(shop);
         e3.add(i3);
         e4.add(i4);
         eAchievements.add(iAchievements);
+        eShop.add(iShop);
         frame.add(optionsmenu);
         frame.add(option1);
         frame.add(option2);
@@ -1657,6 +1865,50 @@ ePlayButton.setActionCommand("ePlayButton1");
         }
 
 
+        if (e.getActionCommand().equals("eShop")) {
+           shop.setVisible(!shop.isVisible());
+           iPanel.setVisible(!iPanel.isVisible());
+           for (int s = 0; s < scl.schwerte.length; s++){
+if (shop.getComponent(s).getName().equals("Sword")){
+    shop.getComponent(s).setVisible(false);
+}
+           }
+        }
+
+
+
+        if (e.getActionCommand().equals("eShop_Swords")) {
+           // shop.setVisible(!shop.isVisible());
+            //iPanel.setVisible(!iPanel.isVisible());
+            for (int s = 0; s < scl.schilder.length + scl.schwerte.length; s++){
+                if (shop.getComponent(s).getName().equals("Sword")){
+                    shop.getComponent(s).setVisible(true);              
+            }
+            if (shop.getComponent(s).getName().equals("Shield")){
+                shop.getComponent(s).setVisible(false);         
+        }
+        
+
+             }
+         }
+
+         if (e.getActionCommand().equals("eShop_Shields")) {
+            // shop.setVisible(!shop.isVisible());
+           //  iPanel.setVisible(!iPanel.isVisible());
+             for (int s = 0; s < scl.schilder.length + scl.schwerte.length; s++){
+                if (shop.getComponent(s).getName().equals("Shield")){
+                    shop.getComponent(s).setVisible(true);              
+            }
+            if (shop.getComponent(s).getName().equals("Sword")){
+                shop.getComponent(s).setVisible(false);         
+        }
+        
+
+             }
+                     
+             
+          }
+
         if (e.getActionCommand().equals("Main_Choose")) {
             System.out.println("Main_Choose");
             // System.out.println("Dsalkgbw");
@@ -1880,6 +2132,8 @@ spieler.thread3 = (Integer) null;
                 chosen_Main_Element_Description.setVisible(true);
                 chosen_Main_Element_Picture.setVisible(true);
                 choose_Element.setVisible(true);
+                choose_Element.setText(" Wählen ");
+
 
                 chosen_Main_Element_Picture.setIcon(
                         new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\" + Elemente.elements[v] + ".png")
@@ -1896,11 +2150,14 @@ spieler.thread3 = (Integer) null;
         for (v = 0; v < scl.schwerte.length; v++) {
             if (e.getActionCommand().equals(scl.schwerte[v])) {
 
+                fighting_options.setVisible(false);
+                commbox.setVisible(true);
                 chosen_Main_Element.setVisible(true);
                 chosen_Main_Element_Name.setVisible(true);
                 chosen_Main_Element_Description.setVisible(true);
                 chosen_Main_Element_Picture.setVisible(true);
                 choose_Element.setVisible(true);
+                choose_Element.setText(" Kaufen ");
 
                 chosen_Main_Element_Picture.setIcon(
                         new ImageIcon(new ImageIcon(scl.i[v])
@@ -1913,7 +2170,32 @@ spieler.thread3 = (Integer) null;
             }
         }
 
+        for (v = 0; v < scl.schilder.length; v++) {
+            if (e.getActionCommand().equals(scl.schilder[v])) {
+
+                fighting_options.setVisible(false);
+                commbox.setVisible(true);
+                chosen_Main_Element.setVisible(true);
+                chosen_Main_Element_Name.setVisible(true);
+                chosen_Main_Element_Description.setVisible(true);
+                chosen_Main_Element_Picture.setVisible(true);
+                choose_Element.setVisible(true);
+                choose_Element.setText(" Kaufen ");
+
+                chosen_Main_Element_Picture.setIcon(
+                        new ImageIcon(new ImageIcon(scl.i2[v])
+                                .getImage().getScaledInstance(200, 195, Image.SCALE_AREA_AVERAGING)));
+                chosen_Main_Element_Name.setText("  " + scl.schilder[v] + "  ");
+                chosen_Main_Element_Name.setForeground(scl.shieldsColor[v]);
+                chosen_Main_Element_Description.setText("Kostet " +  scl.shieldsPreis[v] + " coins" );
+                commbox.setText(scl.inf2[v]);
+
+            }
+        }
+
     }
+    
+
     // Ren();
 
 
