@@ -2468,6 +2468,8 @@ if (spieler.currentEnemyHP < 0){
                           damageText.setVisible(false);
                           boostDamageText.setVisible(false);
 
+                          enemyAttack();
+
 for (int xi = 0; xi<= 120; xi++){
     fighting_options.setBounds(38, 1080 - xi*5, 1200, 300);
     Thread.sleep(spieler.t1);
@@ -2624,6 +2626,9 @@ if (spieler.currentEnemyHP < 0){
    enemyInfoHP.setText("0");
 
 }
+
+enemyAttack();
+
 
                     if (spieler.healUpgrade1 == true && spieler.Support_Element == "  Heal  "){
 
@@ -4097,6 +4102,354 @@ for (int xi = 0; xi<= 120; xi++){
     Thread.sleep(spieler.t1);
         }
             }
+
+    }
+
+
+
+    public void enemyAttack() throws InterruptedException{
+        String element;
+        if (spieler.Main_Element == "  Ancient  ") {
+
+            System.out.println(";lrth");
+            element = spieler.enemyMain_Element;
+            Attack(element);
+        }
+
+        if (spieler.Main_Element == "  Cosmic  ") {
+            element = spieler.enemyMain_Element;
+
+            if (spieler.enemyMain_Element == "Gravity" || spieler.enemySecond_Element == "Gravity" || spieler.enemyThird_Element == "Gravity" || spieler.enemyLast_Element == "Gravity" && spieler.enemyAtacked == false ){
+                element = "Gravity";
+            }
+        
+
+        if (spieler.enemyMain_Element == "Void" || spieler.enemySecond_Element == "Void" || spieler.enemyThird_Element == "Void" || spieler.enemyLast_Element == "Void" && spieler.enemyAtacked == false){
+element = "Void";        
+        }
+
+        spieler.enemyAtacked = true;
+
+            Attack(element);
+    
+        }
+
+        if (spieler.Main_Element == "  Crystal  ") {
+
+            element = spieler.enemyMain_Element;
+
+            if (spieler.enemyMain_Element == "Feuer" || spieler.enemySecond_Element == "Feuer" || spieler.enemyThird_Element == "Feuer" || spieler.enemyLast_Element == "Feuer" && spieler.enemyAtacked == false ){
+                element = "Feuer";
+            }
+        
+
+        if (spieler.enemyMain_Element == "Wasser" || spieler.enemySecond_Element == "Wasser" || spieler.enemyThird_Element == "Wasser" || spieler.enemyLast_Element == "Wasser" && spieler.enemyAtacked == false){
+element = "Wasser";        
+        }
+
+        spieler.enemyAtacked = true;
+
+            Attack(element);
+        }
+
+        if (spieler.Main_Element == "  Erde  ") {
+
+            element = spieler.enemyMain_Element;
+
+            if (spieler.enemyMain_Element == "Feuer" || spieler.enemySecond_Element == "Feuer" || spieler.enemyThird_Element == "Feuer" || spieler.enemyLast_Element == "Feuer" && spieler.enemyAtacked == false ){
+                element = "Feuer";
+            }
+        
+
+        if (spieler.enemyMain_Element == "Wind" || spieler.enemySecond_Element == "Wind" || spieler.enemyThird_Element == "Wind" || spieler.enemyLast_Element == "Wind" && spieler.enemyAtacked == false){
+element = "Wind";        
+        }
+
+        spieler.enemyAtacked = true;
+
+            Attack(element);
+        }
+
+        
+    }
+    
+
+    
+
+    public void animateEnemyAttack(String ci, int damg2) throws InterruptedException{
+
+
+        damageText.setIcon(new ImageIcon(new ImageIcon(ci).getImage().getScaledInstance(40, 35, Image.SCALE_AREA_AVERAGING)));
+
+        damageText.setBounds(900,480,600,80);
+            damageText.setVisible(true);
+            damageText.setText("" + damg2 + "");
+            for (int z = 0; z<= 200;z++){
+                damageText.setBounds(900, 480 - z, 600, 80);
+                Thread.sleep(spieler.damageTextAnimation);
+            }
+
+            damageText.setText("" + damg2 + " Gegner Schaden");
+            Thread.sleep(spieler.t3);
+
+    }
+
+    public void Attack(String element) throws InterruptedException {
+        int damg2;
+        String ci;
+        if (element == "Ancient") {
+            System.out.println("Enemy used Ancient");
+            System.out.println("You lost " + spieler.CurrentEnemyPower + " HP");
+
+            damg2 = spieler.CurrentEnemyPower;
+            ci = "Textrpg\\Images\\Elemente\\Ancient.png";
+            animateEnemyAttack(ci,damg2);
+        }
+
+        if (element == "Cosmic") {
+            Thread.sleep(spieler.t1 * 10);
+
+            damg2 = spieler.Power;
+            damageText.setForeground(new Color(255,255,255));
+            ci = "Textrpg\\Images\\Elemente\\Cosmic.png";
+
+            if (spieler.Main_Element == "  Erde  " || spieler.Main_Element == "  Gravity  " || spieler.Main_Element == "  Void  " ){
+
+                damageText.setForeground(new Color(255,50,0));
+                damg2 = spieler.CurrentEnemyPower *2;
+
+             ci = "Textrpg\\Images\\Elemente_Strong\\Cosmic.png";
+
+
+            }
+
+            if (spieler.Main_Element == "  Cosmic  "){
+                damageText.setForeground(new Color(255,200,30));
+                damg2 = spieler.CurrentEnemyPower /2;
+
+             ci = "Textrpg\\Images\\Elemente_Weak\\Cosmic.png";
+
+
+            }
+
+        animateEnemyAttack(ci,damg2);
+        }
+
+
+        if (element == "Crystal") {
+            Thread.sleep(spieler.t1 * 10);
+
+            damg2 = spieler.Power;
+            damageText.setForeground(new Color(255,255,255));
+            ci = "Textrpg\\Images\\Elemente\\Crystal.png";
+
+            if (spieler.Main_Element == "  Cosmic  " || spieler.Main_Element == "  Crystal  " ){
+
+                damageText.setForeground(new Color(255,50,0));
+                damg2 = spieler.CurrentEnemyPower *2;
+
+             ci = "Textrpg\\Images\\Elemente_Strong\\Crystal.png";
+
+
+            }
+
+            if (spieler.Main_Element == "  Cosmic  "){
+                damageText.setForeground(new Color(255,200,30));
+                damg2 = spieler.CurrentEnemyPower /2;
+
+             ci = "Textrpg\\Images\\Elemente_Weak\\Crystal.png";
+
+
+            }
+
+        animateEnemyAttack(ci,damg2);
+        }
+
+        if (element == "Erde") {
+            Thread.sleep(spieler.t1 * 10);
+            System.out.println("Erdeg");
+
+            damg2 = spieler.Power;
+            damageText.setForeground(new Color(255,255,255));
+            ci = "Textrpg\\Images\\Elemente\\Erde.png";
+
+            if (spieler.Main_Element == "  Feuer  " || spieler.Main_Element == "  Crystal  " ){
+
+                damageText.setForeground(new Color(255,50,0));
+                damg2 = spieler.CurrentEnemyPower *2;
+
+             ci = "Textrpg\\Images\\Elemente_Strong\\Erde.png";
+
+
+            }
+
+            if (spieler.Main_Element == "  Cosmic  "){
+                damageText.setForeground(new Color(255,200,30));
+                damg2 = spieler.CurrentEnemyPower /2;
+
+             ci = "Textrpg\\Images\\Elemente_Weak\\Erde.png";
+
+
+            }
+
+        animateEnemyAttack(ci,damg2);
+        }
+
+
+        if (element == "Feuer") {
+            Thread.sleep(spieler.t1 * 10);
+
+            damg2 = spieler.Power;
+            damageText.setForeground(new Color(255,255,255));
+            ci = "Textrpg\\Images\\Elemente\\Feuer.png";
+
+            if (spieler.Main_Element == "  Cosmic  " || spieler.Main_Element == "  Crystal  " ){
+
+                damageText.setForeground(new Color(255,50,0));
+                damg2 = spieler.CurrentEnemyPower *2;
+
+             ci = "Textrpg\\Images\\Elemente_Strong\\Feuer.png";
+
+
+            }
+
+            if (spieler.Main_Element == "  Cosmic  "){
+                damageText.setForeground(new Color(255,200,30));
+                damg2 = spieler.CurrentEnemyPower /2;
+
+             ci = "Textrpg\\Images\\Elemente_Weak\\Feuer.png";
+
+
+            }
+
+        animateEnemyAttack(ci,damg2);
+        }
+
+
+
+        if (element == "Gravity") {
+           
+                Thread.sleep(spieler.t1 * 10);
+
+                damg2 = spieler.Power;
+                damageText.setForeground(new Color(255,255,255));
+                ci = "Textrpg\\Images\\Elemente\\Gravity.png";
+
+                if (spieler.Main_Element == "  Cosmic  " || spieler.Main_Element == "  Crystal  " ){
+
+                    damageText.setForeground(new Color(255,50,0));
+                    damg2 = spieler.CurrentEnemyPower *2;
+
+                 ci = "Textrpg\\Images\\Elemente_Strong\\Gravity.png";
+
+
+                }
+
+                if (spieler.Main_Element == "  Gravity  "){
+                    damageText.setForeground(new Color(255,200,30));
+                    damg2 = spieler.CurrentEnemyPower /2;
+
+                 ci = "Textrpg\\Images\\Elemente_Weak\\Gravity.png";
+
+
+                }
+            System.out.println("Enemy used Gravity");
+            System.out.println("You lost " + spieler.CurrentEnemyPower + " HP");
+
+            animateEnemyAttack(ci,damg2);
+        }
+
+        if (element == "Licht") {
+            Thread.sleep(spieler.t1 * 10);
+
+            damg2 = spieler.Power;
+            damageText.setForeground(new Color(255,255,255));
+            ci = "Textrpg\\Images\\Elemente\\Licht.png";
+
+            if (spieler.Main_Element == "  Cosmic  " || spieler.Main_Element == "  Crystal  " ){
+
+                damageText.setForeground(new Color(255,50,0));
+                damg2 = spieler.CurrentEnemyPower *2;
+
+             ci = "Textrpg\\Images\\Elemente_Strong\\Licht.png";
+
+
+            }
+
+            if (spieler.Main_Element == "  Cosmic  "){
+                damageText.setForeground(new Color(255,200,30));
+                damg2 = spieler.CurrentEnemyPower /2;
+
+             ci = "Textrpg\\Images\\Elemente_Weak\\Licht.png";
+
+
+            }
+
+        animateEnemyAttack(ci,damg2);
+        }
+
+        if (element == "Lunar") {
+            Thread.sleep(spieler.t1 * 10);
+
+            damg2 = spieler.Power;
+            damageText.setForeground(new Color(255,255,255));
+            ci = "Textrpg\\Images\\Elemente\\Lunar.png";
+
+            if (spieler.Main_Element == "  Cosmic  " || spieler.Main_Element == "  Crystal  " ){
+
+                damageText.setForeground(new Color(255,50,0));
+                damg2 = spieler.CurrentEnemyPower *2;
+
+             ci = "Textrpg\\Images\\Elemente_Strong\\Lunar.png";
+
+
+            }
+
+            if (spieler.Main_Element == "  Cosmic  "){
+                damageText.setForeground(new Color(255,200,30));
+                damg2 = spieler.CurrentEnemyPower /2;
+
+             ci = "Textrpg\\Images\\Elemente_Weak\\Lunar.png";
+
+
+            }
+
+        animateEnemyAttack(ci,damg2);
+        }
+        
+
+        if (element == "Void") {
+           
+            Thread.sleep(spieler.t1 * 10);
+
+            damg2 = spieler.Power;
+            damageText.setForeground(new Color(255,255,255));
+            ci = "Textrpg\\Images\\Elemente\\Void.png";
+
+            if (spieler.Main_Element == "  Cosmic  " || spieler.Main_Element == "  Crystal  " ){
+
+                damageText.setForeground(new Color(255,50,0));
+                damg2 = spieler.CurrentEnemyPower *2;
+
+             ci = "Textrpg\\Images\\Elemente_Strong\\Void.png";
+
+
+            }
+
+            if (spieler.Main_Element == "  Void  " || spieler.Main_Element == "  Gravity  "){
+                damageText.setForeground(new Color(255,200,30));
+                damg2 = spieler.CurrentEnemyPower /2;
+
+             ci = "Textrpg\\Images\\Elemente_Weak\\Void.png";
+
+
+            }
+        System.out.println("Enemy used Gravity");
+        System.out.println("You lost " + spieler.CurrentEnemyPower + " HP");
+
+       // damg2 = spieler.CurrentEnemyPower;
+        animateEnemyAttack(ci,damg2);
+    }
 
     }
 
