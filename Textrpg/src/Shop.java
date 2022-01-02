@@ -43,7 +43,7 @@ public class Shop {
                 " -Gibt 10% mehr Kraft",
                 " -Gibt 20% mehr Kraft",
                 " -Gibt 30% mehr Kraft",
-                " -Gibt 50% mehr Kraft                                                                        -Gibt 10% mehr HP ",
+                " -Gibt 50% mehr Kraft                                                                               -Gibt 10% mehr HP ",
             };
 
             String[] i = {
@@ -81,7 +81,7 @@ public class Shop {
         
                     String[] inf2 = {
                         " -Gibt 5% mehr HP",
-                        " -Gibt 10% mehr HP                                                                           -Gibt 10% weniger Wasser Schaden ",
+                        " -Gibt 10% mehr HP                                                                                  -Gibt 10% weniger Wasser Schaden ",
                     };
         
                     String[] i2 = {

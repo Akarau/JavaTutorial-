@@ -394,7 +394,7 @@ JLabel self_HealText;
         shop_options.setVisible(true);
         shop_options.setBackground(Color.BLACK);
         shop_options.setFocusable(false);
-        shop_options.setBounds(1180, 300, 90, 160);
+        shop_options.setBounds(350, 280, 90, 160);
         shop_options.setBorder(new LineBorder(null));
 
 
@@ -1152,7 +1152,8 @@ enemyImage.setForeground(en.enemyColors[0]);
 
 enemyImage.setVisible(false);
 
-/*
+
+
 JPanel playerInfo = new JPanel();
 
 playerInfo.setVisible(true);
@@ -1245,7 +1246,7 @@ frame.add(playerInfoSecondElement);
 frame.add(playerInfoAttack);
 frame.add(playerInfoSupportElement);
 
-*/
+
 
 
 damageText = new JLabel("DamageText");
@@ -1290,7 +1291,7 @@ reducedDamgeText2.setVisible(false);
 shop = new JPanel();
 shop.setForeground(new Color(255, 0, 150));
 shop.setFont(new Font("Times new Roman", Font.PLAIN, 60));
-shop.setBounds(680, 150, 500, 400);
+shop.setBounds(440, 130, 500, 400);
 shop.setBackground(Color.black);
 shop.setVisible(true);
 shop.setFocusable(false);
@@ -1299,12 +1300,22 @@ shop.setBorder(new LineBorder(Color.white));
 iPanel = new JLabel("            Shop          ");
 iPanel.setForeground(new Color(255, 255, 255));
 iPanel.setFont(new Font("Times new Roman", Font.PLAIN, 60));
-iPanel.setBounds(680, 50, 500, 92);
+iPanel.setBounds(440, 30, 500, 92);
 iPanel.setBackground(Color.black);
 iPanel.setVisible(true);
 iPanel.setFocusable(false);
 iPanel.setBorder(new LineBorder(Color.white));
 chosen_Main_Element.setVisible(false);
+fighting_options.setVisible(false);
+enemyInfo.setVisible(false);
+enemyInfoDifficulty.setVisible(false);
+enemyInfoHP.setVisible(false);
+enemyImage.setVisible(false);
+enemyInfoImage.setVisible(false);
+enemyImage.setVisible(false);
+enemyInfoName.setVisible(false);
+enemyInfoMainElement.setVisible(false);
+enemyInfoSecondElement.setVisible(false);
 
 swordsMenu = new JPanel();
 swordsMenu.setForeground(new Color(255, 0, 150));
@@ -1779,6 +1790,7 @@ frame.add(iPanel);
         if (e.getActionCommand() == "ConfirmName") {
            // texarea.setEditable(false);
            spieler.playerName = texarea.getText();
+           playerInfoName.setText(spieler.playerName);
            System.out.println(spieler.playerName);
            System.out.println(texarea.getText());
  //playerInfoName.setText(texarea.getText());
@@ -1787,7 +1799,7 @@ confirmName.setVisible(false);
 texarea.setEditable(false);
 commbox.setVisible(true);
 option1.setVisible(false);
-elementsMenu.setVisible(true);
+//elementsMenu.setVisible(true);
 //fighting_options.setVisible(true);
 //elementsMenu.setVisible(true);
 
@@ -1800,7 +1812,7 @@ elementsMenu.setVisible(true);
 
 
 
-           commbox.setText(" Welcome " + "'"+texarea.getText()+"'" + ", your name is terrible.                                                      Now choose your main element. Your main element is strongest             element you will get.  Each element has positive and negative things.     For example Crystal is weak against 'Fire' but strong against 'Earth' ");
+        //   commbox.setText(" Welcome " + "'"+texarea.getText()+"'" + ", your name is terrible.                                                      Now choose your main element. Your main element is strongest             element you will get.  Each element has positive and negative things.     For example Crystal is weak against 'Fire' but strong against 'Earth' ");
 
          //  Thread.sleep(spieler.thread1);
           // spieler.thread1 = 1000;
@@ -1808,7 +1820,7 @@ elementsMenu.setVisible(true);
    
         //   elementsMenu.setVisible(true);
    
-           chosen_Main_Element.setVisible(true);
+        //   chosen_Main_Element.setVisible(true);
            choose_Element.setActionCommand("Main_Choose");
         }
 
@@ -4691,7 +4703,7 @@ uit++;
 
              //   Thread.sleep(3000);
                 animateText(" First, enter your name.", null, commbox, spieler.textSpeed, null);
-                elementImage.setVisible(true);
+             //   elementImage.setVisible(true);
 
                 spieler.textSpeed = 14;
 
@@ -4811,7 +4823,7 @@ enemyImage.setBounds(500,280,400,400);
 
 enemyImage.setForeground(en.enemyColors[0]);
 
-enemyImage.setVisible(true);
+//enemyImage.setVisible(true);
 
 // ||
 
@@ -4849,7 +4861,7 @@ enemyImage.setBounds(500,280,400,400);
 
 enemyImage.setForeground(en.enemyColors[0]);
 
-enemyImage.setVisible(true);
+//enemyImage.setVisible(true);
 
 enemyInfoName.setText("  "+en.bosses[Index]+"  ");
 
@@ -5696,30 +5708,7 @@ i2.setForeground(new Color(255,215,0));
 }
 
 }
-
-
-        
-
-
+    }
 }
 
-    public <ActionEvent> void CL(ActionEvent e) throws InterruptedException {
-        // if(((EventObject) e).getSource()==startname){
-        if (((EventObject) e).getSource() == this.startname) {
-            Loading();
-            System.out.print("D");
-        }
 
-        if (((EventObject) e).getSource() == this.option1) {
-            // Loading();
-            System.out.print("Start");
-        }
-
-    }
-
-    public static void add(JLabel tutorialEnemy) {
-    }
-
-    // @Override
-
-}
