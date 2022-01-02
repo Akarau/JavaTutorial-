@@ -89,4 +89,50 @@ public class Shop {
                         "Textrpg\\Images\\Shields\\Aqua shield.png",
                     };
 
+
+                    String boosts[] = {
+                        "Schnelle Rüstung",
+                        "Heal Elixir",
+                        "Heal Potion",
+                        "Reflection",
+
+
+                    };
+        
+                    Color[] boostsColor = {
+                        new Color(25,50,100),
+                        new Color(255,255,255),
+                        new Color(25,50,255),
+                        new Color(255,25,150),
+                    };
+                
+                
+                    float[] boostsEffect = {
+                1.05f,
+                1.10f,
+                1.15f,
+                1.20f,
+                    };
+                
+                    int[] boostsPreis = {
+                        50,
+                        100,
+                        250,
+                        400,
+                            };
+                
+                            String[] inf3 = {
+                                " -Gibt 100 mehr HP",
+                                " -Gibt 250 HP",
+                                " -Gibt 800 mehr HP",
+                                " -Der Gegner schädet sich beim nächsten Angriff",
+                            };
+                
+                            String[] i3 = {
+                                "Textrpg\\Images\\Boosts\\SchnelleR.png",
+                                "Textrpg\\Images\\Boosts\\Helixir.png",
+                                "Textrpg\\Images\\Boosts\\HPotion.png",
+                                "Textrpg\\Images\\Boosts\\Reflection.png"
+                            };
+
 }

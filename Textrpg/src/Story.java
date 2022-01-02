@@ -58,6 +58,7 @@ public class Story implements ActionListener {
     JPanel fightPlayButton;
     JPanel shop_swords;
     JPanel shop_shields;
+    JPanel shop_boosts;
 
     JButton e1;
     JButton e2;
@@ -394,7 +395,7 @@ JLabel self_HealText;
         shop_options.setVisible(true);
         shop_options.setBackground(Color.BLACK);
         shop_options.setFocusable(false);
-        shop_options.setBounds(350, 280, 90, 160);
+        shop_options.setBounds(350, 280, 90, 240);
         shop_options.setBorder(new LineBorder(null));
 
 
@@ -502,6 +503,15 @@ JLabel self_HealText;
         shop_shields.setFocusable(false);
         shop_shields.setOpaque(false);
 
+        shop_boosts = new JPanel();
+        shop_boosts.setForeground(new Color(255, 0, 150));
+        shop_boosts.setFont(new Font("Times new Roman", Font.PLAIN, 60));
+        shop_boosts.setBounds(150, 150, 80, 150);
+        shop_boosts.setBackground(Color.black);
+        shop_boosts.setVisible(true);
+        shop_boosts.setFocusable(false);
+        shop_boosts.setOpaque(false);
+
 
         shop_options.add(shop_swords);
         shop_options.add(shop_shields);
@@ -597,6 +607,18 @@ JLabel self_HealText;
         eshop_shields.setBorder(new LineBorder(Color.black));
 
 
+        javax.swing.JButton eshop_boosts = new JButton();
+        eshop_boosts.setForeground(new Color(255, 255, 255));
+        eshop_boosts.setFont(new Font("Times new Roman", Font.PLAIN, 60));
+        eshop_boosts.setBounds(0, 0, 0, 0);
+        eshop_boosts.setBackground(Color.black);
+        eshop_boosts.setVisible(true);
+        eshop_boosts.setFocusable(false);
+        eshop_boosts.addActionListener(this);
+        eshop_boosts.setActionCommand("eShop_Boosts");
+        eshop_boosts.setText("  ");
+        eshop_boosts.setBorder(new LineBorder(Color.black));
+
 
         ePlayButton = new JButton();
         ePlayButton.setForeground(new Color(255, 255, 255));
@@ -658,6 +680,19 @@ JLabel self_HealText;
                                .getScaledInstance(65, 60, Image.SCALE_AREA_AVERAGING)));
 
 
+                              JLabel ishop_boosts = new JLabel();
+                              ishop_boosts.setForeground(new Color(255, 255, 255));
+                              ishop_boosts.setFont(new Font("Times new Roman", Font.PLAIN, 35));
+                               // i3.setBounds(200, 400, 400, 0);
+                               ishop_boosts.setSize(20, 20);
+                               ishop_boosts.setBackground(Color.WHITE);
+                               ishop_boosts.setVisible(true);
+                               ishop_boosts.setFocusable(false);
+                               ishop_boosts.setOpaque(false);
+                               ishop_boosts.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Boosts\\elixirI.png").getImage()
+                                       .getScaledInstance(65, 60, Image.SCALE_AREA_AVERAGING)));
+
+
        ePlayButton.add(ifightPlayButton);
        frame.add(fightPlayButton);
        fightPlayButton.add(ePlayButton);
@@ -670,10 +705,13 @@ JLabel self_HealText;
         fighting_options.add(shopButton);
         shop_options.add(shop_swords);
         shop_options.add(shop_shields);
+        shop_options.add(shop_boosts);
         shop_swords.add(eshop_swords);
         shop_shields.add(eshop_shields);
         eshop_shields.add(ishop_shields);
         eshop_swords.add(ishop_swords);
+        shop_boosts.add(eshop_boosts);
+        eshop_boosts.add(ishop_boosts);
         b1.add(e1);
         b2.add(e2);
         b3.add(e3);
@@ -1453,6 +1491,8 @@ frame.add(iPanel);
 
         }
 
+
+
         for (int s2 = 0; s2 < scl.schilder.length; s2++) {
             // System.out.println(c);
             // System.out.println(colors[c]);
@@ -1503,6 +1543,69 @@ frame.add(iPanel);
             this.shop.add(shieldB);
 //this.shop.add(swordBi);
             shieldB.add(si);
+            // commbox.setVisible(true);
+
+            // if (Elemente.elements[e] == null) {
+            // break;
+            // } else {
+
+            // }
+            // }
+
+        }
+
+
+
+        for (int s = 0; s < scl.boosts.length; s++) {
+            // System.out.println(c);
+            // System.out.println(colors[c]);
+
+            // if (Elemente.elements[e] != null){
+
+            javax.swing.JButton boostB = new JButton();
+            boostB.setForeground(new Color(80, 0, 255));
+            boostB.setFont(new Font("Times new Roman", Font.PLAIN, 60));
+            boostB.setBounds(0, 0, 100, 100);
+            boostB.setBackground(Color.black);
+            boostB.setVisible(true);
+            boostB.setFocusable(false);
+            boostB.addActionListener(this);
+            boostB.setActionCommand(scl.boosts[s]);
+            choose_Element.setActionCommand("Sword_Buy");
+            boostB.setBorder(new LineBorder(Color.white));
+            boostB.setName("Boost");
+/*
+            javax.swing.JLabel swordBi = new JLabel("k76");
+            swordBi.setForeground(new Color(80, 0, 255));
+            swordBi.setFont(new Font("Times new Roman", Font.PLAIN, 60));
+            swordBi.setBounds(0, 300, 100, 100);
+            swordBi.setBackground(Color.red);
+            swordBi.setVisible(true);
+            swordBi.setFocusable(false);
+            choose_Element.setActionCommand("Sword_Buy");
+            swordBi.setBorder(new LineBorder(Color.white));
+*/
+            JLabel si = new JLabel();
+            si.setForeground(colors2[c]);
+            si.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+            // color.setBounds(500, 500, 350, 350);
+            si.setIcon(new ImageIcon(new ImageIcon(scl.i3[s])
+                    .getImage().getScaledInstance(140, 135, Image.SCALE_AREA_AVERAGING)));
+                    si.setSize(800, 800);
+                    si.setBackground(Color.white);
+                    si.setVisible(true);
+                    si.setFocusable(false);
+            // ei.addActionListener(this);
+            // ei.setActionCommand(colors[c]);
+            si.setBorder(new LineBorder(Color.white));
+            // ei.setActionCommand(colors[c]);
+            // color.setBorder(BorderFactory.createBevelBorder(200, Color.white,
+            // Color.BLACK));
+
+            // elementsMenu.add(ei);
+            this.shop.add(boostB);
+//this.shop.add(swordBi);
+boostB.add(si);
             // commbox.setVisible(true);
 
             // if (Elemente.elements[e] == null) {
@@ -1892,13 +1995,18 @@ if (shop.getComponent(s).getName().equals("Sword")){
         if (e.getActionCommand().equals("eShop_Swords")) {
            // shop.setVisible(!shop.isVisible());
             //iPanel.setVisible(!iPanel.isVisible());
-            for (int s = 0; s < scl.schilder.length + scl.schwerte.length; s++){
-                if (shop.getComponent(s).getName().equals("Sword")){
-                    shop.getComponent(s).setVisible(true);              
-            }
+            for (int s = 0; s < scl.schilder.length + scl.schwerte.length + scl.boosts.length; s++){
             if (shop.getComponent(s).getName().equals("Shield")){
                 shop.getComponent(s).setVisible(false);         
         }
+
+        if (shop.getComponent(s).getName().equals("Boost")){
+            shop.getComponent(s).setVisible(false);         
+    }
+
+    if (shop.getComponent(s).getName().equals("Sword")){
+        shop.getComponent(s).setVisible(true);              
+}
         
 
              }
@@ -1907,16 +2015,48 @@ if (shop.getComponent(s).getName().equals("Sword")){
          if (e.getActionCommand().equals("eShop_Shields")) {
             // shop.setVisible(!shop.isVisible());
            //  iPanel.setVisible(!iPanel.isVisible());
-             for (int s = 0; s < scl.schilder.length + scl.schwerte.length; s++){
+             for (int s = 0; s < scl.schilder.length + scl.schwerte.length + scl.boosts.length; s++){
+
+            if (shop.getComponent(s).getName().equals("Sword")){
+                shop.getComponent(s).setVisible(false);         
+        }
+
+        if (shop.getComponent(s).getName().equals("Boost")){
+            shop.getComponent(s).setVisible(false);         
+    }
+
+    if (shop.getComponent(s).getName().equals("Shield")){
+        shop.getComponent(s).setVisible(true);              
+}
+        
+
+             }
+
+             
+                     
+             
+          }
+
+
+          if (e.getActionCommand().equals("eShop_Boosts")) {
+            // shop.setVisible(!shop.isVisible());
+           //  iPanel.setVisible(!iPanel.isVisible());
+             for (int s = 0; s < scl.schilder.length + scl.schwerte.length + scl.boosts.length; s++){
                 if (shop.getComponent(s).getName().equals("Shield")){
-                    shop.getComponent(s).setVisible(true);              
+                    shop.getComponent(s).setVisible(false);              
             }
             if (shop.getComponent(s).getName().equals("Sword")){
                 shop.getComponent(s).setVisible(false);         
         }
+
+        if (shop.getComponent(s).getName().equals("Boost")){
+            shop.getComponent(s).setVisible(true);         
+    }
         
 
              }
+
+             
                      
              
           }
@@ -2176,6 +2316,7 @@ spieler.thread3 = (Integer) null;
                                 .getImage().getScaledInstance(200, 195, Image.SCALE_AREA_AVERAGING)));
                 chosen_Main_Element_Name.setText("  " + scl.schwerte[v] + "  ");
                 chosen_Main_Element_Name.setForeground(scl.swordsColor[v]);
+                commbox.setForeground(scl.swordsColor[v]);
                 chosen_Main_Element_Description.setText("Kostet " +  scl.swordsPreis[v] + " coins" );
                 commbox.setText(scl.inf[v]);
 
@@ -2199,8 +2340,34 @@ spieler.thread3 = (Integer) null;
                                 .getImage().getScaledInstance(200, 195, Image.SCALE_AREA_AVERAGING)));
                 chosen_Main_Element_Name.setText("  " + scl.schilder[v] + "  ");
                 chosen_Main_Element_Name.setForeground(scl.shieldsColor[v]);
+                commbox.setForeground(scl.shieldsColor[v]);
                 chosen_Main_Element_Description.setText("Kostet " +  scl.shieldsPreis[v] + " coins" );
                 commbox.setText(scl.inf2[v]);
+
+            }
+        }
+
+
+        for (v = 0; v < scl.boosts.length; v++) {
+            if (e.getActionCommand().equals(scl.boosts[v])) {
+
+                fighting_options.setVisible(false);
+                commbox.setVisible(true);
+                chosen_Main_Element.setVisible(true);
+                chosen_Main_Element_Name.setVisible(true);
+                chosen_Main_Element_Description.setVisible(true);
+                chosen_Main_Element_Picture.setVisible(true);
+                choose_Element.setVisible(true);
+                choose_Element.setText(" Kaufen ");
+
+                chosen_Main_Element_Picture.setIcon(
+                        new ImageIcon(new ImageIcon(scl.i3[v])
+                                .getImage().getScaledInstance(200, 195, Image.SCALE_AREA_AVERAGING)));
+                chosen_Main_Element_Name.setText("  " + scl.boosts[v] + "  ");
+                chosen_Main_Element_Name.setForeground(scl.boostsColor[v]);
+                commbox.setForeground(scl.boostsColor[v]);
+                chosen_Main_Element_Description.setText("Kostet " +  scl.boostsPreis[v] + " coins" );
+                commbox.setText(scl.inf3[v]);
 
             }
         }
