@@ -1325,6 +1325,13 @@ reducedDamgeText2.setForeground(new Color(255,180,0));
 reducedDamgeText2.setBounds(250, 340, 100, 80);
 reducedDamgeText2.setVisible(false);
 
+reflectedDamgeText = new JLabel("ReflectedDamage");
+reflectedDamgeText.setFont(new Font("Times new Roman", Font.PLAIN, 35));
+reflectedDamgeText.setOpaque(false);
+reflectedDamgeText.setForeground(new Color(250,150,0));
+reflectedDamgeText.setBounds(900, 280, 600, 80);
+reflectedDamgeText.setVisible(false);
+
 
 shop = new JPanel();
 shop.setForeground(new Color(255, 0, 150));
@@ -1343,6 +1350,7 @@ iPanel.setBackground(Color.black);
 iPanel.setVisible(true);
 iPanel.setFocusable(false);
 iPanel.setBorder(new LineBorder(Color.white));
+/*
 chosen_Main_Element.setVisible(false);
 fighting_options.setVisible(false);
 enemyInfo.setVisible(false);
@@ -1354,7 +1362,7 @@ enemyImage.setVisible(false);
 enemyInfoName.setVisible(false);
 enemyInfoMainElement.setVisible(false);
 enemyInfoSecondElement.setVisible(false);
-
+*/
 swordsMenu = new JPanel();
 swordsMenu.setForeground(new Color(255, 0, 150));
 swordsMenu.setFont(new Font("Times new Roman", Font.PLAIN, 60));
@@ -1371,6 +1379,7 @@ frame.add(boostDamageText);
 frame.add(self_HealText);
 frame.add(reducedDamgeText);
 frame.add(reducedDamgeText2);
+frame.add(reflectedDamgeText);
 
 frame.add(enemyImage);
 
@@ -4349,6 +4358,101 @@ element = "Wind";
             Attack(element);
         }
 
+        if (spieler.Main_Element == "  Feuer  ") {
+
+            element = spieler.enemyMain_Element;
+
+            if (spieler.enemyMain_Element == "Wasser" || spieler.enemySecond_Element == "Wasser" || spieler.enemyThird_Element == "Wasser" || spieler.enemyLast_Element == "Wasser" && spieler.enemyAtacked == false ){
+                element = "Wasser";
+            }
+        
+
+        if (spieler.enemyMain_Element == "Erde" || spieler.enemySecond_Element == "Erde" || spieler.enemyThird_Element == "Erde" || spieler.enemyLast_Element == "Erde" && spieler.enemyAtacked == false){
+element = "Erde";        
+        }
+
+        spieler.enemyAtacked = true;
+
+            Attack(element);
+        }
+
+
+        if (spieler.Main_Element == "  Gravity  ") {
+
+            element = spieler.enemyMain_Element;
+
+            if (spieler.enemyMain_Element == "Void" || spieler.enemySecond_Element == "Void" || spieler.enemyThird_Element == "Void" || spieler.enemyLast_Element == "Void" && spieler.enemyAtacked == false ){
+                element = "Void";
+            }
+        
+
+        if (spieler.enemyMain_Element == "Cosmic" || spieler.enemySecond_Element == "Cosmic" || spieler.enemyThird_Element == "Cosmic" || spieler.enemyLast_Element == "Cosmic" && spieler.enemyAtacked == false){
+element = "Cosmic";        
+        }
+
+        spieler.enemyAtacked = true;
+
+            Attack(element);
+        }
+
+
+        if (spieler.Main_Element == "  Licht  ") {
+
+            element = spieler.enemyMain_Element;
+
+            if (spieler.enemyMain_Element == "Lunar" || spieler.enemySecond_Element == "Lunar" || spieler.enemyThird_Element == "Lunar" || spieler.enemyLast_Element == "Lunar" && spieler.enemyAtacked == false ){
+                element = "Lunar";
+            }
+        
+
+        if (spieler.enemyMain_Element == "Cosmic" || spieler.enemySecond_Element == "Cosmic" || spieler.enemyThird_Element == "Cosmic" || spieler.enemyLast_Element == "Cosmic" && spieler.enemyAtacked == false){
+element = "Cosmic";        
+        }
+
+        spieler.enemyAtacked = true;
+
+            Attack(element);
+        }
+
+
+        if (spieler.Main_Element == "  Lunar  ") {
+
+            element = spieler.enemyMain_Element;
+
+            if (spieler.enemyMain_Element == "Licht" || spieler.enemySecond_Element == "Licht" || spieler.enemyThird_Element == "Licht" || spieler.enemyLast_Element == "Licht" && spieler.enemyAtacked == false ){
+                element = "Licht";
+            }
+        
+
+        if (spieler.enemyMain_Element == "Cosmic" || spieler.enemySecond_Element == "Cosmic" || spieler.enemyThird_Element == "Cosmic" || spieler.enemyLast_Element == "Cosmic" && spieler.enemyAtacked == false){
+element = "Cosmic";        
+        }
+
+        spieler.enemyAtacked = true;
+
+            Attack(element);
+        }
+
+
+
+        if (spieler.Main_Element == "  Void  ") {
+
+            element = spieler.enemyMain_Element;
+
+            if (spieler.enemyMain_Element == "Gravity" || spieler.enemySecond_Element == "Gravity" || spieler.enemyThird_Element == "Gravity" || spieler.enemyLast_Element == "Gravity" && spieler.enemyAtacked == false ){
+                element = "Gravity";
+            }
+        
+
+        if (spieler.enemyMain_Element == "Cosmic" || spieler.enemySecond_Element == "Cosmic" || spieler.enemyThird_Element == "Cosmic" || spieler.enemyLast_Element == "Cosmic" && spieler.enemyAtacked == false){
+element = "Cosmic";        
+        }
+
+        spieler.enemyAtacked = true;
+
+            Attack(element);
+        }
+
         
     }
     
@@ -4358,7 +4462,30 @@ element = "Wind";
     public void animateEnemyAttack(String ci, int damg2) throws InterruptedException{
 
 
+
+
+        if (spieler.reflection.equals(true)){
+            reflectedDamgeText.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Boosts\\Reflection.png").getImage().getScaledInstance(40, 35, Image.SCALE_AREA_AVERAGING)));
+
+            reflectedDamgeText.setBounds(900,480,600,80);
+            reflectedDamgeText.setVisible(true);
+            reflectedDamgeText.setText("" + damg2 + "");
+            for (int z = 0; z<= 200;z++){
+                reflectedDamgeText.setBounds(900, 480 - z, 600, 80);
+                Thread.sleep(spieler.damageTextAnimation);
+            }
+
+            reflectedDamgeText.setText("" + damg2 + " Reflektierte Schaden");
+            spieler.currentEnemyHP -= damg2;
+            enemyInfoHP.setText("" + spieler.currentEnemyHP + "");
+            Thread.sleep(spieler.t3 + 100);
+            reflectedDamgeText.setVisible(false);
+        }
+
+        if (spieler.reflection.equals(false)){
+
         damageText.setIcon(new ImageIcon(new ImageIcon(ci).getImage().getScaledInstance(40, 35, Image.SCALE_AREA_AVERAGING)));
+
 
         damageText.setBounds(900,480,600,80);
             damageText.setVisible(true);
@@ -4370,12 +4497,19 @@ element = "Wind";
 
             damageText.setText("" + damg2 + " Gegner Schaden");
             Thread.sleep(spieler.t3);
+            spieler.enemyAtacked = false;
+
+        }
+
+            
 
     }
 
     public void Attack(String element) throws InterruptedException {
         int damg2;
         String ci;
+        System.out.println(element + " @");
+
         if (element == "Ancient") {
             System.out.println("Enemy used Ancient");
             System.out.println("You lost " + spieler.CurrentEnemyPower + " HP");
@@ -4492,7 +4626,7 @@ element = "Wind";
 
             }
 
-            if (spieler.Main_Element == "  Cosmic  "){
+            if (spieler.Main_Element == "  Feuer  "){
                 damageText.setForeground(new Color(255,200,30));
                 damg2 = spieler.CurrentEnemyPower /2;
 
