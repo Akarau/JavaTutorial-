@@ -2040,6 +2040,10 @@ if (scl.schwerte[s] == chosen_Main_Element_Name.getText() ){
                 }
                 
             }
+            spieler.powerBoostName = chosen_Main_Element_Name.getText();
+                choose_Element.setText(" Equipped ");
+
+            
         }
         }
 
@@ -2139,6 +2143,8 @@ if (shop.isVisible()== true){
                     if (inventory.containsKey(scl.items[o])){
                         System.out.println("SW");
                         inventarPanel.getComponent(o).setVisible(true);
+                        choose_Element.setText(" gekauft ");
+
                     }
                     
                 }
@@ -2151,6 +2157,8 @@ if (shop.isVisible()== true){
 
             for (int s = 0; s < scl.schwerte.length; s++){
 
+
+
                 if (scl.schwerte[s] == chosen_Main_Element_Name.getText()){
                 System.out.println(chosen_Main_Element_Name.getText());
                 if (!inventory.containsKey(chosen_Main_Element_Name.getText())){
@@ -2160,6 +2168,7 @@ if (shop.isVisible()== true){
                         inventory.putIfAbsent(scl.schwerte[s], 1);
                         System.out.println(spieler.Gold);
                         System.out.println(inventory);
+                        choose_Element.setText(" gekauft ");
                     }
                 }
             }
@@ -2179,6 +2188,8 @@ if (shop.isVisible()== true){
                         inventory.putIfAbsent(scl.schilder[s], 1);
                         System.out.println(spieler.Gold);
                         System.out.println(inventory);
+                        choose_Element.setText(" gekauft ");
+
                     }
                 }
             }
@@ -2195,9 +2206,11 @@ if (shop.isVisible()== true){
 
                     if (spieler.Gold >= scl.boostsPreis[s]){
                         spieler.Gold -= scl.boostsPreis[s];
-                        inventory.put(scl.boosts[s], inventory.get(scl.boosts[s]));
+                        inventory.put(scl.boosts[s], 1);
                         System.out.println(inventory.get(scl.boosts[s] + 1));
                         chosen_Main_Element_Name.setText(chosen_Main_Element_Name.getText() +"[" + inventory.get(scl.boosts[s]) + "]");
+                        choose_Element.setText(" gekauft ");
+
                     }
               //  }
             }
@@ -2741,6 +2754,10 @@ spieler.thread3 = (Integer) null;
                 chosen_Main_Element_Description.setText("Kostet " +  scl.swordsPreis[v] + " coins" );
                 commbox.setText(scl.inf[v]);
                 choose_Element.setActionCommand("Sword_Buy");
+                if (inventory.containsKey(chosen_Main_Element_Name.getText())){
+                    choose_Element.setText(" gekauft ");
+
+                }
 
             }
         }
@@ -2767,6 +2784,10 @@ spieler.thread3 = (Integer) null;
                 chosen_Main_Element_Description.setText("Kostet " +  scl.shieldsPreis[v] + " coins" );
                 commbox.setText(scl.inf2[v]);
                 choose_Element.setActionCommand("Shield_Buy");
+                if (inventory.containsKey(chosen_Main_Element_Name.getText())){
+                    choose_Element.setText(" gekauft ");
+
+                }
             }
         }
 
@@ -2793,6 +2814,10 @@ spieler.thread3 = (Integer) null;
                 chosen_Main_Element_Description.setText("Kostet " +  scl.boostsPreis[v] + " coins" );
                 commbox.setText(scl.inf3[v]);
                 choose_Element.setActionCommand("Boost_Buy");
+                if (inventory.containsKey(chosen_Main_Element_Name.getText())){
+                    choose_Element.setText(" gekauft ");
+
+                }
             }
         }
 
@@ -2819,7 +2844,10 @@ spieler.thread3 = (Integer) null;
                 commbox.setText(scl.inf[v]);
                 chosen_Main_Element_Name.setBorder(null);
                 choose_Element.setActionCommand("Sword_Equip");
+                if (spieler.powerBoostName.equals(chosen_Main_Element_Name.getText())){
+                    choose_Element.setText(" Equipped ");
 
+                }
             }
         }
 
@@ -2846,7 +2874,10 @@ spieler.thread3 = (Integer) null;
                 commbox.setText(scl.inf2[v]);
                 choose_Element.setActionCommand("Shield_Equip");
                 chosen_Main_Element_Name.setBorder(null);
+                if (spieler.powerBoostName.equals(chosen_Main_Element_Name.getText())){
+                    choose_Element.setText(" Equipped ");
 
+                }
             }
         }
 
@@ -2861,7 +2892,7 @@ spieler.thread3 = (Integer) null;
                 chosen_Main_Element_Description.setVisible(true);
                 chosen_Main_Element_Picture.setVisible(true);
                 choose_Element.setVisible(true);
-                choose_Element.setText(" Equippen ");
+                choose_Element.setText(" Verwenden ");
 
                 chosen_Main_Element_Picture.setIcon(
                         new ImageIcon(new ImageIcon(scl.i3[v])
@@ -2874,7 +2905,10 @@ spieler.thread3 = (Integer) null;
 
                 choose_Element.setActionCommand("Boost_Equip");
                 chosen_Main_Element_Name.setBorder(null);
+                if (spieler.powerBoostName.equals(chosen_Main_Element_Name.getText())){
+                    choose_Element.setText(" Equipped ");
 
+                }
             }
         }
         
