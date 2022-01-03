@@ -3,6 +3,7 @@ import java.awt.Component;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.util.EventObject;
+import java.util.HashMap;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.BorderFactory;
@@ -22,6 +23,8 @@ public class Story implements ActionListener {
     CuPower spieler = new CuPower();
     Shop scl = new Shop();
 
+    
+
 
     private static final Component JButton = null;
     static ImageIcon imageW = new ImageIcon("Textrpg\\Images\\Crystal.png");
@@ -30,6 +33,10 @@ public class Story implements ActionListener {
     JLabel commboxtex;
     JLabel inf;
     JPanel shop_options;
+    JPanel inventarPanel;
+   JButton eshop_swords;
+   JButton eshop_shields;
+   JButton eshop_boosts;
 
     static JLabel l;
     static JLabel i1;
@@ -39,6 +46,7 @@ public class Story implements ActionListener {
     static JLabel iAchievements;
     static JLabel ifightPlayButton;
     static JLabel iShop;
+    static JLabel iInventar;
     static JLabel ishop_swords;
     static JLabel ishop_shields;
     static JButton option1;
@@ -55,6 +63,7 @@ public class Story implements ActionListener {
     JPanel b4;
     JPanel achievementsButton;
     JPanel shopButton;
+    JPanel inventarButton;
     JPanel fightPlayButton;
     JPanel shop_swords;
     JPanel shop_shields;
@@ -111,6 +120,9 @@ public class Story implements ActionListener {
     JPanel playerInfo;
 JLabel playerInfoName;
 JLabel playerInfoHP;
+JLabel playerInfoPower;
+JPanel playerInfoHPProgress;
+JLabel playerInfoHPShield;
 JLabel playerInfoMainElement;
 JLabel playerInfoSecondElement;
 JLabel playerInfoAttack;
@@ -193,6 +205,7 @@ JLabel self_HealText;
             new Color(25, 105, 255), new Color(255, 0, 255), new Color(255, 0, 80) };
 
 
+            HashMap <String, Integer> inventory = new HashMap <>();
 
 
 
@@ -202,6 +215,9 @@ JLabel self_HealText;
         //pGame.cuPower.playerhealdamageanimation(pPanel);
        // Enemy r;
         
+
+      // inventory.put("Helixir", 1);
+
         frame = new JFrame();
         // fenster.setSize(1920, 1080);
 
@@ -216,6 +232,7 @@ JLabel self_HealText;
         // fenster.getContentPane().setBackground(Color.green);
         // fenster.setLayout(null);
         // fenster.getContentPane();
+
 
         byte RG = 127;
         panel1 = new JPanel();
@@ -392,7 +409,7 @@ JLabel self_HealText;
 
         shop_options = new JPanel();
         // optionsmenu_colors.setBounds(1.x, 1.y, );
-        shop_options.setVisible(true);
+        shop_options.setVisible(false);
         shop_options.setBackground(Color.BLACK);
         shop_options.setFocusable(false);
         shop_options.setBounds(350, 280, 90, 240);
@@ -485,6 +502,14 @@ JLabel self_HealText;
         shopButton.setVisible(true);
         shopButton.setFocusable(false);
 
+        inventarButton = new JPanel();
+        inventarButton.setForeground(new Color(255, 0, 150));
+        inventarButton.setFont(new Font("Times new Roman", Font.PLAIN, 60));
+        inventarButton.setBounds(150, 150, 240, 2540);
+        inventarButton.setBackground(Color.black);
+        inventarButton.setVisible(true);
+        inventarButton.setFocusable(false);
+
         shop_swords = new JPanel();
         shop_swords.setForeground(new Color(255, 0, 150));
         shop_swords.setFont(new Font("Times new Roman", Font.PLAIN, 60));
@@ -493,6 +518,22 @@ JLabel self_HealText;
         shop_swords.setVisible(true);
         shop_swords.setFocusable(false);
         shop_swords.setOpaque(false);
+
+        inventarPanel = new JPanel();
+        inventarPanel.setForeground(new Color(255, 0, 150));
+        inventarPanel.setFont(new Font("Times new Roman", Font.PLAIN, 60));
+        inventarPanel.setBounds(440, 130, 500, 400);
+        inventarPanel.setVisible(false);
+        inventarPanel.setFocusable(false);
+        inventarPanel.setOpaque(false);
+        inventarPanel.setBorder(new LineBorder(Color.white));
+
+        frame.add(inventarPanel);
+
+
+
+       
+
 
         shop_shields = new JPanel();
         shop_shields.setForeground(new Color(255, 0, 150));
@@ -513,8 +554,8 @@ JLabel self_HealText;
         shop_boosts.setOpaque(false);
 
 
-        shop_options.add(shop_swords);
-        shop_options.add(shop_shields);
+        //shop_options.add(shop_swords);
+       // shop_options.add(shop_shields);
 
         // e1.addActionListener(this);
         // e1.setActionCommand("E");
@@ -582,7 +623,7 @@ JLabel self_HealText;
         eShop.setOpaque(false);
 
 
-        javax.swing.JButton eshop_swords = new JButton();
+         eshop_swords = new JButton();
         eshop_swords.setForeground(new Color(255, 255, 255));
         eshop_swords.setFont(new Font("Times new Roman", Font.PLAIN, 60));
         eshop_swords.setBounds(0, 0, 0, 0);
@@ -594,7 +635,7 @@ JLabel self_HealText;
         eshop_swords.setText("  ");
         eshop_swords.setBorder(new LineBorder(Color.black));
 
-        javax.swing.JButton eshop_shields = new JButton();
+         eshop_shields = new JButton();
         eshop_shields.setForeground(new Color(255, 255, 255));
         eshop_shields.setFont(new Font("Times new Roman", Font.PLAIN, 60));
         eshop_shields.setBounds(0, 0, 0, 0);
@@ -607,7 +648,7 @@ JLabel self_HealText;
         eshop_shields.setBorder(new LineBorder(Color.black));
 
 
-        javax.swing.JButton eshop_boosts = new JButton();
+         eshop_boosts = new JButton();
         eshop_boosts.setForeground(new Color(255, 255, 255));
         eshop_boosts.setFont(new Font("Times new Roman", Font.PLAIN, 60));
         eshop_boosts.setBounds(0, 0, 0, 0);
@@ -618,6 +659,19 @@ JLabel self_HealText;
         eshop_boosts.setActionCommand("eShop_Boosts");
         eshop_boosts.setText("  ");
         eshop_boosts.setBorder(new LineBorder(Color.black));
+
+
+
+        javax.swing.JButton einventar = new JButton();
+        einventar.setForeground(new Color(255, 255, 255));
+        einventar.setFont(new Font("Times new Roman", Font.PLAIN, 60));
+        einventar.setBounds(0, 0, 0, 0);
+        einventar.setBackground(Color.black);
+        einventar.setVisible(true);
+        einventar.setFocusable(false);
+        einventar.addActionListener(this);
+        einventar.setActionCommand("eInventar");
+        einventar.setOpaque(false);
 
 
         ePlayButton = new JButton();
@@ -693,6 +747,24 @@ JLabel self_HealText;
                                        .getScaledInstance(65, 60, Image.SCALE_AREA_AVERAGING)));
 
 
+                                       iInventar = new JLabel();
+                                       iInventar.setForeground(new Color(255, 255, 255));
+                                       iInventar.setFont(new Font("Times new Roman", Font.PLAIN, 35));
+                                        // i3.setBounds(200, 400, 400, 0);
+                                        iInventar.setSize(20, 20);
+                                        iInventar.setBackground(Color.WHITE);
+                                        iInventar.setVisible(true);
+                                        iInventar.setFocusable(false);
+                                        iInventar.setOpaque(false);
+                                        iInventar.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Others\\Inventory.png").getImage()
+                                                .getScaledInstance(55, 50, Image.SCALE_AREA_AVERAGING)));
+
+                                                        frame.add(fighting_options);
+                                                        fighting_options.add(inventarButton);
+                                                        inventarButton.add(einventar);
+                                                        einventar.add(iInventar);
+
+
        ePlayButton.add(ifightPlayButton);
        frame.add(fightPlayButton);
        fightPlayButton.add(ePlayButton);
@@ -703,6 +775,9 @@ JLabel self_HealText;
         fighting_options.add(b4);
         fighting_options.add(achievementsButton);
         fighting_options.add(shopButton);
+        fighting_options.add(inventarButton);
+        inventarButton.add(einventar);
+        einventar.add(iInventar);
         shop_options.add(shop_swords);
         shop_options.add(shop_shields);
         shop_options.add(shop_boosts);
@@ -1014,7 +1089,117 @@ texarea.setBorder(new LineBorder(Color.white));
 //texarea.setEditable(true);
 
 
+for (int s = 0; s < scl.schwerte.length; s++) {
 
+
+    javax.swing.JButton swordB = new JButton();
+    swordB.setForeground(new Color(80, 0, 255));
+    swordB.setFont(new Font("Times new Roman", Font.PLAIN, 60));
+    swordB.setBounds(0, 0, 100, 100);
+    swordB.setBackground(Color.black);
+    swordB.setVisible(true);
+    swordB.setFocusable(false);
+    swordB.addActionListener(this);
+    swordB.setActionCommand(scl.schwerte[s] + "I");
+    choose_Element.setActionCommand("Sword_Equip");
+    swordB.setBorder(new LineBorder(Color.white));
+    swordB.setName(scl.schwerte[s]);
+
+
+    JLabel si = new JLabel();
+    si.setForeground(colors2[c]);
+    si.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+    si.setIcon(new ImageIcon(new ImageIcon(scl.i[s])
+            .getImage().getScaledInstance(140, 135, Image.SCALE_AREA_AVERAGING)));
+            si.setSize(800, 800);
+            si.setBackground(Color.white);
+            si.setVisible(true);
+            si.setFocusable(false);
+
+    si.setBorder(new LineBorder(Color.white));
+
+
+    this.inventarPanel.add(swordB);
+    swordB.add(si);
+
+}
+
+
+for (int s = 0; s < scl.schilder.length; s++) {
+
+
+    javax.swing.JButton shieldB = new JButton();
+    shieldB.setForeground(new Color(80, 0, 255));
+    shieldB.setFont(new Font("Times new Roman", Font.PLAIN, 60));
+    shieldB.setBounds(0, 0, 100, 100);
+    shieldB.setBackground(Color.black);
+    shieldB.setVisible(true);
+    shieldB.setFocusable(false);
+    shieldB.addActionListener(this);
+    shieldB.setActionCommand(scl.schilder[s] + "I");
+    choose_Element.setActionCommand("Shield_Equip");
+    shieldB.setBorder(new LineBorder(Color.white));
+    shieldB.setName(scl.schilder[s]);
+
+
+    JLabel si = new JLabel();
+    si.setForeground(colors2[c]);
+    si.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+    si.setIcon(new ImageIcon(new ImageIcon(scl.i2[s])
+            .getImage().getScaledInstance(140, 135, Image.SCALE_AREA_AVERAGING)));
+            si.setSize(800, 800);
+            si.setBackground(Color.white);
+            si.setVisible(true);
+            si.setFocusable(false);
+
+    si.setBorder(new LineBorder(Color.white));
+
+
+    this.inventarPanel.add(shieldB);
+    shieldB.add(si);
+
+}
+
+
+
+for (int s = 0; s < scl.boosts.length; s++) {
+
+
+    javax.swing.JButton boostB = new JButton();
+    boostB.setForeground(new Color(80, 0, 255));
+    boostB.setFont(new Font("Times new Roman", Font.PLAIN, 60));
+    boostB.setBounds(0, 0, 100, 100);
+    boostB.setBackground(Color.black);
+    boostB.setVisible(true);
+    boostB.setFocusable(false);
+    boostB.addActionListener(this);
+    boostB.setActionCommand(scl.boosts[s] + "I");
+    choose_Element.setActionCommand("Boost_Equip");
+    boostB.setBorder(new LineBorder(Color.white));
+    boostB.setName(scl.boosts[s]);
+
+
+    JLabel si = new JLabel();
+    si.setForeground(colors2[c]);
+    si.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+    si.setIcon(new ImageIcon(new ImageIcon(scl.i3[s])
+            .getImage().getScaledInstance(140, 135, Image.SCALE_AREA_AVERAGING)));
+            si.setSize(800, 800);
+            si.setBackground(Color.white);
+            si.setVisible(true);
+            si.setFocusable(false);
+
+    si.setBorder(new LineBorder(Color.white));
+
+
+    this.inventarPanel.add(boostB);
+    boostB.add(si);
+
+}
+
+
+
+en = new Enemy(null);
 
 
 JPanel enemyInfo = new JPanel();
@@ -1031,7 +1216,6 @@ enemyInfo.setBorder(new LineBorder(Color.white));
 
  
 
-en = new Enemy(null);
 
  
 
@@ -1136,7 +1320,7 @@ enemyInfoDifficulty.setFont(new Font("Times new Roman", Font.PLAIN, 20));
 
 //enemyInfoMainElement.setBorder(new LineBorder(Color.red));
 
-
+/*
 frame.add(enemyInfoDifficulty);
 
 frame.add(enemyInfoMainElement);
@@ -1154,7 +1338,7 @@ frame.add(enemyInfoHP);
 frame.add(enemyInfo);
 
 frame.add(enemyInfoImage);
-
+*/
 
 confirmName = new JButton("/");
 confirmName.setForeground(new Color(255, 255, 255));
@@ -1173,7 +1357,7 @@ elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Cos
 
 elementImage.setBounds(500,280,400,400);
 
-elementImage.setForeground(en.enemyColors[0]);
+//elementImage.setForeground(en.enemyColors[0]);
 
 elementImage.setVisible(false);
 
@@ -1186,7 +1370,7 @@ enemyImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Enemies\\Dunkle
 
 enemyImage.setBounds(500,280,400,400);
 
-enemyImage.setForeground(en.enemyColors[0]);
+//enemyImage.setForeground(en.enemyColors[0]);
 
 enemyImage.setVisible(false);
 
@@ -1216,15 +1400,38 @@ playerInfoName.setFont(new Font("Times new Roman", Font.PLAIN, 30));
 
  
 
-playerInfoHP = new JLabel("" + spieler.Health);
+playerInfoHP = new JLabel("           " + spieler.Health);
 
 playerInfoHP.setBounds(75,170,220,40);
 
-playerInfoHP.setForeground(new Color(60,60,60));
+playerInfoHP.setForeground(new Color(120,120,120));
 
 playerInfoHP.setFont(new Font("Times new Roman", Font.PLAIN, 30));
 
-//playerInfoHP.setBorder(new LineBorder(Color.red));
+playerInfoHP.setBorder(new LineBorder(Color.white));
+
+playerInfoPower = new JLabel("1x");
+
+playerInfoPower.setBounds(75,210,220,40);
+
+playerInfoPower.setForeground(new Color(120,120,120));
+
+playerInfoPower.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+
+
+playerInfoHPShield = new JLabel();
+
+playerInfoHPShield.setBounds(80,170,80,40);
+
+playerInfoHPShield.setForeground(new Color(255,150,0));
+
+playerInfoHPShield.setBackground(new Color(255,150,0));
+
+playerInfoHPShield.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+
+//playerInfoHPShield.setBorder(new LineBorder(new Color(255,150,0)));
+
+playerInfoHPShield.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Shields\\Standard shield.png").getImage().getScaledInstance(25, 25, Image.SCALE_AREA_AVERAGING)));
 
 
 playerInfoMainElement = new JLabel();
@@ -1279,6 +1486,8 @@ playerInfoSupportElement.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\E
 frame.add(playerInfo);
 frame.add(playerInfoName);
 frame.add(playerInfoHP);
+frame.add(playerInfoPower);
+frame.add(playerInfoHPShield);
 frame.add(playerInfoMainElement);
 frame.add(playerInfoSecondElement);
 frame.add(playerInfoAttack);
@@ -1338,7 +1547,7 @@ shop.setForeground(new Color(255, 0, 150));
 shop.setFont(new Font("Times new Roman", Font.PLAIN, 60));
 shop.setBounds(440, 130, 500, 400);
 shop.setBackground(Color.black);
-shop.setVisible(true);
+shop.setVisible(false);
 shop.setFocusable(false);
 shop.setBorder(new LineBorder(Color.white));
 
@@ -1347,7 +1556,7 @@ iPanel.setForeground(new Color(255, 255, 255));
 iPanel.setFont(new Font("Times new Roman", Font.PLAIN, 60));
 iPanel.setBounds(440, 30, 500, 92);
 iPanel.setBackground(Color.black);
-iPanel.setVisible(true);
+iPanel.setVisible(false);
 iPanel.setFocusable(false);
 iPanel.setBorder(new LineBorder(Color.white));
 /*
@@ -1404,7 +1613,7 @@ frame.add(iPanel);
             elemB.setFocusable(false);
             elemB.addActionListener(this);
             elemB.setActionCommand(Elemente.elements[e]);
-            choose_Element.setActionCommand("Main_Choose");
+         //   choose_Element.setActionCommand("Main_Choose");
             elemB.setBorder(new LineBorder(Color.white));
 
 
@@ -1453,8 +1662,8 @@ frame.add(iPanel);
             swordB.setVisible(false);
             swordB.setFocusable(false);
             swordB.addActionListener(this);
-            swordB.setActionCommand(scl.schwerte[s]);
-            choose_Element.setActionCommand("Sword_Buy");
+            swordB.setActionCommand(scl.schwerte[s] + "B");
+           // choose_Element.setActionCommand("Sword_Buy" + scl.schwerte[s]);
             swordB.setBorder(new LineBorder(Color.white));
             swordB.setName("Sword");
 /*
@@ -1516,8 +1725,8 @@ frame.add(iPanel);
             shieldB.setVisible(true);
             shieldB.setFocusable(false);
             shieldB.addActionListener(this);
-            shieldB.setActionCommand(scl.schilder[s2]);
-            choose_Element.setActionCommand("Shield_Buy");
+            shieldB.setActionCommand(scl.schilder[s2] + "B");
+           // choose_Element.setActionCommand("Shield_Buy");
             shieldB.setBorder(new LineBorder(Color.white));
             shieldB.setName("Shield");
 /*
@@ -1579,8 +1788,8 @@ frame.add(iPanel);
             boostB.setVisible(true);
             boostB.setFocusable(false);
             boostB.addActionListener(this);
-            boostB.setActionCommand(scl.boosts[s]);
-            choose_Element.setActionCommand("Sword_Buy");
+            boostB.setActionCommand(scl.boosts[s] + "B");
+          //  choose_Element.setActionCommand("Sword_Buy");
             boostB.setBorder(new LineBorder(Color.white));
             boostB.setName("Boost");
 /*
@@ -1748,6 +1957,7 @@ boostB.add(si);
             }
         }
 
+
         for (int t = 1; t<50000; t++){
          //   enemyImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Ancient2.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
             for (int a = 1; a<80; a++){
@@ -1790,6 +2000,7 @@ boostB.add(si);
     int n1;
     char c;
     String t = "loading:";
+    
 
     java.awt.event.ActionEvent e;
 
@@ -1813,6 +2024,191 @@ boostB.add(si);
 
         }
 
+
+        if (e.getActionCommand() == "Sword_Equip") {
+
+            System.out.println("D");
+            for (int s = 0; s < scl.schwerte.length; s++){
+if (scl.schwerte[s] == chosen_Main_Element_Name.getText() ){
+    playerInfoPower.setForeground(scl.swordsColor[s]);
+    playerInfoPower.setText(scl.swordsPower[s] + "x");
+
+                playerInfoPower.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Swords\\" + chosen_Main_Element_Name.getText() +".png").getImage().getScaledInstance(25, 25, Image.SCALE_AREA_AVERAGING)));
+                if (chosen_Main_Element_Name.getText() == "The Warrior"){
+                    playerInfoPower.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Swords\\" + chosen_Main_Element_Name.getText() +".png").getImage().getScaledInstance(30, 25, Image.SCALE_AREA_AVERAGING)));
+
+                }
+                
+            }
+        }
+        }
+
+        if (e.getActionCommand() == "Shield_Equip") {
+
+            System.out.println("D");
+            for (int s = 0; s < scl.schilder.length; s++){
+
+                playerInfoHPShield.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Shields\\" + chosen_Main_Element_Name.getText() +".png").getImage().getScaledInstance(25, 25, Image.SCALE_AREA_AVERAGING)));
+
+            }
+        }
+
+        if (e.getActionCommand() == "eInventar") {
+            chosen_Main_Element_Name.setBorder(null);
+
+            eshop_swords.setActionCommand("eInventar_Swords");
+            eshop_shields.setActionCommand("eInventar_Shields");
+            eshop_boosts.setActionCommand("eInventar_Boosts");
+
+            for (int o = 0; o < scl.items.length; o++){
+               inventarPanel.getComponent(o).setVisible(false);
+                }
+
+            inventarPanel.setVisible(!inventarPanel.isVisible());
+            shop_options.setVisible(!shop_options.isVisible());
+            iPanel.setVisible(!iPanel.isVisible());
+iPanel.setText("         Inventory        ");
+
+
+if (shop.isVisible()== true){
+    shop.setVisible(false);
+ inventarPanel.setVisible(true);
+ iPanel.setVisible(true);
+ shop_options.setVisible(true);
+ iPanel.setText("         Inventory        ");
+
+}
+
+            for (int o = 0; o < scl.schwerte.length; o++){
+            if (inventory.containsKey(scl.items[o])){
+                System.out.println("SW");
+                inventarPanel.getComponent(o).setVisible(true);
+            }
+            
+        }
+    }
+
+
+        if (e.getActionCommand().equals("eInventar_Swords")) {
+
+            chosen_Main_Element_Name.setBorder(null);
+
+            for (int o = 0; o < scl.items.length; o++){
+               inventarPanel.getComponent(o).setVisible(false);
+                }
+
+                for (int o = 0; o < scl.schwerte.length; o++){
+                    if (inventory.containsKey(scl.items[o])){
+                        System.out.println("SW");
+                        inventarPanel.getComponent(o).setVisible(true);
+                    }
+                    
+                }
+          
+          }
+
+          if (e.getActionCommand().equals("eInventar_Shields")) {
+
+            chosen_Main_Element_Name.setBorder(null);
+
+            for (int o = 0; o < scl.items.length; o++){
+                inventarPanel.getComponent(o).setVisible(false);
+                 }
+
+                for (int o = scl.schwerte.length; o < (scl.items.length - scl.boosts.length); o++){
+                    if (inventory.containsKey(scl.items[o])){
+                        System.out.println("SW");
+                        inventarPanel.getComponent(o).setVisible(true);
+                    }
+                    
+                }
+          
+          
+          }
+
+
+          if (e.getActionCommand().equals("eInventar_Boosts")) {
+
+            chosen_Main_Element_Name.setBorder(null);
+
+            for (int o = 0; o < scl.items.length; o++){
+                inventarPanel.getComponent(o).setVisible(false);
+                 }
+
+                for (int o = (scl.schwerte.length + scl.schilder.length); o < scl.items.length; o++){
+                    if (inventory.containsKey(scl.items[o])){
+                        System.out.println("SW");
+                        inventarPanel.getComponent(o).setVisible(true);
+                    }
+                    
+                }
+          
+          
+          }
+
+
+        if (e.getActionCommand() == "Sword_Buy") {
+
+            for (int s = 0; s < scl.schwerte.length; s++){
+
+                if (scl.schwerte[s] == chosen_Main_Element_Name.getText()){
+                System.out.println(chosen_Main_Element_Name.getText());
+                if (!inventory.containsKey(chosen_Main_Element_Name.getText())){
+
+                    if (spieler.Gold >= scl.swordsPreis[s]){
+                        spieler.Gold -= scl.swordsPreis[s];
+                        inventory.putIfAbsent(scl.schwerte[s], 1);
+                        System.out.println(spieler.Gold);
+                        System.out.println(inventory);
+                    }
+                }
+            }
+        }
+        }
+
+        if (e.getActionCommand() == "Shield_Buy") {
+
+            for (int s = 0; s < scl.schilder.length; s++){
+
+                if (scl.schilder[s] == chosen_Main_Element_Name.getText()){
+                System.out.println(chosen_Main_Element_Name.getText());
+                if (!inventory.containsKey(chosen_Main_Element_Name.getText())){
+
+                    if (spieler.Gold >= scl.shieldsPreis[s]){
+                        spieler.Gold -= scl.shieldsPreis[s];
+                        inventory.putIfAbsent(scl.schilder[s], 1);
+                        System.out.println(spieler.Gold);
+                        System.out.println(inventory);
+                    }
+                }
+            }
+        }
+        }
+
+        if (e.getActionCommand() == "Boost_Buy") {
+
+            for (int s = 0; s < scl.boosts.length; s++){
+
+                if (scl.boosts[s] == chosen_Main_Element_Name.getText()){
+                System.out.println(chosen_Main_Element_Name.getText());
+             //   if (inventory.containsKey(chosen_Main_Element_Name.getText())){
+
+                    if (spieler.Gold >= scl.boostsPreis[s]){
+                        spieler.Gold -= scl.boostsPreis[s];
+                        inventory.put(scl.boosts[s], inventory.get(scl.boosts[s]));
+                        System.out.println(inventory.get(scl.boosts[s] + 1));
+                        chosen_Main_Element_Name.setText(chosen_Main_Element_Name.getText() +"[" + inventory.get(scl.boosts[s]) + "]");
+                    }
+              //  }
+            }
+        }
+        }
+
+
+
+
+        
+
         if (e.getActionCommand() == "+") {
             upgradeMenu.setVisible(!upgradeMenu.isVisible());
         //    texarea.setEditable(false);
@@ -1831,12 +2227,20 @@ boostB.add(si);
         }
 
         if (e.getActionCommand() == "HealthUpgrade") {
-            System.out.println("HealthUpgrade");
             if (spieler.Points >= 1) {
                 spieler.Health = spieler.Health + 5;
+                spieler.MaxHealth = spieler.MaxHealth + 5;
                 i6.setText("  Health: " + spieler.Health + " ");
                 spieler.Points--;
                 pointsText.setText(" Points:  " + spieler.Points);
+                playerInfoHP.setText("" + spieler.Health);
+                playerInfoHPProgress.setBounds(75,170,0,40);
+                for (int w = 0; w<spieler.Health;w++){
+                    playerInfoHPProgress.setBounds(75,170,w,40);
+                    if (playerInfoHPProgress.getBounds().width >= 220){
+                        playerInfoHPProgress.setBounds(75,170,220,40);
+                    }
+                }
             }
         }
 
@@ -1885,19 +2289,10 @@ boostB.add(si);
             tex.setVisible(false);
         }
 
-   /*     if (e.getActionCommand() == "option3") {
-            System.out.println("option3");
-            // System.out.println("Dsalkgbw");
-            // frame.add(commboxtex);
-            // l.setVisible(true);
-            // l.setIcon(imageW);
-
-            // commboxtex.setVisible(true);
+       if (e.getActionCommand() == "option3") {
             frame.setVisible(false);
-            // commboxtex.setIcon(imageW);
-
         }
-*/
+
 
         if (e.getActionCommand() == "ConfirmName") {
            // texarea.setEditable(false);
@@ -1933,7 +2328,7 @@ option1.setVisible(false);
         //   elementsMenu.setVisible(true);
    
         //   chosen_Main_Element.setVisible(true);
-           choose_Element.setActionCommand("Main_Choose");
+       //    choose_Element.setActionCommand("Main_Choose");
         }
 
         if (e.getActionCommand().equals("options_c")) {
@@ -1990,8 +2385,24 @@ ePlayButton.setActionCommand("ePlayButton1");
 
 
         if (e.getActionCommand().equals("eShop")) {
+            eshop_swords.setActionCommand("eShop_Swords");
+            eshop_shields.setActionCommand("eShop_Shields");
+            eshop_boosts.setActionCommand("eShop_Boosts");
+
            shop.setVisible(!shop.isVisible());
            iPanel.setVisible(!iPanel.isVisible());
+           shop_options.setVisible(!shop_options.isVisible());
+           iPanel.setText("            Shop          ");
+
+           if (inventarPanel.isVisible()== true){
+               inventarPanel.setVisible(false);
+            shop.setVisible(true);
+            iPanel.setVisible(true);
+            shop_options.setVisible(true);
+            iPanel.setText("            Shop          ");
+
+           }
+
            for (int s = 0; s < scl.schwerte.length; s++){
 if (shop.getComponent(s).getName().equals("Sword")){
     shop.getComponent(s).setVisible(false);
@@ -2309,9 +2720,10 @@ spieler.thread3 = (Integer) null;
         }
 
         for (v = 0; v < scl.schwerte.length; v++) {
-            if (e.getActionCommand().equals(scl.schwerte[v])) {
+            if (e.getActionCommand().equals(scl.schwerte[v] + "B")) {
+                chosen_Main_Element_Name.setBorder(null);
 
-                fighting_options.setVisible(false);
+             //   fighting_options.setVisible(false);
                 commbox.setVisible(true);
                 chosen_Main_Element.setVisible(true);
                 chosen_Main_Element_Name.setVisible(true);
@@ -2323,19 +2735,21 @@ spieler.thread3 = (Integer) null;
                 chosen_Main_Element_Picture.setIcon(
                         new ImageIcon(new ImageIcon(scl.i[v])
                                 .getImage().getScaledInstance(200, 195, Image.SCALE_AREA_AVERAGING)));
-                chosen_Main_Element_Name.setText("  " + scl.schwerte[v] + "  ");
+                chosen_Main_Element_Name.setText(scl.schwerte[v]);
                 chosen_Main_Element_Name.setForeground(scl.swordsColor[v]);
                 commbox.setForeground(scl.swordsColor[v]);
                 chosen_Main_Element_Description.setText("Kostet " +  scl.swordsPreis[v] + " coins" );
                 commbox.setText(scl.inf[v]);
+                choose_Element.setActionCommand("Sword_Buy");
 
             }
         }
 
         for (v = 0; v < scl.schilder.length; v++) {
-            if (e.getActionCommand().equals(scl.schilder[v])) {
+            if (e.getActionCommand().equals(scl.schilder[v]  + "B")) {
+                chosen_Main_Element_Name.setBorder(null);
 
-                fighting_options.setVisible(false);
+              //  fighting_options.setVisible(false);
                 commbox.setVisible(true);
                 chosen_Main_Element.setVisible(true);
                 chosen_Main_Element_Name.setVisible(true);
@@ -2347,20 +2761,21 @@ spieler.thread3 = (Integer) null;
                 chosen_Main_Element_Picture.setIcon(
                         new ImageIcon(new ImageIcon(scl.i2[v])
                                 .getImage().getScaledInstance(200, 195, Image.SCALE_AREA_AVERAGING)));
-                chosen_Main_Element_Name.setText("  " + scl.schilder[v] + "  ");
+                chosen_Main_Element_Name.setText(scl.schilder[v]);
                 chosen_Main_Element_Name.setForeground(scl.shieldsColor[v]);
                 commbox.setForeground(scl.shieldsColor[v]);
                 chosen_Main_Element_Description.setText("Kostet " +  scl.shieldsPreis[v] + " coins" );
                 commbox.setText(scl.inf2[v]);
-
+                choose_Element.setActionCommand("Shield_Buy");
             }
         }
 
 
         for (v = 0; v < scl.boosts.length; v++) {
-            if (e.getActionCommand().equals(scl.boosts[v])) {
+            if (e.getActionCommand().equals(scl.boosts[v]  + "B")) {
+                chosen_Main_Element_Name.setBorder(null);
 
-                fighting_options.setVisible(false);
+               // fighting_options.setVisible(false);
                 commbox.setVisible(true);
                 chosen_Main_Element.setVisible(true);
                 chosen_Main_Element_Name.setVisible(true);
@@ -2372,14 +2787,97 @@ spieler.thread3 = (Integer) null;
                 chosen_Main_Element_Picture.setIcon(
                         new ImageIcon(new ImageIcon(scl.i3[v])
                                 .getImage().getScaledInstance(200, 195, Image.SCALE_AREA_AVERAGING)));
-                chosen_Main_Element_Name.setText("  " + scl.boosts[v] + "  ");
+                chosen_Main_Element_Name.setText(scl.boosts[v]);
                 chosen_Main_Element_Name.setForeground(scl.boostsColor[v]);
                 commbox.setForeground(scl.boostsColor[v]);
                 chosen_Main_Element_Description.setText("Kostet " +  scl.boostsPreis[v] + " coins" );
                 commbox.setText(scl.inf3[v]);
+                choose_Element.setActionCommand("Boost_Buy");
+            }
+        }
+
+
+        for (v = 0; v < scl.schwerte.length; v++) {
+            if (e.getActionCommand().equals(scl.schwerte[v] + "I")) {
+
+               // fighting_options.setVisible(false);
+                commbox.setVisible(true);
+                chosen_Main_Element.setVisible(true);
+                chosen_Main_Element_Name.setVisible(true);
+                chosen_Main_Element_Description.setVisible(true);
+                chosen_Main_Element_Picture.setVisible(true);
+                choose_Element.setVisible(true);
+                choose_Element.setText(" Equippen ");
+
+                chosen_Main_Element_Picture.setIcon(
+                        new ImageIcon(new ImageIcon(scl.i[v])
+                                .getImage().getScaledInstance(200, 195, Image.SCALE_AREA_AVERAGING)));
+                chosen_Main_Element_Name.setText(scl.schwerte[v]);
+                chosen_Main_Element_Name.setForeground(scl.swordsColor[v]);
+                commbox.setForeground(scl.swordsColor[v]);
+                chosen_Main_Element_Description.setText(" " +  scl.swordsPreis[v] + " coins" );
+                commbox.setText(scl.inf[v]);
+                chosen_Main_Element_Name.setBorder(null);
+                choose_Element.setActionCommand("Sword_Equip");
 
             }
         }
+
+
+        for (v = 0; v < scl.schilder.length; v++) {
+            if (e.getActionCommand().equals(scl.schilder[v]  + "I")) {
+
+              //  fighting_options.setVisible(false);
+                commbox.setVisible(true);
+                chosen_Main_Element.setVisible(true);
+                chosen_Main_Element_Name.setVisible(true);
+                chosen_Main_Element_Description.setVisible(true);
+                chosen_Main_Element_Picture.setVisible(true);
+                choose_Element.setVisible(true);
+                choose_Element.setText(" Equippen ");
+
+                chosen_Main_Element_Picture.setIcon(
+                        new ImageIcon(new ImageIcon(scl.i2[v])
+                                .getImage().getScaledInstance(200, 195, Image.SCALE_AREA_AVERAGING)));
+                chosen_Main_Element_Name.setText(scl.schilder[v]);
+                chosen_Main_Element_Name.setForeground(scl.shieldsColor[v]);
+                commbox.setForeground(scl.shieldsColor[v]);
+                chosen_Main_Element_Description.setText(" " +  scl.shieldsPreis[v] + " coins" );
+                commbox.setText(scl.inf2[v]);
+                choose_Element.setActionCommand("Shield_Equip");
+                chosen_Main_Element_Name.setBorder(null);
+
+            }
+        }
+
+
+        for (v = 0; v < scl.boosts.length; v++) {
+            if (e.getActionCommand().equals(scl.boosts[v]  + "I")) {
+
+               // fighting_options.setVisible(false);
+                commbox.setVisible(true);
+                chosen_Main_Element.setVisible(true);
+                chosen_Main_Element_Name.setVisible(true);
+                chosen_Main_Element_Description.setVisible(true);
+                chosen_Main_Element_Picture.setVisible(true);
+                choose_Element.setVisible(true);
+                choose_Element.setText(" Equippen ");
+
+                chosen_Main_Element_Picture.setIcon(
+                        new ImageIcon(new ImageIcon(scl.i3[v])
+                                .getImage().getScaledInstance(200, 195, Image.SCALE_AREA_AVERAGING)));
+                chosen_Main_Element_Name.setText("  " + scl.boosts[v] + "  ");
+                chosen_Main_Element_Name.setForeground(scl.boostsColor[v]);
+                commbox.setForeground(scl.boostsColor[v]);
+                chosen_Main_Element_Description.setText(" " +  scl.boostsPreis[v] + " coins" );
+                commbox.setText(scl.inf3[v]);
+
+                choose_Element.setActionCommand("Boost_Equip");
+                chosen_Main_Element_Name.setBorder(null);
+
+            }
+        }
+        
 
     }
     
@@ -4498,7 +4996,12 @@ element = "Cosmic";
             damageText.setText("" + damg2 + " Gegner Schaden");
             Thread.sleep(spieler.t3);
             spieler.enemyAtacked = false;
+            spieler.Health -= damg2;
+            playerInfoHP.setText("          " +spieler.Health);
 
+            for (int w2 = 0; w2<(spieler.Health * spieler.MaxHealth)/100; w2++){
+                playerInfoHPProgress.setBounds(75,170,w2,40);
+            }
         }
 
             

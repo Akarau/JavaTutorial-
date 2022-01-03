@@ -1,16 +1,20 @@
 import java.awt.Color;
+import java.util.HashMap;
 
 import javax.swing.JPanel;
+import java.util.HashMap;
 
 public class CuPower {
-      int Gold = 0;
+      int Gold = 50000;
       int Power = 100;
       int Points = 50;
       int Health = 100;
+      int MaxHealth;
       int damg;
 
+      
+
     public  int playerHealthResult = 10;
-     int MaxHealth;
       float GoldEarn = 1F;
      String Main_Element = "  Ancient  ";
      String Second_Element = "  Cosmic  ";
@@ -64,9 +68,17 @@ Boolean luckUpgrade1 = false;
 // Elemente //
 
 
+// Inventory //
+
+
+
+// Inventory //
+
+
     public CuPower() {
 
-
+        HashMap <String, Integer> inventory = new HashMap <>();
+inventory.put("Helixir", 1);
 
     }
 

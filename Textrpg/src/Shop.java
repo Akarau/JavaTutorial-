@@ -2,12 +2,37 @@ import java.awt.Color;
 
 
 public class Shop {
+
+
+    String items[] = {
+        "Standard Schwert",
+        "Double Schwert",
+        "Diamant Schwert",
+        "Molten Schwert",
+        "The Warrior",
+        "Standard Shield",
+        "Aqua Shield",
+        "Schnelle Rüstung",
+        "Heal Elixir",
+        "Heal Potion",
+        "Reflection",
+    };
+
      String schwerte[] = {
         "Standard Schwert",
         "Double Schwert",
         "Diamant Schwert",
         "Molten Schwert",
         "The Warrior",
+    };
+
+
+    int schwerteval[] = {
+        1,
+        2,
+        3,
+        4,
+        5,
     };
 
 
@@ -47,10 +72,10 @@ public class Shop {
             };
 
             String[] i = {
-                "Textrpg\\Images\\Swords\\Standard sword.png",
-                "Textrpg\\Images\\Swords\\Double swords.png",
-                "Textrpg\\Images\\Swords\\Diamond sword.png",
-                "Textrpg\\Images\\Swords\\Molten sword.png",
+                "Textrpg\\Images\\Swords\\Standard Schwert.png",
+                "Textrpg\\Images\\Swords\\Double Schwert.png",
+                "Textrpg\\Images\\Swords\\Diamant Schwert.png",
+                "Textrpg\\Images\\Swords\\Molten Schwert.png",
                 "Textrpg\\Images\\Swords\\The Warrior.png",
             };
 
@@ -58,7 +83,6 @@ public class Shop {
             String schilder[] = {
                 "Standard Shield",
                 "Aqua Shield",
-        
             };
 
             Color[] shieldsColor = {
@@ -95,8 +119,6 @@ public class Shop {
                         "Heal Elixir",
                         "Heal Potion",
                         "Reflection",
-
-
                     };
         
                     Color[] boostsColor = {
