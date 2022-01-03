@@ -20,9 +20,10 @@ public class CuPower {
      String Second_Element = "  Cosmic  ";
      String Support_Element = "  Luck  ";
      String playerName;
-     float powerBoost = 1.5f;
+     float powerBoost = 1;
      String powerBoostIcon = "Textrpg\\Images\\Swords\\Double swords.png";
      String powerBoostName = "";
+     String hpBoostName = "";
      float hpBoost = 1.5f;
 
      // Enemy //

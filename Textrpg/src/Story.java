@@ -2033,6 +2033,7 @@ if (scl.schwerte[s] == chosen_Main_Element_Name.getText() ){
     playerInfoPower.setForeground(scl.swordsColor[s]);
     playerInfoPower.setText(scl.swordsPower[s] + "x");
 
+    spieler.powerBoost = scl.swordsPower[s];
                 playerInfoPower.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Swords\\" + chosen_Main_Element_Name.getText() +".png").getImage().getScaledInstance(25, 25, Image.SCALE_AREA_AVERAGING)));
                 if (chosen_Main_Element_Name.getText() == "The Warrior"){
                     playerInfoPower.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Swords\\" + chosen_Main_Element_Name.getText() +".png").getImage().getScaledInstance(30, 25, Image.SCALE_AREA_AVERAGING)));
@@ -2049,13 +2050,78 @@ if (scl.schwerte[s] == chosen_Main_Element_Name.getText() ){
 
         if (e.getActionCommand() == "Shield_Equip") {
 
-            System.out.println("D");
-            for (int s = 0; s < scl.schilder.length; s++){
 
-                playerInfoHPShield.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Shields\\" + chosen_Main_Element_Name.getText() +".png").getImage().getScaledInstance(25, 25, Image.SCALE_AREA_AVERAGING)));
+
+            for (int s = 0; s < scl.schilder.length; s++){
+                if (scl.schilder[s] == chosen_Main_Element_Name.getText() ){
+                
+                    playerInfoHPShield.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Shields\\" + chosen_Main_Element_Name.getText() +".png").getImage().getScaledInstance(25, 25, Image.SCALE_AREA_AVERAGING)));
+                  //  if (chosen_Main_Element_Name.getText() == "The Warrior"){
+                                    playerInfoPower.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Swords\\" + chosen_Main_Element_Name.getText() +".png").getImage().getScaledInstance(30, 25, Image.SCALE_AREA_AVERAGING)));
+                
+                           //     }
+                                
+                            }
+                            spieler.hpBoostName = chosen_Main_Element_Name.getText();
+                                choose_Element.setText(" Equipped ");
+                
+                            
+                        }
+
+ 
+ 
+                    }
+
+
+
+                    if (e.getActionCommand() == "Boost_Use") {
+
+                        System.out.println("D");
+                        for (int s = 0; s < scl.boosts.length; s++){
+            if (scl.boosts[s] == chosen_Main_Element_Name.getText()){
+            
+                            playerInfoPower.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Boosts\\" + chosen_Main_Element_Name.getText() +".png").getImage().getScaledInstance(25, 25, Image.SCALE_AREA_AVERAGING)));
+                            
+                        }
+
+                        inventarPanel.setVisible(false);
+                        shop_options.setVisible(false);
+                        iPanel.setVisible(false);
+            
+            chosen_Main_Element.setVisible(false);
+                shop.setVisible(false);
+             inventarPanel.setVisible(false);
+             iPanel.setVisible(false);
+             shop_options.setVisible(false);
+            
+             if (scl.boosts[s] == "Schnelle Rüstung" && chosen_Main_Element_Name.getText() == "Schnelle Rüstung"){
+                        spieler.Health += 100;
+                        playerInfoHP.setText("           " +spieler.Health);
+                        inventory.remove(scl.boosts[s]);
+
 
             }
-        }
+
+            if (scl.boosts[s] == "Heal Elixir" && chosen_Main_Element_Name.getText() == "Heal Elixir"){
+                spieler.Health += 250;
+                playerInfoHP.setText("           " +spieler.Health);
+                inventory.remove(scl.boosts[s]);
+
+    }
+
+    if (scl.boosts[s] == "Heal Potion" && chosen_Main_Element_Name.getText() == "Heal Potion"){
+        System.out.println("HEAL");
+        spieler.Health += 800;
+        playerInfoHP.setText("           " +spieler.Health);
+        inventory.remove(scl.boosts[s]);
+
+}
+                        
+                    }
+
+
+
+                    }
 
         if (e.getActionCommand() == "eInventar") {
             chosen_Main_Element_Name.setBorder(null);
@@ -2874,7 +2940,7 @@ spieler.thread3 = (Integer) null;
                 commbox.setText(scl.inf2[v]);
                 choose_Element.setActionCommand("Shield_Equip");
                 chosen_Main_Element_Name.setBorder(null);
-                if (spieler.powerBoostName.equals(chosen_Main_Element_Name.getText())){
+                if (spieler.hpBoostName.equals(chosen_Main_Element_Name.getText())){
                     choose_Element.setText(" Equipped ");
 
                 }
@@ -2897,15 +2963,15 @@ spieler.thread3 = (Integer) null;
                 chosen_Main_Element_Picture.setIcon(
                         new ImageIcon(new ImageIcon(scl.i3[v])
                                 .getImage().getScaledInstance(200, 195, Image.SCALE_AREA_AVERAGING)));
-                chosen_Main_Element_Name.setText("  " + scl.boosts[v] + "  ");
+                chosen_Main_Element_Name.setText(scl.boosts[v]);
                 chosen_Main_Element_Name.setForeground(scl.boostsColor[v]);
                 commbox.setForeground(scl.boostsColor[v]);
                 chosen_Main_Element_Description.setText(" " +  scl.boostsPreis[v] + " coins" );
                 commbox.setText(scl.inf3[v]);
 
-                choose_Element.setActionCommand("Boost_Equip");
+                choose_Element.setActionCommand("Boost_Use");
                 chosen_Main_Element_Name.setBorder(null);
-                if (spieler.powerBoostName.equals(chosen_Main_Element_Name.getText())){
+                if (spieler.hpBoostName.equals(chosen_Main_Element_Name.getText())){
                     choose_Element.setText(" Equipped ");
 
                 }
