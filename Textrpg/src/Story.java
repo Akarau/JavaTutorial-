@@ -2116,6 +2116,15 @@ if (scl.schwerte[s] == chosen_Main_Element_Name.getText() ){
         inventory.remove(scl.boosts[s]);
 
 }
+
+if (scl.boosts[s] == "Reflection" && chosen_Main_Element_Name.getText() == "Reflection"){
+    System.out.println("HEAL");
+    spieler.Health += 800;
+   // playerInfo.setForeground(new Color(255,150,50));
+    playerInfoHP.setText("           " +spieler.Health);
+    inventory.remove(scl.boosts[s]);
+
+}
                         
                     }
 
@@ -2132,6 +2141,14 @@ if (scl.schwerte[s] == chosen_Main_Element_Name.getText() ){
 
             for (int o = 0; o < scl.items.length; o++){
                inventarPanel.getComponent(o).setVisible(false);
+                }
+
+                for (int o = 0; o < scl.schwerte.length; o++){
+                    if (inventory.containsKey(scl.items[o])){
+                        System.out.println("SW");
+                        inventarPanel.getComponent(o).setVisible(true);
+                    }
+                    
                 }
 
             inventarPanel.setVisible(!inventarPanel.isVisible());
@@ -2473,6 +2490,7 @@ ePlayButton.setActionCommand("ePlayButton1");
            shop_options.setVisible(!shop_options.isVisible());
            iPanel.setText("            Shop          ");
 
+
            if (inventarPanel.isVisible()== true){
                inventarPanel.setVisible(false);
             shop.setVisible(true);
@@ -2482,11 +2500,7 @@ ePlayButton.setActionCommand("ePlayButton1");
 
            }
 
-           for (int s = 0; s < scl.schwerte.length; s++){
-if (shop.getComponent(s).getName().equals("Sword")){
-    shop.getComponent(s).setVisible(false);
-}
-           }
+
         }
 
 
