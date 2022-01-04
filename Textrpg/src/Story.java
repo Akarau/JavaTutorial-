@@ -2129,7 +2129,6 @@ if (scl.schwerte[s] == chosen_Main_Element_Name.getText() ){
     }
 
     if (scl.boosts[s] == "Heal Potion" && chosen_Main_Element_Name.getText() == "Heal Potion"){
-        System.out.println("HEAL");
         spieler.Health += 800;
         playerInfoHP.setText("           " +spieler.Health);
         inventory.remove(scl.boosts[s]);
@@ -2137,13 +2136,11 @@ if (scl.schwerte[s] == chosen_Main_Element_Name.getText() ){
 }
 
 if (scl.boosts[s] == "Reflection" && chosen_Main_Element_Name.getText() == "Reflection"){
-    System.out.println("HEAL");
-    spieler.Health += 800;
-   // playerInfo.setForeground(new Color(255,150,50));
     playerInfoHP.setText("           " +spieler.Health);
     inventory.remove(scl.boosts[s]);
     playerInfo.setBorder(new LineBorder(new Color(250,150,150)));
-   // setForeground(new Color(250,150,0))
+    reflectedDamgeImage.setVisible(true);
+    spieler.reflection = true;
 }
                         
                     }
@@ -5097,6 +5094,7 @@ element = "Cosmic";
 
 
         if (spieler.reflection.equals(true)){
+            spieler.reflection = false;
             reflectedDamgeText.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Boosts\\Reflection.png").getImage().getScaledInstance(40, 35, Image.SCALE_AREA_AVERAGING)));
 
             reflectedDamgeText.setBounds(900,480,600,80);
@@ -5112,6 +5110,8 @@ element = "Cosmic";
             enemyInfoHP.setText("" + spieler.currentEnemyHP + "");
             Thread.sleep(spieler.t3 + 100);
             reflectedDamgeText.setVisible(false);
+            playerInfo.setBorder(new LineBorder(Color.white));
+
         }
 
         if (spieler.reflection.equals(false)){
