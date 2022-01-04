@@ -37,6 +37,7 @@ public class Story implements ActionListener {
    JButton eshop_swords;
    JButton eshop_shields;
    JButton eshop_boosts;
+   JLabel reflectedDamgeImage;
 
     static JLabel l;
     static JLabel i1;
@@ -764,6 +765,24 @@ JLabel self_HealText;
                                                         inventarButton.add(einventar);
                                                         einventar.add(iInventar);
 
+                                                        reflectedDamgeImage = new JLabel();
+                                                        reflectedDamgeImage.setForeground(new Color(255, 255, 255));
+                                                        reflectedDamgeImage.setFont(new Font("Times new Roman", Font.PLAIN, 35));
+                                                          reflectedDamgeImage.setBounds(400, 100, 300, 300);
+                                                         
+                                                         reflectedDamgeImage.setBackground(Color.WHITE);
+                                                         reflectedDamgeImage.setVisible(true);
+                                                         reflectedDamgeImage.setFocusable(false);
+                                                         reflectedDamgeImage.setOpaque(false);
+                                                         reflectedDamgeImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Boosts\\Reflection.png").getImage()
+                                                                 .getScaledInstance(45, 40, Image.SCALE_AREA_AVERAGING)));
+                                                                 frame.add(reflectedDamgeImage);
+                 
+                                                                         frame.add(fighting_options);
+                                                                         fighting_options.add(inventarButton);
+                                                                         inventarButton.add(einventar);
+                                                                         einventar.add(iInventar);
+
 
        ePlayButton.add(ifightPlayButton);
        frame.add(fightPlayButton);
@@ -1376,7 +1395,7 @@ enemyImage.setVisible(false);
 
 
 
-JPanel playerInfo = new JPanel();
+playerInfo = new JPanel();
 
 playerInfo.setVisible(true);
 
@@ -2123,7 +2142,8 @@ if (scl.boosts[s] == "Reflection" && chosen_Main_Element_Name.getText() == "Refl
    // playerInfo.setForeground(new Color(255,150,50));
     playerInfoHP.setText("           " +spieler.Health);
     inventory.remove(scl.boosts[s]);
-
+    playerInfo.setBorder(new LineBorder(new Color(250,150,150)));
+   // setForeground(new Color(250,150,0))
 }
                         
                     }
