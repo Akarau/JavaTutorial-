@@ -13,6 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 
 
@@ -20,8 +21,9 @@ public class Story implements ActionListener {
 
     CuPower spieler = new CuPower();
     Shop scl = new Shop();
+    Achievements rew = new Achievements();
 
-    
+
 
 
     private static final Component JButton = null;
@@ -75,6 +77,7 @@ public class Story implements ActionListener {
 
     JPanel upgradeMenu;
     JPanel shop;
+    JPanel achievements;
     JLabel iPanel;
     JPanel swordsMenu;
 
@@ -1361,6 +1364,92 @@ shop.setVisible(false);
 shop.setFocusable(false);
 shop.setBorder(new LineBorder(Color.white));
 
+achievements = new JPanel();
+achievements.setForeground(new Color(255, 0, 150));
+achievements.setFont(new Font("Times new Roman", Font.PLAIN, 60));
+achievements.setBounds(440, 130, 500, 400);
+achievements.setBackground(Color.black);
+achievements.setVisible(true);
+achievements.setFocusable(false);
+achievements.setBorder(new LineBorder(Color.white));
+
+frame.add(achievements);
+
+
+
+
+for (int a = 0; a < rew.achievements.length; a++) {
+
+
+    javax.swing.JButton swordB = new JButton();
+    swordB.setForeground(new Color(80, 0, 255));
+    swordB.setFont(new Font("Times new Roman", Font.PLAIN, 60));
+    swordB.setBounds(0, 0, 100, 100);
+    swordB.setBackground(Color.black);
+    swordB.setVisible(true);
+    swordB.setFocusable(false);
+    swordB.addActionListener(this);
+    swordB.setActionCommand(rew.achievements[a]);
+    swordB.setBorder(new LineBorder(Color.white));
+    swordB.setName("Achievement");
+
+    JLabel si = new JLabel();
+    si.setForeground(colors2[c]);
+    si.setFont(new Font("Times new Roman", Font.PLAIN, 55));
+    // color.setBounds(500, 500, 350, 350);
+    si.setIcon(new ImageIcon(new ImageIcon(rew.achievementsImage[a])
+            .getImage().getScaledInstance(140, 135, Image.SCALE_AREA_AVERAGING)));
+            si.setSize(800, 800);
+            si.setBackground(Color.white);
+            si.setVisible(true);
+            si.setFocusable(false);
+
+    si.setBorder(new LineBorder(Color.white));
+si.setText("      " + rew.achievements[a] + "    ");
+
+
+achievements.add(swordB);
+swordB.add(si);
+
+}
+
+
+
+for (int s2 = 0; s2 < scl.schilder.length; s2++) {
+
+
+    javax.swing.JButton shieldB = new JButton();
+    shieldB.setForeground(new Color(80, 0, 255));
+    shieldB.setFont(new Font("Times new Roman", Font.PLAIN, 60));
+    shieldB.setBounds(0, 0, 100, 100);
+    shieldB.setBackground(Color.black);
+    shieldB.setVisible(true);
+    shieldB.setFocusable(false);
+    shieldB.addActionListener(this);
+    shieldB.setActionCommand(scl.schilder[s2] + "B");
+    shieldB.setBorder(new LineBorder(Color.white));
+    shieldB.setName("Shield");
+
+    JLabel si = new JLabel();
+    si.setForeground(colors2[c]);
+    si.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+    // color.setBounds(500, 500, 350, 350);
+    si.setIcon(new ImageIcon(new ImageIcon(scl.i2[s2])
+            .getImage().getScaledInstance(140, 135, Image.SCALE_AREA_AVERAGING)));
+            si.setSize(800, 800);
+            si.setBackground(Color.white);
+            si.setVisible(true);
+            si.setFocusable(false);
+
+    si.setBorder(new LineBorder(Color.white));
+
+    this.shop.add(shieldB);
+    shieldB.add(si);
+
+}
+
+
+
 iPanel = new JLabel("            Shop          ");
 iPanel.setForeground(new Color(255, 255, 255));
 iPanel.setFont(new Font("Times new Roman", Font.PLAIN, 60));
@@ -2549,6 +2638,38 @@ spieler.thread3 = 0;
             }
         }
         
+
+
+        for (v = 0; v < rew.achievements.length; v++) {
+            if (e.getActionCommand().equals(rew.achievements[v])) {
+                chosen_Main_Element_Name.setBorder(null);
+                //commbox.setVisible(true);
+                chosen_Main_Element.setVisible(true);
+                chosen_Main_Element_Name.setVisible(true);
+                chosen_Main_Element_Description.setVisible(true);
+                chosen_Main_Element_Picture.setVisible(true);
+                choose_Element.setVisible(true);
+                choose_Element.setText(" Einfordern ");
+
+                chosen_Main_Element_Picture.setIcon(
+                        new ImageIcon(new ImageIcon(rew.achievementsImage[v])
+                                .getImage().getScaledInstance(200, 195, Image.SCALE_AREA_AVERAGING)));
+                chosen_Main_Element_Name.setText(rew.achievements[v] + "[" + rew.achievementsDifficulty[v] + "]");
+                chosen_Main_Element_Name.setForeground(rew.achievementsColor[v]);
+              //  commbox.setForeground(scl.swordsColor[v]);
+                chosen_Main_Element_Description.setText(rew.achievementsDescription[v]);
+                chosen_Main_Element_Description.setBorder(new LineBorder(Color.black));
+               // commbox.setText(scl.inf[v]);
+               // choose_Element.setActionCommand("Sword_Buy");
+               // if (inventory.containsKey(chosen_Main_Element_Name.getText())){
+             //       choose_Element.setText(" gekauft ");
+
+            //    }
+
+            }
+        }
+
+
 
     }
     

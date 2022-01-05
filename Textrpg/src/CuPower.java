@@ -34,7 +34,7 @@ public class CuPower {
      String enemySecond_Element;
      String enemyThird_Element;
      String enemyLast_Element;
-     Boolean enemyAtacked;
+     Boolean enemyAtacked = false;
      Boolean reflection = false;
 
      // Enemy //
