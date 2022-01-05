@@ -86,7 +86,7 @@ public class Enemy {
 
 
     String enemyDifficulty[] = {
-        "Easy",
+        "Leicht",
         "Fire",
     };
 

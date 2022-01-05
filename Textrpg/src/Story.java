@@ -2,10 +2,8 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.Font;
 import java.awt.event.ActionListener;
-import java.util.EventObject;
 import java.util.HashMap;
 import java.awt.*;
-import java.awt.event.*;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -213,26 +211,17 @@ JLabel self_HealText;
 
 
     public Story(Game game) throws InterruptedException {
-        //pGame.cuPower.playerhealdamageanimation(pPanel);
-       // Enemy r;
+
         
 
-      // inventory.put("Helixir", 1);
 
         frame = new JFrame();
-        // fenster.setSize(1920, 1080);
 
         // Setzt das Fenster immer auf Fullscreen
         frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
         // Entfernt den oberen Rahmen
         frame.setUndecorated(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        // r = new Enemy();
-        // fenster.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        // fenster.getContentPane().setBackground(Color.green);
-        // fenster.setLayout(null);
-        // fenster.getContentPane();
 
 
         byte RG = 127;
@@ -248,14 +237,13 @@ JLabel self_HealText;
         panel2.setBounds(460, 600, 350, 800);
         panel2.setBackground(Color.BLACK);
         panel2.setForeground(Color.black);
+
         startname = new JButton("     Spielen     ");
-        // startname.setFont(startschrift);
         startname.setBackground(Color.BLACK);
         startname.setSize(400, 400);
         startname.setFont(startschrift);
         startname.setForeground(Color.WHITE);
         startname.setVisible(false);
-        // startname.setFocusable(false);
         startname.addActionListener(this);
         startname.setActionCommand("startname");
         startname.setBorder(new LineBorder(Color.white));
@@ -281,7 +269,6 @@ JLabel self_HealText;
         i1 = new JLabel();
         i1.setForeground(new Color(255, 0, 160));
         i1.setFont(new Font("Times new Roman", Font.PLAIN, 60));
-        // i1.setBounds(200, 400, 400, 0);
         i1.setSize(20, 20);
         i1.setBackground(Color.WHITE);
         i1.setVisible(true);
@@ -305,7 +292,6 @@ JLabel self_HealText;
         i3 = new JLabel();
         i3.setForeground(new Color(255, 255, 255));
         i3.setFont(new Font("Times new Roman", Font.PLAIN, 60));
-        // i3.setBounds(200, 400, 400, 0);
         i3.setSize(20, 20);
         i3.setBackground(Color.WHITE);
         i3.setVisible(true);
@@ -317,7 +303,6 @@ JLabel self_HealText;
         i4 = new JLabel();
         i4.setForeground(new Color(0, 220, 255));
         i4.setFont(new Font("Times new Roman", Font.PLAIN, 60));
-        // i3.setBounds(200, 400, 400, 0);
         i4.setSize(20, 20);
         i4.setBackground(Color.WHITE);
         i4.setVisible(true);
@@ -379,7 +364,6 @@ JLabel self_HealText;
         optionsmenu.setVisible(false);
         optionsmenu.setBackground(Color.BLACK);
         optionsmenu.setFocusable(false);
-        // optionsmenu.setForeground(Color.BLACK);
         optionsmenu.setBorder(new LineBorder(Color.white));
 
         options_c = new JButton("   Colors   ");
@@ -398,10 +382,8 @@ JLabel self_HealText;
         colors_R.setVisible(false);
         colors_R.setBackground(RGBColor(30, 30, 30));
         colors_R.setFocusable(false);
-        // colors_R.setForeground(Color.white);
 
         optionsmenu_options = new JPanel();
-        // optionsmenu_colors.setBounds(1.x, 1.y, );
         optionsmenu_options.setVisible(false);
         optionsmenu_options.setBackground(Color.BLACK);
         optionsmenu_options.setFocusable(false);
@@ -409,7 +391,6 @@ JLabel self_HealText;
         optionsmenu_options.setBorder(new LineBorder(Color.white));
 
         shop_options = new JPanel();
-        // optionsmenu_colors.setBounds(1.x, 1.y, );
         shop_options.setVisible(false);
         shop_options.setBackground(Color.BLACK);
         shop_options.setFocusable(false);
@@ -421,7 +402,6 @@ JLabel self_HealText;
 
 
        JPanel optionsmenu_colorsoutlines = new JPanel();
-        // optionsmenu_colors.setBounds(1.x, 1.y, );
         optionsmenu_colorsoutlines.setVisible(false);
         optionsmenu_colorsoutlines.setBackground(Color.BLACK);
         optionsmenu_colorsoutlines.setFocusable(false);
@@ -431,7 +411,6 @@ JLabel self_HealText;
         frame.add(shop_options);
 
         fighting_options = new JPanel();
-        // optionsmenu_colors.setBounds(1.x, 1.y, );
         fighting_options.setVisible(true);
         fighting_options.setBackground(Color.BLACK);
         fighting_options.setFocusable(true);
@@ -449,9 +428,6 @@ JLabel self_HealText;
         b1.setFocusable(false);
         tn.setIcon(url);
         tn.setText("text");
-        // e1.addActionListener(this);
-        // e1.setActionCommand("E");
-        optionsmenu_options.setBorder(new LineBorder(Color.white));
 
         b2 = new JPanel();
         b2.setForeground(new Color(200, 255, 80));
@@ -460,9 +436,6 @@ JLabel self_HealText;
         b2.setBackground(Color.black);
         b2.setVisible(true);
         b2.setFocusable(false);
-        // e2.addActionListener(this);
-        // e2.setActionCommand("E");
-        optionsmenu_options.setBorder(new LineBorder(Color.white));
 
         b3 = new JPanel();
         b3.setForeground(new Color(255, 0, 150));
@@ -471,9 +444,6 @@ JLabel self_HealText;
         b3.setBackground(Color.black);
         b3.setVisible(true);
         b3.setFocusable(false);
-        // e3.addActionListener(this);
-        // e3.setActionCommand("E");
-        optionsmenu_options.setBorder(new LineBorder(Color.white));
 
         b4 = new JPanel();
         b4.setForeground(new Color(255, 255, 255));
@@ -482,9 +452,6 @@ JLabel self_HealText;
         b4.setBackground(Color.black);
         b4.setVisible(true);
         b4.setFocusable(false);
-        // e4.addActionListener(this);
-        // e4.setActionCommand("E");
-        optionsmenu_options.setBorder(new LineBorder(Color.white));
 
 
         achievementsButton = new JPanel();
@@ -532,10 +499,6 @@ JLabel self_HealText;
         frame.add(inventarPanel);
 
 
-
-       
-
-
         shop_shields = new JPanel();
         shop_shields.setForeground(new Color(255, 0, 150));
         shop_shields.setFont(new Font("Times new Roman", Font.PLAIN, 60));
@@ -553,14 +516,6 @@ JLabel self_HealText;
         shop_boosts.setVisible(true);
         shop_boosts.setFocusable(false);
         shop_boosts.setOpaque(false);
-
-
-        //shop_options.add(shop_swords);
-       // shop_options.add(shop_shields);
-
-        // e1.addActionListener(this);
-        // e1.setActionCommand("E");
-
 
         e1 = new JButton();
         e1.setForeground(new Color(255, 0, 140));
@@ -700,7 +655,6 @@ JLabel self_HealText;
        ifightPlayButton = new JLabel();
        ifightPlayButton.setForeground(new Color(255, 255, 255));
        ifightPlayButton.setFont(new Font("Times new Roman", Font.PLAIN, 35));
-       // i3.setBounds(200, 400, 400, 0);
        ifightPlayButton.setSize(20, 20);
        ifightPlayButton.setBackground(Color.WHITE);
        ifightPlayButton.setVisible(true);
@@ -713,7 +667,6 @@ JLabel self_HealText;
                ishop_swords = new JLabel();
                ishop_swords.setForeground(new Color(255, 255, 255));
                ishop_swords.setFont(new Font("Times new Roman", Font.PLAIN, 35));
-               // i3.setBounds(200, 400, 400, 0);
                ishop_swords.setSize(20, 20);
                ishop_swords.setBackground(Color.WHITE);
                ishop_swords.setVisible(true);
@@ -725,7 +678,6 @@ JLabel self_HealText;
                        ishop_shields = new JLabel();
                        ishop_shields.setForeground(new Color(255, 255, 255));
                        ishop_shields.setFont(new Font("Times new Roman", Font.PLAIN, 35));
-                       // i3.setBounds(200, 400, 400, 0);
                        ishop_shields.setSize(20, 20);
                        ishop_shields.setBackground(Color.WHITE);
                        ishop_shields.setVisible(true);
@@ -738,7 +690,6 @@ JLabel self_HealText;
                               JLabel ishop_boosts = new JLabel();
                               ishop_boosts.setForeground(new Color(255, 255, 255));
                               ishop_boosts.setFont(new Font("Times new Roman", Font.PLAIN, 35));
-                               // i3.setBounds(200, 400, 400, 0);
                                ishop_boosts.setSize(20, 20);
                                ishop_boosts.setBackground(Color.WHITE);
                                ishop_boosts.setVisible(true);
@@ -751,7 +702,6 @@ JLabel self_HealText;
                                        iInventar = new JLabel();
                                        iInventar.setForeground(new Color(255, 255, 255));
                                        iInventar.setFont(new Font("Times new Roman", Font.PLAIN, 35));
-                                        // i3.setBounds(200, 400, 400, 0);
                                         iInventar.setSize(20, 20);
                                         iInventar.setBackground(Color.WHITE);
                                         iInventar.setVisible(true);
@@ -832,13 +782,11 @@ JLabel self_HealText;
         b.setFocusable(false);
         b.addActionListener(this);
         b.setActionCommand("b#1");
-        optionsmenu_options.setBorder(new LineBorder(Color.white));
 
         optionsmenu_options.add(tex);
         optionsmenu_options.add(b);
 
         optionsmenu_colors = new JPanel();
-        // optionsmenu_colors.setBounds(1.x, 1.y, );
         optionsmenu_colors.setVisible(false);
         optionsmenu_colors.setBackground(Color.BLACK);
         optionsmenu_colors.setFocusable(false);
@@ -846,7 +794,6 @@ JLabel self_HealText;
         optionsmenu_colors.setBorder(new LineBorder(Color.white));
 
         optionsmenu_colorsoutlines = new JPanel();
-        // optionsmenu_colors.setBounds(1.x, 1.y, );
         optionsmenu_colorsoutlines.setVisible(false);
         optionsmenu_colorsoutlines.setBackground(Color.BLACK);
         optionsmenu_colorsoutlines.setFocusable(false);
@@ -877,7 +824,6 @@ JLabel self_HealText;
         commboxtex.setSize(400, 400);
         commboxtex.setBackground(Color.WHITE);
         commboxtex.setVisible(true);
-        // commboxtex.setFocusable(false);
 
         upgradeMenu = new JPanel();
         upgradeMenu.setForeground(new Color(255, 0, 150));
@@ -934,8 +880,6 @@ JLabel self_HealText;
         pointsText.setVisible(true);
         pointsText.setFocusable(false);
         pointsText.setAlignmentX(80);
-        // upgrade1.addActionListener(this);
-        // upgrade1.setActionCommand("E");
         pointsText.setBorder(new LineBorder(Color.black));
 
         upgradeMenuButton = new JButton("+");
@@ -953,9 +897,7 @@ JLabel self_HealText;
         i5 = new JLabel();
         i5.setForeground(Color.white);
         i5.setFont(new Font("Times new Roman", Font.PLAIN, 50));
-        // i3.setBounds(200, 400, 400, 0);
         i5.setSize(80, 80);
-        // i5.setBackground(Color.WHITE);
         i5.setVisible(true);
         i5.setFocusable(false);
         i5.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Others\\Damage.png").getImage().getScaledInstance(55,
@@ -966,9 +908,7 @@ JLabel self_HealText;
         i6 = new JLabel();
         i6.setForeground(Color.white);
         i6.setFont(new Font("Times new Roman", Font.PLAIN, 50));
-        // i3.setBounds(200, 400, 400, 0);
         i6.setSize(80, 80);
-        // i5.setBackground(Color.WHITE);
         i6.setVisible(true);
         i6.setFocusable(false);
         i6.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Others\\HealI.png").getImage().getScaledInstance(55,
@@ -978,9 +918,7 @@ JLabel self_HealText;
         i7 = new JLabel();
         i7.setForeground(Color.white);
         i7.setFont(new Font("Times new Roman", Font.PLAIN, 50));
-        // i3.setBounds(200, 400, 400, 0);
         i7.setSize(80, 80);
-        // i5.setBackground(Color.WHITE);
         i7.setVisible(true);
         i7.setFocusable(false);
         i7.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Others\\Coin.png").getImage().getScaledInstance(55, 50,
@@ -990,20 +928,16 @@ JLabel self_HealText;
         iAchievements = new JLabel();
         iAchievements.setForeground(Color.white);
         iAchievements.setFont(new Font("Times new Roman", Font.PLAIN, 50));
-        // i3.setBounds(200, 400, 400, 0);
         iAchievements.setSize(80, 80);
-        // i5.setBackground(Color.WHITE);
         iAchievements.setVisible(true);
         iAchievements.setFocusable(false);
         iAchievements.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Others\\Badge.png").getImage().getScaledInstance(55, 50,
                 Image.SCALE_AREA_AVERAGING)));
 
-                iShop = new JLabel();
-                iShop.setForeground(Color.white);
-                iShop.setFont(new Font("Times new Roman", Font.PLAIN, 50));
-        // i3.setBounds(200, 400, 400, 0);
+        iShop = new JLabel();
+        iShop.setForeground(Color.white);
+        iShop.setFont(new Font("Times new Roman", Font.PLAIN, 50));
         iShop.setSize(80, 80);
-        // i5.setBackground(Color.WHITE);
         iShop.setVisible(true);
         iShop.setFocusable(false);
         iShop.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Others\\Shop.png").getImage().getScaledInstance(55, 50,
@@ -1023,7 +957,6 @@ JLabel self_HealText;
         elementsMenu.setVisible(false);
         elementsMenu.setBackground(Color.BLACK);
         elementsMenu.setFocusable(false);
-        // optionsmenu.setForeground(Color.BLACK);
         elementsMenu.setBorder(new LineBorder(Color.white));
 
         frame.add(elementsMenu);
@@ -1045,8 +978,6 @@ JLabel self_HealText;
         chosen_Main_Element_Picture.setVisible(true);
         chosen_Main_Element_Picture.setFocusable(false);
         chosen_Main_Element_Picture.setAlignmentX(80);
-        // upgrade1.addActionListener(this);
-        // upgrade1.setActionCommand("E");
         chosen_Main_Element_Picture.setBorder(new LineBorder(Color.white));
 
         chosen_Main_Element_Name = new JLabel("Ancient");
@@ -1057,8 +988,6 @@ JLabel self_HealText;
         chosen_Main_Element_Name.setVisible(true);
         chosen_Main_Element_Name.setFocusable(false);
         chosen_Main_Element_Name.setAlignmentX(80);
-        // upgrade1.addActionListener(this);
-        // upgrade1.setActionCommand("E");
         chosen_Main_Element_Name.setBorder(new LineBorder(Color.white));
 
         chosen_Main_Element_Description = new JTextArea(
@@ -1071,8 +1000,7 @@ JLabel self_HealText;
         chosen_Main_Element_Description.setFocusable(false);
         chosen_Main_Element_Description.setAlignmentX(80);
         chosen_Main_Element_Description.setLineWrap(true);
-        // upgrade1.addActionListener(this);
-        // upgrade1.setActionCommand("E");
+
 
         choose_Element = new JButton(" Wählen ");
         choose_Element.setForeground(new Color(0, 255, 80));
@@ -1083,7 +1011,6 @@ JLabel self_HealText;
         choose_Element.setVisible(true);
         choose_Element.setFocusable(false);
         choose_Element.addActionListener(this);
-        // choose_Element.setActionCommand("choose_Element");
         choose_Element.setBorder(new LineBorder(Color.white));
 
         chosen_Main_Element_Description.setBorder(new LineBorder(Color.white));
@@ -1098,15 +1025,11 @@ JLabel self_HealText;
 
 texarea = new JTextField(10);
 texarea.setBounds(520,400,200,60);
-//texarea.setLineWrap(true);
-//texarea.setWrapStyleWord(true);
 texarea.setVisible(true);
 texarea.setBackground(Color.BLACK);
 texarea.setForeground(Color.WHITE);
 texarea.setFont(new Font("Arial",Font.BOLD,20));
 texarea.setBorder(new LineBorder(Color.white));
-//texarea.setEditable(true);
-
 
 for (int s = 0; s < scl.schwerte.length; s++) {
 
@@ -1180,7 +1103,6 @@ for (int s = 0; s < scl.schilder.length; s++) {
 }
 
 
-
 for (int s = 0; s < scl.boosts.length; s++) {
 
 
@@ -1217,129 +1139,66 @@ for (int s = 0; s < scl.boosts.length; s++) {
 }
 
 
-
 en = new Enemy(null);
 
 
 JPanel enemyInfo = new JPanel();
-
 enemyInfo.setVisible(true);
-
 enemyInfo.setOpaque(false);
-
 enemyInfo.setFocusable(false);
-
 enemyInfo.setBounds(0, 110, 500, 150);
-
 enemyInfo.setBorder(new LineBorder(Color.white));
-
  
-
-
- 
-
 enemyInfoImage = new JLabel();
-
 enemyInfoImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Enemies\\DunkleFlamme.png").getImage().getScaledInstance(140, 135, Image.SCALE_AREA_AVERAGING)));
-
 enemyInfoImage.setBounds(20,120,140,120);
-
 enemyInfoImage.setForeground(en.enemyColors[0]);
-
 enemyInfoImage.setFont(new Font("Times new Roman", Font.PLAIN, 30));
-
 enemyInfoImage.setBorder(new LineBorder(en.enemyColors[1]));
 
- 
-
 enemyInfoName = new JLabel("  DunkleFlamme  ");
-
 enemyInfoName.setBounds(175,120,300,40);
-
 enemyInfoName.setForeground(en.enemyColors[0]);
-
 enemyInfoName.setFont(new Font("Times new Roman", Font.PLAIN, 30));
-
 enemyInfoName.setBorder(new LineBorder(en.enemyColors[1]));
 
- 
-
 enemyInfoHP = new JLabel("          " +en.enemiesHP[1]);
-
 enemyInfoHP.setBounds(175,170,220,40);
-
 enemyInfoHP.setForeground(Color.red);
-
 enemyInfoHP.setFont(new Font("Times new Roman", Font.PLAIN, 30));
-
 enemyInfoHP.setBorder(new LineBorder(Color.red));
 
- 
-
 enemyInfoMainElement = new JLabel();
-
 enemyInfoMainElement.setBounds(175,215,40,40);
-
 enemyInfoMainElement.setForeground(Color.red);
-
 enemyInfoMainElement.setFont(new Font("Times new Roman", Font.PLAIN, 30));
-
-//enemyInfoMainElement.setBorder(new LineBorder(Color.red));
-
 enemyInfoMainElement.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\" + en.enemy_Main_Materias[0] +".png").getImage().getScaledInstance(40, 40, Image.SCALE_AREA_AVERAGING)));
- 
 
 enemyInfoSecondElement = new JLabel();
-
 enemyInfoSecondElement.setBounds(220,215,40,40);
-
 enemyInfoSecondElement.setForeground(Color.red);
-
 enemyInfoSecondElement.setFont(new Font("Times new Roman", Font.PLAIN, 30));
 
-//enemyInfoMainElement.setBorder(new LineBorder(Color.red));
-
 enemyInfoSecondElement.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\" + en.enemy_Second_Materias[0] +".png").getImage().getScaledInstance(40, 40, Image.SCALE_AREA_AVERAGING)));
-
 enemyInfoThirdElement = new JLabel();
-
 enemyInfoThirdElement.setBounds(265,215,40,40);
-
 enemyInfoThirdElement.setForeground(Color.red);
-
 enemyInfoThirdElement.setFont(new Font("Times new Roman", Font.PLAIN, 30));
-
-//enemyInfoMainElement.setBorder(new LineBorder(Color.red));
-
 enemyInfoThirdElement.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\" + en.enemy_Third_Materias[0] +".png").getImage().getScaledInstance(40, 40, Image.SCALE_AREA_AVERAGING)));
 
-
 enemyInfoLastElement = new JLabel();
-
 enemyInfoLastElement.setBounds(310,215,40,40);
-
 enemyInfoLastElement.setForeground(Color.red);
-
 enemyInfoLastElement.setFont(new Font("Times new Roman", Font.PLAIN, 30));
-
-//enemyInfoMainElement.setBorder(new LineBorder(Color.red));
-
 enemyInfoLastElement.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\" + en.enemy_Last_Materias[0] +".png").getImage().getScaledInstance(40, 40, Image.SCALE_AREA_AVERAGING)));
 
-
-
-
 enemyInfoDifficulty = new JLabel(en.enemyDifficulty[0]);
-
 enemyInfoDifficulty.setBounds(450,220,40,40);
-
 enemyInfoDifficulty.setForeground(en.difficultyColors[0]);
-
 enemyInfoDifficulty.setFont(new Font("Times new Roman", Font.PLAIN, 20));
 
-//enemyInfoMainElement.setBorder(new LineBorder(Color.red));
 
-/*
+
 frame.add(enemyInfoDifficulty);
 
 frame.add(enemyInfoMainElement);
@@ -1357,7 +1216,7 @@ frame.add(enemyInfoHP);
 frame.add(enemyInfo);
 
 frame.add(enemyInfoImage);
-*/
+
 
 confirmName = new JButton("/");
 confirmName.setForeground(new Color(255, 255, 255));
@@ -1371,135 +1230,71 @@ confirmName.setActionCommand("ConfirmName");
 confirmName.setBorder(new LineBorder(Color.white));
 
 elementImage = new JLabel();
-
 elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Cosmic.png").getImage().getScaledInstance(370, 365, Image.SCALE_AREA_AVERAGING)));
-
 elementImage.setBounds(500,280,400,400);
-
-//elementImage.setForeground(en.enemyColors[0]);
-
 elementImage.setVisible(false);
-
 frame.add(elementImage);
 
 
- enemyImage = new JLabel();
-
+enemyImage = new JLabel();
 enemyImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Enemies\\DunkleFlamme.png").getImage().getScaledInstance(370, 365, Image.SCALE_AREA_AVERAGING)));
-
 enemyImage.setBounds(500,280,400,400);
-
-//enemyImage.setForeground(en.enemyColors[0]);
-
 enemyImage.setVisible(false);
 
 
-
 playerInfo = new JPanel();
-
 playerInfo.setVisible(true);
-
 playerInfo.setOpaque(false);
-
 playerInfo.setFocusable(false);
-
 playerInfo.setBounds(0, 110, 500, 150);
-
 playerInfo.setBorder(new LineBorder(Color.white));
 
 playerInfoName = new JLabel("");
-
 playerInfoName.setBounds(75,120,300,40);
-
 playerInfoName.setForeground(Color.white);
-
 playerInfoName.setFont(new Font("Times new Roman", Font.PLAIN, 30));
 
-//playerInfoName.setBorder(new LineBorder(en.enemyColors[1]));
-
- 
-
 playerInfoHP = new JLabel("           " + spieler.Health);
-
 playerInfoHP.setBounds(75,170,220,40);
-
 playerInfoHP.setForeground(new Color(120,120,120));
-
 playerInfoHP.setFont(new Font("Times new Roman", Font.PLAIN, 30));
-
 playerInfoHP.setBorder(new LineBorder(Color.white));
 
 playerInfoPower = new JLabel("1x");
-
 playerInfoPower.setBounds(75,210,220,40);
-
 playerInfoPower.setForeground(new Color(120,120,120));
-
 playerInfoPower.setFont(new Font("Times new Roman", Font.PLAIN, 30));
 
-
 playerInfoHPShield = new JLabel();
-
 playerInfoHPShield.setBounds(80,170,80,40);
-
 playerInfoHPShield.setForeground(new Color(255,150,0));
-
 playerInfoHPShield.setBackground(new Color(255,150,0));
-
 playerInfoHPShield.setFont(new Font("Times new Roman", Font.PLAIN, 30));
-
-//playerInfoHPShield.setBorder(new LineBorder(new Color(255,150,0)));
-
 playerInfoHPShield.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Shields\\Standard shield.png").getImage().getScaledInstance(25, 25, Image.SCALE_AREA_AVERAGING)));
 
 
 playerInfoMainElement = new JLabel();
-
 playerInfoMainElement.setBounds(75,215,40,40);
-
 playerInfoMainElement.setForeground(Color.red);
-
 playerInfoMainElement.setFont(new Font("Times new Roman", Font.PLAIN, 30));
-
-//enemyInfoMainElement.setBorder(new LineBorder(Color.red));
-
 playerInfoMainElement.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\" + spieler.Main_Element +".png").getImage().getScaledInstance(40, 40, Image.SCALE_AREA_AVERAGING)));
  
-
 playerInfoSecondElement = new JLabel();
-
 playerInfoSecondElement.setBounds(120,215,40,40);
-
 playerInfoSecondElement.setForeground(Color.red);
-
 playerInfoSecondElement.setFont(new Font("Times new Roman", Font.PLAIN, 30));
-
-//enemyInfoMainElement.setBorder(new LineBorder(Color.red));
-
 playerInfoSecondElement.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\" + spieler.Second_Element +".png").getImage().getScaledInstance(40, 40, Image.SCALE_AREA_AVERAGING)));
 
 playerInfoAttack = new JLabel();
-
 playerInfoAttack.setBounds(165,215,40,40);
-
 playerInfoAttack.setForeground(Color.red);
-
 playerInfoAttack.setFont(new Font("Times new Roman", Font.PLAIN, 30));
-
-//enemyInfoMainElement.setBorder(new LineBorder(Color.red));
-
 playerInfoAttack.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Others\\Damage.png").getImage().getScaledInstance(40, 40, Image.SCALE_AREA_AVERAGING)));
 
 playerInfoSupportElement = new JLabel();
-
 playerInfoSupportElement.setBounds(210,215,40,40);
-
 playerInfoSupportElement.setForeground(Color.red);
-
 playerInfoSupportElement.setFont(new Font("Times new Roman", Font.PLAIN, 30));
-
-//enemyInfoMainElement.setBorder(new LineBorder(Color.red));
-
 playerInfoSupportElement.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\" + en.enemy_Last_Materias[0] +".png").getImage().getScaledInstance(40, 40, Image.SCALE_AREA_AVERAGING)));
 
 frame.add(playerInfo);
@@ -1522,15 +1317,12 @@ damageText.setForeground(new Color(250,150,0));
 damageText.setBounds(900, 280, 600, 80);
 damageText.setVisible(false);
 
-
 boostDamageText = new JLabel("BoostDamageText");
 boostDamageText.setFont(new Font("Times new Roman", Font.PLAIN, 40));
 boostDamageText.setOpaque(false);
 boostDamageText.setForeground(new Color(25,255,255));
 boostDamageText.setBounds(900, 380, 600, 80);
 boostDamageText.setVisible(false);
-
-
 
 self_HealText = new JLabel();
 self_HealText.setFont(new Font("Times new Roman", Font.PLAIN, 30));
@@ -1559,7 +1351,6 @@ reflectedDamgeText.setOpaque(false);
 reflectedDamgeText.setForeground(new Color(250,150,0));
 reflectedDamgeText.setBounds(900, 280, 600, 80);
 reflectedDamgeText.setVisible(false);
-
 
 shop = new JPanel();
 shop.setForeground(new Color(255, 0, 150));
@@ -1600,7 +1391,6 @@ swordsMenu.setVisible(true);
 swordsMenu.setFocusable(false);
 swordsMenu.setOpaque(false);
 swordsMenu.setBorder(new LineBorder(Color.white));
-//shop.add(swordsMenu);
 
 frame.add(damageText);
 frame.add(boostDamageText);
@@ -1618,10 +1408,6 @@ frame.add(iPanel);
         JLabel ei;
 
         for (int e = 0; e < Elemente.elements.length; e++) {
-            // System.out.println(c);
-            // System.out.println(colors[c]);
-
-            // if (Elemente.elements[e] != null){
 
             javax.swing.JButton elemB = new JButton();
             elemB.setForeground(new Color(80, 0, 255));
@@ -1632,46 +1418,29 @@ frame.add(iPanel);
             elemB.setFocusable(false);
             elemB.addActionListener(this);
             elemB.setActionCommand(Elemente.elements[e]);
-         //   choose_Element.setActionCommand("Main_Choose");
             elemB.setBorder(new LineBorder(Color.white));
 
 
             ei = new JLabel();
             ei.setForeground(colors2[c]);
             ei.setFont(new Font("Times new Roman", Font.PLAIN, 30));
-            // color.setBounds(500, 500, 350, 350);
             ei.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\" + Elemente.elements[e] + ".png")
                     .getImage().getScaledInstance(140, 135, Image.SCALE_AREA_AVERAGING)));
             ei.setSize(800, 800);
             ei.setBackground(Color.white);
             ei.setVisible(true);
             ei.setFocusable(false);
-            // ei.addActionListener(this);
-            // ei.setActionCommand(colors[c]);
             ei.setBorder(new LineBorder(Color.white));
-            // ei.setActionCommand(colors[c]);
-            // color.setBorder(BorderFactory.createBevelBorder(200, Color.white,
-            // Color.BLACK));
 
-            // elementsMenu.add(ei);
+
             elementsMenu.add(elemB);
             elemB.add(ei);
-            // commbox.setVisible(true);
 
-            // if (Elemente.elements[e] == null) {
-            // break;
-            // } else {
-
-            // }
-            // }
 
         }
 
         for (int s = 0; s < scl.schwerte.length; s++) {
-            // System.out.println(c);
-            // System.out.println(colors[c]);
 
-            // if (Elemente.elements[e] != null){
 
             javax.swing.JButton swordB = new JButton();
             swordB.setForeground(new Color(80, 0, 255));
@@ -1682,20 +1451,9 @@ frame.add(iPanel);
             swordB.setFocusable(false);
             swordB.addActionListener(this);
             swordB.setActionCommand(scl.schwerte[s] + "B");
-           // choose_Element.setActionCommand("Sword_Buy" + scl.schwerte[s]);
             swordB.setBorder(new LineBorder(Color.white));
             swordB.setName("Sword");
-/*
-            javax.swing.JLabel swordBi = new JLabel("k76");
-            swordBi.setForeground(new Color(80, 0, 255));
-            swordBi.setFont(new Font("Times new Roman", Font.PLAIN, 60));
-            swordBi.setBounds(0, 300, 100, 100);
-            swordBi.setBackground(Color.red);
-            swordBi.setVisible(true);
-            swordBi.setFocusable(false);
-            choose_Element.setActionCommand("Sword_Buy");
-            swordBi.setBorder(new LineBorder(Color.white));
-*/
+
             JLabel si = new JLabel();
             si.setForeground(colors2[c]);
             si.setFont(new Font("Times new Roman", Font.PLAIN, 30));
@@ -1706,35 +1464,19 @@ frame.add(iPanel);
                     si.setBackground(Color.white);
                     si.setVisible(true);
                     si.setFocusable(false);
-            // ei.addActionListener(this);
-            // ei.setActionCommand(colors[c]);
+
             si.setBorder(new LineBorder(Color.white));
-            // ei.setActionCommand(colors[c]);
-            // color.setBorder(BorderFactory.createBevelBorder(200, Color.white,
-            // Color.BLACK));
 
-            // elementsMenu.add(ei);
+
             this.shop.add(swordB);
-//this.shop.add(swordBi);
             swordB.add(si);
-            // commbox.setVisible(true);
-
-            // if (Elemente.elements[e] == null) {
-            // break;
-            // } else {
-
-            // }
-            // }
 
         }
 
 
 
         for (int s2 = 0; s2 < scl.schilder.length; s2++) {
-            // System.out.println(c);
-            // System.out.println(colors[c]);
 
-            // if (Elemente.elements[e] != null){
 
             javax.swing.JButton shieldB = new JButton();
             shieldB.setForeground(new Color(80, 0, 255));
@@ -1745,20 +1487,9 @@ frame.add(iPanel);
             shieldB.setFocusable(false);
             shieldB.addActionListener(this);
             shieldB.setActionCommand(scl.schilder[s2] + "B");
-           // choose_Element.setActionCommand("Shield_Buy");
             shieldB.setBorder(new LineBorder(Color.white));
             shieldB.setName("Shield");
-/*
-            javax.swing.JLabel swordBi = new JLabel("k76");
-            swordBi.setForeground(new Color(80, 0, 255));
-            swordBi.setFont(new Font("Times new Roman", Font.PLAIN, 60));
-            swordBi.setBounds(0, 300, 100, 100);
-            swordBi.setBackground(Color.red);
-            swordBi.setVisible(true);
-            swordBi.setFocusable(false);
-            choose_Element.setActionCommand("Sword_Buy");
-            swordBi.setBorder(new LineBorder(Color.white));
-*/
+
             JLabel si = new JLabel();
             si.setForeground(colors2[c]);
             si.setFont(new Font("Times new Roman", Font.PLAIN, 30));
@@ -1769,35 +1500,17 @@ frame.add(iPanel);
                     si.setBackground(Color.white);
                     si.setVisible(true);
                     si.setFocusable(false);
-            // ei.addActionListener(this);
-            // ei.setActionCommand(colors[c]);
+
             si.setBorder(new LineBorder(Color.white));
-            // ei.setActionCommand(colors[c]);
-            // color.setBorder(BorderFactory.createBevelBorder(200, Color.white,
-            // Color.BLACK));
 
-            // elementsMenu.add(ei);
             this.shop.add(shieldB);
-//this.shop.add(swordBi);
             shieldB.add(si);
-            // commbox.setVisible(true);
-
-            // if (Elemente.elements[e] == null) {
-            // break;
-            // } else {
-
-            // }
-            // }
 
         }
 
 
 
         for (int s = 0; s < scl.boosts.length; s++) {
-            // System.out.println(c);
-            // System.out.println(colors[c]);
-
-            // if (Elemente.elements[e] != null){
 
             javax.swing.JButton boostB = new JButton();
             boostB.setForeground(new Color(80, 0, 255));
@@ -1808,49 +1521,25 @@ frame.add(iPanel);
             boostB.setFocusable(false);
             boostB.addActionListener(this);
             boostB.setActionCommand(scl.boosts[s] + "B");
-          //  choose_Element.setActionCommand("Sword_Buy");
             boostB.setBorder(new LineBorder(Color.white));
             boostB.setName("Boost");
-/*
-            javax.swing.JLabel swordBi = new JLabel("k76");
-            swordBi.setForeground(new Color(80, 0, 255));
-            swordBi.setFont(new Font("Times new Roman", Font.PLAIN, 60));
-            swordBi.setBounds(0, 300, 100, 100);
-            swordBi.setBackground(Color.red);
-            swordBi.setVisible(true);
-            swordBi.setFocusable(false);
-            choose_Element.setActionCommand("Sword_Buy");
-            swordBi.setBorder(new LineBorder(Color.white));
-*/
+
             JLabel si = new JLabel();
             si.setForeground(colors2[c]);
             si.setFont(new Font("Times new Roman", Font.PLAIN, 30));
-            // color.setBounds(500, 500, 350, 350);
             si.setIcon(new ImageIcon(new ImageIcon(scl.i3[s])
                     .getImage().getScaledInstance(140, 135, Image.SCALE_AREA_AVERAGING)));
                     si.setSize(800, 800);
                     si.setBackground(Color.white);
                     si.setVisible(true);
                     si.setFocusable(false);
-            // ei.addActionListener(this);
-            // ei.setActionCommand(colors[c]);
+
             si.setBorder(new LineBorder(Color.white));
-            // ei.setActionCommand(colors[c]);
-            // color.setBorder(BorderFactory.createBevelBorder(200, Color.white,
-            // Color.BLACK));
 
-            // elementsMenu.add(ei);
+
             this.shop.add(boostB);
-//this.shop.add(swordBi);
 boostB.add(si);
-            // commbox.setVisible(true);
 
-            // if (Elemente.elements[e] == null) {
-            // break;
-            // } else {
-
-            // }
-            // }
 
         }
 
@@ -1869,19 +1558,9 @@ boostB.add(si);
         commboxnext.setActionCommand("commboxnext1");
         commboxnext.setBorder(new LineBorder(Color.white));
 
-        // TODO FIX
-       // peterlustig.playerhealdamageanimation(Healthbar);
-
         frame.add(commboxnext);
 
-        // commbox.add(commboxtex);
-        // optionsmenu_colors.setForeground(Color.white);
-        // Option1.setBackground(Color.white);
-        // Option1 = startname.clone
-
         for (int c = 0; c < colors.length; c++) {
-            // System.out.println(c);
-            // System.out.println(colors[c]);
 
             color = new JButton("   " + colors[c] + "   ");
             color.setForeground(colors2[c]);
@@ -1895,8 +1574,6 @@ boostB.add(si);
             color.setActionCommand(colors[c]);
             color.setBorder(new LineBorder(colors2[c]));
             color.setActionCommand(colors[c]);
-            // color.setBorder(BorderFactory.createBevelBorder(200, Color.white,
-            // Color.BLACK));
 
             optionsmenu_colors.add(color);
 
@@ -1907,8 +1584,6 @@ boostB.add(si);
         frame.add(upgradeMenu);
 
         for (int c = 0; c < colors.length; c++) {
-            // System.out.println(c);
-            // System.out.println(colors[c]);
 
             color = new JButton("  " + "□" + "  ");
             color.setForeground(colors2[c]);
@@ -1921,8 +1596,6 @@ boostB.add(si);
             color.addActionListener(this);
             color.setActionCommand("B" + colors[c]);
             color.setBorder(new LineBorder(colors2[c]));
-            // color.setBorder(BorderFactory.createBevelBorder(200, Color.white,
-            // Color.BLACK));
             optionsmenu_colorsoutlines.add(color);
 
         }
@@ -1946,8 +1619,6 @@ boostB.add(si);
         frame.add(panel1);
         optionsmenu.add(options_c);
         optionsmenu.add(options_ts);
-        // options_c.add(colors_R);
-        // tn.add(optionsmenu);
         frame.setVisible(true);
 
         spawnEnemy("Enemies", 0, 0, 0);
@@ -1962,7 +1633,6 @@ boostB.add(si);
             if (l.isVisible() == true) {
                 Loading();
                 l.setVisible(false);
-            //    break;
             }
             if (elementImage.isVisible()==true){
                 System.out.println("Ddfgwiopg");
@@ -1978,7 +1648,6 @@ boostB.add(si);
 
 
         for (int t = 1; t<50000; t++){
-         //   enemyImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Ancient2.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
             for (int a = 1; a<80; a++){
         enemyImage.setBounds(480+a,280,400,400);
             Thread.sleep(3);
@@ -2002,16 +1671,10 @@ boostB.add(si);
             for (int a = 1; a<18; a++){
             i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Animation_Ancient\\" + a + ".png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
             Thread.sleep(0);
-                     }
-           
+                     }         
             
            
                    }
-
-
-
-        // addActionListener((ActionListener) new ActionListiner());{
-        // kann gelöscht werden delete comment after
 
     }
 
@@ -2023,19 +1686,7 @@ boostB.add(si);
 
     java.awt.event.ActionEvent e;
 
-    public void clickEvenet(java.awt.event.ActionEvent d) throws InterruptedException {
-        if (d.getSource() == this.option3) {
-        //    damage("Anc", "E");
-            System.out.print("D");
-        }
-    }
     public void actionPerformed(java.awt.event.ActionEvent e) {
-        // System.out.println(e.getSource());
-        // if (e.getSource()==l){
-        // l.setVisible(!l.isVisible());
-        // }
-
-        // System.out.println(e.getActionCommand());;
 
         if (e.getActionCommand() == "startname") {
             System.out.println("startname");
@@ -2075,12 +1726,9 @@ if (scl.schwerte[s] == chosen_Main_Element_Name.getText() ){
                 if (scl.schilder[s] == chosen_Main_Element_Name.getText() ){
                 
                     playerInfoHPShield.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Shields\\" + chosen_Main_Element_Name.getText() +".png").getImage().getScaledInstance(25, 25, Image.SCALE_AREA_AVERAGING)));
-                  //  if (chosen_Main_Element_Name.getText() == "The Warrior"){
-                                    playerInfoPower.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Swords\\" + chosen_Main_Element_Name.getText() +".png").getImage().getScaledInstance(30, 25, Image.SCALE_AREA_AVERAGING)));
-                
-                           //     }
-                                
+                                    playerInfoPower.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Swords\\" + chosen_Main_Element_Name.getText() +".png").getImage().getScaledInstance(30, 25, Image.SCALE_AREA_AVERAGING)));                                
                             }
+
                             spieler.hpBoostName = chosen_Main_Element_Name.getText();
                                 choose_Element.setText(" Equipped ");
                 
@@ -2266,8 +1914,6 @@ if (shop.isVisible()== true){
                     if (spieler.Gold >= scl.swordsPreis[s]){
                         spieler.Gold -= scl.swordsPreis[s];
                         inventory.putIfAbsent(scl.schwerte[s], 1);
-                        System.out.println(spieler.Gold);
-                        System.out.println(inventory);
                         choose_Element.setText(" gekauft ");
                     }
                 }
@@ -2286,8 +1932,6 @@ if (shop.isVisible()== true){
                     if (spieler.Gold >= scl.shieldsPreis[s]){
                         spieler.Gold -= scl.shieldsPreis[s];
                         inventory.putIfAbsent(scl.schilder[s], 1);
-                        System.out.println(spieler.Gold);
-                        System.out.println(inventory);
                         choose_Element.setText(" gekauft ");
 
                     }
@@ -2302,7 +1946,6 @@ if (shop.isVisible()== true){
 
                 if (scl.boosts[s] == chosen_Main_Element_Name.getText()){
                 System.out.println(chosen_Main_Element_Name.getText());
-             //   if (inventory.containsKey(chosen_Main_Element_Name.getText())){
 
                     if (spieler.Gold >= scl.boostsPreis[s]){
                         spieler.Gold -= scl.boostsPreis[s];
@@ -2312,7 +1955,6 @@ if (shop.isVisible()== true){
                         choose_Element.setText(" gekauft ");
 
                     }
-              //  }
             }
         }
         }
@@ -2324,8 +1966,6 @@ if (shop.isVisible()== true){
 
         if (e.getActionCommand() == "+") {
             upgradeMenu.setVisible(!upgradeMenu.isVisible());
-        //    texarea.setEditable(false);
-          //  texarea.setText("D");
           spawnEnemy("Enemies", 0, 0, 0);
         }
 
@@ -2367,13 +2007,9 @@ if (shop.isVisible()== true){
         }
 
         if (e.getActionCommand() == "startb") {
-            // System.out.println(CuPower.Power);
-            // CuPower.Power++;
-            // option3.setText("Your power is: " + CuPower.Power);
 
             l.setVisible(!l.isVisible());
 
-            // panel3.setVisible(true);
             startname.setVisible(false);
              option1.setVisible(false);
             option2.setVisible(false);
@@ -2408,45 +2044,18 @@ if (shop.isVisible()== true){
 
 
         if (e.getActionCommand() == "ConfirmName") {
-           // texarea.setEditable(false);
            spieler.playerName = texarea.getText();
            playerInfoName.setText(spieler.playerName);
            System.out.println(spieler.playerName);
            System.out.println(texarea.getText());
- //playerInfoName.setText(texarea.getText());
 texarea.setVisible(false);
 confirmName.setVisible(false);
 texarea.setEditable(false);
 commbox.setVisible(true);
 option1.setVisible(false);
-//elementsMenu.setVisible(true);
-//fighting_options.setVisible(true);
-//elementsMenu.setVisible(true);
-
-
-
-
-
-
-
-
-
-
-        //   commbox.setText(" Welcome " + "'"+texarea.getText()+"'" + ", your name is terrible.                                                      Now choose your main element. Your main element is strongest             element you will get.  Each element has positive and negative things.     For example Crystal is weak against 'Fire' but strong against 'Earth' ");
-
-         //  Thread.sleep(spieler.thread1);
-          // spieler.thread1 = 1000;
-   
-   
-        //   elementsMenu.setVisible(true);
-   
-        //   chosen_Main_Element.setVisible(true);
-       //    choose_Element.setActionCommand("Main_Choose");
         }
 
         if (e.getActionCommand().equals("options_c")) {
-            System.out.println("options_c");
-            System.out.println("Dsalkgbw");
 
             frame.setVisible(false);
 
@@ -2457,7 +2066,6 @@ option1.setVisible(false);
 
 ifightPlayButton.setText("   1x");
 spieler.t1 = 4;
-System.out.println(spieler.t1);
 
 spieler.t2 = 200;
 spieler.t3 = 300;
@@ -2469,9 +2077,6 @@ spieler.damageTextAnimation = 6;
 spieler.boostDamageTextAnimation = 5;
 ePlayButton.setActionCommand("ePlayButton2");
 
-
-System.out.println("2x");
-
         }
 
 
@@ -2480,8 +2085,6 @@ System.out.println("2x");
 
             ifightPlayButton.setText("   2x");
             spieler.t1 = 0;
-            System.out.println(spieler.t1);
-
             spieler.t1 = 3/2;
             spieler.t2 = 50;
             spieler.t3 = 100;
@@ -2523,8 +2126,6 @@ ePlayButton.setActionCommand("ePlayButton1");
 
 
         if (e.getActionCommand().equals("eShop_Swords")) {
-           // shop.setVisible(!shop.isVisible());
-            //iPanel.setVisible(!iPanel.isVisible());
             for (int s = 0; s < scl.schilder.length + scl.schwerte.length + scl.boosts.length; s++){
             if (shop.getComponent(s).getName().equals("Shield")){
                 shop.getComponent(s).setVisible(false);         
@@ -2543,8 +2144,6 @@ ePlayButton.setActionCommand("ePlayButton1");
          }
 
          if (e.getActionCommand().equals("eShop_Shields")) {
-            // shop.setVisible(!shop.isVisible());
-           //  iPanel.setVisible(!iPanel.isVisible());
              for (int s = 0; s < scl.schilder.length + scl.schwerte.length + scl.boosts.length; s++){
 
             if (shop.getComponent(s).getName().equals("Sword")){
@@ -2569,8 +2168,6 @@ ePlayButton.setActionCommand("ePlayButton1");
 
 
           if (e.getActionCommand().equals("eShop_Boosts")) {
-            // shop.setVisible(!shop.isVisible());
-           //  iPanel.setVisible(!iPanel.isVisible());
              for (int s = 0; s < scl.schilder.length + scl.schwerte.length + scl.boosts.length; s++){
                 if (shop.getComponent(s).getName().equals("Shield")){
                     shop.getComponent(s).setVisible(false);              
@@ -2593,17 +2190,12 @@ ePlayButton.setActionCommand("ePlayButton1");
 
         if (e.getActionCommand().equals("Main_Choose")) {
             System.out.println("Main_Choose");
-            // System.out.println("Dsalkgbw");
-
-            // frame.setVisible(false);
             try {
 
                 animateText(
                         " du hast" + "  '" + chosen_Main_Element_Name.getText() + "'  " + "als Haupt Element gewählt",
                         null, commbox, spieler.textSpeed, "");
             } catch (InterruptedException e1) {
-                // TODO Auto-generated catch block
-                // e1.printStackTrace();
             }
 
             spieler.Main_Element = chosen_Main_Element_Name.getText();
@@ -2615,23 +2207,14 @@ ePlayButton.setActionCommand("ePlayButton1");
                         " Now choose your second Element. Your second Element is weaker than your main Element. But it's still affective",
                         null, commbox, spieler.textSpeed, "");
             } catch (InterruptedException e1) {
-                // TODO Auto-generated catch block
-                // e1.printStackTrace();
+
             }
 
             for (int t = 0; t < Elemente.elements.length; t++) {
-                // System.out.println(Elemente.elements[t]+":"+CuPower.Main_Element);
-                System.out.println(Elemente.elements[t].charAt(0) + " element");
-                System.out.println(spieler.Main_Element.charAt(2) + " Main");
-                System.out.println(Elemente.elements[t].charAt(1));
-                System.out.println(spieler.Main_Element.charAt(3) + " Main");
-                System.out.println(Elemente.elements[t].charAt(2));
-                System.out.println(spieler.Main_Element.charAt(4) + " Main");
                 if (Elemente.elements[t].charAt(0) == spieler.Main_Element.charAt(2)
                         && Elemente.elements[t].charAt(1) == spieler.Main_Element.charAt(3)
                         && Elemente.elements[t].charAt(2) == spieler.Main_Element.charAt(4)
                         && Elemente.elements[t].charAt(3) == spieler.Main_Element.charAt(5)) {
-                    // chosen_Main_Element.setVisible(false);
                     chosen_Main_Element.setVisible(false);
                     i1.setIcon(
                             new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\" + Elemente.elements[t] + ".png")
@@ -2647,13 +2230,8 @@ ePlayButton.setActionCommand("ePlayButton1");
 
         }
 
-        // fighting_options.setVisible(true);
 
         if (e.getActionCommand().equals("Second_Choose")) {
-            System.out.println("Second_Choose");
-            // System.out.println("Dsalkgbw");
-
-            // frame.setVisible(false);
             chosen_Main_Element.setVisible(false);
             elementsMenu.setVisible(false);
             try {
@@ -2662,26 +2240,15 @@ ePlayButton.setActionCommand("ePlayButton1");
                         " du hast" + "  '" + chosen_Main_Element_Name.getText() + "'  " + "als Second Element gewählt",
                         null, commbox, spieler.textSpeed, "");
             } catch (InterruptedException e1) {
-                // TODO Auto-generated catch block
-                // e1.printStackTrace();
             }
             spieler.Second_Element = chosen_Main_Element_Name.getText();
             choose_Element.setActionCommand("/");
 
             for (int t = 0; t < Elemente.elements.length; t++) {
-                // System.out.println(Elemente.elements[t]+":"+CuPower.Main_Element);
-                // System.out.println(Elemente.elements[t].charAt(0) + " element");
-                // System.out.println(CuPower.Main_Element.charAt(2) + " Main");
-                // System.out.println(Elemente.elements[t].charAt(1));
-                // System.out.println(CuPower.Main_Element.charAt(3) + " Main");
-                // System.out.println(Elemente.elements[t].charAt(2));
-                // System.out.println(CuPower.Main_Element.charAt(4) + " Main");
                 if (Elemente.elements[t].charAt(0) == spieler.Second_Element.charAt(2)
                         && Elemente.elements[t].charAt(1) == spieler.Second_Element.charAt(3)
                         && Elemente.elements[t].charAt(2) == spieler.Second_Element.charAt(4)
                         && Elemente.elements[t].charAt(3) == spieler.Second_Element.charAt(5)) {
-                    // System.out.println("PowerReached");
-                    System.out.println(Elemente.elements[t]);
                     i2.setIcon(
                             new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\" + Elemente.elements[t] + ".png")
                                     .getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
@@ -2695,8 +2262,6 @@ ePlayButton.setActionCommand("ePlayButton1");
                         animateText(" You have chosen" + spieler.Main_Element + "as the main element and "
                                 + spieler.Second_Element + "as the second element", null, commbox, spieler.textSpeed, "");
                     } catch (InterruptedException e1) {
-                        // TODO Auto-generated catch block
-                        // e1.printStackTrace();
                     }
 
                 }
@@ -2707,29 +2272,21 @@ ePlayButton.setActionCommand("ePlayButton1");
 
 
         if (e.getActionCommand().equals("Attack#1")) {
-       //  Fight.fightAnimation(CuPower.Main_Element);
        elementImage.setBounds(5000,280,400,400);
-//spieler.Main_Element = "  " +"Cosmic"+ "  ";
        e2.setEnabled(false);
        elementImage.setVisible(true);
-       System.out.println(elementImage.isVisible());
        e2.setEnabled(true);
 at = 1;
-     //  damage("Anc", "D");
         }
 
 
         if (e.getActionCommand().equals("Attack#2")) {
-            //  Fight.fightAnimation(CuPower.Main_Element);
             elementImage.setBounds(5000,280,400,400);
-     //spieler.Main_Element = "  " +"Cosmic"+ "  ";
             e1.setEnabled(false);
             elementImage.setVisible(true);
-            System.out.println(elementImage.isVisible());
             at = 2;
             e1.setEnabled(true);
 
-          //  damage("Anc", "D");
              }
 
 
@@ -2760,13 +2317,6 @@ spieler.textSpeed = 0;
 spieler.thread1 = 0;
 spieler.thread2 = 0;
 spieler.thread3 = 0;
-spieler.thread1 = (Integer) null;
-
-spieler.thread2 = (Integer) null;
-
-spieler.thread3 = (Integer) null;
-
-
         }
 
         Byte v;
@@ -2832,8 +2382,6 @@ spieler.thread3 = (Integer) null;
         for (v = 0; v < scl.schwerte.length; v++) {
             if (e.getActionCommand().equals(scl.schwerte[v] + "B")) {
                 chosen_Main_Element_Name.setBorder(null);
-
-             //   fighting_options.setVisible(false);
                 commbox.setVisible(true);
                 chosen_Main_Element.setVisible(true);
                 chosen_Main_Element_Name.setVisible(true);
@@ -2862,8 +2410,6 @@ spieler.thread3 = (Integer) null;
         for (v = 0; v < scl.schilder.length; v++) {
             if (e.getActionCommand().equals(scl.schilder[v]  + "B")) {
                 chosen_Main_Element_Name.setBorder(null);
-
-              //  fighting_options.setVisible(false);
                 commbox.setVisible(true);
                 chosen_Main_Element.setVisible(true);
                 chosen_Main_Element_Name.setVisible(true);
@@ -2892,8 +2438,6 @@ spieler.thread3 = (Integer) null;
         for (v = 0; v < scl.boosts.length; v++) {
             if (e.getActionCommand().equals(scl.boosts[v]  + "B")) {
                 chosen_Main_Element_Name.setBorder(null);
-
-               // fighting_options.setVisible(false);
                 commbox.setVisible(true);
                 chosen_Main_Element.setVisible(true);
                 chosen_Main_Element_Name.setVisible(true);
@@ -2921,8 +2465,6 @@ spieler.thread3 = (Integer) null;
 
         for (v = 0; v < scl.schwerte.length; v++) {
             if (e.getActionCommand().equals(scl.schwerte[v] + "I")) {
-
-               // fighting_options.setVisible(false);
                 commbox.setVisible(true);
                 chosen_Main_Element.setVisible(true);
                 chosen_Main_Element_Name.setVisible(true);
@@ -2952,7 +2494,6 @@ spieler.thread3 = (Integer) null;
         for (v = 0; v < scl.schilder.length; v++) {
             if (e.getActionCommand().equals(scl.schilder[v]  + "I")) {
 
-              //  fighting_options.setVisible(false);
                 commbox.setVisible(true);
                 chosen_Main_Element.setVisible(true);
                 chosen_Main_Element_Name.setVisible(true);
@@ -2982,7 +2523,6 @@ spieler.thread3 = (Integer) null;
         for (v = 0; v < scl.boosts.length; v++) {
             if (e.getActionCommand().equals(scl.boosts[v]  + "I")) {
 
-               // fighting_options.setVisible(false);
                 commbox.setVisible(true);
                 chosen_Main_Element.setVisible(true);
                 chosen_Main_Element_Name.setVisible(true);
@@ -3013,26 +2553,8 @@ spieler.thread3 = (Integer) null;
     }
     
 
-    // Ren();
-
-
-  //  public void damage(String element, String enemyMainElement){
-
-   //     if (element == "Anc"){
-
-        //    for(int d = 0;d<spieler.Power;d++){
-//option1.setText(""+d+"");
-//Fight fight = new Fight();
-//fight.fight("Anc", elementImage);
-    //        }
-     //   }
-  //  }
-//
     public void Loading() throws InterruptedException {
-        // System.out.println("not Vis");
         if (l.isVisible() == true) {
-            // System.out.println("Visible");
-            // Thread.sleep(2000);
             l.setVisible(true);
             l.setText("LoadingC");
             int i;
@@ -3067,9 +2589,7 @@ spieler.thread3 = (Integer) null;
                     Thread.sleep(1000);
                     l.setText("Loading completed");
 
-                    // startname.setVisible(!startname.isVisible());
                     tn.setVisible(false);
-                    // System.out.println(l.getBounds());
 
                     break;
                 }
@@ -3105,7 +2625,6 @@ spieler.thread3 = (Integer) null;
 
                     Thread.sleep(1000);
 
-                    // TEST
 
                 }
 
@@ -3114,10 +2633,6 @@ spieler.thread3 = (Integer) null;
             startb();
 
         }
-
-        // animateText("E", l);
-
-        // startb();
 
     }
 
@@ -3160,7 +2675,6 @@ elementImage.setVisible(false);
             for (int t = 1; t<4; t++){
                 elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Ancient.png").getImage().getScaledInstance(370, 365, Image.SCALE_AREA_AVERAGING)));
 
-                //   enemyImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Ancient2.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
                    for (int a = 1; a<18; a++){
                     elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Animation_Ancient\\" + a + ".png").getImage().getScaledInstance(370, 365, Image.SCALE_AREA_AVERAGING)));
 
@@ -3256,18 +2770,12 @@ if (spieler.powerBoost != 1 && spieler.currentEnemyHP > 0 ){
         extradamg++;
         spieler.currentEnemyHP -= extradamg;
 extradamg = 0;
-      //  spieler.currentEnemyHP -= 1;
 
         }
-
-        
-  //      extradamg++;
 
 
     }
     Thread.sleep(spieler.t3);
-  //  extradamg--;
-   // spieler.currentEnemyHP -= extradamg;
     enemyInfoHP.setText("         "+spieler.currentEnemyHP);
 enemyImage.setEnabled(true);
 
@@ -3284,6 +2792,8 @@ if (spieler.currentEnemyHP < 0){
 
                           damageText.setVisible(false);
                           boostDamageText.setVisible(false);
+
+                          Thread.sleep(spieler.t3 * 2);
 
                           enemyAttack();
 
@@ -3316,10 +2826,7 @@ Thread.sleep(spieler.t3);
 
             elementImage.setVisible(true);
 
-            System.out.println("Cosmic=Main");
            
-        //    elementImage.setBounds(elementImage.getBounds().x + 200, elementImage.getBounds().y - 200, 400, 400);
-
             elementImage.setEnabled(true);
             for (int t = 0; t<100; t++){
                 elementImage.setBounds(elementImage.getBounds().x - 1, elementImage.getBounds().y + 1, 400, 400);
@@ -3339,8 +2846,6 @@ Thread.sleep(spieler.cosmicAnimation2);
                     Thread.sleep(spieler.t1 * 10);
 
                     damg = spieler.Power;
-                 //   spieler.currentEnemyHP -= spieler.Power;
-                 //   enemyInfoHP.setText("           " +spieler.currentEnemyHP);
                     damageText.setText("" + spieler.Power+ "");
                     damageText.setForeground(new Color(255,255,255));
                     enemyImage.setEnabled(false);
@@ -3354,7 +2859,6 @@ Thread.sleep(spieler.cosmicAnimation2);
                         damageText.setForeground(new Color(255,50,0));
                         damg = spieler.Power *2;
                         enemyImage.setEnabled(false);
-                     //   Thread.sleep(40);
                      damageText.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Cosmic.png").getImage().getScaledInstance(35, 35, Image.SCALE_AREA_AVERAGING)));
 
 
@@ -3365,7 +2869,6 @@ Thread.sleep(spieler.cosmicAnimation2);
                         damageText.setForeground(new Color(255,200,30));
                         damg = spieler.Power /2;
                         enemyImage.setEnabled(false);
-                     //   Thread.sleep(40);
                      damageText.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Cosmic.png").getImage().getScaledInstance(35, 35, Image.SCALE_AREA_AVERAGING)));
 
 
@@ -3396,7 +2899,6 @@ enemyImage.setEnabled(true);
 
 
                 Thread.sleep(spieler.t2);
-               // enemyImage.setEnabled(true);
 
                 Thread.sleep(spieler.t2/2);
 
@@ -3433,8 +2935,6 @@ Thread.sleep(spieler.t2);
 
                     }
                     Thread.sleep(spieler.t3);
-                   // extradamg--;
-                   // spieler.currentEnemyHP -= extradamg;
                     enemyInfoHP.setText("         "+spieler.currentEnemyHP);
 enemyImage.setEnabled(true);
 
@@ -3444,70 +2944,13 @@ if (spieler.currentEnemyHP < 0){
 
 }
 
-enemyAttack();
 
 
-                    if (spieler.healUpgrade1 == true && spieler.Support_Element == "  Heal  "){
-
-                        self_HealText.setVisible(true);
-                        int hp = (damg + extradamg)/8;
-                        spieler.Health += hp;
-                        System.out.println(hp);
-                        playerInfoHP.setText("" +spieler.Health);
-                        self_HealText.setText("" + hp);
-                        self_HealText.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Others\\HealI.png").getImage().getScaledInstance(35, 35, Image.SCALE_AREA_AVERAGING)));
-
-
-
-                        Thread.sleep(spieler.t2);
-                    }
-
-/*
-                    if (spieler.Support_Element == "  Luck  "){
-
-                        reducedDamgeText.setVisible(true);
-                        int rd = (spieler.CurrentEnemyPower)/8;
-                        
-                        System.out.println(rd);
-                        reducedDamgeText.setText("-" +rd);
-                      //  self_HealText.setText("" + rd);
-                        reducedDamgeText.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Luck.png").getImage().getScaledInstance(35, 35, Image.SCALE_AREA_AVERAGING)));
-
-
-
-                        Thread.sleep(spieler.t2);
-                    }
-                    */
+                    
 
 
                 }
-                
-              //  enemyInfoHP.setText("         "+spieler.currentEnemyHP);
-
-
-                    System.out.println(spieler.currentEnemyHP);
-    /*
-                    if (spieler.currentEnemyHP <= 0){
-                        spieler.currentEnemyHP = 0;
-                        enemyInfoHP.setText("           " +spieler.currentEnemyHP);
-                    
-                
-    
-                    Thread.sleep(spieler.t3 *2);
-                    enemyImage.setEnabled(true);
-                    
-                }
-
-              
-*/
-
-
             }
-
-                if (n == 2){
-System.out.println("Cosmic");
-i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Cosmic.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
-                }
 
 /*
                 if (spieler.powerBoost != 1){
@@ -3547,6 +2990,11 @@ i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Cosmic
             damageText.setVisible(false);
 boostDamageText.setVisible(false);
 
+Thread.sleep(spieler.t3 * 2);
+
+
+enemyAttack();
+
             for (int xi = 0; xi<= 120; xi++){
                 fighting_options.setBounds(38, 1080 - xi*5, 1200, 300);
                 Thread.sleep(spieler.t1);
@@ -3580,31 +3028,23 @@ boostDamageText.setVisible(false);
 
                 dm2 = 6;
                 damg = spieler.Power;
-              //  damageText.setText("" + spieler.Power+ "");
                 damageText.setForeground(new Color(255,255,255));
-              //  enemyImage.setEnabled(false);
                 damageText.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Crystal.png").getImage().getScaledInstance(35, 35, Image.SCALE_AREA_AVERAGING)));
 
                 if (spieler.enemyMain_Element == "Erde" || spieler.enemyMain_Element == "Crystal" ){
 
-                   // damageText.setText("" + spieler.Power *2 + "");
                     damageText.setForeground(new Color(255,50,0));
                     dm2 = 3;
                     damg = spieler.Power*2;
-
-                  //  enemyImage.setEnabled(false);
-                 //   Thread.sleep(40);
                  damageText.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Crystal.png").getImage().getScaledInstance(35, 35, Image.SCALE_AREA_AVERAGING)));
 
 
                 }
 
                 if (spieler.enemyMain_Element == "Crystal" || spieler.enemyMain_Element == "Feuer" || spieler.enemyMain_Element == "Wasser"){
-                 //   damageText.setText("" + spieler.Power /2 + "");
                     damageText.setForeground(new Color(255,200,30));
                     dm2 = 12;
-                 //   enemyImage.setEnabled(false);
-                 //   Thread.sleep(40);
+
                  damg = spieler.Power/2;
                  damageText.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Crystal.png").getImage().getScaledInstance(35, 35, Image.SCALE_AREA_AVERAGING)));
 
@@ -3693,8 +3133,6 @@ enemyImage.setEnabled(true);
 
 
                 Thread.sleep(spieler.t2);
-               // enemyImage.setEnabled(true);
-
                 Thread.sleep(spieler.t2/2);
 
                 chosen_Main_Element.setVisible(false);
@@ -3724,7 +3162,6 @@ Thread.sleep(spieler.t2);
                         if (spieler.powerBoost != 1 && spieler.currentEnemyHP >= 0 ){
                         boostDamageText.setText("+ "+ power);
                         Thread.sleep((long) (power/6 * spieler.t1));
-                       // extradamg++;
                        extradamg++;
                        spieler.currentEnemyHP -= extradamg;
    extradamg = 0;
@@ -3741,12 +3178,6 @@ Thread.sleep(spieler.t2);
 
                     enemyInfoHP.setText("         "+spieler.currentEnemyHP);
                     enemyImage.setEnabled(true);
-
-                    
-                     //   extradamg--;
-                      //  spieler.currentEnemyHP -= extradamg;
-                        
-
                         if (spieler.currentEnemyHP < 0){
                             spieler.currentEnemyHP = 0;
                            enemyInfoHP.setText("0");
@@ -3762,6 +3193,10 @@ Thread.sleep(spieler.t2);
 
 damageText.setVisible(false);
 boostDamageText.setVisible(false);
+
+Thread.sleep(spieler.t3 * 2);
+
+enemyAttack();
 
           for (int xi = 0; xi<= 120; xi++){
             fighting_options.setBounds(38, 1080 - xi*5, 1200, 300);
@@ -3884,19 +3319,14 @@ boostDamageText.setVisible(false);
                                  Thread.sleep(power/6);
                                  extradamg++;
                                  spieler.currentEnemyHP -= extradamg;
-             extradamg = 0;
-                                // spieler.currentEnemyHP -= 1;
-         
+             extradamg = 0;         
                                  }
          
                                  
-                           //      extradamg++;
          
          
                              }
                              Thread.sleep(spieler.t3);
-                       //      extradamg--;
-                        //     spieler.currentEnemyHP -= extradamg;
                              enemyInfoHP.setText("         "+spieler.currentEnemyHP);
                              
          enemyImage.setEnabled(true);
@@ -3917,6 +3347,10 @@ boostDamageText.setVisible(false);
                             damageText.setVisible(false);
                             damageText.setBounds(900, 480, 600, 80);
                             boostDamageText.setVisible(false);
+
+                            Thread.sleep(spieler.t3 * 2);
+enemyAttack();
+
                             for (int xi = 0; xi<= 120; xi++){
                               fighting_options.setBounds(38, 1080 - xi*5, 1200, 300);
                               Thread.sleep(spieler.t1);
@@ -3938,10 +3372,6 @@ boostDamageText.setVisible(false);
 
                         if (spieler.currentEnemyHP > 0){
                             
-                         //   damageText.setVisible(true);
-                         //   boostDamageText.setVisible(false);
-                         //   boostDamageText.setBounds(900, 380, 600, 80);
-                          //  Thread.sleep(spieler.t1 * 10);
         
                             damg = spieler.Power;
 
@@ -4052,8 +3482,6 @@ damageText.setBounds(900, 480, 600, 80);
 
                             
                     enemyImage.setEnabled(false);
-                   // damageText.setText(damg + " Element Schaden");
-
     
                     Thread.sleep(spieler.t2);
 
@@ -4091,20 +3519,14 @@ damageText.setBounds(900, 480, 600, 80);
                              if (spieler.powerBoost != 1 && spieler.currentEnemyHP >= 0 ){
                              boostDamageText.setText("+ "+ power);
                              Thread.sleep(power/6);
-                            // spieler.currentEnemyHP -= 1;
                             extradamg++;
                             spieler.currentEnemyHP -= extradamg;
         extradamg = 0;
                              }
-     
-                             
-                       //      extradamg++;
-     
+          
      
                          }
                          Thread.sleep(spieler.t3);
-                       //  extradamg--;
-                        // spieler.currentEnemyHP -= extradamg;
                          enemyInfoHP.setText("         "+spieler.currentEnemyHP);
                          
      enemyImage.setEnabled(true);
@@ -4124,6 +3546,11 @@ damageText.setBounds(900, 480, 600, 80);
                         elementImage.setVisible(false);
                         damageText.setVisible(false);
                         boostDamageText.setVisible(false);
+
+                        Thread.sleep(spieler.t3 * 2);
+
+                        enemyAttack();
+                        
                         for (int xi = 0; xi<= 120; xi++){
                           fighting_options.setBounds(38, 1080 - xi*5, 1200, 300);
                           Thread.sleep(spieler.t1);
@@ -4161,9 +3588,7 @@ damageText.setBounds(900, 480, 600, 80);
 
 
                                     for (int t = 1; t<5; t++){
-                                        //    elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Gravity.png").getImage().getScaledInstance(370, 365, Image.SCALE_AREA_AVERAGING)));
-                            
-                                            //   enemyImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Ancient2.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+                                       
                                                for (int a = 1; a<37; a++){
                                                 elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Animation_Gravity\\" + a + ".png").getImage().getScaledInstance(370, 50, Image.SCALE_AREA_AVERAGING)));
                             
@@ -4176,11 +3601,7 @@ damageText.setBounds(900, 480, 600, 80);
                                                                                     
                                                       }
                     
-                            
-                                    //   damageText.setVisible(true);
-                                    //   boostDamageText.setVisible(false);
-                                    //   boostDamageText.setBounds(900, 380, 600, 80);
-                                     //  Thread.sleep(spieler.t1 * 10);
+                        
                    
                                        damg = spieler.Power;
            
@@ -4229,14 +3650,11 @@ damageText.setBounds(900, 480, 600, 80);
                    
            
                
-                         //  elementImage.setVisible(true);
                            enemyImage.setEnabled(true);
 
                
                            System.out.println("Feuer=Main");
-                                         
-                               //   enemyImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Ancient2.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
-                                
+                                                                         
                               
                                            Thread.sleep(spieler.t1);
                                  
@@ -4301,18 +3719,11 @@ damageText.setBounds(900, 480, 600, 80);
                                         extradamg++;
                                         spieler.currentEnemyHP -= extradamg;
                     extradamg = 0;
-                                       // spieler.currentEnemyHP -= 1;
                 
                                         }
-                
-                                        
-                                  //      extradamg++;
-                
-                
+        
                                     }
                                     Thread.sleep(spieler.t3);
-                                 //   extradamg--;
-                                  //  spieler.currentEnemyHP -= extradamg;
                                     enemyInfoHP.setText("         "+spieler.currentEnemyHP);
                                     
                 enemyImage.setEnabled(true);
@@ -4332,6 +3743,10 @@ damageText.setBounds(900, 480, 600, 80);
                                    elementImage.setVisible(false);
                                    damageText.setVisible(false);
                                    boostDamageText.setVisible(false);
+                                   
+                                   Thread.sleep(spieler.t3 * 2);
+
+                                   enemyAttack();
                                    for (int xi = 0; xi<= 120; xi++){
                                      fighting_options.setBounds(38, 1080 - xi*5, 1200, 300);
                                      Thread.sleep(spieler.t1);
@@ -4362,19 +3777,13 @@ damageText.setBounds(900, 480, 600, 80);
             
                         System.out.println("Gravity=Main");
     
-                     //   for (int a = 1; a<37; a++){
                             elementImage.setVisible(true);
 
 
 
 
                                         if (spieler.currentEnemyHP > 0){
-
-
-
-                                          
-                                                //    elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Gravity.png").getImage().getScaledInstance(370, 365, Image.SCALE_AREA_AVERAGING)));
-                                    
+                                                                      
                                                 for (int a = 1; a<13; a++){
                                                     elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Animation_Licht\\" + a + ".png").getImage().getScaledInstance(370, 365, Image.SCALE_AREA_AVERAGING)));
                                 
@@ -4430,15 +3839,8 @@ damageText.setBounds(900, 480, 600, 80);
                            
                    
                        
-                                 //  elementImage.setVisible(true);
                                    enemyImage.setEnabled(true);
-        
-                       
-                                   System.out.println("Feuer=Main");
-                                                 
-                                       //   enemyImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Ancient2.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
-                                        
-                                      
+                                    
                                                    Thread.sleep(spieler.t1);
                                          
                                                    enemyImage.setEnabled(true);
@@ -4448,11 +3850,7 @@ damageText.setBounds(900, 480, 600, 80);
         
                                                    enemyImage.setEnabled(false);
                                                  elementImage.setVisible(false);
-        
-                   
-                                               
-                   
-                   
+
                                                            Thread.sleep(spieler.t1);
                                                            enemyImage.setEnabled(true);
                                           
@@ -4461,11 +3859,7 @@ damageText.setBounds(900, 480, 600, 80);
                    
                                                                        Thread.sleep(spieler.t1);
                                          
-                   
-                                            
-                   
-                                           
-                              
+                    
                                        Thread.sleep(spieler.t2);
                         
                                         Thread.sleep(spieler.t2/2);
@@ -4503,8 +3897,6 @@ damageText.setBounds(900, 480, 600, 80);
                         
                                             }
                                             Thread.sleep(spieler.t3);
-                                         //   extradamg--;
-                                        //    spieler.currentEnemyHP -= extradamg;
                                             enemyInfoHP.setText("         "+spieler.currentEnemyHP);
                                             
                         enemyImage.setEnabled(true);
@@ -4524,6 +3916,12 @@ damageText.setBounds(900, 480, 600, 80);
                                            elementImage.setVisible(false);
                                            damageText.setVisible(false);
                                            boostDamageText.setVisible(false);
+
+
+                                           Thread.sleep(spieler.t3 * 2);
+
+                                           enemyAttack();
+
                                            for (int xi = 0; xi<= 120; xi++){
                                              fighting_options.setBounds(38, 1080 - xi*5, 1200, 300);
                                              Thread.sleep(spieler.t1);
@@ -4610,10 +4008,6 @@ damageText.setBounds(900, 480, 600, 80);
 
        chosen_Main_Element.setVisible(false);
        
-       
-                      //             elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Lunar.png").getImage().getScaledInstance(300, 295, Image.SCALE_AREA_AVERAGING)));
-       
-                             //  elementImage.setBounds(500,100,400,400);
                                Thread.sleep(spieler.t2);
                
        
@@ -4684,9 +4078,7 @@ elementImage.setVisible(false);
     
 
     
-           
-                       System.out.println("Feuer=Main");
-                      
+                                 
                                      enemyImage.setEnabled(true);
                                      elementImage.setVisible(false);
            
@@ -4720,19 +4112,13 @@ elementImage.setVisible(false);
                                     extradamg++;
                                     spieler.currentEnemyHP -= extradamg;
                 extradamg = 0;;
-                                   // spieler.currentEnemyHP -= 1;
             
                                     }
             
-                                    
-                              //      extradamg++;
             
             
                                 }
                                 Thread.sleep(spieler.t3);
-                            //    extradamg--;
-                              //  System.out.println(extradamg);
-                              //  spieler.currentEnemyHP -= extradamg;
                                 enemyInfoHP.setText("         "+spieler.currentEnemyHP);
                                 
             enemyImage.setEnabled(true);
@@ -4753,6 +4139,11 @@ elementImage.setVisible(false);
                                damageText.setVisible(false);
                                boostDamageText.setVisible(false);
                                elementImage.setBounds(400,240,400,400);
+
+                               Thread.sleep(spieler.t3 * 2);
+
+                               enemyAttack();
+
                                for (int xi = 0; xi<= 120; xi++){
                                  fighting_options.setBounds(38, 1080 - xi*5, 1200, 300);
                                  Thread.sleep(spieler.t1);
@@ -4777,13 +4168,11 @@ elementImage.setVisible(false);
     
                     Thread.sleep(spieler.t2);
     
-                 //   elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Lunar.png").getImage().getScaledInstance(370, 50, Image.SCALE_AREA_AVERAGING)));
                                      elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Animation_Void\\1.png").getImage().getScaledInstance(370, 50, Image.SCALE_AREA_AVERAGING)));
 
 
             elementImage.setBounds(500,280,400,400);
 
-        //    elementsMenu.setVisible(true);
         elementImage.setVisible(true);
 
             System.out.println("Lunar=Main");
@@ -4800,8 +4189,6 @@ elementImage.setVisible(false);
                 Thread.sleep(spieler.t1 * 10);
 
                 damg = spieler.Power;
-             //   spieler.currentEnemyHP -= spieler.Power;
-             //   enemyInfoHP.setText("           " +spieler.currentEnemyHP);
                 damageText.setText("" + spieler.Power+ "");
                 damageText.setForeground(new Color(255,255,255));
                 enemyImage.setEnabled(false);
@@ -4815,7 +4202,6 @@ elementImage.setVisible(false);
                     damageText.setForeground(new Color(255,50,0));
                     damg = spieler.Power *2;
                     enemyImage.setEnabled(false);
-                 //   Thread.sleep(40);
                  damageText.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Void.png").getImage().getScaledInstance(35, 35, Image.SCALE_AREA_AVERAGING)));
 
 
@@ -4826,7 +4212,6 @@ elementImage.setVisible(false);
                     damageText.setForeground(new Color(255,200,30));
                     damg = spieler.Power /2;
                     enemyImage.setEnabled(false);
-                 //   Thread.sleep(40);
                  damageText.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Void.png").getImage().getScaledInstance(35, 35, Image.SCALE_AREA_AVERAGING)));
 
 
@@ -4857,7 +4242,6 @@ enemyImage.setEnabled(true);
 
 
             Thread.sleep(spieler.t2);
-           // enemyImage.setEnabled(true);
 
             Thread.sleep(spieler.t2/2);
 
@@ -4892,9 +4276,15 @@ extradamg = 0;
 
 
                 }
+
+                extradamg = 0;
+
+                elementImage.setVisible(false);
+                damageText.setVisible(false);
+                boostDamageText.setVisible(false);
+                elementImage.setBounds(400,240,400,400);
+
                 Thread.sleep(spieler.t3);
-              //  extradamg--;
-               // spieler.currentEnemyHP -= extradamg;
                 enemyInfoHP.setText("         "+spieler.currentEnemyHP);
 enemyImage.setEnabled(true);
 
@@ -4906,13 +4296,11 @@ enemyInfoHP.setText("0");
             }
         }
 
-/*
-          elementImage.setVisible(false);
-          for (int xi = 0; xi<= 14; xi++){
-            fighting_options.setBounds(38, 480 + xi*5, 1200, 300);
-            Thread.sleep(2);
-                }
-*/
+
+        Thread.sleep(spieler.t3 * 2);
+
+        enemyAttack();
+
 
 for (int xi = 0; xi<= 120; xi++){
     fighting_options.setBounds(38, 1080 - xi*5, 1200, 300);
@@ -5091,7 +4479,30 @@ element = "Cosmic";
     public void animateEnemyAttack(String ci, int damg2) throws InterruptedException{
 
 
+        if (spieler.reflection.equals(false)){
 
+            damageText.setIcon(new ImageIcon(new ImageIcon(ci).getImage().getScaledInstance(40, 35, Image.SCALE_AREA_AVERAGING)));
+    
+    
+            damageText.setBounds(900,480,600,80);
+                damageText.setVisible(true);
+                damageText.setText("" + damg2 + "");
+                for (int z = 0; z<= 200;z++){
+                    damageText.setBounds(900, 480 - z, 600, 80);
+                    Thread.sleep(spieler.damageTextAnimation);
+                }
+    
+                damageText.setText("" + damg2 + " Gegner Schaden");
+                Thread.sleep(spieler.t3);
+                spieler.enemyAtacked = false;
+                spieler.Health -= damg2;
+                playerInfoHP.setText("          " +spieler.Health);
+    
+                for (int w2 = 0; w2<(spieler.Health * spieler.MaxHealth)/100; w2++){
+                    playerInfoHPProgress.setBounds(75,170,w2,40);
+                }
+            }
+    
 
         if (spieler.reflection.equals(true)){
             spieler.reflection = false;
@@ -5114,30 +4525,7 @@ element = "Cosmic";
 
         }
 
-        if (spieler.reflection.equals(false)){
-
-        damageText.setIcon(new ImageIcon(new ImageIcon(ci).getImage().getScaledInstance(40, 35, Image.SCALE_AREA_AVERAGING)));
-
-
-        damageText.setBounds(900,480,600,80);
-            damageText.setVisible(true);
-            damageText.setText("" + damg2 + "");
-            for (int z = 0; z<= 200;z++){
-                damageText.setBounds(900, 480 - z, 600, 80);
-                Thread.sleep(spieler.damageTextAnimation);
-            }
-
-            damageText.setText("" + damg2 + " Gegner Schaden");
-            Thread.sleep(spieler.t3);
-            spieler.enemyAtacked = false;
-            spieler.Health -= damg2;
-            playerInfoHP.setText("          " +spieler.Health);
-
-            for (int w2 = 0; w2<(spieler.Health * spieler.MaxHealth)/100; w2++){
-                playerInfoHPProgress.setBounds(75,170,w2,40);
-            }
-        }
-
+    
             
 
     }
@@ -5148,8 +4536,6 @@ element = "Cosmic";
         System.out.println(element + " @");
 
         if (element == "Ancient") {
-            System.out.println("Enemy used Ancient");
-            System.out.println("You lost " + spieler.CurrentEnemyPower + " HP");
 
             damg2 = spieler.CurrentEnemyPower;
             ci = "Textrpg\\Images\\Elemente\\Ancient.png";
@@ -5397,7 +4783,6 @@ element = "Cosmic";
         System.out.println("Enemy used Gravity");
         System.out.println("You lost " + spieler.CurrentEnemyPower + " HP");
 
-       // damg2 = spieler.CurrentEnemyPower;
         animateEnemyAttack(ci,damg2);
     }
 
@@ -5440,8 +4825,6 @@ element = "Cosmic";
     public void animateText(String message, JLabel tex, JTextArea a, int w, String standardText)
             throws InterruptedException {
 
-        // System.out.println(message.toCharArray());
-        // System.out.println(message.length());
         Thread.sleep(1000);
         if (tex != null) {
             tex.setText("");
@@ -5449,13 +4832,10 @@ element = "Cosmic";
                 tex.setText(standardText);
             }
             for (Byte m1 = 0; m1 < message.length(); m1++) {
-                // System.out.print(message.charAt(m1));
-                // Option1.setText(message.charAt(m1));
                 tex.setText(tex.getText() + message.charAt(m1));
                 Thread.sleep(w);
             }
 
-            // commbox.setText(l.getText() + message.charAt(m1));
         }
 
         if (a != null) {
@@ -5465,7 +4845,6 @@ element = "Cosmic";
             }
             for (Byte m1 = 0; m1 < message.length(); m1++) {
                 System.out.print(message.charAt(m1));
-                // Option1.setText(message.charAt(m1));
                 Thread.sleep(w);
                 a.setText(a.getText() + message.charAt(m1));
             }
@@ -5482,9 +4861,7 @@ element = "Cosmic";
             Thread.sleep(i / i * 1, 3);
             panel3.setBackground(new Color(i, i, i));
             System.out.println("i: " + i);
-            // if (i<255){
-            // break;
-            // }
+
         }
 
         Thread.sleep(spieler.thread1);
@@ -5569,10 +4946,6 @@ Thread.sleep(spieler.thread2);
 spieler.thread2 = 2000;
 }
 
-
-
-        // panel3.add(commbox);
-
         for (i = 1; i < 235; i++) {
             Thread.sleep(i / i * 1, 3);
             panel3.setBackground(new Color(255 - i, 255 - i, 255 - i));
@@ -5580,11 +4953,7 @@ spieler.thread2 = 2000;
 
         }
 
-        // Thread.sleep(1000);
-
-        // panel3.setVisible(false);
         frame.setBackground(new Color(20, 20, 20));
-        // panel3.setVisible(false);
         panel3.setVisible(false);
         commbox.setVisible(false);
 
@@ -5594,6 +4963,7 @@ spieler.thread2 = 2000;
         commbox.setBackground(Color.black);
         commbox.setForeground(Color.white);
         commbox.setBorder(new LineBorder(Color.white));
+
         if (uit == 5){
             uit++;
 
@@ -5639,9 +5009,7 @@ uit++;
                 spieler.textSpeed = 14;
         }
 
-             //   Thread.sleep(3000);
                 animateText(" First, enter your name.", null, commbox, spieler.textSpeed, null);
-             //   elementImage.setVisible(true);
 
                 spieler.textSpeed = 14;
 
@@ -5761,12 +5129,6 @@ enemyImage.setBounds(500,280,400,400);
 
 enemyImage.setForeground(en.enemyColors[0]);
 
-//enemyImage.setVisible(true);
-
-// ||
-
-
-
         }
 
         if (File == "Bosses"){
@@ -5798,8 +5160,6 @@ if (en.boss_Last_Materias[Index]!= null){
 enemyImage.setBounds(500,280,400,400);
 
 enemyImage.setForeground(en.enemyColors[0]);
-
-//enemyImage.setVisible(true);
 
 enemyInfoName.setText("  "+en.bosses[Index]+"  ");
 
@@ -6301,21 +5661,6 @@ i2.setText("        Licht         ");
 i2.setForeground(new Color(155,25,0));
 }
 
-/*     if (spieler.Main_Element == "  Void  "){
-i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Void.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
-i1.setText("        Void         ");
-i1.setForeground(new Color(155,25,0));
-    }
-
-
-
-    if (spieler.Second_Element == "  Void  "){
-        i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Void.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
-        i2.setText("        Void         ");
-        i2.setForeground(new Color(155,25,0));
-            }
-*/
-
 
 // Strong //
 
@@ -6323,33 +5668,21 @@ i1.setForeground(new Color(155,25,0));
 
 // Weak //
 
-/*
-if (spieler.Main_Element == "  Wind  "){
-i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Wind.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
-i1.setText("        Wind         ");
+
+if (spieler.Main_Element == "  Lunar  "){
+i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Lunar.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+i1.setText("        Lunar         ");
 i1.setForeground(new Color(255,215,0));
 }
 
-if (spieler.Second_Element == "  Wind  "){
-i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Wind.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
-i2.setText("        Wind         ");
+if (spieler.Second_Element == "  Lunar  "){
+i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Lunar.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+i2.setText("        Lunar         ");
 i2.setForeground(new Color(255,215,0));
 }
 
-if (spieler.Main_Element == "  Crystal  "){
-i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Crystal.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
-i1.setText("        Crystal         ");
-i1.setForeground(new Color(255,215,0));
-}
 
 
-if (spieler.Second_Element == "  Crystal  "){
-i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Crystal.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
-i2.setText("        Crystal         ");
-i2.setForeground(new Color(255,215,0));
-}
-
-*/
 
 }
 
@@ -6394,22 +5727,6 @@ i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Cosmic
 i2.setText("        Cosmic         ");
 i2.setForeground(new Color(155,25,0));
     }
-/*
-if (spieler.Main_Element == "  Void  "){
-i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Void.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
-i1.setText("        Void         ");
-i1.setForeground(new Color(155,25,0));
-    }
-
-
-
-    if (spieler.Second_Element == "  Void  "){
-        i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Void.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
-        i2.setText("        Void         ");
-        i2.setForeground(new Color(155,25,0));
-            }
-
-*/
 
 // Strong //
 
@@ -6475,36 +5792,6 @@ i2.setForeground(new Color(155,25,0));
 
 
 
-/*
-if (spieler.Main_Element == "  Cosmic  "){
-i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Cosmic.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
-i1.setText("        Cosmic         ");
-i1.setForeground(new Color(155,25,0));
-}
-
-
-
-if (spieler.Second_Element == "  Cosmic  "){
-i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Cosmic.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
-i2.setText("        Cosmic         ");
-i2.setForeground(new Color(155,25,0));
-    }
-
-if (spieler.Main_Element == "  Void  "){
-i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Void.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
-i1.setText("        Void         ");
-i1.setForeground(new Color(155,25,0));
-    }
-
-
-
-    if (spieler.Second_Element == "  Void  "){
-        i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Void.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
-        i2.setText("        Void         ");
-        i2.setForeground(new Color(155,25,0));
-            }
-
-*/
 
 // Strong //
 
@@ -6512,18 +5799,6 @@ i1.setForeground(new Color(155,25,0));
 
 // Weak //
 
-
-if (spieler.Main_Element == "  Feuer  "){
-i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Feuer.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
-i1.setText("        Feuer         ");
-i1.setForeground(new Color(255,215,0));
-}
-
-if (spieler.Second_Element == "  Feuer  "){
-i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Feuer.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
-i2.setText("        Feuer         ");
-i2.setForeground(new Color(255,215,0));
-}
 
 if (spieler.Main_Element == "  Wasser  "){
 i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Wasser.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
@@ -6537,6 +5812,20 @@ i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Wasser.p
 i2.setText("        Wasser         ");
 i2.setForeground(new Color(255,215,0));
 }
+
+if (spieler.Main_Element == "  Feuer  "){
+    i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Feuer.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
+    i1.setText("        Feuer         ");
+    i1.setForeground(new Color(155,25,0));
+    }
+    
+    
+    
+    if (spieler.Second_Element == "  Feuer  "){
+    i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Feuer.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
+    i2.setText("        Feuer         ");
+    i2.setForeground(new Color(155,25,0));
+        }
 
 }
 
@@ -6566,70 +5855,12 @@ i2.setForeground(new Color(155,25,0));
 }
 
 
-
-/*
-if (spieler.Main_Element == "  Cosmic  "){
-i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Cosmic.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
-i1.setText("        Cosmic         ");
-i1.setForeground(new Color(155,25,0));
-}
-
-
-
-if (spieler.Second_Element == "  Cosmic  "){
-i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Cosmic.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
-i2.setText("        Cosmic         ");
-i2.setForeground(new Color(155,25,0));
-    }
-
-if (spieler.Main_Element == "  Void  "){
-i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Void.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
-i1.setText("        Void         ");
-i1.setForeground(new Color(155,25,0));
-    }
-
-
-
-    if (spieler.Second_Element == "  Void  "){
-        i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Void.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
-        i2.setText("        Void         ");
-        i2.setForeground(new Color(155,25,0));
-            }
-
-*/
-
 // Strong //
 
 
 
 // Weak //
 
-/*
-if (spieler.Main_Element == "  Feuer  "){
-i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Feuer.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
-i1.setText("        Feuer         ");
-i1.setForeground(new Color(255,215,0));
-}
-
-if (spieler.Second_Element == "  Feuer  "){
-i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Feuer.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
-i2.setText("        Feuer         ");
-i2.setForeground(new Color(255,215,0));
-}
-
-if (spieler.Main_Element == "  Wasser  "){
-i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Wasser.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
-i1.setText("        Wasser         ");
-i1.setForeground(new Color(255,215,0));
-}
-
-
-if (spieler.Second_Element == "  Wasser  "){
-i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Wasser.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
-i2.setText("        Wasser         ");
-i2.setForeground(new Color(255,215,0));
-}
-*/
 
 
 if (spieler.Main_Element == "  Wind  "){
