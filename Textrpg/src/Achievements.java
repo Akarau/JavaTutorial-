@@ -28,6 +28,12 @@ public class Achievements {
         new Color(120,0,150),
     };
 
+    Color[] difficultyColors = {
+        new Color(0,255,60),
+        new Color(160,0,255),
+        new Color(25,255,255),
+    };
+
     public Achievements(){
 
        

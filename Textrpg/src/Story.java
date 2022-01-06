@@ -2643,7 +2643,7 @@ spieler.thread3 = 0;
         for (v = 0; v < rew.achievements.length; v++) {
             if (e.getActionCommand().equals(rew.achievements[v])) {
                 chosen_Main_Element_Name.setBorder(null);
-                //commbox.setVisible(true);
+                commbox.setVisible(true);
                 chosen_Main_Element.setVisible(true);
                 chosen_Main_Element_Name.setVisible(true);
                 chosen_Main_Element_Description.setVisible(true);
@@ -2654,12 +2654,13 @@ spieler.thread3 = 0;
                 chosen_Main_Element_Picture.setIcon(
                         new ImageIcon(new ImageIcon(rew.achievementsImage[v])
                                 .getImage().getScaledInstance(200, 195, Image.SCALE_AREA_AVERAGING)));
-                chosen_Main_Element_Name.setText(rew.achievements[v] + "[" + rew.achievementsDifficulty[v] + "]");
+                chosen_Main_Element_Name.setText(rew.achievements[v]);
                 chosen_Main_Element_Name.setForeground(rew.achievementsColor[v]);
-              //  commbox.setForeground(scl.swordsColor[v]);
-                chosen_Main_Element_Description.setText(rew.achievementsDescription[v]);
+                commbox.setForeground(rew.achievementsColor[v]);
+                chosen_Main_Element_Description.setText(rew.achievementsDifficulty[v]);
+                chosen_Main_Element_Description.setBorder(null);
                 chosen_Main_Element_Description.setBorder(new LineBorder(Color.black));
-               // commbox.setText(scl.inf[v]);
+                commbox.setText(rew.achievementsDescription[v]);
                // choose_Element.setActionCommand("Sword_Buy");
                // if (inventory.containsKey(chosen_Main_Element_Name.getText())){
              //       choose_Element.setText(" gekauft ");
