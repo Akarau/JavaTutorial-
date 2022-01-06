@@ -10,6 +10,7 @@ public class CuPower {
       int Points = 50;
       int Health = 100;
       int MaxHealth;
+      int damageMade;
       int damg;
 
       
@@ -75,6 +76,15 @@ Boolean luckUpgrade1 = false;
 
 
 // Inventory //
+
+
+// Achievements //
+
+Boolean starter = true;
+Boolean kämpfer = false;
+
+
+// Achievements //
 
 
     public CuPower() {

@@ -4,19 +4,28 @@ public class Achievements {
     
 
     String[] achievements = {
-        "Starter"
+        "Starter",
+        "Kämpfer",
     };
 
     String[] achievementsDescription = {
         "Mach das Tutorial zu Ende",
+        "Verursache 2.5k Schaden",
+    };
+
+    String[] achievementsReward = {
+        " +250 Münzen ",
+        " +750 Münzen ",
     };
 
     String[] achievementsImage = {
-        "Textrpg\\Images\\Achievements\\Tutorial.png"
+        "Textrpg\\Images\\Achievements\\Tutorial.png",
+        "Textrpg\\Images\\Others\\Damage.png",
     };
 
     String[] achievementsDifficulty = {
-        "Leicht"
+        "Leicht",
+        "Normal"
     };
 
 

@@ -2408,6 +2408,8 @@ spieler.thread2 = 0;
 spieler.thread3 = 0;
         }
 
+
+
         Byte v;
 
         for (v = 0; v < colors.length; v++) {
@@ -2660,12 +2662,28 @@ spieler.thread3 = 0;
                 chosen_Main_Element_Description.setText(rew.achievementsDifficulty[v]);
                 chosen_Main_Element_Description.setBorder(null);
                 chosen_Main_Element_Description.setBorder(new LineBorder(Color.black));
-                commbox.setText(rew.achievementsDescription[v]);
-               // choose_Element.setActionCommand("Sword_Buy");
+                commbox.setText(" " + rew.achievementsDescription[v]);
+             //   choose_Element.setActionCommand("Achievement_Claim");
+                choose_Element.setEnabled(false);
+                choose_Element.setText(rew.achievementsReward[v]);
+
                // if (inventory.containsKey(chosen_Main_Element_Name.getText())){
              //       choose_Element.setText(" gekauft ");
 
             //    }
+            fighting_options.setVisible(false);
+
+               if(chosen_Main_Element_Name.getText().equals("Kämpfer")){
+
+                if (spieler.damageMade > 2500){
+                    commbox.setText(" Verursache 2.5k Schaden > " + "2.5k von 2.5k Schaden");
+                }
+                else {
+                    commbox.setText(" Verursache 2.5k Schaden > " + spieler.damageMade + " von  2.5k Schaden");
+
+                }
+               
+            }
 
             }
         }
