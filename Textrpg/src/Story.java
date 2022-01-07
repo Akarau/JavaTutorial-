@@ -56,6 +56,7 @@ public class Story implements ActionListener {
     static JButton options_c;
     static JButton options_ts;
     static JButton commboxnext;
+    JLabel moon_Artemis;
     JButton tex;
     JButton b;
     JPanel b1;
@@ -268,6 +269,20 @@ JLabel self_HealText;
         l.setBackground(Color.WHITE);
         l.setVisible(false);
         l.setFocusable(false);
+
+
+        moon_Artemis = new JLabel();
+        moon_Artemis.setForeground(new Color(255, 0, 160));
+        moon_Artemis.setFont(new Font("Times new Roman", Font.PLAIN, 60));
+        moon_Artemis.setSize(600, 600);
+        moon_Artemis.setBounds(250, -200, 600, 600);
+        moon_Artemis.setBackground(Color.WHITE);
+        moon_Artemis.setVisible(false);
+        moon_Artemis.setFocusable(false);
+        moon_Artemis.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Others\\Moon.png").getImage()
+                .getScaledInstance(500, 500, Image.SCALE_AREA_AVERAGING)));
+    
+                frame.add(moon_Artemis);
 
         i1 = new JLabel();
         i1.setForeground(new Color(255, 0, 160));
@@ -1415,6 +1430,7 @@ swordB.add(si);
 
 
 
+
 for (int s2 = 0; s2 < scl.schilder.length; s2++) {
 
 
@@ -1458,6 +1474,10 @@ iPanel.setBackground(Color.black);
 iPanel.setVisible(false);
 iPanel.setFocusable(false);
 iPanel.setBorder(new LineBorder(Color.white));
+
+
+
+
 /*
 chosen_Main_Element.setVisible(false);
 fighting_options.setVisible(false);
@@ -1711,6 +1731,8 @@ boostB.add(si);
         frame.setVisible(true);
 
         spawnEnemy("Enemies", 0, 0, 0);
+       // artemisCombat();
+
 
 
 
@@ -1764,8 +1786,11 @@ boostB.add(si);
             
            
                    }
+                   
 
     }
+
+    
 
     int i;
     int n1;
@@ -1774,6 +1799,8 @@ boostB.add(si);
     
 
     java.awt.event.ActionEvent e;
+
+    
 
     public void actionPerformed(java.awt.event.ActionEvent e) {
 
@@ -1791,8 +1818,9 @@ boostB.add(si);
 if (scl.schwerte[s] == chosen_Main_Element_Name.getText() ){
     playerInfoPower.setForeground(scl.swordsColor[s]);
     playerInfoPower.setText(scl.swordsPower[s] + "x");
-
+    spieler.powerBoostIcon = scl.i[s];
     spieler.powerBoost = scl.swordsPower[s];
+    boostDamageText.setForeground(scl.swordsColor[s]);
                 playerInfoPower.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Swords\\" + chosen_Main_Element_Name.getText() +".png").getImage().getScaledInstance(25, 25, Image.SCALE_AREA_AVERAGING)));
                 if (chosen_Main_Element_Name.getText() == "The Warrior"){
                     playerInfoPower.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Swords\\" + chosen_Main_Element_Name.getText() +".png").getImage().getScaledInstance(30, 25, Image.SCALE_AREA_AVERAGING)));
@@ -2938,7 +2966,7 @@ if (spieler.powerBoost != 1 && spieler.currentEnemyHP > 0 ){
     for (int power = 0; power <=  (damg * spieler.powerBoost - damg); power++){
         if (spieler.powerBoost != 1 && spieler.currentEnemyHP >= 0 ){
         boostDamageText.setText("+ "+ power);
-        Thread.sleep((long) (power/6 * spieler.t1));
+        Thread.sleep((power * spieler.t1));
         extradamg++;
         spieler.currentEnemyHP -= extradamg;
 extradamg = 0;
@@ -3096,7 +3124,7 @@ Thread.sleep(spieler.t2);
                     for (int power = 0; power <=  damg * spieler.powerBoost - damg; power++){
                         if (spieler.powerBoost != 1 && spieler.currentEnemyHP >= 0 ){
                         boostDamageText.setText("+ "+ power);
-                        Thread.sleep((long) (power/6 * spieler.t1));
+                        Thread.sleep((power * spieler.t1));
                         extradamg++;
                         spieler.currentEnemyHP -= extradamg;
     extradamg = 0;
@@ -3337,7 +3365,7 @@ Thread.sleep(spieler.t2);
                     for (int power = 0; power <=  dm * spieler.powerBoost - dm; power++){
                         if (spieler.powerBoost != 1 && spieler.currentEnemyHP >= 0 ){
                         boostDamageText.setText("+ "+ power);
-                        Thread.sleep((long) (power/6 * spieler.t1));
+                        Thread.sleep((power * spieler.t1));
                        extradamg++;
                        spieler.currentEnemyHP -= extradamg;
    extradamg = 0;
@@ -3494,7 +3522,7 @@ enemyAttack();
                              for (int power = 0; power <=  damg * spieler.powerBoost - damg; power++){
                                  if (spieler.powerBoost != 1 && spieler.currentEnemyHP >= 0 ){
                                  boostDamageText.setText("+ "+ power);
-                                 Thread.sleep(power/6);
+                                 Thread.sleep((power * spieler.t1));
                                  extradamg++;
                                  spieler.currentEnemyHP -= extradamg;
              extradamg = 0;         
@@ -3698,7 +3726,7 @@ damageText.setBounds(900, 480, 600, 80);
                          for (int power = 0; power <=  damg * spieler.powerBoost - damg; power++){
                              if (spieler.powerBoost != 1 && spieler.currentEnemyHP >= 0 ){
                              boostDamageText.setText("+ "+ power);
-                             Thread.sleep(power/6);
+                             Thread.sleep((power * spieler.t1));
                             extradamg++;
                             spieler.currentEnemyHP -= extradamg;
         extradamg = 0;
@@ -3897,7 +3925,7 @@ damageText.setBounds(900, 480, 600, 80);
                                     for (int power = 0; power <=  damg * spieler.powerBoost - damg; power++){
                                         if (spieler.powerBoost != 1 && spieler.currentEnemyHP >= 0 ){
                                         boostDamageText.setText("+ "+ power);
-                                        Thread.sleep(power/6);
+                                        Thread.sleep((power * spieler.t1));
                                         extradamg++;
                                         spieler.currentEnemyHP -= extradamg;
                     extradamg = 0;
@@ -4071,7 +4099,7 @@ damageText.setBounds(900, 480, 600, 80);
                                             for (int power = 0; power <=  damg * spieler.powerBoost - damg; power++){
                                                 if (spieler.powerBoost != 1 && spieler.currentEnemyHP >= 0 ){
                                                 boostDamageText.setText("+ "+ power);
-                                                Thread.sleep(power/6);
+                                                Thread.sleep((power * spieler.t1));
                                                 extradamg++;
                                                 spieler.currentEnemyHP -= extradamg;
                             extradamg = 0;                       
@@ -4294,7 +4322,7 @@ elementImage.setVisible(false);
                                 for (int power = 0; power <=  (damg*3) * spieler.powerBoost - (damg*3); power++){
                                     if (spieler.powerBoost != 1 && spieler.currentEnemyHP >= 0 ){
                                     boostDamageText.setText("+ "+ power);
-                                    Thread.sleep(power/6);
+                                    Thread.sleep((power * spieler.t1));
                                     extradamg++;
                                     spieler.currentEnemyHP -= extradamg;
                 extradamg = 0;;
@@ -4455,7 +4483,7 @@ Thread.sleep(spieler.t2);
                 for (int power = 0; power <=  damg * spieler.powerBoost - damg; power++){
                     if (spieler.powerBoost != 1 && spieler.currentEnemyHP >= 0 ){
                     boostDamageText.setText("+ "+ power);
-                    Thread.sleep((long) (power/6 * spieler.t1));
+                    Thread.sleep((power * spieler.t1));
                     extradamg++;
                     spieler.currentEnemyHP -= extradamg;
 extradamg = 0;
@@ -4675,7 +4703,7 @@ element = "Cosmic";
     
             damageText.setBounds(900,480,600,80);
                 damageText.setVisible(true);
-                damageText.setText("" + damg2 + "");
+              //  damageText.setText("" + damg2 + "");
                 for (int z = 0; z<= 200;z++){
                     damageText.setBounds(900, 480 - z, 600, 80);
                     Thread.sleep(spieler.damageTextAnimation);
@@ -4688,9 +4716,12 @@ element = "Cosmic";
                 playerInfoHP.setText("          " +spieler.Health);
     
                 
-                for (int w2 = 0; w2<(spieler.Health * spieler.MaxHealth)/100; w2++){
-                    playerInfoHPProgress.setBounds(75,170,w2,40);
-                }
+         //       for (int w2 = 0; w2<(spieler.Health * spieler.MaxHealth)/100; w2++){
+             //       playerInfoHPProgress.setBounds(75,170,w2,40);
+           //    }
+
+                Thread.sleep(spieler.t3);
+                damageText.setVisible(false);
             }
     
 
@@ -5297,6 +5328,9 @@ uit++;
 
 
     
+
+    
+
 
 
 
@@ -6082,8 +6116,110 @@ i2.setForeground(new Color(255,215,0));
 
 }
 
+
+
+
 }
+
+
+
     }
+
+    
+
+   public void artemisCombat() throws InterruptedException{
+
+    moon_Artemis.setVisible(true);
+
+    Thread.sleep(2000);
+
+    panel3.setVisible(true);
+    System.out.println("Startb");
+    int i;
+
+    for (i = 1; i < 200; i++) {
+        Thread.sleep(4);
+        panel3.setBackground(new Color(i /8, i /8, i/8));
+        System.out.println("i: " + i);
+
+    
+}
+
+Thread.sleep(200);
+
+for (i = 1; i < 230; i++) {
+    Thread.sleep(0);
+    panel3.setBackground(new Color(i+ 25, i+ 25, i+ 25));
+    System.out.println("i: " + i);
+
+
+}
+
+Thread.sleep(200);
+
+
+/*
+for (i = 1; i < 230; i++) {
+Thread.sleep(0);
+panel3.setBackground(new Color(i+ 25, i+ 25, i+ 25));
+System.out.println("i: " + i);
+
+
+}
+
+Thread.sleep(200);
+
+
+
+for (i = 1; i < 230; i++) {
+Thread.sleep(0);
+panel3.setBackground(new Color(i+ 25, i+ 25, i+ 25));
+System.out.println("i: " + i);
+
+
+}
+
+*/
+
+for (i = 1; i < 255; i++) {
+    Thread.sleep(4);
+    panel3.setBackground(new Color(255 - (i), 255 -(i), 255 - (i)));
+    System.out.println("i: " + i);
+
+}
+
+Thread.sleep(300);
+panel3.setVisible(false);
+    /*
+    for (int t = 0; t<3; t++){
+        panel3.setVisible(true);
+        panel3.setBackground(new Color(0, 0, 0));
+
+    for (i = 1; i < 51; i++) {
+        Thread.sleep(4);
+        panel3.setBackground(new Color(i * 5, i * 5, i * 5));
+        System.out.println("i: " + i);
+
+    }
+}
+
+    panel3.setVisible(true);
+    for (i = 1; i < 60; i++) {
+        Thread.sleep(8);
+        panel3.setBackground(new Color(255 - (i+195), 255 -(i+195), 255 - (i+195)));
+        System.out.println("i: " + i);
+
+   }
+
+   Thread.sleep(200);
+
+   panel3.setVisible(false);
+*/
+
+
+    }
+
+
 }
 
 
