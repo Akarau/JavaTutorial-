@@ -6,7 +6,7 @@ import java.util.HashMap;
 
 public class CuPower {
       int Gold = 50000;
-      int Power = 100;
+      int Power = 50;
       int Points = 50;
       int Health = 100;
       int MaxHealth;

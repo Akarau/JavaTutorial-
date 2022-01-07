@@ -48,7 +48,7 @@ public class Enemy {
     };
 
     int enemiesHP[] = {
-        100,
+        1000,
         200,
     };
 
