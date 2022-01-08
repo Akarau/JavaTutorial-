@@ -34,10 +34,15 @@ public class Story implements ActionListener {
     JLabel inf;
     JPanel shop_options;
     JPanel inventarPanel;
+    JPanel achievementsPanel;
    JButton eshop_swords;
    JButton eshop_shields;
    JButton eshop_boosts;
    JLabel reflectedDamgeImage;
+   JLabel achievementI;
+   JLabel achievementN;
+   JTextArea achievementD;
+   JLabel achievementDif;
 
     static JLabel l;
     static JLabel i1;
@@ -516,6 +521,64 @@ JLabel self_HealText;
 
         frame.add(inventarPanel);
 
+        
+        achievementsPanel = new JPanel();
+        achievementsPanel.setForeground(new Color(255, 0, 150));
+        achievementsPanel.setFont(new Font("Times new Roman", Font.PLAIN, 60));
+        achievementsPanel.setBounds(1007, 280, 265, 120);
+        achievementsPanel.setVisible(false);
+        achievementsPanel.setFocusable(false);
+        achievementsPanel.setOpaque(false);
+        achievementsPanel.setBorder(new LineBorder(Color.white));
+
+        achievementI = new JLabel();
+        achievementI.setForeground(new Color(255, 255, 255));
+        achievementI.setFont(new Font("Times new Roman", Font.PLAIN, 15));
+        achievementI.setBounds(1010, 280, 265, 120);
+        achievementI.setBackground(Color.WHITE);
+        achievementI.setVisible(false);
+        achievementI.setFocusable(false);
+        achievementI.setOpaque(false);
+        achievementI.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Achievements\\Tutorial.png").getImage()
+                .getScaledInstance(105, 100, Image.SCALE_AREA_AVERAGING)));
+
+                achievementN = new JLabel();
+                achievementN.setForeground(new Color(180, 180, 180));
+                achievementN.setFont(new Font("Times new Roman", Font.PLAIN, 22));
+                achievementN.setBounds(1120, 250, 265, 120);
+                achievementN.setBackground(Color.WHITE);
+                achievementN.setVisible(false);
+                achievementI.setFocusable(false);
+                achievementN.setOpaque(false);
+                achievementN.setText("Starter");
+
+                achievementD = new JTextArea();
+                achievementD.setForeground(new Color(100, 100, 100));
+                achievementD.setFont(new Font("Times new Roman", Font.PLAIN, 15));
+                achievementD.setBounds(1120, 340, 120, 120);
+                achievementD.setBackground(Color.WHITE);
+                achievementD.setVisible(false);
+                achievementD.setFocusable(false);
+                achievementD.setOpaque(false);
+                achievementD.setLineWrap(true);
+                achievementD.setText("Mach das Tutorial zu Ende");
+
+                achievementDif = new JLabel();
+                achievementDif.setForeground(new Color(0, 255, 25));
+                achievementDif.setFont(new Font("Times new Roman", Font.PLAIN, 14));
+                achievementDif.setBounds(1220, 325, 265, 120);
+                achievementDif.setBackground(Color.WHITE);
+                achievementDif.setVisible(false);
+                achievementDif.setFocusable(false);
+                achievementDif.setOpaque(false);
+                achievementDif.setText("Leicht");
+
+        frame.add(achievementsPanel);
+
+        frame.add(achievementI);
+        frame.add(achievementN);
+        frame.add(achievementD);
+        frame.add(achievementDif);
 
         shop_shields = new JPanel();
         shop_shields.setForeground(new Color(255, 0, 150));
@@ -736,7 +799,7 @@ JLabel self_HealText;
                                                         reflectedDamgeImage = new JLabel();
                                                         reflectedDamgeImage.setForeground(new Color(255, 255, 255));
                                                         reflectedDamgeImage.setFont(new Font("Times new Roman", Font.PLAIN, 35));
-                                                          reflectedDamgeImage.setBounds(1360, 100, 300, 300);
+                                                          reflectedDamgeImage.setBounds(1238, 100, 300, 300);
                                                          
                                                          reflectedDamgeImage.setBackground(Color.WHITE);
                                                          reflectedDamgeImage.setVisible(false);
@@ -1164,54 +1227,54 @@ enemyInfo = new JPanel();
 enemyInfo.setVisible(true);
 enemyInfo.setOpaque(false);
 enemyInfo.setFocusable(false);
-enemyInfo.setBounds(900, 110, 500, 150);
+enemyInfo.setBounds(800, 110, 470, 150);
 enemyInfo.setBorder(new LineBorder(Color.white));
  
 enemyInfoImage = new JLabel();
 enemyInfoImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Enemies\\DunkleFlamme.png").getImage().getScaledInstance(140, 135, Image.SCALE_AREA_AVERAGING)));
-enemyInfoImage.setBounds(920,120,140,120);
+enemyInfoImage.setBounds(820,120,140,120);
 enemyInfoImage.setForeground(en.enemyColors[0]);
 enemyInfoImage.setFont(new Font("Times new Roman", Font.PLAIN, 30));
 enemyInfoImage.setBorder(new LineBorder(en.enemyColors[1]));
 
 enemyInfoName = new JLabel("  DunkleFlamme  ");
-enemyInfoName.setBounds(1075,120,300,40);
+enemyInfoName.setBounds(995,120,250,40);
 enemyInfoName.setForeground(en.enemyColors[0]);
 enemyInfoName.setFont(new Font("Times new Roman", Font.PLAIN, 30));
 enemyInfoName.setBorder(new LineBorder(en.enemyColors[1]));
 
 enemyInfoHP = new JLabel("          " +en.enemiesHP[1]);
-enemyInfoHP.setBounds(1075,170,220,40);
+enemyInfoHP.setBounds(995,170,220,40);
 enemyInfoHP.setForeground(Color.red);
 enemyInfoHP.setFont(new Font("Times new Roman", Font.PLAIN, 30));
 enemyInfoHP.setBorder(new LineBorder(Color.red));
 
 enemyInfoMainElement = new JLabel();
-enemyInfoMainElement.setBounds(1075,215,40,40);
+enemyInfoMainElement.setBounds(995,215,40,40);
 enemyInfoMainElement.setForeground(Color.red);
 enemyInfoMainElement.setFont(new Font("Times new Roman", Font.PLAIN, 30));
 enemyInfoMainElement.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\" + en.enemy_Main_Materias[0] +".png").getImage().getScaledInstance(40, 40, Image.SCALE_AREA_AVERAGING)));
 
 enemyInfoSecondElement = new JLabel();
-enemyInfoSecondElement.setBounds(1120,215,40,40);
+enemyInfoSecondElement.setBounds(1040,215,40,40);
 enemyInfoSecondElement.setForeground(Color.red);
 enemyInfoSecondElement.setFont(new Font("Times new Roman", Font.PLAIN, 30));
 
 enemyInfoSecondElement.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\" + en.enemy_Second_Materias[0] +".png").getImage().getScaledInstance(40, 40, Image.SCALE_AREA_AVERAGING)));
 enemyInfoThirdElement = new JLabel();
-enemyInfoThirdElement.setBounds(1165,215,40,40);
+enemyInfoThirdElement.setBounds(1085,215,40,40);
 enemyInfoThirdElement.setForeground(Color.red);
 enemyInfoThirdElement.setFont(new Font("Times new Roman", Font.PLAIN, 30));
 enemyInfoThirdElement.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\" + en.enemy_Third_Materias[0] +".png").getImage().getScaledInstance(40, 40, Image.SCALE_AREA_AVERAGING)));
 
 enemyInfoLastElement = new JLabel();
-enemyInfoLastElement.setBounds(1210,215,40,40);
+enemyInfoLastElement.setBounds(1130,215,40,40);
 enemyInfoLastElement.setForeground(Color.red);
 enemyInfoLastElement.setFont(new Font("Times new Roman", Font.PLAIN, 30));
 enemyInfoLastElement.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\" + en.enemy_Last_Materias[0] +".png").getImage().getScaledInstance(40, 40, Image.SCALE_AREA_AVERAGING)));
 
 enemyInfoDifficulty = new JLabel(en.enemyDifficulty[0]);
-enemyInfoDifficulty.setBounds(1300,220,80,40);
+enemyInfoDifficulty.setBounds(1180,220,80,40);
 enemyInfoDifficulty.setForeground(en.difficultyColors[0]);
 enemyInfoDifficulty.setFont(new Font("Times new Roman", Font.PLAIN, 20));
 
@@ -4529,6 +4592,11 @@ for (int xi = 0; xi<= 120; xi++){
 
             System.out.println(spieler.damageMade + " Damg");
             spieler.damageMade += damg + (damg * spieler.powerBoost - damg);
+            if (spieler.damageMade >= 2500 && spieler.kämpfer == false){
+                Award(1);
+                spieler.kämpfer = true;
+
+            }
 
     }
 
@@ -4583,8 +4651,8 @@ element = "Wasser";
 
             element = spieler.enemyMain_Element;
 
-            if (spieler.enemyMain_Element == "Feuer" || spieler.enemySecond_Element == "Feuer" || spieler.enemyThird_Element == "Feuer" || spieler.enemyLast_Element == "Feuer" && spieler.enemyAtacked == false ){
-                element = "Feuer";
+            if (spieler.enemyMain_Element == "Crystal" || spieler.enemySecond_Element == "Crystal" || spieler.enemyThird_Element == "Crystal" || spieler.enemyLast_Element == "Crystal" && spieler.enemyAtacked == false ){
+                element = "Crystal";
             }
         
 
@@ -4777,7 +4845,7 @@ element = "Cosmic";
             damageText.setForeground(new Color(255,255,255));
             ci = "Textrpg\\Images\\Elemente\\Cosmic.png";
 
-            if (spieler.Main_Element == "  Erde  " || spieler.Main_Element == "  Gravity  " || spieler.Main_Element == "  Void  " ){
+            if (spieler.Main_Element == "  Gravity  " || spieler.Main_Element == "  Void  " ){
 
                 damageText.setForeground(new Color(255,50,0));
                 damg2 = spieler.CurrentEnemyPower *2;
@@ -4807,7 +4875,7 @@ element = "Cosmic";
             damageText.setForeground(new Color(255,255,255));
             ci = "Textrpg\\Images\\Elemente\\Crystal.png";
 
-            if (spieler.Main_Element == "  Cosmic  " || spieler.Main_Element == "  Crystal  " ){
+            if (spieler.Main_Element == "  Cosmic  " || spieler.Main_Element == "  Erde  " ){
 
                 damageText.setForeground(new Color(255,50,0));
                 damg2 = spieler.CurrentEnemyPower *2;
@@ -4817,7 +4885,7 @@ element = "Cosmic";
 
             }
 
-            if (spieler.Main_Element == "  Cosmic  "){
+            if (spieler.Main_Element == "  Feuer  " || spieler.Main_Element == "  Wasser  " || spieler.Main_Element == "  Crystal  "  ){
                 damageText.setForeground(new Color(255,200,30));
                 damg2 = spieler.CurrentEnemyPower /2;
 
@@ -4837,7 +4905,7 @@ element = "Cosmic";
             damageText.setForeground(new Color(255,255,255));
             ci = "Textrpg\\Images\\Elemente\\Erde.png";
 
-            if (spieler.Main_Element == "  Feuer  " || spieler.Main_Element == "  Crystal  " ){
+            if (spieler.Main_Element == "  Feuer  " || spieler.Main_Element == "  Wind  " ){
 
                 damageText.setForeground(new Color(255,50,0));
                 damg2 = spieler.CurrentEnemyPower *2;
@@ -4847,7 +4915,7 @@ element = "Cosmic";
 
             }
 
-            if (spieler.Main_Element == "  Cosmic  "){
+            if (spieler.Main_Element == "  Crystal  " || spieler.Main_Element == "  Erde  " ){
                 damageText.setForeground(new Color(255,200,30));
                 damg2 = spieler.CurrentEnemyPower /2;
 
@@ -4877,7 +4945,7 @@ element = "Cosmic";
 
             }
 
-            if (spieler.Main_Element == "  Feuer  "){
+            if (spieler.Main_Element == "  Crystal  " || spieler.Main_Element == "  Feuer  " ){
                 damageText.setForeground(new Color(255,200,30));
                 damg2 = spieler.CurrentEnemyPower /2;
 
@@ -4899,7 +4967,7 @@ element = "Cosmic";
                 damageText.setForeground(new Color(255,255,255));
                 ci = "Textrpg\\Images\\Elemente\\Gravity.png";
 
-                if (spieler.Main_Element == "  Cosmic  " || spieler.Main_Element == "  Crystal  " ){
+                if (spieler.Main_Element == "  Cosmic  " || spieler.Main_Element == "  Void  " ){
 
                     damageText.setForeground(new Color(255,50,0));
                     damg2 = spieler.CurrentEnemyPower *2;
@@ -4990,7 +5058,7 @@ element = "Cosmic";
             damageText.setForeground(new Color(255,255,255));
             ci = "Textrpg\\Images\\Elemente\\Void.png";
 
-            if (spieler.Main_Element == "  Cosmic  " || spieler.Main_Element == "  Crystal  " ){
+            if (spieler.Main_Element == "  Cosmic  " || spieler.Main_Element == "  Gravity  " ){
 
                 damageText.setForeground(new Color(255,50,0));
                 damg2 = spieler.CurrentEnemyPower *2;
@@ -5000,7 +5068,7 @@ element = "Cosmic";
 
             }
 
-            if (spieler.Main_Element == "  Void  " || spieler.Main_Element == "  Gravity  "){
+            if (spieler.Main_Element == "  Void  "){
                 damageText.setForeground(new Color(255,200,30));
                 damg2 = spieler.CurrentEnemyPower /2;
 
@@ -6218,6 +6286,66 @@ panel3.setVisible(false);
    panel3.setVisible(false);
 */
 
+
+    }
+
+
+
+    void Award(int a) throws InterruptedException{
+
+
+        achievementI.setIcon(new ImageIcon(new ImageIcon(rew.achievementsImage[a]).getImage()
+                .getScaledInstance(105, 100, Image.SCALE_AREA_AVERAGING)));
+
+                achievementN.setText(rew.achievements[a]);
+                achievementN.setForeground(rew.achievementsColor[a]);
+                achievementD.setText(rew.rewardDescription[a]);
+                achievementDif.setText(rew.achievementsDifficulty[a]);
+                achievementDif.setForeground(rew.difficultyColors[a]);
+
+achievementsPanel.setBounds(1307, 280, 265, 120);
+achievementI.setBounds(1310, 280, 265, 120);
+achievementN.setBounds(1420, 250, 265, 120);
+achievementD.setBounds(1420, 340, 120, 120);
+achievementDif.setBounds(1520, 325, 265, 120);
+
+Thread.sleep(80);
+
+achievementsPanel.setVisible(true);
+achievementI.setVisible(true);
+achievementN.setVisible(true);
+achievementD.setVisible(true);
+achievementDif.setVisible(true);
+
+for (int v = 0; v< 300; v++){
+    Thread.sleep(1);
+achievementsPanel.setBounds(1307-v, 280, 265, 120);
+achievementI.setBounds(1310-v, 280, 265, 120);
+achievementN.setBounds(1420-v, 250, 265, 120);
+achievementD.setBounds(1420-v, 340, 120, 120);
+achievementDif.setBounds(1520-v, 325, 265, 120);
+
+}
+
+Thread.sleep(5000);
+
+for (int v = 0; v< 300; v++){
+    Thread.sleep(1);
+achievementsPanel.setBounds(1007+v, 280, 265, 120);
+achievementI.setBounds(1010+v, 280, 265, 120);
+achievementN.setBounds(1120+v, 250, 265, 120);
+achievementD.setBounds(1120+v, 340, 120, 120);
+achievementDif.setBounds(1220+v, 325, 265, 120);
+
+}
+
+Thread.sleep(80);
+
+achievementsPanel.setVisible(false);
+achievementI.setVisible(false);
+achievementN.setVisible(false);
+achievementD.setVisible(false);
+achievementDif.setVisible(false);
 
     }
 

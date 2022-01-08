@@ -13,6 +13,15 @@ public class Achievements {
         "Verursache 2.5k Schaden",
     };
 
+
+    
+
+    String[] rewardDescription = {
+        "Mach das Tutorial zu Ende",
+        "Verursache 2.5k    Schaden",
+    };
+
+
     String[] achievementsReward = {
         " +250 Münzen ",
         " +750 Münzen ",
