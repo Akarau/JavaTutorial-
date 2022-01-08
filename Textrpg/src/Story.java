@@ -2976,6 +2976,7 @@ extradamg = 0;
 
     }
     spieler.currentEnemyHP++;
+    spieler.damageMade += damg + (damg * spieler.powerBoost - damg);
     Thread.sleep(spieler.t3);
     enemyInfoHP.setText("         "+spieler.currentEnemyHP);
 enemyImage.setEnabled(true);
@@ -4525,6 +4526,10 @@ for (int xi = 0; xi<= 120; xi++){
         }
             }
 
+
+            System.out.println(spieler.damageMade + " Damg");
+            spieler.damageMade += damg + (damg * spieler.powerBoost - damg);
+
     }
 
 
@@ -4703,7 +4708,7 @@ element = "Cosmic";
     
             damageText.setBounds(900,480,600,80);
                 damageText.setVisible(true);
-              //  damageText.setText("" + damg2 + "");
+                damageText.setText(null);
                 for (int z = 0; z<= 200;z++){
                     damageText.setBounds(900, 480 - z, 600, 80);
                     Thread.sleep(spieler.damageTextAnimation);
@@ -4716,9 +4721,6 @@ element = "Cosmic";
                 playerInfoHP.setText("          " +spieler.Health);
     
                 
-         //       for (int w2 = 0; w2<(spieler.Health * spieler.MaxHealth)/100; w2++){
-             //       playerInfoHPProgress.setBounds(75,170,w2,40);
-           //    }
 
                 Thread.sleep(spieler.t3);
                 damageText.setVisible(false);
