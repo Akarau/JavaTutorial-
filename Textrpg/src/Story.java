@@ -3032,7 +3032,7 @@ enemyImage.setEnabled(true);
 
                 if (spieler.currentEnemyHP < 0){
                     spieler.currentEnemyHP = 0;
-                   enemyInfoHP.setText("0");
+                   enemyInfoHP.setText("             0");
 
                 }
                 
@@ -3068,7 +3068,7 @@ enemyImage.setEnabled(true);
 
 if (spieler.currentEnemyHP < 0){
     spieler.currentEnemyHP = 0;
-   enemyInfoHP.setText("0");
+   enemyInfoHP.setText("             0");
 
 }
 
@@ -3193,7 +3193,7 @@ enemyImage.setEnabled(true);
                 enemyInfoHP.setText("         "+spieler.currentEnemyHP);
                 if (spieler.currentEnemyHP < 0){
                     spieler.currentEnemyHP = 0;
-                   enemyInfoHP.setText("0");
+                   enemyInfoHP.setText("             0");
 
                 }
 Thread.sleep(spieler.t2);
@@ -3230,7 +3230,7 @@ enemyImage.setEnabled(true);
 
 if (spieler.currentEnemyHP < 0){
     spieler.currentEnemyHP = 0;
-   enemyInfoHP.setText("0");
+   enemyInfoHP.setText("             0");
 
 }
 
@@ -3432,7 +3432,7 @@ enemyImage.setEnabled(true);
                 enemyInfoHP.setText("         "+spieler.currentEnemyHP);
                 if (spieler.currentEnemyHP < 0){
                     spieler.currentEnemyHP = 0;
-                   enemyInfoHP.setText("0");
+                   enemyInfoHP.setText("             0");
 
                 }
 
@@ -3472,7 +3472,7 @@ Thread.sleep(spieler.t2);
                     enemyImage.setEnabled(true);
                         if (spieler.currentEnemyHP < 0){
                             spieler.currentEnemyHP = 0;
-                           enemyInfoHP.setText("0");
+                           enemyInfoHP.setText("             0");
 
                         
                     }
@@ -3591,7 +3591,7 @@ enemyAttack();
                          enemyInfoHP.setText("         "+spieler.currentEnemyHP);
                          if (spieler.currentEnemyHP < 0){
                             spieler.currentEnemyHP = 0;
-                           enemyInfoHP.setText("0");
+                           enemyInfoHP.setText("             0");
 
                         }
          Thread.sleep(spieler.t2);
@@ -3627,7 +3627,7 @@ enemyAttack();
 
          if (spieler.currentEnemyHP < 0){
             spieler.currentEnemyHP = 0;
-           enemyInfoHP.setText("0");
+           enemyInfoHP.setText("             0");
 
         }
                   
@@ -3795,7 +3795,7 @@ damageText.setBounds(900, 480, 600, 80);
                      enemyInfoHP.setText("         "+spieler.currentEnemyHP);
                      if (spieler.currentEnemyHP < 0){
                         spieler.currentEnemyHP = 0;
-                       enemyInfoHP.setText("0");
+                       enemyInfoHP.setText("             0");
 
                     }
      Thread.sleep(spieler.t2);
@@ -3829,7 +3829,7 @@ damageText.setBounds(900, 480, 600, 80);
 
      if (spieler.currentEnemyHP < 0){
         spieler.currentEnemyHP = 0;
-       enemyInfoHP.setText("0");
+       enemyInfoHP.setText("             0");
 
     }
               
@@ -3994,7 +3994,7 @@ damageText.setBounds(900, 480, 600, 80);
                                 enemyInfoHP.setText("         "+spieler.currentEnemyHP);
                                 if (spieler.currentEnemyHP < 0){
                                    spieler.currentEnemyHP = 0;
-                                  enemyInfoHP.setText("0");
+                                  enemyInfoHP.setText("             0");
            
                                }
                 Thread.sleep(spieler.t2);
@@ -4028,7 +4028,7 @@ damageText.setBounds(900, 480, 600, 80);
            
                 if (spieler.currentEnemyHP < 0){
                    spieler.currentEnemyHP = 0;
-                  enemyInfoHP.setText("0");
+                  enemyInfoHP.setText("             0");
            
                }
                          
@@ -4167,7 +4167,7 @@ damageText.setBounds(900, 480, 600, 80);
                                         enemyInfoHP.setText("         "+spieler.currentEnemyHP);
                                         if (spieler.currentEnemyHP < 0){
                                            spieler.currentEnemyHP = 0;
-                                          enemyInfoHP.setText("0");
+                                          enemyInfoHP.setText("             0");
                    
                                        }
 
@@ -4203,7 +4203,7 @@ damageText.setBounds(900, 480, 600, 80);
                    
                         if (spieler.currentEnemyHP < 0){
                            spieler.currentEnemyHP = 0;
-                          enemyInfoHP.setText("0");
+                          enemyInfoHP.setText("             0");
                    
                        }
                                  
@@ -4257,8 +4257,6 @@ damageText.setBounds(900, 480, 600, 80);
             elementImage.setBounds(500,280,400,400);
 
             elementsMenu.setVisible(false);
-
-            System.out.println("Lunar=Main");
 
                 
 
@@ -4391,7 +4389,7 @@ elementImage.setVisible(false);
                             enemyInfoHP.setText("         "+spieler.currentEnemyHP);
                             if (spieler.currentEnemyHP < 0){
                                spieler.currentEnemyHP = 0;
-                              enemyInfoHP.setText("0");
+                              enemyInfoHP.setText("             0");
        
                            }
             Thread.sleep(spieler.t2);
@@ -4428,7 +4426,7 @@ elementImage.setVisible(false);
        
             if (spieler.currentEnemyHP < 0){
                spieler.currentEnemyHP = 0;
-              enemyInfoHP.setText("0");
+              enemyInfoHP.setText("             0");
        
            }
                      
@@ -4552,7 +4550,7 @@ enemyImage.setEnabled(true);
             enemyInfoHP.setText("         "+spieler.currentEnemyHP);
             if (spieler.currentEnemyHP < 0){
                 spieler.currentEnemyHP = 0;
-               enemyInfoHP.setText("0");
+               enemyInfoHP.setText("             0");
 
             }
 Thread.sleep(spieler.t2);
@@ -4593,7 +4591,7 @@ enemyImage.setEnabled(true);
 
 if (spieler.currentEnemyHP < 0){
 spieler.currentEnemyHP = 0;
-enemyInfoHP.setText("0");
+enemyInfoHP.setText("             0");
 
 }
             }
@@ -4836,7 +4834,7 @@ element = "Cosmic";
                 enemyInfoHP.setText("             0");
 
             }
-            Thread.sleep(spieler.t3 + 100);
+            Thread.sleep(spieler.t3 + 200);
             reflectedDamgeText.setVisible(false);
             enemyInfo.setBorder(new LineBorder(Color.white));
             reflectedDamgeImage.setVisible(false);
