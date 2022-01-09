@@ -23,7 +23,7 @@ public class Achievements {
 
 
     String[] achievementsReward = {
-        " +250 Münzen ",
+        " +250 Münzen und 5 Punkte",
         " +750 Münzen ",
     };
 
@@ -33,8 +33,8 @@ public class Achievements {
     };
 
     String[] achievementsDifficulty = {
-        "Leicht",
-        "Normal"
+        "                      Leicht",
+        "                      Normal"
     };
 
 

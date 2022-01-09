@@ -424,7 +424,7 @@ JLabel self_HealText;
        
 
 
-       JPanel optionsmenu_colorsoutlines = new JPanel();
+        optionsmenu_colorsoutlines = new JPanel();
         optionsmenu_colorsoutlines.setVisible(false);
         optionsmenu_colorsoutlines.setBackground(Color.BLACK);
         optionsmenu_colorsoutlines.setFocusable(false);
@@ -1355,25 +1355,25 @@ playerInfoHPShield.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Shields
 
 
 playerInfoMainElement = new JLabel();
-playerInfoMainElement.setBounds(75,215,40,40);
+playerInfoMainElement.setBounds(300,215,40,40);
 playerInfoMainElement.setForeground(Color.red);
 playerInfoMainElement.setFont(new Font("Times new Roman", Font.PLAIN, 30));
 playerInfoMainElement.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\" + spieler.Main_Element +".png").getImage().getScaledInstance(40, 40, Image.SCALE_AREA_AVERAGING)));
  
 playerInfoSecondElement = new JLabel();
-playerInfoSecondElement.setBounds(120,215,40,40);
+playerInfoSecondElement.setBounds(345,215,40,40);
 playerInfoSecondElement.setForeground(Color.red);
 playerInfoSecondElement.setFont(new Font("Times new Roman", Font.PLAIN, 30));
 playerInfoSecondElement.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\" + spieler.Second_Element +".png").getImage().getScaledInstance(40, 40, Image.SCALE_AREA_AVERAGING)));
 
 playerInfoAttack = new JLabel();
-playerInfoAttack.setBounds(165,215,40,40);
+playerInfoAttack.setBounds(390,215,40,40);
 playerInfoAttack.setForeground(Color.red);
 playerInfoAttack.setFont(new Font("Times new Roman", Font.PLAIN, 30));
 playerInfoAttack.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Others\\Damage.png").getImage().getScaledInstance(40, 40, Image.SCALE_AREA_AVERAGING)));
 
 playerInfoSupportElement = new JLabel();
-playerInfoSupportElement.setBounds(210,215,40,40);
+playerInfoSupportElement.setBounds(435,215,40,40);
 playerInfoSupportElement.setForeground(Color.red);
 playerInfoSupportElement.setFont(new Font("Times new Roman", Font.PLAIN, 30));
 playerInfoSupportElement.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\" + en.enemy_Last_Materias[0] +".png").getImage().getScaledInstance(40, 40, Image.SCALE_AREA_AVERAGING)));
@@ -1986,6 +1986,7 @@ if (scl.boosts[s] == "Reflection" && chosen_Main_Element_Name.getText() == "Refl
             eshop_swords.setActionCommand("eInventar_Swords");
             eshop_shields.setActionCommand("eInventar_Shields");
             eshop_boosts.setActionCommand("eInventar_Boosts");
+            chosen_Main_Element.setVisible(false);
 
             for (int o = 0; o < scl.items.length; o++){
                inventarPanel.getComponent(o).setVisible(false);
@@ -2000,8 +2001,9 @@ if (scl.boosts[s] == "Reflection" && chosen_Main_Element_Name.getText() == "Refl
 
             inventarPanel.setVisible(!inventarPanel.isVisible());
             shop_options.setVisible(!shop_options.isVisible());
-            iPanel.setVisible(!iPanel.isVisible());
-iPanel.setText("         Inventory        ");
+            iPanel.setVisible(inventarPanel.isVisible());
+            achievements.setVisible(!achievements.isVisible());
+iPanel.setText("          Inventar        ");
 
 
 if (shop.isVisible()== true){
@@ -2009,8 +2011,12 @@ if (shop.isVisible()== true){
  inventarPanel.setVisible(true);
  iPanel.setVisible(true);
  shop_options.setVisible(true);
- iPanel.setText("         Inventory        ");
+ iPanel.setText("          Inventar        ");
 commbox.setVisible(false);
+}
+
+if (achievements.isVisible()== true){
+    achievements.setVisible(false);
 }
 
     }
@@ -2161,14 +2167,23 @@ commbox.setVisible(false);
         }
 
         if (e.getActionCommand() == "eAchievements") {
+            chosen_Main_Element.setVisible(false);
             achievements.setVisible(!achievements.isVisible());
-            if (achievements.isVisible()== true){
-                chosen_Main_Element.setVisible(true);
-            }
-            else{
-                chosen_Main_Element.setVisible(false);
+            iPanel.setVisible(achievements.isVisible());
+            iPanel.setText("   Auszeichnungen   ");
+            shop_options.setVisible(false);
 
+ 
+            if (inventarPanel.isVisible()== true){
+                inventarPanel.setVisible(false);
+ 
             }
+ 
+            if (shop.isVisible()== true){
+             shop.setVisible(false);
+         }
+ 
+               
         }
 
         
@@ -2240,13 +2255,14 @@ commbox.setVisible(false);
         if (e.getActionCommand() == "ConfirmName") {
            spieler.playerName = texarea.getText();
            playerInfoName.setText(spieler.playerName);
-           System.out.println(spieler.playerName);
-           System.out.println(texarea.getText());
+           elementsMenu.setVisible(true);
 texarea.setVisible(false);
 confirmName.setVisible(false);
 texarea.setEditable(false);
 commbox.setVisible(true);
 option1.setVisible(false);
+fighting_options.setVisible(false);
+choose_Element.setActionCommand("Main_Choose");
         }
 
         if (e.getActionCommand().equals("options_c")) {
@@ -2299,8 +2315,10 @@ ePlayButton.setActionCommand("ePlayButton1");
             eshop_shields.setActionCommand("eShop_Shields");
             eshop_boosts.setActionCommand("eShop_Boosts");
 
+            chosen_Main_Element.setVisible(false);
+
            shop.setVisible(!shop.isVisible());
-           iPanel.setVisible(!iPanel.isVisible());
+           iPanel.setVisible(shop.isVisible());
            shop_options.setVisible(!shop_options.isVisible());
            iPanel.setText("            Shop          ");
 
@@ -2313,6 +2331,10 @@ ePlayButton.setActionCommand("ePlayButton1");
             iPanel.setText("            Shop          ");
 
            }
+
+           if (achievements.isVisible()== true){
+            achievements.setVisible(false);
+        }
 
 
         }
@@ -2392,26 +2414,14 @@ ePlayButton.setActionCommand("ePlayButton1");
           }
 
         if (e.getActionCommand().equals("Main_Choose")) {
-            System.out.println("Main_Choose");
-            try {
 
-                animateText(
-                        " du hast" + "  '" + chosen_Main_Element_Name.getText() + "'  " + "als Haupt Element gewählt",
-                        null, commbox, spieler.textSpeed, "");
-            } catch (InterruptedException e1) {
-            }
-
+           // commbox.setText(" du hast" + "  '" + chosen_Main_Element_Name.getText() + "'  " + "als Haupt Element gewählt");
             spieler.Main_Element = chosen_Main_Element_Name.getText();
             choose_Element.setActionCommand("Second_Choose");
+            commbox.setText(" Wähle jetzt dein Sekundärelement aus.");
 
-            try {
 
-                animateText(
-                        " Now choose your second Element. Your second Element is weaker than your main Element. But it's still affective",
-                        null, commbox, spieler.textSpeed, "");
-            } catch (InterruptedException e1) {
 
-            }
 
             for (int t = 0; t < Elemente.elements.length; t++) {
                 if (Elemente.elements[t].charAt(0) == spieler.Main_Element.charAt(2)
@@ -2425,6 +2435,9 @@ ePlayButton.setActionCommand("ePlayButton1");
                     i1.setText(Elemente.elementsName[t]);
                     i1.setForeground(Elemente.elemetColors[t]);
                     elementsMenu.getComponent(t).setEnabled(false);
+                    playerInfoMainElement.setIcon(
+                        new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\" + Elemente.elements[t] + ".png")
+                                .getImage().getScaledInstance(40, 40, Image.SCALE_AREA_AVERAGING)));
 
                 }
             }
@@ -2437,13 +2450,7 @@ ePlayButton.setActionCommand("ePlayButton1");
         if (e.getActionCommand().equals("Second_Choose")) {
             chosen_Main_Element.setVisible(false);
             elementsMenu.setVisible(false);
-            try {
 
-                animateText(
-                        " du hast" + "  '" + chosen_Main_Element_Name.getText() + "'  " + "als Second Element gewählt",
-                        null, commbox, spieler.textSpeed, "");
-            } catch (InterruptedException e1) {
-            }
             spieler.Second_Element = chosen_Main_Element_Name.getText();
             choose_Element.setActionCommand("/");
 
@@ -2460,15 +2467,15 @@ ePlayButton.setActionCommand("ePlayButton1");
                     chosen_Main_Element.setVisible(false);
                     elementsMenu.getComponent(t).setEnabled(false);
 
-                    try {
-
-                        animateText(" You have chosen" + spieler.Main_Element + "as the main element and "
-                                + spieler.Second_Element + "as the second element", null, commbox, spieler.textSpeed, "");
-                    } catch (InterruptedException e1) {
-                    }
-
+                    playerInfoSecondElement.setIcon(
+                        new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\" + Elemente.elements[t] + ".png")
+                                .getImage().getScaledInstance(40, 40, Image.SCALE_AREA_AVERAGING)));
                 }
             }
+
+            
+            commbox.setText("Du hast" + spieler.Main_Element + "als Hauptelement und" + spieler.Second_Element + "als Sekundärelement gewählt");
+
 
         }
 
@@ -2580,6 +2587,8 @@ spieler.thread3 = 0;
                 chosen_Main_Element_Name.setForeground(Elemente.elemetColors[v]);
                 chosen_Main_Element_Description.setText("           " + Elemente.elements[v]
                         + " effective agains                      | " + Elemente.elementsPowers[v] + " |");
+                        chosen_Main_Element_Description.setForeground(Color.white);
+
                 commbox.setText(Elemente.elements[v] + " " + Elemente.elementsWeaks[v]);
 
             }
@@ -2605,6 +2614,8 @@ spieler.thread3 = 0;
                 chosen_Main_Element_Name.setForeground(scl.swordsColor[v]);
                 commbox.setForeground(scl.swordsColor[v]);
                 chosen_Main_Element_Description.setText("Kostet " +  scl.swordsPreis[v] + " coins" );
+                chosen_Main_Element_Description.setForeground(Color.white);
+
                 commbox.setText(scl.inf[v]);
                 choose_Element.setActionCommand("Sword_Buy");
                 if (inventory.containsKey(chosen_Main_Element_Name.getText())){
@@ -2635,6 +2646,8 @@ spieler.thread3 = 0;
                 chosen_Main_Element_Name.setForeground(scl.shieldsColor[v]);
                 commbox.setForeground(scl.shieldsColor[v]);
                 chosen_Main_Element_Description.setText("Kostet " +  scl.shieldsPreis[v] + " coins" );
+                chosen_Main_Element_Description.setForeground(Color.white);
+
                 commbox.setText(scl.inf2[v]);
                 choose_Element.setActionCommand("Shield_Buy");
                 if (inventory.containsKey(chosen_Main_Element_Name.getText())){
@@ -2665,6 +2678,8 @@ spieler.thread3 = 0;
                 chosen_Main_Element_Name.setForeground(scl.boostsColor[v]);
                 commbox.setForeground(scl.boostsColor[v]);
                 chosen_Main_Element_Description.setText("Kostet " +  scl.boostsPreis[v] + " coins" );
+                chosen_Main_Element_Description.setForeground(Color.white);
+
                 commbox.setText(scl.inf3[v]);
                 choose_Element.setActionCommand("Boost_Buy");
                 if (inventory.containsKey(chosen_Main_Element_Name.getText())){
@@ -2694,6 +2709,8 @@ spieler.thread3 = 0;
                 chosen_Main_Element_Name.setForeground(scl.swordsColor[v]);
                 commbox.setForeground(scl.swordsColor[v]);
                 chosen_Main_Element_Description.setText(" " +  scl.swordsPreis[v] + " coins" );
+                chosen_Main_Element_Description.setForeground(Color.white);
+
                 commbox.setText(scl.inf[v]);
                 chosen_Main_Element_Name.setBorder(null);
                 choose_Element.setActionCommand("Sword_Equip");
@@ -2724,6 +2741,8 @@ spieler.thread3 = 0;
                 chosen_Main_Element_Name.setForeground(scl.shieldsColor[v]);
                 commbox.setForeground(scl.shieldsColor[v]);
                 chosen_Main_Element_Description.setText(" " +  scl.shieldsPreis[v] + " coins" );
+                chosen_Main_Element_Description.setForeground(Color.white);
+
                 commbox.setText(scl.inf2[v]);
                 choose_Element.setActionCommand("Shield_Equip");
                 chosen_Main_Element_Name.setBorder(null);
@@ -2754,6 +2773,8 @@ spieler.thread3 = 0;
                 chosen_Main_Element_Name.setForeground(scl.boostsColor[v]);
                 commbox.setForeground(scl.boostsColor[v]);
                 chosen_Main_Element_Description.setText(" " +  scl.boostsPreis[v] + " coins" );
+                chosen_Main_Element_Description.setForeground(Color.white);
+
                 commbox.setText(scl.inf3[v]);
 
                 choose_Element.setActionCommand("Boost_Use");
@@ -2785,6 +2806,7 @@ spieler.thread3 = 0;
                 chosen_Main_Element_Name.setForeground(rew.achievementsColor[v]);
                 commbox.setForeground(rew.achievementsColor[v]);
                 chosen_Main_Element_Description.setText(rew.achievementsDifficulty[v]);
+                chosen_Main_Element_Description.setForeground(rew.difficultyColors[v]);
                 chosen_Main_Element_Description.setBorder(null);
                 chosen_Main_Element_Description.setBorder(new LineBorder(Color.black));
                 commbox.setText(" " + rew.achievementsDescription[v]);
