@@ -1922,7 +1922,6 @@ boostB.add(si);
         optionsmenu.add(options_ts);
         frame.setVisible(true);
 
-        spawnEnemy("Enemies", 0, 0, 0);
        // artemisCombat();
 
 
@@ -1990,6 +1989,47 @@ boostB.add(si);
     
 
     java.awt.event.ActionEvent e;
+
+
+    public void openInv(){
+        chosen_Main_Element_Name.setBorder(null);
+
+        eshop_swords.setActionCommand("eInventar_Swords");
+        eshop_shields.setActionCommand("eInventar_Shields");
+        eshop_boosts.setActionCommand("eInventar_Boosts");
+        chosen_Main_Element.setVisible(false);
+
+        for (int o = 0; o < scl.items.length; o++){
+           inventarPanel.getComponent(o).setVisible(false);
+            }
+
+            for (int o = 0; o < scl.schwerte.length; o++){
+                if (inventory.containsKey(scl.items[o])){
+                    inventarPanel.getComponent(o).setVisible(true);
+                }
+                
+            }
+
+        inventarPanel.setVisible(!inventarPanel.isVisible());
+        shop_options.setVisible(!shop_options.isVisible());
+        iPanel.setVisible(inventarPanel.isVisible());
+        achievements.setVisible(!achievements.isVisible());
+iPanel.setText("          Inventar        ");
+
+
+if (shop.isVisible()== true){
+shop.setVisible(false);
+inventarPanel.setVisible(true);
+iPanel.setVisible(true);
+shop_options.setVisible(true);
+iPanel.setText("          Inventar        ");
+commbox.setVisible(false);
+}
+
+if (achievements.isVisible()== true){
+achievements.setVisible(false);
+}
+    }
 
     
 
@@ -2109,43 +2149,7 @@ if (scl.boosts[s] == "Reflection" && chosen_Main_Element_Name.getText() == "Refl
                     }
 
         if (e.getActionCommand() == "eInventar") {
-            chosen_Main_Element_Name.setBorder(null);
-
-            eshop_swords.setActionCommand("eInventar_Swords");
-            eshop_shields.setActionCommand("eInventar_Shields");
-            eshop_boosts.setActionCommand("eInventar_Boosts");
-            chosen_Main_Element.setVisible(false);
-
-            for (int o = 0; o < scl.items.length; o++){
-               inventarPanel.getComponent(o).setVisible(false);
-                }
-
-                for (int o = 0; o < scl.schwerte.length; o++){
-                    if (inventory.containsKey(scl.items[o])){
-                        inventarPanel.getComponent(o).setVisible(true);
-                    }
-                    
-                }
-
-            inventarPanel.setVisible(!inventarPanel.isVisible());
-            shop_options.setVisible(!shop_options.isVisible());
-            iPanel.setVisible(inventarPanel.isVisible());
-            achievements.setVisible(!achievements.isVisible());
-iPanel.setText("          Inventar        ");
-
-
-if (shop.isVisible()== true){
-    shop.setVisible(false);
- inventarPanel.setVisible(true);
- iPanel.setVisible(true);
- shop_options.setVisible(true);
- iPanel.setText("          Inventar        ");
-commbox.setVisible(false);
-}
-
-if (achievements.isVisible()== true){
-    achievements.setVisible(false);
-}
+           openInv();
 
     }
 
@@ -2281,7 +2285,6 @@ if (achievements.isVisible()== true){
 
         if (e.getActionCommand() == "+") {
             upgradeMenu.setVisible(!upgradeMenu.isVisible());
-          spawnEnemy("Enemies", 0, 0, 0);
         }
 
         if (e.getActionCommand() == "PowerUpgrade") {
@@ -3092,6 +3095,45 @@ spieler.thread3 = 0;
     }
 
 
+    public void endEnemy(){
+
+        if (nextPosition1 == "Erster Gegner Kampf"){
+            enemyInfo.setVisible(false);
+enemyImage.setVisible(false);
+enemyInfoDifficulty.setVisible(false);
+enemyInfoHP.setVisible(false);
+enemyInfoImage.setVisible(false);
+enemyInfoName.setVisible(false);
+enemyInfoMainElement.setVisible(false);
+enemyInfoSecondElement.setVisible(false);
+enemyInfoThirdElement.setVisible(false);
+enemyInfoLastElement.setVisible(false);
+
+playerInfo.setVisible(false);
+playerInfoAttack.setVisible(false);
+playerInfoHP.setVisible(false);
+playerInfoHPShield.setVisible(false);
+playerInfoMainElement.setVisible(false);
+playerInfoName.setVisible(false);
+playerInfoPower.setVisible(false);
+playerInfoSecondElement.setVisible(false);
+playerInfoSupportElement.setVisible(false);
+
+fighting_options.setVisible(false);
+fightPlayButton.setVisible(false);
+
+mainTextPanel.setVisible(true);
+optionsPanel.setVisible(true);
+mainTextArea.setText("[DunkleFlamme] wurde besiegt! \n \nDu hast 100 Münzen bekommen! \n \nJe stärker der Gegner ist, desto mehr Münzen bekommst du!");
+option1button.setText("Belohnung fordern!");
+option2button.setText("");
+nextPosition1 = "Anfangpart8";
+nextPosition2 = "";
+
+        }
+    }
+
+
     public void animateElement(String main_element, String second_element, byte n) throws InterruptedException {
 
 
@@ -3200,10 +3242,9 @@ enemyImage.setEnabled(true);
                 spieler.currentEnemyHP -= damg;
                 enemyInfoHP.setText("         "+spieler.currentEnemyHP);
 
-                if (spieler.currentEnemyHP < 0){
+                if (spieler.currentEnemyHP <= 0){
                     spieler.currentEnemyHP = 0;
                    enemyInfoHP.setText("             0");
-
                 }
                 
 Thread.sleep(spieler.t2);
@@ -3236,11 +3277,12 @@ extradamg = 0;
     enemyInfoHP.setText("         "+spieler.currentEnemyHP);
 enemyImage.setEnabled(true);
 
-if (spieler.currentEnemyHP < 0){
+if (spieler.currentEnemyHP <= 0){
     spieler.currentEnemyHP = 0;
    enemyInfoHP.setText("             0");
-
 }
+
+
 
 }
 
@@ -3253,6 +3295,12 @@ if (spieler.currentEnemyHP < 0){
                           Thread.sleep(spieler.t3 * 2);
 
                           enemyAttack();
+
+                          if (spieler.currentEnemyHP <= 0){
+                            spieler.currentEnemyHP = 0;
+                           enemyInfoHP.setText("             0");
+                        endEnemy();
+                        }
 
 for (int xi = 0; xi<= 120; xi++){
     fighting_options.setBounds(38, 1080 - xi*5, 1200, 300);
@@ -3361,11 +3409,11 @@ enemyImage.setEnabled(true);
 
                 spieler.currentEnemyHP -= damg;
                 enemyInfoHP.setText("         "+spieler.currentEnemyHP);
-                if (spieler.currentEnemyHP < 0){
+                if (spieler.currentEnemyHP <= 0){
                     spieler.currentEnemyHP = 0;
                    enemyInfoHP.setText("             0");
-
                 }
+
 Thread.sleep(spieler.t2);
                 if (spieler.powerBoost != 1 && spieler.currentEnemyHP > 0 ){
                     boostDamageText.setBounds(900,480,600,80);
@@ -3398,11 +3446,6 @@ Thread.sleep(spieler.t2);
                     enemyInfoHP.setText("         "+spieler.currentEnemyHP);
 enemyImage.setEnabled(true);
 
-if (spieler.currentEnemyHP < 0){
-    spieler.currentEnemyHP = 0;
-   enemyInfoHP.setText("             0");
-
-}
 
 
 
@@ -3454,6 +3497,12 @@ Thread.sleep(spieler.t3 * 2);
 
 
 enemyAttack();
+
+if (spieler.currentEnemyHP <= 0){
+    spieler.currentEnemyHP = 0;
+   enemyInfoHP.setText("             0");
+   endEnemy();
+}
 
             for (int xi = 0; xi<= 120; xi++){
                 fighting_options.setBounds(38, 1080 - xi*5, 1200, 300);
@@ -3600,10 +3649,9 @@ enemyImage.setEnabled(true);
 
                 spieler.currentEnemyHP -= damg;
                 enemyInfoHP.setText("         "+spieler.currentEnemyHP);
-                if (spieler.currentEnemyHP < 0){
+                if (spieler.currentEnemyHP <= 0){
                     spieler.currentEnemyHP = 0;
                    enemyInfoHP.setText("             0");
-
                 }
 
 
@@ -3640,12 +3688,7 @@ Thread.sleep(spieler.t2);
 
                     enemyInfoHP.setText("         "+spieler.currentEnemyHP);
                     enemyImage.setEnabled(true);
-                        if (spieler.currentEnemyHP < 0){
-                            spieler.currentEnemyHP = 0;
-                           enemyInfoHP.setText("             0");
 
-                        
-                    }
                     
                 }
             
@@ -3659,6 +3702,13 @@ boostDamageText.setVisible(false);
 Thread.sleep(spieler.t3 * 2);
 
 enemyAttack();
+if (spieler.currentEnemyHP <= 0){
+    spieler.currentEnemyHP = 0;
+   enemyInfoHP.setText("             0");
+
+   endEnemy();
+
+}
 
           for (int xi = 0; xi<= 120; xi++){
             fighting_options.setBounds(38, 1080 - xi*5, 1200, 300);
@@ -3759,9 +3809,10 @@ enemyAttack();
                          spieler.currentEnemyHP -= damg;
 
                          enemyInfoHP.setText("         "+spieler.currentEnemyHP);
-                         if (spieler.currentEnemyHP < 0){
+                         if (spieler.currentEnemyHP <= 0){
                             spieler.currentEnemyHP = 0;
                            enemyInfoHP.setText("             0");
+                           endEnemy();
 
                         }
          Thread.sleep(spieler.t2);
@@ -3795,11 +3846,6 @@ enemyAttack();
                              
          enemyImage.setEnabled(true);
 
-         if (spieler.currentEnemyHP < 0){
-            spieler.currentEnemyHP = 0;
-           enemyInfoHP.setText("             0");
-
-        }
                   
 
 
@@ -3814,6 +3860,13 @@ enemyAttack();
 
                             Thread.sleep(spieler.t3 * 2);
 enemyAttack();
+
+if (spieler.currentEnemyHP <= 0){
+    spieler.currentEnemyHP = 0;
+   enemyInfoHP.setText("             0");
+   endEnemy();
+
+}
 
                             for (int xi = 0; xi<= 120; xi++){
                               fighting_options.setBounds(38, 1080 - xi*5, 1200, 300);
@@ -3963,7 +4016,7 @@ damageText.setBounds(900, 480, 600, 80);
                      spieler.currentEnemyHP -= damg;
 
                      enemyInfoHP.setText("         "+spieler.currentEnemyHP);
-                     if (spieler.currentEnemyHP < 0){
+                     if (spieler.currentEnemyHP <= 0){
                         spieler.currentEnemyHP = 0;
                        enemyInfoHP.setText("             0");
 
@@ -3997,11 +4050,6 @@ damageText.setBounds(900, 480, 600, 80);
                          
      enemyImage.setEnabled(true);
 
-     if (spieler.currentEnemyHP < 0){
-        spieler.currentEnemyHP = 0;
-       enemyInfoHP.setText("             0");
-
-    }
               
 
 
@@ -4016,6 +4064,13 @@ damageText.setBounds(900, 480, 600, 80);
                         Thread.sleep(spieler.t3 * 2);
 
                         enemyAttack();
+
+                        if (spieler.currentEnemyHP <= 0){
+                            spieler.currentEnemyHP = 0;
+                           enemyInfoHP.setText("             0");
+                           endEnemy();
+                    
+                        }
                         
                         for (int xi = 0; xi<= 120; xi++){
                           fighting_options.setBounds(38, 1080 - xi*5, 1200, 300);
@@ -4162,10 +4217,10 @@ damageText.setBounds(900, 480, 600, 80);
                                 spieler.currentEnemyHP -= damg;
            
                                 enemyInfoHP.setText("         "+spieler.currentEnemyHP);
-                                if (spieler.currentEnemyHP < 0){
+                                if (spieler.currentEnemyHP <= 0){
                                    spieler.currentEnemyHP = 0;
                                   enemyInfoHP.setText("             0");
-           
+
                                }
                 Thread.sleep(spieler.t2);
                                 if (spieler.powerBoost != 1 && spieler.currentEnemyHP > 0 ){
@@ -4196,11 +4251,6 @@ damageText.setBounds(900, 480, 600, 80);
                                     
                 enemyImage.setEnabled(true);
            
-                if (spieler.currentEnemyHP < 0){
-                   spieler.currentEnemyHP = 0;
-                  enemyInfoHP.setText("             0");
-           
-               }
                          
            
            
@@ -4215,6 +4265,14 @@ damageText.setBounds(900, 480, 600, 80);
                                    Thread.sleep(spieler.t3 * 2);
 
                                    enemyAttack();
+
+                                   if (spieler.currentEnemyHP <= 0){
+                                    spieler.currentEnemyHP = 0;
+                                   enemyInfoHP.setText("             0");
+                                   endEnemy();
+                 
+                                }
+
                                    for (int xi = 0; xi<= 120; xi++){
                                      fighting_options.setBounds(38, 1080 - xi*5, 1200, 300);
                                      Thread.sleep(spieler.t1);
@@ -4335,10 +4393,9 @@ damageText.setBounds(900, 480, 600, 80);
                                         spieler.currentEnemyHP -= damg;
                    
                                         enemyInfoHP.setText("         "+spieler.currentEnemyHP);
-                                        if (spieler.currentEnemyHP < 0){
+                                        if (spieler.currentEnemyHP <= 0){
                                            spieler.currentEnemyHP = 0;
                                           enemyInfoHP.setText("             0");
-                   
                                        }
 
                         Thread.sleep(spieler.t2);
@@ -4371,11 +4428,6 @@ damageText.setBounds(900, 480, 600, 80);
                                             
                         enemyImage.setEnabled(true);
                    
-                        if (spieler.currentEnemyHP < 0){
-                           spieler.currentEnemyHP = 0;
-                          enemyInfoHP.setText("             0");
-                   
-                       }
                                  
                    
                    
@@ -4391,6 +4443,13 @@ damageText.setBounds(900, 480, 600, 80);
                                            Thread.sleep(spieler.t3 * 2);
 
                                            enemyAttack();
+
+                                           if (spieler.currentEnemyHP <= 0){
+                                            spieler.currentEnemyHP = 0;
+                                           enemyInfoHP.setText("             0");
+                                           endEnemy();
+                 
+                                        }
 
                                            for (int xi = 0; xi<= 120; xi++){
                                              fighting_options.setBounds(38, 1080 - xi*5, 1200, 300);
@@ -4557,10 +4616,10 @@ elementImage.setVisible(false);
                             spieler.currentEnemyHP -= (damg * 3);
        
                             enemyInfoHP.setText("         "+spieler.currentEnemyHP);
-                            if (spieler.currentEnemyHP < 0){
+                            if (spieler.currentEnemyHP <= 0){
                                spieler.currentEnemyHP = 0;
                               enemyInfoHP.setText("             0");
-       
+
                            }
             Thread.sleep(spieler.t2);
                             if (spieler.powerBoost != 1 && spieler.currentEnemyHP > 0 ){
@@ -4594,11 +4653,6 @@ elementImage.setVisible(false);
                                 
             enemyImage.setEnabled(true);
        
-            if (spieler.currentEnemyHP < 0){
-               spieler.currentEnemyHP = 0;
-              enemyInfoHP.setText("             0");
-       
-           }
                      
        
        
@@ -4614,6 +4668,13 @@ elementImage.setVisible(false);
                                Thread.sleep(spieler.t3 * 2);
 
                                enemyAttack();
+
+                               if (spieler.currentEnemyHP <= 0){
+                                spieler.currentEnemyHP = 0;
+                               enemyInfoHP.setText("             0");
+                               endEnemy();
+                 
+                            }
 
                                for (int xi = 0; xi<= 120; xi++){
                                  fighting_options.setBounds(38, 1080 - xi*5, 1200, 300);
@@ -4718,10 +4779,9 @@ enemyImage.setEnabled(true);
 
             spieler.currentEnemyHP -= damg;
             enemyInfoHP.setText("         "+spieler.currentEnemyHP);
-            if (spieler.currentEnemyHP < 0){
+            if (spieler.currentEnemyHP <= 0){
                 spieler.currentEnemyHP = 0;
                enemyInfoHP.setText("             0");
-
             }
 Thread.sleep(spieler.t2);
             if (spieler.powerBoost != 1 && spieler.currentEnemyHP > 0 ){
@@ -4759,11 +4819,6 @@ extradamg = 0;
                 enemyInfoHP.setText("         "+spieler.currentEnemyHP);
 enemyImage.setEnabled(true);
 
-if (spieler.currentEnemyHP < 0){
-spieler.currentEnemyHP = 0;
-enemyInfoHP.setText("             0");
-
-}
             }
         }
 
@@ -4771,6 +4826,13 @@ enemyInfoHP.setText("             0");
         Thread.sleep(spieler.t3 * 2);
 
         enemyAttack();
+
+        if (spieler.currentEnemyHP <= 0){
+            spieler.currentEnemyHP = 0;
+            enemyInfoHP.setText("             0");
+            endEnemy();
+            
+            }
 
 
 for (int xi = 0; xi<= 120; xi++){
@@ -5000,8 +5062,9 @@ element = "Cosmic";
             reflectedDamgeText.setText("" + damg2 + " Reflektierte Schaden");
             spieler.currentEnemyHP -= damg2;
             enemyInfoHP.setText("         " + spieler.currentEnemyHP + "");
-            if (spieler.currentEnemyHP < 0){
+            if (spieler.currentEnemyHP <= 0){
                 enemyInfoHP.setText("             0");
+                endEnemy();
 
             }
             Thread.sleep(spieler.t3 + 200);
@@ -5633,6 +5696,41 @@ enemyImage.setBounds(500,280,400,400);
 
 enemyImage.setForeground(en.enemyColors[0]);
 
+
+
+enemyImage.setBounds(500,280,400,400);
+
+enemyImage.setForeground(en.enemyColors[0]);
+
+
+enemyInfo.setVisible(true);
+enemyImage.setVisible(true);
+enemyInfoDifficulty.setVisible(true);
+enemyInfoHP.setVisible(true);
+enemyInfoImage.setVisible(true);
+enemyInfoName.setVisible(true);
+enemyInfoMainElement.setVisible(true);
+enemyInfoSecondElement.setVisible(true);
+enemyInfoThirdElement.setVisible(true);
+enemyInfoLastElement.setVisible(true);
+
+playerInfo.setVisible(true);
+playerInfoAttack.setVisible(true);
+playerInfoHP.setVisible(true);
+//playerInfoHPProgress.setVisible(true);
+playerInfoHPShield.setVisible(true);
+playerInfoMainElement.setVisible(true);
+playerInfoName.setVisible(true);
+playerInfoPower.setVisible(true);
+playerInfoSecondElement.setVisible(true);
+playerInfoSupportElement.setVisible(true);
+
+fighting_options.setVisible(true);
+fightPlayButton.setVisible(true);
+
+
+
+
         }
 
         if (File == "Bosses"){
@@ -5671,11 +5769,30 @@ enemyInfoName.setText("  "+en.bosses[Index]+"  ");
 
 enemyInfoHP.setText("          " +en.bossesHP[Index]);
 
+enemyInfo.setVisible(true);
+enemyImage.setVisible(true);
+enemyInfoDifficulty.setVisible(true);
+enemyInfoHP.setVisible(true);
+enemyInfoImage.setVisible(true);
+enemyInfoName.setVisible(true);
+enemyInfoMainElement.setVisible(true);
+enemyInfoSecondElement.setVisible(true);
+enemyInfoThirdElement.setVisible(true);
+enemyInfoLastElement.setVisible(true);
 
+playerInfo.setVisible(true);
+playerInfoAttack.setVisible(true);
+playerInfoHP.setVisible(true);
+//playerInfoHPProgress.setVisible(true);
+playerInfoHPShield.setVisible(true);
+playerInfoMainElement.setVisible(true);
+playerInfoName.setVisible(true);
+playerInfoPower.setVisible(true);
+playerInfoSecondElement.setVisible(true);
+playerInfoSupportElement.setVisible(true);
 
-
-
-
+fighting_options.setVisible(true);
+fightPlayButton.setVisible(true);
 
 
         }
@@ -6634,18 +6751,18 @@ achievementDif.setVisible(false);
     
     nextPosition1="Anfangpart4";
     
-    nextPosition2="Lastpart4";
+    nextPosition2="";
     nextPosition3="";
     nextPosition4="";
 
     }
 
     public void Anfangpart5(){
-        mainTextArea.setText("(Du willst dich gerade auf dem Weg zu dem Tempel machen; da unterbricht dich der alte Mann.) \n \"Warte! * schau bevor du gehst, nimm das hier, es wird dir helfen. *Huste *Huste\" ");
+        mainTextArea.setText("(Du willst dich gerade auf dem Weg zu dem Tempel machen; da unterbricht dich der alte Mann.) \n \n \"Warte! * schau bevor du gehst, nimm das hier, es wird dir helfen. *Huste *Huste\" ");
     
         option1button.setText("Hilfe nehmen");
      
-        option2button.setText("");
+        option2button.setText("zurück");
     
         option3button.setText("");
     
@@ -6655,8 +6772,8 @@ achievementDif.setVisible(false);
     
     nextPosition1="Anfangpart6";
     
-    nextPosition2="";
-    nextPosition3="";
+    nextPosition2="Anfangpart4";
+    nextPosition3="Auftragangenommen";
     nextPosition4="";
 
     }
@@ -6673,41 +6790,122 @@ achievementDif.setVisible(false);
             case "Anfangpart3":DerAnfangpart3();break;
 
             case "Anfangpart4":
-            mainTextArea.setText("Du fragst den alten Mann wo du die Tempel denn findest. \n \"Nicht weit von hier, *Huste *Huste ca. 3 Kilometer östlich ist ein Tempel, den du besuchen kannst. *Huste *Huste Mann diese verdammte *Huste *Huste. WRRRYYYY!\"");
+            mainTextArea.setText("(Du fragst den alten Mann, wo du den Tempel findest.) \n \n \"Nicht weit von hier, *Huste *Huste ca. 3 Kilometer östlich ist ein Tempel, den du besuchen kannst. *Huste *Huste Mann diese verdammte *Huste *Huste. WRRRYYYY!\"");
             option2button.setText("zurück");
             nextPosition1 = "Anfangpart5";
+            nextPosition2 = "Auftragangenommen";
           //  Anfangpart5();
             ;break;
 
             case "Anfangpart5":Anfangpart5();break;
 
             case "Anfangpart6":
-            mainTextArea.setText(spieler.playerName + " erhält Standard Schwert\n" + spieler.playerName + " erhält Standard Schild\n" + spieler.playerName + " erhält Heal elixir ");
-            inventory.put("Standard sword", 1);
-            nextPosition2 = "";
-            option2button.setText("");
+            mainTextArea.setText(spieler.playerName + " erhält Standard Schwert\n" + spieler.playerName + " erhält Standard Schild\n" + spieler.playerName + " erhält Heal elixir \n \"Das wird dir helfen. *Huste. Dein Schild bestimmt deine HP und dein Schwert bestimmt deine Schaden. *Huste. \nViel Erfolg\"");
+            option1button.setText("weiter");
+            option2button.setText("Inventar öffnen");
+            option3button.setText("Sachen equippen");
+            inventory.putIfAbsent(scl.schwerte[0], 1);
+            inventory.putIfAbsent(scl.schilder[0], 1);
+            inventory.putIfAbsent(scl.boosts[1], 1);
+
             nextPosition1 = "Anfangpart7";
+            nextPosition2 = "InventarÖffnen";
+            nextPosition3 = "Sachen Equippen"
+            
             ;break;
 
             case "Anfangpart7":
-            option1button.setText("weiter");
+            mainTextArea.setText("Ihe verabschiedet euch und du machs dich auf dem Weg zu dem Tempel. Es dauert nicht lange, bis du ankommst. \nVor dir steht er also, der Tempel von deinem ersten Geger");
+            option1button.setText("Tempel betreten");
             option2button.setText("zurück");
-            option3button.setText("Inventar öffnen");
-            option4button.setText("Sachen equippen");
-            nextPosition2 = "Lastpart6"
+            option3button.setText("");
+            nextPosition1 = "Tempel betreten";
+            nextPosition2 = "Anfangpart6";
+            nextPosition3 = "";
             ;break;
 
-
-            case "Lastpart4": Auftragangenommen(); break;
-            case "Lastpart5":
-            mainTextArea.setText("Du fragst den alten Mann wo du die Tempel denn findest. \n \"Nicht weit von hier, *Huste *Huste ca. 3 Kilometer östlich ist ein Tempel, den du besuchen kannst. *Huste *Huste Mann diese verdammte *Huste *Huste. WRRRYYYY!\"");
+            case "Anfangpart8":
+            mainTextArea.setText("Erneut versuchst du die Tür zu öffnen, es funktioniert. \n\nVor dir steht also eine Frau mit weißen Gewändern, und einem silbernen Bogen");
+            option1button.setText("Tempel betreten");
             option2button.setText("zurück");
+            option3button.setText("");
+            nextPosition1 = "Anfangpart9";
+            nextPosition2 = "Last1";
+            nextPosition3 = "";
+            ;break;
+
+            case "Anfangpart9":
+            mainTextArea.setText("Du wagst es also, mich herauszufordern? Ich bin Artemis, Ich bin die .. der Jagd, Tochter von Zeus und zwillingsschwester von Apollon. Und du, du bist nur ein Niemand. Du wirst es bereuen, den Auftrag angenommen zu haben");
+            option1button.setText("Kampf beginnen");
+            option2button.setText("zurück");
+            option3button.setText("");
+            nextPosition1 = "Anfangpart9";
+            nextPosition2 = "Anfangpart8";
+            nextPosition3 = "";
+
+
+
+            ;break;
+
+            case "Last1":; 
+            mainTextArea.setText("[DunkleFlamme] wurde besiegt! \n \nDu hast 100 Münzen bekommen! \n \nJe stärker der Gegner ist, desto mehr Münzen bekommst du!");
+option1button.setText("Belohnung fordern!");
+option2button.setText("");
+nextPosition1 = "Anfangpart8";
+nextPosition2 = "";            
+break;  
+
+            case "InventarÖffnen": openInv(); 
+            mainTextPanel.setVisible(false);
+            break;
+
+            case "Sachen Equippen":; 
+
+           
+            playerInfoPower.setForeground(scl.swordsColor[0]);
+                    playerInfoPower.setText(scl.swordsPower[0] + "x");
+                    spieler.powerBoostIcon = scl.i[0];
+                    spieler.powerBoost = scl.swordsPower[0];
+                    boostDamageText.setForeground(scl.swordsColor[0]);
+                    playerInfoPower.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Swords\\Standard Schwert.png").getImage().getScaledInstance(25, 25, Image.SCALE_AREA_AVERAGING)));
+                    spieler.powerBoostName = "Standard Schwert";
+                    choose_Element.setText(" Equipped ");
+
+                        
+                            playerInfoHPShield.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Shields\\Standard shield.png").getImage().getScaledInstance(25, 25, Image.SCALE_AREA_AVERAGING)));
+                            spieler.hpBoostName = "Standard Shield";
+                                        choose_Element.setText(" Equipped ");
+                                        mainTextArea.setText(" Sachen wurden erfolgreich ausgerüstet");
+            break;
+
+
+            case "Tempel betreten":
+            mainTextArea.setText("Du gehst in den Tempel, die ganzen Besucher, die eben noch überall waren sind wie vom Erdboden verschluckt. \n \n Du siehst eine Tür am Ende des Raumes, du läufst auf sie zu, aber sie geht nicht auf. An der Tür steht eingraviert; \"Besiege die Gegner, damit sich die Tür öffnet\" \n \n Du drehst dich wieder um");
             option1button.setText("weiter");
-            nextPosition2 = "Lastpart4";
-            nextPosition1 = "Anfangpart5"
-          //  nextPosition1 = "Anfangpart5";
-           // Anfangpart5();
-            ; break;
+            option2button.setText("zurück");
+            option3button.setText("");
+            nextPosition1 = "Erster Gegner";
+            nextPosition2 = "Anfangpart7";
+
+            ;break;
+
+            case "Erster Gegner":
+            mainTextArea.setText("[DunkleFlamme] ist erschienen!");
+            option1button.setText("Kampf beginnen");
+            option2button.setText("");
+            option3button.setText("");
+            nextPosition1 = "Erster Gegner Kampf";
+            nextPosition2 = "";
+
+            ;break;
+
+            case "Erster Gegner Kampf":
+            mainTextPanel.setVisible(false);
+            optionsPanel.setVisible(false);
+
+            spawnEnemy("Enemies", 0, 0, 0);
+            ;break;
+
 
 
     
