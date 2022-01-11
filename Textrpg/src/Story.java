@@ -23,6 +23,8 @@ public class Story implements ActionListener {
     Shop scl = new Shop();
     Achievements rew = new Achievements();
 
+    String text,nextPosition1,nextPosition2,nextPosition3,nextPosition4;
+
 
 
 
@@ -43,6 +45,14 @@ public class Story implements ActionListener {
    JLabel achievementN;
    JTextArea achievementD;
    JLabel achievementDif;
+
+   JPanel mainTextPanel;
+   JTextArea mainTextArea;
+   JButton option1button;
+   JButton option2button;
+   JButton option3button;
+   JButton option4button;
+   JPanel optionsPanel;
 
     static JLabel l;
     static JLabel i1;
@@ -232,7 +242,6 @@ JLabel self_HealText;
         frame.setUndecorated(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-
         byte RG = 127;
         panel1 = new JPanel();
         panel1.setBounds(800, 200, 350, 100);
@@ -275,6 +284,123 @@ JLabel self_HealText;
         l.setVisible(false);
         l.setFocusable(false);
 
+        optionsPanel = new JPanel();
+
+        optionsPanel.setBounds(300,560,600,100);
+
+        optionsPanel.setLayout(new GridLayout(2,2));
+
+        frame.add(optionsPanel);
+       
+
+        mainTextPanel = new JPanel();
+
+        mainTextPanel.setBounds(200,135,850,400);
+
+        mainTextPanel.setBackground(Color.black);
+        mainTextPanel.setBorder(new LineBorder(Color.white));
+
+        mainTextPanel.setVisible(false);
+
+frame.add(mainTextPanel);       
+       
+
+        mainTextArea= new JTextArea();
+
+        mainTextArea.setBounds(200,185,825,400);
+
+        mainTextArea.setForeground(Color.white);
+
+        mainTextArea.setFont(new Font("Times new Roman", Font.PLAIN, 35));
+
+        mainTextArea.setWrapStyleWord(true);
+
+        mainTextArea.setLineWrap(true);
+
+        mainTextArea.setBackground(Color.black);
+mainTextArea.setOpaque(false);
+
+        mainTextArea.setEditable(false);
+        mainTextArea.setVisible(true);
+
+        frame.add(mainTextArea);
+
+
+        mainTextPanel.add(mainTextArea);
+
+        
+        option1button =new JButton("choice1");
+
+        option1button.setBackground(Color.black);
+
+        option1button.setForeground(Color.white);
+
+        option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+
+
+        option1button.setFocusPainted(false);
+
+        option1button.addActionListener(this);
+
+        option1button.setActionCommand("o1");
+
+        optionsPanel.add(option1button);
+
+       
+
+        option2button =new JButton("choice2");
+
+        option2button.setBackground(Color.black);
+
+        option2button.setForeground(Color.white);
+
+        option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+
+        option2button.setFocusPainted(false);
+
+        option2button.addActionListener(this);
+
+        option2button.setActionCommand("o2");
+
+        optionsPanel.add(option2button);
+
+
+        option3button=new JButton("choice3");
+
+        option3button.setBackground(Color.black);
+
+        option3button.setForeground(Color.white);
+
+        option3button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+
+
+        option3button.setFocusPainted(false);
+
+        option3button.addActionListener(this);
+
+        option3button.setActionCommand("o3");
+
+        optionsPanel.add(option3button);
+
+       
+
+        option4button=new JButton("choice4");
+
+        option4button.setBackground(Color.black);
+
+        option4button.setForeground(Color.white);
+
+        option4button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+
+
+        option4button.setFocusPainted(false);
+
+        option4button.addActionListener(this);
+
+        option4button.setActionCommand("o4");
+
+
+        optionsPanel.add(option4button);
 
         moon_Artemis = new JLabel();
         moon_Artemis.setForeground(new Color(255, 0, 160));
@@ -728,7 +854,7 @@ JLabel self_HealText;
        fightPlayButton.setFont(new Font("Times new Roman", Font.PLAIN, 60));
        fightPlayButton.setBounds(150, 250, 240, 160);
        fightPlayButton.setBackground(Color.black);
-       fightPlayButton.setVisible(true);
+       fightPlayButton.setVisible(false);
        fightPlayButton.setOpaque(false);
        fightPlayButton.setFocusable(false);
 
@@ -792,9 +918,6 @@ JLabel self_HealText;
                                                 .getScaledInstance(55, 50, Image.SCALE_AREA_AVERAGING)));
 
                                                         frame.add(fighting_options);
-                                                        fighting_options.add(inventarButton);
-                                                        inventarButton.add(einventar);
-                                                        einventar.add(iInventar);
 
                                                         reflectedDamgeImage = new JLabel();
                                                         reflectedDamgeImage.setForeground(new Color(255, 255, 255));
@@ -810,9 +933,6 @@ JLabel self_HealText;
                                                                  frame.add(reflectedDamgeImage);
                  
                                                                          frame.add(fighting_options);
-                                                                         fighting_options.add(inventarButton);
-                                                                         inventarButton.add(einventar);
-                                                                         einventar.add(iInventar);
 
 
        ePlayButton.add(ifightPlayButton);
@@ -1324,7 +1444,7 @@ enemyImage.setVisible(false);
 
 
 playerInfo = new JPanel();
-playerInfo.setVisible(true);
+playerInfo.setVisible(false);
 playerInfo.setOpaque(false);
 playerInfo.setFocusable(false);
 playerInfo.setBounds(0, 110, 500, 150);
@@ -1334,17 +1454,21 @@ playerInfoName = new JLabel("");
 playerInfoName.setBounds(75,120,300,40);
 playerInfoName.setForeground(Color.white);
 playerInfoName.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+playerInfoName.setVisible(false);
 
 playerInfoHP = new JLabel("           " + spieler.Health);
 playerInfoHP.setBounds(75,170,220,40);
 playerInfoHP.setForeground(new Color(120,120,120));
 playerInfoHP.setFont(new Font("Times new Roman", Font.PLAIN, 30));
 playerInfoHP.setBorder(new LineBorder(Color.white));
+playerInfoHP.setVisible(false);
 
 playerInfoPower = new JLabel("1x");
 playerInfoPower.setBounds(75,210,220,40);
 playerInfoPower.setForeground(new Color(120,120,120));
 playerInfoPower.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+playerInfoPower.setVisible(false);
+
 
 playerInfoHPShield = new JLabel();
 playerInfoHPShield.setBounds(80,170,80,40);
@@ -1352,6 +1476,7 @@ playerInfoHPShield.setForeground(new Color(255,150,0));
 playerInfoHPShield.setBackground(new Color(255,150,0));
 playerInfoHPShield.setFont(new Font("Times new Roman", Font.PLAIN, 30));
 playerInfoHPShield.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Shields\\Standard shield.png").getImage().getScaledInstance(25, 25, Image.SCALE_AREA_AVERAGING)));
+playerInfoHPShield.setVisible(false);
 
 
 playerInfoMainElement = new JLabel();
@@ -1359,18 +1484,22 @@ playerInfoMainElement.setBounds(300,215,40,40);
 playerInfoMainElement.setForeground(Color.red);
 playerInfoMainElement.setFont(new Font("Times new Roman", Font.PLAIN, 30));
 playerInfoMainElement.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\" + spieler.Main_Element +".png").getImage().getScaledInstance(40, 40, Image.SCALE_AREA_AVERAGING)));
+playerInfoMainElement.setVisible(false);
  
+
 playerInfoSecondElement = new JLabel();
 playerInfoSecondElement.setBounds(345,215,40,40);
 playerInfoSecondElement.setForeground(Color.red);
 playerInfoSecondElement.setFont(new Font("Times new Roman", Font.PLAIN, 30));
 playerInfoSecondElement.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\" + spieler.Second_Element +".png").getImage().getScaledInstance(40, 40, Image.SCALE_AREA_AVERAGING)));
+playerInfoSecondElement.setVisible(false);
 
 playerInfoAttack = new JLabel();
 playerInfoAttack.setBounds(390,215,40,40);
 playerInfoAttack.setForeground(Color.red);
 playerInfoAttack.setFont(new Font("Times new Roman", Font.PLAIN, 30));
 playerInfoAttack.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Others\\Damage.png").getImage().getScaledInstance(40, 40, Image.SCALE_AREA_AVERAGING)));
+playerInfoAttack.setVisible(false);
 
 playerInfoSupportElement = new JLabel();
 playerInfoSupportElement.setBounds(435,215,40,40);
@@ -1447,7 +1576,7 @@ achievements.setForeground(new Color(255, 0, 150));
 achievements.setFont(new Font("Times new Roman", Font.PLAIN, 60));
 achievements.setBounds(440, 130, 500, 400);
 achievements.setBackground(Color.black);
-achievements.setVisible(true);
+achievements.setVisible(false);
 achievements.setFocusable(false);
 achievements.setBorder(new LineBorder(Color.white));
 
@@ -1541,7 +1670,7 @@ iPanel.setBorder(new LineBorder(Color.white));
 
 
 
-/*
+
 chosen_Main_Element.setVisible(false);
 fighting_options.setVisible(false);
 enemyInfo.setVisible(false);
@@ -1553,7 +1682,7 @@ enemyImage.setVisible(false);
 enemyInfoName.setVisible(false);
 enemyInfoMainElement.setVisible(false);
 enemyInfoSecondElement.setVisible(false);
-*/
+
 swordsMenu = new JPanel();
 swordsMenu.setForeground(new Color(255, 0, 150));
 swordsMenu.setFont(new Font("Times new Roman", Font.PLAIN, 60));
@@ -1803,7 +1932,6 @@ boostB.add(si);
             Loading();
             Thread TH = new Thread();
             TH.sleep(1000);
-             System.out.println("x");
             if (l.isVisible() == true) {
                 Loading();
                 l.setVisible(false);
@@ -2217,8 +2345,16 @@ if (achievements.isVisible()== true){
 
         if (e.getActionCommand() == "startb") {
 
-            l.setVisible(!l.isVisible());
+         //   l.setVisible(!l.isVisible());
 
+
+       // optionsPanel.setVisible(true);
+
+        //option1button.setVisible(true);
+
+        texarea.setVisible(true);
+confirmName.setVisible(true);
+commbox.setVisible(false);
             startname.setVisible(false);
              option1.setVisible(false);
             option2.setVisible(false);
@@ -2255,19 +2391,53 @@ if (achievements.isVisible()== true){
         if (e.getActionCommand() == "ConfirmName") {
            spieler.playerName = texarea.getText();
            playerInfoName.setText(spieler.playerName);
-           elementsMenu.setVisible(true);
+          // elementsMenu.setVisible(true);
 texarea.setVisible(false);
 confirmName.setVisible(false);
 texarea.setEditable(false);
-commbox.setVisible(true);
+//commbox.setVisible(true);
 option1.setVisible(false);
 fighting_options.setVisible(false);
 choose_Element.setActionCommand("Main_Choose");
+
+commbox.setText("Welcome " + spieler.playerName + ", your name is terrible");
+mainTextPanel.setVisible(true);
+mainTextArea.setVisible(true);
+DerAnfang();
+
         }
 
         if (e.getActionCommand().equals("options_c")) {
 
             frame.setVisible(false);
+
+        }
+
+        if (e.getActionCommand().equals("o1")) {
+
+            selectposition(nextPosition1);
+            
+
+        }
+
+        if (e.getActionCommand().equals("o2")) {
+
+            selectposition(nextPosition2);
+            
+
+        }
+
+        if (e.getActionCommand().equals("o3")) {
+
+            selectposition(nextPosition3);
+            
+
+        }
+
+        if (e.getActionCommand().equals("o4")) {
+
+            selectposition(nextPosition4);
+            
 
         }
 
@@ -5138,6 +5308,7 @@ element = "Cosmic";
 
     int uit;
 
+
     public void animateText(String message, JLabel tex, JTextArea a, int w, String standardText)
             throws InterruptedException {
 
@@ -5146,9 +5317,11 @@ element = "Cosmic";
             tex.setText("");
             if (standardText != null) {
                 tex.setText(standardText);
+                System.out.print(standardText);
             }
             for (Byte m1 = 0; m1 < message.length(); m1++) {
                 tex.setText(tex.getText() + message.charAt(m1));
+                System.out.print(message.charAt(m1));
                 Thread.sleep(w);
             }
 
@@ -5168,6 +5341,9 @@ element = "Cosmic";
         }
 
     }
+
+
+    
 
     public void startb() throws InterruptedException {
         panel3.setVisible(true);
@@ -6370,6 +6546,188 @@ achievementDif.setVisible(false);
     }
 
 
+
+
+
+
+    public void DerAnfang(){
+
+
+
+        mainTextArea.setText("Nun "+spieler.playerName+" sind sie bereit für ihr erstes Abenteuer.\n\n\nDu bist ein einfacher Tourist der die Stadt Athen besucht\n\nMöge deine Geschichte beginnen...");
+         option1button.setText("weiter");
+     
+         option2button.setText("");
+     
+         option3button.setText("");
+     
+         option4button.setText("");
+     
+        
+     
+     nextPosition1="Anfangpart2";
+     
+     nextPosition2="";
+     nextPosition3="";
+     nextPosition4="";
+     
+     }
+
+     public void DerAnfangpart2(){
+
+          mainTextArea.setText("Seelenruhig läufst du durch die Straßen von Athen, die Kopfhörer im Ohr und den Blick aufs Meer gerichtet.Du bleibst stehen, beobachtest wie die Wellen den Sandstrand hochwandern, bis sie wieder zurückwandern, immer so weiter. \n\nDie Idylle wird von einem alten gebrechlichen Mann unterbrochen, der möchte dass du für ihn einen Auftrag erledigst.");
+      
+      nextPosition1="Anfangpart3";
+      
+      
+      
+      }
+
+
+      public void DerAnfangpart3(){
+    
+          mainTextArea.setText(" Er möchte, dass… du für ihn den Olymp stürzt.Versuche Zeus seine Aufmerksamkeit zu erregen, indem du Götter oder Bestien besiegst, er wird dich dann in seinen Tempel einladen. Ob du sie nach dem Kampf tötest oder am Leben lässt entscheidest du selber *Huste *Huste Uaah. Verwirrt schaust du den alten Mann an.\n\n Willst du den Auftrag annehmen?");
+      
+          option1button.setText("Ja");
+      
+          option2button.setText("Nein");
+      
+      
+      
+          nextPosition1="Auftragangenommen";
+      
+          nextPosition2="AuftragannehmenNein";
+      
+      
+      
+      }
+
+      public void DerAnfangende(){
+
+        mainTextArea.setText("Enttäuscht schaut dich der alte Mann an. Stöhnend und hustend geht er weg.\n\nDein Urlaub geht ganz normal weiter");
+    
+        option1button.setText("Spiel beenden");
+        option2button.setText("Meinung ändern");
+
+        
+       
+    
+     nextPosition1="Beenden";
+    
+    nextPosition2="Meinung ändern";
+    
+    }
+    
+
+    public void Auftragangenommen(){
+        mainTextArea.setText("(Du bemerkst dass die Götter dich ab jetzt beobachten.) \n \"Wirklich? Uah Uah Endlich! *Huste *Huste. Suche in den antiken Tempeln der Griechen. Dort befinden sich Götter. Falls du sie besiegst, sagen sie dir vielleicht wo Zeus ist. *Huste *Huste\" ");
+    
+        option1button.setText("weiter");
+     
+        option2button.setText("");
+    
+        option3button.setText("");
+    
+        option4button.setText("");
+    
+       
+    
+    nextPosition1="Anfangpart4";
+    
+    nextPosition2="Lastpart4";
+    nextPosition3="";
+    nextPosition4="";
+
+    }
+
+    public void Anfangpart5(){
+        mainTextArea.setText("(Du willst dich gerade auf dem Weg zu dem Tempel machen; da unterbricht dich der alte Mann.) \n \"Warte! * schau bevor du gehst, nimm das hier, es wird dir helfen. *Huste *Huste\" ");
+    
+        option1button.setText("Hilfe nehmen");
+     
+        option2button.setText("");
+    
+        option3button.setText("");
+    
+        option4button.setText("");
+    
+       
+    
+    nextPosition1="Anfangpart6";
+    
+    nextPosition2="";
+    nextPosition3="";
+    nextPosition4="";
+
+    }
+
+
+    public void selectposition(String nextPosition){
+
+        switch(nextPosition){
+    
+            case "Auftragannehmen":break;
+    
+            case "Anfangpart2":DerAnfangpart2();break;
+    
+            case "Anfangpart3":DerAnfangpart3();break;
+
+            case "Anfangpart4":
+            mainTextArea.setText("Du fragst den alten Mann wo du die Tempel denn findest. \n \"Nicht weit von hier, *Huste *Huste ca. 3 Kilometer östlich ist ein Tempel, den du besuchen kannst. *Huste *Huste Mann diese verdammte *Huste *Huste. WRRRYYYY!\"");
+            option2button.setText("zurück");
+            nextPosition1 = "Anfangpart5";
+          //  Anfangpart5();
+            ;break;
+
+            case "Anfangpart5":Anfangpart5();break;
+
+            case "Anfangpart6":
+            mainTextArea.setText(spieler.playerName + " erhält Standard Schwert\n" + spieler.playerName + " erhält Standard Schild\n" + spieler.playerName + " erhält Heal elixir ");
+            inventory.put("Standard sword", 1);
+            nextPosition2 = "";
+            option2button.setText("");
+            nextPosition1 = "Anfangpart7";
+            ;break;
+
+            case "Anfangpart7":
+            option1button.setText("weiter");
+            option2button.setText("zurück");
+            option3button.setText("Inventar öffnen");
+            option4button.setText("Sachen equippen");
+            nextPosition2 = "Lastpart6"
+            ;break;
+
+
+            case "Lastpart4": Auftragangenommen(); break;
+            case "Lastpart5":
+            mainTextArea.setText("Du fragst den alten Mann wo du die Tempel denn findest. \n \"Nicht weit von hier, *Huste *Huste ca. 3 Kilometer östlich ist ein Tempel, den du besuchen kannst. *Huste *Huste Mann diese verdammte *Huste *Huste. WRRRYYYY!\"");
+            option2button.setText("zurück");
+            option1button.setText("weiter");
+            nextPosition2 = "Lastpart4";
+            nextPosition1 = "Anfangpart5"
+          //  nextPosition1 = "Anfangpart5";
+           // Anfangpart5();
+            ; break;
+
+
+    
+            case "AuftragannehmenNein":DerAnfangende();break;
+
+            case "Meinung ändern": DerAnfangpart3(); break;
+    
+            case "Beenden":frame.setVisible(false);break;
+            
+            case "Auftragangenommen": Auftragangenommen(); break;
+    
+        }
+
+
+
+
+  
+    }
+
+
+
+
 }
-
-

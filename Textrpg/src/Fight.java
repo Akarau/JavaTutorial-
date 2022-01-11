@@ -138,7 +138,6 @@ i23.setFocusable(false);
     ei.setVisible(true);
 
     while (ei.isVisible() == true){
-      System.out.println("Feap");
       for (int anc = 1; anc<2; anc++){
         //   enemyImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Ancient2.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
            for (int a = 1; a<1; a++){

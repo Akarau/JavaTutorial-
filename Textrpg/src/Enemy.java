@@ -48,7 +48,7 @@ public class Enemy {
     };
 
     int enemiesHP[] = {
-        100,
+        1000,
         200,
     };
 
@@ -63,7 +63,7 @@ public class Enemy {
     };
 
     static String enemy_Main_Materias[] = {
-        "Feuer",
+        "Erde",
         "Fire",
     };
 

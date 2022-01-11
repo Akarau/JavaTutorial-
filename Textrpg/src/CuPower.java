@@ -17,7 +17,7 @@ public class CuPower {
 
     public  int playerHealthResult = 10;
       float GoldEarn = 1F;
-     String Main_Element = "  Ancient  ";
+     String Main_Element = "  Crystal  ";
      String Second_Element = "  Cosmic  ";
      String Support_Element = "  Luck  ";
      String playerName;
