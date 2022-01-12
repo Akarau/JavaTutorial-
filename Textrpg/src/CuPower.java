@@ -9,6 +9,7 @@ public class CuPower {
       int Power = 50;
       int Points = 50;
       int Health = 100;
+      int karma = 0;
       int MaxHealth;
       int damageMade;
       int damg;

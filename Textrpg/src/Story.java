@@ -6879,8 +6879,8 @@ achievementDif.setVisible(false);
             option1button.setText("Artemis töten");
             option2button.setText("Artemis verschonen");
             option3button.setText("");
-            nextPosition1 = "";
-            nextPosition2 = "Anfangpart10";
+            nextPosition1 = "Artemis töten";
+            nextPosition2 = "Artemis verschonen";
             nextPosition3 = "";
 
             moon_Artemis.setVisible(true);
@@ -6902,7 +6902,8 @@ achievementDif.setVisible(false);
 
             case "Last1":; 
             mainTextArea.setText("[DunkleFlamme] wurde besiegt! \n \nDu hast 100 Münzen bekommen! \n \nJe stärker der Gegner ist, desto mehr Münzen bekommst du!");
-option1button.setText("Belohnung fordern!");
+            option1button.setText("Belohnung fordern!");
+option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
 option2button.setText("");
 nextPosition1 = "Anfangpart8";
 nextPosition2 = "";            
@@ -6911,6 +6912,25 @@ break;
             case "InventarÖffnen": openInv(); 
             mainTextPanel.setVisible(false);
             break;
+
+            case "Artemis töten":; 
+            nextPosition2 = "";
+            mainTextArea.setText("Du versetzt Artemis den letzten Gnadenstoß \n\n Du verlässt den Tempel \n\n Dein Gefühl sagt dir, dass die Götter nun wütender sind");
+            option1button.setText("weiter");
+            option2button.setText("");
+            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+
+            break;
+
+            case "Artemis verschonen":; 
+            nextPosition1 = "";
+            mainTextArea.setText("Du lässt Artemis und verlässt den Tempel \n\n Du hast das Gefühl, dass die Götter nachsichtiger sind");
+            option1button.setText("weiter");
+            option2button.setText("");
+            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+
+            break;
+
 
             case "Sachen Equippen":; 
 
