@@ -290,6 +290,8 @@ JLabel self_HealText;
 
         optionsPanel.setLayout(new GridLayout(2,2));
 
+        optionsPanel.setVisible(false);
+
         frame.add(optionsPanel);
        
 
@@ -2394,7 +2396,7 @@ commbox.setVisible(false);
         if (e.getActionCommand() == "ConfirmName") {
            spieler.playerName = texarea.getText();
            playerInfoName.setText(spieler.playerName);
-          // elementsMenu.setVisible(true);
+           elementsMenu.setVisible(true);
 texarea.setVisible(false);
 confirmName.setVisible(false);
 texarea.setEditable(false);
@@ -2404,9 +2406,9 @@ fighting_options.setVisible(false);
 choose_Element.setActionCommand("Main_Choose");
 
 commbox.setText("Welcome " + spieler.playerName + ", your name is terrible");
-mainTextPanel.setVisible(true);
-mainTextArea.setVisible(true);
-DerAnfang();
+//mainTextPanel.setVisible(true);
+//mainTextArea.setVisible(true);
+//DerAnfang();
 
         }
 
@@ -2643,6 +2645,11 @@ ePlayButton.setActionCommand("ePlayButton1");
                     playerInfoSecondElement.setIcon(
                         new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\" + Elemente.elements[t] + ".png")
                                 .getImage().getScaledInstance(40, 40, Image.SCALE_AREA_AVERAGING)));
+                                optionsPanel.setVisible(true);
+                                mainTextPanel.setVisible(true);
+mainTextArea.setVisible(true);
+DerAnfang();
+
                 }
             }
 
@@ -5680,7 +5687,7 @@ uit++;
 
 
 
-    public void spawnEnemy(String File, int Index, int HP, int Power) {
+    public void spawnEnemy(String File, int Index) {
 
         
         if (File == "Enemies"){
@@ -6895,7 +6902,7 @@ achievementDif.setVisible(false);
             mainTextPanel.setVisible(false);
             optionsPanel.setVisible(false);
 
-            spawnEnemy("Bosses", 0, 0, 0);
+            spawnEnemy("Bosses", 0);
 
 
             ;break;            
@@ -6995,7 +7002,7 @@ break;
             mainTextPanel.setVisible(false);
             optionsPanel.setVisible(false);
 
-            spawnEnemy("Enemies", 0, 0, 0);
+            spawnEnemy("Enemies", 0);
             ;break;
 
 
@@ -7008,6 +7015,9 @@ break;
             case "Beenden":frame.setVisible(false);break;
             
             case "Auftragangenommen": Auftragangenommen(); break;
+
+
+
     
         }
 
