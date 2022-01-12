@@ -123,7 +123,7 @@ public class Enemy {
 
 
     int bossesHP[] = {
-        1024,
+        14,
         200,
     };
 

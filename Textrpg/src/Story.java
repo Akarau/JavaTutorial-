@@ -323,11 +323,11 @@ mainTextArea.setOpaque(false);
         mainTextArea.setEditable(false);
         mainTextArea.setVisible(true);
 
-        frame.add(mainTextArea);
+      
+
 
 
         mainTextPanel.add(mainTextArea);
-
         
         option1button =new JButton("choice1");
 
@@ -3094,42 +3094,59 @@ spieler.thread3 = 0;
 
     }
 
+    public void endFight(){
+        enemyInfo.setVisible(false);
+        enemyImage.setVisible(false);
+        enemyInfoDifficulty.setVisible(false);
+        enemyInfoHP.setVisible(false);
+        enemyInfoImage.setVisible(false);
+        enemyInfoName.setVisible(false);
+        enemyInfoMainElement.setVisible(false);
+        enemyInfoSecondElement.setVisible(false);
+        enemyInfoThirdElement.setVisible(false);
+        enemyInfoLastElement.setVisible(false);
+        
+        playerInfo.setVisible(false);
+        playerInfoAttack.setVisible(false);
+        playerInfoHP.setVisible(false);
+        playerInfoHPShield.setVisible(false);
+        playerInfoMainElement.setVisible(false);
+        playerInfoName.setVisible(false);
+        playerInfoPower.setVisible(false);
+        playerInfoSecondElement.setVisible(false);
+        playerInfoSupportElement.setVisible(false);
+        
+        fighting_options.setVisible(false);
+        fightPlayButton.setVisible(false);
+    }
 
     public void endEnemy(){
 
         if (nextPosition1 == "Erster Gegner Kampf"){
-            enemyInfo.setVisible(false);
-enemyImage.setVisible(false);
-enemyInfoDifficulty.setVisible(false);
-enemyInfoHP.setVisible(false);
-enemyInfoImage.setVisible(false);
-enemyInfoName.setVisible(false);
-enemyInfoMainElement.setVisible(false);
-enemyInfoSecondElement.setVisible(false);
-enemyInfoThirdElement.setVisible(false);
-enemyInfoLastElement.setVisible(false);
-
-playerInfo.setVisible(false);
-playerInfoAttack.setVisible(false);
-playerInfoHP.setVisible(false);
-playerInfoHPShield.setVisible(false);
-playerInfoMainElement.setVisible(false);
-playerInfoName.setVisible(false);
-playerInfoPower.setVisible(false);
-playerInfoSecondElement.setVisible(false);
-playerInfoSupportElement.setVisible(false);
-
-fighting_options.setVisible(false);
-fightPlayButton.setVisible(false);
+            endFight();
 
 mainTextPanel.setVisible(true);
 optionsPanel.setVisible(true);
 mainTextArea.setText("[DunkleFlamme] wurde besiegt! \n \nDu hast 100 Münzen bekommen! \n \nJe stärker der Gegner ist, desto mehr Münzen bekommst du!");
 option1button.setText("Belohnung fordern!");
+option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
 option2button.setText("");
 nextPosition1 = "Anfangpart8";
 nextPosition2 = "";
 
+        }
+
+        if (nextPosition1 == "Artemis Kampf"){
+            endFight();
+            mainTextPanel.setVisible(true);
+            nextPosition1 = "Anfangpart11";
+            nextPosition2 = "";
+            option1button.setText("weiter");
+            option2button.setText("");
+            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 45));
+            mainTextArea.setText("\"Du hast es also tatsächlich geschafft? Beeindruckend!\" Allerdings wirst du es gegen meinen Bruder nicht so leicht haben!  Gehe der Sonne nach sie wird dich zu ihm führen.\n \"Was für eine Schande, gegen einen niederen Menschen verloren…\"");
+            optionsPanel.setVisible(true);
+           // mainTextArea.setText("[Artemis] wurde besiegt! \n \nDu hast 1024 Münzen bekommen!");
         }
     }
 
@@ -6673,7 +6690,8 @@ achievementDif.setVisible(false);
 
         mainTextArea.setText("Nun "+spieler.playerName+" sind sie bereit für ihr erstes Abenteuer.\n\n\nDu bist ein einfacher Tourist der die Stadt Athen besucht\n\nMöge deine Geschichte beginnen...");
          option1button.setText("weiter");
-     
+         option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+
          option2button.setText("");
      
          option3button.setText("");
@@ -6740,7 +6758,8 @@ achievementDif.setVisible(false);
         mainTextArea.setText("(Du bemerkst dass die Götter dich ab jetzt beobachten.) \n \"Wirklich? Uah Uah Endlich! *Huste *Huste. Suche in den antiken Tempeln der Griechen. Dort befinden sich Götter. Falls du sie besiegst, sagen sie dir vielleicht wo Zeus ist. *Huste *Huste\" ");
     
         option1button.setText("weiter");
-     
+        option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+
         option2button.setText("");
     
         option3button.setText("");
@@ -6804,6 +6823,8 @@ achievementDif.setVisible(false);
             option1button.setText("weiter");
             option2button.setText("Inventar öffnen");
             option3button.setText("Sachen equippen");
+            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+            option3button.setFont(new Font("Times new Roman", Font.PLAIN, 35));
             inventory.putIfAbsent(scl.schwerte[0], 1);
             inventory.putIfAbsent(scl.schilder[0], 1);
             inventory.putIfAbsent(scl.boosts[1], 1);
@@ -6817,6 +6838,7 @@ achievementDif.setVisible(false);
             case "Anfangpart7":
             mainTextArea.setText("Ihe verabschiedet euch und du machs dich auf dem Weg zu dem Tempel. Es dauert nicht lange, bis du ankommst. \nVor dir steht er also, der Tempel von deinem ersten Geger");
             option1button.setText("Tempel betreten");
+            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 38));
             option2button.setText("zurück");
             option3button.setText("");
             nextPosition1 = "Tempel betreten";
@@ -6827,6 +6849,7 @@ achievementDif.setVisible(false);
             case "Anfangpart8":
             mainTextArea.setText("Erneut versuchst du die Tür zu öffnen, es funktioniert. \n\nVor dir steht also eine Frau mit weißen Gewändern, und einem silbernen Bogen");
             option1button.setText("Tempel betreten");
+            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 38));
             option2button.setText("zurück");
             option3button.setText("");
             nextPosition1 = "Anfangpart9";
@@ -6836,16 +6859,46 @@ achievementDif.setVisible(false);
 
             case "Anfangpart9":
             mainTextArea.setText("Du wagst es also, mich herauszufordern? Ich bin Artemis, Ich bin die .. der Jagd, Tochter von Zeus und zwillingsschwester von Apollon. Und du, du bist nur ein Niemand. Du wirst es bereuen, den Auftrag angenommen zu haben");
+            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));
             option1button.setText("Kampf beginnen");
             option2button.setText("zurück");
             option3button.setText("");
-            nextPosition1 = "Anfangpart9";
+            nextPosition1 = "Artemis Kampf";
             nextPosition2 = "Anfangpart8";
             nextPosition3 = "";
 
+            moon_Artemis.setVisible(true);
 
 
             ;break;
+
+            case "Anfangpart11":
+           mainTextArea.setText(" Willst du Artemis töten? \n > Artemis töten\n Artemis wird getötet [-4 karma] \n\n > Artemis verschonen\n Artemis wird verschont [+4 karma]");
+          option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));
+          option2button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+            option1button.setText("Artemis töten");
+            option2button.setText("Artemis verschonen");
+            option3button.setText("");
+            nextPosition1 = "";
+            nextPosition2 = "Anfangpart10";
+            nextPosition3 = "";
+
+            moon_Artemis.setVisible(true);
+
+
+            ;break;
+
+            case "Artemis Kampf":
+
+            moon_Artemis.setVisible(true);
+
+            mainTextPanel.setVisible(false);
+            optionsPanel.setVisible(false);
+
+            spawnEnemy("Bosses", 0, 0, 0);
+
+
+            ;break;            
 
             case "Last1":; 
             mainTextArea.setText("[DunkleFlamme] wurde besiegt! \n \nDu hast 100 Münzen bekommen! \n \nJe stärker der Gegner ist, desto mehr Münzen bekommst du!");
@@ -6881,6 +6934,8 @@ break;
 
             case "Tempel betreten":
             mainTextArea.setText("Du gehst in den Tempel, die ganzen Besucher, die eben noch überall waren sind wie vom Erdboden verschluckt. \n \n Du siehst eine Tür am Ende des Raumes, du läufst auf sie zu, aber sie geht nicht auf. An der Tür steht eingraviert; \"Besiege die Gegner, damit sich die Tür öffnet\" \n \n Du drehst dich wieder um");
+            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+            option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
             option1button.setText("weiter");
             option2button.setText("zurück");
             option3button.setText("");
@@ -6891,6 +6946,7 @@ break;
 
             case "Erster Gegner":
             mainTextArea.setText("[DunkleFlamme] ist erschienen!");
+            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));
             option1button.setText("Kampf beginnen");
             option2button.setText("");
             option3button.setText("");
