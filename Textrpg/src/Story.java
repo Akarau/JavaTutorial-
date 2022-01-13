@@ -754,7 +754,7 @@ mainTextArea.setOpaque(false);
         e3.setVisible(true);
         e3.setFocusable(false);
         e3.addActionListener(this);
-        e3.setActionCommand("E");
+        e3.setActionCommand("Attack#3");
 
         javax.swing.JButton e4 = new JButton();
         e4.setForeground(new Color(255, 255, 255));
@@ -1228,7 +1228,7 @@ mainTextArea.setOpaque(false);
 
 texarea = new JTextField(10);
 texarea.setBounds(520,400,200,60);
-texarea.setVisible(true);
+texarea.setVisible(false);
 texarea.setBackground(Color.BLACK);
 texarea.setForeground(Color.WHITE);
 texarea.setFont(new Font("Arial",Font.BOLD,20));
@@ -1426,7 +1426,7 @@ confirmName.setForeground(new Color(255, 255, 255));
 confirmName.setFont(new Font("Times new Roman", Font.PLAIN, 60));
 confirmName.setBounds(740, 400, 60, 60);
 confirmName.setBackground(Color.black);
-confirmName.setVisible(true);
+confirmName.setVisible(false);
 confirmName.setFocusable(false);
 confirmName.addActionListener(this);
 confirmName.setActionCommand("ConfirmName");
@@ -1938,13 +1938,16 @@ boostB.add(si);
                 l.setVisible(false);
             }
             if (elementImage.isVisible()==true){
-                System.out.println("Ddfgwiopg");
                 if (at == 1){
                     animateElement(spieler.Main_Element,null,(byte) 1);
                 }
                 if (at == 2){
                     System.out.println("at = 2");;
                     animateElement(null,spieler.Second_Element,(byte) 2);
+                }
+                if (at == 3){
+                    System.out.println("at = 2");;
+                    animateElement(null,null,(byte) 3);
                 }
             }
         }
@@ -2678,6 +2681,15 @@ at = 1;
             e1.setEnabled(true);
 
              }
+
+             if (e.getActionCommand().equals("Attack#3")) {
+                elementImage.setBounds(5000,280,400,400);
+                e1.setEnabled(false);
+                elementImage.setVisible(true);
+                at = 3;
+                e1.setEnabled(true);
+    
+                 }
 
 
         if (e.getActionCommand().equals("c#1")) {
@@ -4871,6 +4883,45 @@ for (int xi = 0; xi<= 120; xi++){
             if (spieler.damageMade >= 2500 && spieler.kämpfer == false){
                 Award(1);
                 spieler.kämpfer = true;
+
+            }
+
+            if (at == 3){
+                elementImage.setBounds(600,280,200,200);
+                elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Others\\Damage.png").getImage().getScaledInstance(180, 180, Image.SCALE_AREA_AVERAGING)));
+    
+    
+                elementImage.setVisible(true);
+    Thread.sleep(50);
+    elementImage.setVisible(false);
+
+                System.out.println("D1");
+                Thread.sleep(300);
+                elementImage.setBounds(650,280,200,200);
+                elementImage.setVisible(true);
+                Thread.sleep(50);
+
+                elementImage.setVisible(false);
+
+                Thread.sleep(300);
+                elementImage.setBounds(560,340,200,200);
+                elementImage.setVisible(true);
+                Thread.sleep(50);
+
+                elementImage.setVisible(false);
+
+                Thread.sleep(300);
+                elementImage.setBounds(720,380,200,200);
+                elementImage.setVisible(true);
+                Thread.sleep(50);
+
+                elementImage.setVisible(false);
+
+                Thread.sleep(300);
+                elementImage.setBounds(520,230,200,200);
+                elementImage.setVisible(true);
+                enemyImage.setEnabled(false);
+                Thread.sleep(50);
 
             }
 
