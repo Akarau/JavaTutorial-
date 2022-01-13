@@ -6972,35 +6972,84 @@ break;
             break;
 
             case "Artemis töten":; 
-            nextPosition1 = "AfterArtemis1";
-            nextPosition2 = "";
+            spieler.karma = -4;
+            nextPosition1 = "AfterArtemis";
+            nextPosition2 = "Anfangpart11";
             mainTextArea.setText("Du versetzt Artemis den letzten Gnadenstoß \n\n Du verlässt den Tempel \n\n Dein Gefühl sagt dir, dass die Götter nun wütender sind");
             option1button.setText("weiter");
-            option2button.setText("");
+            option2button.setText("zurück");
             option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+            option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+            option3button.setText("");
 
             break;
 
             case "Artemis verschonen":; 
-            nextPosition1 = "AfterArtemis1";
+            spieler.karma = 4;
+            nextPosition1 = "AfterArtemis";
+            nextPosition2 = "Anfangpart11";
             mainTextArea.setText("Du lässt Artemis und verlässt den Tempel \n\n Du hast das Gefühl, dass die Götter nachsichtiger sind");
             option1button.setText("weiter");
-            option2button.setText("");
-            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
-            
+            option2button.setText("zurück");
+            option3button.setText("");
+            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));        
+            option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
 
             break;
 
-            case "AfterArtemis1":; 
-            nextPosition1 = "LinkerTeil1";
-            nextPosition2 = "RechterTeil1";
+            case "AfterArtemis":; 
+            nextPosition2 = "StoryR_1";
+            nextPosition3 = "Anfangpart11";
+
+            if (spieler.karma == -4){
+                nextPosition3 = "Artemis töten";
+            }
+
+            if (spieler.karma == +4){
+                nextPosition3 = "Artemis verschonen";
+
+            }
+
             mainTextArea.setText(" Du bist noch ganz erschöpft von dem Kampf von gegen Artemis. \n \n Die Besucher von vorhin sind bereits weg und die Sonne geht bereits unter. \n \n Was willst du als nächstes tun?");
 
 
             option1button.setText("Rast suchen");
             option2button.setText("Den Tempel suchen, den Artemis beschrieben hat");
+            option3button.setText("zurück");
             option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
-            option2button.setFont(new Font("Times new Roman", Font.PLAIN, 14));
+            option2button.setFont(new Font("Times new Roman", Font.PLAIN, 12));
+            option3button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+
+
+            break;
+
+            case "StoryR_1":; 
+            nextPosition1 = "StoryR_2";
+            nextPosition2 = "AfterArtemis";
+
+            if (spieler.karma == -4){
+                mainTextArea.setText(" Du läufst der untergehende Sonne entgegen, und stellst dir vor, dass dein Gegner genau so untergehen wird!");
+         //       nextPosition3 = "Artemis töten";
+            }
+
+            if (spieler.karma == +4){
+                mainTextArea.setText(" Du läufst der untergehende Sonne entgegen.");
+             //   nextPosition3 = "Artemis verschonen";
+
+            }
+
+            case "StoryR_2":; 
+            nextPosition1 = "StoryR_3";
+            nextPosition2 = "StoryR_1";
+
+                mainTextArea.setText(" Nach einer Zeit hörst du den Klang nach Kithara, du folgst die Melodie, ");
+
+
+            option1button.setText("weiter");
+            option2button.setText("zurück");
+            option3button.setText("");
+            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));        
+            option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
 
 
             break;
