@@ -3167,6 +3167,32 @@ nextPosition2 = "";
             optionsPanel.setVisible(true);
            // mainTextArea.setText("[Artemis] wurde besiegt! \n \nDu hast 1024 Münzen bekommen!");
         }
+
+
+        if (nextPosition1 == "Apollon Kampf"){
+            endFight();
+            mainTextPanel.setVisible(true);
+            nextPosition1 = "StoryR_5";
+            nextPosition2 = "StoryR_5;";
+            option1button.setText("weiter");
+            option2button.setText("");
+            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+            option2button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+
+            option1button.setText("Apollon töten");
+            option2button.setText("Apollon verschonen");
+            if (spieler.karma == -4){
+                mainTextArea.setText("\"Du hast also gewonnen. Komm töte mich, sowie du meine Schwester getötet hast\"");
+
+            }
+
+            if (spieler.karma == 4){
+                mainTextArea.setText("\"Du hast also gewonnen. \n\n\nKomm töte mich \"");
+            }
+            optionsPanel.setVisible(true);
+           // mainTextArea.setText("[Artemis] wurde besiegt! \n \nDu hast 1024 Münzen bekommen!");
+        }
+
     }
 
 
@@ -6967,6 +6993,56 @@ nextPosition1 = "Anfangpart8";
 nextPosition2 = "";            
 break;  
 
+case "Last2":; 
+
+if (spieler.karma == 8){
+    spieler.karma = 4;
+   // mainTextArea.setText(" \" Du verschonst mich also. Leider kann ich dir nicht sagen, wer dein nächster Gegner ist, aber mein Gefühl sagt mir, dass du ihn darnicht suchen musst\"");
+
+}
+
+if (spieler.karma == 0){
+    spieler.karma = -4;
+}
+
+
+mainTextPanel.setVisible(true);
+nextPosition1 = "StoryR_5";
+nextPosition2 = "StoryR_5;";
+option1button.setText("weiter");
+option2button.setText("");
+option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+option2button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+
+if (spieler.karma == -4){
+    option1button.setText("Apollon töten");
+    option2button.setText("Apollon verschonen");
+    mainTextArea.setText("\"Du hast also gewonnen. Komm töte mich, sowie du meine Schwester getötet hast\"");
+
+}
+
+if (spieler.karma == 4){
+    mainTextArea.setText("\"Du hast gewonnen. \n\n\nKomm töte mich \"");
+}
+
+
+optionsPanel.setVisible(true);
+
+break;  
+
+case "Apollon verschonen":; 
+nextPosition1 = "AfterArtemis";
+nextPosition2 = "Anfangpart11";
+mainTextArea.setText("Du lässt Artemis und verlässt den Tempel \n\n Du hast das Gefühl, dass die Götter nachsichtiger sind");
+option1button.setText("weiter");
+option2button.setText("zurück");
+option3button.setText("");
+option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));        
+option2button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+
+break;
+
+
             case "InventarÖffnen": openInv(); 
             mainTextPanel.setVisible(false);
             break;
@@ -6998,6 +7074,7 @@ break;
             break;
 
             case "AfterArtemis":; 
+            nextPosition1 = "";
             nextPosition2 = "StoryR_1";
             nextPosition3 = "Anfangpart11";
 
@@ -7010,7 +7087,7 @@ break;
 
             }
 
-            mainTextArea.setText(" Du bist noch ganz erschöpft von dem Kampf von gegen Artemis. \n \n Die Besucher von vorhin sind bereits weg und die Sonne geht bereits unter. \n \n Was willst du als nächstes tun?");
+            mainTextArea.setText(" Du bist noch ganz erschöpft von dem Kampf gegen Artemis. \n \n Die Besucher von vorhin sind bereits weg und die Sonne geht bereits unter. \n \n Was willst du als nächstes tun?");
 
 
             option1button.setText("Rast suchen");
@@ -7038,11 +7115,36 @@ break;
 
             }
 
+            option1button.setText("weiter");
+            option2button.setText("zurück");
+            option3button.setText("");
+            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));        
+            option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+
+            break;
+
             case "StoryR_2":; 
             nextPosition1 = "StoryR_3";
             nextPosition2 = "StoryR_1";
 
-                mainTextArea.setText(" Nach einer Zeit hörst du den Klang nach Kithara, du folgst die Melodie, ");
+                mainTextArea.setText(" Nach einer Zeit hörst du den Klang nach Kithara, du folgst die Melodie, bis du auf einer großen Wiese ankommst.");
+
+            option1button.setText("weiter");
+            option2button.setText("zurück");
+            option3button.setText("");
+            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));        
+            option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+
+
+            break;
+
+            case "StoryR_3":; 
+
+    mainTextArea.setText(" \"Schön hier nicht wahr? \n \n Ich finde die wundervolle Landschaft perfekt, von der Musik, die Kithara untermalt \n \n Jedoch...   Macht deine Anwesenheit diese Idylle kaputt!\"");
+
+
+nextPosition1 = "StoryR_4";
+nextPosition2 = "StoryR_2";
 
 
             option1button.setText("weiter");
@@ -7053,6 +7155,107 @@ break;
 
 
             break;
+
+            case "StoryR_4":; 
+
+if (spieler.karma == -4){
+    mainTextArea.setText(" Du bleibst stehen.. \n\n \"Ich bin Apollon, der Zwillingsbruder von der Göttin, die du eben getötet hast und die Wiese hier ist dein Grab\"");
+
+}
+
+if (spieler.karma == 4){
+    mainTextArea.setText("\"Ich bin Apollon, der Zwillingsbruder von Athene, ich bin der Gott der Poesie, des Lichtes, der Pest und der Prophetie.\" \n\n Du bleibst stehen.. \n\n \"Und ich bin ebenfalls dein nächster Gegner\" ");
+
+}
+
+
+nextPosition1 = "Apollon Kampf";
+nextPosition2 = "StoryR_3";
+
+
+            option1button.setText("Kampf beginnen");
+            option2button.setText("zurück");
+            option3button.setText("");
+            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));        
+            option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+
+
+
+            break;
+
+
+            case "StoryR_5":; 
+
+    mainTextArea.setText(" \" Warte, ich will dir noch eine Sache sagen! \n\n Merkur wird dein Untergang, er wird dich vernichten!\"");
+
+
+nextPosition1 = "Apollon töten";
+nextPosition2 = "Last_2";
+
+
+            option1button.setText("weiter");
+            option2button.setText("zurück");
+            option3button.setText("");
+            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 25));        
+            option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+
+
+
+            break;
+
+            case "StoryR_5;":; 
+            System.out.println(spieler.karma);
+
+            if (spieler.karma == 4){
+                spieler.karma = 8;
+                mainTextArea.setText(" \" Du verschonst mich also. Leider kann ich dir nicht sagen, wer dein nächster Gegner ist, aber mein Gefühl sagt mir, dass du ihn garnicht suchen musst\"");
+
+            }
+
+            if (spieler.karma == -4){
+                spieler.karma = 0;
+                mainTextArea.setText(" \" Du willst mich also verschonen. Jedoch kann ich dir dennoch nicht verziehen, was du meiner Schwester angetan hast. Allerdings kann ich dir verraten, wo du Medusa findest. Östlich von her ist ein Tempel, dort befindet sie sich. Wenn du besiegst, dannbringe ihren Kopf zu Polydektes\"");
+
+            }
+
+        
+        
+        nextPosition1 = "Apollon verschonen";
+        nextPosition2 = "Last_2e";
+        
+        
+                    option1button.setText("weiter");
+                    option2button.setText("zurück");
+                    option3button.setText("");
+                    option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));        
+                    option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+        
+        
+        
+                    break;
+
+
+                    case "Last_2e":
+
+                    mainTextArea.setText(" \" D43z\"");
+
+        
+        
+                    ;break;            
+        
+
+            case "Apollon Kampf":
+
+            moon_Artemis.setVisible(true);
+
+            mainTextPanel.setVisible(false);
+            optionsPanel.setVisible(false);
+
+            spawnEnemy("Bosses", 0);
+
+
+            ;break;            
+
 
 
             case "Sachen Equippen":; 
