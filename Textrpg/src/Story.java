@@ -7190,8 +7190,7 @@ nextPosition2 = "StoryR_3";
 
 
 nextPosition1 = "Apollon töten";
-nextPosition2 = "Last_2";
-
+nextPosition2 = "Last_2e";
 
             option1button.setText("weiter");
             option2button.setText("zurück");
@@ -7237,9 +7236,40 @@ nextPosition2 = "Last_2";
 
                     case "Last_2e":
 
-                    mainTextArea.setText(" \" D43z\"");
 
-        
+                    if (spieler.karma == 8){
+                        spieler.karma = 4;
+                       // mainTextArea.setText(" \" Du verschonst mich also. Leider kann ich dir nicht sagen, wer dein nächster Gegner ist, aber mein Gefühl sagt mir, dass du ihn darnicht suchen musst\"");
+                    
+                    }
+                    
+                    if (spieler.karma == 0){
+                        spieler.karma = -4;
+                    }
+                    
+                    
+                    mainTextPanel.setVisible(true);
+                    nextPosition1 = "StoryR_5";
+                    nextPosition2 = "StoryR_5;";
+                    option1button.setText("weiter");
+                    option2button.setText("");
+                    option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+                    option2button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+                    
+                    if (spieler.karma == -4){
+                        option1button.setText("Apollon töten");
+                        option2button.setText("Apollon verschonen");
+                        mainTextArea.setText("\"Du hast also gewonnen. Komm töte mich, sowie du meine Schwester getötet hast\"");
+                    
+                    }
+                    
+                    if (spieler.karma == 4){
+                        mainTextArea.setText("\"Du hast gewonnen. \n\n\nKomm töte mich \"");
+                    }
+                    
+                    
+                    optionsPanel.setVisible(true);
+                    
         
                     ;break;            
         
