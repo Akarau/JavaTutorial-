@@ -3235,6 +3235,20 @@ nextPosition2 = "";
 
         }
 
+        if (nextPosition1 == "Medusa Fight"){
+endFight();
+            mainTextPanel.setVisible(true);
+optionsPanel.setVisible(true);
+mainTextArea.setText("Du schlägst der Medusa den Kopf ab. Daraufhin gehst du zu Polydektes.\"Du hast die Medusa getötet? Na dann gib ihn mir doch.\" sagt Polydektes genervt.\nDu fragst ihn wo der nächste Tempel ist.\n\n\"Warum sollte ich dir das verraten? Nur weil du mir den Kopf der Medusa gegeben hast? Da musst du mir schon mehr geben!\"");
+
+
+option1button.setText("weiter");
+option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+option2button.setText("");
+nextPosition1 = "StoryR_6......";
+nextPosition2 = "";
+
+        }
     }
 
 
@@ -7495,15 +7509,94 @@ nextPosition3 = "";
                                     nextPosition1 = "Medusa Fight";
                                     nextPosition2 = "";
                                     
-                                                option1button.setText("weiter");
+                                                option1button.setText("Kampf beginnen");
                                                 option2button.setText("zurück");
                                                 option3button.setText("");
-                                                option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));        
+                                                option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
                                                 option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
                                     
                                     
                                     
                                                 break;
+
+
+                                                case "StoryR_6......":; 
+
+                                                mainTextArea.setText(" Du ziehst dein Schwert rennst auf Polydektes zu, er zieht den Kopf der Medusa und will ihn auf dich richten, allerdings schlägst du ihm vorher die Hand ab.\"Aaaaaah, du Mistker!\".Du forderst ihm auf dir zu sagen wo der nächste Tempel ist.\"Ist ja gut ich errate es dir ja. Geh zum Berg Oite, dort wartet der letzte Gegner dem du vor Zeus bekämpfen musst. Er ist auf dem Berg Oite\"");
+    
+    
+    
+                                        
+                                        
+                                        nextPosition1 = "StoryR_6.......";
+                                        nextPosition2 = "Last_3e";
+                                        
+                                                    option1button.setText("weiter");
+                                                    option2button.setText("zurück");
+                                                    option3button.setText("");
+                                                    option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));        
+                                                    option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                                        
+                                        
+                                        
+                                                    break;
+
+                                                    case "StoryR_6.......":; 
+
+                                                    mainTextArea.setText(" Willst du Polydektes töten? \n > Polydektes töten\n Polydektes wird getötet [-4 karma] \n\n > Polydektes verschonen\n Polydektes wird verschont [+4 karma]");
+        
+        
+        
+                                            
+                                            
+                                            nextPosition1 = "";
+                                            nextPosition2 = "StoryR_6......";
+                                            
+                                                        option1button.setText("weiter");
+                                                        option2button.setText("zurück");
+                                                        option3button.setText("");
+                                                        option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));        
+                                                        option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                                            
+                                            
+                                            
+                                                        break;
+
+                                                    
+                                                    case "Last_3e":; 
+
+                                                    mainTextPanel.setVisible(true);
+optionsPanel.setVisible(true);
+mainTextArea.setText("Du schlägst der Medusa den Kopf ab. Daraufhin gehst du zu Polydektes.\"Du hast die Medusa getötet? Na dann gib ihn mir doch.\" sagt Polydektes genervt.\nDu fragst ihn wo der nächste Tempel ist.\n\n\"Warum sollte ich dir das verraten? Nur weil du mir den Kopf der Medusa gegeben hast? Da musst du mir schon mehr geben!\"");
+
+
+option1button.setText("weiter");
+option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+option2button.setText("");
+nextPosition1 = "StoryR_6......";
+nextPosition2 = "";
+
+                                            
+                                                        break;
+                                                    
+                                                case "Medusa Fight":;    
+                                        
+                                                optionsPanel.setVisible(false);
+                                                mainTextPanel.setVisible(false);
+                                        
+spawnEnemy("Bosses", 0);
+                                                nextPosition2 = "";
+                                        
+                                                    option1button.setText("weiter");
+                                                    option2button.setText("zurück");
+                                                    option3button.setText("");
+                                                    option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));        
+                                                    option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                                        
+                                        
+                                        
+                                                    break;
+    
 
 
                     case "Last_2e":
