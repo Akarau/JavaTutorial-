@@ -7250,7 +7250,7 @@ break;
 
             case "StoryR_3":; 
 
-    mainTextArea.setText(" \"Schön hier nicht wahr? \n \n Ich finde die wundervolle Landschaft perfekt, von der Musik, die Kithara untermalt \n \n Jedoch...   Macht deine Anwesenheit diese Idylle kaputt!\"");
+    mainTextArea.setText(" \"Schön hier nicht wahr? \n \n Ich finde die wundervolle Landschaft perfekt, von der Musik, die Kithara untermalt \n \n Jedoch... Macht deine Anwesenheit diese Idylle kaputt!\"");
 
 
 nextPosition1 = "StoryR_4";
@@ -7486,7 +7486,7 @@ nextPosition3 = "";
 
                                             case "StoryR_6.....":; 
 
-                                            mainTextArea.setText(" Du hast die Gorgonen besiegst.\nJetzt hörst du plötzlich eine weibliche Stimme.\n\"Weißt du, dass ich so aussehe ist alleine Poseidons Schuld! Er vergewaltigte mich, dieser Mistkerl. Als Athene dass sah war sie so erzürnt, dass sie mich in dieses Etwas verwandelte. Seitdem tauchen hier ständig Leute auf die mich töten wollen.\" \n Sie bricht in tränen aus. \"Stirb!\"");
+                                            mainTextArea.setText(" Du hast die Gorgonen besiegst.\nJetzt hörst du plötzlich eine weibliche Stimme.\n\"Weißt du, dass ich so aussehe ist alleine Poseidons Schuld! Er vergewaltigte mich, dieser Mistkerl. Als Athene dass sah war sie so erzürnt, dass sie mich in dieses Etwas verwandelte. Seitdem tauchen hier ständig Leute auf die mich töten wollen.\" \n Sie bricht in tränen aus. \n\"Stirb!\"");
 
 
 
