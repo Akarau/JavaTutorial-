@@ -5,6 +5,8 @@ import javax.swing.JPanel;
 import java.util.HashMap;
 
 public class CuPower {
+
+
       int Gold = 50000;
       int Power = 50;
       int Points = 50;
@@ -38,6 +40,8 @@ public class CuPower {
      String enemyLast_Element;
      Boolean enemyAtacked = false;
      Boolean reflection = false;
+
+     Boolean ApollonK;
 
      // Enemy //
 

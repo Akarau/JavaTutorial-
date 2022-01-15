@@ -3193,6 +3193,48 @@ nextPosition2 = "";
            // mainTextArea.setText("[Artemis] wurde besiegt! \n \nDu hast 1024 Münzen bekommen!");
         }
 
+        if (nextPosition1 == "Gorgon1"){
+            endFight();
+
+mainTextPanel.setVisible(true);
+optionsPanel.setVisible(true);
+mainTextArea.setText("[Gorgon1] wurde besiegt! \n \nDu hast 100 Münzen bekommen!");
+option1button.setText("nächster Gegner");
+option1button.setFont(new Font("Times new Roman", Font.PLAIN, 32));
+option2button.setText("");
+nextPosition1 = "StoryR_6...";
+nextPosition2 = "";
+
+        }
+
+        if (nextPosition1 == "Gorgon2"){
+            endFight();
+
+mainTextPanel.setVisible(true);
+optionsPanel.setVisible(true);
+mainTextArea.setText("[Gorgon2] wurde besiegt! \n \nDu hast 150 Münzen bekommen!");
+option1button.setText("nächster Gegner");
+option1button.setFont(new Font("Times new Roman", Font.PLAIN, 32));
+option2button.setText("");
+nextPosition1 = "StoryR_6....";
+nextPosition2 = "";
+
+        }
+
+        if (nextPosition1 == "Gorgon3"){
+            endFight();
+
+mainTextPanel.setVisible(true);
+optionsPanel.setVisible(true);
+mainTextArea.setText("[Gorgon3] wurde besiegt! \n \nDu hast 200 Münzen bekommen!");
+option1button.setText("Belohnung fordern!");
+option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+option2button.setText("");
+nextPosition1 = "StoryR_6.....";
+nextPosition2 = "";
+
+        }
+
     }
 
 
@@ -6944,6 +6986,7 @@ achievementDif.setVisible(false);
             case "Anfangpart9":
             mainTextArea.setText("Du wagst es also, mich herauszufordern? Ich bin Artemis, Ich bin die .. der Jagd, Tochter von Zeus und zwillingsschwester von Apollon. Und du, du bist nur ein Niemand. Du wirst es bereuen, den Auftrag angenommen zu haben");
             option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));
+            option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
             option1button.setText("Kampf beginnen");
             option2button.setText("zurück");
             option3button.setText("");
@@ -6995,6 +7038,7 @@ break;
 
 
 case "Apollon verschonen":; 
+spieler.ApollonK = false;
 nextPosition1 = "AfterApollon";
 nextPosition2 = "StoryR_5;";
 mainTextArea.setText("Du verschonst Apollon");
@@ -7004,7 +7048,7 @@ option3button.setText("");
 option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));        
 option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
 
-
+/*
 if (spieler.karma == 4){
     spieler.karma = 8;
 }
@@ -7013,19 +7057,23 @@ if (spieler.karma == -4){
     spieler.karma = 0;
 }
 
-
+*/
 break;
 
 case "Apollon töten":; 
-nextPosition1 = "AfterApollon";
-nextPosition2 = "StoryR_5;";
-mainTextArea.setText("---");
-option1button.setText("weiter");
+spieler.ApollonK = true;
+nextPosition1 = "Apollon töten1";
+nextPosition2 = "StoryR_5";
+mainTextArea.setText("Nun gut vielleicht Habe ich das verdient, aber warte noch, bevor du mich tötest will ich dir eine Sache sagen.\"Töte Medusa und bring Polydektes ihren Kopf.\"");
+
+
+option1button.setText("Apollon töten");
 option2button.setText("zurück");
 option3button.setText("");
-option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));        
+option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
 option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
 
+/*
 if (spieler.karma == 8){
     spieler.karma = 4;
 }
@@ -7033,7 +7081,30 @@ if (spieler.karma == 8){
 if (spieler.karma == 0){
     spieler.karma = -4;
 }
+*/
 
+break;
+
+case "Apollon töten1":; 
+nextPosition1 = "AfterApollon";
+nextPosition2 = "Apollon töten";
+mainTextArea.setText("Du tötest Apollon");
+
+
+option1button.setText("weiter");
+option2button.setText("zurück");
+option3button.setText("");
+option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));        
+option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+/*
+if (spieler.karma == 8){
+    spieler.karma = 4;
+}
+
+if (spieler.karma == 0){
+    spieler.karma = -4;
+}
+*/
 
 break;
 
@@ -7097,23 +7168,41 @@ break;
 
             case "AfterApollon":; 
             nextPosition1 = "StoryR_6";
-            nextPosition2 = "StoryR_1";
-            nextPosition3 = "Anfangpart11";
+            nextPosition2 = "";
 
-            if (spieler.karma <= -4){
-                nextPosition3 = "Apollon töten";
+            if (spieler.ApollonK == true && spieler.karma == -4){
+                spieler.karma = -8;
+            }
+            if (spieler.ApollonK == true && spieler.karma == 4){
+                spieler.karma = 0;
             }
 
-            if (spieler.karma >= 4){
-                nextPosition3 = "Apollon verschonen";
-
+            if (spieler.ApollonK == false && spieler.karma == -4){
+                spieler.karma = 0;
             }
+
+            if (spieler.ApollonK == false && spieler.karma == 4){
+                spieler.karma = 8;
+            }
+            /*
+            if (spieler.karma <= -4 && spieler.ApollonK == true){
+                nextPosition2 = "Apollon töten1";
+                
+            }
+
+            if (spieler.karma >= 4 && spieler.ApollonK == false){
+                nextPosition2 = "Apollon verschonen";
+
+
+               }
+
+               */
 
             mainTextArea.setText(" Du begibst dich in eine Herberge. \n\n Dort ruhst du dich bis zum nächsten Tag aus");
 
 
             option1button.setText("weiter");
-            option2button.setText("zurück");
+            option2button.setText("");
             option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
             option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
 
@@ -7195,7 +7284,7 @@ nextPosition2 = "StoryR_3";
             option1button.setText("Kampf beginnen");
             option2button.setText("zurück");
             option3button.setText("");
-            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));        
+            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
             option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
 
 
@@ -7204,6 +7293,17 @@ nextPosition2 = "StoryR_3";
 
 
             case "StoryR_5":; 
+
+            
+            if (spieler.karma == 4){
+             //   spieler.karma = 0;
+               // mainTextArea.setText(" \" Du verschonst mich also. Leider kann ich dir nicht sagen, wer dein nächster Gegner ist, aber mein Gefühl sagt mir, dass du ihn darnicht suchen musst\"");
+            
+            }
+            
+            if (spieler.karma == -4){
+             //   spieler.karma = -8;
+            }
 
     mainTextArea.setText(" \" Warte, ich will dir noch eine Sache sagen! \n\n Merkur wird dein Untergang, er wird dich vernichten!\"");
 
@@ -7214,7 +7314,7 @@ nextPosition2 = "Last_2e";
             option1button.setText("weiter");
             option2button.setText("zurück");
             option3button.setText("");
-            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 25));        
+            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));        
             option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
 
 
@@ -7224,14 +7324,14 @@ nextPosition2 = "Last_2e";
             case "StoryR_5;":; 
             System.out.println(spieler.karma);
 
-            if (spieler.karma == 8){
-                spieler.karma = 4;
+            if (spieler.karma == 4){
+             //   spieler.karma = 8;
                // mainTextArea.setText(" \" Du verschonst mich also. Leider kann ich dir nicht sagen, wer dein nächster Gegner ist, aber mein Gefühl sagt mir, dass du ihn darnicht suchen musst\"");
             
             }
             
-            if (spieler.karma == 0){
-                spieler.karma = -4;
+            if (spieler.karma == -4){
+               // spieler.karma = 0;
             }
 
             if (spieler.karma >= 4){
@@ -7266,23 +7366,25 @@ nextPosition2 = "Last_2e";
                     case "StoryR_6":; 
 
                     if (spieler.karma <= -4){
-                        mainTextArea.setText(" \" Beim\"");
+                        mainTextArea.setText(" Beim Frühstück am nächsten Morgen setzt sich ein seltsamer Mann zu dir, er stellt sich dir mit Mars vor. Er fordert dich auf mit zu kommen. Du willigst ein. Ihr kommt an einem Tempel an. Mars betritt den Tempel dann du. \n\nDu bist erneut in einem Raum. Du siehst dich um.");
+
 
                     }
 
                     if (spieler.karma == 0){
                         mainTextArea.setText(" Nach dem du gefrühstückt hast, machst du dich auf dem Weg zu Medusa in Richtung osten.\n\n Irgendwann triffst du auf ein Tempel, sein Eingang ist ein riesiges, steinernes Schlangenmaul.\n Du setzt eine Augenbinde auf, um dich vor den Blicken der Medusa zu Schützen, dann gehst du hinein.");
 
+                        nextPosition1 = "StoryR_6.";
+                        nextPosition2 = "AfterApollon";
                     }
 
                     if (spieler.karma >= 4){
-                        mainTextArea.setText(" \" Nach dem du\"");
+                        mainTextArea.setText(" Nach dem du gefrühstückt, gehst du nach draußen. Dort siehst du eine weiße Taube sie schaut dich seltsam an und fliegt dann los. Dein Gefühl sagt dir du solltest der Taube folgen. Du folgst ihr. Nach einiger Zeit kommt ihr an einem Tempel an die Taube fliegt hinein, du gehst ihr nach. \n\nWieder ein Raum, du wartest auf die Gegner, damit du die Tür öffnen kannst.");
+
 
                     }
                 
                 
-                nextPosition1 = "StoryR_6.";
-                nextPosition2 = "Last_2e";
                 
                             option1button.setText("weiter");
                             option2button.setText("zurück");
@@ -7303,28 +7405,92 @@ nextPosition2 = "Last_2e";
                         nextPosition1 = "StoryR_6..";
                         nextPosition2 = "StoryR_6";
                         
-                                    option1button.setText("weiter");
+                                    option1button.setText("Kampf beginnen");
                                     option2button.setText("zurück");
                                     option3button.setText("");
-                                    option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));        
+                                    option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
                                     option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
                         
                         
                         
                                     break;
 
+                                    case "StoryR_6..":; 
+
+                                    optionsPanel.setVisible(false);
+                                    mainTextPanel.setVisible(false);
+                           spawnEnemy("Enemies", 0);
+                                    mainTextArea.setText(" Auf dem Boden sind überall Schlangen auf einmal. \n\nEs kommen aus allen Ecken Gorgonen!");
+                            
+                            
+                            nextPosition1 = "Gorgon1";
+                            nextPosition2 = "StoryR_6";
+                            
+                                        option1button.setText("weiter");
+                                        option2button.setText("zurück");
+                                        option3button.setText("");
+                                        option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));        
+                                        option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                            
+                            
+                            
+                                        break;
+
+                                        
+                                    case "StoryR_6...":; 
+
+                                    optionsPanel.setVisible(false);
+                                    mainTextPanel.setVisible(false);
+                           spawnEnemy("Enemies", 0);
+                                    mainTextArea.setText(" Auf dem Boden sind überall Schlangen auf einmal. \n\nEs kommen aus allen Ecken Gorgonen!");
+                            
+                            
+                            nextPosition1 = "Gorgon2";
+                            nextPosition2 = "StoryR_6";
+                            
+                                        option1button.setText("weiter");
+                                        option2button.setText("zurück");
+                                        option3button.setText("");
+                                        option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));        
+                                        option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                            
+                            
+                            
+                                        break;
+
+                                        case "StoryR_6....":; 
+
+                                        optionsPanel.setVisible(false);
+                                        mainTextPanel.setVisible(false);
+                               spawnEnemy("Enemies", 0);
+                                        mainTextArea.setText(" Auf dem Boden sind überall Schlangen auf einmal. \n\nEs kommen aus allen Ecken Gorgonen!");
+                                
+                                
+                                nextPosition1 = "Gorgon3";
+                                nextPosition2 = "StoryR_6";
+                                
+                                            option1button.setText("weiter");
+                                            option2button.setText("zurück");
+                                            option3button.setText("");
+                                            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));        
+                                            option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                                
+                                
+                                
+                                            break;
+
 
                     case "Last_2e":
 
 
                     if (spieler.karma == 8){
-                        spieler.karma = 4;
+                     //   spieler.karma = 4;
                        // mainTextArea.setText(" \" Du verschonst mich also. Leider kann ich dir nicht sagen, wer dein nächster Gegner ist, aber mein Gefühl sagt mir, dass du ihn darnicht suchen musst\"");
                     
                     }
                     
                     if (spieler.karma == 0){
-                        spieler.karma = -4;
+                     //   spieler.karma = -4;
                     }
                    
                     
