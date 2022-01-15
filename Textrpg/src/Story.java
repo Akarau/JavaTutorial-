@@ -7211,6 +7211,7 @@ break;
             case "StoryR_1":; 
             nextPosition1 = "StoryR_2";
             nextPosition2 = "AfterArtemis";
+            nextPosition3 = "";
 
             if (spieler.karma == -4){
                 mainTextArea.setText(" Du läufst der untergehende Sonne entgegen, und stellst dir vor, dass dein Gegner genau so untergehen wird!");
@@ -7234,6 +7235,7 @@ break;
             case "StoryR_2":; 
             nextPosition1 = "StoryR_3";
             nextPosition2 = "StoryR_1";
+            nextPosition3 = "";
 
                 mainTextArea.setText(" Nach einer Zeit hörst du den Klang nach Kithara, du folgst die Melodie, bis du auf einer großen Wiese ankommst.");
 
@@ -7253,6 +7255,7 @@ break;
 
 nextPosition1 = "StoryR_4";
 nextPosition2 = "StoryR_2";
+nextPosition3 = "";
 
 
             option1button.setText("weiter");
@@ -7279,6 +7282,7 @@ if (spieler.karma == 4){
 
 nextPosition1 = "Apollon Kampf";
 nextPosition2 = "StoryR_3";
+nextPosition3 = "";
 
 
             option1button.setText("Kampf beginnen");
@@ -7310,6 +7314,7 @@ nextPosition2 = "StoryR_3";
 
 nextPosition1 = "Apollon töten";
 nextPosition2 = "Last_2e";
+nextPosition3 = "";
 
             option1button.setText("weiter");
             option2button.setText("zurück");
@@ -7389,7 +7394,7 @@ nextPosition2 = "Last_2e";
                             option1button.setText("weiter");
                             option2button.setText("zurück");
                             option3button.setText("");
-                            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 25));        
+                            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));        
                             option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
                 
                 
@@ -7478,6 +7483,27 @@ nextPosition2 = "Last_2e";
                                 
                                 
                                             break;
+
+                                            case "StoryR_6.....":; 
+
+                                            mainTextArea.setText(" Du hast die Gorgonen besiegst.\nJetzt hörst du plötzlich eine weibliche Stimme.\n\"Weißt du, dass ich so aussehe ist alleine Poseidons Schuld! Er vergewaltigte mich, dieser Mistkerl. Als Athene dass sah war sie so erzürnt, dass sie mich in dieses Etwas verwandelte. Seitdem tauchen hier ständig Leute auf die mich töten wollen.\" \n Sie bricht in tränen aus. \"Stirb!\"");
+
+
+
+                                    
+                                    
+                                    nextPosition1 = "Medusa Fight";
+                                    nextPosition2 = "";
+                                    
+                                                option1button.setText("weiter");
+                                                option2button.setText("zurück");
+                                                option3button.setText("");
+                                                option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));        
+                                                option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                                    
+                                    
+                                    
+                                                break;
 
 
                     case "Last_2e":
