@@ -62,7 +62,7 @@ public class Enemy {
         200,
     };
 
-    static String enemy_Main_Materias[] = {
+    String enemy_Main_Materias[] = {
         "Erde",
         "Fire",
     };
