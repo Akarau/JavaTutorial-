@@ -4108,7 +4108,7 @@ damageText.setBounds(900, 480, 600, 80);
                                         
                                                     }
 
-                                                    damageText.setText("" + (damg/3 + damg/3 + damg/3) +  " Element Schaden");
+                                                    damageText.setText("" + (damg) +  " Element Schaden");
 
                                                     Thread.sleep(spieler.t1);
                       
@@ -5958,32 +5958,30 @@ fightPlayButton.setVisible(true);
         if (en.boss_Main_Materias[Index] == "Cosmic" || en.enemy_Main_Materias[Index] == "Cosmic") {
 
 
-
-
             // Strong //
 
-            if (spieler.Main_Element == "  Gravity  "){
+            if (spieler.Main_Element.charAt(2) == 'G' && spieler.Main_Element.charAt(3) == 'r'){
                 i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Gravity.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
                 i1.setText("        Gravity         ");
                 i1.setForeground(new Color(155,25,0));
              }
         
         
-             if (spieler.Second_Element == "  Gravity  "){
+             if (spieler.Second_Element.charAt(2) == 'G' && spieler.Second_Element.charAt(3) == 'r'){
                 i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Gravity.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
                 i2.setText("        Gravity         ");
                 i2.setForeground(new Color(155,25,0));
              }
         
-                    if (spieler.Main_Element == "  Void  "){
-                        i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Void.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
+             if (spieler.Main_Element.charAt(2) == 'V' && spieler.Main_Element.charAt(3) == 'o'){
+                i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Void.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
                         i1.setText("        Void         ");
                         i1.setForeground(new Color(155,25,0));
                             }
         
         
         
-                            if (spieler.Second_Element == "  Void  "){
+                            if (spieler.Second_Element.charAt(2) == 'V' && spieler.Second_Element.charAt(3) == 'o'){
                                 i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Void.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
                                 i2.setText("        Void         ");
                                 i2.setForeground(new Color(155,25,0));
@@ -5998,26 +5996,26 @@ fightPlayButton.setVisible(true);
             // Weak //
 
 
-            if (spieler.Main_Element == "  Erde  "){
+            if (spieler.Main_Element.charAt(2) == 'E' && spieler.Main_Element.charAt(3) == 'r'){
                 i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Erde.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
                 i1.setText("        Erde         ");
                 i1.setForeground(new Color(255,215,0));
                     }
                 
-                    if (spieler.Second_Element == "  Erde  "){
-                i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Erde.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+                    if (spieler.Second_Element.charAt(2) == 'E' && spieler.Second_Element.charAt(3) == 'r'){
+                        i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Erde.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
                 i2.setText("        Erde         ");
                 i2.setForeground(new Color(255,215,0));
                     }
                 
-                    if (spieler.Main_Element == "  Cosmic  "){
+                    if (spieler.Main_Element.charAt(2) == 'C' && spieler.Main_Element.charAt(3) == 'o'){
                         i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Cosmic.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
                         i1.setText("        Cosmic         ");
                         i1.setForeground(new Color(255,215,0));
                      }
                 
                 
-                     if (spieler.Second_Element == "  Cosmic  "){
+                     if (spieler.Second_Element.charAt(2) == 'C' && spieler.Second_Element.charAt(3) == 'o'){
                         i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Cosmic.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
                         i2.setText("        Cosmic         ");
                         i2.setForeground(new Color(255,215,0));
