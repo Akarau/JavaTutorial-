@@ -3147,13 +3147,141 @@ spieler.thread3 = 0;
 
 mainTextPanel.setVisible(true);
 optionsPanel.setVisible(true);
-mainTextArea.setText("[DunkleFlamme] wurde besiegt! \n \nDu hast 100 Münzen bekommen! \n \nJe stärker der Gegner ist, desto mehr Münzen bekommst du!");
+mainTextArea.setText("[(Wütender) Hirsch] wurde besiegt! \n \nDu hast 120 Münzen bekommen! \n \nJe stärker der Gegner ist, desto mehr Münzen bekommst du!");
+option1button.setText("Belohnung fordern!");
+option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+option2button.setText("");
+nextPosition1 = "Zweiter Gegner Kampf";
+nextPosition2 = "";
+
+        }
+
+        if (nextPosition1 == "Zweiter Gegner Kampf"){
+            endFight();
+
+mainTextPanel.setVisible(true);
+optionsPanel.setVisible(true);
+mainTextArea.setText("[(Wilder) Eber] wurde besiegt! \n \nDu hast 140 Münzen bekommen!");
+option1button.setText("Belohnung fordern!");
+option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+option2button.setText("");
+nextPosition1 = "Dritter Gegner Kampf";
+nextPosition2 = "";
+
+        }
+
+        if (nextPosition1 == "Dritter Gegner Kampf"){
+            endFight();
+
+mainTextPanel.setVisible(true);
+optionsPanel.setVisible(true);
+mainTextArea.setText("[(Wütender) Bär] wurde besiegt! \n \nDu hast 160 Münzen bekommen!");
+option1button.setText("Belohnung fordern!");
+option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+option2button.setText("");
+nextPosition1 = "Vierter Gegner Kampf";
+nextPosition2 = "";
+
+        }
+
+        if (nextPosition1 == "Vierter Gegner Kampf"){
+            endFight();
+
+mainTextPanel.setVisible(true);
+optionsPanel.setVisible(true);
+mainTextArea.setText("[(Zorniger) Stier] wurde besiegt! \n \nDu hast 180 Münzen bekommen!");
 option1button.setText("Belohnung fordern!");
 option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
 option2button.setText("");
 nextPosition1 = "Anfangpart8";
 nextPosition2 = "";
 
+        }
+
+        if (nextPosition1 == "StoryR_6++"){
+            endFight();
+            mainTextPanel.setVisible(true);
+optionsPanel.setVisible(true);
+mainTextArea.setText("[Gladiator lvl 1] wurde besiegt! \n \nDu hast 220 Münzen bekommen!");
+spieler.Gold+= 220;
+option1button.setText("nächster Gegner");
+option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+option2button.setText("");
+        }
+
+        if (nextPosition1 == "StoryR_6+++"){
+            endFight();
+            mainTextPanel.setVisible(true);
+optionsPanel.setVisible(true);
+mainTextArea.setText("[Gladiator lvl 2] wurde besiegt! \n \nDu hast 240 Münzen bekommen!");
+spieler.Gold+= 240;
+option1button.setText("nächster Gegner");
+option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+option2button.setText("");
+        }
+
+        if (nextPosition1 == "StoryR_6++++"){
+            endFight();
+            mainTextPanel.setVisible(true);
+optionsPanel.setVisible(true);
+mainTextArea.setText("[Gladiator lvl 3] wurde besiegt! \n \nDu hast 260 Münzen bekommen!");
+spieler.Gold+= 260;
+option1button.setText("nächster Gegner");
+option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+option2button.setText("");
+        }
+
+        if (nextPosition1 == "StoryR_6+++++"){
+            endFight();
+            mainTextPanel.setVisible(true);
+optionsPanel.setVisible(true);
+mainTextArea.setText("[Gladiator lvl 4] wurde besiegt! \n \nDu hast 280 Münzen bekommen!");
+spieler.Gold+= 280;
+option1button.setText("nächster Gegner");
+option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+option2button.setText("");
+        }
+
+        if (nextPosition1 == "StoryR_6++++++"){
+            endFight();
+            mainTextPanel.setVisible(true);
+optionsPanel.setVisible(true);
+mainTextArea.setText("[Gladiator lvl 5] wurde besiegt! \n \nDu hast 300 Münzen bekommen!");
+spieler.Gold+= 300;
+option1button.setText("letzter Gladiator");
+option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+option2button.setText("");
+        }
+        
+
+        if (nextPosition1 == "StoryR_6+++++++"){
+            endFight();
+            mainTextPanel.setVisible(true);
+optionsPanel.setVisible(true);
+mainTextArea.setText("[Gladiator lvl 6] wurde besiegt! \n \nDu hast 320 Münzen bekommen!");
+spieler.Gold+= 320;
+option1button.setText("weiter");
+option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+option2button.setText("");
+nextPosition2 = "";
+        }
+
+        if (nextPosition1 == "StoryR_6++++++++++"){
+            endFight();
+
+            optionsPanel.setVisible(true);
+            mainTextPanel.setVisible(true);
+
+            mainTextArea.setText(" Du hast also gewonnen. Mein Respekt.\n Dein nächster Gegner wartet auf den Berg Oite auf dich, er ist dein letzter vor Zeus");
+        
+        nextPosition1 = "StoryR_6+++++++++++";
+
+        Font f = new Font("Times new Roman", Font.PLAIN, 40);
+        
+                    option1button.setText("weiter");
+                    option3button.setText("");
+                    option1button.setFont(f);        
+                    option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
         }
 
         if (nextPosition1 == "Artemis Kampf"){
@@ -4217,7 +4345,8 @@ damageText.setBounds(900, 480, 600, 80);
                     elementImage.setBounds(500,480,400,400);
         
                     elementsMenu.setVisible(false);
-        
+                    elementImage.setVisible(true);
+
                     System.out.println("Gravity=Main");
 
 
@@ -4227,7 +4356,7 @@ damageText.setBounds(900, 480, 600, 80);
 
 
 
-                                    for (int t = 1; t<5; t++){
+                                    for (int t = 1; t<3; t++){
                                        
                                                for (int a = 1; a<37; a++){
                                                 elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Animation_Gravity\\" + a + ".png").getImage().getScaledInstance(370, 50, Image.SCALE_AREA_AVERAGING)));
@@ -4610,7 +4739,7 @@ damageText.setBounds(900, 480, 600, 80);
 
                             if (spieler.currentEnemyHP > 0){
                
-                                   damg = (spieler.Power)/3;
+                                   damg = (spieler.Power);
        
                                    damageText.setText("" + spieler.Power+ "");
                                    damageText.setForeground(new Color(255,255,255));
@@ -4618,11 +4747,11 @@ damageText.setBounds(900, 480, 600, 80);
                
                
                
-                                   if (spieler.enemyMain_Element == "Wind" || spieler.enemyMain_Element == "Crystal" ){
+                                   if (spieler.enemyMain_Element == "Erde" || spieler.enemyMain_Element == "Crystal" ){
                
                                        damageText.setText("" + spieler.Power *2 + "");
                                        damageText.setForeground(new Color(255,50,0));
-                                       damg = (spieler.Power *2)/3;
+                                       damg = (spieler.Power *2);
                                     damageText.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Lunar.png").getImage().getScaledInstance(35, 35, Image.SCALE_AREA_AVERAGING)));
                
                
@@ -4631,7 +4760,7 @@ damageText.setBounds(900, 480, 600, 80);
                                    if (spieler.enemyMain_Element == "Lunar"){
                                        damageText.setText("" + spieler.Power /2 + "");
                                        damageText.setForeground(new Color(255,200,30));
-                                       damg = (spieler.Power /2)/3;
+                                       damg = (spieler.Power /2);
                                        damageText.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Lunar.png").getImage().getScaledInstance(35, 35, Image.SCALE_AREA_AVERAGING)));
                
                
@@ -4641,6 +4770,7 @@ damageText.setBounds(900, 480, 600, 80);
                                elementImage.setVisible(false);
                                damageText.setBounds(900, 480, 600, 80);
 
+                               damageText.setText("");
                                damageText.setVisible(true);
        
                                Thread.sleep(spieler.t2);
@@ -4671,7 +4801,7 @@ damageText.setBounds(900, 480, 600, 80);
                                 enemyImage.setEnabled(false);
                                 elementImage.setVisible(false);
                                 elementImage.setBounds(600,320,400,400);
-                                damageText.setText("" + damg + "");
+                                damageText.setText("" + damg/3 + "");
 
     
                                 Thread.sleep(spieler.t2 / 2);
@@ -4691,7 +4821,7 @@ damageText.setBounds(900, 480, 600, 80);
                                    Thread.sleep(spieler.t1);
                 
                                             }
-                                            damageText.setText("" + (damg + damg) + "");
+                                            damageText.setText("" + (damg + damg)/3 + "");
 
     
                                             enemyImage.setEnabled(false);
@@ -4715,7 +4845,7 @@ damageText.setBounds(900, 480, 600, 80);
                             
                                                         }
 
-                                                        damageText.setText("" + (damg + damg + damg) +  " Element Schaden");
+                                                        damageText.setText("" + (damg) +  " Element Schaden");
        
                                                            Thread.sleep(spieler.t1 / 2);
                                                            enemyImage.setEnabled(false);
@@ -5040,11 +5170,14 @@ for (int xi = 0; xi<= 120; xi++){
 
 
     public void enemyAttack() throws InterruptedException{
-        String element;
-        if (spieler.Main_Element == "  Ancient  ") {
 
-            System.out.println(";lrth");
+        System.out.println("Enemyattack43686");;
+        String element;
+        if (spieler.Main_Element.charAt(2) == 'C' || spieler.Main_Element.charAt(3) == 'o') {
+
             element = spieler.enemyMain_Element;
+            spieler.enemyAtacked = true;
+
             Attack(element);
         }
 
@@ -6180,8 +6313,8 @@ i2.setForeground(new Color(155,25,0));
 }
 
 if (spieler.Main_Element.charAt(2) == 'L' && spieler.Main_Element.charAt(3) == 'u'){
-i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Cosmic.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
-i1.setText("        Cosmic         ");
+i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Lunar.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
+i1.setText("        Lunar         ");
 i1.setForeground(new Color(155,25,0));
     }
 
@@ -7415,6 +7548,10 @@ nextPosition3 = "";
                     if (spieler.karma >= 4){
                         mainTextArea.setText(" Nach dem du gefrühstückt, gehst du nach draußen. Dort siehst du eine weiße Taube sie schaut dich seltsam an und fliegt dann los. Dein Gefühl sagt dir du solltest der Taube folgen. Du folgst ihr. Nach einiger Zeit kommt ihr an einem Tempel an die Taube fliegt hinein, du gehst ihr nach. \n\nWieder ein Raum, du wartest auf die Gegner, damit du die Tür öffnen kannst.");
 
+                        nextPosition1 = "StoryR_6+";
+                        nextPosition2 = "AfterApollon";
+                        option1button.setText("Kampf beginnen");
+                        option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
 
                     }
                 
@@ -7429,6 +7566,259 @@ nextPosition3 = "";
                 
                 
                             break;
+
+                            case "StoryR_6+":; 
+
+                            optionsPanel.setVisible(false);
+                            mainTextPanel.setVisible(false);
+                            spawnEnemy("Enemies", 5);
+                           
+                                mainTextArea.setText(" Auf dem Boden sind überall Schlangen auf einmal. \n\nEs kommen aus allen Ecken Gorgonen!");
+                        
+                        
+                        nextPosition1 = "StoryR_6++";
+                        nextPosition2 = "StoryR_6";
+                        
+                                    option1button.setText("Kampf beginnen");
+                                    option2button.setText("zurück");
+                                    option3button.setText("");
+                                    option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
+                                    option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                        
+                        
+                        
+                                    break;
+
+                                    case "StoryR_6++":; 
+
+                                    optionsPanel.setVisible(false);
+                                    mainTextPanel.setVisible(false);
+                                    spawnEnemy("Enemies", 6);
+                                                                   
+                                
+                                nextPosition1 = "StoryR_6+++";
+                                
+                                            option1button.setText("nächster Gegner");
+                                            option3button.setText("");
+                                            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
+                                            option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                                
+                                
+                                
+                                            break;
+
+                                            case "StoryR_6+++":; 
+
+                                            optionsPanel.setVisible(false);
+                                            mainTextPanel.setVisible(false);
+                                            spawnEnemy("Enemies", 7);
+                                                                           
+                                        
+                                        nextPosition1 = "StoryR_6++++";
+                                        
+                                                    option1button.setText("nächster Gegner");
+                                                    option3button.setText("");
+                                                    option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
+                                                    option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                                        
+                                        
+                                        
+                                                    break;
+
+                                                    case "StoryR_6++++":; 
+
+                                                    optionsPanel.setVisible(false);
+                                                    mainTextPanel.setVisible(false);
+                                                    spawnEnemy("Enemies", 8);
+                                                                                   
+                                                
+                                                nextPosition1 = "StoryR_6+++++";
+                                                
+                                                            option1button.setText("nächster Gegner");
+                                                            option3button.setText("");
+                                                            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
+                                                            option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                                                
+                                                
+                                                
+                                                            break;
+
+                                                            case "StoryR_6+++++":; 
+
+                                                    optionsPanel.setVisible(false);
+                                                    mainTextPanel.setVisible(false);
+                                                    spawnEnemy("Enemies", 9);
+                                                                                   
+                                                
+                                                nextPosition1 = "StoryR_6++++++";
+                                                
+                                                            option1button.setText("letzter Glad");
+                                                            option3button.setText("");
+                                                            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
+                                                            option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                                                
+                                                
+                                                
+                                                            break;
+
+                                                            case "StoryR_6++++++":; 
+
+                                                    optionsPanel.setVisible(false);
+                                                    mainTextPanel.setVisible(false);
+                                                    spawnEnemy("Enemies", 10);
+                                                                                   
+                                                
+                                                nextPosition1 = "StoryR_6+++++++";
+                                                
+                                                            option1button.setText("weiter");
+                                                            option3button.setText("");
+                                                            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));        
+                                                            option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                                                
+                                                
+                                                
+                                                            break;
+
+                                                            case "StoryR_6+++++++":; 
+
+                                                    optionsPanel.setVisible(true);
+                                                    mainTextPanel.setVisible(true);
+                                                    mainTextArea.setText(" Du gehst in den nächsten Raum, dort siehst du eine Frau in Gladiator Rüstung.\n\n \"Ich bin Athene, die Göttin des taktischen und friedlichen Krieg und eine Schwester des Zeus.\"");
+                                                                                   
+                                                
+                                                nextPosition1 = "StoryR_6++++++++";
+                                                
+                                                            option1button.setText("weiter");
+                                                            option3button.setText("");
+                                                            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));        
+                                                            option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                                                
+                                                
+                                                
+                                                            break;
+
+                                                            case "StoryR_6++++++++":; 
+
+                                                            optionsPanel.setVisible(true);
+                                                            mainTextPanel.setVisible(true);
+                                                            mainTextArea.setText(" Du gehst ein paar Schritte auf Athene zu. \n\n \"Ich werde dafür sorgen, dass die Gerechtigkeit siegt\"");
+                                                                                           
+                                                        
+                                                        nextPosition1 = "StoryR_6+++++++++";
+                                                        
+                                                                    option1button.setText("weiter");
+                                                                    option3button.setText("");
+                                                                    option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));        
+                                                                    option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                                                        
+                                                        
+                                                        
+                                                                    break;
+
+                                                                    case "StoryR_6+++++++++":; 
+
+                                                                    optionsPanel.setVisible(false);
+                                                                    mainTextPanel.setVisible(false);
+spawnEnemy("Bosses", 0);                                                                                                   
+                                                                
+                                                                nextPosition1 = "StoryR_6++++++++++";
+                                                                
+                                                                            option1button.setText("weiter");
+                                                                            option3button.setText("");
+                                                                            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));        
+                                                                            option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                                                                
+                                                                
+                                                                
+                                                                            break;
+
+                                                                            case "StoryR_6++++++++++":; 
+
+                                                                            optionsPanel.setVisible(true);
+                                                                            mainTextPanel.setVisible(true);
+
+                                                                            mainTextArea.setText(" Du hast also gewonnen. Mein Respekt.\n Dein nächster Gegner wartet auf den Berg Oite auf dich, er ist dein letzter vor Zeus");
+                                                                        
+                                                                        nextPosition1 = "StoryR_6+++++++++++";
+
+                                                                        Font f = new Font("Times new Roman", Font.PLAIN, 40);
+                                                                        
+                                                                                    option1button.setText("weiter");
+                                                                                    option3button.setText("");
+                                                                                    option1button.setFont(f);        
+                                                                                    option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                                                                        
+                                                                        
+                                                                        
+                                                                                    break;
+
+                                                        
+
+                                                                                    case "StoryR_6+++++++++++":; 
+
+                                                                                    optionsPanel.setVisible(true);
+                                                                                    mainTextPanel.setVisible(true);
+        
+                                                                                    mainTextArea.setText(" Willst du Athene töten? \n > Athene töten\n Athene wird getötet [-4 karma] \n\n > Athene verschonen\n Athene wird verschont [+4 karma]");
+                                                                                
+                                                                                nextPosition1 = "Athene töten";
+                                                                                nextPosition2 = "Athene verschonen";
+
+                                                                                
+                                                                                            option1button.setText("Athene töten");
+                                                                                            option2button.setText("Athene verschonen");
+                                                                                            option3button.setText("");
+                                                                                            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
+                                                                                            option2button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+                                                                                
+                                                                                
+                                                                                
+                                                                                            break;
+
+                                                                                            case "Athene töten":; 
+
+                                                                                    optionsPanel.setVisible(true);
+                                                                                    mainTextPanel.setVisible(true);
+        
+                                                                                    mainTextArea.setText(" \"Wenn du mich töten willst dann sei es so.\" \nAthenes Kopf rollt zu Boden\n\n Du verlässt den Tempel und suchst Rast");
+                                                                                
+                                                                                    nextPosition1 = "Story7xtr";
+                                                                                    nextPosition2 = "StoryR_6+++++++++++";
+                                                                                    
+                                                                                
+                                                                                            option1button.setText("weiter");
+                                                                                            option2button.setText("zurück");
+                                                                                            option3button.setText("");
+                                                                                            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));        
+                                                                                            option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                                                                                
+                                                                                
+                                                                                
+                                                                                            break;
+
+                                                                                            case "Athene verschonen":; 
+
+                                                                                    optionsPanel.setVisible(true);
+                                                                                    mainTextPanel.setVisible(true);
+
+                                                                                    nextPosition1 = "Story7xtr";
+                                                                                    nextPosition2 = "StoryR_6+++++++++++";
+        
+                                                                                    mainTextArea.setText(" \"Ich habe es ja gesagt.\" \n\nDie Gerechtigkeit wird gewinnen");
+                                                                                
+                                                                                    
+                                                                                
+                                                                                    option1button.setText("weiter");
+                                                                                    option2button.setText("zurück");
+                                                                                            option3button.setText("");
+                                                                                            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));        
+                                                                                            option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                                                                                
+                                                                                
+                                                                                
+                                                                                            break;
+
+
 
                             case "StoryR_6.":; 
 
@@ -7557,6 +7947,7 @@ nextPosition3 = "";
                                                     break;
 
                                                     case "StoryR_6.......":; 
+                                                    spieler.PolydektesK = null;
 
                                                     mainTextArea.setText(" Willst du Polydektes töten? \n > Polydektes töten\n Polydektes wird getötet [-4 karma] \n\n > Polydektes verschonen\n Polydektes wird verschont [+4 karma]");
         
@@ -7564,9 +7955,151 @@ nextPosition3 = "";
         
                                             
                                             
-                                            nextPosition1 = "";
-                                            nextPosition2 = "StoryR_6......";
+                                            nextPosition1 = "Polydektes töten";
+                                            nextPosition2 = "Polydektes verschonen";
                                             
+                                                        option1button.setText("Polydektes töten");
+                                                        option2button.setText("Polydektes verschonen");
+                                                        option3button.setText("");
+                                                        option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));        
+                                                        option2button.setFont(new Font("Times new Roman", Font.PLAIN, 25));
+                                            
+                                            
+                                            
+                                                        break;
+
+                                                        
+
+                                                            case "Polydektes töten":; 
+                                                            spieler.PolydektesK = true;
+
+                                                        mainTextArea.setText(" Du hebst den Kopf der Medusa vom Boden auf und richtet ihn auf Polydektes \n\nMit einem letzten Schrei wird er zu Stein. Du suchst vor Erschöpfung Rast.");
+            
+            
+            
+                                                
+                                                
+                                                nextPosition1 = "Story7";
+                                                nextPosition2 = "StoryR_6........";
+                                                
+                                                            option1button.setText("weiter");
+                                                            option2button.setText("zurück");
+                                                            option3button.setText("");
+                                                            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));        
+                                                            option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                                                
+                                                
+                                                
+                                                            break;
+
+                                                            case "Polydektes verschonen":; 
+spieler.PolydektesK = false;
+                                                        mainTextArea.setText(" Du verschwindest vom Ort und suchst Rast");
+            
+            
+                                                
+                                                
+                                                nextPosition1 = "Story7";
+                                                nextPosition2 = "StoryR_6........";
+                                                
+                                                            option1button.setText("weiter");
+                                                            option2button.setText("zurück");
+                                                            option3button.setText("");
+                                                            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));        
+                                                            option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                                                
+                                                
+                                                
+                                                            break;
+
+                                                            case "Story7":; 
+
+                                                            if (spieler.PolydektesK == true){
+                                                                spieler.karma-=4;
+                                                            }
+
+                                                            if (spieler.PolydektesK == false){
+                                                                spieler.karma+=4;
+                                                            }
+
+                
+                
+                
+                                                    if (spieler.karma >0){
+                                                        mainTextArea.setText(" Du wachst am Morgen auf.\n\n Albträume haben dich die ganze Nacht über geplagt. Du hast das Gefühl, dass die Seelen derer die du getötet hast auf deinen Schultern lasten.\n\nWillst du ihnen nachgehen oder zum Berg Otie?");
+                                                        nextPosition1 = "Story7L";
+                                                    
+                                                        option1button.setText("Seelen nachgehen");
+                                                        option2button.setText("Zum Berg Otie");
+                                                        option3button.setText("");
+                                                        option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));        
+                                                        option2button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+                                                    }
+
+                                                    if (spieler.karma <0){
+                                                        mainTextArea.setText(" Du wachst am Morgen auf, frühstückst in Ruhe und machst dich dann auf den Weg zum Berg Oite.\n\nUnterwegs kommst du am Strand vorbei, du fühlst wie das Meer nach dir ruft\n\n Willst du näher zum Meer oder zum Berg Oite?");
+                                                        nextPosition1 = "Story7R";
+                                                    
+                                                        option1button.setText("Zu Wasser");
+                                                        option2button.setText("Zum Berg Otie");
+                                                        option3button.setText("");
+                                                        option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));        
+                                                        option2button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+                                                    }
+
+                                                    break;
+                                                    
+
+                                                    case "Story7xtr":; 
+
+                                                    if (spieler.ApollonK == true){
+                                                        spieler.karma-=4;
+                                                    }
+
+                                                    if (spieler.ApollonK == false){
+                                                        spieler.karma+=4;
+                                                    }
+
+        
+        
+        
+                                            if (spieler.karma >0){
+                                                mainTextArea.setText(" Du wachst am Morgen auf.\n\n Albträume haben dich die ganze Nacht über geplagt. Du hast das Gefühl, dass die Seelen derer die du getötet hast auf deinen Schultern lasten.\n\nWillst du ihnen nachgehen oder zum Berg Otie?");
+                                                nextPosition1 = "Story7L";
+                                                nextPosition2 = "Story7M";
+
+                                                option1button.setText("Seelen nachgehen");
+                                                option2button.setText("Zum Berg Otie");
+                                                option3button.setText("");
+                                                option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));        
+                                                option2button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+                                            }
+
+                                            if (spieler.karma <0){
+                                                mainTextArea.setText(" Du wachst am Morgen auf, frühstückst in Ruhe und machst dich dann auf den Weg zum Berg Oite.\n\nUnterwegs kommst du am Strand vorbei, du fühlst wie das Meer nach dir ruft\n\n Willst du näher zum Meer oder zum Berg Oite?");
+                                                nextPosition1 = "Story7R";
+                                                nextPosition2 = "Story7M";
+                                            
+                                                option1button.setText("zu Wasser");
+                                                option2button.setText("Zum Berg Otie");
+                                                option3button.setText("");
+                                                option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));        
+                                                option2button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+                                            }
+
+                                            break;
+
+                                        
+
+                                                    case "Story7R":; 
+
+                                                        
+                
+                                                   
+
+                                                        mainTextArea.setText(" Du wirst ins Wasser gerissen\n\n Du versuchst nach oben zu schwimmen, aber Irgendwas zieht dich nach unten.\n Du denkst , dass du Bald ertrinken wirst. Dann plötzlich bekommst du wieder Luft.\n Du bist in einer gigantischen Luftblase unter Wasser, vor dir steht dein letzter Tempel");
+                                                        nextPosition1 = "Story7R_2";
+                                                    
                                                         option1button.setText("weiter");
                                                         option2button.setText("zurück");
                                                         option3button.setText("");
@@ -7574,9 +8107,44 @@ nextPosition3 = "";
                                                         option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
                                             
                                             
+                                                        break;
+
+                                                        case "Story7L":; 
+
+                                                        
+                
+                                                   
+
+                                                        mainTextArea.setText(" Innerhalb von wenigen Sekunden befindest du dich auf einmal in einem dunklen Gebiet, überall fliegen die Seelen der verstorbenen herum.\n\n Einige erscheinen vor dir.\n\n Es sind die, die du getötet hast.");
+                                                        nextPosition1 = "Story7R_2";
+                                                    
+                                                        option1button.setText("weiter");
+                                                        option2button.setText("zurück");
+                                                        option3button.setText("");
+                                                        option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));        
+                                                        option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                                            
                                             
                                                         break;
 
+                                                        case "Story7M":; 
+
+                                                        
+                
+                                                   
+
+                                                        mainTextArea.setText(" Du gehst zum Berg Oite. Du Reist schon mehrere Tage.\nBis du an einem Schild ankommst. \" Berg Oite\". \n Du blickst hinauf und fängst dann an den Pfad hochzulaufen");
+                                                        nextPosition1 = "Story7R_2";
+                                                    
+                                                        option1button.setText("weiter");
+                                                        option2button.setText("zurück");
+                                                        option3button.setText("");
+                                                        option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));        
+                                                        option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                                            
+                                            
+                                                        break;
+                                                   
                                                     
                                                     case "Last_3e":; 
 
@@ -7713,9 +8281,33 @@ spawnEnemy("Bosses", 0);
             mainTextPanel.setVisible(false);
             optionsPanel.setVisible(false);
 
-            spawnEnemy("Enemies", 0);
+            spawnEnemy("Enemies", 1);
+            nextPosition1 = "Zweiter Gegner Kampf";
             ;break;
 
+            case "Zweiter Gegner Kampf":
+            mainTextPanel.setVisible(false);
+            optionsPanel.setVisible(false);
+
+            spawnEnemy("Enemies", 2);
+            nextPosition1 = "Dritter Gegner Kampf";
+            ;break;
+
+            case "Dritter Gegner Kampf":
+            mainTextPanel.setVisible(false);
+            optionsPanel.setVisible(false);
+
+            spawnEnemy("Enemies", 3);
+            nextPosition1 = "Vierter Gegner Kampf";
+            ;break;
+
+            case "Vierter Gegner Kampf":
+            mainTextPanel.setVisible(false);
+            optionsPanel.setVisible(false);
+
+            spawnEnemy("Enemies", 4);
+            nextPosition1 = "Anfangpart8";
+            ;break;
 
 
     

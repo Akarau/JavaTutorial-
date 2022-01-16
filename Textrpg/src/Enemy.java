@@ -44,50 +44,125 @@ public class Enemy {
 
     String enemies[] = {
         "DunkleFlamme",
-        "Balrog",
+        "(Wütender) Hirsch",
+        "(Wilder) Eber",
+        "(Wütender) Bär",
+        "(Zorniger) Stier",
+        "Gladiator lvl 1",
+        "Gladiator lvl 2",
+        "Gladiator lvl 3",
+        "Gladiator lvl 4",
+        "Gladiator lvl 5",
+        "Gladiator lvl 6",
+
+
     };
 
     int enemiesHP[] = {
         100,
-        200,
+        120,
+        140,
+        160,
+        180,
+        220,
+        240,
+        260,
+        280,
+        300,
+        320,
     };
 
-    String enemiesHPString[] = {
-        "100",
-        "200",
-    };
 
     int enemiesPower[] = {
         5,
-        200,
+        12,
+        14,
+        16,
+        18,
+        22,
+        24,
+        26,
+        28,
+        30,
+        32,
+
     };
 
     String enemy_Main_Materias[] = {
         "Erde",
-        "Fire",
+        "Erde",
+        "Erde",
+        "Feuer",
+        "Erde",
+        "Erde",
+        "Erde",
+        "Erde",
+        "Erde",
+        "Erde",
+        "Erde",
+
     };
 
 
     String enemy_Second_Materias[] = {
         "Lunar",
         "Fire",
+        "Crystal",
+        "Crystal",
+        "Crystal",
+        "",
+        "",
+        "Feuer",
+        "Feuer",
+        "Feuer",
+        "Feuer",
+
     };
 
-    static String enemy_Third_Materias[] = {
+    String enemy_Third_Materias[] = {
         "D",
         "Fire",
+        "Crystal",
+        "Crystal",
+        "Crystal",
+        "",
+        "",
+        "",
+        "",
+        "Ancient",
+        "Ancient",
+
     };
 
 
     String enemy_Last_Materias[] = {
         "C",
         "Fire",
+        "Crystal",
+        "Crystal",
+        "Crystal",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+
     };
 
 
     String enemyDifficulty[] = {
         "Leicht",
         "Fire",
+        "Crystal",
+        "Crystal",
+        "Crystal",
+        "Crystal",
+        "Crystal",
+        "Crystal",
+        "Crystal",
+        "Crystal",
+
     };
 
 
@@ -100,11 +175,11 @@ public class Enemy {
         new Color(60,0,53),
         new Color(255,100,0),
         new Color(255,125,34),
-        new Color(255,255,255),
-        new Color(255,255,0),
-        new Color(0,255,80),
-        new Color(40,40,40),
-        new Color(100,0,255),
+        new Color(255,105,28),
+        new Color(255,85,22),
+        new Color(255,65,16),
+        new Color(255,55,8),
+        new Color(255,35,0),
         new Color(0,150,255),
     };
 
@@ -113,6 +188,18 @@ public class Enemy {
         new Color(0,255,60),
         new Color(160,0,255),
         new Color(25,255,255),
+        new Color(25,255,255),
+        new Color(25,255,255),
+        new Color(25,255,255),
+        new Color(25,255,255),
+        new Color(25,255,255),
+        new Color(25,255,255),
+        new Color(25,255,255),
+        new Color(25,255,255),
+        new Color(25,255,255),
+        new Color(25,255,255),
+        new Color(25,255,255),
+
     };
 
 
