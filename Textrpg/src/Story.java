@@ -26,6 +26,7 @@ public class Story implements ActionListener {
     String text,nextPosition1,nextPosition2,nextPosition3,nextPosition4;
 
     JPanel specialEnemyP;
+    JPanel specialEnemyP2;
     JLabel specialEnemyI;
     JLabel specialEnemyI2;
     JLabel specialEnemyT;
@@ -569,7 +570,7 @@ mainTextArea.setOpaque(false);
         specialEnemyT.setText("1500");
         specialEnemyT.setBackground(new Color(0,0,0));
 
-      JPanel specialEnemyP2 = new JPanel();
+        specialEnemyP2 = new JPanel();
         specialEnemyP2.setBounds(400, 40, 500, 40);
         specialEnemyP2.setVisible(false);
         specialEnemyP2.setBackground(new Color(60,60,60));
@@ -3188,6 +3189,11 @@ spieler.thread3 = 0;
         
         fighting_options.setVisible(false);
         fightPlayButton.setVisible(false);
+
+        specialEnemyP.setVisible(false);
+        specialEnemyP2.setVisible(false);
+        specialEnemyI.setVisible(false);
+        specialEnemyT.setVisible(false);
     }
 
     public void endEnemy(){
@@ -6087,9 +6093,15 @@ public void setSpecialWeapon(String File){
 
     if (File == "W"){
 
+
         if (nextPosition1 == "Artemis Kampf"){
+            specialEnemyP.setVisible(true);
+            specialEnemyP2.setVisible(true);
+            specialEnemyI.setVisible(true);
+            specialEnemyT.setVisible(true);
+
             specialEnemyP.setBounds(400, 40, (int) (2.1 * spieler.currentEnemyHP), 40);
-            specialEnemyP.setForeground(en.bossesColors[1]);
+            specialEnemyP.setBackground(en.bossesColors[1]);
             specialEnemyI.setBounds(385 +(2 * spieler.currentEnemyHP), 0, 265, 120);
             specialEnemyT.setBounds(350 +(2 * spieler.currentEnemyHP), 100, 250, 40);
             specialEnemyI.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\weapons\\Artemis Pfeil.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));       
