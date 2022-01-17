@@ -25,6 +25,9 @@ public class Story implements ActionListener {
 
     String text,nextPosition1,nextPosition2,nextPosition3,nextPosition4;
 
+    JPanel specialEnemyP;
+    JLabel specialEnemyI;
+    JPanel specialEnemyT;
 
 
 
@@ -534,6 +537,8 @@ mainTextArea.setOpaque(false);
         colors_R.setBackground(RGBColor(30, 30, 30));
         colors_R.setFocusable(false);
 
+
+
         optionsmenu_options = new JPanel();
         optionsmenu_options.setVisible(false);
         optionsmenu_options.setBackground(Color.BLACK);
@@ -549,7 +554,27 @@ mainTextArea.setOpaque(false);
         shop_options.setBorder(new LineBorder(null));
 
 
-       
+        specialEnemyP = new JPanel();
+        specialEnemyP.setBounds(400, 40, 500, 50);
+        specialEnemyP.setVisible(true);
+        specialEnemyP.setBackground(new Color(0,255,0));
+        specialEnemyP.setFocusable(false);
+
+      JPanel specialEnemyP2 = new JPanel();
+        specialEnemyP2.setBounds(400, 40, 500, 50);
+        specialEnemyP2.setVisible(true);
+        specialEnemyP2.setBackground(new Color(60,60,60));
+        specialEnemyP2.setFocusable(false);
+
+        specialEnemyI = new JLabel();
+        specialEnemyI.setBounds(850, 0, 265, 120);
+        specialEnemyI.setVisible(true);
+        specialEnemyI.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Bosses\\Medusa.png").getImage()
+                .getScaledInstance(105, 100, Image.SCALE_AREA_AVERAGING)));
+                frame.add(specialEnemyI);
+
+        frame.add(specialEnemyP);
+        frame.add(specialEnemyP2);
 
 
         optionsmenu_colorsoutlines = new JPanel();
@@ -6014,6 +6039,11 @@ public void standardE(){
 
         }
     }
+}
+
+
+public void spawnSpecialEnemy(String File, int Index){
+
 }
 
     public void spawnEnemy(String File, int Index) {
