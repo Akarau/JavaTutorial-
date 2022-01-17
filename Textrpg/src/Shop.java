@@ -10,6 +10,7 @@ public class Shop {
         "Diamant Schwert",
         "Molten Schwert",
         "The Warrior",
+        "Artemis Pfeil",
         "Standard Shield",
         "Aqua Shield",
         "Schnelle Rüstung",
@@ -24,8 +25,17 @@ public class Shop {
         "Diamant Schwert",
         "Molten Schwert",
         "The Warrior",
+        "Artemis Pfeil",
     };
 
+    String schwerteInv[] = {
+        "Standard Schwert",
+        "Double Schwert",
+        "Diamant Schwert",
+        "Molten Schwert",
+        "The Warrior",
+        "Artemis Pfeil",
+    };
 
     int schwerteval[] = {
         1,
@@ -37,30 +47,34 @@ public class Shop {
 
 
 
-    Color[] swordsColor = {
+    Color[] weaponsColor = {
         new Color(255,0,160),
         new Color(160,0,255),
         new Color(25,255,255),
         new Color(255,120,0),
         new Color(120,0,150),
+        new Color(120,0,150),
+
     };
 
 
-    float[] swordsPower = {
+    float[] weaponsPower = {
 1.05f,
 1.10f,
 1.20f,
 1.30f,
 1.50f,
+1.15f,
     };
 
-    int[] swordsPreis = {
+    int[] weaponsPreis = {
         100,
         250,
         1000,
         2000,
         5000,
-        
+        0,
+
             };
 
             String[] inf = {
@@ -69,14 +83,18 @@ public class Shop {
                 " -Gibt 20% mehr Kraft",
                 " -Gibt 30% mehr Kraft",
                 " -Gibt 50% mehr Kraft                                                                               -Gibt 10% mehr HP ",
+                " -Gibt 15% mehr Kraft",
+
             };
 
             String[] i = {
-                "Textrpg\\Images\\Swords\\Standard Schwert.png",
-                "Textrpg\\Images\\Swords\\Double Schwert.png",
-                "Textrpg\\Images\\Swords\\Diamant Schwert.png",
-                "Textrpg\\Images\\Swords\\Molten Schwert.png",
-                "Textrpg\\Images\\Swords\\The Warrior.png",
+                "Textrpg\\Images\\weapons\\Standard Schwert.png",
+                "Textrpg\\Images\\weapons\\Double Schwert.png",
+                "Textrpg\\Images\\weapons\\Diamant Schwert.png",
+                "Textrpg\\Images\\weapons\\Molten Schwert.png",
+                "Textrpg\\Images\\weapons\\The Warrior.png",
+                "Textrpg\\Images\\weapons\\Artemis Pfeil.png",
+
             };
 
 

@@ -27,7 +27,8 @@ public class Story implements ActionListener {
 
     JPanel specialEnemyP;
     JLabel specialEnemyI;
-    JPanel specialEnemyT;
+    JLabel specialEnemyI2;
+    JLabel specialEnemyT;
 
 
 
@@ -40,7 +41,7 @@ public class Story implements ActionListener {
     JPanel shop_options;
     JPanel inventarPanel;
     JPanel achievementsPanel;
-   JButton eshop_swords;
+   JButton eshop_weapons;
    JButton eshop_shields;
    JButton eshop_boosts;
    JLabel reflectedDamgeImage;
@@ -66,7 +67,7 @@ public class Story implements ActionListener {
     static JLabel ifightPlayButton;
     static JLabel iShop;
     static JLabel iInventar;
-    static JLabel ishop_swords;
+    static JLabel ishop_weapons;
     static JLabel ishop_shields;
     static JButton option1;
     static JButton option2;
@@ -85,7 +86,7 @@ public class Story implements ActionListener {
     JPanel shopButton;
     JPanel inventarButton;
     JPanel fightPlayButton;
-    JPanel shop_swords;
+    JPanel shop_weapons;
     JPanel shop_shields;
     JPanel shop_boosts;
 
@@ -98,7 +99,7 @@ public class Story implements ActionListener {
     JPanel shop;
     JPanel achievements;
     JLabel iPanel;
-    JPanel swordsMenu;
+    JPanel weaponsMenu;
 
     JButton upgradeMenuButton;
     static JLabel i5;
@@ -560,6 +561,14 @@ mainTextArea.setOpaque(false);
         specialEnemyP.setBackground(new Color(0,255,0));
         specialEnemyP.setFocusable(false);
 
+        specialEnemyT = new JLabel();
+        specialEnemyT.setBounds(850, 100, 250, 40);
+        specialEnemyT.setVisible(true);
+        specialEnemyT.setFont(new Font("Times new Roman", Font.PLAIN, 25));
+        specialEnemyT.setBackground(new Color(0,255,0));
+        specialEnemyT.setText("1500");
+        specialEnemyT.setBackground(new Color(0,0,0));
+
       JPanel specialEnemyP2 = new JPanel();
         specialEnemyP2.setBounds(400, 40, 500, 40);
         specialEnemyP2.setVisible(true);
@@ -570,11 +579,21 @@ mainTextArea.setOpaque(false);
         specialEnemyI.setBounds(850, 0, 265, 120);
         specialEnemyI.setVisible(true);
         specialEnemyI.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Bosses\\Zeus_Normal.png").getImage()
-                .getScaledInstance(105, 100, Image.SCALE_AREA_AVERAGING)));
+                .getScaledInstance(85, 75, Image.SCALE_AREA_AVERAGING)));
                 frame.add(specialEnemyI);
+
+                specialEnemyI2 = new JLabel();
+                specialEnemyI2.setBounds(350, 0, 265, 120);
+                specialEnemyI2.setVisible(true);
+                specialEnemyI2.setEnabled(false);
+                specialEnemyI2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Bosses\\Zeus_Rage.png").getImage()
+                        .getScaledInstance(75, 65, Image.SCALE_AREA_AVERAGING)));
+                        frame.add(specialEnemyI);
+                        frame.add(specialEnemyI2);
 
         frame.add(specialEnemyP);
         frame.add(specialEnemyP2);
+        frame.add(specialEnemyT);
 
 
         optionsmenu_colorsoutlines = new JPanel();
@@ -654,14 +673,14 @@ mainTextArea.setOpaque(false);
         inventarButton.setVisible(true);
         inventarButton.setFocusable(false);
 
-        shop_swords = new JPanel();
-        shop_swords.setForeground(new Color(255, 0, 150));
-        shop_swords.setFont(new Font("Times new Roman", Font.PLAIN, 60));
-        shop_swords.setBounds(150, 150, 80, 150);
-        shop_swords.setBackground(Color.black);
-        shop_swords.setVisible(true);
-        shop_swords.setFocusable(false);
-        shop_swords.setOpaque(false);
+        shop_weapons = new JPanel();
+        shop_weapons.setForeground(new Color(255, 0, 150));
+        shop_weapons.setFont(new Font("Times new Roman", Font.PLAIN, 60));
+        shop_weapons.setBounds(150, 150, 80, 150);
+        shop_weapons.setBackground(Color.black);
+        shop_weapons.setVisible(true);
+        shop_weapons.setFocusable(false);
+        shop_weapons.setOpaque(false);
 
         inventarPanel = new JPanel();
         inventarPanel.setForeground(new Color(255, 0, 150));
@@ -813,17 +832,17 @@ mainTextArea.setOpaque(false);
         eShop.setOpaque(false);
 
 
-         eshop_swords = new JButton();
-        eshop_swords.setForeground(new Color(255, 255, 255));
-        eshop_swords.setFont(new Font("Times new Roman", Font.PLAIN, 60));
-        eshop_swords.setBounds(0, 0, 0, 0);
-        eshop_swords.setBackground(Color.black);
-        eshop_swords.setVisible(true);
-        eshop_swords.setFocusable(false);
-        eshop_swords.addActionListener(this);
-        eshop_swords.setActionCommand("eShop_Swords");
-        eshop_swords.setText("  ");
-        eshop_swords.setBorder(new LineBorder(Color.black));
+         eshop_weapons = new JButton();
+        eshop_weapons.setForeground(new Color(255, 255, 255));
+        eshop_weapons.setFont(new Font("Times new Roman", Font.PLAIN, 60));
+        eshop_weapons.setBounds(0, 0, 0, 0);
+        eshop_weapons.setBackground(Color.black);
+        eshop_weapons.setVisible(true);
+        eshop_weapons.setFocusable(false);
+        eshop_weapons.addActionListener(this);
+        eshop_weapons.setActionCommand("eShop_weapons");
+        eshop_weapons.setText("  ");
+        eshop_weapons.setBorder(new LineBorder(Color.black));
 
          eshop_shields = new JButton();
         eshop_shields.setForeground(new Color(255, 255, 255));
@@ -898,15 +917,15 @@ mainTextArea.setOpaque(false);
                .getScaledInstance(35, 35, Image.SCALE_AREA_AVERAGING)));
                ifightPlayButton.setText("   1x");
 
-               ishop_swords = new JLabel();
-               ishop_swords.setForeground(new Color(255, 255, 255));
-               ishop_swords.setFont(new Font("Times new Roman", Font.PLAIN, 35));
-               ishop_swords.setSize(20, 20);
-               ishop_swords.setBackground(Color.WHITE);
-               ishop_swords.setVisible(true);
-               ishop_swords.setFocusable(false);
-               ishop_swords.setOpaque(false);
-               ishop_swords.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Swords\\The Warrior.png").getImage()
+               ishop_weapons = new JLabel();
+               ishop_weapons.setForeground(new Color(255, 255, 255));
+               ishop_weapons.setFont(new Font("Times new Roman", Font.PLAIN, 35));
+               ishop_weapons.setSize(20, 20);
+               ishop_weapons.setBackground(Color.WHITE);
+               ishop_weapons.setVisible(true);
+               ishop_weapons.setFocusable(false);
+               ishop_weapons.setOpaque(false);
+               ishop_weapons.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\weapons\\The Warrior.png").getImage()
                        .getScaledInstance(65, 60, Image.SCALE_AREA_AVERAGING)));
 
                        ishop_shields = new JLabel();
@@ -975,13 +994,13 @@ mainTextArea.setOpaque(false);
         fighting_options.add(inventarButton);
         inventarButton.add(einventar);
         einventar.add(iInventar);
-        shop_options.add(shop_swords);
+        shop_options.add(shop_weapons);
         shop_options.add(shop_shields);
         shop_options.add(shop_boosts);
-        shop_swords.add(eshop_swords);
+        shop_weapons.add(eshop_weapons);
         shop_shields.add(eshop_shields);
         eshop_shields.add(ishop_shields);
-        eshop_swords.add(ishop_swords);
+        eshop_weapons.add(ishop_weapons);
         shop_boosts.add(eshop_boosts);
         eshop_boosts.add(ishop_boosts);
         b1.add(e1);
@@ -1710,15 +1729,15 @@ enemyInfoName.setVisible(false);
 enemyInfoMainElement.setVisible(false);
 enemyInfoSecondElement.setVisible(false);
 
-swordsMenu = new JPanel();
-swordsMenu.setForeground(new Color(255, 0, 150));
-swordsMenu.setFont(new Font("Times new Roman", Font.PLAIN, 60));
-swordsMenu.setBounds(0, 0, 500, 400);
-swordsMenu.setBackground(Color.black);
-swordsMenu.setVisible(true);
-swordsMenu.setFocusable(false);
-swordsMenu.setOpaque(false);
-swordsMenu.setBorder(new LineBorder(Color.white));
+weaponsMenu = new JPanel();
+weaponsMenu.setForeground(new Color(255, 0, 150));
+weaponsMenu.setFont(new Font("Times new Roman", Font.PLAIN, 60));
+weaponsMenu.setBounds(0, 0, 500, 400);
+weaponsMenu.setBackground(Color.black);
+weaponsMenu.setVisible(true);
+weaponsMenu.setFocusable(false);
+weaponsMenu.setOpaque(false);
+weaponsMenu.setBorder(new LineBorder(Color.white));
 
 frame.add(damageText);
 frame.add(boostDamageText);
@@ -2024,7 +2043,7 @@ boostB.add(si);
     public void openInv(){
         chosen_Main_Element_Name.setBorder(null);
 
-        eshop_swords.setActionCommand("eInventar_Swords");
+        eshop_weapons.setActionCommand("eInventar_weapons");
         eshop_shields.setActionCommand("eInventar_Shields");
         eshop_boosts.setActionCommand("eInventar_Boosts");
         chosen_Main_Element.setVisible(false);
@@ -2077,14 +2096,14 @@ achievements.setVisible(false);
             System.out.println("D");
             for (int s = 0; s < scl.schwerte.length; s++){
 if (scl.schwerte[s] == chosen_Main_Element_Name.getText() ){
-    playerInfoPower.setForeground(scl.swordsColor[s]);
-    playerInfoPower.setText(scl.swordsPower[s] + "x");
+    playerInfoPower.setForeground(scl.weaponsColor[s]);
+    playerInfoPower.setText(scl.weaponsPower[s] + "x");
     spieler.powerBoostIcon = scl.i[s];
-    spieler.powerBoost = scl.swordsPower[s];
-    boostDamageText.setForeground(scl.swordsColor[s]);
-                playerInfoPower.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Swords\\" + chosen_Main_Element_Name.getText() +".png").getImage().getScaledInstance(25, 25, Image.SCALE_AREA_AVERAGING)));
+    spieler.powerBoost = scl.weaponsPower[s];
+    boostDamageText.setForeground(scl.weaponsColor[s]);
+                playerInfoPower.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\weapons\\" + chosen_Main_Element_Name.getText() +".png").getImage().getScaledInstance(25, 25, Image.SCALE_AREA_AVERAGING)));
                 if (chosen_Main_Element_Name.getText() == "The Warrior"){
-                    playerInfoPower.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Swords\\" + chosen_Main_Element_Name.getText() +".png").getImage().getScaledInstance(30, 25, Image.SCALE_AREA_AVERAGING)));
+                    playerInfoPower.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\weapons\\" + chosen_Main_Element_Name.getText() +".png").getImage().getScaledInstance(30, 25, Image.SCALE_AREA_AVERAGING)));
 
                 }
                 
@@ -2104,7 +2123,7 @@ if (scl.schwerte[s] == chosen_Main_Element_Name.getText() ){
                 if (scl.schilder[s] == chosen_Main_Element_Name.getText() ){
                 
                     playerInfoHPShield.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Shields\\" + chosen_Main_Element_Name.getText() +".png").getImage().getScaledInstance(25, 25, Image.SCALE_AREA_AVERAGING)));
-                                    //playerInfoPower.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Swords\\" + chosen_Main_Element_Name.getText() +".png").getImage().getScaledInstance(30, 25, Image.SCALE_AREA_AVERAGING)));                                
+                                    //playerInfoPower.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\weapons\\" + chosen_Main_Element_Name.getText() +".png").getImage().getScaledInstance(30, 25, Image.SCALE_AREA_AVERAGING)));                                
                             }
 
                             spieler.hpBoostName = chosen_Main_Element_Name.getText();
@@ -2184,7 +2203,7 @@ if (scl.boosts[s] == "Reflection" && chosen_Main_Element_Name.getText() == "Refl
     }
 
 
-        if (e.getActionCommand().equals("eInventar_Swords")) {
+        if (e.getActionCommand().equals("eInventar_weapons")) {
 
             commbox.setVisible(false);
             chosen_Main_Element.setVisible(false);
@@ -2260,8 +2279,8 @@ if (scl.boosts[s] == "Reflection" && chosen_Main_Element_Name.getText() == "Refl
                 System.out.println(chosen_Main_Element_Name.getText());
                 if (!inventory.containsKey(chosen_Main_Element_Name.getText())){
 
-                    if (spieler.Gold >= scl.swordsPreis[s]){
-                        spieler.Gold -= scl.swordsPreis[s];
+                    if (spieler.Gold >= scl.weaponsPreis[s]){
+                        spieler.Gold -= scl.weaponsPreis[s];
                         inventory.putIfAbsent(scl.schwerte[s], 1);
                         choose_Element.setText(" gekauft ");
                     }
@@ -2514,7 +2533,7 @@ ePlayButton.setActionCommand("ePlayButton1");
 
 
         if (e.getActionCommand().equals("eShop")) {
-            eshop_swords.setActionCommand("eShop_Swords");
+            eshop_weapons.setActionCommand("eShop_weapons");
             eshop_shields.setActionCommand("eShop_Shields");
             eshop_boosts.setActionCommand("eShop_Boosts");
 
@@ -2544,7 +2563,7 @@ ePlayButton.setActionCommand("ePlayButton1");
 
 
 
-        if (e.getActionCommand().equals("eShop_Swords")) {
+        if (e.getActionCommand().equals("eShop_weapons")) {
             commbox.setVisible(false);
             chosen_Main_Element.setVisible(false);
 
@@ -2828,9 +2847,9 @@ spieler.thread3 = 0;
                         new ImageIcon(new ImageIcon(scl.i[v])
                                 .getImage().getScaledInstance(200, 195, Image.SCALE_AREA_AVERAGING)));
                 chosen_Main_Element_Name.setText(scl.schwerte[v]);
-                chosen_Main_Element_Name.setForeground(scl.swordsColor[v]);
-                commbox.setForeground(scl.swordsColor[v]);
-                chosen_Main_Element_Description.setText("Kostet " +  scl.swordsPreis[v] + " coins" );
+                chosen_Main_Element_Name.setForeground(scl.weaponsColor[v]);
+                commbox.setForeground(scl.weaponsColor[v]);
+                chosen_Main_Element_Description.setText("Kostet " +  scl.weaponsPreis[v] + " coins" );
                 chosen_Main_Element_Description.setForeground(Color.white);
 
                 commbox.setText(scl.inf[v]);
@@ -2923,9 +2942,9 @@ spieler.thread3 = 0;
                         new ImageIcon(new ImageIcon(scl.i[v])
                                 .getImage().getScaledInstance(200, 195, Image.SCALE_AREA_AVERAGING)));
                 chosen_Main_Element_Name.setText(scl.schwerte[v]);
-                chosen_Main_Element_Name.setForeground(scl.swordsColor[v]);
-                commbox.setForeground(scl.swordsColor[v]);
-                chosen_Main_Element_Description.setText(" " +  scl.swordsPreis[v] + " coins" );
+                chosen_Main_Element_Name.setForeground(scl.weaponsColor[v]);
+                commbox.setForeground(scl.weaponsColor[v]);
+                chosen_Main_Element_Description.setText(" " +  scl.weaponsPreis[v] + " coins" );
                 chosen_Main_Element_Description.setForeground(Color.white);
 
                 commbox.setText(scl.inf[v]);
@@ -3178,6 +3197,41 @@ option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
 option2button.setText("");
 nextPosition1 = "Zweiter Gegner Kampf";
 nextPosition2 = "";
+
+        }
+
+        if (nextPosition1 == "Artemis Kampf"){
+           System.out.println("ArtemisD4zt3");
+           inventory.putIfAbsent("Artemis Pfeil", 1);
+           javax.swing.JButton swordB = new JButton();
+           swordB.setForeground(new Color(80, 0, 255));
+           swordB.setFont(new Font("Times new Roman", Font.PLAIN, 60));
+           swordB.setBounds(0, 0, 100, 100);
+           swordB.setBackground(Color.black);
+           swordB.setVisible(true);
+           swordB.setFocusable(false);
+           swordB.addActionListener(this);
+           swordB.setActionCommand(scl.schwerte[5] + "I");
+           choose_Element.setActionCommand("Sword_Equip");
+           swordB.setBorder(new LineBorder(Color.white));
+           swordB.setName("Sword");
+       
+       
+           JLabel si = new JLabel();
+           si.setForeground(colors2[c]);
+           si.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+           si.setIcon(new ImageIcon(new ImageIcon(scl.i[5])
+                   .getImage().getScaledInstance(140, 135, Image.SCALE_AREA_AVERAGING)));
+                   si.setSize(800, 800);
+                   si.setBackground(Color.white);
+                   si.setVisible(true);
+                   si.setFocusable(false);
+       
+           si.setBorder(new LineBorder(Color.white));
+       
+       
+           this.inventarPanel.add(swordB);
+           swordB.add(si);
 
         }
 
@@ -3767,7 +3821,7 @@ boostDamageText.setVisible(false);
 
 Thread.sleep(spieler.t3 * 2);
 
-
+setSpecialWeapon("W", "Artemis Pfeil");
 enemyAttack();
 
 if (spieler.currentEnemyHP <= 0){
@@ -6042,7 +6096,23 @@ public void standardE(){
 }
 
 
-public void spawnSpecialEnemy(String File, int Index){
+public void setSpecialWeapon(String File, String Index){
+
+
+    if (File == "W"){
+
+        if (nextPosition1 == "Artemis Kampf"){
+            specialEnemyP.setBounds(400, 40, (int) (2.1 * spieler.currentEnemyHP), 40);
+            specialEnemyI.setBounds(385 +(2 * spieler.currentEnemyHP), 0, 265, 120);
+            specialEnemyT.setBounds(350 +(2 * spieler.currentEnemyHP), 100, 250, 40);
+            specialEnemyI.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\weapons\\" + Index + ".png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));       
+            specialEnemyT.setForeground(new Color(255,180,0));
+            specialEnemyT.setText("Artemis Bow");
+moon_Artemis.setVisible(false);
+        }
+       
+
+    }
 
 }
 
@@ -7222,8 +7292,9 @@ achievementDif.setVisible(false);
 
             mainTextPanel.setVisible(false);
             optionsPanel.setVisible(false);
+            spawnEnemy("Bosses", 1);
 
-            spawnEnemy("Bosses", 0);
+            setSpecialWeapon("W", "Artemis Pfeil");
 
 
             ;break;            
@@ -8317,12 +8388,12 @@ spawnEnemy("Bosses", 0);
             case "Sachen Equippen":; 
 
            
-            playerInfoPower.setForeground(scl.swordsColor[0]);
-                    playerInfoPower.setText(scl.swordsPower[0] + "x");
+            playerInfoPower.setForeground(scl.weaponsColor[0]);
+                    playerInfoPower.setText(scl.weaponsPower[0] + "x");
                     spieler.powerBoostIcon = scl.i[0];
-                    spieler.powerBoost = scl.swordsPower[0];
-                    boostDamageText.setForeground(scl.swordsColor[0]);
-                    playerInfoPower.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Swords\\Standard Schwert.png").getImage().getScaledInstance(25, 25, Image.SCALE_AREA_AVERAGING)));
+                    spieler.powerBoost = scl.weaponsPower[0];
+                    boostDamageText.setForeground(scl.weaponsColor[0]);
+                    playerInfoPower.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\weapons\\Standard Schwert.png").getImage().getScaledInstance(25, 25, Image.SCALE_AREA_AVERAGING)));
                     spieler.powerBoostName = "Standard Schwert";
                     choose_Element.setText(" Equipped ");
 

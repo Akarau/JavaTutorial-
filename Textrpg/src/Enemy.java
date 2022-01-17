@@ -214,14 +214,14 @@ public class Enemy {
 
     int bossesHP[] = {
         14,
-        200,
+        240,
         300,
         400,
     };
 
     int bossesPower[] = {
         40,
-        200,
+        22,
         200,
         200,
     };
