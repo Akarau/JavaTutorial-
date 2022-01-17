@@ -4347,8 +4347,6 @@ damageText.setBounds(900, 480, 600, 80);
                     elementsMenu.setVisible(false);
                     elementImage.setVisible(true);
 
-                    System.out.println("Gravity=Main");
-
 
                  
 
@@ -4356,7 +4354,7 @@ damageText.setBounds(900, 480, 600, 80);
 
 
 
-                                    for (int t = 1; t<3; t++){
+                                    for (int t = 1; t<2; t++){
                                        
                                                for (int a = 1; a<37; a++){
                                                 elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Animation_Gravity\\" + a + ".png").getImage().getScaledInstance(370, 50, Image.SCALE_AREA_AVERAGING)));
@@ -4404,7 +4402,8 @@ damageText.setBounds(900, 480, 600, 80);
            damageText.setBounds(900, 480, 600, 80);
            
                                    damageText.setVisible(true);
-           
+                                   enemyImage.setEnabled(false);
+elementImage.setVisible(false);
                                        Thread.sleep(spieler.t2);
                                        for (int z = 0; z<= 200;z++){
                                            damageText.setBounds(900, 480 - z, 600, 80);
@@ -4412,7 +4411,6 @@ damageText.setBounds(900, 480, 600, 80);
                                        }
            
            
-                                       enemyImage.setEnabled(false);
 
            
                                    Thread.sleep(spieler.t2);
@@ -4442,7 +4440,6 @@ damageText.setBounds(900, 480, 600, 80);
                                                    Thread.sleep(spieler.t1);
                                                    enemyImage.setEnabled(true);
                
-                                                   elementImage.setVisible(true);
            
                                                   
                                                                damageText.setText("" + damg +  " Element Schaden");
@@ -4541,16 +4538,15 @@ damageText.setBounds(900, 480, 600, 80);
                             Thread.sleep(spieler.t1);
                                 }
                 
+                                elementsMenu.setVisible(false);
+
                                 Thread.sleep(spieler.t2);
                 
-                                elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Licht.png").getImage().getScaledInstance(370, 50, Image.SCALE_AREA_AVERAGING)));
+                                elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Licht.png").getImage().getScaledInstance(370, 365, Image.SCALE_AREA_AVERAGING)));
     
                         elementImage.setBounds(500,280,400,400);
             
-                        elementsMenu.setVisible(false);
-            
-                        System.out.println("Gravity=Main");
-    
+                
                             elementImage.setVisible(true);
 
 
@@ -5099,6 +5095,12 @@ for (int xi = 0; xi<= 120; xi++){
             }
 
             if (at == 3){
+
+                for (int xi = 0; xi<= 120; xi++){
+                            fighting_options.setBounds(38, 480 + xi*5, 1200, 300);
+                            Thread.sleep(spieler.t1);
+                                }
+
                 elementImage.setBounds(600,280,200,200);
                 elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Others\\Damage.png").getImage().getScaledInstance(180, 180, Image.SCALE_AREA_AVERAGING)));
     
@@ -5110,7 +5112,6 @@ for (int xi = 0; xi<= 120; xi++){
     enemyImage.setEnabled(true);
     elementImage.setVisible(false);
 
-                System.out.println("D1");
                 Thread.sleep(spieler.t3);
                 elementImage.setBounds(650,280,200,200);
                 elementImage.setVisible(true);
@@ -5162,7 +5163,10 @@ for (int xi = 0; xi<= 120; xi++){
                     endEnemy();
                     
                     }
-                
+                for (int xi = 0; xi<= 120; xi++){
+    fighting_options.setBounds(38, 1080 - xi*5, 1200, 300);
+    Thread.sleep(spieler.t1);
+        }
             }
 
     }
@@ -6043,11 +6047,9 @@ if (en.enemy_Third_Materias[Index]!= null){
 }
 
 
-enemyImage.setBounds(500,280,400,400);
-
-enemyImage.setForeground(en.enemyColors[0]);
 
 
+elementImage.setBounds(500,280,400,400);
 
 enemyImage.setBounds(500,280,400,400);
 
@@ -6116,6 +6118,13 @@ if (en.boss_Third_Materias[Index]!= null){
 if (en.boss_Last_Materias[Index]!= null){
     enemyInfoLastElement.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\" + en.boss_Last_Materias[Index] +".png").getImage().getScaledInstance(40, 40, Image.SCALE_AREA_AVERAGING)));
     spieler.enemyThird_Element = en.boss_Last_Materias[Index];
+
+}
+
+if (en.bosses[Index] == "Athene"){
+    enemyImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Bosses\\" + en.bosses[Index] + ".png").getImage().getScaledInstance(250, 365, Image.SCALE_AREA_AVERAGING)));
+    enemyImage.setBounds(400,280,400,400);
+    elementImage.setBounds(400,280,400,400);
 
 }
 
@@ -7719,7 +7728,7 @@ nextPosition3 = "";
 
                                                                     optionsPanel.setVisible(false);
                                                                     mainTextPanel.setVisible(false);
-spawnEnemy("Bosses", 0);                                                                                                   
+spawnEnemy("Bosses", 3);                                                                                                   
                                                                 
                                                                 nextPosition1 = "StoryR_6++++++++++";
                                                                 

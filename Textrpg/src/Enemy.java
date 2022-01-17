@@ -205,21 +205,31 @@ public class Enemy {
 
     String bosses[] = {
         "Medusa",
-        "Balrog",
+        "Artemis",
+        "Apollon",
+        "Athene",
+        "",
     };
 
 
     int bossesHP[] = {
         14,
         200,
+        300,
+        400,
     };
 
     int bossesPower[] = {
         40,
         200,
+        200,
+        200,
     };
 
     Color[] bossesColors = {
+        new Color(0,255,80),
+        new Color(0,255,80),
+        new Color(0,255,80),
         new Color(0,255,80),
 
     };
@@ -228,33 +238,50 @@ public class Enemy {
     String boss_Main_Materias[] = {
         "Cosmic",
         "Fire",
+        "Fire",
+        "Licht",
+
     };
 
 
     String boss_Second_Materias[] = {
         "Void",
         "Fire",
+        "Fire",
+        "Fire",
+
     };
 
     String boss_Third_Materias[] = {
         "Ancient",
         "Fire",
+        "Fire",
+        "Fire",
+
     };
 
     String boss_Last_Materias[] = {
         "Luck",
         "Fire",
+        "Fire",
+        "Fire",
+
     };
 
     String bossDifficulty[] = {
         "Hard",
         "Fire",
+        "Fire",
+        "Fire",
+
     };
 
     Color[] bossdifficultyColors = {
         new Color(255,140,0),
         new Color(160,0,255),
         new Color(25,255,255),
+        new Color(25,255,255),
+
     };
 
 
