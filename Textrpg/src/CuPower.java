@@ -8,7 +8,7 @@ public class CuPower {
 
 
       int Gold = 50000;
-      int Power = 500;
+      int Power = 250;
       int Points = 50;
       int Health = 100;
       int karma = 0;

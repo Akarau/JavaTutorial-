@@ -222,8 +222,8 @@ public class Enemy {
     int bossesPower[] = {
         40,
         22,
-        200,
-        200,
+        22,
+        22,
     };
 
     Color[] bossesColors = {
