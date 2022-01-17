@@ -3605,7 +3605,7 @@ Thread.sleep(spieler.cosmicAnimation2);
 
 
 
-                    if (spieler.enemyMain_Element == "Erde" || spieler.enemyMain_Element == "Crystal" ){
+                    if (spieler.enemyMain_Element == "Void" || spieler.enemyMain_Element == "Gravity" ){
 
                         damageText.setText("" + spieler.Power *2 + "");
                         damageText.setForeground(new Color(255,50,0));
@@ -8134,8 +8134,49 @@ spieler.PolydektesK = false;
                                                    
 
                                                         mainTextArea.setText(" Du gehst zum Berg Oite. Du Reist schon mehrere Tage.\nBis du an einem Schild ankommst. \" Berg Oite\". \n Du blickst hinauf und fängst dann an den Pfad hochzulaufen");
-                                                        nextPosition1 = "Story7R_2";
+                                                        nextPosition1 = "Story7M_2";
                                                     
+                                                        option1button.setText("weiter");
+                                                        option2button.setText("zurück");
+                                                        option3button.setText("");
+                                                        option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));        
+                                                        option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                                            
+                                            
+                                                        break;
+
+                                                        case "Story7M_2":; 
+
+                                                        
+                
+                                                   
+
+                                                        mainTextArea.setText(" Nach einem sehr anstrengenden Weg kommst du oben an.\nAuch hier ist ein Tempel.\nDu betriffst den Tempel\nDu bist in einem gigantischen Raum, viel größer alle, in denen du zuvor warst. \n\nDu siehst den Gott durch den Raum laufen. Er trägt ein riesigen Löwenpelz");
+
+
+                                                        nextPosition1 = "Story7M_3";
+                                                        nextPosition2 = "Story7M";
+
+                                                        option1button.setText("weiter");
+                                                        option2button.setText("zurück");
+                                                        option3button.setText("");
+                                                        option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));        
+                                                        option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                                            
+                                            
+                                                        break;
+
+                                                        case "Story7M_3":; 
+
+                                                        
+                
+                                                   
+
+                                                        mainTextArea.setText(" Du überlegst inh anzugreifen allerdings fängt zuvor an zu reden.\n\n\"Mein Name ist Herkules, ich bin ein Halb Gott und ein Sohn von Zeus. Ich habe 12 unlösbare Aufgaben erledigt, darunter den nemischen Löwen besiegen oder eine Hydra zu vernichten. Unde wo wir gerade bei Hydra sind, bevor du mich besiegen kannst musst du gegen ihn hier kämpfen\"");
+
+
+                                                        nextPosition1 = "Story7M_4";
+                                                    nextPosition2 = "Story7M_2";
                                                         option1button.setText("weiter");
                                                         option2button.setText("zurück");
                                                         option3button.setText("");
