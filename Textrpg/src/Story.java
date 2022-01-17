@@ -555,13 +555,13 @@ mainTextArea.setOpaque(false);
 
 
         specialEnemyP = new JPanel();
-        specialEnemyP.setBounds(400, 40, 500, 50);
+        specialEnemyP.setBounds(400, 40, 500, 40);
         specialEnemyP.setVisible(true);
         specialEnemyP.setBackground(new Color(0,255,0));
         specialEnemyP.setFocusable(false);
 
       JPanel specialEnemyP2 = new JPanel();
-        specialEnemyP2.setBounds(400, 40, 500, 50);
+        specialEnemyP2.setBounds(400, 40, 500, 40);
         specialEnemyP2.setVisible(true);
         specialEnemyP2.setBackground(new Color(60,60,60));
         specialEnemyP2.setFocusable(false);
@@ -569,7 +569,7 @@ mainTextArea.setOpaque(false);
         specialEnemyI = new JLabel();
         specialEnemyI.setBounds(850, 0, 265, 120);
         specialEnemyI.setVisible(true);
-        specialEnemyI.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Bosses\\Medusa.png").getImage()
+        specialEnemyI.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Bosses\\Zeus_Normal.png").getImage()
                 .getScaledInstance(105, 100, Image.SCALE_AREA_AVERAGING)));
                 frame.add(specialEnemyI);
 
