@@ -3832,8 +3832,6 @@ if (spieler.currentEnemyHP <= 0){
                     elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Crystal.png").getImage().getScaledInstance(200, 195, Image.SCALE_AREA_AVERAGING)));
                     elementImage.setBounds(elementImage.getBounds().x, elementImage.getBounds().y, 100, 100);
 
-
-            System.out.println("Crystal=Main");
             
 
             int dm = 0;
@@ -3941,6 +3939,7 @@ Thread.sleep(spieler.t1 * 10);
 enemyImage.setEnabled(true);
           }
 
+          damageText.setText(""+damg);
 
         Thread.sleep(spieler.t3);
 
@@ -3954,10 +3953,9 @@ enemyImage.setEnabled(true);
                 Thread.sleep(spieler.t2/2);
 
                 chosen_Main_Element.setVisible(false);
-                extradamg = 0;
 
                 spieler.currentEnemyHP -= damg;
-                enemyInfoHP.setText("         "+spieler.currentEnemyHP);
+                enemyInfoHP.setText("             "+spieler.currentEnemyHP);
                 if (spieler.currentEnemyHP <= 0){
                     spieler.currentEnemyHP = 0;
                    enemyInfoHP.setText("             0");
@@ -3965,6 +3963,8 @@ enemyImage.setEnabled(true);
 
 
 Thread.sleep(spieler.t2);
+extradamg = -1;
+
                 if (spieler.powerBoost != 1 && spieler.currentEnemyHP > 0 ){
                     boostDamageText.setBounds(900,480,600,80);
                     boostDamageText.setText("BoostDamage");
@@ -3975,27 +3975,26 @@ Thread.sleep(spieler.t2);
                         boostDamageText.setBounds(900, 480 - z/2, 600, 80);
                         Thread.sleep(spieler.boostDamageTextAnimation);
                     }
-                    for (int power = 0; power <=  dm * spieler.powerBoost - dm; power++){
+                    for (int power = 0; power <=  damg * spieler.powerBoost - damg; power++){
                         if (spieler.powerBoost != 1 && spieler.currentEnemyHP >= 0 ){
                         boostDamageText.setText("+ "+ power);
                         Thread.sleep((power * spieler.t1));
-                       extradamg++;
-                       spieler.currentEnemyHP -= extradamg;
-   extradamg = 0;
+                        extradamg++;
+                        spieler.currentEnemyHP -= extradamg;
+    extradamg = 0;
 
                         }
 
                     }
 
 
-
                     }
-                    spieler.currentEnemyHP++;
 
+                    elementImage.setVisible(false);
 
                     Thread.sleep(spieler.t3);
 
-                    enemyInfoHP.setText("         "+spieler.currentEnemyHP);
+                    enemyInfoHP.setText("             "+spieler.currentEnemyHP);
                     enemyImage.setEnabled(true);
 
                     
@@ -4025,7 +4024,6 @@ if (spieler.currentEnemyHP <= 0){
             Thread.sleep(spieler.t1);
                 }
 
-          elementImage.setVisible(false);
 
           }
 
