@@ -3260,12 +3260,12 @@ nextPosition2 = "";
 
         if (nextPosition1 == "Artemis Kampf"){
            inventory.putIfAbsent("Artemis Pfeil", 1);
-           Award("W", 1, "Artemis Pfeil", "Artemis Waffe erhalten", "Textrpg\\Images\\weapons\\Artemis Pfeil.png");
+           Award("W", 1, "Artemis Pfeil", "Artemis Waffe \nerhalten", "Textrpg\\Images\\weapons\\Artemis Pfeil.png");
         }
 
         if (nextPosition1 == "Apollon Kampf"){
             inventory.putIfAbsent("Lichtbogen", 1);
-            Award("W", 1, "Lichtbogen", "Apollon Waffe erhalten", "Textrpg\\Images\\weapons\\Lichtbogen.png");
+            Award("W", 1, "Lichtbogen", "Apollon Waffe \nerhalten", "Textrpg\\Images\\weapons\\Lichtbogen.png");
 
         }
 
@@ -4210,13 +4210,13 @@ if (spieler.currentEnemyHP <= 0){
 
 
 
+                        damageText.setText("");
 
                         if (spieler.currentEnemyHP > 0){
                             
         
                             damg = spieler.Power;
 
-                            damageText.setText("" + spieler.Power+ "");
                             damageText.setForeground(new Color(255,255,255));
                             damageText.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Feuer.png").getImage().getScaledInstance(35, 35, Image.SCALE_AREA_AVERAGING)));
         
@@ -4224,7 +4224,6 @@ if (spieler.currentEnemyHP <= 0){
         
                             if (spieler.enemyMain_Element == "Wind" || spieler.enemyMain_Element == "Crystal" ){
         
-                                damageText.setText("" + spieler.Power *2 + "");
                                 damageText.setForeground(new Color(255,50,0));
                                 damg = spieler.Power *2;
                              damageText.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Feuer.png").getImage().getScaledInstance(35, 35, Image.SCALE_AREA_AVERAGING)));
@@ -4232,8 +4231,7 @@ if (spieler.currentEnemyHP <= 0){
         
                             }
         
-                            if (spieler.enemyMain_Element == "Feuer" || spieler.enemyMain_Element == "Wasser"){
-                                damageText.setText("" + spieler.Power /2 + "");
+                            if (spieler.enemyMain_Element == "Feuer" || spieler.enemyMain_Element == "Wasser" || spieler.enemyMain_Element == "Erde"){
                                 damageText.setForeground(new Color(255,200,30));
                                 damg = spieler.Power /2;
                                 damageText.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Feuer.png").getImage().getScaledInstance(35, 35, Image.SCALE_AREA_AVERAGING)));
@@ -4265,7 +4263,6 @@ damageText.setBounds(900, 480, 600, 80);
     
                 elementImage.setVisible(true);
     
-                System.out.println("Feuer=Main");
                
                     elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Feuer.png").getImage().getScaledInstance(300, 295, Image.SCALE_AREA_AVERAGING)));
     
@@ -6587,6 +6584,19 @@ i2.setText("        Feuer         ");
 i2.setForeground(new Color(255,215,0));
 }
 
+if (spieler.Main_Element.charAt(2) == 'L' && spieler.Main_Element.charAt(3) == 'i'){
+    i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Licht.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+i1.setText("        Feuer         ");
+i1.setForeground(new Color(255,215,0));
+}
+
+
+if (spieler.Second_Element.charAt(2) == 'L' && spieler.Second_Element.charAt(3) == 'i'){
+    i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Licht.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+i2.setText("        Feuer         ");
+i2.setForeground(new Color(255,215,0));
+}
+
 }
 
 
@@ -7330,7 +7340,7 @@ achievementDif.setVisible(false);
             option2button.setText("zurück");
             option3button.setText("");
             nextPosition1 = "Anfangpart9";
-            nextPosition2 = "Last1";
+            nextPosition2 = "Laste_1";
             nextPosition3 = "";
             ;break;
 
@@ -7366,6 +7376,21 @@ achievementDif.setVisible(false);
 
             ;break;
 
+
+            case "Laste_1":
+
+            mainTextPanel.setVisible(true);
+            optionsPanel.setVisible(true);
+            mainTextArea.setText("[(Zorniger) Stier] wurde besiegt! \n \nDu hast 180 Münzen bekommen!");
+            option1button.setText("weiter");
+            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+            option2button.setText("");
+            nextPosition1 = "Anfangpart8";
+            nextPosition2 = "";
+
+
+            ;break;            
+
             case "Artemis Kampf":
 
             moon_Artemis.setVisible(true);
@@ -7380,7 +7405,7 @@ achievementDif.setVisible(false);
             ;break;            
 
             case "Last1":; 
-            mainTextArea.setText("[DunkleFlamme] wurde besiegt! \n \nDu hast 100 Münzen bekommen! \n \nJe stärker der Gegner ist, desto mehr Münzen bekommst du!");
+            mainTextArea.setText("[(Wütender) Hirsch] wurde besiegt! \n \nDu hast 100 Münzen bekommen! \n \nJe stärker der Gegner ist, desto mehr Münzen bekommst du!");
             option1button.setText("Belohnung fordern!");
 option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
 option2button.setText("");
@@ -8499,7 +8524,7 @@ spawnEnemy("Bosses", 0);
             ;break;
 
             case "Erster Gegner":
-            mainTextArea.setText("[DunkleFlamme] ist erschienen!");
+            mainTextArea.setText("[(Wütender) Hirsch] ist erschienen!");
             option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));
             option1button.setText("Kampf beginnen");
             option2button.setText("");
