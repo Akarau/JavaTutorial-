@@ -3196,58 +3196,11 @@ spieler.thread3 = 0;
         specialEnemyT.setVisible(false);
     }
 
-    public void endEnemy(){
+    public void endEnemy() throws InterruptedException{
 
         standardE();
-        if (nextPosition1 == "Erster Gegner Kampf"){
-            endFight();
 
-mainTextPanel.setVisible(true);
-optionsPanel.setVisible(true);
-mainTextArea.setText("[(Wütender) Hirsch] wurde besiegt! \n \nDu hast 120 Münzen bekommen! \n \nJe stärker der Gegner ist, desto mehr Münzen bekommst du!");
-option1button.setText("Belohnung fordern!");
-option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
-option2button.setText("");
-nextPosition1 = "Zweiter Gegner Kampf";
-nextPosition2 = "";
-
-        }
-
-        if (nextPosition1 == "Artemis Kampf"){
-           inventory.putIfAbsent("Artemis Pfeil", 1);
-        }
-
-        if (nextPosition1 == "Apollon Kampf"){
-            inventory.putIfAbsent("Lichtbogen", 1);
-        }
-
-        if (nextPosition1 == "Zweiter Gegner Kampf"){
-            endFight();
-
-mainTextPanel.setVisible(true);
-optionsPanel.setVisible(true);
-mainTextArea.setText("[(Wilder) Eber] wurde besiegt! \n \nDu hast 140 Münzen bekommen!");
-option1button.setText("Belohnung fordern!");
-option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
-option2button.setText("");
-nextPosition1 = "Dritter Gegner Kampf";
-nextPosition2 = "";
-
-        }
-
-        if (nextPosition1 == "Dritter Gegner Kampf"){
-            endFight();
-
-mainTextPanel.setVisible(true);
-optionsPanel.setVisible(true);
-mainTextArea.setText("[(Wütender) Bär] wurde besiegt! \n \nDu hast 160 Münzen bekommen!");
-option1button.setText("Belohnung fordern!");
-option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
-option2button.setText("");
-nextPosition1 = "Vierter Gegner Kampf";
-nextPosition2 = "";
-
-        }
+        
 
         if (nextPosition1 == "Vierter Gegner Kampf"){
             endFight();
@@ -3262,6 +3215,63 @@ nextPosition1 = "Anfangpart8";
 nextPosition2 = "";
 
         }
+
+        if (nextPosition1 == "Dritter Gegner Kampf"){
+            endFight();
+
+mainTextPanel.setVisible(true);
+optionsPanel.setVisible(true);
+mainTextArea.setText("[(Wütender) Bär] wurde besiegt! \n \nDu hast 160 Münzen bekommen!");
+option1button.setText("letzter Gegner");
+option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+option2button.setText("");
+nextPosition1 = "Vierter Gegner Kampf";
+nextPosition2 = "";
+
+        }
+
+        if (nextPosition1 == "Zweiter Gegner Kampf"){
+            endFight();
+
+mainTextPanel.setVisible(true);
+optionsPanel.setVisible(true);
+mainTextArea.setText("[(Wilder) Eber] wurde besiegt! \n \nDu hast 140 Münzen bekommen!");
+option1button.setText("nächster Gegner");
+option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+option2button.setText("");
+nextPosition1 = "Dritter Gegner Kampf";
+nextPosition2 = "";
+
+        }
+        
+        if (nextPosition1 == "Erster Gegner Kampf"){
+            endFight();
+
+mainTextPanel.setVisible(true);
+optionsPanel.setVisible(true);
+mainTextArea.setText("[(Wütender) Hirsch] wurde besiegt! \n \nDu hast 120 Münzen bekommen! \n \nJe stärker der Gegner ist, desto mehr Münzen bekommst du!");
+option1button.setText("nächster Gegner");
+option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+option2button.setText("");
+nextPosition1 = "Zweiter Gegner Kampf";
+nextPosition2 = "";
+
+        }
+
+        if (nextPosition1 == "Artemis Kampf"){
+           inventory.putIfAbsent("Artemis Pfeil", 1);
+           Award("W", 1, "Artemis Pfeil", "Artemis Waffe erhalten", "Textrpg\\Images\\weapons\\Artemis Pfeil.png");
+        }
+
+        if (nextPosition1 == "Apollon Kampf"){
+            inventory.putIfAbsent("Lichtbogen", 1);
+            Award("W", 1, "Lichtbogen", "Apollon Waffe erhalten", "Textrpg\\Images\\weapons\\Lichtbogen.png");
+
+        }
+
+       
+
+       
 
         if (nextPosition1 == "StoryR_6++"){
             endFight();
@@ -5161,7 +5171,7 @@ for (int xi = 0; xi<= 120; xi++){
             System.out.println(spieler.damageMade + " Damg");
             spieler.damageMade += damg + (damg * spieler.powerBoost - damg);
             if (spieler.damageMade >= 2500 && spieler.kämpfer == false){
-                Award(1);
+                Award("A",1,null,null,null);
                 spieler.kämpfer = true;
 
             }
@@ -7035,17 +7045,17 @@ panel3.setVisible(false);
 
 
 
-    void Award(int a) throws InterruptedException{
+    void Award(String File, int a, String N, String D, String I) throws InterruptedException{
 
+if (File == "A"){
+    achievementI.setIcon(new ImageIcon(new ImageIcon(rew.achievementsImage[a]).getImage()
+    .getScaledInstance(105, 100, Image.SCALE_AREA_AVERAGING)));
 
-        achievementI.setIcon(new ImageIcon(new ImageIcon(rew.achievementsImage[a]).getImage()
-                .getScaledInstance(105, 100, Image.SCALE_AREA_AVERAGING)));
-
-                achievementN.setText(rew.achievements[a]);
-                achievementN.setForeground(rew.achievementsColor[a]);
-                achievementD.setText(rew.rewardDescription[a]);
-                achievementDif.setText(rew.achievementsDifficulty[a]);
-                achievementDif.setForeground(rew.difficultyColors[a]);
+    achievementN.setText(rew.achievements[a]);
+    achievementN.setForeground(rew.achievementsColor[a]);
+    achievementD.setText(rew.rewardDescription[a]);
+    achievementDif.setText(rew.achievementsDifficulty[a]);
+    achievementDif.setForeground(rew.difficultyColors[a]);
 
 achievementsPanel.setBounds(1307, 280, 265, 120);
 achievementI.setBounds(1310, 280, 265, 120);
@@ -7062,7 +7072,7 @@ achievementD.setVisible(true);
 achievementDif.setVisible(true);
 
 for (int v = 0; v< 300; v++){
-    Thread.sleep(1);
+Thread.sleep(1);
 achievementsPanel.setBounds(1307-v, 280, 265, 120);
 achievementI.setBounds(1310-v, 280, 265, 120);
 achievementN.setBounds(1420-v, 250, 265, 120);
@@ -7074,7 +7084,7 @@ achievementDif.setBounds(1520-v, 325, 265, 120);
 Thread.sleep(5000);
 
 for (int v = 0; v< 300; v++){
-    Thread.sleep(1);
+Thread.sleep(1);
 achievementsPanel.setBounds(1007+v, 280, 265, 120);
 achievementI.setBounds(1010+v, 280, 265, 120);
 achievementN.setBounds(1120+v, 250, 265, 120);
@@ -7090,6 +7100,59 @@ achievementI.setVisible(false);
 achievementN.setVisible(false);
 achievementD.setVisible(false);
 achievementDif.setVisible(false);
+}
+
+if (File == "W"){
+    achievementI.setIcon(new ImageIcon(new ImageIcon(I).getImage()
+    .getScaledInstance(105, 100, Image.SCALE_AREA_AVERAGING)));
+
+    achievementN.setText(N);
+    achievementN.setForeground(specialEnemyT.getForeground());
+    achievementD.setText(D);
+
+achievementsPanel.setBounds(1307, 280, 265, 120);
+achievementI.setBounds(1310, 280, 265, 120);
+achievementN.setBounds(1420, 250, 265, 120);
+achievementD.setBounds(1420, 340, 120, 120);
+achievementDif.setBounds(1520, 325, 265, 120);
+
+Thread.sleep(80);
+
+achievementsPanel.setVisible(true);
+achievementI.setVisible(true);
+achievementN.setVisible(true);
+achievementD.setVisible(true);
+achievementDif.setVisible(false);
+
+for (int v = 0; v< 300; v++){
+Thread.sleep(1);
+achievementsPanel.setBounds(1307-v, 280, 265, 120);
+achievementI.setBounds(1310-v, 280, 265, 120);
+achievementN.setBounds(1420-v, 250, 265, 120);
+achievementD.setBounds(1420-v, 340, 120, 120);
+
+}
+
+Thread.sleep(5000);
+
+for (int v = 0; v< 300; v++){
+Thread.sleep(1);
+achievementsPanel.setBounds(1007+v, 280, 265, 120);
+achievementI.setBounds(1010+v, 280, 265, 120);
+achievementN.setBounds(1120+v, 250, 265, 120);
+achievementD.setBounds(1120+v, 340, 120, 120);
+
+}
+
+Thread.sleep(80);
+
+achievementsPanel.setVisible(false);
+achievementI.setVisible(false);
+achievementN.setVisible(false);
+achievementD.setVisible(false);
+achievementDif.setVisible(false);
+}
+       
 
     }
 
@@ -8451,7 +8514,7 @@ spawnEnemy("Bosses", 0);
             optionsPanel.setVisible(false);
 
             spawnEnemy("Enemies", 1);
-            nextPosition1 = "Zweiter Gegner Kampf";
+           // nextPosition1 = "Zweiter Gegner Kampf";
             ;break;
 
             case "Zweiter Gegner Kampf":
@@ -8459,7 +8522,7 @@ spawnEnemy("Bosses", 0);
             optionsPanel.setVisible(false);
 
             spawnEnemy("Enemies", 2);
-            nextPosition1 = "Dritter Gegner Kampf";
+         //   nextPosition1 = "Dritter Gegner Kampf";
             ;break;
 
             case "Dritter Gegner Kampf":
@@ -8467,7 +8530,7 @@ spawnEnemy("Bosses", 0);
             optionsPanel.setVisible(false);
 
             spawnEnemy("Enemies", 3);
-            nextPosition1 = "Vierter Gegner Kampf";
+         //   nextPosition1 = "Vierter Gegner Kampf";
             ;break;
 
             case "Vierter Gegner Kampf":
@@ -8475,7 +8538,7 @@ spawnEnemy("Bosses", 0);
             optionsPanel.setVisible(false);
 
             spawnEnemy("Enemies", 4);
-            nextPosition1 = "Anfangpart8";
+          //  nextPosition1 = "Anfangpart8";
             ;break;
 
 
