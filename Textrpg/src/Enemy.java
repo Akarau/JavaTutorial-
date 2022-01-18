@@ -229,7 +229,7 @@ public class Enemy {
     Color[] bossesColors = {
         new Color(0,255,80),
         new Color(225,225,225),
-        new Color(0,255,80),
+        new Color(255,205,40),
         new Color(0,255,80),
 
     };

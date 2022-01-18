@@ -11,6 +11,7 @@ public class Shop {
         "Molten Schwert",
         "The Warrior",
         "Artemis Pfeil",
+        "Lichtbogen",
         "Standard Shield",
         "Aqua Shield",
         "Schnelle Rüstung",
@@ -26,6 +27,7 @@ public class Shop {
         "Molten Schwert",
         "The Warrior",
         "Artemis Pfeil",
+        "Lichtbogen",
     };
 
     String schwerteInv[] = {
@@ -35,6 +37,7 @@ public class Shop {
         "Molten Schwert",
         "The Warrior",
         "Artemis Pfeil",
+        "Lichtbogen",
     };
 
     int schwerteval[] = {
@@ -54,6 +57,7 @@ public class Shop {
         new Color(255,120,0),
         new Color(120,0,150),
         new Color(120,0,150),
+        new Color(120,0,150),
 
     };
 
@@ -65,6 +69,7 @@ public class Shop {
 1.30f,
 1.50f,
 1.15f,
+1.25f,
     };
 
     int[] weaponsPreis = {
@@ -74,6 +79,8 @@ public class Shop {
         2000,
         5000,
         0,
+        0,
+
 
             };
 
@@ -84,6 +91,8 @@ public class Shop {
                 " -Gibt 30% mehr Kraft",
                 " -Gibt 50% mehr Kraft                                                                               -Gibt 10% mehr HP ",
                 " -Gibt 15% mehr Kraft",
+                " -Gibt 25% mehr Kraft",
+
 
             };
 
@@ -94,6 +103,7 @@ public class Shop {
                 "Textrpg\\Images\\weapons\\Molten Schwert.png",
                 "Textrpg\\Images\\weapons\\The Warrior.png",
                 "Textrpg\\Images\\weapons\\Artemis Pfeil.png",
+                "Textrpg\\Images\\weapons\\Lichtbogen.png",
 
             };
 

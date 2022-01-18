@@ -3217,6 +3217,10 @@ nextPosition2 = "";
            inventory.putIfAbsent("Artemis Pfeil", 1);
         }
 
+        if (nextPosition1 == "Apollon Kampf"){
+            inventory.putIfAbsent("Lichtbogen", 1);
+        }
+
         if (nextPosition1 == "Zweiter Gegner Kampf"){
             endFight();
 
@@ -6107,6 +6111,22 @@ public void setSpecialWeapon(String File){
             specialEnemyT.setText("Artemis Pfeil");
 moon_Artemis.setVisible(false);
         }
+
+        if (nextPosition1 == "Apollon Kampf"){
+            specialEnemyP.setVisible(true);
+            specialEnemyP2.setVisible(true);
+            specialEnemyI.setVisible(true);
+            specialEnemyT.setVisible(true);
+
+            specialEnemyP.setBounds(400, 40, (int) (1.7 * spieler.currentEnemyHP), 40);
+            specialEnemyP.setBackground(en.bossesColors[2]);
+            specialEnemyI.setBounds(385 +(2 * spieler.currentEnemyHP), 0, 265, 120);
+            specialEnemyT.setBounds(350 +(2 * spieler.currentEnemyHP), 100, 250, 40);
+            specialEnemyI.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\weapons\\Lichtbogen.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));       
+            specialEnemyT.setForeground(new Color(255,205,40));
+            specialEnemyT.setText("Lichtbogen");
+moon_Artemis.setVisible(false);
+        }
        
 
     }
@@ -8376,6 +8396,7 @@ spawnEnemy("Bosses", 0);
             optionsPanel.setVisible(false);
 
             spawnEnemy("Bosses", 0);
+            setSpecialWeapon("W");
 
 
             ;break;            
