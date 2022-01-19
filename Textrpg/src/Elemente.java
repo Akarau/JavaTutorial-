@@ -78,10 +78,10 @@ public class Elemente {
 
 
     static String elementsWeaks[] = {
-        "is weak against Crystal", // Ancient Weak dagegen
-        "is weak against Ancient + Gravity + Void", // Cosmic Weak dagegen
+        "ist nicht schwach und nicht stark gegen andere Elemente", // Ancient Weak dagegen
+        "ist schwach und stark gegen Gravity und Void", // Cosmic Weak dagegen
         "is weak against Feuer + Wasser", // Crystal Weak dagegen
-        "is weak against Cosmic + Crystal + Gravity", // Erde Weak dagegen
+        "ist schwach gegen Crystal", // Erde Weak dagegen
         "is weak against Erde + Wasser", // Feuer Weak dagegen
         "is weak against Cosmic + Void", // Gravity Weak dagegen
      //   "is a support Element. It heals you and it has an upgrade", // Heal Weak dagegen

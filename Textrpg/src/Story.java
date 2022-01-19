@@ -192,8 +192,8 @@ JLabel reducedDamgeText;
 JLabel reducedDamgeText2;
 JLabel reflectedDamgeText;
 JLabel self_HealText;
-
-
+JLabel specialEffectText;
+JLabel specialEffectText2;
 
 
 // Fight //
@@ -1612,6 +1612,23 @@ reflectedDamgeText.setForeground(new Color(250,150,0));
 reflectedDamgeText.setBounds(900, 280, 600, 80);
 reflectedDamgeText.setVisible(false);
 
+specialEffectText = new JLabel("ReflectedDamage");
+specialEffectText.setFont(new Font("Times new Roman", Font.PLAIN, 35));
+specialEffectText.setOpaque(false);
+specialEffectText.setForeground(new Color(250,150,0));
+specialEffectText.setBounds(900, 280, 600, 80);
+specialEffectText.setVisible(false);
+
+specialEffectText2 = new JLabel("ReflectedDamage");
+specialEffectText2.setFont(new Font("Times new Roman", Font.PLAIN, 35));
+specialEffectText2.setOpaque(false);
+specialEffectText2.setForeground(new Color(250,150,0));
+specialEffectText2.setBounds(900, 340, 600, 80);
+specialEffectText2.setVisible(false);
+
+frame.add(specialEffectText);
+frame.add(specialEffectText2);
+
 shop = new JPanel();
 shop.setForeground(new Color(255, 0, 150));
 shop.setFont(new Font("Times new Roman", Font.PLAIN, 60));
@@ -2455,12 +2472,12 @@ commbox.setVisible(false);
 texarea.setVisible(false);
 confirmName.setVisible(false);
 texarea.setEditable(false);
-//commbox.setVisible(true);
+commbox.setVisible(true);
 option1.setVisible(false);
 fighting_options.setVisible(false);
 choose_Element.setActionCommand("Main_Choose");
 
-commbox.setText("Welcome " + spieler.playerName + ", your name is terrible");
+commbox.setText("Willkommen " + spieler.playerName + ", wähle zuerst das Main Element");
 //mainTextPanel.setVisible(true);
 //mainTextArea.setVisible(true);
 //DerAnfang();
@@ -2648,7 +2665,7 @@ ePlayButton.setActionCommand("ePlayButton1");
            // commbox.setText(" du hast" + "  '" + chosen_Main_Element_Name.getText() + "'  " + "als Haupt Element gewählt");
             spieler.Main_Element = chosen_Main_Element_Name.getText();
             choose_Element.setActionCommand("Second_Choose");
-            commbox.setText(" Wähle jetzt dein Sekundärelement aus.");
+            commbox.setText(" Wähle jetzt dein Sekundär Element aus.");
 
 
 
@@ -2681,6 +2698,7 @@ ePlayButton.setActionCommand("ePlayButton1");
             chosen_Main_Element.setVisible(false);
             elementsMenu.setVisible(false);
 
+            commbox.setVisible(false);
             spieler.Second_Element = chosen_Main_Element_Name.getText();
             choose_Element.setActionCommand("/");
 
@@ -3176,6 +3194,7 @@ spieler.thread3 = 0;
         enemyInfoSecondElement.setVisible(false);
         enemyInfoThirdElement.setVisible(false);
         enemyInfoLastElement.setVisible(false);
+        reflectedDamgeImage.setVisible(false);
         
         playerInfo.setVisible(false);
         playerInfoAttack.setVisible(false);
@@ -3258,12 +3277,69 @@ nextPosition2 = "";
 
         }
 
+        if (nextPosition1 == "Story7L_5"){
 
-       
+            endFight();
 
-       
+mainTextPanel.setVisible(true);
+optionsPanel.setVisible(true);
+mainTextArea.setText("[(Ghost) Stier] wurde besiegt! \n \nDu hast 120 Münzen bekommen!");
+option1button.setText("weiter");
+option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+option2button.setText("");
+nextPosition1 = "Story7L_6";
+nextPosition2 = "";
+        
+        }
 
-        if (nextPosition1 == "StoryR_6++"){
+        if (nextPosition1 == "Story7L_4"){
+
+            endFight();
+
+mainTextPanel.setVisible(true);
+optionsPanel.setVisible(true);
+mainTextArea.setText("[(Ghost) Bär] wurde besiegt! \n \nDu hast 120 Münzen bekommen!");
+option1button.setText("letzter Gegner");
+option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+option2button.setText("");
+nextPosition1 = "Story7L_5";
+nextPosition2 = "";
+        
+        }
+
+        if (nextPosition1 == "Story7L_3"){
+
+            endFight();
+
+mainTextPanel.setVisible(true);
+optionsPanel.setVisible(true);
+mainTextArea.setText("[(Ghost) Eber] wurde besiegt! \n \nDu hast 120 Münzen bekommen!");
+option1button.setText("nächster Gegner");
+option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+option2button.setText("");
+nextPosition1 = "Story7L_4";
+nextPosition2 = "";
+        
+        }
+
+
+        if (nextPosition1 == "Story7L_2"){
+
+            endFight();
+
+mainTextPanel.setVisible(true);
+optionsPanel.setVisible(true);
+mainTextArea.setText("[(Ghost) Hirsch] wurde besiegt! \n \nDu hast 120 Münzen bekommen!");
+option1button.setText("nächster Gegner");
+option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+option2button.setText("");
+nextPosition1 = "Story7L_3";
+nextPosition2 = "";
+        
+        }
+
+
+  if (nextPosition1 == "StoryR_6++"){
             endFight();
             mainTextPanel.setVisible(true);
 optionsPanel.setVisible(true);
@@ -3613,6 +3689,7 @@ if (spieler.currentEnemyHP <= 0){
                           Thread.sleep(spieler.t3 * 2);
                           setSpecialWeapon("W");
 
+                          specialCombat();
                           enemyAttack();
 
                           if (spieler.currentEnemyHP <= 0){
@@ -3815,6 +3892,7 @@ boostDamageText.setVisible(false);
 Thread.sleep(spieler.t3 * 2);
 
 setSpecialWeapon("W");
+specialCombat();
 enemyAttack();
 
 if (spieler.currentEnemyHP <= 0){
@@ -3857,7 +3935,7 @@ if (spieler.currentEnemyHP <= 0){
                 damageText.setForeground(new Color(255,255,255));
                 damageText.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Crystal.png").getImage().getScaledInstance(35, 35, Image.SCALE_AREA_AVERAGING)));
 
-                if (spieler.enemyMain_Element == "Erde" || spieler.enemyMain_Element == "Crystal" ){
+                if (spieler.enemyMain_Element == "Erde"){
 
                     damageText.setForeground(new Color(255,50,0));
                     dm2 = 3;
@@ -3867,7 +3945,7 @@ if (spieler.currentEnemyHP <= 0){
 
                 }
 
-                if (spieler.enemyMain_Element == "Crystal" || spieler.enemyMain_Element == "Feuer" || spieler.enemyMain_Element == "Wasser"){
+                if (spieler.enemyMain_Element == "Crystal" || spieler.enemyMain_Element == "Feuer"){
                     damageText.setForeground(new Color(255,200,30));
                     dm2 = 12;
 
@@ -4019,6 +4097,7 @@ boostDamageText.setVisible(false);
 
 Thread.sleep(spieler.t3 * 2);
 setSpecialWeapon("W");
+specialCombat();
 
 enemyAttack();
 if (spieler.currentEnemyHP <= 0){
@@ -4073,7 +4152,7 @@ if (spieler.currentEnemyHP <= 0){
             
             
             
-                                if (spieler.enemyMain_Element == "Wind" || spieler.enemyMain_Element == "Crystal" ){
+                                if (spieler.enemyMain_Element == "Feuer" || spieler.enemyMain_Element == "Crystal" ){
             
                                     damageText.setText("" + spieler.Power *2 + "");
                                     damageText.setForeground(new Color(255,50,0));
@@ -4178,6 +4257,7 @@ if (spieler.currentEnemyHP <= 0){
 
                             Thread.sleep(spieler.t3 * 2);
                             setSpecialWeapon("W");
+                            specialCombat();
 
 enemyAttack();
 
@@ -4380,6 +4460,7 @@ damageText.setBounds(900, 480, 600, 80);
 
                         Thread.sleep(spieler.t3 * 2);
                         setSpecialWeapon("W");
+                        specialCombat();
 
                         enemyAttack();
 
@@ -4580,6 +4661,7 @@ elementImage.setVisible(false);
                                    
                                    Thread.sleep(spieler.t3 * 2);
                                    setSpecialWeapon("W");
+                                   specialCombat();
 
                                    enemyAttack();
 
@@ -4641,7 +4723,7 @@ elementImage.setVisible(false);
                            
                            
                            
-                                               if (spieler.enemyMain_Element == "Wind" || spieler.enemyMain_Element == "Crystal" ){
+                                               if (spieler.enemyMain_Element == "Lunar" || spieler.enemyMain_Element == "Crystal" ){
                            
                                                    damageText.setText("" + spieler.Power *2 + "");
                                                    damageText.setForeground(new Color(255,50,0));
@@ -4651,7 +4733,7 @@ elementImage.setVisible(false);
                            
                                                }
                            
-                                               if (spieler.enemyMain_Element == "Feuer"){
+                                               if (spieler.enemyMain_Element == "Feuer" || spieler.enemyMain_Element == "Licht"){
                                                    damageText.setText("" + spieler.Power /2 + "");
                                                    damageText.setForeground(new Color(255,200,30));
                                                    damg = spieler.Power /2;
@@ -4758,6 +4840,7 @@ elementImage.setVisible(false);
 
                                            Thread.sleep(spieler.t3 * 2);
                                            setSpecialWeapon("W");
+                                           specialCombat();
 
                                            enemyAttack();
 
@@ -4816,7 +4899,7 @@ elementImage.setVisible(false);
                
                
                
-                                   if (spieler.enemyMain_Element == "Erde" || spieler.enemyMain_Element == "Crystal" ){
+                                   if (spieler.enemyMain_Element == "Licht"){
                
                                        damageText.setText("" + spieler.Power *2 + "");
                                        damageText.setForeground(new Color(255,50,0));
@@ -4956,7 +5039,7 @@ elementImage.setVisible(false);
                                     Thread.sleep((power * spieler.t1));
                                     extradamg++;
                                     spieler.currentEnemyHP -= extradamg;
-                extradamg = 0;;
+                extradamg = 0;
             
                                     }
             
@@ -4985,6 +5068,7 @@ elementImage.setVisible(false);
 
                                Thread.sleep(spieler.t3 * 2);
                                setSpecialWeapon("W");
+                               specialCombat();
 
                                enemyAttack();
 
@@ -5140,9 +5224,10 @@ enemyImage.setEnabled(true);
 
             }
         }
-
+        damageText.setVisible(false);
         Thread.sleep(spieler.t3 * 2);
         setSpecialWeapon("W");
+        specialCombat();
 
         enemyAttack();
 
@@ -5161,7 +5246,6 @@ for (int xi = 0; xi<= 120; xi++){
             }
 
 
-            System.out.println(spieler.damageMade + " Damg");
             spieler.damageMade += damg + (damg * spieler.powerBoost - damg);
             if (spieler.damageMade >= 2500 && spieler.kämpfer == false){
                 Award("A",1,null,null,null);
@@ -5230,6 +5314,7 @@ for (int xi = 0; xi<= 120; xi++){
                 
                 elementImage.setVisible(false);
                 setSpecialWeapon("W");
+                specialCombat();
 
                 enemyAttack();
 
@@ -5251,164 +5336,13 @@ for (int xi = 0; xi<= 120; xi++){
 
     public void enemyAttack() throws InterruptedException{
 
-        System.out.println("Enemyattack43686");;
         String element;
-        if (spieler.Main_Element.charAt(2) == 'C' || spieler.Main_Element.charAt(3) == 'o') {
+        
 
             element = spieler.enemyMain_Element;
             spieler.enemyAtacked = true;
 
             Attack(element);
-        }
-
-        if (spieler.Main_Element == "  Cosmic  ") {
-            element = spieler.enemyMain_Element;
-
-            if (spieler.enemyMain_Element == "Gravity" || spieler.enemySecond_Element == "Gravity" || spieler.enemyThird_Element == "Gravity" || spieler.enemyLast_Element == "Gravity" && spieler.enemyAtacked == false ){
-                element = "Gravity";
-            }
-        
-
-        if (spieler.enemyMain_Element == "Void" || spieler.enemySecond_Element == "Void" || spieler.enemyThird_Element == "Void" || spieler.enemyLast_Element == "Void" && spieler.enemyAtacked == false){
-element = "Void";        
-        }
-
-        spieler.enemyAtacked = true;
-
-            Attack(element);
-    
-        }
-
-        if (spieler.Main_Element == "  Crystal  ") {
-
-            element = spieler.enemyMain_Element;
-
-            if (spieler.enemyMain_Element == "Feuer" || spieler.enemySecond_Element == "Feuer" || spieler.enemyThird_Element == "Feuer" || spieler.enemyLast_Element == "Feuer" && spieler.enemyAtacked == false ){
-                element = "Feuer";
-            }
-        
-
-        if (spieler.enemyMain_Element == "Wasser" || spieler.enemySecond_Element == "Wasser" || spieler.enemyThird_Element == "Wasser" || spieler.enemyLast_Element == "Wasser" && spieler.enemyAtacked == false){
-element = "Wasser";        
-        }
-
-        spieler.enemyAtacked = true;
-
-            Attack(element);
-        }
-
-        if (spieler.Main_Element == "  Erde  ") {
-
-            element = spieler.enemyMain_Element;
-
-            if (spieler.enemyMain_Element == "Crystal" || spieler.enemySecond_Element == "Crystal" || spieler.enemyThird_Element == "Crystal" || spieler.enemyLast_Element == "Crystal" && spieler.enemyAtacked == false ){
-                element = "Crystal";
-            }
-        
-
-        if (spieler.enemyMain_Element == "Wind" || spieler.enemySecond_Element == "Wind" || spieler.enemyThird_Element == "Wind" || spieler.enemyLast_Element == "Wind" && spieler.enemyAtacked == false){
-element = "Wind";        
-        }
-
-        spieler.enemyAtacked = true;
-
-            Attack(element);
-        }
-
-        if (spieler.Main_Element == "  Feuer  ") {
-
-            element = spieler.enemyMain_Element;
-
-            if (spieler.enemyMain_Element == "Wasser" || spieler.enemySecond_Element == "Wasser" || spieler.enemyThird_Element == "Wasser" || spieler.enemyLast_Element == "Wasser" && spieler.enemyAtacked == false ){
-                element = "Wasser";
-            }
-        
-
-        if (spieler.enemyMain_Element == "Erde" || spieler.enemySecond_Element == "Erde" || spieler.enemyThird_Element == "Erde" || spieler.enemyLast_Element == "Erde" && spieler.enemyAtacked == false){
-element = "Erde";        
-        }
-
-        spieler.enemyAtacked = true;
-
-            Attack(element);
-        }
-
-
-        if (spieler.Main_Element == "  Gravity  ") {
-
-            element = spieler.enemyMain_Element;
-
-            if (spieler.enemyMain_Element == "Void" || spieler.enemySecond_Element == "Void" || spieler.enemyThird_Element == "Void" || spieler.enemyLast_Element == "Void" && spieler.enemyAtacked == false ){
-                element = "Void";
-            }
-        
-
-        if (spieler.enemyMain_Element == "Cosmic" || spieler.enemySecond_Element == "Cosmic" || spieler.enemyThird_Element == "Cosmic" || spieler.enemyLast_Element == "Cosmic" && spieler.enemyAtacked == false){
-element = "Cosmic";        
-        }
-
-        spieler.enemyAtacked = true;
-
-            Attack(element);
-        }
-
-
-        if (spieler.Main_Element == "  Licht  ") {
-
-            element = spieler.enemyMain_Element;
-
-            if (spieler.enemyMain_Element == "Lunar" || spieler.enemySecond_Element == "Lunar" || spieler.enemyThird_Element == "Lunar" || spieler.enemyLast_Element == "Lunar" && spieler.enemyAtacked == false ){
-                element = "Lunar";
-            }
-        
-
-        if (spieler.enemyMain_Element == "Cosmic" || spieler.enemySecond_Element == "Cosmic" || spieler.enemyThird_Element == "Cosmic" || spieler.enemyLast_Element == "Cosmic" && spieler.enemyAtacked == false){
-element = "Cosmic";        
-        }
-
-        spieler.enemyAtacked = true;
-
-            Attack(element);
-        }
-
-
-        if (spieler.Main_Element == "  Lunar  ") {
-
-            element = spieler.enemyMain_Element;
-
-            if (spieler.enemyMain_Element == "Licht" || spieler.enemySecond_Element == "Licht" || spieler.enemyThird_Element == "Licht" || spieler.enemyLast_Element == "Licht" && spieler.enemyAtacked == false ){
-                element = "Licht";
-            }
-        
-
-        if (spieler.enemyMain_Element == "Cosmic" || spieler.enemySecond_Element == "Cosmic" || spieler.enemyThird_Element == "Cosmic" || spieler.enemyLast_Element == "Cosmic" && spieler.enemyAtacked == false){
-element = "Cosmic";        
-        }
-
-        spieler.enemyAtacked = true;
-
-            Attack(element);
-        }
-
-
-
-        if (spieler.Main_Element == "  Void  ") {
-
-            element = spieler.enemyMain_Element;
-
-            if (spieler.enemyMain_Element == "Gravity" || spieler.enemySecond_Element == "Gravity" || spieler.enemyThird_Element == "Gravity" || spieler.enemyLast_Element == "Gravity" && spieler.enemyAtacked == false ){
-                element = "Gravity";
-            }
-        
-
-        if (spieler.enemyMain_Element == "Cosmic" || spieler.enemySecond_Element == "Cosmic" || spieler.enemyThird_Element == "Cosmic" || spieler.enemyLast_Element == "Cosmic" && spieler.enemyAtacked == false){
-element = "Cosmic";        
-        }
-
-        spieler.enemyAtacked = true;
-
-            Attack(element);
-        }
 
         
     }
@@ -5496,7 +5430,7 @@ element = "Cosmic";
             damageText.setForeground(new Color(255,255,255));
             ci = "Textrpg\\Images\\Elemente\\Cosmic.png";
 
-            if (spieler.Main_Element == "  Gravity  " || spieler.Main_Element == "  Void  " ){
+            if (spieler.Main_Element.charAt(2) == 'G' && spieler.Main_Element.charAt(3) == 'r'|| spieler.Main_Element.charAt(2) == 'V' || spieler.Main_Element.charAt(2) == 'o'){
 
                 damageText.setForeground(new Color(255,50,0));
                 damg2 = spieler.CurrentEnemyPower *2;
@@ -5506,7 +5440,7 @@ element = "Cosmic";
 
             }
 
-            if (spieler.Main_Element == "  Cosmic  "){
+            if (spieler.Main_Element.charAt(2) == 'C' && spieler.Main_Element.charAt(3) == 'o'){
                 damageText.setForeground(new Color(255,200,30));
                 damg2 = spieler.CurrentEnemyPower /2;
 
@@ -5526,7 +5460,7 @@ element = "Cosmic";
             damageText.setForeground(new Color(255,255,255));
             ci = "Textrpg\\Images\\Elemente\\Crystal.png";
 
-            if (spieler.Main_Element == "  Cosmic  " || spieler.Main_Element == "  Erde  " ){
+            if (spieler.Main_Element.charAt(2) == 'E' && spieler.Main_Element.charAt(3) == 'r'){
 
                 damageText.setForeground(new Color(255,50,0));
                 damg2 = spieler.CurrentEnemyPower *2;
@@ -5536,7 +5470,7 @@ element = "Cosmic";
 
             }
 
-            if (spieler.Main_Element == "  Feuer  " || spieler.Main_Element == "  Wasser  " || spieler.Main_Element == "  Crystal  "  ){
+            if (spieler.Main_Element.charAt(2) == 'F' && spieler.Main_Element.charAt(3) == 'e'|| spieler.Main_Element.charAt(2) == 'C' || spieler.Main_Element.charAt(2) == 'r'){
                 damageText.setForeground(new Color(255,200,30));
                 damg2 = spieler.CurrentEnemyPower /2;
 
@@ -5556,7 +5490,7 @@ element = "Cosmic";
             damageText.setForeground(new Color(255,255,255));
             ci = "Textrpg\\Images\\Elemente\\Erde.png";
 
-            if (spieler.Main_Element == "  Feuer  " || spieler.Main_Element == "  Wind  " ){
+            if (spieler.Main_Element.charAt(2) == 'F' && spieler.Main_Element.charAt(3) == 'e'|| spieler.Main_Element.charAt(2) == 'W' || spieler.Main_Element.charAt(2) == 'i'){
 
                 damageText.setForeground(new Color(255,50,0));
                 damg2 = spieler.CurrentEnemyPower *2;
@@ -5566,7 +5500,7 @@ element = "Cosmic";
 
             }
 
-            if (spieler.Main_Element == "  Crystal  " || spieler.Main_Element == "  Erde  " ){
+            if (spieler.Main_Element.charAt(2) == 'C' && spieler.Main_Element.charAt(3) == 'r'|| spieler.Main_Element.charAt(2) == 'E' || spieler.Main_Element.charAt(2) == 'r'){
                 damageText.setForeground(new Color(255,200,30));
                 damg2 = spieler.CurrentEnemyPower /2;
 
@@ -5586,7 +5520,7 @@ element = "Cosmic";
             damageText.setForeground(new Color(255,255,255));
             ci = "Textrpg\\Images\\Elemente\\Feuer.png";
 
-            if (spieler.Main_Element == "  Cosmic  " || spieler.Main_Element == "  Crystal  " ){
+            if (spieler.Main_Element.charAt(2) == 'L' && spieler.Main_Element.charAt(3) == 'i'|| spieler.Main_Element.charAt(2) == 'C' || spieler.Main_Element.charAt(2) == 'r'){
 
                 damageText.setForeground(new Color(255,50,0));
                 damg2 = spieler.CurrentEnemyPower *2;
@@ -5596,7 +5530,7 @@ element = "Cosmic";
 
             }
 
-            if (spieler.Main_Element == "  Crystal  " || spieler.Main_Element == "  Feuer  " ){
+            if (spieler.Main_Element.charAt(2) == 'W' && spieler.Main_Element.charAt(3) == 'a'|| spieler.Main_Element.charAt(2) == 'F' || spieler.Main_Element.charAt(2) == 'e'){
                 damageText.setForeground(new Color(255,200,30));
                 damg2 = spieler.CurrentEnemyPower /2;
 
@@ -5618,7 +5552,7 @@ element = "Cosmic";
                 damageText.setForeground(new Color(255,255,255));
                 ci = "Textrpg\\Images\\Elemente\\Gravity.png";
 
-                if (spieler.Main_Element == "  Cosmic  " || spieler.Main_Element == "  Void  " ){
+                if (spieler.Main_Element.charAt(2) == 'C' && spieler.Main_Element.charAt(3) == 'o'|| spieler.Main_Element.charAt(2) == 'V' || spieler.Main_Element.charAt(2) == 'o'){
 
                     damageText.setForeground(new Color(255,50,0));
                     damg2 = spieler.CurrentEnemyPower *2;
@@ -5628,7 +5562,7 @@ element = "Cosmic";
 
                 }
 
-                if (spieler.Main_Element == "  Gravity  "){
+                if (spieler.Main_Element.charAt(2) == 'G' && spieler.Main_Element.charAt(3) == 'r'){
                     damageText.setForeground(new Color(255,200,30));
                     damg2 = spieler.CurrentEnemyPower /2;
 
@@ -5649,7 +5583,7 @@ element = "Cosmic";
             damageText.setForeground(new Color(255,255,255));
             ci = "Textrpg\\Images\\Elemente\\Licht.png";
 
-            if (spieler.Main_Element == "  Cosmic  " || spieler.Main_Element == "  Crystal  " ){
+            if (spieler.Main_Element.charAt(2) == 'L' && spieler.Main_Element.charAt(3) == 'u'|| spieler.Main_Element.charAt(2) == 'C' || spieler.Main_Element.charAt(2) == 'r'){
 
                 damageText.setForeground(new Color(255,50,0));
                 damg2 = spieler.CurrentEnemyPower *2;
@@ -5659,7 +5593,7 @@ element = "Cosmic";
 
             }
 
-            if (spieler.Main_Element == "  Cosmic  "){
+            if (spieler.Main_Element.charAt(2) == 'F' && spieler.Main_Element.charAt(3) == 'e'|| spieler.Main_Element.charAt(2) == 'L' || spieler.Main_Element.charAt(2) == 'i'){
                 damageText.setForeground(new Color(255,200,30));
                 damg2 = spieler.CurrentEnemyPower /2;
 
@@ -5678,7 +5612,7 @@ element = "Cosmic";
             damageText.setForeground(new Color(255,255,255));
             ci = "Textrpg\\Images\\Elemente\\Lunar.png";
 
-            if (spieler.Main_Element == "  Cosmic  " || spieler.Main_Element == "  Crystal  " ){
+            if (spieler.Main_Element.charAt(2) == 'L' && spieler.Main_Element.charAt(3) == 'i'){
 
                 damageText.setForeground(new Color(255,50,0));
                 damg2 = spieler.CurrentEnemyPower *2;
@@ -5688,7 +5622,7 @@ element = "Cosmic";
 
             }
 
-            if (spieler.Main_Element == "  Cosmic  "){
+            if (spieler.Main_Element.charAt(2) == 'L' && spieler.Main_Element.charAt(3) == 'u'){
                 damageText.setForeground(new Color(255,200,30));
                 damg2 = spieler.CurrentEnemyPower /2;
 
@@ -5709,7 +5643,7 @@ element = "Cosmic";
             damageText.setForeground(new Color(255,255,255));
             ci = "Textrpg\\Images\\Elemente\\Void.png";
 
-            if (spieler.Main_Element == "  Cosmic  " || spieler.Main_Element == "  Gravity  " ){
+            if (spieler.Main_Element.charAt(2) == 'C' && spieler.Main_Element.charAt(3) == 'o'|| spieler.Main_Element.charAt(2) == 'G' || spieler.Main_Element.charAt(2) == 'r'){
 
                 damageText.setForeground(new Color(255,50,0));
                 damg2 = spieler.CurrentEnemyPower *2;
@@ -5719,7 +5653,7 @@ element = "Cosmic";
 
             }
 
-            if (spieler.Main_Element == "  Void  "){
+            if (spieler.Main_Element.charAt(2) == 'V' && spieler.Main_Element.charAt(3) == 'o'){
                 damageText.setForeground(new Color(255,200,30));
                 damg2 = spieler.CurrentEnemyPower /2;
 
@@ -6136,9 +6070,41 @@ moon_Artemis.setVisible(false);
 
 }
 
+public void specialCombat() throws InterruptedException{
+    if (nextPosition1 == "Hades Kampf" && spieler.reflection == false && spieler.currentEnemyHP > 400){
+        if (spieler.currentEnemyHP > 1000){
+            specialEffectText.setEnabled(false);
+            specialEffectText.setVisible(true);
+            specialEffectText.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Bosses\\Artemis.png")
+                    .getImage().getScaledInstance(40, 35, Image.SCALE_AREA_AVERAGING)));
+                    specialEffectText.setText("-"+ damg/10 +" Schaden - Artemis Effect");
+                    spieler.currentEnemyHP += damg/10;
+                    Thread.sleep(spieler.t3);
+                    enemyInfoHP.setText("          " +spieler.currentEnemyHP);                   
+        }
+
+        if (spieler.currentEnemyHP > 400){
+            specialEffectText2.setEnabled(false);
+            specialEffectText2.setVisible(true);
+            specialEffectText2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Bosses\\Apollon.png")
+                    .getImage().getScaledInstance(40, 35, Image.SCALE_AREA_AVERAGING)));
+                    specialEffectText2.setText("+"+ damg/20 + " Hades HP - Apollon Effect");
+                    spieler.currentEnemyHP += damg/20;
+                    enemyInfoHP.setText("          " +spieler.currentEnemyHP);    
+                    Thread.sleep(spieler.t3);               
+        }
+        Thread.sleep(spieler.t3 * 15);
+        specialEffectText.setVisible(false);
+        specialEffectText2.setVisible(false);
+
+    }
+}
+
     public void spawnEnemy(String File, int Index) {
 
-        
+        if (spieler.reflection == true){
+            reflectedDamgeImage.setVisible(true);
+        }
         if (File == "Enemies"){
             standardE();
 
@@ -6441,19 +6407,6 @@ i2.setText("        Crystal         ");
 i2.setForeground(new Color(155,25,0));
 }
 
-if (spieler.Main_Element.charAt(2) == 'L' && spieler.Main_Element.charAt(3) == 'u'){
-i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Lunar.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
-i1.setText("        Lunar         ");
-i1.setForeground(new Color(155,25,0));
-    }
-
-
-
-    if (spieler.Second_Element.charAt(2) == 'L' && spieler.Second_Element.charAt(3) == 'u'){
-        i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Lunar.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));
-        i2.setText("        Lunar         ");
-        i2.setForeground(new Color(155,25,0));
-            }
 
 
 
@@ -6520,8 +6473,8 @@ if (spieler.enemyMain_Element == "Feuer"){
 // Strong //
 
 if (spieler.Main_Element.charAt(2) == 'E' && spieler.Main_Element.charAt(3) == 'r'){
-    i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Crystal.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
-i1.setText("        Crystal         ");
+    i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Erde.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+i1.setText("        Erde         ");
 i1.setForeground(new Color(155,25,0));
 }
 
@@ -6582,14 +6535,14 @@ i2.setForeground(new Color(255,215,0));
 
 if (spieler.Main_Element.charAt(2) == 'L' && spieler.Main_Element.charAt(3) == 'i'){
     i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Licht.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
-i1.setText("        Feuer         ");
+i1.setText("        Licht         ");
 i1.setForeground(new Color(255,215,0));
 }
 
 
 if (spieler.Second_Element.charAt(2) == 'L' && spieler.Second_Element.charAt(3) == 'i'){
     i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Licht.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
-i2.setText("        Feuer         ");
+i2.setText("        Licht         ");
 i2.setForeground(new Color(255,215,0));
 }
 
@@ -7183,7 +7136,7 @@ achievementDif.setVisible(false);
      
         
      
-     nextPosition1="Anfangpart2";
+     nextPosition1="Story7L";
      
      nextPosition2="";
      nextPosition3="";
@@ -7782,7 +7735,7 @@ nextPosition3 = "";
 
                             optionsPanel.setVisible(false);
                             mainTextPanel.setVisible(false);
-                            spawnEnemy("Enemies", 5);
+                            spawnEnemy("Enemies", 9);
                            
                                 mainTextArea.setText(" Auf dem Boden sind überall Schlangen auf einmal. \n\nEs kommen aus allen Ecken Gorgonen!");
                         
@@ -7804,7 +7757,7 @@ nextPosition3 = "";
 
                                     optionsPanel.setVisible(false);
                                     mainTextPanel.setVisible(false);
-                                    spawnEnemy("Enemies", 6);
+                                    spawnEnemy("Enemies", 10);
                                                                    
                                 
                                 nextPosition1 = "StoryR_6+++";
@@ -7822,7 +7775,7 @@ nextPosition3 = "";
 
                                             optionsPanel.setVisible(false);
                                             mainTextPanel.setVisible(false);
-                                            spawnEnemy("Enemies", 7);
+                                            spawnEnemy("Enemies", 11);
                                                                            
                                         
                                         nextPosition1 = "StoryR_6++++";
@@ -7840,7 +7793,7 @@ nextPosition3 = "";
 
                                                     optionsPanel.setVisible(false);
                                                     mainTextPanel.setVisible(false);
-                                                    spawnEnemy("Enemies", 8);
+                                                    spawnEnemy("Enemies", 12);
                                                                                    
                                                 
                                                 nextPosition1 = "StoryR_6+++++";
@@ -7858,7 +7811,7 @@ nextPosition3 = "";
 
                                                     optionsPanel.setVisible(false);
                                                     mainTextPanel.setVisible(false);
-                                                    spawnEnemy("Enemies", 9);
+                                                    spawnEnemy("Enemies", 13);
                                                                                    
                                                 
                                                 nextPosition1 = "StoryR_6++++++";
@@ -7876,7 +7829,7 @@ nextPosition3 = "";
 
                                                     optionsPanel.setVisible(false);
                                                     mainTextPanel.setVisible(false);
-                                                    spawnEnemy("Enemies", 10);
+                                                    spawnEnemy("Enemies", 14);
                                                                                    
                                                 
                                                 nextPosition1 = "StoryR_6+++++++";
@@ -8236,7 +8189,7 @@ spieler.PolydektesK = false;
                 
                 
                 
-                                                    if (spieler.karma >0){
+                                                    if (spieler.karma <0){
                                                         mainTextArea.setText(" Du wachst am Morgen auf.\n\n Albträume haben dich die ganze Nacht über geplagt. Du hast das Gefühl, dass die Seelen derer die du getötet hast auf deinen Schultern lasten.\n\nWillst du ihnen nachgehen oder zum Berg Oite?");
                                                         nextPosition1 = "Story7L";
                                                     
@@ -8247,7 +8200,7 @@ spieler.PolydektesK = false;
                                                         option2button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
                                                     }
 
-                                                    if (spieler.karma <0){
+                                                    if (spieler.karma >0){
                                                         mainTextArea.setText(" Du wachst am Morgen auf, frühstückst in Ruhe und machst dich dann auf den Weg zum Berg Oite.\n\nUnterwegs kommst du am Strand vorbei, du fühlst wie das Meer nach dir ruft\n\n Willst du näher zum Meer oder zum Berg Oite?");
                                                         nextPosition1 = "Story7R";
                                                     
@@ -8274,7 +8227,7 @@ spieler.PolydektesK = false;
         
         
         
-                                            if (spieler.karma >0){
+                                            if (spieler.karma <0){
                                                 mainTextArea.setText(" Du wachst am Morgen auf.\n\n Albträume haben dich die ganze Nacht über geplagt. Du hast das Gefühl, dass die Seelen derer die du getötet hast auf deinen Schultern lasten.\n\nWillst du ihnen nachgehen oder zum Berg Oite?");
                                                 nextPosition1 = "Story7L";
                                                 nextPosition2 = "Story7M";
@@ -8286,7 +8239,7 @@ spieler.PolydektesK = false;
                                                 option2button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
                                             }
 
-                                            if (spieler.karma <0){
+                                            if (spieler.karma >0){
                                                 mainTextArea.setText(" Du wachst am Morgen auf, frühstückst in Ruhe und machst dich dann auf den Weg zum Berg Oite.\n\nUnterwegs kommst du am Strand vorbei, du fühlst wie das Meer nach dir ruft\n\n Willst du näher zum Meer oder zum Berg Oite?");
                                                 nextPosition1 = "Story7R";
                                                 nextPosition2 = "Story7M";
@@ -8365,8 +8318,26 @@ spieler.PolydektesK = false;
 
 
                                                         mainTextArea.setText(" Innerhalb von wenigen Sekunden befindest du dich auf einmal in einem dunklen Gebiet, überall fliegen die Seelen der verstorbenen herum.\n\n Einige erscheinen vor dir.\n\n Es sind die, die du getötet hast.");
-                                                        nextPosition1 = "Story7R_2";
+                                                        nextPosition1 = "Story7L_2";
                                                         nextPosition2 = "Story7xtr";
+
+                                                        option1button.setText("Kampf beginnen");
+                                                        option2button.setText("zurück");
+                                                        option3button.setText("");
+                                                        option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
+                                                        option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                                            
+                                            
+                                                        break;
+
+                                                        case "Story7L_2":; 
+
+
+                                                        optionsPanel.setVisible(false);
+                                                        mainTextPanel.setVisible(false);
+                                                        spawnEnemy("Enemies", 5);
+                                                        mainTextArea.setText(" Innerhalb von wenigen Sekunden befindest du dich auf einmal in einem dunklen Gebiet, überall fliegen die Seelen der verstorbenen herum.\n\n Einige erscheinen vor dir.\n\n Es sind die, die du getötet hast.");
+                                                        nextPosition2 = "Story7L";
 
                                                         option1button.setText("weiter");
                                                         option2button.setText("zurück");
@@ -8377,12 +8348,13 @@ spieler.PolydektesK = false;
                                             
                                                         break;
 
-                                                        case "Story7L_2":; 
+                                                        case "Story7L_3":; 
 
 
+                                                        optionsPanel.setVisible(false);
+                                                        mainTextPanel.setVisible(false);
+                                                        spawnEnemy("Enemies", 6);
                                                         mainTextArea.setText(" Innerhalb von wenigen Sekunden befindest du dich auf einmal in einem dunklen Gebiet, überall fliegen die Seelen der verstorbenen herum.\n\n Einige erscheinen vor dir.\n\n Es sind die, die du getötet hast.");
-                                                        nextPosition1 = "Story7L_3";
-                                                        nextPosition2 = "Story7L";
 
                                                         option1button.setText("weiter");
                                                         option2button.setText("zurück");
@@ -8395,13 +8367,27 @@ spieler.PolydektesK = false;
 
                                                         case "Story7L_4":; 
 
+                                                        spawnEnemy("Enemies", 7);
+                                                        optionsPanel.setVisible(false);
+                                                        mainTextPanel.setVisible(false);
+                                                      //  mainTextArea.setText(" \"Applaus, Applaus. Sehr gut wie du die die du bereits getötet, nochmal tötest.\"\"Ich bin Hades, der Gott der Unterwelt, und ein Bruder von Zeus. Du fragst dich vielleicht was du hier macht, nun gut das war ich! Ich wollte dass du nochmal gegen die Leute die du getötet hast kämpfst und dein nächster Gegner bin ich.\"");
 
-                                                        mainTextArea.setText(" \"Applaus, Applaus. Sehr gut wie du die die du bereits getötet, nochmal tötest.\"\"Ich bin Hades, der Gott der Unterwelt, und ein Bruder von Zeus. Du fragst dich vielleicht was du hier macht, nun gut das war ich! Ich wollte dass du nochmal gegen die Leute die du getötet hast kämpfst und dein nächster Gegner bin ich.\"");
 
 
-                                                        nextPosition1 = "Story7L_5";
-                                                        nextPosition2 = "";
+                                                        option1button.setText("weiter");
+                                                        option2button.setText("zurück");
+                                                        option3button.setText("");
+                                                        option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));        
+                                                        option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                                            
+                                            
+                                                        break;
 
+                                                        
+                                                        case "Story7L_5":; 
+                                                        optionsPanel.setVisible(false);
+                                                        mainTextPanel.setVisible(false);
+                                                        spawnEnemy("Enemies", 8);
                                                         option1button.setText("weiter");
                                                         option2button.setText("zurück");
                                                         option3button.setText("");
@@ -8413,11 +8399,33 @@ spieler.PolydektesK = false;
 
                                                         case "Story7L_6":; 
 
+                                                        optionsPanel.setVisible(true);
+                                                        mainTextPanel.setVisible(true);
+                                                        mainTextArea.setText(" \"Applaus, Applaus. Sehr gut wie du die die du bereits getötet, nochmal tötest.\"Ich bin Hades, der Gott der Unterwelt, und ein Bruder von Zeus. Du fragst dich vielleicht was du hier macht, nun gut das war ich! Ich wollte dass du nochmal gegen die Leute die du getötet hast kämpfst und dein nächster Gegner bin ich.\"");
 
+
+                                                        nextPosition1 = "Hades Kampf";
+                                                        nextPosition2 = "";
+
+                                                        option1button.setText("weiter");
+                                                        option2button.setText("zurück");
+                                                        option3button.setText("");
+                                                        option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));        
+                                                        option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                                            
+                                            
+                                                        break;
+
+                                                        case "Hades Kampf":; 
+
+                                                        optionsPanel.setVisible(false);
+                                                        mainTextPanel.setVisible(false);
+                                                        spawnEnemy("Bosses", 4);
                                                         mainTextArea.setText("\"Herzlichen, herzlichen Glückwunsch! Du hast also gewonnen. Los komm töte mi…\"\n\nDu hast Hades den Kopf abgehackt, du bist wieder an der Oberfläche.");
+                                                        mainTextArea.setText(" \"Applaus, Applaus. Sehr gut wie du die die du bereits getötet, nochmal tötest.\"Ich bin Hades, der Gott der Unterwelt, und ein Bruder von Zeus. Du fragst dich vielleicht was du hier macht, nun gut das war ich! Ich wollte dass du nochmal gegen die Leute die du getötet hast kämpfst und dein nächster Gegner bin ich.\"");
 
 
-                                                        nextPosition1 = "Story7L_4";
+                                                      //  nextPosition1 = "Story7L_4";
                                                         nextPosition2 = "";
 
                                                         option1button.setText("weiter");

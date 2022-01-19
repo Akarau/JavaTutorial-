@@ -48,6 +48,10 @@ public class Enemy {
         "(Wilder) Eber",
         "(Wütender) Bär",
         "(Zorniger) Stier",
+        "(Ghost) Hirsch",
+        "(Ghost) Eber",
+        "(Ghost) Bär",
+        "(Ghost) Stier",
         "Gladiator lvl 1",
         "Gladiator lvl 2",
         "Gladiator lvl 3",
@@ -208,7 +212,7 @@ public class Enemy {
         "Artemis",
         "Apollon",
         "Athene",
-        "",
+        "Hades",
     };
 
 
@@ -217,6 +221,7 @@ public class Enemy {
         240,
         300,
         400,
+        1500,
     };
 
     int bossesPower[] = {
@@ -224,6 +229,7 @@ public class Enemy {
         22,
         22,
         22,
+        10,
     };
 
     Color[] bossesColors = {
@@ -231,6 +237,7 @@ public class Enemy {
         new Color(225,225,225),
         new Color(255,205,40),
         new Color(0,255,80),
+        new Color(255,135,0),
 
     };
 
@@ -240,6 +247,7 @@ public class Enemy {
         "Fire",
         "Fire",
         "Licht",
+        "Feuer",
 
     };
 
@@ -249,6 +257,7 @@ public class Enemy {
         "Fire",
         "Fire",
         "Fire",
+        "Erde",
 
     };
 
@@ -257,6 +266,7 @@ public class Enemy {
         "Fire",
         "Fire",
         "Fire",
+        "Licht",
 
     };
 
@@ -265,6 +275,7 @@ public class Enemy {
         "Fire",
         "Fire",
         "Fire",
+        "",
 
     };
 
@@ -273,6 +284,7 @@ public class Enemy {
         "Fire",
         "Fire",
         "Fire",
+        "Hard++",
 
     };
 
@@ -281,6 +293,7 @@ public class Enemy {
         new Color(160,0,255),
         new Color(25,255,255),
         new Color(25,255,255),
+        new Color(255,135,0),
 
     };
 
