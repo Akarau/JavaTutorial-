@@ -3258,16 +3258,8 @@ nextPosition2 = "";
 
         }
 
-        if (nextPosition1 == "Artemis Kampf"){
-           inventory.putIfAbsent("Artemis Pfeil", 1);
-           Award("W", 1, "Artemis Pfeil", "Artemis Waffe \nerhalten", "Textrpg\\Images\\weapons\\Artemis Pfeil.png");
-        }
 
-        if (nextPosition1 == "Apollon Kampf"){
-            inventory.putIfAbsent("Lichtbogen", 1);
-            Award("W", 1, "Lichtbogen", "Apollon Waffe \nerhalten", "Textrpg\\Images\\weapons\\Lichtbogen.png");
 
-        }
 
        
 
@@ -3369,6 +3361,8 @@ nextPosition2 = "";
             option1button.setFont(new Font("Times new Roman", Font.PLAIN, 45));
             mainTextArea.setText("\"Du hast es also tatsächlich geschafft? Beeindruckend!\" Allerdings wirst du es gegen meinen Bruder nicht so leicht haben!  Gehe der Sonne nach sie wird dich zu ihm führen.\n \"Was für eine Schande, gegen einen niederen Menschen verloren…\"");
             optionsPanel.setVisible(true);
+            inventory.putIfAbsent("Artemis Pfeil", 1);
+            Award("W", 1, "Artemis Pfeil", "Artemis Waffe \nerhalten", "Textrpg\\Images\\weapons\\Artemis Pfeil.png");
            // mainTextArea.setText("[Artemis] wurde besiegt! \n \nDu hast 1024 Münzen bekommen!");
         }
 
@@ -3395,6 +3389,8 @@ nextPosition2 = "";
             }
             optionsPanel.setVisible(true);
            // mainTextArea.setText("[Artemis] wurde besiegt! \n \nDu hast 1024 Münzen bekommen!");
+           inventory.putIfAbsent("Lichtbogen", 1);
+           Award("W", 1, "Lichtbogen", "Apollon Waffe \nerhalten", "Textrpg\\Images\\weapons\\Lichtbogen.png");
         }
 
         if (nextPosition1 == "Gorgon1"){
