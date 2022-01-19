@@ -2022,20 +2022,6 @@ boostB.add(si);
         }
 
 
-        for (int t = 1; t<50000; t++){
-            for (int a = 1; a<80; a++){
-        enemyImage.setBounds(480+a,280,400,400);
-            Thread.sleep(3);
-                     }
-        
-                     for (int a = 1; a<80; a++){
-                        enemyImage.setBounds(560-a,280,400,400);
-                            Thread.sleep(3);
-                                     }
-           
-            
-           
-                   }
 
 
 
@@ -6099,6 +6085,8 @@ public void specialCombat() throws InterruptedException{
 
     }
 }
+
+
 
     public void spawnEnemy(String File, int Index) {
 
