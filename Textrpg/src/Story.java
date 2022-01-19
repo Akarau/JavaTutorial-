@@ -7122,7 +7122,7 @@ achievementN.setBounds(1420, 250, 265, 120);
 achievementD.setBounds(1420, 340, 120, 120);
 achievementDif.setBounds(1520, 325, 265, 120);
 
-Thread.sleep(80);
+Thread.sleep(spieler.t2);
 
 achievementsPanel.setVisible(true);
 achievementI.setVisible(true);
@@ -7139,7 +7139,7 @@ achievementD.setBounds(1420-v, 340, 120, 120);
 
 }
 
-Thread.sleep(5000);
+Thread.sleep(spieler.t3 * 16);
 
 for (int v = 0; v< 300; v++){
 Thread.sleep(1);
@@ -7150,7 +7150,7 @@ achievementD.setBounds(1120+v, 340, 120, 120);
 
 }
 
-Thread.sleep(80);
+Thread.sleep(spieler.t2);
 
 achievementsPanel.setVisible(false);
 achievementI.setVisible(false);
@@ -8237,11 +8237,11 @@ spieler.PolydektesK = false;
                 
                 
                                                     if (spieler.karma >0){
-                                                        mainTextArea.setText(" Du wachst am Morgen auf.\n\n Albträume haben dich die ganze Nacht über geplagt. Du hast das Gefühl, dass die Seelen derer die du getötet hast auf deinen Schultern lasten.\n\nWillst du ihnen nachgehen oder zum Berg Otie?");
+                                                        mainTextArea.setText(" Du wachst am Morgen auf.\n\n Albträume haben dich die ganze Nacht über geplagt. Du hast das Gefühl, dass die Seelen derer die du getötet hast auf deinen Schultern lasten.\n\nWillst du ihnen nachgehen oder zum Berg Oite?");
                                                         nextPosition1 = "Story7L";
                                                     
                                                         option1button.setText("Seelen nachgehen");
-                                                        option2button.setText("Zum Berg Otie");
+                                                        option2button.setText("Zum Berg Oite");
                                                         option3button.setText("");
                                                         option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));        
                                                         option2button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
@@ -8252,7 +8252,7 @@ spieler.PolydektesK = false;
                                                         nextPosition1 = "Story7R";
                                                     
                                                         option1button.setText("Zu Wasser");
-                                                        option2button.setText("Zum Berg Otie");
+                                                        option2button.setText("Zum Berg Oite");
                                                         option3button.setText("");
                                                         option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));        
                                                         option2button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
@@ -8275,12 +8275,12 @@ spieler.PolydektesK = false;
         
         
                                             if (spieler.karma >0){
-                                                mainTextArea.setText(" Du wachst am Morgen auf.\n\n Albträume haben dich die ganze Nacht über geplagt. Du hast das Gefühl, dass die Seelen derer die du getötet hast auf deinen Schultern lasten.\n\nWillst du ihnen nachgehen oder zum Berg Otie?");
+                                                mainTextArea.setText(" Du wachst am Morgen auf.\n\n Albträume haben dich die ganze Nacht über geplagt. Du hast das Gefühl, dass die Seelen derer die du getötet hast auf deinen Schultern lasten.\n\nWillst du ihnen nachgehen oder zum Berg Oite?");
                                                 nextPosition1 = "Story7L";
                                                 nextPosition2 = "Story7M";
 
                                                 option1button.setText("Seelen nachgehen");
-                                                option2button.setText("Zum Berg Otie");
+                                                option2button.setText("Zum Berg Oite");
                                                 option3button.setText("");
                                                 option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));        
                                                 option2button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
@@ -8292,7 +8292,7 @@ spieler.PolydektesK = false;
                                                 nextPosition2 = "Story7M";
                                             
                                                 option1button.setText("zu Wasser");
-                                                option2button.setText("Zum Berg Otie");
+                                                option2button.setText("Zum Berg Oite");
                                                 option3button.setText("");
                                                 option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));        
                                                 option2button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
@@ -8304,12 +8304,10 @@ spieler.PolydektesK = false;
 
                                                     case "Story7R":; 
 
-                                                        
-                
-                                                   
 
                                                         mainTextArea.setText(" Du wirst ins Wasser gerissen\n\n Du versuchst nach oben zu schwimmen, aber Irgendwas zieht dich nach unten.\n Du denkst , dass du Bald ertrinken wirst. Dann plötzlich bekommst du wieder Luft.\n Du bist in einer gigantischen Luftblase unter Wasser, vor dir steht dein letzter Tempel");
                                                         nextPosition1 = "Story7R_2";
+                                                        nextPosition2 = "Story7xtr";
                                                     
                                                         option1button.setText("weiter");
                                                         option2button.setText("zurück");
@@ -8320,15 +8318,56 @@ spieler.PolydektesK = false;
                                             
                                                         break;
 
+                                                        case "Story7R_2":; 
+
+
+                                                        nextPosition1 = "Story7R_3";
+                                                        nextPosition2 = "Story7R";
+
+                                                        if (spieler.karma <= -12){
+                                                            mainTextArea.setText(" Du gehst auf den Tempel zu und betriffst ihn.");
+
+                                                        }
+
+                                                        if (spieler.karma > -12){
+                                                            mainTextArea.setText(" Entschlossen gehst du auf den Tempel zu und betrittst ihn.                                                            ");
+
+
+                                                        }
+                                                    
+                                                        option1button.setText("weiter");
+                                                        option2button.setText("zurück");
+                                                        option3button.setText("");
+                                                        option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));        
+                                                        option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                                            
+                                            
+                                                        break;
+
+                                                        case "Story7R_3":; 
+
+
+                                                        nextPosition1 = "Story7R_4";
+                                                        nextPosition2 = "Story7R_2";
+
+                                                            mainTextArea.setText("Der Tempel ist von innen mit Korallen bewachsen. Du siehst Delphine durch die Luft schwimmen, sie greifen an!.");
+                                                    
+                                                        option1button.setText("Kampf beginnen");
+                                                        option2button.setText("zurück");
+                                                        option3button.setText("");
+                                                        option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
+                                                        option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                                            
+                                            
+                                                        break;
+
                                                         case "Story7L":; 
 
-                                                        
-                
-                                                   
 
                                                         mainTextArea.setText(" Innerhalb von wenigen Sekunden befindest du dich auf einmal in einem dunklen Gebiet, überall fliegen die Seelen der verstorbenen herum.\n\n Einige erscheinen vor dir.\n\n Es sind die, die du getötet hast.");
                                                         nextPosition1 = "Story7R_2";
-                                                    
+                                                        nextPosition2 = "Story7xtr";
+
                                                         option1button.setText("weiter");
                                                         option2button.setText("zurück");
                                                         option3button.setText("");
@@ -8346,6 +8385,7 @@ spieler.PolydektesK = false;
 
                                                         mainTextArea.setText(" Du gehst zum Berg Oite. Du Reist schon mehrere Tage.\nBis du an einem Schild ankommst. \" Berg Oite\". \n Du blickst hinauf und fängst dann an den Pfad hochzulaufen");
                                                         nextPosition1 = "Story7M_2";
+                                                        nextPosition2 = "Story7xtr";
                                                     
                                                         option1button.setText("weiter");
                                                         option2button.setText("zurück");
@@ -8392,6 +8432,27 @@ spieler.PolydektesK = false;
                                                         option2button.setText("zurück");
                                                         option3button.setText("");
                                                         option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));        
+                                                        option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                                            
+                                            
+                                                        break;
+
+                                                        
+                                                        case "Story7M_4":; 
+
+                                                        
+                
+                                                   
+
+                                                        mainTextArea.setText(" Eine Hydra erscheint wie aus dem nichts");
+
+
+                                                        nextPosition1 = "Story7M_5";
+                                                    nextPosition2 = "Story7M_3";
+                                                        option1button.setText("Kampf beginnen");
+                                                        option2button.setText("zurück");
+                                                        option3button.setText("");
+                                                        option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
                                                         option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
                                             
                                             
