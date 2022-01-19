@@ -8377,6 +8377,58 @@ spieler.PolydektesK = false;
                                             
                                                         break;
 
+                                                        case "Story7L_2":; 
+
+
+                                                        mainTextArea.setText(" Innerhalb von wenigen Sekunden befindest du dich auf einmal in einem dunklen Gebiet, überall fliegen die Seelen der verstorbenen herum.\n\n Einige erscheinen vor dir.\n\n Es sind die, die du getötet hast.");
+                                                        nextPosition1 = "Story7L_3";
+                                                        nextPosition2 = "Story7L";
+
+                                                        option1button.setText("weiter");
+                                                        option2button.setText("zurück");
+                                                        option3button.setText("");
+                                                        option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));        
+                                                        option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                                            
+                                            
+                                                        break;
+
+                                                        case "Story7L_4":; 
+
+
+                                                        mainTextArea.setText(" \"Applaus, Applaus. Sehr gut wie du die die du bereits getötet, nochmal tötest.\"\"Ich bin Hades, der Gott der Unterwelt, und ein Bruder von Zeus. Du fragst dich vielleicht was du hier macht, nun gut das war ich! Ich wollte dass du nochmal gegen die Leute die du getötet hast kämpfst und dein nächster Gegner bin ich.\"");
+
+
+                                                        nextPosition1 = "Story7L_5";
+                                                        nextPosition2 = "";
+
+                                                        option1button.setText("weiter");
+                                                        option2button.setText("zurück");
+                                                        option3button.setText("");
+                                                        option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));        
+                                                        option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                                            
+                                            
+                                                        break;
+
+                                                        case "Story7L_6":; 
+
+
+                                                        mainTextArea.setText("\"Herzlichen, herzlichen Glückwunsch! Du hast also gewonnen. Los komm töte mi…\"\n\nDu hast Hades den Kopf abgehackt, du bist wieder an der Oberfläche.");
+
+
+                                                        nextPosition1 = "Story7L_4";
+                                                        nextPosition2 = "";
+
+                                                        option1button.setText("weiter");
+                                                        option2button.setText("zurück");
+                                                        option3button.setText("");
+                                                        option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));        
+                                                        option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                                            
+                                            
+                                                        break;
+
                                                         case "Story7M":; 
 
                                                         
