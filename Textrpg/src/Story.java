@@ -6123,7 +6123,7 @@ moon_Artemis.setVisible(false);
 
             specialEnemyP.setBounds(400, 40, (int) (1.7 * spieler.currentEnemyHP), 40);
             specialEnemyP.setBackground(en.bossesColors[2]);
-            specialEnemyI.setBounds(385 +(2 * spieler.currentEnemyHP), 0, 265, 120);
+            specialEnemyI.setBounds((int) (385 +(1.65 * spieler.currentEnemyHP)), 0, 265, 120);
             specialEnemyT.setBounds(350 +(2 * spieler.currentEnemyHP), 100, 250, 40);
             specialEnemyI.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\weapons\\Lichtbogen.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));       
             specialEnemyT.setForeground(new Color(255,205,40));
@@ -8592,7 +8592,7 @@ spawnEnemy("Bosses", 0);
             mainTextPanel.setVisible(false);
             optionsPanel.setVisible(false);
 
-            spawnEnemy("Bosses", 0);
+            spawnEnemy("Bosses", 2);
             setSpecialWeapon("W");
 
 
