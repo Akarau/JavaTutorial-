@@ -3092,7 +3092,7 @@ spieler.thread3 = 0;
             int i;
             for (i = 1;; i++) {
                 l.setText("Loading: " + i + "%");
-                Thread.sleep(i / i * 6);
+                Thread.sleep(i / i * 32);
 
                 if (i >= 99 && i <= 99) {
                      Thread.sleep(500);
