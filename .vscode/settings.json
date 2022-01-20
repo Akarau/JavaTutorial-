@@ -1,0 +1,7 @@
+{
+    "java.project.sourcePaths": [
+        "Textrpg/src",
+        "Textrpg/Images",
+        "Textrpg\\Images"
+    ]
+}
