@@ -5000,7 +5000,7 @@ elementImage.setVisible(false);
                   
                            Thread.sleep(spieler.t2);
                         
-                            spieler.currentEnemyHP -= (damg * 3);
+                            spieler.currentEnemyHP -= (damg);
        
                             enemyInfoHP.setText("         "+spieler.currentEnemyHP);
                             if (spieler.currentEnemyHP <= 0){
@@ -6060,6 +6060,9 @@ public void specialCombat() throws InterruptedException{
     if (nextPosition1 == "Hades Kampf" && spieler.reflection == false && spieler.currentEnemyHP > 400){
         if (spieler.currentEnemyHP > 1000){
             specialEffectText.setEnabled(false);
+                     specialEffectText.setFont(new Font("Times new Roman", Font.PLAIN, 25));
+                              specialEffectText2.setFont(new Font("Times new Roman", Font.PLAIN, 25));
+
             specialEffectText.setVisible(true);
             specialEffectText.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Bosses\\Artemis.png")
                     .getImage().getScaledInstance(40, 35, Image.SCALE_AREA_AVERAGING)));
@@ -6075,7 +6078,7 @@ public void specialCombat() throws InterruptedException{
             specialEffectText2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Bosses\\Apollon.png")
                     .getImage().getScaledInstance(40, 35, Image.SCALE_AREA_AVERAGING)));
                     specialEffectText2.setText("+"+ damg/20 + " Hades HP - Apollon Effect");
-                    spieler.currentEnemyHP += damg/20;
+                    spieler.currentEnemyHP += damg/15;
                     enemyInfoHP.setText("          " +spieler.currentEnemyHP);    
                     Thread.sleep(spieler.t3);               
         }
