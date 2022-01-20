@@ -13,7 +13,6 @@ import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 
 
@@ -251,7 +250,7 @@ JLabel specialEffectText2;
         panel1 = new JPanel();
         panel1.setBounds(800, 200, 350, 100);
         panel1.setBackground(Color.black);
-        tn = new JLabel("The Day");
+        tn = new JLabel("");
         tn.setForeground(Color.white);
         tn.setFont(titelgröße);
         tn.setBackground(Color.WHITE);
@@ -613,7 +612,6 @@ mainTextArea.setOpaque(false);
         fighting_options.setBounds(38, 480, 1200, 300);
         fighting_options.setBorder(new LineBorder(Color.white));
 
-        ImageIcon url = new ImageIcon("W.png");
 
         b1 = new JPanel();
         b1.setForeground(new Color(255, 0, 150));
@@ -622,7 +620,6 @@ mainTextArea.setOpaque(false);
         b1.setBackground(Color.black);
         b1.setVisible(true);
         b1.setFocusable(false);
-        tn.setIcon(url);
 
         b2 = new JPanel();
         b2.setForeground(new Color(200, 255, 80));
@@ -631,6 +628,7 @@ mainTextArea.setOpaque(false);
         b2.setBackground(Color.black);
         b2.setVisible(true);
         b2.setFocusable(false);
+
 
         b3 = new JPanel();
         b3.setForeground(new Color(255, 0, 150));
@@ -893,7 +891,6 @@ mainTextArea.setOpaque(false);
         ePlayButton.addActionListener(this);
         ePlayButton.setActionCommand("ePlayButton2");
         ePlayButton.setOpaque(false);
-       // optionsmenu_options.setBorder(new LineBorder(Color.white));
 
        fightPlayButton = new JPanel();
        fightPlayButton.setForeground(new Color(255, 0, 150));
@@ -1845,42 +1842,6 @@ frame.add(iPanel);
         }
 
 
-/*
-        for (int s2 = 0; s2 < scl.schilder.length; s2++) {
-
-
-            javax.swing.JButton shieldB = new JButton();
-            shieldB.setForeground(new Color(80, 0, 255));
-            shieldB.setFont(new Font("Times new Roman", Font.PLAIN, 60));
-            shieldB.setBounds(0, 0, 100, 100);
-            shieldB.setBackground(Color.black);
-            shieldB.setVisible(true);
-            shieldB.setFocusable(false);
-            shieldB.addActionListener(this);
-            shieldB.setActionCommand(scl.schilder[s2] + "B");
-            shieldB.setBorder(new LineBorder(Color.white));
-            shieldB.setName("Shield");
-
-            JLabel si = new JLabel();
-            si.setForeground(colors2[c]);
-            si.setFont(new Font("Times new Roman", Font.PLAIN, 30));
-            // color.setBounds(500, 500, 350, 350);
-            si.setIcon(new ImageIcon(new ImageIcon(scl.i2[s2])
-                    .getImage().getScaledInstance(140, 135, Image.SCALE_AREA_AVERAGING)));
-                    si.setSize(800, 800);
-                    si.setBackground(Color.white);
-                    si.setVisible(true);
-                    si.setFocusable(false);
-
-            si.setBorder(new LineBorder(Color.white));
-
-            this.shop.add(shieldB);
-            shieldB.add(si);
-
-        }
-*/
-
-
         for (int s = 0; s < scl.boosts.length; s++) {
 
             javax.swing.JButton boostB = new JButton();
@@ -1922,11 +1883,10 @@ boostB.add(si);
         commboxnext.setFont(new Font("Arial", Font.PLAIN, 25));
         commboxnext.setBounds(700, 500, 75, 35);
         commboxnext.setBackground(Color.black);
-        commboxnext.setVisible(true);
+        commboxnext.setVisible(false);
         commboxnext.setFocusable(false);
         commboxnext.setAlignmentX(80);
         commboxnext.addActionListener(this);
-        commboxnext.setActionCommand("commboxnext1");
         commboxnext.setBorder(new LineBorder(Color.white));
 
         frame.add(commboxnext);
@@ -7121,7 +7081,7 @@ achievementDif.setVisible(false);
      
         
      
-     nextPosition1="Story7M_3";
+     nextPosition1="Anfangpart2";
      
      nextPosition2="";
      nextPosition3="";
