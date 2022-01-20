@@ -4686,10 +4686,10 @@ elementImage.setVisible(false);
 
                                         if (spieler.currentEnemyHP > 0){
                                                                       
-                                                for (int a = 1; a<13; a++){
+                                                for (int a = 1; a<10; a++){
                                                     elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Animation_Licht\\" + a + ".png").getImage().getScaledInstance(370, 365, Image.SCALE_AREA_AVERAGING)));
                                 
-                                                   Thread.sleep(spieler.t1 * 5);
+                                                   Thread.sleep(spieler.t1 * 3);
                         
                                                             }
 
