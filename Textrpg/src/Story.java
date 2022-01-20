@@ -7324,7 +7324,7 @@ if (spieler.enemyMain_Element == "Wasser"){
     
     if (spieler.Main_Element.charAt(2) == 'W' && spieler.Main_Element.charAt(3) == 'a'){
         i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Wasser.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
-    i1.setText("        Feuer         ");
+    i1.setText("        Wasser         ");
     i1.setForeground(new Color(255,215,0));
     }
     
