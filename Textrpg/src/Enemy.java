@@ -1,38 +1,4 @@
 import java.awt.Color;
-import java.awt.Component;
-import java.awt.Font;
-import java.awt.event.ActionListener;
-import java.beans.PropertyChangeListener;
-import java.io.IOException;
-import java.lang.StackWalker.Option;
-import java.lang.reflect.Array;
-import java.util.EventObject;
-import java.util.Timer;
-import java.awt.*;
-import java.awt.event.*;
-
-import javax.imageio.ImageIO;
-import javax.swing.AbstractButton;
-import javax.swing.Action;
-import javax.swing.BorderFactory;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JComponent;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JProgressBar;
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
-import javax.swing.GroupLayout.Alignment;
-import javax.swing.border.Border;
-import javax.swing.border.LineBorder;
-import javax.swing.plaf.synth.ColorType;
-import javax.swing.text.AttributeSet.ColorAttribute;
-import javax.swing.border.LineBorder;
-import javax.swing.ImageIcon;
-
-import org.w3c.dom.css.RGBColor;
 
 
 
@@ -58,8 +24,7 @@ public class Enemy {
         "Gladiator lvl 4",
         "Gladiator lvl 5",
         "Gladiator lvl 6",
-
-
+        "Hydra",
     };
 
     int enemiesHP[] = {
@@ -74,6 +39,13 @@ public class Enemy {
         280,
         300,
         320,
+        400,
+        400,
+        400,
+        400,
+        400,
+
+
     };
 
 
@@ -89,6 +61,12 @@ public class Enemy {
         28,
         30,
         32,
+        40,
+        40,
+        40,
+        40,
+        40,
+
 
     };
 
@@ -104,6 +82,14 @@ public class Enemy {
         "Erde",
         "Erde",
         "Erde",
+        "Erde",
+        "Erde",
+        "Erde",
+        "",
+        "",
+        "",
+        "",
+
 
     };
 
@@ -120,6 +106,14 @@ public class Enemy {
         "Feuer",
         "Feuer",
         "Feuer",
+        "Wasser",
+        "Wasser",
+        "Wasser",
+        "Wasser",
+        "",
+        "",
+        "",
+
 
     };
 
@@ -135,6 +129,17 @@ public class Enemy {
         "",
         "Ancient",
         "Ancient",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+
 
     };
 
@@ -151,6 +156,16 @@ public class Enemy {
         "",
         "",
         "",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+
 
     };
 
@@ -166,6 +181,16 @@ public class Enemy {
         "Crystal",
         "Crystal",
         "Crystal",
+        "Hydra",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
 
     };
 
@@ -185,12 +210,24 @@ public class Enemy {
         new Color(255,55,8),
         new Color(255,35,0),
         new Color(0,150,255),
+        new Color(0,150,255),
+        new Color(0,150,255),
+        new Color(0,150,255),
+        new Color(0,150,255),
+        new Color(0,150,255),
+        new Color(0,150,255),
+
     };
 
 
     Color[] difficultyColors = {
         new Color(0,255,60),
         new Color(160,0,255),
+        new Color(25,255,255),
+        new Color(25,255,255),
+        new Color(25,255,255),
+        new Color(25,255,255),
+        new Color(25,255,255),
         new Color(25,255,255),
         new Color(25,255,255),
         new Color(25,255,255),

@@ -2,13 +2,12 @@ import java.awt.Color;
 import java.util.HashMap;
 
 import javax.swing.JPanel;
-import java.util.HashMap;
 
 public class CuPower {
 
 
       int Gold = 50000;
-      int Power = 50;
+      int Power = 500;
       int Points = 50;
       int Health = 100;
       int karma = 0;

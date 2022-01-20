@@ -623,7 +623,6 @@ mainTextArea.setOpaque(false);
         b1.setVisible(true);
         b1.setFocusable(false);
         tn.setIcon(url);
-        tn.setText("text");
 
         b2 = new JPanel();
         b2.setForeground(new Color(200, 255, 80));
@@ -2408,15 +2407,15 @@ if (scl.boosts[s] == "Reflection" && chosen_Main_Element_Name.getText() == "Refl
 
         if (e.getActionCommand() == "startb") {
 
-         //   l.setVisible(!l.isVisible());
+            l.setVisible(!l.isVisible());
 
 
        // optionsPanel.setVisible(true);
 
         //option1button.setVisible(true);
 
-        texarea.setVisible(true);
-confirmName.setVisible(true);
+      //  texarea.setVisible(true);
+//confirmName.setVisible(true);
 commbox.setVisible(false);
             startname.setVisible(false);
              option1.setVisible(false);
@@ -3093,28 +3092,28 @@ spieler.thread3 = 0;
             int i;
             for (i = 1;; i++) {
                 l.setText("Loading: " + i + "%");
-                Thread.sleep(i / i);
+                Thread.sleep(i / i * 6);
 
                 if (i >= 99 && i <= 99) {
-                    // Thread.sleep(500);
+                     Thread.sleep(500);
                     l.setText("Loading: 99%.");
-                    // Thread.sleep(500);
+                     Thread.sleep(500);
                     l.setText("Loading: 99%..");
-                    // Thread.sleep(500);
+                     Thread.sleep(500);
                     l.setText("Loading: 99%...");
-                    // Thread.sleep(500);
+                     Thread.sleep(500);
                     l.setText("Loading: 99%.");
-                    // Thread.sleep(500);
+                     Thread.sleep(500);
                     l.setText("Loading: 99%..");
-                    // Thread.sleep(500);
+                     Thread.sleep(500);
                     l.setText("Loading: 99%...");
-                    // Thread.sleep(500);
+                     Thread.sleep(500);
                     l.setText("Loading: 99%.");
-                    // Thread.sleep(500);
+                     Thread.sleep(500);
                     l.setText("Loading: 99%..");
-                    // Thread.sleep(500);
+                     Thread.sleep(500);
                     l.setText("Loading: 99%...");
-                    // Thread.sleep(2000);
+                     Thread.sleep(2000);
                     l.setText("Loading: 100%");
 
                     // L.setText("Loading completed");
@@ -3142,7 +3141,7 @@ spieler.thread3 = 0;
 
                     String message;
 
-                    message = "        The Day";
+                    message = " Geben sie einen Name ein";
                     System.out.println(message.toCharArray());
                     // System.out.println(message.length());
                     Thread.sleep(1000);
@@ -3152,8 +3151,8 @@ spieler.thread3 = 0;
                         // Option1.setText(message.charAt(m1));
                         Thread.sleep(28);
 
-                        l.setText(l.getText() + message.charAt(m1));
-                        // commbox.setText(l.getText() + message.charAt(m1));
+                       // l.setText(l.getText() + message.charAt(m1));
+                         commbox.setText(l.getText() + message.charAt(m1));
                     }
 
                     Thread.sleep(1000);
@@ -3511,6 +3510,37 @@ nextPosition1 = "StoryR_6......";
 nextPosition2 = "";
 
         }
+
+        if (nextPosition1 == "Hades Kampf"){
+            endFight();
+                        mainTextPanel.setVisible(true);
+            optionsPanel.setVisible(true);
+            mainTextArea.setText("\"Herzlichen, herzlichen Glückwunsch! Du hast also gewonnen. Los komm töte mi…\"\n\nDu hast Hades den Kopf abgehackt, du bist wieder an der Oberfläche.");
+            
+            
+            option1button.setText("weiter");
+            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+            option2button.setText("");
+            nextPosition1 = "End";
+            nextPosition2 = "";
+            
+                    }
+
+
+                    if (nextPosition1 == "Hydra Kampf"){
+                        endFight();
+                                    mainTextPanel.setVisible(true);
+                        optionsPanel.setVisible(true);
+                        mainTextArea.setText("Hydra");
+                        
+                        
+                        option1button.setText("weiter");
+                        option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                        option2button.setText("");
+                        nextPosition1 = "End";
+                        nextPosition2 = "";
+                        
+                                }
     }
 
 
@@ -5096,7 +5126,6 @@ elementImage.setVisible(false);
 
         elementImage.setVisible(true);
 
-            System.out.println("Lunar=Main");
 
             for (int i = 0; i< 73; i++){
                 elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Animation_Void\\" + i + ".png").getImage().getScaledInstance(370, 365, Image.SCALE_AREA_AVERAGING)));
@@ -5727,15 +5756,8 @@ for (int xi = 0; xi<= 120; xi++){
     
 
     public void startb() throws InterruptedException {
-        panel3.setVisible(true);
         System.out.println("Startb");
-        int i;
-        for (i = 1; i < 255; i++) {
-            Thread.sleep(i / i * 1, 3);
-            panel3.setBackground(new Color(i, i, i));
-            System.out.println("i: " + i);
 
-        }
 
         Thread.sleep(spieler.thread1);
 
@@ -5743,7 +5765,7 @@ for (int xi = 0; xi<= 120; xi++){
         commbox.setText(
                 "                                                                                                                                                                                                                            ");
         commbox.setVisible(true);
-if (uit == 0){
+if (uit == -1){
         animateText(animateTextphases[0], null, commbox, spieler.textSpeed, animateTextphasesdef[0]); // Text in String ist die Nachricht, zweites Wort
                                                                      // ist die JLabel, die deren Text geändert sein
                                                                      // muss, die Zahl am Ende ist die Geschwindigkeit;
@@ -5819,13 +5841,7 @@ Thread.sleep(spieler.thread2);
 spieler.thread2 = 2000;
 }
 
-        for (i = 1; i < 235; i++) {
-            Thread.sleep(i / i * 1, 3);
-            panel3.setBackground(new Color(255 - i, 255 - i, 255 - i));
-            System.out.println("i: " + i);
-
-        }
-
+        
         frame.setBackground(new Color(20, 20, 20));
         panel3.setVisible(false);
         commbox.setVisible(false);
@@ -5882,7 +5898,7 @@ uit++;
                 spieler.textSpeed = 14;
         }
 
-                animateText(" First, enter your name.", null, commbox, spieler.textSpeed, null);
+                animateText(" Geben sie einen Name ein", null, commbox, spieler.textSpeed, null);
 
                 spieler.textSpeed = 14;
 
@@ -6907,27 +6923,10 @@ i2.setForeground(new Color(255,215,0));
 
     Thread.sleep(2000);
 
-    panel3.setVisible(true);
     System.out.println("Startb");
     int i;
 
-    for (i = 1; i < 200; i++) {
-        Thread.sleep(4);
-        panel3.setBackground(new Color(i /8, i /8, i/8));
-        System.out.println("i: " + i);
-
-    
-}
-
-Thread.sleep(200);
-
-for (i = 1; i < 230; i++) {
-    Thread.sleep(0);
-    panel3.setBackground(new Color(i+ 25, i+ 25, i+ 25));
-    System.out.println("i: " + i);
-
-
-}
+   
 
 Thread.sleep(200);
 
@@ -6955,12 +6954,7 @@ System.out.println("i: " + i);
 
 */
 
-for (i = 1; i < 255; i++) {
-    Thread.sleep(4);
-    panel3.setBackground(new Color(255 - (i), 255 -(i), 255 - (i)));
-    System.out.println("i: " + i);
 
-}
 
 Thread.sleep(300);
 panel3.setVisible(false);
@@ -7127,7 +7121,7 @@ achievementDif.setVisible(false);
      
         
      
-     nextPosition1="Story7L";
+     nextPosition1="Story7M_3";
      
      nextPosition2="";
      nextPosition3="";
@@ -8412,7 +8406,6 @@ spieler.PolydektesK = false;
                                                         optionsPanel.setVisible(false);
                                                         mainTextPanel.setVisible(false);
                                                         spawnEnemy("Bosses", 4);
-                                                        mainTextArea.setText("\"Herzlichen, herzlichen Glückwunsch! Du hast also gewonnen. Los komm töte mi…\"\n\nDu hast Hades den Kopf abgehackt, du bist wieder an der Oberfläche.");
                                                         mainTextArea.setText(" \"Applaus, Applaus. Sehr gut wie du die die du bereits getötet, nochmal tötest.\"Ich bin Hades, der Gott der Unterwelt, und ein Bruder von Zeus. Du fragst dich vielleicht was du hier macht, nun gut das war ich! Ich wollte dass du nochmal gegen die Leute die du getötet hast kämpfst und dein nächster Gegner bin ich.\"");
 
 
@@ -8498,7 +8491,26 @@ spieler.PolydektesK = false;
                                                         mainTextArea.setText(" Eine Hydra erscheint wie aus dem nichts");
 
 
-                                                        nextPosition1 = "Story7M_5";
+                                                        nextPosition1 = "Hydra Kampf";
+                                                    nextPosition2 = "Story7M_3";
+                                                        option1button.setText("Kampf beginnen");
+                                                        option2button.setText("zurück");
+                                                        option3button.setText("");
+                                                        option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
+                                                        option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                                            
+                                            
+                                                        break;
+
+                                                        case "Hydra Kampf":; 
+
+                                                        
+                
+                                optionsPanel.setVisible(false);
+                                mainTextPanel.setVisible(false);
+
+                                spawnEnemy("Enemies", 15);
+                                                        nextPosition1 = "Hydra Kampf";
                                                     nextPosition2 = "Story7M_3";
                                                         option1button.setText("Kampf beginnen");
                                                         option2button.setText("zurück");
