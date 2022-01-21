@@ -25,6 +25,10 @@ public class Enemy {
         "Gladiator lvl 5",
         "Gladiator lvl 6",
         "Hydra",
+        "Delphin lvl 1",
+        "Delphin lvl 2",
+        "Delphin lvl 3",
+
     };
 
     int enemiesHP[] = {
@@ -44,6 +48,9 @@ public class Enemy {
         400,
         400,
         400,
+        200,
+        220,
+        240,
 
 
     };
@@ -66,6 +73,9 @@ public class Enemy {
         40,
         40,
         40,
+        10,
+        12,
+        14,
 
 
     };
@@ -87,8 +97,9 @@ public class Enemy {
         "Erde",
         "",
         "Wasser",
-        "",
-        "",
+        "Wasser",
+        "Wasser",
+        "Wasser",
 
 
     };
@@ -113,6 +124,8 @@ public class Enemy {
         "Wind",
         "",
         "",
+        "",
+        "",
 
 
     };
@@ -129,6 +142,9 @@ public class Enemy {
         "",
         "Ancient",
         "Ancient",
+"",
+"",
+"",
 "",
 "",
 "",
@@ -165,6 +181,10 @@ public class Enemy {
 "",
 "",
 "",
+"",
+"",
+"",
+"",
 
 
     };
@@ -182,6 +202,10 @@ public class Enemy {
         "Crystal",
         "Crystal",
         "Hydra",
+        "",
+        "",
+        "",
+        "",
         "",
         "",
         "",
@@ -216,6 +240,9 @@ public class Enemy {
         new Color(0,150,255),
         new Color(0,150,255),
         new Color(0,150,255),
+        new Color(0,150,255),
+        new Color(0,150,255),
+        new Color(0,150,255),
 
     };
 
@@ -223,6 +250,9 @@ public class Enemy {
     Color[] difficultyColors = {
         new Color(0,255,60),
         new Color(160,0,255),
+        new Color(25,255,255),
+        new Color(25,255,255),
+        new Color(25,255,255),
         new Color(25,255,255),
         new Color(25,255,255),
         new Color(25,255,255),

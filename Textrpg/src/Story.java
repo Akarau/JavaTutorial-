@@ -2367,7 +2367,7 @@ if (scl.boosts[s] == "Reflection" && chosen_Main_Element_Name.getText() == "Refl
 
         if (e.getActionCommand() == "startb") {
 
-            l.setVisible(!l.isVisible());
+        //    l.setVisible(!l.isVisible());
 
 
        // optionsPanel.setVisible(true);
@@ -2376,6 +2376,8 @@ if (scl.boosts[s] == "Reflection" && chosen_Main_Element_Name.getText() == "Refl
 
       //  texarea.setVisible(true);
 //confirmName.setVisible(true);
+confirmName.setVisible(true);
+texarea.setVisible(true);
 commbox.setVisible(false);
             startname.setVisible(false);
              option1.setVisible(false);
@@ -3486,6 +3488,29 @@ nextPosition2 = "";
             
                     }
 
+                    if (nextPosition1 == "Heraktles Kampf"){
+                        endFight();
+                        optionsPanel.setVisible(true);
+                        mainTextPanel.setVisible(true);
+
+                        if (spieler.karma < 0){
+                            mainTextArea.setText(" \"Du Mistkerl, du hast also gewonnen. Mein Vater wird mich rächen.\"\n\nDu hast Heraktles getötet. ");
+
+                        }
+                        else{
+                            mainTextArea.setText(" \"Du hast also gewonnen. Nun gehe mein Vater wird dich bald empfangen.\"\n\nDu hast Heraktles verschont.");
+
+                        }
+                                                nextPosition1 = "End";
+                                                option1button.setText("weiter");
+                                                option2button.setText("");
+                                                option3button.setText("");
+                                                option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
+                                                option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                        nextPosition2 = "";
+                        
+                                }
+
 
                     if (nextPosition1 == "Hydra Kampf"){
                         endFight();
@@ -3493,7 +3518,6 @@ nextPosition2 = "";
                         mainTextPanel.setVisible(true);
 
                         mainTextArea.setText(" \"Du hast die hydra also besiegt, allerdings bin ich den nächster Gegner, gegen mich wirst du es nicht so leicht haben\" ");
-                                                nextPosition1 = "Heraktles Kampf";
                                                 option1button.setText("Kampf beginnen");
                                                 option2button.setText("");
                                                 option3button.setText("");
@@ -3503,6 +3527,64 @@ nextPosition2 = "";
                         nextPosition2 = "";
                         
                                 }
+
+                                if (nextPosition1 == "Story7R_6"){
+                                    endFight();
+                                    optionsPanel.setVisible(true);
+                                    mainTextPanel.setVisible(true);
+            
+                                    mainTextArea.setText("[Delphin lvl 3] wurde besiegt! Du hast 240 Münzen bekommen!\n\nDu hast die Delphine besiegt und machst dich auf dem Weg zum nächsten Raum.\n Du öffnest die Tür vor die steht ein Meerjungmann, mit einer Krone auf dem Kopf.");
+                                                            option1button.setText("weiter");
+                                                            option2button.setText("");
+                                                            option3button.setText("");
+                                                            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));        
+                                                            option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                                                            nextPosition1 = "Story7R_7";
+                                                            nextPosition2 = "";
+                                    
+                                            }
+
+                                            if (nextPosition1 == "Story7R_5"){
+                                                endFight();
+                                                optionsPanel.setVisible(true);
+                                                mainTextPanel.setVisible(true);
+                        
+                                                mainTextArea.setText("[Delphin lvl 2] wurde besiegt! \n \nDu hast 220 Münzen bekommen!");
+                                                                        option1button.setText("letzter Gegner");
+                                                                        option2button.setText("");
+                                                                        option3button.setText("");
+                                                                        option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
+                                                                        option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                                                                        nextPosition1 = "Story7R_6";
+                                                                        nextPosition2 = "";
+                                                
+                                                        }
+
+
+                                if (nextPosition1 == "Story7R_4"){
+                                    endFight();
+                                    optionsPanel.setVisible(true);
+                                    mainTextPanel.setVisible(true);
+            
+                                    mainTextArea.setText("[Delphin lvl 1] wurde besiegt! \n \nDu hast 200 Münzen bekommen!");
+                                                            option1button.setText("nächster Gegner");
+                                                            option2button.setText("");
+                                                            option3button.setText("");
+                                                            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
+                                                            option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                                                            nextPosition1 = "Story7R_5";
+                                                            nextPosition2 = "";
+                                    
+                                            }
+
+                                            
+
+
+            
+
+
+
+                                
     }
 
 
@@ -7636,7 +7718,7 @@ achievementDif.setVisible(false);
      
         
      
-     nextPosition1="Anfangpart2";
+     nextPosition1="Story7R_2";
      
      nextPosition2="";
      nextPosition3="";
@@ -8596,7 +8678,7 @@ spawnEnemy("Bosses", 3);
 
                                                 case "StoryR_6......":; 
 
-                                                mainTextArea.setText(" Du ziehst dein Schwert rennst auf Polydektes zu, er zieht den Kopf der Medusa und will ihn auf dich richten, allerdings schlägst du ihm vorher die Hand ab.\"Aaaaaah, du Mistker!\".Du forderst ihm auf dir zu sagen wo der nächste Tempel ist.\"Ist ja gut ich errate es dir ja. Geh zum Berg Oite, dort wartet der letzte Gegner dem du vor Zeus bekämpfen musst. Er ist auf dem Berg Oite\"");
+                                                mainTextArea.setText(" Du ziehst dein Schwert rennst auf Polydektes zu, er zieht den Kopf der Medusa und will ihn auf dich richten, allerdings schlägst du ihm vorher die Hand ab.\"Aaaaaah, du Mistkerl!\".Du forderst ihm auf dir zu sagen wo der nächste Tempel ist.\"Ist ja gut ich errate es dir ja. Geh zum Berg Oite, dort wartet der letzte Gegner dem du vor Zeus bekämpfen musst. Er ist auf dem Berg Oite\"");
     
     
     
@@ -8811,6 +8893,89 @@ spieler.PolydektesK = false;
                                                             mainTextArea.setText("Der Tempel ist von innen mit Korallen bewachsen. Du siehst Delphine durch die Luft schwimmen, sie greifen an!.");
                                                     
                                                         option1button.setText("Kampf beginnen");
+                                                        option2button.setText("zurück");
+                                                        option3button.setText("");
+                                                        option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
+                                                        option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                                            
+                                            
+                                                        break;
+
+                                                        case "Story7R_4":; 
+
+
+                                                        nextPosition2 = "Story7R_2";
+                                                        optionsPanel.setVisible(false);
+                                                        mainTextPanel.setVisible(false);
+
+
+                                                        spawnEnemy("Enemies", 16);
+                                                        option1button.setText("nächster Gegner");
+                                                        option2button.setText("zurück");
+                                                        option3button.setText("");
+                                                        option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
+                                                        option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                                            
+                                            
+                                                        break;
+
+                                                        
+                                                        case "Story7R_5":; 
+
+
+                                                        nextPosition2 = "Story7R_3";
+
+                                                        optionsPanel.setVisible(false);
+                                                        mainTextPanel.setVisible(false);
+
+
+                                                        spawnEnemy("Enemies", 17);
+
+                                                    
+                                                        option1button.setText("letzter Gegner");
+                                                        option2button.setText("zurück");
+                                                        option3button.setText("");
+                                                        option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
+                                                        option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                                            
+                                            
+                                                        break;
+
+                                                        case "Story7R_6":; 
+
+
+                                                        nextPosition2 = "Story7R_3";
+
+                                                        optionsPanel.setVisible(false);
+                                                        mainTextPanel.setVisible(false);
+
+
+                                                        spawnEnemy("Enemies", 18);
+
+                                                    
+                                                        option1button.setText("nächster Gegner");
+                                                        option2button.setText("zurück");
+                                                        option3button.setText("");
+                                                        option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
+                                                        option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                                            
+                                            
+                                                        break;
+
+                                                        case "Story7R_7":; 
+
+
+                                                        nextPosition2 = "Story7R_6";
+
+                                                        optionsPanel.setVisible(true);
+                                                        mainTextPanel.setVisible(true);
+
+
+                                                        mainTextArea.setText("\"Hahaha, ich bin Poseidon, der Gott des Meeres und Bruder des Zeus. Du scheinst ja kein schlechter Kerl zu sein, sowie ich es erwartet habe. Hahaha.\n\nAber ich habe nun einmal die Aufgabe meinen Bruder zu beschützen. Also komm kämpfe mir!\"");
+
+
+                                                    
+                                                        option1button.setText("weiter");
                                                         option2button.setText("zurück");
                                                         option3button.setText("");
                                                         option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
@@ -9051,7 +9216,7 @@ spieler.PolydektesK = false;
                                                                                 spawnEnemy("Bosses", 5);
 
                                                 
-                                                                                                        nextPosition1 = "After Heraktles";
+                                                                                                     //   nextPosition1 = "After Heraktles";
                                                                                                         nextPosition2 = "";
                                                                                                         option1button.setText("Kampf beginnen");
                                                                                                         option2button.setText("");
@@ -9061,7 +9226,9 @@ spieler.PolydektesK = false;
                                                                                             
                                                                                             
                                                                                                         break;
-                                                   
+
+
+                                                                                                    
                                                     
                                                     case "Last_3e":; 
 
