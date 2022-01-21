@@ -7636,7 +7636,7 @@ achievementDif.setVisible(false);
      
         
      
-     nextPosition1="Story7M_3";
+     nextPosition1="Anfangpart2";
      
      nextPosition2="";
      nextPosition3="";
@@ -7736,7 +7736,12 @@ achievementDif.setVisible(false);
 
     public void selectposition(String nextPosition){
 
+        optionsPanel.setVisible(true);
+        mainTextPanel.setVisible(true);
+        
         switch(nextPosition){
+
+
     
             case "Auftragannehmen":break;
     
