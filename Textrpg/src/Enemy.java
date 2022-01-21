@@ -28,6 +28,8 @@ public class Enemy {
         "Delphin lvl 1",
         "Delphin lvl 2",
         "Delphin lvl 3",
+        "Bandit lvl 1",
+        "Bandit lvl 2",
 
     };
 
@@ -51,6 +53,8 @@ public class Enemy {
         200,
         220,
         240,
+        300,
+        335,
 
 
     };
@@ -76,6 +80,8 @@ public class Enemy {
         10,
         12,
         14,
+        15,
+        18,
 
 
     };
@@ -100,6 +106,8 @@ public class Enemy {
         "Wasser",
         "Wasser",
         "Wasser",
+        "Erde",
+        "Erde",
 
 
     };
@@ -126,6 +134,8 @@ public class Enemy {
         "",
         "",
         "",
+        "",
+        "",
 
 
     };
@@ -142,6 +152,8 @@ public class Enemy {
         "",
         "Ancient",
         "Ancient",
+"",
+"",
 "",
 "",
 "",
@@ -185,6 +197,8 @@ public class Enemy {
 "",
 "",
 "",
+"",
+"",
 
 
     };
@@ -202,6 +216,8 @@ public class Enemy {
         "Crystal",
         "Crystal",
         "Hydra",
+        "",
+        "",
         "",
         "",
         "",
@@ -243,6 +259,8 @@ public class Enemy {
         new Color(0,150,255),
         new Color(0,150,255),
         new Color(0,150,255),
+        new Color(0,150,255),
+        new Color(0,150,255),
 
     };
 
@@ -250,6 +268,8 @@ public class Enemy {
     Color[] difficultyColors = {
         new Color(0,255,60),
         new Color(160,0,255),
+        new Color(25,255,255),
+        new Color(25,255,255),
         new Color(25,255,255),
         new Color(25,255,255),
         new Color(25,255,255),
@@ -281,6 +301,7 @@ public class Enemy {
         "Athene",
         "Hades",
         "Heraktles",
+        "Hermes",
     };
 
 
@@ -291,6 +312,7 @@ public class Enemy {
         400,
         1500,
         800,
+        400,
 
     };
 
@@ -301,6 +323,7 @@ public class Enemy {
         22,
         10,
         14,
+        24,
 
     };
 
@@ -309,6 +332,7 @@ public class Enemy {
         new Color(225,225,225),
         new Color(255,205,40),
         new Color(0,255,80),
+        new Color(255,135,0),
         new Color(255,135,0),
         new Color(255,135,0),
 
@@ -322,6 +346,7 @@ public class Enemy {
         "Licht",
         "Feuer",
         "Ancient",
+        "Licht",
 
     };
 
@@ -333,6 +358,7 @@ public class Enemy {
         "Fire",
         "Erde",
         "Cosmic",
+        "Ancient",
 
 
     };
@@ -344,6 +370,7 @@ public class Enemy {
         "Fire",
         "Licht",
         "Crystal",
+        "",
 
     };
 
@@ -354,6 +381,7 @@ public class Enemy {
         "Fire",
         "",
         "Erde",
+        "",
 
 
     };
@@ -365,6 +393,7 @@ public class Enemy {
         "Fire",
         "Hard++",
         "Hard++",
+        "Hermes++",
 
     };
 
@@ -373,6 +402,7 @@ public class Enemy {
         new Color(160,0,255),
         new Color(25,255,255),
         new Color(25,255,255),
+        new Color(255,135,0),
         new Color(255,135,0),
         new Color(255,135,0),
 

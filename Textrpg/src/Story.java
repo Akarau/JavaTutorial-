@@ -3577,6 +3577,60 @@ nextPosition2 = "";
                                     
                                             }
 
+                                            if (nextPosition1 == "Zweiter Bandit"){
+                                                endFight();
+                                                optionsPanel.setVisible(true);
+                                                mainTextPanel.setVisible(true);
+                        
+                                                mainTextArea.setText("[Bandit lvl 2] wurde besiegt! \n \nDu hast 335 Münzen bekommen!");
+                                                                        option1button.setText("weiter");
+                                                                        option2button.setText("");
+                                                                        option3button.setText("");
+                                                                        option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));        
+                                                                        option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                                                                        nextPosition1= "Hermes davor";
+                                                                        nextPosition2 = "";
+                                                
+                                                        }
+
+
+                                            if (nextPosition1 == "Erster Bandit"){
+                                                endFight();
+                                                optionsPanel.setVisible(true);
+                                                mainTextPanel.setVisible(true);
+                        
+                                                mainTextArea.setText("[Bandit lvl 1] wurde besiegt! \n \nDu hast 300 Münzen bekommen!");
+                                                                        option1button.setText("nächster Gegner");
+                                                                        option2button.setText("");
+                                                                        option3button.setText("");
+                                                                        option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
+                                                                        option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                                                                        nextPosition1= "Zweiter Bandit";
+                                                                        nextPosition2 = "";
+                                                
+                                                        }
+
+                                                        if (nextPosition1 == "Hermes Kampf"){
+                                                            endFight();
+                                                            optionsPanel.setVisible(true);
+                                                            mainTextPanel.setVisible(true);
+                                    
+                                                            
+                                                            nextPosition1="Hermes töten";
+                                                            nextPosition2="Hermes verschonen"; 
+                                                            option1button.setText("Hermes töten");
+                                                            option2button.setText("Hermes verschonen");
+                                                                                    option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
+                                                                                    option2button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+
+                                                            
+                                                                    }
+            
+
+                                                       
+
+
+
                                             
 
 
@@ -7718,7 +7772,7 @@ achievementDif.setVisible(false);
      
         
      
-     nextPosition1="Story7R_2";
+     nextPosition1="Anfangpart2";
      
      nextPosition2="";
      nextPosition3="";
@@ -8053,7 +8107,7 @@ break;
             break;
 
             case "AfterArtemis":; 
-            nextPosition1 = "";
+            nextPosition1 = "Linkerteil1";
             nextPosition2 = "StoryR_1";
             nextPosition3 = "Anfangpart11";
 
@@ -8082,6 +8136,7 @@ break;
             case "AfterApollon":; 
             nextPosition1 = "StoryR_6";
             nextPosition2 = "";
+            nextPosition3 = "";
 
             if (spieler.ApollonK == true && spieler.karma == -4){
                 spieler.karma = -8;
@@ -8116,10 +8171,288 @@ break;
 
             option1button.setText("weiter");
             option2button.setText("");
+            option3button.setText("");
             option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
             option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
 
             break;
+
+
+
+            case "Linkerteil1":
+            mainTextArea.setText("Du gehst in eine Herberge und übernachtest. \nAm nächsten Morgen beim Frühstück setzt sich ein Händler neben dich.\nHändler: Ich habe gehört sie sind an antiken Tempeln interessiert.");
+            
+            nextPosition1="sprechen mit Händler";
+            nextPosition2 = "AfterArtemis";
+            nextPosition3 = "";
+
+            option1button.setText("Antworten");
+            option2button.setText("zurück");
+            option3button.setText("");
+            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+            option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+            
+            
+            ;break;
+            
+            case "sprechen mit Händler":
+            
+            nextPosition1 = "Banditen suche";
+            nextPosition2 = "Linkerteil1";
+            nextPosition3 = "";
+
+            
+            if(spieler.karma > 4){
+            mainTextArea.setText("Was halten sie davon, wenn ich ihnen gegen eine kleine Bezahlung einen zeige? Du nimmst das Angebot an Der Händler bringt dich zu einem Tempel, doch dann, klaut er dein Portmarney und rennt in den Tempel hinein.\n Als Mörder kannst du sowas nicht gebrauchen!");
+            }
+            else{
+            mainTextArea.setText("Was halten sie davon, wenn ich ihnen gegen eine kleine Bezahlung einen zeige? Du nimmst das Angebot an Der Händler bringt dich zu einem Tempel, doch dann, klaut er dein Portmarney und rennt in den Tempel hinein.");
+            }
+            
+            
+            option1button.setText("weiter");
+            option2button.setText("zurück");
+            option3button.setText("");
+            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+            option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+            
+            ;break;
+            
+            case "Banditen suche":
+            
+            nextPosition1 = "Banditen gefunden";
+            nextPosition2 = "sprechen mit Händler";
+            nextPosition3 = "";
+
+            mainTextArea.setText("Du suchst nach dem Bandit aber keine Spur von ihm.\n Am Ende des Raumes ist eine Tür,allerdings erscheint eine Gruppe von Banditen bevor du ankommst.");
+
+            option1button.setText("Suchen");
+            option2button.setText("zurück");
+            option3button.setText("");
+            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+            option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+            
+            ;break;
+            
+            case "Banditen gefunden":
+            
+            nextPosition1 = "Erster Bandit";
+            nextPosition2 = "Banditen suche";
+            nextPosition3 = "";
+
+            mainTextArea.setText("Der Bandit, den du suchst ist nicht unter ihnen");
+            
+            option1button.setText("Kampf beginnen");
+            option2button.setText("zurück");
+            option3button.setText("");
+            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));
+            option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+
+            ;break;
+            
+            case "Erster Bandit":;
+            
+            // Bandit einfügen 
+            spawnEnemy("Enemies", 19);
+            optionsPanel.setVisible(false);
+            mainTextPanel.setVisible(false);
+                        
+            mainTextArea.setText("Der zweite schleicht sich an dir heran.");
+            
+            
+            
+            ;break;
+            
+            case "Zweiter Bandit":
+            
+            //Bandit einfügen
+
+            spawnEnemy("Enemies", 20);
+            optionsPanel.setVisible(false);
+            mainTextPanel.setVisible(false);
+                        
+            ;break;
+            
+            case "Hermes davor":
+            
+            mainTextArea.setText("Du öffnest die Tür zum nächsten Raum. Der Bandit steht in der Mitte. Er trägt seltsame Flügel Schuhe und eine Flügelkappe");
+            
+            option1button.setText("weiter");
+            
+            nextPosition1="Hermes davor P2";
+            
+            ;break;
+            
+            case "Hermes davor P2":
+
+            option1button.setText("weiter");
+            option1button.setText("Kampf beginnen");
+            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));
+            option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+
+            
+            if(spieler.karma <0){
+            mainTextArea.setText("\"Willst du mich jetzt töten? So wie du Artemis getötet hast\"\n\nEr geht einen Schritt auf dich zu. \n\"Ich bin Hermes, Sohn des Zeus, Gott der Händer, der Banditen und der Götterbote. \nIch werde deinem Spielchen ein Ende setzen.\"");
+            }
+            else{
+            mainTextArea.setText("Da bist also tatsächlich drauf reingefallen. Ich bin Hermes, Sohn des Zeus, Gott der Händler, der banditen und der Götterbote. Ich werde dir zeigen, dass du es gegen mich nicht so leicht hast wie gegen Artemis");
+            }
+            
+            nextPosition1 = "Hermes Kampf";
+            nextPosition2 = "Hermes davor";
+            ;break;
+            
+            
+
+            case "Sequel" :
+
+            nextPosition1 = "StoryR_6";
+            nextPosition2 = "";
+            nextPosition3 = "";
+
+            if (spieler.HermesK == true && spieler.karma == -4){
+                spieler.karma = -8;
+            }
+            if (spieler.HermesK == true && spieler.karma == 4){
+                spieler.karma = 0;
+            }
+
+            if (spieler.HermesK == false && spieler.karma == -4){
+                spieler.karma = 0;
+            }
+
+            if (spieler.HermesK == false && spieler.karma == 4){
+                spieler.karma = 8;
+            }
+
+            mainTextArea.setText(" Du begibst dich in eine Herberge. \n\n Dort ruhst du dich bis zum nächsten Tag aus");
+
+            option1button.setText("weiter");
+            option2button.setText("");
+            option3button.setText("");
+            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+            option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+
+            break;
+
+            case "Hermes Kampf": 
+            
+            spawnEnemy("Bosses", 6);
+            optionsPanel.setVisible(false);
+            mainTextPanel.setVisible(false);
+            // Boss hinzufügen (Hermes)
+            
+            if(spieler.karma>=4){
+            mainTextArea.setText("Du hast also gewonnen. Und was willst du nun mit mir machen, mich töten");
+            }
+            else{
+            mainTextArea.setText("Du hast also gewonnen.komm töte mich ,so wie du Artemis getötet hast");
+            }
+             
+            option1button.setText("verschonen");
+            option2button.setText("töten");
+            ;break;
+            
+            case "Hermes töten":
+            spieler.karma=-4;
+            nextPosition1 = "Sequel";
+            spieler.HermesK = true;
+            option1button.setText("ausruhen");
+            if(spieler.karma<=0){
+            mainTextArea.setText("Warte, ich will dir noch eine Sache sagen!\n Mars wird dein Untergang, er wird dich vernichten");
+            }
+            else{
+            mainTextArea.setText("Nun gut vlt. Habe ich das verdient,aber warte noch bevor du mich tötest will ich dir eine Sache sagen. \n Töte Medusa und bring Polydektes ihren Kopf");
+            
+            }
+            ;break;
+            
+            case "Hermes verschonen":
+            spieler.karma =+4;
+            nextPosition1 = "Sequel";
+            spieler.HermesK = false;
+            option1button.setText("ausruhen");
+            if(spieler.karma==0){
+            mainTextArea.setText("Du verschonst mich also,obwohl ich dir dein Portmarney geklaut habe und dich reingelegt habe?\n Nun gut zur Belohnung ein Tipp. Besiege die Medusa und bring ihren Kopf zu Polydektes");
+            }
+            else{
+            mainTextArea.setText("Du verschonst mich also. Leider kann ich dir nicht sagen wer dein nächster Gegner ist,aber mein Gefühl sagt mir dass du ihn garnicht suchen musst");
+            }
+            
+            ;break;
+            
+            //Jetzt karma funktion anwenden
+            case "Mars anfang 2":
+            mainTextArea.setText("Ihr kommt an einem Tempel an. Mars betritt den Tempel dann du. Du bist erneut in einem Raum.Du siehst dich um");
+             nextPosition1="Mars mini Kampf 1";
+            ;break;
+            
+            
+            case "Mars mini Kampf 2":
+            mainTextArea.setText("(Ein Gladiator erscheint)");
+            option1button.setText("Kämpfen");
+            
+            case "Mars Gladiator1":
+            //Gladiator einfügen
+            nextPosition1="nach Mars Gladiator";  
+            ;break;
+            
+            case "nach Mars Gladiator":
+            nextPosition1="nach Mars Gladiator P2";
+            mainTextArea.setText("Gut du hast es geschafft.\n Du öffnest die Tür zum nächsten Raum.");
+            option1button.setText("weiter");
+            ;break;
+            
+            case "nach Mars Gladiator P2":
+            nextPosition1="nach Mars Gladiator P3";
+            mainTextArea.setText("Vor dir steht er also:Mars. Da bist du ja. Ich bin Ares,der Gott des Krieges und Sohn des Zeus.Ich bin dafür bekannt der blutrünstigste ,grausamste und unbarmherzigste Gott zu sein.Aber das ist belanglos");
+            ;break;
+            
+            case "nach Mars Gladiator P3":
+            nextPosition1="Mars kampf";
+            mainTextArea.setText("Die information wird dir aber nichts bringen ,du wirst jetzt sterben!!!");
+            option1button.setText("Kämpfen");
+            ;break;
+            
+            case "Mars kampf":
+            //Mars/Ares Einfügen
+            
+            nextPosition1="Ares todestext"
+            ;break;
+            
+            case "Ares todestext":
+            mainTextArea.setText("Du mistkerl! verflucht seist du!! (Ares spuckt auf dein Gesicht) Du schlägst ihm gegen sein Schädel.Und forderst ihn auf dir zu sagen wo der nächste Tempel ist. Ares:Und was wenn nicht? Töten kannst du mich nicht");
+            nextPosition1="Ares todestext P2"
+            ;break;
+            
+            case "Ares todestext P2":
+            mainTextArea.setText("Du prügelts auf Ares ein bis er nachgibt.\n  ist ja gut,ist ja gut. Ich verrate es dir ja. Gehe auf dem Berg Oite dort wird dein letzter Gegner warten\n\n Willst du Ares töten");
+            
+            nextPosition1="Ares verschonen";
+            nextPosition2="Ares töten";
+            
+            option1button.setText("verschonen");
+            option2button.setText("töten")
+            
+            ;break;
+            //hier next position setten   
+            case "Ares töten":
+            mainTextArea.setText("Du mistkerl ich habe es dir verrat... \n\n Ares sein Kopf rollt zu Boden. Du verlässt den Tempel und suchst Rast");
+            option1button.setText("weiter");
+            nextPosition1="";
+            spieler.karma=-4;
+            ;break;
+            // hier auch
+            
+            case "Ares verschonen":
+            mainTextArea.setText("Du verlässt den Tempel um Rast zu suchen");
+            option1button.setText("weiter");
+            spieler.karma=+4;
+            nextPosition1="";
+            ;break;
+            
+            //nextposition setten für teil 9 dass das abgespielt werden soll
+
 
             case "StoryR_1":; 
             nextPosition1 = "StoryR_2";
@@ -8285,7 +8618,10 @@ nextPosition3 = "";
 
                     if (spieler.karma <= -4){
                         mainTextArea.setText(" Beim Frühstück am nächsten Morgen setzt sich ein seltsamer Mann zu dir, er stellt sich dir mit Mars vor. Er fordert dich auf mit zu kommen. Du willigst ein. Ihr kommt an einem Tempel an. Mars betritt den Tempel dann du. \n\nDu bist erneut in einem Raum. Du siehst dich um.");
-
+                        nextPosition1 = "StoryR_6++++++++";
+                        nextPosition2 = "Sequel";
+                        option1button.setText("Kampf beginnen");
+                        option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));     
 
                     }
 
@@ -8298,7 +8634,6 @@ nextPosition3 = "";
 
                     if (spieler.karma >= 4){
                         mainTextArea.setText(" Nach dem du gefrühstückt, gehst du nach draußen. Dort siehst du eine weiße Taube sie schaut dich seltsam an und fliegt dann los. Dein Gefühl sagt dir du solltest der Taube folgen. Du folgst ihr. Nach einiger Zeit kommt ihr an einem Tempel an die Taube fliegt hinein, du gehst ihr nach. \n\nWieder ein Raum, du wartest auf die Gegner, damit du die Tür öffnen kannst.");
-
                         nextPosition1 = "StoryR_6+";
                         nextPosition2 = "AfterApollon";
                         option1button.setText("Kampf beginnen");
@@ -8350,7 +8685,7 @@ nextPosition3 = "";
                                 nextPosition1 = "StoryR_6+++";
                                 
                                             option1button.setText("nächster Gegner");
-                                            option3button.setText("");
+                                            option2button.setText("");
                                             option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
                                             option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
                                 
@@ -8368,7 +8703,7 @@ nextPosition3 = "";
                                         nextPosition1 = "StoryR_6++++";
                                         
                                                     option1button.setText("nächster Gegner");
-                                                    option3button.setText("");
+                                                    option2button.setText("");
                                                     option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
                                                     option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
                                         
@@ -8386,7 +8721,7 @@ nextPosition3 = "";
                                                 nextPosition1 = "StoryR_6+++++";
                                                 
                                                             option1button.setText("nächster Gegner");
-                                                            option3button.setText("");
+                                                            option2button.setText("");
                                                             option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
                                                             option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
                                                 
@@ -8403,8 +8738,8 @@ nextPosition3 = "";
                                                 
                                                 nextPosition1 = "StoryR_6++++++";
                                                 
-                                                            option1button.setText("letzter Glad");
-                                                            option3button.setText("");
+                                                            option1button.setText("letzter Gladiator");
+                                                            option2button.setText("");
                                                             option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
                                                             option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
                                                 
@@ -8422,7 +8757,7 @@ nextPosition3 = "";
                                                 nextPosition1 = "StoryR_6+++++++";
                                                 
                                                             option1button.setText("weiter");
-                                                            option3button.setText("");
+                                                            option2button.setText("");
                                                             option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));        
                                                             option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
                                                 
@@ -8438,9 +8773,9 @@ nextPosition3 = "";
                                                                                    
                                                 
                                                 nextPosition1 = "StoryR_6++++++++";
-                                                
+
                                                             option1button.setText("weiter");
-                                                            option3button.setText("");
+                                                            option2button.setText("");
                                                             option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));        
                                                             option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
                                                 
@@ -8456,9 +8791,10 @@ nextPosition3 = "";
                                                                                            
                                                         
                                                         nextPosition1 = "StoryR_6+++++++++";
-                                                        
+                                                        nextPosition2 = "StoryR_6+++++++";
+
                                                                     option1button.setText("weiter");
-                                                                    option3button.setText("");
+                                                                    option2button.setText("zurück");
                                                                     option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));        
                                                                     option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
                                                         

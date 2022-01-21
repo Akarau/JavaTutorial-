@@ -40,9 +40,10 @@ public class CuPower {
      Boolean enemyAtacked = false;
      Boolean reflection = false;
 
-     Boolean ApollonK;
-     Boolean PolydektesK;
-     Boolean AtheneK;
+     Boolean ApollonK = false;
+     Boolean PolydektesK = false;
+     Boolean AtheneK = false;
+     Boolean HermesK = false;
 
      // Enemy //
 
