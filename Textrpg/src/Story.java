@@ -3509,6 +3509,10 @@ nextPosition2 = "";
     public void animateElement(String main_element, String second_element, byte n) throws InterruptedException {
 
 
+
+        damageText.setVisible(false);
+        damageText.setIcon(null);
+
         // Ancient //
 
 /*
@@ -4110,6 +4114,7 @@ if (spieler.currentEnemyHP <= 0){
 
             elementImage.setVisible(true);
          damageText.setText(null);
+         damageText.setIcon(null);
 
 
            
@@ -4117,7 +4122,6 @@ if (spieler.currentEnemyHP <= 0){
 
                             if (spieler.currentEnemyHP > 0){
                                 damageText.setBounds(900, 480, 600, 80);
-                                damageText.setVisible(true);
                                 boostDamageText.setVisible(false);
                                 boostDamageText.setBounds(900, 380, 600, 80);
                                 Thread.sleep(spieler.t1 * 10);
@@ -4149,6 +4153,9 @@ if (spieler.currentEnemyHP <= 0){
             
                                 
                             }
+
+                                                            damageText.setVisible(true);
+
 
                                 Thread.sleep(spieler.t2);
                                 for (int z = 0; z<= 200;z++){
@@ -5706,7 +5713,6 @@ for (int xi = 0; xi<= 120; xi++){
                 System.out.println("Test0");
                 if (spieler.enemyMain_Element == "Crystal" || spieler.enemySecond_Element == "Crystal" || spieler.enemyThird_Element == "Crystal" || spieler.enemyLast_Element == "Crystal" ){
                     element = "Crystal";
-                    System.out.println("Test0-");
 
                 }
 
@@ -5873,20 +5879,22 @@ for (int xi = 0; xi<= 120; xi++){
             damageText.setForeground(new Color(255,255,255));
             ci = "Textrpg\\Images\\Elemente\\Cosmic.png";
 
-            if (spieler.Main_Element.charAt(2) == 'G' && spieler.Main_Element.charAt(3) == 'r'|| spieler.Main_Element.charAt(2) == 'V' || spieler.Main_Element.charAt(3) == 'o'){
+            if (spieler.Main_Element.charAt(2) == 'G' && spieler.Main_Element.charAt(3) == 'r'|| spieler.Main_Element.charAt(2) == 'V' || spieler.Main_Element.charAt(3) == 'o' && spieler.enemyAtacked == false){
 
                 damageText.setForeground(new Color(255,50,0));
                 damg2 = spieler.CurrentEnemyPower *2;
 
+                spieler.enemyAtacked = true;
              ci = "Textrpg\\Images\\Elemente_Strong\\Cosmic.png";
 
 
             }
 
-            if (spieler.Main_Element.charAt(2) == 'C' && spieler.Main_Element.charAt(3) == 'o'){
+            if (spieler.Main_Element.charAt(2) == 'C' && spieler.Main_Element.charAt(3) == 'o' && spieler.enemyAtacked == false){
                 damageText.setForeground(new Color(255,200,30));
                 damg2 = spieler.CurrentEnemyPower /2;
 
+                spieler.enemyAtacked = true;
              ci = "Textrpg\\Images\\Elemente_Weak\\Cosmic.png";
 
 
@@ -5903,20 +5911,21 @@ for (int xi = 0; xi<= 120; xi++){
             damageText.setForeground(new Color(255,255,255));
             ci = "Textrpg\\Images\\Elemente\\Crystal.png";
 
-            if (spieler.Main_Element.charAt(2) == 'E' && spieler.Main_Element.charAt(3) == 'r' || spieler.Main_Element.charAt(2) == 'L' && spieler.Main_Element.charAt(3) == 'i'){
-System.out.println("Test2");
+            if (spieler.Main_Element.charAt(2) == 'E' && spieler.Main_Element.charAt(3) == 'r' || spieler.Main_Element.charAt(2) == 'L' && spieler.Main_Element.charAt(3) == 'i' && spieler.enemyAtacked == false){
                 damageText.setForeground(new Color(255,50,0));
                 damg2 = spieler.CurrentEnemyPower *2;
+                spieler.enemyAtacked = true;
 
              ci = "Textrpg\\Images\\Elemente_Strong\\Crystal.png";
 
 
             }
 
-            if (spieler.Main_Element.charAt(2) == 'F' && spieler.Main_Element.charAt(3) == 'e'|| spieler.Main_Element.charAt(2) == 'C' || spieler.Main_Element.charAt(3) == 'r'){
+            if (spieler.Main_Element.charAt(2) == 'F' && spieler.Main_Element.charAt(3) == 'e'|| spieler.Main_Element.charAt(2) == 'C' || spieler.Main_Element.charAt(3) == 'r' && spieler.enemyAtacked == false){
                 damageText.setForeground(new Color(255,200,30));
                 damg2 = spieler.CurrentEnemyPower /2;
 
+                spieler.enemyAtacked = true;
              ci = "Textrpg\\Images\\Elemente_Weak\\Crystal.png";
 
 
@@ -5933,20 +5942,22 @@ System.out.println("Test2");
             damageText.setForeground(new Color(255,255,255));
             ci = "Textrpg\\Images\\Elemente\\Erde.png";
 
-            if (spieler.Main_Element.charAt(2) == 'W' && spieler.Main_Element.charAt(3) == 'a'|| spieler.Main_Element.charAt(2) == 'W' || spieler.Main_Element.charAt(3) == 'i'){
+            if (spieler.Main_Element.charAt(2) == 'W' && spieler.Main_Element.charAt(3) == 'a'|| spieler.Main_Element.charAt(2) == 'W' || spieler.Main_Element.charAt(3) == 'i' && spieler.enemyAtacked == false){
 
                 damageText.setForeground(new Color(255,50,0));
                 damg2 = spieler.CurrentEnemyPower *2;
 
+                spieler.enemyAtacked = true;
              ci = "Textrpg\\Images\\Elemente_Strong\\Erde.png";
 
 
             }
 
-            if (spieler.Main_Element.charAt(2) == 'C' && spieler.Main_Element.charAt(3) == 'r'|| spieler.Main_Element.charAt(2) == 'E' || spieler.Main_Element.charAt(3) == 'r'){
+            if (spieler.Main_Element.charAt(2) == 'C' && spieler.Main_Element.charAt(3) == 'r'|| spieler.Main_Element.charAt(2) == 'E' || spieler.Main_Element.charAt(3) == 'r' && spieler.enemyAtacked == false){
                 damageText.setForeground(new Color(255,200,30));
                 damg2 = spieler.CurrentEnemyPower /2;
 
+                spieler.enemyAtacked = true;
              ci = "Textrpg\\Images\\Elemente_Weak\\Erde.png";
 
 
@@ -5963,20 +5974,22 @@ System.out.println("Test2");
             damageText.setForeground(new Color(255,255,255));
             ci = "Textrpg\\Images\\Elemente\\Feuer.png";
 
-            if (spieler.Main_Element.charAt(2) == 'L' && spieler.Main_Element.charAt(3) == 'i'|| spieler.Main_Element.charAt(2) == 'C' || spieler.Main_Element.charAt(3) == 'r'){
+            if (spieler.Main_Element.charAt(2) == 'L' && spieler.Main_Element.charAt(3) == 'i'|| spieler.Main_Element.charAt(2) == 'C' || spieler.Main_Element.charAt(3) == 'r' && spieler.enemyAtacked == false){
 
                 damageText.setForeground(new Color(255,50,0));
                 damg2 = spieler.CurrentEnemyPower *2;
 
+                spieler.enemyAtacked = true;
              ci = "Textrpg\\Images\\Elemente_Strong\\Feuer.png";
 
 
             }
 
-            if (spieler.Main_Element.charAt(2) == 'W' && spieler.Main_Element.charAt(3) == 'a'|| spieler.Main_Element.charAt(2) == 'F' || spieler.Main_Element.charAt(3) == 'e'){
+            if (spieler.Main_Element.charAt(2) == 'W' && spieler.Main_Element.charAt(3) == 'a'|| spieler.Main_Element.charAt(2) == 'F' || spieler.Main_Element.charAt(3) == 'e' && spieler.enemyAtacked == false){
                 damageText.setForeground(new Color(255,200,30));
                 damg2 = spieler.CurrentEnemyPower /2;
 
+                spieler.enemyAtacked = true;
              ci = "Textrpg\\Images\\Elemente_Weak\\Feuer.png";
 
 
@@ -5995,20 +6008,22 @@ System.out.println("Test2");
                 damageText.setForeground(new Color(255,255,255));
                 ci = "Textrpg\\Images\\Elemente\\Gravity.png";
 
-                if (spieler.Main_Element.charAt(2) == 'C' && spieler.Main_Element.charAt(3) == 'o'|| spieler.Main_Element.charAt(2) == 'V' || spieler.Main_Element.charAt(3) == 'o'){
+                if (spieler.Main_Element.charAt(2) == 'C' && spieler.Main_Element.charAt(3) == 'o'|| spieler.Main_Element.charAt(2) == 'V' || spieler.Main_Element.charAt(3) == 'o' && spieler.enemyAtacked == false){
 
                     damageText.setForeground(new Color(255,50,0));
                     damg2 = spieler.CurrentEnemyPower *2;
 
+                    spieler.enemyAtacked = true;
                  ci = "Textrpg\\Images\\Elemente_Strong\\Gravity.png";
 
 
                 }
 
-                if (spieler.Main_Element.charAt(2) == 'G' && spieler.Main_Element.charAt(3) == 'r'){
+                if (spieler.Main_Element.charAt(2) == 'G' && spieler.Main_Element.charAt(3) == 'r' && spieler.enemyAtacked == false){
                     damageText.setForeground(new Color(255,200,30));
                     damg2 = spieler.CurrentEnemyPower /2;
 
+                    spieler.enemyAtacked = true;
                  ci = "Textrpg\\Images\\Elemente_Weak\\Gravity.png";
 
 
@@ -6026,20 +6041,22 @@ System.out.println("Test2");
             damageText.setForeground(new Color(255,255,255));
             ci = "Textrpg\\Images\\Elemente\\Licht.png";
 
-            if (spieler.Main_Element.charAt(2) == 'L' && spieler.Main_Element.charAt(3) == 'u'|| spieler.Main_Element.charAt(2) == 'C' || spieler.Main_Element.charAt(3) == 'r'){
+            if (spieler.Main_Element.charAt(2) == 'L' && spieler.Main_Element.charAt(3) == 'u'|| spieler.Main_Element.charAt(2) == 'C' || spieler.Main_Element.charAt(3) == 'r' && spieler.enemyAtacked == false){
 
                 damageText.setForeground(new Color(255,50,0));
                 damg2 = spieler.CurrentEnemyPower *2;
 
+                spieler.enemyAtacked = true;
              ci = "Textrpg\\Images\\Elemente_Strong\\Licht.png";
 
 
             }
 
-            if (spieler.Main_Element.charAt(2) == 'F' && spieler.Main_Element.charAt(3) == 'e'|| spieler.Main_Element.charAt(2) == 'L' || spieler.Main_Element.charAt(3) == 'i'){
+            if (spieler.Main_Element.charAt(2) == 'F' && spieler.Main_Element.charAt(3) == 'e'|| spieler.Main_Element.charAt(2) == 'L' || spieler.Main_Element.charAt(3) == 'i' && spieler.enemyAtacked == false){
                 damageText.setForeground(new Color(255,200,30));
                 damg2 = spieler.CurrentEnemyPower /2;
 
+                spieler.enemyAtacked = true;
              ci = "Textrpg\\Images\\Elemente_Weak\\Licht.png";
 
 
@@ -6055,20 +6072,22 @@ System.out.println("Test2");
             damageText.setForeground(new Color(255,255,255));
             ci = "Textrpg\\Images\\Elemente\\Lunar.png";
 
-            if (spieler.Main_Element.charAt(2) == 'L' && spieler.Main_Element.charAt(3) == 'i'){
+            if (spieler.Main_Element.charAt(2) == 'L' && spieler.Main_Element.charAt(3) == 'i' && spieler.enemyAtacked == false){
 
                 damageText.setForeground(new Color(255,50,0));
                 damg2 = spieler.CurrentEnemyPower *2;
 
+                spieler.enemyAtacked = true;
              ci = "Textrpg\\Images\\Elemente_Strong\\Lunar.png";
 
 
             }
 
-            if (spieler.Main_Element.charAt(2) == 'L' && spieler.Main_Element.charAt(3) == 'u'){
+            if (spieler.Main_Element.charAt(2) == 'L' && spieler.Main_Element.charAt(3) == 'u' && spieler.enemyAtacked == false){
                 damageText.setForeground(new Color(255,200,30));
                 damg2 = spieler.CurrentEnemyPower /2;
 
+                spieler.enemyAtacked = true;
              ci = "Textrpg\\Images\\Elemente_Weak\\Lunar.png";
 
 
@@ -6086,20 +6105,22 @@ System.out.println("Test2");
             damageText.setForeground(new Color(255,255,255));
             ci = "Textrpg\\Images\\Elemente\\Void.png";
 
-            if (spieler.Main_Element.charAt(2) == 'C' && spieler.Main_Element.charAt(3) == 'o'|| spieler.Main_Element.charAt(2) == 'G' || spieler.Main_Element.charAt(3) == 'r'){
+            if (spieler.Main_Element.charAt(2) == 'C' && spieler.Main_Element.charAt(3) == 'o'|| spieler.Main_Element.charAt(2) == 'G' || spieler.Main_Element.charAt(3) == 'r' && spieler.enemyAtacked == false){
 
                 damageText.setForeground(new Color(255,50,0));
                 damg2 = spieler.CurrentEnemyPower *2;
 
+                spieler.enemyAtacked = true;
              ci = "Textrpg\\Images\\Elemente_Strong\\Void.png";
 
 
             }
 
-            if (spieler.Main_Element.charAt(2) == 'V' && spieler.Main_Element.charAt(3) == 'o'){
+            if (spieler.Main_Element.charAt(2) == 'V' && spieler.Main_Element.charAt(3) == 'o' && spieler.enemyAtacked == false){
                 damageText.setForeground(new Color(255,200,30));
                 damg2 = spieler.CurrentEnemyPower /2;
 
+                spieler.enemyAtacked = true;
              ci = "Textrpg\\Images\\Elemente_Weak\\Void.png";
 
 
@@ -6120,20 +6141,22 @@ System.out.println("Test2");
         damageText.setForeground(new Color(255,255,255));
         ci = "Textrpg\\Images\\Elemente\\Wasser.png";
 
-        if (spieler.Main_Element.charAt(2) == 'F' && spieler.Main_Element.charAt(3) == 'e'|| spieler.Main_Element.charAt(2) == 'E' || spieler.Main_Element.charAt(3) == 'r'){
+        if (spieler.Main_Element.charAt(2) == 'F' && spieler.Main_Element.charAt(3) == 'e'|| spieler.Main_Element.charAt(2) == 'E' || spieler.Main_Element.charAt(3) == 'r' && spieler.enemyAtacked == false){
 
             damageText.setForeground(new Color(255,50,0));
             damg2 = spieler.CurrentEnemyPower *2;
 
+            spieler.enemyAtacked = true;
          ci = "Textrpg\\Images\\Elemente_Strong\\Wasser.png";
 
 
         }
 
-        if (spieler.Main_Element.charAt(2) == 'W' && spieler.Main_Element.charAt(3) == 'a'){
+        if (spieler.Main_Element.charAt(2) == 'W' && spieler.Main_Element.charAt(3) == 'a' && spieler.enemyAtacked == false){
             damageText.setForeground(new Color(255,200,30));
             damg2 = spieler.CurrentEnemyPower /2;
 
+            spieler.enemyAtacked = true;
          ci = "Textrpg\\Images\\Elemente_Weak\\Wasser.png";
 
 
@@ -6151,20 +6174,22 @@ if (element == "Wind") {
     damageText.setForeground(new Color(255,255,255));
     ci = "Textrpg\\Images\\Elemente\\Wind.png";
 
-    if (spieler.Main_Element.charAt(2) == 'F' && spieler.Main_Element.charAt(3) == 'e'|| spieler.Main_Element.charAt(2) == 'C' || spieler.Main_Element.charAt(3) == 'r'){
+    if (spieler.Main_Element.charAt(2) == 'F' && spieler.Main_Element.charAt(3) == 'e'|| spieler.Main_Element.charAt(2) == 'C' || spieler.Main_Element.charAt(3) == 'r' && spieler.enemyAtacked == false){
 
         damageText.setForeground(new Color(255,50,0));
         damg2 = spieler.CurrentEnemyPower *2;
 
+        spieler.enemyAtacked = true;
      ci = "Textrpg\\Images\\Elemente_Strong\\Wind.png";
 
 
     }
 
-    if (spieler.Main_Element.charAt(2) == 'W' && spieler.Main_Element.charAt(3) == 'i'){
+    if (spieler.Main_Element.charAt(2) == 'W' && spieler.Main_Element.charAt(3) == 'i' && spieler.enemyAtacked == false){
         damageText.setForeground(new Color(255,200,30));
         damg2 = spieler.CurrentEnemyPower /2;
 
+        spieler.enemyAtacked = true;
      ci = "Textrpg\\Images\\Elemente_Weak\\Wind.png";
 
 
@@ -7299,17 +7324,7 @@ if (spieler.enemyMain_Element == "Wasser"){
     i2.setForeground(new Color(155,25,0));
     }
 
-    if (spieler.Main_Element.charAt(2) == 'F' && spieler.Main_Element.charAt(3) == 'e'){
-        i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Feuer.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
-    i1.setText("        Feuer         ");
-    i1.setForeground(new Color(155,25,0));
-    }
-    
-    if (spieler.Second_Element.charAt(2) == 'F' && spieler.Second_Element.charAt(3) == 'e'){
-        i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Feuer.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
-    i2.setText("        Feuer         ");
-    i2.setForeground(new Color(155,25,0));
-    }
+
     
     
     
@@ -7320,6 +7335,17 @@ if (spieler.enemyMain_Element == "Wasser"){
     // Weak //
     
     
+    if (spieler.Main_Element.charAt(2) == 'F' && spieler.Main_Element.charAt(3) == 'e'){
+        i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Feuer.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+    i1.setText("        Feuer         ");
+    i1.setForeground(new Color(255,215,0));
+    }
+    
+    if (spieler.Second_Element.charAt(2) == 'F' && spieler.Second_Element.charAt(3) == 'e'){
+        i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Feuer.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+    i2.setText("        Feuer         ");
+    i2.setForeground(new Color(255,215,0));
+    }
     
     
     if (spieler.Main_Element.charAt(2) == 'W' && spieler.Main_Element.charAt(3) == 'a'){
@@ -7747,7 +7773,7 @@ achievementDif.setVisible(false);
 
             case "Anfangpart7":
             mainTextArea.setText("Ihe verabschiedet euch und du machs dich auf dem Weg zu dem Tempel. Es dauert nicht lange, bis du ankommst. \nVor dir steht er also, der Tempel von deinem ersten Geger");
-            option1button.setText("Tempel betreten");
+            option1button.setText("Raum betreten");
             option1button.setFont(new Font("Times new Roman", Font.PLAIN, 38));
             option2button.setText("zurück");
             option3button.setText("");

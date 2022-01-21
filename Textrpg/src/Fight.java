@@ -66,12 +66,8 @@ public class Fight {
   }
  static String elements[];
 
- 
 
   public static void fight(String element, JLabel elementImage) {
-
-
-   
 
     do
     {
@@ -132,7 +128,6 @@ i23.setFocusable(false);
      */
 
   }
-
 
   
 
