@@ -5604,7 +5604,7 @@ for (int xi = 0; xi<= 120; xi++){
             damageText.setForeground(new Color(255,255,255));
             ci = "Textrpg\\Images\\Elemente\\Cosmic.png";
 
-            if (spieler.Main_Element.charAt(2) == 'G' && spieler.Main_Element.charAt(3) == 'r'|| spieler.Main_Element.charAt(2) == 'V' || spieler.Main_Element.charAt(2) == 'o'){
+            if (spieler.Main_Element.charAt(2) == 'G' && spieler.Main_Element.charAt(3) == 'r'|| spieler.Main_Element.charAt(2) == 'V' && spieler.Main_Element.charAt(3) == 'o'){
 
                 damageText.setForeground(new Color(255,50,0));
                 damg2 = spieler.CurrentEnemyPower *2;
@@ -5644,7 +5644,7 @@ for (int xi = 0; xi<= 120; xi++){
 
             }
 
-            if (spieler.Main_Element.charAt(2) == 'F' && spieler.Main_Element.charAt(3) == 'e'|| spieler.Main_Element.charAt(2) == 'C' || spieler.Main_Element.charAt(2) == 'r'){
+            if (spieler.Main_Element.charAt(2) == 'F' && spieler.Main_Element.charAt(3) == 'e'|| spieler.Main_Element.charAt(2) == 'C' && spieler.Main_Element.charAt(3) == 'r'){
                 damageText.setForeground(new Color(255,200,30));
                 damg2 = spieler.CurrentEnemyPower /2;
 
@@ -5664,7 +5664,7 @@ for (int xi = 0; xi<= 120; xi++){
             damageText.setForeground(new Color(255,255,255));
             ci = "Textrpg\\Images\\Elemente\\Erde.png";
 
-            if (spieler.Main_Element.charAt(2) == 'F' && spieler.Main_Element.charAt(3) == 'e'|| spieler.Main_Element.charAt(2) == 'W' || spieler.Main_Element.charAt(2) == 'i'){
+            if (spieler.Main_Element.charAt(2) == 'F' && spieler.Main_Element.charAt(3) == 'e'|| spieler.Main_Element.charAt(2) == 'W' && spieler.Main_Element.charAt(3) == 'i'){
 
                 damageText.setForeground(new Color(255,50,0));
                 damg2 = spieler.CurrentEnemyPower *2;
@@ -5674,7 +5674,7 @@ for (int xi = 0; xi<= 120; xi++){
 
             }
 
-            if (spieler.Main_Element.charAt(2) == 'C' && spieler.Main_Element.charAt(3) == 'r'|| spieler.Main_Element.charAt(2) == 'E' || spieler.Main_Element.charAt(2) == 'r'){
+            if (spieler.Main_Element.charAt(2) == 'C' && spieler.Main_Element.charAt(3) == 'r'|| spieler.Main_Element.charAt(2) == 'E' && spieler.Main_Element.charAt(3) == 'r'){
                 damageText.setForeground(new Color(255,200,30));
                 damg2 = spieler.CurrentEnemyPower /2;
 
@@ -5694,7 +5694,7 @@ for (int xi = 0; xi<= 120; xi++){
             damageText.setForeground(new Color(255,255,255));
             ci = "Textrpg\\Images\\Elemente\\Feuer.png";
 
-            if (spieler.Main_Element.charAt(2) == 'L' && spieler.Main_Element.charAt(3) == 'i'|| spieler.Main_Element.charAt(2) == 'C' || spieler.Main_Element.charAt(2) == 'r'){
+            if (spieler.Main_Element.charAt(2) == 'L' && spieler.Main_Element.charAt(3) == 'i'|| spieler.Main_Element.charAt(2) == 'C'&& spieler.Main_Element.charAt(3) == 'r'){
 
                 damageText.setForeground(new Color(255,50,0));
                 damg2 = spieler.CurrentEnemyPower *2;
@@ -5704,7 +5704,7 @@ for (int xi = 0; xi<= 120; xi++){
 
             }
 
-            if (spieler.Main_Element.charAt(2) == 'W' && spieler.Main_Element.charAt(3) == 'a'|| spieler.Main_Element.charAt(2) == 'F' || spieler.Main_Element.charAt(2) == 'e'){
+            if (spieler.Main_Element.charAt(2) == 'W' && spieler.Main_Element.charAt(3) == 'a'|| spieler.Main_Element.charAt(2) == 'F' && spieler.Main_Element.charAt(3) == 'e'){
                 damageText.setForeground(new Color(255,200,30));
                 damg2 = spieler.CurrentEnemyPower /2;
 
@@ -5726,7 +5726,7 @@ for (int xi = 0; xi<= 120; xi++){
                 damageText.setForeground(new Color(255,255,255));
                 ci = "Textrpg\\Images\\Elemente\\Gravity.png";
 
-                if (spieler.Main_Element.charAt(2) == 'C' && spieler.Main_Element.charAt(3) == 'o'|| spieler.Main_Element.charAt(2) == 'V' || spieler.Main_Element.charAt(2) == 'o'){
+                if (spieler.Main_Element.charAt(2) == 'C' && spieler.Main_Element.charAt(3) == 'o'|| spieler.Main_Element.charAt(2) == 'V' && spieler.Main_Element.charAt(3) == 'o'){
 
                     damageText.setForeground(new Color(255,50,0));
                     damg2 = spieler.CurrentEnemyPower *2;
@@ -5757,7 +5757,7 @@ for (int xi = 0; xi<= 120; xi++){
             damageText.setForeground(new Color(255,255,255));
             ci = "Textrpg\\Images\\Elemente\\Licht.png";
 
-            if (spieler.Main_Element.charAt(2) == 'L' && spieler.Main_Element.charAt(3) == 'u'|| spieler.Main_Element.charAt(2) == 'C' || spieler.Main_Element.charAt(2) == 'r'){
+            if (spieler.Main_Element.charAt(2) == 'L' && spieler.Main_Element.charAt(3) == 'u'|| spieler.Main_Element.charAt(2) == 'C' && spieler.Main_Element.charAt(3) == 'r'){
 
                 damageText.setForeground(new Color(255,50,0));
                 damg2 = spieler.CurrentEnemyPower *2;
@@ -5767,7 +5767,7 @@ for (int xi = 0; xi<= 120; xi++){
 
             }
 
-            if (spieler.Main_Element.charAt(2) == 'F' && spieler.Main_Element.charAt(3) == 'e'|| spieler.Main_Element.charAt(2) == 'L' || spieler.Main_Element.charAt(2) == 'i'){
+            if (spieler.Main_Element.charAt(2) == 'F' && spieler.Main_Element.charAt(3) == 'e'|| spieler.Main_Element.charAt(2) == 'L' && spieler.Main_Element.charAt(3) == 'i'){
                 damageText.setForeground(new Color(255,200,30));
                 damg2 = spieler.CurrentEnemyPower /2;
 
@@ -5817,7 +5817,7 @@ for (int xi = 0; xi<= 120; xi++){
             damageText.setForeground(new Color(255,255,255));
             ci = "Textrpg\\Images\\Elemente\\Void.png";
 
-            if (spieler.Main_Element.charAt(2) == 'C' && spieler.Main_Element.charAt(3) == 'o'|| spieler.Main_Element.charAt(2) == 'G' || spieler.Main_Element.charAt(2) == 'r'){
+            if (spieler.Main_Element.charAt(2) == 'C' && spieler.Main_Element.charAt(3) == 'o'|| spieler.Main_Element.charAt(2) == 'G' && spieler.Main_Element.charAt(3) == 'r'){
 
                 damageText.setForeground(new Color(255,50,0));
                 damg2 = spieler.CurrentEnemyPower *2;
