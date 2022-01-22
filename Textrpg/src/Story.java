@@ -3,6 +3,7 @@ import java.awt.Component;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.util.HashMap;
+import java.util.Random;
 import java.awt.*;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
@@ -3677,16 +3678,26 @@ nextPosition2 = "";
             
 
                                                        
-
-
-
-                                            
-
-
+                                                                    if (nextPosition1 == "Poseidon Kampf"){
+                                                                        endFight();
+                                                                        optionsPanel.setVisible(true);
+                                                                        mainTextPanel.setVisible(true);
+                                                
+                                                                        
+                                                                            mainTextArea.setText("\" Wie ich es erwartet habe. Du bist wahrlich stark, mit dieser Stärke wirst du auch meinem Bruder gegenüber treten können\"\n\nDu verschonst deinen Gegner\nBeim Verlassen des Tempels bist du auf einmal wieder an der Oberfläsche vom Wasser. Du schwimmst an Land.");
+                                                                            
+                                                                            
+                                                                        option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));
+                                                                        option2button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+                                                                        option1button.setText("weiter");
+                                                                        option2button.setText("");
+                                                                        option3button.setText("");
+                                                                        nextPosition1 = "End";
+                                                                        nextPosition2 = "";
+                                                                        nextPosition3 = "";
             
-
-
-
+                                                                        
+                                                                                }
                                 
     }
 
@@ -6261,6 +6272,42 @@ public void specialCombat() throws InterruptedException{
         specialEffectText2.setVisible(false);
 
     }
+
+    if (nextPosition1 == "Hermes Kampf" && spieler.reflection == false && spieler.currentEnemyHP > 0){
+
+        Random r = new Random();
+        if (Math.random() > 0.5){
+
+            specialEffectText.setEnabled(true);
+            specialEffectText.setVisible(true);
+            specialEffectText.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Bosses\\Hermes.png")
+                    .getImage().getScaledInstance(40, 35, Image.SCALE_AREA_AVERAGING)));
+                    specialEffectText.setText("Angriff ausgewichen");
+                    spieler.currentEnemyHP += damg;
+                    enemyInfoHP.setText("          " +spieler.currentEnemyHP);     
+                    Thread.sleep(spieler.t3 * 15);
+        specialEffectText.setVisible(false);
+        specialEffectText2.setVisible(false);
+              
+        }
+
+    }
+
+    if (nextPosition1 == "Apollon Kampf" && spieler.reflection == false && spieler.currentEnemyHP > 0){
+        if (Math.random() > 0.4){
+            specialEffectText.setEnabled(true);
+            specialEffectText.setVisible(true);
+            specialEffectText.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Bosses\\Apollon.png")
+                    .getImage().getScaledInstance(40, 35, Image.SCALE_AREA_AVERAGING)));
+                    specialEffectText.setText("Weniger Schaden");
+                    spieler.currentEnemyHP -= (Math.random() * damg);
+                    enemyInfoHP.setText("          " +spieler.currentEnemyHP);     
+                    Thread.sleep(spieler.t3 * 15);
+        specialEffectText.setVisible(false);
+        specialEffectText2.setVisible(false);
+        }
+    }
+
 }
 
 
@@ -7301,7 +7348,7 @@ achievementDif.setVisible(false);
      
         
      
-     nextPosition1="AfterArtemis";
+     nextPosition1="Anfangpart2";
      
      nextPosition2="";
      nextPosition3="";
@@ -8838,6 +8885,34 @@ spieler.PolydektesK = false;
                                                         mainTextPanel.setVisible(false);
                                                         spawnEnemy("Enemies", 18);
                                                         option3button.setText("");
+                                                        option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
+                                                        option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                                            
+                                            
+                                                        break;
+
+                                                        case "Story7R_7":; 
+
+                                                        nextPosition1 = "Poseidon Kampf";
+                                                        optionsPanel.setVisible(true);
+                                                        mainTextPanel.setVisible(true);
+                                                        mainTextArea.setText(" \"Hahaha, ich bin Poseidon, der Gott des meeres und Bruder des zeus. Du scheinst ja kein schlechter Kerl zu sein, sowie ich es erwartet habe. Hahaha.\n\nAber ich habe nun einmal die Aufgabe meinen Bruder zu beschützen. Also komm kämpfen wir!\"");
+
+                                                        option1button.setText("Kampf beginnen");
+                                                        option2button.setText("");
+                                                        option3button.setText("");
+                                                        option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
+                                                        option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                                            
+                                            
+                                                        break;
+
+                                                        case "Poseidon Kampf":; 
+
+                                                        optionsPanel.setVisible(false);
+                                                        mainTextPanel.setVisible(false);
+
+                                                        spawnEnemy("Bosses", 7);
                                                         option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
                                                         option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
                                             

@@ -344,16 +344,18 @@ public class Enemy {
         "Hades",
         "Heraktles",
         "Hermes",
+        "Poseidon",
     };
 
 
     int bossesHP[] = {
         14,
         240,
-        300,
+        360,
         400,
         1500,
         800,
+        150,
         400,
 
     };
@@ -361,10 +363,11 @@ public class Enemy {
     int bossesPower[] = {
         40,
         22,
-        22,
+        40,
         22,
         10,
         14,
+        25,
         24,
 
     };
@@ -374,6 +377,7 @@ public class Enemy {
         new Color(225,225,225),
         new Color(255,205,40),
         new Color(0,255,80),
+        new Color(255,135,0),
         new Color(255,135,0),
         new Color(255,135,0),
         new Color(255,135,0),
@@ -389,6 +393,7 @@ public class Enemy {
         "Feuer",
         "Ancient",
         "Licht",
+        "Wasser",
 
     };
 
@@ -401,6 +406,7 @@ public class Enemy {
         "Erde",
         "Cosmic",
         "Ancient",
+        "Licht",
 
 
     };
@@ -413,6 +419,8 @@ public class Enemy {
         "Licht",
         "Crystal",
         "",
+        "Wind",
+
 
     };
 
@@ -423,6 +431,7 @@ public class Enemy {
         "Fire",
         "",
         "Erde",
+        "",
         "",
 
 
@@ -436,6 +445,7 @@ public class Enemy {
         "Hard++",
         "Hard++",
         "Hermes++",
+        "",
 
     };
 
@@ -444,6 +454,7 @@ public class Enemy {
         new Color(160,0,255),
         new Color(25,255,255),
         new Color(25,255,255),
+        new Color(255,135,0),
         new Color(255,135,0),
         new Color(255,135,0),
         new Color(255,135,0),
