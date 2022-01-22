@@ -3658,10 +3658,10 @@ nextPosition2 = "";
                                     
                                                             
                                                             if(spieler.karma>=4){
-                                                                mainTextArea.setText("Du hast also gewonnen. Und was willst du nun mit mir machen, mich töten\n\nWillst du Hermes töten? \n > Hermes töten\n Hermes wird getötet [-4 karma] \n\n > Hermes verschonen\n Hermes wird verschont [+4 karma]");
+                                                                mainTextArea.setText("Du hast also gewonnen. Und was willst du nun mit mir machen, mich töten?\n\nWillst du Hermes töten? \n > Hermes töten\n Hermes wird getötet [-4 karma] \n\n > Hermes verschonen\n Hermes wird verschont [+4 karma]");
                                                                 }
                                                                 else{
-                                                                mainTextArea.setText("Du hast also gewonnen.komm töte mich, sowie du Artemis getötet hast\n\nWillst du Hermes töten? \n > Hermes töten\n Hermes wird getötet [-4 karma] \n\n > Hermes verschonen\n Hermes wird verschont [+4 karma]");
+                                                                mainTextArea.setText("Du hast also gewonnen. Komm töte mich, sowie du Artemis getötet hast\n\nWillst du Hermes töten? \n > Hermes töten\n Hermes wird getötet [-4 karma] \n\n > Hermes verschonen\n Hermes wird verschont [+4 karma]");
                                                                 }
                                                             option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));
                                                             option2button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
