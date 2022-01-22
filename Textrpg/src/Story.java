@@ -2052,6 +2052,8 @@ boostB.add(si);
 
 
     public void openInv(){
+
+      
         chosen_Main_Element_Name.setBorder(null);
 
         eshop_weapons.setActionCommand("eInventar_weapons");
@@ -7391,6 +7393,8 @@ achievementDif.setVisible(false);
 
     public void selectposition(String nextPosition){
 
+
+
         switch(nextPosition){
     
             case "Auftragannehmen":break;
@@ -7591,7 +7595,12 @@ break;
 
 
             case "InventarÖffnen": openInv(); 
-            mainTextPanel.setVisible(false);
+            if (inventarPanel.isVisible() == true){
+                mainTextPanel.setVisible(false);
+            }
+            else{
+                mainTextPanel.setVisible(true);
+            }
             break;
 
             case "Artemis töten":; 
@@ -7716,7 +7725,7 @@ break;
             nextPosition3 = "";
 
             
-            if(spieler.karma > 4){
+            if(spieler.karma < 0){
             mainTextArea.setText("Was halten sie davon, wenn ich ihnen gegen eine kleine Bezahlung einen zeige? Du nimmst das Angebot an Der Händler bringt dich zu einem Tempel, doch dann, klaut er dein Portmarney und rennt in den Tempel hinein.\n Als Mörder kannst du sowas nicht gebrauchen!");
             }
             else{
@@ -7724,10 +7733,10 @@ break;
             }
             
             
-            option1button.setText("weiter");
+            option1button.setText("Tempel betreten");
             option2button.setText("zurück");
             option3button.setText("");
-            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 38));
             option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
             
             ;break;
@@ -7891,7 +7900,7 @@ break;
             if(spieler.karma==0){
             mainTextArea.setText("Du verschonst mich also,obwohl ich dir dein Portmarney geklaut habe und dich reingelegt habe?\n Nun gut zur Belohnung ein Tipp. Besiege die Medusa und bring ihren Kopf zu Polydektes");
             }
-            else{
+            else if (spieler.karma == 8){
             mainTextArea.setText("Du verschonst mich also. Leider kann ich dir nicht sagen wer dein nächster Gegner ist,aber mein Gefühl sagt mir dass du ihn garnicht suchen musst");
             }
             
