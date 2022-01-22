@@ -8158,7 +8158,7 @@ break;
             case "Ares töten":
             mainTextArea.setText("Du Mistkerl ich habe es dir verrat... \n\n Ares sein Kopf rollt zu Boden. Du verlässt den Tempel und suchst Rast");
             option1button.setText("weiter");
-            nextPosition1="Story7";
+            nextPosition1="Story7xtr2";
             nextPosition2 = "After Ares";
            spieler.AresK = true;
            option1button.setText("weiter");
@@ -8172,7 +8172,7 @@ break;
             
             case "Ares verschonen":
             mainTextArea.setText("Du verlässt den Tempel, um Rast zu suchen");
-            nextPosition1="Story7";
+            nextPosition1="Story7xtr2";
             nextPosition2 = "After Ares";
             spieler.AresK = false;
             option1button.setText("weiter");
@@ -9013,7 +9013,6 @@ spieler.PolydektesK = false;
                                                             case "Story7":; 
 
 
-                                                            System.out.println(spieler.karma);
 
                                                             if (spieler.PolydektesK == true){
                                                                 spieler.karma-=4;
@@ -9023,18 +9022,9 @@ spieler.PolydektesK = false;
                                                                 spieler.karma+=4;
                                                             }
 
-                                                            if (spieler.AresK == true){
-                                                                spieler.karma-=4;
-                                                            }
-                                                            System.out.println(spieler.karma);
+                                                           
 
 
-                                                            if (spieler.AresK == false){
-                                                                spieler.karma+=4;
-                                                            }
-
-
-                                                            System.out.println(spieler.karma);
                 
                 
                                                     if (spieler.karma <0){
@@ -9074,14 +9064,6 @@ spieler.PolydektesK = false;
                                                         spieler.karma+=4;
                                                     }
 
-
-                                                    if (spieler.AresK == true){
-                                                        spieler.karma-=4;
-                                                    }
-
-                                                    if (spieler.AresK == false){
-                                                        spieler.karma+=4;
-                                                    }
         
         
         
@@ -9113,6 +9095,51 @@ spieler.PolydektesK = false;
                                             
 
                                             break;
+
+
+                                            case "Story7xtr2":; 
+
+                                            if (spieler.AresK == true){
+                                                spieler.karma-=4;
+                                            }
+
+
+                                            if (spieler.AresK == false){
+                                                spieler.karma+=4;
+                                            }
+
+
+
+
+                                    if (spieler.karma <0){
+                                        mainTextArea.setText(" Du wachst am Morgen auf.\n\n Albträume haben dich die ganze Nacht über geplagt. Du hast das Gefühl, dass die Seelen derer die du getötet hast auf deinen Schultern lasten.\n\nWillst du ihnen nachgehen oder zum Berg Oite?");
+                                        nextPosition1 = "Story7L";
+                                        nextPosition2 = "Story7M";
+
+                                        option1button.setText("Seelen nachgehen");
+                                        option2button.setText("Zum Berg Oite");
+                                        option3button.setText("");
+                                        option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));        
+                                        option2button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+                                    }
+
+                                    if (spieler.karma >0){
+                                        mainTextArea.setText(" Du wachst am Morgen auf, frühstückst in Ruhe und machst dich dann auf den Weg zum Berg Oite.\n\nUnterwegs kommst du am Strand vorbei, du fühlst wie das Meer nach dir ruft\n\n Willst du näher zum Meer oder zum Berg Oite?");
+                                        nextPosition1 = "Story7R";
+                                        nextPosition2 = "Story7M";
+                                    
+                                        option1button.setText("zu Wasser");
+                                        option2button.setText("Zum Berg Oite");
+                                        option3button.setText("");
+                                        option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));        
+                                        option2button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+                                    }
+                                   
+                                    
+                                    
+
+                                    break;
+
 
                                         
 
