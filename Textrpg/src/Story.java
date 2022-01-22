@@ -3229,7 +3229,7 @@ nextPosition2 = "";
 mainTextPanel.setVisible(true);
 optionsPanel.setVisible(true);
 mainTextArea.setText("[(Wütender) Bär] wurde besiegt! \n \nDu hast 160 Münzen bekommen!");
-option1button.setText("letzter Gegner");
+option1button.setText("Letzter Gegner");
 option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
 option2button.setText("");
 nextPosition1 = "Vierter Gegner Kampf";
@@ -3243,7 +3243,7 @@ nextPosition2 = "";
 mainTextPanel.setVisible(true);
 optionsPanel.setVisible(true);
 mainTextArea.setText("[(Wilder) Eber] wurde besiegt! \n \nDu hast 140 Münzen bekommen!");
-option1button.setText("nächster Gegner");
+option1button.setText("Nächster Gegner");
 option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
 option2button.setText("");
 nextPosition1 = "Dritter Gegner Kampf";
@@ -3257,7 +3257,7 @@ nextPosition2 = "";
 mainTextPanel.setVisible(true);
 optionsPanel.setVisible(true);
 mainTextArea.setText("[(Wütender) Hirsch] wurde besiegt! \n \nDu hast 120 Münzen bekommen! \n \nJe stärker der Gegner ist, desto mehr Münzen bekommst du!");
-option1button.setText("nächster Gegner");
+option1button.setText("Nächster Gegner");
 option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
 option2button.setText("");
 nextPosition1 = "Zweiter Gegner Kampf";
@@ -3287,7 +3287,7 @@ nextPosition2 = "";
 mainTextPanel.setVisible(true);
 optionsPanel.setVisible(true);
 mainTextArea.setText("[(Ghost) Bär] wurde besiegt! \n \nDu hast 120 Münzen bekommen!");
-option1button.setText("letzter Gegner");
+option1button.setText("Letzter Gegner");
 option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
 option2button.setText("");
 nextPosition1 = "Story7L_5";
@@ -3302,7 +3302,7 @@ nextPosition2 = "";
 mainTextPanel.setVisible(true);
 optionsPanel.setVisible(true);
 mainTextArea.setText("[(Ghost) Eber] wurde besiegt! \n \nDu hast 120 Münzen bekommen!");
-option1button.setText("nächster Gegner");
+option1button.setText("Nächster Gegner");
 option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
 option2button.setText("");
 nextPosition1 = "Story7L_4";
@@ -3318,7 +3318,7 @@ nextPosition2 = "";
 mainTextPanel.setVisible(true);
 optionsPanel.setVisible(true);
 mainTextArea.setText("[(Ghost) Hirsch] wurde besiegt! \n \nDu hast 120 Münzen bekommen!");
-option1button.setText("nächster Gegner");
+option1button.setText("Nächster Gegner");
 option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
 option2button.setText("");
 nextPosition1 = "Story7L_3";
@@ -3333,7 +3333,7 @@ nextPosition2 = "";
 optionsPanel.setVisible(true);
 mainTextArea.setText("[Gladiator lvl 1] wurde besiegt! \n \nDu hast 220 Münzen bekommen!");
 spieler.Gold+= 220;
-option1button.setText("nächster Gegner");
+option1button.setText("Nächster Gegner");
 option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
 option2button.setText("");
         }
@@ -3344,7 +3344,7 @@ option2button.setText("");
 optionsPanel.setVisible(true);
 mainTextArea.setText("[Gladiator lvl 2] wurde besiegt! \n \nDu hast 240 Münzen bekommen!");
 spieler.Gold+= 240;
-option1button.setText("nächster Gegner");
+option1button.setText("Nächster Gegner");
 option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
 option2button.setText("");
         }
@@ -3355,7 +3355,7 @@ option2button.setText("");
 optionsPanel.setVisible(true);
 mainTextArea.setText("[Gladiator lvl 3] wurde besiegt! \n \nDu hast 260 Münzen bekommen!");
 spieler.Gold+= 260;
-option1button.setText("nächster Gegner");
+option1button.setText("Nächster Gegner");
 option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
 option2button.setText("");
         }
@@ -3366,7 +3366,7 @@ option2button.setText("");
 optionsPanel.setVisible(true);
 mainTextArea.setText("[Gladiator lvl 4] wurde besiegt! \n \nDu hast 280 Münzen bekommen!");
 spieler.Gold+= 280;
-option1button.setText("nächster Gegner");
+option1button.setText("Nächster Gegner");
 option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
 option2button.setText("");
         }
@@ -3377,7 +3377,7 @@ option2button.setText("");
 optionsPanel.setVisible(true);
 mainTextArea.setText("[Gladiator lvl 5] wurde besiegt! \n \nDu hast 300 Münzen bekommen!");
 spieler.Gold+= 300;
-option1button.setText("letzter Gladiator");
+option1button.setText("Letzter Gladiator");
 option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
 option2button.setText("");
         }
@@ -3463,7 +3463,7 @@ nextPosition2 = "";
 mainTextPanel.setVisible(true);
 optionsPanel.setVisible(true);
 mainTextArea.setText("[Gorgon1] wurde besiegt! \n \nDu hast 100 Münzen bekommen!");
-option1button.setText("nächster Gegner");
+option1button.setText("Nächster Gegner");
 option1button.setFont(new Font("Times new Roman", Font.PLAIN, 32));
 option2button.setText("");
 nextPosition1 = "StoryR_6...";
@@ -3477,7 +3477,7 @@ nextPosition2 = "";
 mainTextPanel.setVisible(true);
 optionsPanel.setVisible(true);
 mainTextArea.setText("[Gorgon2] wurde besiegt! \n \nDu hast 150 Münzen bekommen!");
-option1button.setText("nächster Gegner");
+option1button.setText("Nächster Gegner");
 option1button.setFont(new Font("Times new Roman", Font.PLAIN, 32));
 option2button.setText("");
 nextPosition1 = "StoryR_6....";
@@ -3591,7 +3591,7 @@ nextPosition2 = "";
                                                 mainTextPanel.setVisible(true);
                         
                                                 mainTextArea.setText("[Delphin lvl 2] wurde besiegt! \n \nDu hast 220 Münzen bekommen!");
-                                                                        option1button.setText("letzter Gegner");
+                                                                        option1button.setText("Letzter Delphin");
                                                                         option2button.setText("");
                                                                         option3button.setText("");
                                                                         option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
@@ -3608,7 +3608,7 @@ nextPosition2 = "";
                                     mainTextPanel.setVisible(true);
             
                                     mainTextArea.setText("[Delphin lvl 1] wurde besiegt! \n \nDu hast 200 Münzen bekommen!");
-                                                            option1button.setText("nächster Gegner");
+                                                            option1button.setText("Nächster Gegner");
                                                             option2button.setText("");
                                                             option3button.setText("");
                                                             option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
@@ -3641,7 +3641,7 @@ nextPosition2 = "";
                                                 mainTextPanel.setVisible(true);
                         
                                                 mainTextArea.setText("[Bandit lvl 1] wurde besiegt! \n \nDu hast 300 Münzen bekommen!");
-                                                                        option1button.setText("nächster Gegner");
+                                                                        option1button.setText("Nächster Bandit");
                                                                         option2button.setText("");
                                                                         option3button.setText("");
                                                                         option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
@@ -3657,12 +3657,20 @@ nextPosition2 = "";
                                                             mainTextPanel.setVisible(true);
                                     
                                                             
-                                                            nextPosition1="Hermes töten";
-                                                            nextPosition2="Hermes verschonen"; 
+                                                            if(spieler.karma>=4){
+                                                                mainTextArea.setText("Du hast also gewonnen. Und was willst du nun mit mir machen, mich töten\n\nWillst du Hermes töten? \n > Hermes töten\n Hermes wird getötet [-4 karma] \n\n > Hermes verschonen\n Hermes wird verschont [+4 karma]");
+                                                                }
+                                                                else{
+                                                                mainTextArea.setText("Du hast also gewonnen.komm töte mich, sowie du Artemis getötet hast\n\nWillst du Hermes töten? \n > Hermes töten\n Hermes wird getötet [-4 karma] \n\n > Hermes verschonen\n Hermes wird verschont [+4 karma]");
+                                                                }
+                                                            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));
+                                                            option2button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
                                                             option1button.setText("Hermes töten");
                                                             option2button.setText("Hermes verschonen");
-                                                                                    option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
-                                                                                    option2button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+                                                            option3button.setText("");
+                                                            nextPosition1 = "Hermes töten";
+                                                            nextPosition2 = "Hermes verschonen";
+                                                            nextPosition3 = "";
 
                                                             
                                                                     }
@@ -7293,7 +7301,7 @@ achievementDif.setVisible(false);
      
         
      
-     nextPosition1="Anfangpart2";
+     nextPosition1="AfterArtemis";
      
      nextPosition2="";
      nextPosition3="";
@@ -7801,21 +7809,27 @@ break;
             mainTextArea.setText("Du öffnest die Tür zum nächsten Raum. Der Bandit steht in der Mitte. Er trägt seltsame Flügel Schuhe und eine Flügelkappe");
             
             option1button.setText("weiter");
-            
+            option2button.setText("");
+            option3button.setText("");
+            option4button.setText("");
+
             nextPosition1="Hermes davor P2";
-            
+            nextPosition2="";
+            nextPosition3="";
+            nextPosition4="";
+
             ;break;
             
             case "Hermes davor P2":
 
-            option1button.setText("weiter");
             option1button.setText("Kampf beginnen");
+            option2button.setText("zurück");
             option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));
             option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
 
             
             if(spieler.karma <0){
-            mainTextArea.setText("\"Willst du mich jetzt töten? So wie du Artemis getötet hast\"\n\nEr geht einen Schritt auf dich zu. \n\"Ich bin Hermes, Sohn des Zeus, Gott der Händer, der Banditen und der Götterbote. \nIch werde deinem Spielchen ein Ende setzen.\"");
+            mainTextArea.setText("\"Willst du mich jetzt töten? Sowie du Artemis getötet hast\"\n\nEr geht einen Schritt auf dich zu. \n\"Ich bin Hermes, Sohn des Zeus, Gott der Händer, der Banditen und der Götterbote. \nIch werde deinem Spielchen ein Ende setzen.\"");
             }
             else{
             mainTextArea.setText("Da bist also tatsächlich drauf reingefallen. Ich bin Hermes, Sohn des Zeus, Gott der Händler, der banditen und der Götterbote. Ich werde dir zeigen, dass du es gegen mich nicht so leicht hast wie gegen Artemis");
@@ -7833,7 +7847,7 @@ break;
             nextPosition2 = "";
             nextPosition3 = "";
 
-            /*
+            
             if (spieler.HermesK == true && spieler.karma == -4){
                 spieler.karma = -8;
             }
@@ -7848,7 +7862,7 @@ break;
             if (spieler.HermesK == false && spieler.karma == 4){
                 spieler.karma = 8;
             }
-            */
+            
 
             mainTextArea.setText(" Du begibst dich in eine Herberge. \n\n Dort ruhst du dich bis zum nächsten Tag aus");
 
@@ -7864,45 +7878,70 @@ break;
             
             spawnEnemy("Bosses", 6);
             optionsPanel.setVisible(false);
-            mainTextPanel.setVisible(false);
-            // Boss hinzufügen (Hermes)
-            
+            mainTextPanel.setVisible(false);            
+            ;break;
+
+            case "After Hermes":
             if(spieler.karma>=4){
-            mainTextArea.setText("Du hast also gewonnen. Und was willst du nun mit mir machen, mich töten");
-            }
-            else{
-            mainTextArea.setText("Du hast also gewonnen.komm töte mich ,so wie du Artemis getötet hast");
-            }
-             
-            option1button.setText("verschonen");
-            option2button.setText("töten");
+                mainTextArea.setText("Du hast also gewonnen. Und was willst du nun mit mir machen, mich töten?\n\nWillst du Hermes töten? \n > Hermes töten\n Hermes wird getötet [-4 karma] \n\n > Hermes verschonen\n Hermes wird verschont [+4 karma]");
+                }
+                else{
+                mainTextArea.setText("Du hast also gewonnen. Komm töte mich, sowie du Artemis getötet hast\n\nWillst du Hermes töten? \n > Hermes töten\n Hermes wird getötet [-4 karma] \n\n > Hermes verschonen\n Hermes wird verschont [+4 karma]");
+                }
+            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));
+            option2button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+            option1button.setText("Hermes töten");
+            option2button.setText("Hermes verschonen");
+            option3button.setText("");
+            nextPosition1 = "Hermes töten";
+            nextPosition2 = "Hermes verschonen";
+            nextPosition3 = "";
+
+            moon_Artemis.setVisible(true);
+
+
             ;break;
             
             case "Hermes töten":
-            spieler.karma=-4;
             nextPosition1 = "Sequel";
+            nextPosition2 = "After Hermes";
             spieler.HermesK = true;
-            option1button.setText("ausruhen");
+            option1button.setText("weiter");
+            option2button.setText("zurück");
             if(spieler.karma<=0){
             mainTextArea.setText("Warte, ich will dir noch eine Sache sagen!\n Mars wird dein Untergang, er wird dich vernichten");
             }
             else{
             mainTextArea.setText("Nun gut vlt. Habe ich das verdient,aber warte noch bevor du mich tötest will ich dir eine Sache sagen. \n Töte Medusa und bring Polydektes ihren Kopf");
             
+
+
             }
+
+            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+            option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+
             ;break;
             
             case "Hermes verschonen":
-            spieler.karma =+4;
             nextPosition1 = "Sequel";
+            nextPosition2 = "After Hermes";
+
             spieler.HermesK = false;
-            option1button.setText("ausruhen");
-            if(spieler.karma==0){
+
+            option1button.setText("weiter");
+            option2button.setText("zurück");
+
+            if(spieler.karma==-4){
             mainTextArea.setText("Du verschonst mich also,obwohl ich dir dein Portmarney geklaut habe und dich reingelegt habe?\n Nun gut zur Belohnung ein Tipp. Besiege die Medusa und bring ihren Kopf zu Polydektes");
             }
-            else if (spieler.karma == 8){
+
+            else if (spieler.karma == 4){
             mainTextArea.setText("Du verschonst mich also. Leider kann ich dir nicht sagen wer dein nächster Gegner ist,aber mein Gefühl sagt mir dass du ihn garnicht suchen musst");
             }
+
+            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+            option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
             
             ;break;
             
@@ -8209,7 +8248,7 @@ nextPosition3 = "";
                                 
                                 nextPosition1 = "StoryR_6+++";
                                 
-                                            option1button.setText("nächster Gegner");
+                                            option1button.setText("Nächster Gegner");
                                             option2button.setText("");
                                             option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
                                             option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
@@ -8227,7 +8266,7 @@ nextPosition3 = "";
                                         
                                         nextPosition1 = "StoryR_6++++";
                                         
-                                                    option1button.setText("nächster Gegner");
+                                                    option1button.setText("Nächster Gegner");
                                                     option2button.setText("");
                                                     option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
                                                     option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
@@ -8245,7 +8284,7 @@ nextPosition3 = "";
                                                 
                                                 nextPosition1 = "StoryR_6+++++";
                                                 
-                                                            option1button.setText("nächster Gegner");
+                                                            option1button.setText("Nächster Gegner");
                                                             option2button.setText("");
                                                             option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
                                                             option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
@@ -8455,7 +8494,7 @@ spawnEnemy("Bosses", 3);
 
                                     optionsPanel.setVisible(false);
                                     mainTextPanel.setVisible(false);
-                           spawnEnemy("Enemies", 0);
+                           spawnEnemy("Enemies", 21);
                                     mainTextArea.setText(" Auf dem Boden sind überall Schlangen auf einmal. \n\nEs kommen aus allen Ecken Gorgonen!");
                             
                             
@@ -8477,7 +8516,7 @@ spawnEnemy("Bosses", 3);
 
                                     optionsPanel.setVisible(false);
                                     mainTextPanel.setVisible(false);
-                           spawnEnemy("Enemies", 0);
+                           spawnEnemy("Enemies", 22);
                                     mainTextArea.setText(" Auf dem Boden sind überall Schlangen auf einmal. \n\nEs kommen aus allen Ecken Gorgonen!");
                             
                             
@@ -8498,7 +8537,7 @@ spawnEnemy("Bosses", 3);
 
                                         optionsPanel.setVisible(false);
                                         mainTextPanel.setVisible(false);
-                               spawnEnemy("Enemies", 0);
+                               spawnEnemy("Enemies", 23);
                                         mainTextArea.setText(" Auf dem Boden sind überall Schlangen auf einmal. \n\nEs kommen aus allen Ecken Gorgonen!");
                                 
                                 
@@ -8640,7 +8679,8 @@ spieler.PolydektesK = false;
                                                     if (spieler.karma <0){
                                                         mainTextArea.setText(" Du wachst am Morgen auf.\n\n Albträume haben dich die ganze Nacht über geplagt. Du hast das Gefühl, dass die Seelen derer die du getötet hast auf deinen Schultern lasten.\n\nWillst du ihnen nachgehen oder zum Berg Oite?");
                                                         nextPosition1 = "Story7L";
-                                                    
+                                                        nextPosition2 = "Story7M";
+
                                                         option1button.setText("Seelen nachgehen");
                                                         option2button.setText("Zum Berg Oite");
                                                         option3button.setText("");
@@ -8651,7 +8691,8 @@ spieler.PolydektesK = false;
                                                     if (spieler.karma >0){
                                                         mainTextArea.setText(" Du wachst am Morgen auf, frühstückst in Ruhe und machst dich dann auf den Weg zum Berg Oite.\n\nUnterwegs kommst du am Strand vorbei, du fühlst wie das Meer nach dir ruft\n\n Willst du näher zum Meer oder zum Berg Oite?");
                                                         nextPosition1 = "Story7R";
-                                                    
+                                                        nextPosition2 = "Story7M";
+
                                                         option1button.setText("Zu Wasser");
                                                         option2button.setText("Zum Berg Oite");
                                                         option3button.setText("");
@@ -8758,6 +8799,44 @@ spieler.PolydektesK = false;
                                                     
                                                         option1button.setText("Kampf beginnen");
                                                         option2button.setText("zurück");
+                                                        option3button.setText("");
+                                                        option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
+                                                        option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                                            
+                                            
+                                                        break;
+
+                                                        case "Story7R_4":; 
+
+
+                                                        optionsPanel.setVisible(false);
+                                                        mainTextPanel.setVisible(false);
+                                                        spawnEnemy("Enemies", 16);
+                                                        option3button.setText("");
+                                                        option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
+                                                        option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                                            
+                                            
+                                                        break;
+
+                                                        case "Story7R_5":; 
+
+                                                        optionsPanel.setVisible(false);
+                                                        mainTextPanel.setVisible(false);
+                                                        spawnEnemy("Enemies", 17);
+                                                        option3button.setText("");
+                                                        option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
+                                                        option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                                            
+                                            
+                                                        break;
+
+                                                        
+                                                        case "Story7R_6":; 
+
+                                                        optionsPanel.setVisible(false);
+                                                        mainTextPanel.setVisible(false);
+                                                        spawnEnemy("Enemies", 18);
                                                         option3button.setText("");
                                                         option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
                                                         option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
@@ -8968,6 +9047,33 @@ spieler.PolydektesK = false;
                                             
                                             
                                                         break;
+
+                                                        case "Story7M_5":;
+                                                        
+                                                        optionsPanel.setVisible(false);
+                                                        mainTextPanel.setVisible(false); 
+                                                        nextPosition1 = "Hydra Kampf";
+
+                                                        spawnEnemy("Enemies", 15);
+                                                        option3button.setText("");
+                                                        option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
+                                                        option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                                            
+                                            
+                                                        break;
+
+                                                        case "Heraktles Kampf":;
+                                                        
+                                                        optionsPanel.setVisible(false);
+                                                        mainTextPanel.setVisible(false); 
+
+                                                        spawnEnemy("Bosses", 5);
+                                                        option3button.setText("");
+                                                        option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
+                                                        option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                                            
+                                            
+                                                        break;
                                                    
                                                     
                                                     case "Last_3e":; 
@@ -9144,22 +9250,7 @@ spawnEnemy("Bosses", 0);
             
             ;break; 
             
-            case "Hermes kampf": 
-            
-            // Boss hinzufügen (Hermes)
-            
-            if(spieler.karma>=4){
-            mainTextArea.setText("Du hast also gewonnen. Und was willst du nun mit mir machen, mich töten");
-            }
-            else{
-            mainTextArea.setText("Du hast also gewonnen.komm töte mich ,so wie du Artemis getötet hast");
-            }
-            
-            nextPosition1="Hermes verschonen";
-            nextPosition2="Hermes töten"; 
-            option1button.setText("verschonen");
-            option2button.setText("töten");
-            ;break;
+
             
            
             //Jetzt karma funktion anwenden

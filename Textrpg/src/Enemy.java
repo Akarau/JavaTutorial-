@@ -30,6 +30,9 @@ public class Enemy {
         "Delphin lvl 3",
         "Bandit lvl 1",
         "Bandit lvl 2",
+        "Gorgon lvl 1",
+        "Gorgon lvl 2",
+        "Gorgon lvl 3",
 
     };
 
@@ -54,6 +57,10 @@ public class Enemy {
         220,
         240,
         300,
+        335,
+        335,
+        335,
+        335,
         335,
 
 
@@ -82,6 +89,10 @@ public class Enemy {
         14,
         15,
         18,
+        18,
+        18,
+        18,
+        18,
 
 
     };
@@ -106,6 +117,11 @@ public class Enemy {
         "Wasser",
         "Wasser",
         "Wasser",
+        "Erde",
+        "Erde",
+        "Erde",
+        "Erde",
+        "Erde",
         "Erde",
         "Erde",
 
@@ -136,6 +152,11 @@ public class Enemy {
         "",
         "",
         "",
+        "",
+        "",
+        "",
+        "",
+        "",
 
 
     };
@@ -152,6 +173,11 @@ public class Enemy {
         "",
         "Ancient",
         "Ancient",
+"",
+"",
+"",
+"",
+"",
 "",
 "",
 "",
@@ -199,6 +225,10 @@ public class Enemy {
 "",
 "",
 "",
+"",
+"",
+"",
+"",
 
 
     };
@@ -216,6 +246,11 @@ public class Enemy {
         "Crystal",
         "Crystal",
         "Hydra",
+        "",
+        "",
+        "",
+        "",
+        "",
         "",
         "",
         "",
@@ -261,6 +296,9 @@ public class Enemy {
         new Color(0,150,255),
         new Color(0,150,255),
         new Color(0,150,255),
+        new Color(0,150,255),
+        new Color(0,150,255),
+        new Color(0,150,255),
 
     };
 
@@ -268,6 +306,10 @@ public class Enemy {
     Color[] difficultyColors = {
         new Color(0,255,60),
         new Color(160,0,255),
+        new Color(25,255,255),
+        new Color(25,255,255),
+        new Color(25,255,255),
+        new Color(25,255,255),
         new Color(25,255,255),
         new Color(25,255,255),
         new Color(25,255,255),
