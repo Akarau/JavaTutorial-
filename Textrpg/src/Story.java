@@ -9683,53 +9683,73 @@ spawnEnemy("Bosses", 0);
             //nextposition setten für teil 9 dass das abgespielt werden soll
             
             
+            case "End":
+            
+            mainTextArea.setText("Nach ein paar Tagen geschieht es, Zeus lädt dich Zeus in den Olymp ein. Du nimmst die Einladung an.\n\nPlötzlich bist du in einem Palast, aus Wolken. Vor dir ist eine Tür. Du öffnest sie \n\nDu läufst zwischen verschiedenen Göttern her.");
+            
+            option1button.setText("weiter");
+            option2button.setText("");
+            nextPosition1 = "End2";
+
+            ;break; 
+
+            case "End2":
+            
+            if (spieler.karma <0){
+                mainTextArea.setText("Hasserfüllt und ängstlich schauen sie dich an\n\nDu gehst an ihnen vorbei auf die nächste Tür zu.\n Du öffnest sie");
+
+            }
+            else{
+                mainTextArea.setText("Lächelnd schauen sie dich an\n\nDu gehst an ihnen vorbei auf die nächste Tür zu.\n Du öffnest sie");
+            }
+            
+            option1button.setText("weiter");
+            option2button.setText("zurück");
+            nextPosition1 = "End3";
+            nextPosition1 = "End";
+
+            ;break; 
+
+            case "End3":
+            
+            if (spieler.karma <0){
+                mainTextArea.setText("\"Du kleiner Mistkerl, wie kannst du es wagen, meine Kinder getötet zu haben?\"");
+
+            }
+            else{
+                mainTextArea.setText("Nun wird sich zeigen, ob du es Wert bist, gegen mich zu kämpfen");
+            }
+            
+            option1button.setText("weiter");
+            option2button.setText("zurück");
+            nextPosition1 = "End4";
+            nextPosition1 = "End2";
+
+            ;break; 
+
+
+            case "End4":
+            
+                mainTextArea.setText("\"Jetzt stehen wir uns endlich Angesicht zu Angesicht gegenüber. Gott oder Mensch wer wied gewinnen?\"");
+
+            
+            option1button.setText("weiter");
+            option2button.setText("zurück");
+            nextPosition1 = "Zeus Kampf";
+            nextPosition1 = "End3";
+
+            ;break; 
+
+            case "Zeus Kampf":
             
             
+            option1button.setText("weiter");
+            option2button.setText("zurück");
+            nextPosition1 = "Zeus Kampf";
+            nextPosition1 = "End2";
+
+            ;break; 
             
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     
             case "AuftragannehmenNein":DerAnfangende();break;
 
