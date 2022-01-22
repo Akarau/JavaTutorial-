@@ -33,6 +33,12 @@ public class Enemy {
         "Gorgon lvl 1",
         "Gorgon lvl 2",
         "Gorgon lvl 3",
+        "Amazone lvl 1",
+        "Amazone lvl 2",
+        "Amazone lvl 3",
+        "Amazone lvl 4",
+        "Amazone lvl 5",
+        "Amazone lvl 6",
 
     };
 
@@ -62,6 +68,12 @@ public class Enemy {
         335,
         335,
         335,
+        220,
+        240,
+        260,
+        280,
+        300,
+        320,
 
 
     };
@@ -93,6 +105,12 @@ public class Enemy {
         18,
         18,
         18,
+        22,
+        24,
+        26,
+        28,
+        30,
+        32,
 
 
     };
@@ -124,6 +142,12 @@ public class Enemy {
         "Erde",
         "Erde",
         "Erde",
+        "Cosmic",
+        "Cosmic",
+        "Cosmic",
+        "Cosmic",
+        "Cosmic",
+        "Cosmic",
 
 
     };
@@ -157,6 +181,12 @@ public class Enemy {
         "",
         "",
         "",
+        "",
+        "",
+        "Lunar",
+        "Lunar",
+        "Lunar",
+        "Lunar",
 
 
     };
@@ -193,6 +223,12 @@ public class Enemy {
 "",
 "",
 "",
+"",
+"",
+"",
+"",
+"Crystal",
+"Crystal",
 
 
     };
@@ -210,6 +246,12 @@ public class Enemy {
         "",
         "",
         "",
+"",
+"",
+"",
+"",
+"",
+"",
 "",
 "",
 "",
@@ -266,6 +308,12 @@ public class Enemy {
         "",
         "",
         "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
 
     };
 
@@ -299,6 +347,12 @@ public class Enemy {
         new Color(0,150,255),
         new Color(0,150,255),
         new Color(0,150,255),
+        new Color(0,150,255),
+        new Color(0,150,255),
+        new Color(0,150,255),
+        new Color(0,150,255),
+        new Color(0,150,255),
+        new Color(0,150,255),
 
     };
 
@@ -306,6 +360,12 @@ public class Enemy {
     Color[] difficultyColors = {
         new Color(0,255,60),
         new Color(160,0,255),
+        new Color(25,255,255),
+        new Color(25,255,255),
+        new Color(25,255,255),
+        new Color(25,255,255),
+        new Color(25,255,255),
+        new Color(25,255,255),
         new Color(25,255,255),
         new Color(25,255,255),
         new Color(25,255,255),

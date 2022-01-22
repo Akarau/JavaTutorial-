@@ -3328,6 +3328,80 @@ nextPosition2 = "";
         }
 
 
+        if (nextPosition1 == "StoryR_6!!!!!!"){
+            endFight();
+            mainTextPanel.setVisible(true);
+optionsPanel.setVisible(true);
+mainTextArea.setText("[Amazone lvl 6] wurde besiegt! \n \nDu hast 320 Münzen bekommen!");
+spieler.Gold+= 320;
+option1button.setText("weiter");
+option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+option2button.setText("");
+nextPosition1 = "StoryR_6+++++++";
+}
+
+        if (nextPosition1 == "StoryR_6!!!!!"){
+            endFight();
+            mainTextPanel.setVisible(true);
+optionsPanel.setVisible(true);
+mainTextArea.setText("[Amazone lvl 5] wurde besiegt! \n \nDu hast 300 Münzen bekommen!");
+spieler.Gold+= 300;
+option1button.setText("Letzte Amazone");
+option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+option2button.setText("");
+nextPosition1 = "StoryR_6!!!!!!";
+        }
+
+        if (nextPosition1 == "StoryR_6!!!!"){
+            endFight();
+            mainTextPanel.setVisible(true);
+optionsPanel.setVisible(true);
+mainTextArea.setText("[Amazone lvl 4] wurde besiegt! \n \nDu hast 280 Münzen bekommen!");
+spieler.Gold+= 280;
+option1button.setText("Nächster Gegner");
+option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+option2button.setText("");
+nextPosition1 = "StoryR_6!!!!!";
+        }
+
+
+        if (nextPosition1 == "StoryR_6!!!"){
+            endFight();
+            mainTextPanel.setVisible(true);
+optionsPanel.setVisible(true);
+mainTextArea.setText("[Amazone lvl 3] wurde besiegt! \n \nDu hast 260 Münzen bekommen!");
+spieler.Gold+= 260;
+option1button.setText("Nächster Gegner");
+option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+option2button.setText("");
+nextPosition1 = "StoryR_6!!!!";
+        }
+
+        if (nextPosition1 == "StoryR_6!!"){
+            endFight();
+            mainTextPanel.setVisible(true);
+optionsPanel.setVisible(true);
+mainTextArea.setText("[Amazone lvl 2] wurde besiegt! \n \nDu hast 240 Münzen bekommen!");
+spieler.Gold+= 240;
+option1button.setText("Nächster Gegner");
+option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+option2button.setText("");
+nextPosition1 = "StoryR_6!!!";
+        }
+
+        if (nextPosition1 == "StoryR_6!"){
+            endFight();
+            mainTextPanel.setVisible(true);
+optionsPanel.setVisible(true);
+mainTextArea.setText("[Amazone lvl 1] wurde besiegt! \n \nDu hast 220 Münzen bekommen!");
+spieler.Gold+= 220;
+option1button.setText("Nächster Gegner");
+option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+option2button.setText("");
+nextPosition1 = "StoryR_6!!";
+        }
+
+
   if (nextPosition1 == "StoryR_6++"){
             endFight();
             mainTextPanel.setVisible(true);
@@ -8245,7 +8319,7 @@ nextPosition3 = "";
 
                     if (spieler.karma >= 4){
                         mainTextArea.setText(" Nach dem du gefrühstückt, gehst du nach draußen. Dort siehst du eine weiße Taube sie schaut dich seltsam an und fliegt dann los. Dein Gefühl sagt dir du solltest der Taube folgen. Du folgst ihr. Nach einiger Zeit kommt ihr an einem Tempel an die Taube fliegt hinein, du gehst ihr nach. \n\nWieder ein Raum, du wartest auf die Gegner, damit du die Tür öffnen kannst.");
-                        nextPosition1 = "StoryR_6+";
+                        nextPosition1 = "StoryR_6!";
                         nextPosition2 = "AfterApollon";
                         option1button.setText("Kampf beginnen");
                         option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
@@ -8264,14 +8338,115 @@ nextPosition3 = "";
                 
                             break;
 
+
+                            case "StoryR_6!":; 
+
+                            optionsPanel.setVisible(false);
+                            mainTextPanel.setVisible(false);
+                            spawnEnemy("Enemies", 24);
+                                                   
+                                                
+                                    option1button.setText("Kampf beginnen");
+                                    option2button.setText("zurück");
+                                    option3button.setText("");
+                                    option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
+                                    option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                        
+                        
+                        
+                                    break;
+
+                                    case "StoryR_6!!":; 
+
+                                    optionsPanel.setVisible(false);
+                                    mainTextPanel.setVisible(false);
+                                    spawnEnemy("Enemies", 25);
+                                                           
+                                                        
+                                            option1button.setText("Kampf beginnen");
+                                            option2button.setText("zurück");
+                                            option3button.setText("");
+                                            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
+                                            option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                                
+                                
+                                
+                                            break;
+
+                                            case "StoryR_6!!!":; 
+
+                                            optionsPanel.setVisible(false);
+                                            mainTextPanel.setVisible(false);
+                                            spawnEnemy("Enemies", 26);
+                                                                   
+                                                                
+                                                    option1button.setText("Kampf beginnen");
+                                                    option2button.setText("zurück");
+                                                    option3button.setText("");
+                                                    option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
+                                                    option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                                        
+                                        
+                                        
+                                                    break;
+
+                                                    case "StoryR_6!!!!":; 
+
+                                                    optionsPanel.setVisible(false);
+                                                    mainTextPanel.setVisible(false);
+                                                    spawnEnemy("Enemies", 27);
+                                                                           
+                                                                        
+                                                            option1button.setText("Kampf beginnen");
+                                                            option2button.setText("zurück");
+                                                            option3button.setText("");
+                                                            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
+                                                            option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                                                
+                                                
+                                                
+                                                            break;
+
+                                                            case "StoryR_6!!!!!":; 
+
+                                                            optionsPanel.setVisible(false);
+                                                            mainTextPanel.setVisible(false);
+                                                            spawnEnemy("Enemies", 28);
+                                                                                   
+                                                                                
+                                                                    option1button.setText("Kampf beginnen");
+                                                                    option2button.setText("zurück");
+                                                                    option3button.setText("");
+                                                                    option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
+                                                                    option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                                                        
+                                                        
+                                                        
+                                                                    break;
+
+                                                                    case "StoryR_6!!!!!!":; 
+
+                                                                    optionsPanel.setVisible(false);
+                                                                    mainTextPanel.setVisible(false);
+                                                                    spawnEnemy("Enemies", 29);
+                                                                                           
+                                                                                        
+                                                                            option1button.setText("Kampf beginnen");
+                                                                            option2button.setText("zurück");
+                                                                            option3button.setText("");
+                                                                            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
+                                                                            option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                                                                
+                                                                
+                                                                
+                                                                            break;
+
                             case "StoryR_6+":; 
 
                             optionsPanel.setVisible(false);
                             mainTextPanel.setVisible(false);
                             spawnEnemy("Enemies", 9);
-                           
-                                mainTextArea.setText(" Auf dem Boden sind überall Schlangen auf einmal. \n\nEs kommen aus allen Ecken Gorgonen!");
-                        
+                                                   
                         
                         nextPosition1 = "StoryR_6++";
                         nextPosition2 = "StoryR_6";
