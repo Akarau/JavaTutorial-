@@ -405,6 +405,7 @@ public class Enemy {
         "Heraktles",
         "Hermes",
         "Poseidon",
+        "Ares",
     };
 
 
@@ -416,6 +417,7 @@ public class Enemy {
         1500,
         800,
         150,
+        400,
         400,
 
     };
@@ -429,6 +431,7 @@ public class Enemy {
         14,
         25,
         24,
+        (int) (Math.random()* 10 * Math.random() * 9),
 
     };
 
@@ -437,6 +440,7 @@ public class Enemy {
         new Color(225,225,225),
         new Color(255,205,40),
         new Color(0,255,80),
+        new Color(255,135,0),
         new Color(255,135,0),
         new Color(255,135,0),
         new Color(255,135,0),
@@ -454,6 +458,7 @@ public class Enemy {
         "Ancient",
         "Licht",
         "Wasser",
+        "Erde",
 
     };
 
@@ -467,6 +472,7 @@ public class Enemy {
         "Cosmic",
         "Ancient",
         "Licht",
+        "",
 
 
     };
@@ -480,6 +486,7 @@ public class Enemy {
         "Crystal",
         "",
         "Wind",
+        "",
 
 
     };
@@ -491,6 +498,7 @@ public class Enemy {
         "Fire",
         "",
         "Erde",
+        "",
         "",
         "",
 
@@ -506,6 +514,7 @@ public class Enemy {
         "Hard++",
         "Hermes++",
         "",
+        "",
 
     };
 
@@ -514,6 +523,7 @@ public class Enemy {
         new Color(160,0,255),
         new Color(25,255,255),
         new Color(25,255,255),
+        new Color(255,135,0),
         new Color(255,135,0),
         new Color(255,135,0),
         new Color(255,135,0),

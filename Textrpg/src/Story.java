@@ -3458,7 +3458,7 @@ option2button.setText("");
         }
         
 
-        if (nextPosition1 == "StoryR_6+++++++"){
+        if (nextPosition1 == "After Gladiators"){
             endFight();
             mainTextPanel.setVisible(true);
 optionsPanel.setVisible(true);
@@ -3767,6 +3767,34 @@ nextPosition2 = "";
                                                                         option2button.setText("");
                                                                         option3button.setText("");
                                                                         nextPosition1 = "End";
+                                                                        nextPosition2 = "";
+                                                                        nextPosition3 = "";
+            
+                                                                        
+                                                                                }
+
+
+                                                                               
+                                                                                
+                                                                                
+
+
+                                                                                                                                
+                                                                    if (nextPosition1 == "Ares Kampf"){
+                                                                        endFight();
+                                                                        optionsPanel.setVisible(true);
+                                                                        mainTextPanel.setVisible(true);
+                                                
+                                                                        
+                                                                       mainTextArea.setText("Du Mistkerl! Verflucht seist du! Ares spuckt dir ins Gesicht. Du schlägst ihm ins Gesicht. Und forderst ihn auf dir zu sagen wo der nächste Tempel ist.\"Und was ist wenn nicht? Töten kannst du mich nicht\" Du schlägst Ares immer und immer wieder ins Gesicht. Bis er es dir verrät\n\"Ist ja gut, ist ja gut. Ich verrate es dir ja. Gehe auf den Berg Oite, dort wird dein letzter Gegner vor Zeus warten!\"");
+                                                                            
+                                                                            
+                                                                        option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));
+                                                                        option2button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+                                                                        option1button.setText("weiter");
+                                                                        option2button.setText("");
+                                                                        option3button.setText("");
+                                                                        nextPosition1 = "After Ares";
                                                                         nextPosition2 = "";
                                                                         nextPosition3 = "";
             
@@ -6382,6 +6410,12 @@ public void specialCombat() throws InterruptedException{
         }
     }
 
+    if (nextPosition1 == "Ares Kampf" && spieler.reflection == false && spieler.currentEnemyHP > 0){
+
+       spieler.CurrentEnemyPower = (int) (45 + (45 * (Math.random())));
+
+    }
+
 }
 
 
@@ -7422,7 +7456,7 @@ achievementDif.setVisible(false);
      
         
      
-     nextPosition1="Anfangpart2";
+     nextPosition1="After Gladiators";
      
      nextPosition2="";
      nextPosition3="";
@@ -8122,18 +8156,29 @@ break;
             ;break;
             //hier next position setten   
             case "Ares töten":
-            mainTextArea.setText("Du mistkerl ich habe es dir verrat... \n\n Ares sein Kopf rollt zu Boden. Du verlässt den Tempel und suchst Rast");
+            mainTextArea.setText("Du Mistkerl ich habe es dir verrat... \n\n Ares sein Kopf rollt zu Boden. Du verlässt den Tempel und suchst Rast");
             option1button.setText("weiter");
-            nextPosition1="";
-            spieler.karma=-4;
+            nextPosition1="Story7";
+            nextPosition2 = "After Ares";
+           spieler.AresK = true;
+           option1button.setText("weiter");
+           option2button.setText("zurück");
+           option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));        
+           option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                                                                                
+
             ;break;
             // hier auch
             
             case "Ares verschonen":
-            mainTextArea.setText("Du verlässt den Tempel um Rast zu suchen");
+            mainTextArea.setText("Du verlässt den Tempel, um Rast zu suchen");
+            nextPosition1="Story7";
+            nextPosition2 = "After Ares";
+            spieler.AresK = false;
             option1button.setText("weiter");
-            spieler.karma=+4;
-            nextPosition1="";
+            option2button.setText("zurück");
+            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));        
+            option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
             ;break;
             
             //nextposition setten für teil 9 dass das abgespielt werden soll
@@ -8306,7 +8351,10 @@ nextPosition3 = "";
                         nextPosition1 = "StoryR_6+";
                         nextPosition2 = "Sequel";
                         option1button.setText("Kampf beginnen");
+                        option2button.setText("");
+                        option3button.setText("");
                         option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));     
+                        option2button.setFont(new Font("Times new Roman", Font.PLAIN, 35));     
 
                     }
 
@@ -8550,6 +8598,83 @@ nextPosition3 = "";
                                                 
                                                 
                                                             break;
+
+                                                            case "After Gladiators":; 
+
+                                                    optionsPanel.setVisible(true);
+                                                    mainTextPanel.setVisible(true);
+                                                                                   
+                                                    mainTextArea.setText(" Gut du hast es geschafft. Du öffnest die Tür zum nächsten Raum. \n \nVor dir steht er also: Mars.");
+
+                                                nextPosition1 = "After Gladiators2";
+                                                
+                                                            option1button.setText("weiter");
+                                                            option2button.setText("");
+                                                            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));        
+                                                            option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                                                
+                                                
+                                                
+                                                            break;
+
+
+                                                            case "After Gladiators2":; 
+
+                                                            optionsPanel.setVisible(true);
+                                                            mainTextPanel.setVisible(true);
+                                                                                           
+                                                            mainTextArea.setText("\"Da bist du ja. Ich bin Ares, der Gott des blutrünstigen Krieges und Sohn des Zeus.  Ich bin dafür bekannt der blutrünstigste, grausamste und unbarmherzigste Gott zu sein. Aber das ist belanglos, denn die Information bringt einem Toten nichts! Also sag mir, wie willst du sterben? Muhahaha\"");
+        
+                                                        nextPosition1 = "Ares Kampf";
+                                                        
+                                                                    option1button.setText("Kampf beginnen");
+                                                                    option2button.setText("");
+                                                                    option1button.setFont(new Font("Times new Roman", Font.PLAIN, 38));        
+                                                                    option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                                                        
+                                                        
+                                                        
+                                                                    break;
+
+
+                                                                    case "Ares Kampf":; 
+
+                                                                    optionsPanel.setVisible(false);
+                                                                    mainTextPanel.setVisible(false);
+                                                                                                   
+                                                                                
+                                                                    spawnEnemy("Bosses", 8);
+                                                                            option1button.setText("weiter");
+                                                                            option2button.setText("");
+                                                                            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));        
+                                                                            option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+                                                                
+                                                                
+                                                                
+                                                                            break;
+
+
+                                                                            case "After Ares":; 
+
+                                                                            optionsPanel.setVisible(true);
+                                                                            mainTextPanel.setVisible(true);
+
+                                                                            nextPosition1 = "Ares töten";
+                                                                            nextPosition2 = "Ares verschonen";
+
+                                                                                                           
+                                                                            mainTextArea.setText(" Willst du Ares töten? \n > Ares töten\n Ares wird getötet [-4 karma] \n\n > Ares verschonen\n Ares wird verschont [+4 karma]");
+
+                                                                                    option1button.setText("Ares töten");
+                                                                                    option2button.setText("Ares verschonen");
+                                                                                    option1button.setFont(new Font("Times new Roman", Font.PLAIN, 38));        
+                                                                                    option2button.setFont(new Font("Times new Roman", Font.PLAIN, 35));
+                                                                        
+                                                                        
+                                                                        
+                                                                                    break;
+
+
 
                                                             case "StoryR_6+++++++":; 
 
@@ -8887,6 +9012,9 @@ spieler.PolydektesK = false;
 
                                                             case "Story7":; 
 
+
+                                                            System.out.println(spieler.karma);
+
                                                             if (spieler.PolydektesK == true){
                                                                 spieler.karma-=4;
                                                             }
@@ -8895,7 +9023,18 @@ spieler.PolydektesK = false;
                                                                 spieler.karma+=4;
                                                             }
 
-                
+                                                            if (spieler.AresK == true){
+                                                                spieler.karma-=4;
+                                                            }
+                                                            System.out.println(spieler.karma);
+
+
+                                                            if (spieler.AresK == false){
+                                                                spieler.karma+=4;
+                                                            }
+
+
+                                                            System.out.println(spieler.karma);
                 
                 
                                                     if (spieler.karma <0){
@@ -8935,6 +9074,14 @@ spieler.PolydektesK = false;
                                                         spieler.karma+=4;
                                                     }
 
+
+                                                    if (spieler.AresK == true){
+                                                        spieler.karma-=4;
+                                                    }
+
+                                                    if (spieler.AresK == false){
+                                                        spieler.karma+=4;
+                                                    }
         
         
         

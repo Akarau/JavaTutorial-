@@ -44,6 +44,7 @@ public class CuPower {
      Boolean PolydektesK = false;
      Boolean AtheneK = false;
      Boolean HermesK = false;
+     Boolean AresK = false;
 
      // Enemy //
 
