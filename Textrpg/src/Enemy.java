@@ -413,7 +413,7 @@ public class Enemy {
 
     int bossesHP[] = {
         400,
-        240,
+        240, // Artemis
         360,
         400,
         1500,
@@ -428,7 +428,7 @@ public class Enemy {
 
     int bossesPower[] = {
         70,
-        22,
+        22, // Artemis
         40,
         22,
         10,
@@ -443,14 +443,14 @@ public class Enemy {
 
     Color[] bossesColors = {
         new Color(0,255,80),
-        new Color(225,225,225),
-        new Color(255,205,40),
-        new Color(0,255,80),
+        new Color(20,0,100),
+        new Color(80,0,0),
+        new Color(0,80,40),
+        new Color(255,40,0),
         new Color(255,135,0),
-        new Color(255,135,0),
-        new Color(255,135,0),
-        new Color(255,135,0),
-        new Color(255,135,0),
+        new Color(0,185,255),
+        new Color(0,50,255),
+        new Color(200,145,0),
         new Color(255,255,255),
         new Color(255,45,0),
 
@@ -458,9 +458,9 @@ public class Enemy {
 
 
     String boss_Main_Materias[] = {
-        "Cosmic",
-        "Fire",
-        "Fire",
+        "Erde",
+        "Lunar",
+        "Licht",
         "Licht",
         "Feuer",
         "Ancient",
@@ -475,9 +475,9 @@ public class Enemy {
 
     String boss_Second_Materias[] = {
         "Void",
-        "Fire",
-        "Fire",
-        "Fire",
+        "Licht",
+        "Feuer",
+        "Erde",
         "Erde",
         "Cosmic",
         "Ancient",
@@ -492,9 +492,9 @@ public class Enemy {
 
     String boss_Third_Materias[] = {
         "Ancient",
-        "Fire",
-        "Fire",
-        "Fire",
+        "",
+        "",
+        "Ancient",
         "Licht",
         "Crystal",
         "",
@@ -507,14 +507,14 @@ public class Enemy {
     };
 
     String boss_Last_Materias[] = {
-        "Luck",
-        "Fire",
-        "Fire",
-        "Fire",
         "",
+        "",
+        "",
+        "",
+        "Lunar",
         "Erde",
         "",
-        "",
+        "Crystal",
         "",
         "Gravity",
         "Void",
@@ -524,16 +524,16 @@ public class Enemy {
 
     String bossDifficulty[] = {
         "Hard",
-        "Fire",
-        "Fire",
-        "Fire",
+        "Normal",
+        "Normal",
+        "Hard",
         "Hard++",
         "Hard++",
-        "Hermes++",
-        "",
-        "",
-        "Schwierig",
-        "hard",
+        "Normal",
+        "Hard++",
+        "Hard",
+        "Extrem",
+        "Extrem",
 
     };
 

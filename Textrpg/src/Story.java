@@ -2743,6 +2743,7 @@ DerAnfang();
        iPanel.setVisible(false);
        inventarPanel.setVisible(false);
        shop_options.setVisible(false);
+       chosen_Main_Element.setVisible(false);
 
 at = 1;
         }
@@ -2759,6 +2760,7 @@ at = 1;
             iPanel.setVisible(false);
             inventarPanel.setVisible(false);
             shop_options.setVisible(false);
+            chosen_Main_Element.setVisible(false);
 
 
              }
@@ -2774,7 +2776,8 @@ at = 1;
                 iPanel.setVisible(false);
                 inventarPanel.setVisible(false);
                 shop_options.setVisible(false);
-    
+                chosen_Main_Element.setVisible(false);
+
                  }
 
 
@@ -6992,7 +6995,7 @@ public void specialCombat() throws InterruptedException{
             specialEffectText.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Bosses\\Apollon.png")
                     .getImage().getScaledInstance(40, 35, Image.SCALE_AREA_AVERAGING)));
                     specialEffectText.setText("Weniger Schaden");
-                    spieler.currentEnemyHP -= (Math.random() * damg);
+                    spieler.currentEnemyHP += (Math.random() * damg);
                     enemyInfoHP.setText("          " +spieler.currentEnemyHP);     
                     Thread.sleep(spieler.t3 * 15);
         specialEffectText.setVisible(false);
@@ -7105,6 +7108,7 @@ fightPlayButton.setVisible(true);
 
         if (File == "Bosses"){
             standardE();
+            
 
             spieler.file = "Bosses";
             spieler.index = Index;
@@ -7147,6 +7151,9 @@ if (en.bosses[Index] == "Athene"){
     elementImage.setBounds(400,280,400,400);
 
 }
+
+
+
 
 enemyImage.setBounds(500,280,400,400);
 
@@ -8073,7 +8080,7 @@ achievementDif.setVisible(false);
      
         
      
-     nextPosition1="Hermes Kampf";
+     nextPosition1="Artemis Kampf";
      
      nextPosition2="";
      nextPosition3="";
@@ -8654,6 +8661,7 @@ break;
             case "Hermes Kampf": 
             
             spawnEnemy("Bosses", 6);
+            spieler.HealthB = spieler.Health;
             optionsPanel.setVisible(false);
             mainTextPanel.setVisible(false);            
             ;break;
