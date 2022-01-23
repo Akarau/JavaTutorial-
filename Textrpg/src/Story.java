@@ -3632,6 +3632,8 @@ nextPosition2 = "";
             optionsPanel.setVisible(true);
             mainTextArea.setText("\"Herzlichen, herzlichen Glückwunsch! Du hast also gewonnen. Los komm töte mi…\"\n\nDu hast Hades den Kopf abgehackt, du bist wieder an der Oberfläche.");
             
+            Award("W", 1, "Hades Blades", "Hades Blades \nerhalten", "Textrpg\\Images\\weapons\\Hades Blades.png");
+inventory.putIfAbsent("Hades Blades", 1);
             spieler.karma -= 4;
             option1button.setText("weiter");
             option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
@@ -6064,7 +6066,7 @@ for (int xi = 0; xi<= 120; xi++){
                     playerInfoHP.setText("          " +spieler.Health);
                     mainTextPanel.setVisible(true);
                     fighting_options.setVisible(false);
-                    mainTextArea.setText("Du hast verloren.\n\nKampf wieder gestellt");
+                    mainTextArea.setText("Du hast verloren.\n\nKampf wird wieder gestellt");
                     endFight();
                     Thread.sleep(2000);
                     spawnEnemy(spieler.file, spieler.index);
@@ -6858,6 +6860,24 @@ moon_Artemis.setVisible(false);
 moon_Artemis.setVisible(false);
         }
 
+        if (nextPosition1 == "Hades Kampf"){
+            specialEnemyP.setVisible(true);
+            specialEnemyP2.setVisible(true);
+            specialEnemyI.setVisible(true);
+            specialEnemyT.setVisible(true);
+
+            //specialEnemyP2.setBounds(400, 40, 500, 40);
+
+            specialEnemyP.setBounds(400, 40, (int) (spieler.currentEnemyHP/3), 40);
+            specialEnemyP.setBackground(en.bossesColors[2]);
+            specialEnemyI.setBounds((int) (360 +(spieler.currentEnemyHP/3)), 0, 265, 120);
+            specialEnemyT.setBounds((int) (328 +(spieler.currentEnemyHP/3)), 100, 250, 40);
+            specialEnemyI.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\weapons\\Hades Blades.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));       
+            specialEnemyT.setForeground(new Color(255,205,40));
+            specialEnemyT.setText("Hades Blades");
+moon_Artemis.setVisible(false);
+        }
+
     }
 
 }
@@ -6946,6 +6966,9 @@ public void specialCombat() throws InterruptedException{
         specialEffectText2.setVisible(false);
         }
      }
+
+     setSpecialWeapon("W");
+
 
 }
 
@@ -7992,7 +8015,7 @@ achievementDif.setVisible(false);
      
         
      
-     nextPosition1="Poseidon Kampf";
+     nextPosition1="Hades Kampf";
      
      nextPosition2="";
      nextPosition3="";
@@ -9952,6 +9975,7 @@ spieler.PolydektesK = false;
                                                         optionsPanel.setVisible(false);
                                                         mainTextPanel.setVisible(false);
                                                         spawnEnemy("Bosses", 4);
+                                                        setSpecialWeapon("W");
                                                         spieler.HealthB = spieler.Health;
 
                                                         mainTextArea.setText("\"Herzlichen, herzlichen Glückwunsch! Du hast also gewonnen. Los komm töte mi…\"\n\nDu hast Hades den Kopf abgehackt, du bist wieder an der Oberfläche.");

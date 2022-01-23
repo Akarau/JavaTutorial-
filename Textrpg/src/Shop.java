@@ -12,6 +12,7 @@ public class Shop {
         "The Warrior",
         "Artemis Pfeil",
         "Lichtbogen",
+        "Hades Blades",
         "Standard Shield",
         "Aqua Shield",
         "Python Rüstung",
@@ -30,6 +31,7 @@ public class Shop {
         "The Warrior",
         "Artemis Pfeil",
         "Lichtbogen",
+        "Hades Blades",
     };
 
     String schwerteInv[] = {
@@ -60,6 +62,7 @@ public class Shop {
         new Color(120,0,150),
         new Color(120,0,150),
         new Color(120,0,150),
+        new Color(120,0,150),
 
     };
 
@@ -72,6 +75,7 @@ public class Shop {
 1.50f,
 1.15f,
 1.25f,
+1.40f,
     };
 
     int[] weaponsPreis = {
@@ -80,6 +84,7 @@ public class Shop {
         1000,
         2000,
         5000,
+        0,
         0,
         0,
 
@@ -91,9 +96,10 @@ public class Shop {
                 " -Gibt 10% mehr Kraft",
                 " -Gibt 20% mehr Kraft",
                 " -Gibt 30% mehr Kraft",
-                " -Gibt 50% mehr Kraft                                                                               -Gibt 10% mehr HP ",
+                " -Gibt 50% mehr Kraft",
                 " -Gibt 15% mehr Kraft",
                 " -Gibt 25% mehr Kraft",
+                " -Gibt 40% mehr Kraft",
 
 
             };
@@ -106,6 +112,7 @@ public class Shop {
                 "Textrpg\\Images\\weapons\\The Warrior.png",
                 "Textrpg\\Images\\weapons\\Artemis Pfeil.png",
                 "Textrpg\\Images\\weapons\\Lichtbogen.png",
+                "Textrpg\\Images\\weapons\\Hases Blades.png",
 
             };
 
