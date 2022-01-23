@@ -3498,6 +3498,7 @@ spieler.Gold+= 320;
 option1button.setText("weiter");
 option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
 option2button.setText("");
+nextPosition1 = "After Gladiators";
 nextPosition2 = "";
         }
 
@@ -8080,7 +8081,7 @@ achievementDif.setVisible(false);
      
         
      
-     nextPosition1="Artemis Kampf";
+     nextPosition1="Anfangpart2";
      
      nextPosition2="";
      nextPosition3="";
@@ -9230,7 +9231,7 @@ nextPosition3 = "";
                                                     spieler.HealthB = spieler.Health;
                        
                                                 
-                                                nextPosition1 = "StoryR_6+++++++";
+                                                nextPosition1 = "After Gladiators";
                                                 
                                                             option1button.setText("weiter");
                                                             option2button.setText("");
