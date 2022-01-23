@@ -6,7 +6,7 @@ import javax.swing.JPanel;
 public class CuPower {
 
 
-      int Gold = 50000;
+      int Gold = 2000;
       int Power = 50;
       int Points = 10;
       int Health = 250;
