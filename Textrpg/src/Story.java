@@ -493,7 +493,7 @@ mainTextArea.setOpaque(false);
         option3 = new JButton("   Exit   ");
         option3.setForeground(Color.white);
         option3.setFont(new Font("Times new Roman", Font.PLAIN, 30));
-        option3.setBounds(500, 500, 350, 350);
+        option3.setBounds(500, 400, 350, 350);
         option3.setSize(300, 70);
         option3.setBackground(Color.black);
         option3.setVisible(true);
@@ -1970,7 +1970,7 @@ boostB.add(si);
         eShop.add(iShop);
         frame.add(optionsmenu);
         frame.add(option1);
-        frame.add(option2);
+      //  frame.add(option2);
         frame.add(option3);
         frame.add(panel1);
         optionsmenu.add(options_c);
@@ -2656,6 +2656,7 @@ if (shop.getComponent(s).getName().equals("Special_Sword")){
             spieler.Main_Element = chosen_Main_Element_Name.getText();
             choose_Element.setActionCommand("Second_Choose");
             commbox.setText(" Wähle jetzt ein zweites Element aus.");
+            commbox.setVisible(true);
 
 
 
@@ -2856,6 +2857,7 @@ at = 1;
 
                 commbox.setText(Elemente.elements[v] + " " + Elemente.elementsWeaks[v]);
 
+                commbox.setVisible(false);
             }
         }
 
@@ -8064,7 +8066,7 @@ achievementDif.setVisible(false);
      
         
      
-     nextPosition1="Hades Kampf";
+     nextPosition1="Anfangpart2";
      
      nextPosition2="";
      nextPosition3="";
