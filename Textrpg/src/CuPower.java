@@ -7,9 +7,9 @@ public class CuPower {
 
 
       int Gold = 50000;
-      int Power = 500;
-      int Points = 50;
-      int Health = 5;
+      int Power = 50;
+      int Points = 10;
+      int Health = 250;
       int HealthB;
       int karma = 0;
       int MaxHealth;
@@ -28,7 +28,7 @@ public class CuPower {
      String powerBoostIcon = "Textrpg\\Images\\Swords\\Double swords.png";
      String powerBoostName = "";
      String hpBoostName = "";
-     float hpBoost = 1.05f;
+     float hpBoost = 1f;
 
      // Enemy //
      String file;

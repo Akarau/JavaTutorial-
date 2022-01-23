@@ -76,7 +76,6 @@ public class Story implements ActionListener {
     static JButton option3;
     static JButton options_c;
     static JButton options_ts;
-    static JButton commboxnext;
     JLabel moon_Artemis;
     JButton tex;
     JButton b;
@@ -109,7 +108,6 @@ public class Story implements ActionListener {
     static JLabel i7;
     static JButton powerUpgradeButton;
     static JButton healthUpgradeButton;
-    static JButton goldUpgradeButton;
     static JLabel pointsText;
 
     // upgrades //
@@ -900,7 +898,7 @@ mainTextArea.setOpaque(false);
        fightPlayButton = new JPanel();
        fightPlayButton.setForeground(new Color(255, 0, 150));
        fightPlayButton.setFont(new Font("Times new Roman", Font.PLAIN, 60));
-       fightPlayButton.setBounds(150, 250, 240, 160);
+       fightPlayButton.setBounds(10, 265, 240, 160);
        fightPlayButton.setBackground(Color.black);
        fightPlayButton.setVisible(false);
        fightPlayButton.setOpaque(false);
@@ -1109,17 +1107,6 @@ mainTextArea.setOpaque(false);
         healthUpgradeButton.setActionCommand("HealthUpgrade");
         healthUpgradeButton.setBorder(new LineBorder(Color.white));
 
-        goldUpgradeButton = new JButton();
-        goldUpgradeButton.setForeground(new Color(255, 255, 255));
-        goldUpgradeButton.setFont(new Font("Times new Roman", Font.PLAIN, 60));
-        goldUpgradeButton.setBounds(0, 0, 0, 0);
-        goldUpgradeButton.setBackground(Color.black);
-        goldUpgradeButton.setVisible(true);
-        goldUpgradeButton.setFocusable(false);
-        goldUpgradeButton.setAlignmentX(80);
-        goldUpgradeButton.addActionListener(this);
-        goldUpgradeButton.setActionCommand("GoldUpgrade");
-        goldUpgradeButton.setBorder(new LineBorder(Color.white));
 
         pointsText = new JLabel(" Points:  " + spieler.Points);
         pointsText.setForeground(new Color(255, 255, 255));
@@ -1194,12 +1181,10 @@ mainTextArea.setOpaque(false);
 
         powerUpgradeButton.add(i5);
         healthUpgradeButton.add(i6);
-        goldUpgradeButton.add(i7);
 
         upgradeMenu.add(pointsText);
         upgradeMenu.add(powerUpgradeButton);
         upgradeMenu.add(healthUpgradeButton);
-        upgradeMenu.add(goldUpgradeButton);
 
         elementsMenu = new JPanel();
         elementsMenu.setBounds(200, 80, 750, 455);
@@ -1930,20 +1915,7 @@ boostB.add(si);
 
         JButton color;
 
-        commboxnext = new JButton(">");
-        commboxnext.setForeground(new Color(255, 255, 255));
-        commboxnext.setFont(new Font("Arial", Font.PLAIN, 25));
-        commboxnext.setBounds(700, 500, 75, 35);
-        commboxnext.setBackground(Color.black);
-        commboxnext.setVisible(true);
-        commboxnext.setFocusable(false);
-        commboxnext.setAlignmentX(80);
-        commboxnext.addActionListener(this);
-        commboxnext.setActionCommand("commboxnext1");
-        commboxnext.setBorder(new LineBorder(Color.white));
-
-        frame.add(commboxnext);
-
+    
         for (int c = 0; c < colors.length; c++) {
 
             color = new JButton("   " + colors[c] + "   ");
@@ -2411,7 +2383,7 @@ if (scl.boosts[s] == "Reflection" && chosen_Main_Element_Name.getText() == "Refl
                 }
             }
         }
-
+/*
         if (e.getActionCommand() == "GoldUpgrade") {
             if (spieler.Points >= 1) {
                 spieler.GoldEarn = (float) (spieler.GoldEarn + 0.5);
@@ -2420,18 +2392,18 @@ if (scl.boosts[s] == "Reflection" && chosen_Main_Element_Name.getText() == "Refl
                 pointsText.setText(" Points:  " + spieler.Points);
             }
         }
-
+*/
         if (e.getActionCommand() == "startb") {
 
-         //   l.setVisible(!l.isVisible());
+            l.setVisible(!l.isVisible());
 
 
        // optionsPanel.setVisible(true);
 
         //option1button.setVisible(true);
 
-        texarea.setVisible(true);
-confirmName.setVisible(true);
+       // texarea.setVisible(true);
+//confirmName.setVisible(true);
 commbox.setVisible(false);
             startname.setVisible(false);
              option1.setVisible(false);
@@ -2478,7 +2450,7 @@ option1.setVisible(false);
 fighting_options.setVisible(false);
 choose_Element.setActionCommand("Main_Choose");
 
-commbox.setText("Willkommen " + spieler.playerName + ", wähle zuerst das Main Element");
+commbox.setText("Willkommen " + spieler.playerName + ", wähle zuerst ein Main Element");
 //mainTextPanel.setVisible(true);
 //mainTextArea.setVisible(true);
 //DerAnfang();
@@ -2692,7 +2664,7 @@ if (shop.getComponent(s).getName().equals("Special_Sword")){
            // commbox.setText(" du hast" + "  '" + chosen_Main_Element_Name.getText() + "'  " + "als Haupt Element gewählt");
             spieler.Main_Element = chosen_Main_Element_Name.getText();
             choose_Element.setActionCommand("Second_Choose");
-            commbox.setText(" Wähle jetzt dein Sekundär Element aus.");
+            commbox.setText(" Wähle jetzt ein zweites Element aus.");
 
 
 
@@ -2827,14 +2799,7 @@ at = 1;
 
         }
 
-        if (e.getActionCommand().equals("commboxnext1")) {
-            uit++;
-spieler.textSpeed = 0;
-spieler.thread1 = 0;
-spieler.thread2 = 0;
-spieler.thread3 = 0;
-        }
-
+       
 
 
         Byte v;
@@ -3271,6 +3236,7 @@ spieler.thread3 = 0;
 mainTextPanel.setVisible(true);
 optionsPanel.setVisible(true);
 mainTextArea.setText("[(Zorniger) Stier] wurde besiegt! \n \nDu hast 180 Münzen bekommen!");
+spieler.Gold+= 180;
 option1button.setText("Belohnung fordern!");
 option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
 option2button.setText("");
@@ -3285,6 +3251,7 @@ nextPosition2 = "";
 mainTextPanel.setVisible(true);
 optionsPanel.setVisible(true);
 mainTextArea.setText("[(Wütender) Bär] wurde besiegt! \n \nDu hast 160 Münzen bekommen!");
+spieler.Gold+= 160;
 option1button.setText("Letzter Gegner");
 option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
 option2button.setText("");
@@ -3299,6 +3266,7 @@ nextPosition2 = "";
 mainTextPanel.setVisible(true);
 optionsPanel.setVisible(true);
 mainTextArea.setText("[(Wilder) Eber] wurde besiegt! \n \nDu hast 140 Münzen bekommen!");
+spieler.Gold+= 140;
 option1button.setText("Nächster Gegner");
 option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
 option2button.setText("");
@@ -3313,6 +3281,7 @@ nextPosition2 = "";
 mainTextPanel.setVisible(true);
 optionsPanel.setVisible(true);
 mainTextArea.setText("[(Wütender) Hirsch] wurde besiegt! \n \nDu hast 120 Münzen bekommen! \n \nJe stärker der Gegner ist, desto mehr Münzen bekommst du!");
+spieler.Gold+= 120;
 option1button.setText("Nächster Gegner");
 option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
 option2button.setText("");
@@ -3328,6 +3297,7 @@ nextPosition2 = "";
 mainTextPanel.setVisible(true);
 optionsPanel.setVisible(true);
 mainTextArea.setText("[(Ghost) Stier] wurde besiegt! \n \nDu hast 120 Münzen bekommen!");
+spieler.Gold+= 120;
 option1button.setText("weiter");
 option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
 option2button.setText("");
@@ -3343,6 +3313,7 @@ nextPosition2 = "";
 mainTextPanel.setVisible(true);
 optionsPanel.setVisible(true);
 mainTextArea.setText("[(Ghost) Bär] wurde besiegt! \n \nDu hast 120 Münzen bekommen!");
+spieler.Gold+= 120;
 option1button.setText("Letzter Gegner");
 option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
 option2button.setText("");
@@ -3358,6 +3329,7 @@ nextPosition2 = "";
 mainTextPanel.setVisible(true);
 optionsPanel.setVisible(true);
 mainTextArea.setText("[(Ghost) Eber] wurde besiegt! \n \nDu hast 120 Münzen bekommen!");
+spieler.Gold+= 120;
 option1button.setText("Nächster Gegner");
 option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
 option2button.setText("");
@@ -3374,6 +3346,7 @@ nextPosition2 = "";
 mainTextPanel.setVisible(true);
 optionsPanel.setVisible(true);
 mainTextArea.setText("[(Ghost) Hirsch] wurde besiegt! \n \nDu hast 120 Münzen bekommen!");
+spieler.Gold+= 120;
 option1button.setText("Nächster Gegner");
 option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
 option2button.setText("");
@@ -3593,6 +3566,7 @@ nextPosition2 = "";
 mainTextPanel.setVisible(true);
 optionsPanel.setVisible(true);
 mainTextArea.setText("[Gorgon1] wurde besiegt! \n \nDu hast 100 Münzen bekommen!");
+spieler.Gold+= 100;
 option1button.setText("Nächster Gegner");
 option1button.setFont(new Font("Times new Roman", Font.PLAIN, 32));
 option2button.setText("");
@@ -3607,6 +3581,7 @@ nextPosition2 = "";
 mainTextPanel.setVisible(true);
 optionsPanel.setVisible(true);
 mainTextArea.setText("[Gorgon2] wurde besiegt! \n \nDu hast 150 Münzen bekommen!");
+spieler.Gold+= 150;
 option1button.setText("Nächster Gegner");
 option1button.setFont(new Font("Times new Roman", Font.PLAIN, 32));
 option2button.setText("");
@@ -3621,6 +3596,7 @@ nextPosition2 = "";
 mainTextPanel.setVisible(true);
 optionsPanel.setVisible(true);
 mainTextArea.setText("[Gorgon3] wurde besiegt! \n \nDu hast 200 Münzen bekommen!");
+spieler.Gold+= 200;
 option1button.setText("Belohnung fordern!");
 option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
 option2button.setText("");
@@ -3722,6 +3698,7 @@ inventory.putIfAbsent("Hades Blades", 1);
                                                             option1button.setText("weiter");
                                                             option2button.setText("");
                                                             option3button.setText("");
+                                                            spieler.Gold+= 240;
                                                             option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));        
                                                             option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
                                                             nextPosition1 = "Story7R_7";
@@ -3735,6 +3712,8 @@ inventory.putIfAbsent("Hades Blades", 1);
                                                 mainTextPanel.setVisible(true);
                         
                                                 mainTextArea.setText("[Delphin lvl 2] wurde besiegt! \n \nDu hast 220 Münzen bekommen!");
+                                                spieler.Gold+= 220;
+
                                                                         option1button.setText("Letzter Delphin");
                                                                         option2button.setText("");
                                                                         option3button.setText("");
@@ -3752,6 +3731,8 @@ inventory.putIfAbsent("Hades Blades", 1);
                                     mainTextPanel.setVisible(true);
             
                                     mainTextArea.setText("[Delphin lvl 1] wurde besiegt! \n \nDu hast 200 Münzen bekommen!");
+                                    spieler.Gold+= 200;
+
                                                             option1button.setText("Nächster Gegner");
                                                             option2button.setText("");
                                                             option3button.setText("");
@@ -3768,6 +3749,8 @@ inventory.putIfAbsent("Hades Blades", 1);
                                                 mainTextPanel.setVisible(true);
                         
                                                 mainTextArea.setText("[Bandit lvl 2] wurde besiegt! \n \nDu hast 335 Münzen bekommen!");
+                                                spieler.Gold+= 335;
+
                                                                         option1button.setText("weiter");
                                                                         option2button.setText("");
                                                                         option3button.setText("");
@@ -3785,6 +3768,8 @@ inventory.putIfAbsent("Hades Blades", 1);
                                                 mainTextPanel.setVisible(true);
                         
                                                 mainTextArea.setText("[Bandit lvl 1] wurde besiegt! \n \nDu hast 300 Münzen bekommen!");
+                                                spieler.Gold+= 300;
+
                                                                         option1button.setText("Nächster Bandit");
                                                                         option2button.setText("");
                                                                         option3button.setText("");
@@ -6513,7 +6498,7 @@ animateEnemyAttack(ci,damg2);
 
 
 
-    int uit;
+    int uit = 25;
 
 
     public void animateText(String message, JLabel tex, JTextArea a, int w, String standardText)
@@ -6553,15 +6538,8 @@ animateEnemyAttack(ci,damg2);
     
 
     public void startb() throws InterruptedException {
-        panel3.setVisible(true);
         System.out.println("Startb");
         int i;
-        for (i = 1; i < 255; i++) {
-            Thread.sleep(i / i * 1, 3);
-            panel3.setBackground(new Color(i, i, i));
-            System.out.println("i: " + i);
-
-        }
 
         Thread.sleep(spieler.thread1);
 
@@ -6645,12 +6623,7 @@ Thread.sleep(spieler.thread2);
 spieler.thread2 = 2000;
 }
 
-        for (i = 1; i < 235; i++) {
-            Thread.sleep(i / i * 1, 3);
-            panel3.setBackground(new Color(255 - i, 255 - i, 255 - i));
-            System.out.println("i: " + i);
 
-        }
 
         frame.setBackground(new Color(20, 20, 20));
         panel3.setVisible(false);
@@ -6708,7 +6681,7 @@ uit++;
                 spieler.textSpeed = 14;
         }
 
-                animateText(" First, enter your name.", null, commbox, spieler.textSpeed, null);
+                animateText(" Geben sie einen Name ein", null, commbox, spieler.textSpeed, null);
 
                 spieler.textSpeed = 14;
 
@@ -8090,7 +8063,7 @@ achievementDif.setVisible(false);
      
         
      
-     nextPosition1="Heraktles Kampf";
+     nextPosition1="Anfangpart2";
      
      nextPosition2="";
      nextPosition3="";
@@ -8287,6 +8260,7 @@ achievementDif.setVisible(false);
             mainTextPanel.setVisible(true);
             optionsPanel.setVisible(true);
             mainTextArea.setText("[(Zorniger) Stier] wurde besiegt! \n \nDu hast 180 Münzen bekommen!");
+            spieler.Gold+= 180;
             option1button.setText("weiter");
             option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
             option2button.setText("");
@@ -8312,6 +8286,7 @@ achievementDif.setVisible(false);
 
             case "Last1":; 
             mainTextArea.setText("[(Wütender) Hirsch] wurde besiegt! \n \nDu hast 100 Münzen bekommen! \n \nJe stärker der Gegner ist, desto mehr Münzen bekommst du!");
+            spieler.Gold+= 100;
             option1button.setText("Belohnung fordern!");
 option1button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
 option2button.setText("");
@@ -10292,7 +10267,7 @@ spieler.HealthB = spieler.Health;
                         
                             playerInfoHPShield.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Shields\\Standard shield.png").getImage().getScaledInstance(25, 25, Image.SCALE_AREA_AVERAGING)));
                             spieler.hpBoostName = "Standard Shield";
-                            spieler.hpBoost = 1.05f;
+                            spieler.hpBoost = 0.05f;
                                         choose_Element.setText(" Equipped ");
                                         mainTextArea.setText(" Sachen wurden erfolgreich ausgerüstet");
             break;
