@@ -898,7 +898,7 @@ mainTextArea.setOpaque(false);
        fightPlayButton = new JPanel();
        fightPlayButton.setForeground(new Color(255, 0, 150));
        fightPlayButton.setFont(new Font("Times new Roman", Font.PLAIN, 60));
-       fightPlayButton.setBounds(10, 265, 240, 160);
+       fightPlayButton.setBounds(0, 265, 240, 160);
        fightPlayButton.setBackground(Color.black);
        fightPlayButton.setVisible(false);
        fightPlayButton.setOpaque(false);
@@ -5415,7 +5415,7 @@ elementImage.setVisible(false);
                   
                            Thread.sleep(spieler.t2);
                         
-                            spieler.currentEnemyHP -= (damg * 3);
+                            spieler.currentEnemyHP -= (damg);
        
                             enemyInfoHP.setText("         "+spieler.currentEnemyHP);
                             if (spieler.currentEnemyHP <= 0){
@@ -6965,6 +6965,11 @@ public void specialCombat() throws InterruptedException{
 
             specialEffectText.setEnabled(true);
             specialEffectText.setVisible(true);
+
+            if (spieler.powerBoost != 1 && spieler.currentEnemyHP > 0 ){
+                    spieler.currentEnemyHP += (damg * spieler.powerBoost) - damg;
+            }
+
             specialEffectText.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Bosses\\Hermes.png")
                     .getImage().getScaledInstance(40, 35, Image.SCALE_AREA_AVERAGING)));
                     specialEffectText.setText("Angriff ausgewichen");
@@ -6973,6 +6978,8 @@ public void specialCombat() throws InterruptedException{
                     Thread.sleep(spieler.t3 * 15);
         specialEffectText.setVisible(false);
         specialEffectText2.setVisible(false);
+
+
               
         }
 
@@ -7334,6 +7341,19 @@ i2.setText("        Crystal         ");
 i2.setForeground(new Color(155,25,0));
 }
 
+if (spieler.Main_Element.charAt(2) == 'W' && spieler.Main_Element.charAt(3) == 'a'){
+    i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Wasser.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+    i1.setText("        Wasser         ");
+    i1.setForeground(new Color(155,25,0));
+    }
+    
+    
+    if (spieler.Second_Element.charAt(2) == 'W' && spieler.Second_Element.charAt(3) == 'a'){
+    i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Wasser.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
+    i2.setText("        Wasser         ");
+    i2.setForeground(new Color(155,25,0));
+    }
+
 
 
 
@@ -7344,17 +7364,7 @@ i2.setForeground(new Color(155,25,0));
 // Weak //
 
 
-if (spieler.Main_Element.charAt(2) == 'W' && spieler.Main_Element.charAt(3) == 'i'){
-    i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Wind.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
-i1.setText("        Wind         ");
-i1.setForeground(new Color(255,215,0));
-}
 
-if (spieler.Second_Element.charAt(2) == 'W' && spieler.Second_Element.charAt(3) == 'i'){
-i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Wind.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
-i2.setText("        Wind         ");
-i2.setForeground(new Color(255,215,0));
-}
 
 if (spieler.Main_Element.charAt(2) == 'F' && spieler.Main_Element.charAt(3) == 'e'){
     i1.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Feuer.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
@@ -7363,7 +7373,7 @@ i1.setForeground(new Color(255,215,0));
 }
 
 
-if (spieler.Second_Element.charAt(2) == 'F' && spieler.Main_Element.charAt(3) == 'e'){
+if (spieler.Second_Element.charAt(2) == 'F' && spieler.Second_Element.charAt(3) == 'e'){
     i2.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Feuer.png").getImage().getScaledInstance(72, 60, Image.SCALE_AREA_AVERAGING)));
 i2.setText("        Feuer         ");
 i2.setForeground(new Color(255,215,0));
@@ -8063,7 +8073,7 @@ achievementDif.setVisible(false);
      
         
      
-     nextPosition1="Anfangpart2";
+     nextPosition1="Hermes Kampf";
      
      nextPosition2="";
      nextPosition3="";
