@@ -455,7 +455,7 @@ mainTextArea.setOpaque(false);
         i3.setFocusable(false);
         i3.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Others\\Damage.png").getImage().getScaledInstance(60,
                 60, Image.SCALE_AREA_AVERAGING)));
-        i3.setText("        Angriff        ");
+        i3.setText("                       Angriff                                  ");
 
         i4 = new JLabel();
         i4.setForeground(new Color(0, 220, 255));
@@ -647,7 +647,7 @@ mainTextArea.setOpaque(false);
         b4.setFont(new Font("Times new Roman", Font.PLAIN, 60));
         b4.setBounds(150, 150, 240, 2540);
         b4.setBackground(Color.black);
-        b4.setVisible(true);
+        b4.setVisible(false);
         b4.setFocusable(false);
 
 
@@ -1582,6 +1582,15 @@ damageText.setForeground(new Color(250,150,0));
 damageText.setBounds(900, 280, 600, 80);
 damageText.setVisible(false);
 
+reducedDamgeText = new JLabel("DamageText");
+reducedDamgeText.setFont(new Font("Times new Roman", Font.PLAIN, 35));
+reducedDamgeText.setOpaque(false);
+reducedDamgeText.setForeground(new Color(250,150,0));
+reducedDamgeText.setBounds(200, 280, 480, 80);
+reducedDamgeText.setVisible(false);
+
+frame.add(reducedDamgeText);
+
 boostDamageText = new JLabel("BoostDamageText");
 boostDamageText.setFont(new Font("Times new Roman", Font.PLAIN, 40));
 boostDamageText.setOpaque(false);
@@ -1595,13 +1604,6 @@ self_HealText.setOpaque(false);
 self_HealText.setForeground(new Color(255,255,255));
 self_HealText.setBounds(250, 280, 100, 80);
 self_HealText.setVisible(false);
-
-reducedDamgeText = new JLabel();
-reducedDamgeText.setFont(new Font("Times new Roman", Font.PLAIN, 30));
-reducedDamgeText.setOpaque(false);
-reducedDamgeText.setForeground(new Color(255,180,0));
-reducedDamgeText.setBounds(250, 280, 100, 80);
-reducedDamgeText.setVisible(false);
 
 reducedDamgeText2 = new JLabel();
 reducedDamgeText2.setFont(new Font("Times new Roman", Font.PLAIN, 30));
@@ -2144,7 +2146,8 @@ if (scl.schwerte[s] == chosen_Main_Element_Name.getText() ){
 
             for (int s = 0; s < scl.schilder.length; s++){
                 if (scl.schilder[s] == chosen_Main_Element_Name.getText() ){
-                
+                spieler.hpBoost = scl.shieldsEffect[s];
+                spieler.hpBoostName = scl.schilder[s];
                     playerInfoHPShield.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Shields\\" + chosen_Main_Element_Name.getText() +".png").getImage().getScaledInstance(25, 25, Image.SCALE_AREA_AVERAGING)));
                                     //playerInfoPower.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\weapons\\" + chosen_Main_Element_Name.getText() +".png").getImage().getScaledInstance(30, 25, Image.SCALE_AREA_AVERAGING)));                                
                             }
@@ -2763,6 +2766,12 @@ DerAnfang();
        e2.setEnabled(false);
        elementImage.setVisible(true);
        e2.setEnabled(true);
+       commbox.setVisible(false);
+       shop.setVisible(false);
+       iPanel.setVisible(false);
+       inventarPanel.setVisible(false);
+       shop_options.setVisible(false);
+
 at = 1;
         }
 
@@ -2773,6 +2782,12 @@ at = 1;
             elementImage.setVisible(true);
             at = 2;
             e1.setEnabled(true);
+            commbox.setVisible(false);
+            shop.setVisible(false);
+            iPanel.setVisible(false);
+            inventarPanel.setVisible(false);
+            shop_options.setVisible(false);
+
 
              }
 
@@ -2782,6 +2797,11 @@ at = 1;
                 elementImage.setVisible(true);
                 at = 3;
                 e1.setEnabled(true);
+                commbox.setVisible(false);
+                shop.setVisible(false);
+                iPanel.setVisible(false);
+                inventarPanel.setVisible(false);
+                shop_options.setVisible(false);
     
                  }
 
@@ -6042,7 +6062,24 @@ for (int xi = 0; xi<= 120; xi++){
     }
     
 
-    
+    public void protection(int d) throws InterruptedException{
+if (spieler.hpBoost > 0){
+    reducedDamgeText.setText("");
+    reducedDamgeText.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Shields\\" + spieler.hpBoostName +".png").getImage().getScaledInstance(40, 35, Image.SCALE_AREA_AVERAGING)));
+    reducedDamgeText.setVisible(true);
+
+    for (int z = 0; z<= 200;z++){
+        reducedDamgeText.setBounds(200, 480 - z, 600, 80);
+        Thread.sleep(spieler.damageTextAnimation);
+    }
+reducedDamgeText.setText("" + (int) d * spieler.hpBoost);
+spieler.Health+= (int) d * spieler.hpBoost;
+playerInfoHP.setText("          " + (int) spieler.Health);
+Thread.sleep(spieler.t3 * 5);
+reducedDamgeText.setVisible(false);
+
+}
+    }
 
     public void animateEnemyAttack(String ci, int damg2) throws InterruptedException{
 
@@ -6070,6 +6107,8 @@ for (int xi = 0; xi<= 120; xi++){
 
                 Thread.sleep(spieler.t3);
                 damageText.setVisible(false);
+
+                protection(damg2);
 
                 if (spieler.Health <= 0){
                     spieler.Health = spieler.HealthB;
@@ -10253,6 +10292,7 @@ spieler.HealthB = spieler.Health;
                         
                             playerInfoHPShield.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Shields\\Standard shield.png").getImage().getScaledInstance(25, 25, Image.SCALE_AREA_AVERAGING)));
                             spieler.hpBoostName = "Standard Shield";
+                            spieler.hpBoost = 1.05f;
                                         choose_Element.setText(" Equipped ");
                                         mainTextArea.setText(" Sachen wurden erfolgreich ausgerüstet");
             break;

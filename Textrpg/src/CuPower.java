@@ -28,7 +28,7 @@ public class CuPower {
      String powerBoostIcon = "Textrpg\\Images\\Swords\\Double swords.png";
      String powerBoostName = "";
      String hpBoostName = "";
-     float hpBoost = 1.5f;
+     float hpBoost = 1.05f;
 
      // Enemy //
      String file;

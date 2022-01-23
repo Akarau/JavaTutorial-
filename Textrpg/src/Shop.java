@@ -136,11 +136,11 @@ public class Shop {
         
         
             float[] shieldsEffect = {
-        1.05f,
-        1.10f,
-        1.10f,
-        1.10f,
-        1.50f,
+        0.05f,
+        0.10f,
+        0.10f,
+        0.50f,
+        0.50f,
 
             };
         
