@@ -3614,8 +3614,7 @@ endFight();
             mainTextPanel.setVisible(true);
 optionsPanel.setVisible(true);
 mainTextArea.setText("Du schlägst der Medusa den Kopf ab. Daraufhin gehst du zu Polydektes.\"Du hast die Medusa getötet? Na dann gib ihn mir doch.\" sagt Polydektes genervt.\nDu fragst ihn wo der nächste Tempel ist.\n\n\"Warum sollte ich dir das verraten? Nur weil du mir den Kopf der Medusa gegeben hast? Da musst du mir schon mehr geben!\"");
-Award("W", 1, "Python Rüstug", "Python Rüstung \nerhalten", "Textrpg\\Images\\Shields\\Python Rüstung.png");
-inventory.putIfAbsent("Python Rüstung", 1);
+
 
 
 option1button.setText("weiter");
@@ -3624,6 +3623,9 @@ option2button.setText("");
 nextPosition1 = "StoryR_6......";
 nextPosition2 = "";
 
+Award("W", 1, "Python Rüstug", "Python Rüstung \nerhalten", "Textrpg\\Images\\Shields\\Python Rüstung.png");
+inventory.putIfAbsent("Python Rüstung", 1);
+
         }
 
         if (nextPosition1 == "Hades Kampf"){
@@ -3631,15 +3633,17 @@ nextPosition2 = "";
                         mainTextPanel.setVisible(true);
             optionsPanel.setVisible(true);
             mainTextArea.setText("\"Herzlichen, herzlichen Glückwunsch! Du hast also gewonnen. Los komm töte mi…\"\n\nDu hast Hades den Kopf abgehackt, du bist wieder an der Oberfläche.");
-            
-            Award("W", 1, "Hades Blades", "Hades Blades \nerhalten", "Textrpg\\Images\\weapons\\Hades Blades.png");
-inventory.putIfAbsent("Hades Blades", 1);
+
             spieler.karma -= 4;
             option1button.setText("weiter");
             option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
             option2button.setText("");
             nextPosition1 = "End";
             nextPosition2 = "";
+
+                        
+            Award("W", 1, "Hades Blades", "Hades Blades \nerhalten", "Textrpg\\Images\\weapons\\Hades Blades.png");
+inventory.putIfAbsent("Hades Blades", 1);
             
                     }
 
@@ -3647,6 +3651,7 @@ inventory.putIfAbsent("Hades Blades", 1);
                         endFight();
                         optionsPanel.setVisible(true);
                         mainTextPanel.setVisible(true);
+
 
                         if (spieler.karma < 0){
                             mainTextArea.setText(" \"Du Mistkerl, du hast also gewonnen. Mein Vater wird mich rächen.\"\n\nDu hast Heraktles getötet. ");
@@ -3656,6 +3661,8 @@ inventory.putIfAbsent("Hades Blades", 1);
                             mainTextArea.setText(" \"Du hast also gewonnen. Nun gehe mein Vater wird dich bald empfangen.\"\n\nDu hast Heraktles verschont.");
 
                         }
+
+
                                                 nextPosition1 = "End";
                                                 option1button.setText("weiter");
                                                 option2button.setText("");
@@ -3663,6 +3670,9 @@ inventory.putIfAbsent("Hades Blades", 1);
                                                 option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
                                                 option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
                         nextPosition2 = "";
+
+                        Award("W", 1, "Fell des Löwen", "Fell des \nLöwen erhalten", "Textrpg\\Images\\Shields\\Fell des Löwen.png");
+                        inventory.putIfAbsent("Fell des Löwen", 1);
                         
                                 }
 
@@ -6102,6 +6112,7 @@ for (int xi = 0; xi<= 120; xi++){
             enemyInfo.setBorder(new LineBorder(Color.white));
             reflectedDamgeImage.setVisible(false);
 
+            setSpecialWeapon("W");
         }
 
     
@@ -6878,7 +6889,31 @@ moon_Artemis.setVisible(false);
 moon_Artemis.setVisible(false);
         }
 
+
+        if (nextPosition1 == "Heraktles Kampf"){
+            specialEnemyP.setVisible(true);
+            specialEnemyP2.setVisible(true);
+            specialEnemyI.setVisible(true);
+            specialEnemyT.setVisible(true);
+    
+    
+            specialEnemyP.setBounds(400, 40, (int) (spieler.currentEnemyHP/1.6), 40);
+            specialEnemyP.setBackground(en.bossesColors[2]);
+            specialEnemyI.setBounds((int) (360 +(spieler.currentEnemyHP/1.55)), 0, 265, 120);
+            specialEnemyT.setBounds((int) (360 + (spieler.currentEnemyHP/1.55)), 100, 250, 40);
+            specialEnemyI.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Shields\\Fell des Löwen.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));       
+            specialEnemyT.setForeground(new Color(255,205,40));
+            specialEnemyT.setText("Fell des löwen");
+    moon_Artemis.setVisible(false);
+        }
+
     }
+
+
+
+
+
+
 
 }
 
@@ -6951,6 +6986,7 @@ public void specialCombat() throws InterruptedException{
        spieler.CurrentEnemyPower = (int) (45 + (45 * (Math.random())));
 
     }
+    
 
     if (nextPosition1 == "Zeus Kampf" && spieler.reflection == false && spieler.currentEnemyHP > 0){
         if (Math.random() > 0.3){
@@ -8015,7 +8051,7 @@ achievementDif.setVisible(false);
      
         
      
-     nextPosition1="Hades Kampf";
+     nextPosition1="Heraktles Kampf";
      
      nextPosition2="";
      nextPosition3="";
@@ -10097,6 +10133,7 @@ spieler.PolydektesK = false;
                                                         mainTextPanel.setVisible(false); 
 
                                                         spawnEnemy("Bosses", 5);
+                                                        setSpecialWeapon("W");
                                                         spieler.HealthB = spieler.Health;
 
                                                         option3button.setText("");

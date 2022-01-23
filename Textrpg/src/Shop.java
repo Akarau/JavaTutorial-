@@ -17,6 +17,7 @@ public class Shop {
         "Aqua Shield",
         "Python Rüstung",
         "Neptuns Rüstung",
+        "Fell des Löwen",
         "Schnelle Rüstung",
         "Heal Elixir",
         "Heal Potion",
@@ -122,7 +123,7 @@ public class Shop {
                 "Aqua Shield",
                 "Python Rüstung",
                 "Neptuns Rüstung",
-
+                "Fell des Löwen",
             };
 
             Color[] shieldsColor = {
@@ -130,7 +131,7 @@ public class Shop {
                 new Color(20,50,255),
                 new Color(20,50,255),
                 new Color(20,50,255),
-
+                new Color(20,50,255),
             };
         
         
@@ -139,12 +140,14 @@ public class Shop {
         1.10f,
         1.10f,
         1.10f,
+        1.50f,
 
             };
         
             int[] shieldsPreis = {
                 100,
                 250,
+                0,
                 0,
                 0,
 
@@ -155,6 +158,7 @@ public class Shop {
                         " -Gibt 10% mehr HP",
                         " -Gibt 10% mehr HP",
                         " -Gibt 20% mehr HP",
+                        " -Gibt 50% mehr HP",
 
                     };
         
@@ -163,6 +167,7 @@ public class Shop {
                         "Textrpg\\Images\\Shields\\Aqua shield.png",
                         "Textrpg\\Images\\Shields\\Python Rüstung.png",
                         "Textrpg\\Images\\Shields\\Neptuns Rüstung.png",
+                        "Textrpg\\Images\\Shields\\Fell des Löwen.png",
 
                     };
 
