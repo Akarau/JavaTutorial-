@@ -3112,28 +3112,28 @@ at = 1;
             int i;
             for (i = 1;; i++) {
                 l.setText("Loading: " + i + "%");
-                Thread.sleep(i / i);
+                Thread.sleep(i / i * 32);
 
                 if (i >= 99 && i <= 99) {
-                    // Thread.sleep(500);
+                     Thread.sleep(500);
                     l.setText("Loading: 99%.");
-                    // Thread.sleep(500);
+                     Thread.sleep(500);
                     l.setText("Loading: 99%..");
-                    // Thread.sleep(500);
+                     Thread.sleep(500);
                     l.setText("Loading: 99%...");
-                    // Thread.sleep(500);
+                     Thread.sleep(500);
                     l.setText("Loading: 99%.");
-                    // Thread.sleep(500);
+                     Thread.sleep(500);
                     l.setText("Loading: 99%..");
-                    // Thread.sleep(500);
+                     Thread.sleep(500);
                     l.setText("Loading: 99%...");
-                    // Thread.sleep(500);
+                     Thread.sleep(500);
                     l.setText("Loading: 99%.");
-                    // Thread.sleep(500);
+                     Thread.sleep(500);
                     l.setText("Loading: 99%..");
-                    // Thread.sleep(500);
+                     Thread.sleep(500);
                     l.setText("Loading: 99%...");
-                    // Thread.sleep(2000);
+                     Thread.sleep(2000);
                     l.setText("Loading: 100%");
 
                     // L.setText("Loading completed");
@@ -3161,7 +3161,7 @@ at = 1;
 
                     String message;
 
-                    message = "        The Day";
+                    message = "        ";
                     // System.out.println(message.length());
                     Thread.sleep(1000);
                     l.setText("");
