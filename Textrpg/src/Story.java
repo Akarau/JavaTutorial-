@@ -2363,7 +2363,7 @@ if (scl.boosts[s] == "Reflection" && chosen_Main_Element_Name.getText() == "Refl
                 i6.setText("  Health: " + spieler.Health + " ");
                 spieler.Points--;
                 pointsText.setText(" Points:  " + spieler.Points);
-                playerInfoHP.setText("" + spieler.Health);
+                playerInfoHP.setText("          " +spieler.Health);
                 playerInfoHPProgress.setBounds(75,170,0,40);
                 for (int w = 0; w<spieler.Health;w++){
                     playerInfoHPProgress.setBounds(75,170,w,40);
@@ -3517,6 +3517,7 @@ nextPosition2 = "";
             mainTextArea.setText("\"Du hast es also tatsächlich geschafft? Beeindruckend!\" Allerdings wirst du es gegen meinen Bruder nicht so leicht haben!  Gehe der Sonne nach sie wird dich zu ihm führen.\n \"Was für eine Schande, gegen einen niederen Menschen verloren…\"");
             inventory.putIfAbsent("Artemis Pfeil", 1);
             Award("W", 1, "Artemis Pfeil", "Artemis Waffe \nerhalten", "Textrpg\\Images\\weapons\\Artemis Pfeil.png");
+            spieler.Points+= 10;
             nextPosition1 = "Anfangpart11";
             nextPosition2 = "";
             option1button.setText("weiter");
@@ -3541,6 +3542,7 @@ nextPosition2 = "";
             }
             inventory.putIfAbsent("Lichtbogen", 1);
             Award("W", 1, "Lichtbogen", "Apollon Waffe \nerhalten", "Textrpg\\Images\\weapons\\Lichtbogen.png");
+            spieler.Points+= 10;
             mainTextPanel.setVisible(true);
             nextPosition1 = "StoryR_5";
             nextPosition2 = "StoryR_5;";
@@ -3617,6 +3619,8 @@ nextPosition2 = "";
 
 Award("W", 1, "Python Rüstug", "Python Rüstung \nerhalten", "Textrpg\\Images\\Shields\\Python Rüstung.png");
 inventory.putIfAbsent("Python Rüstung", 1);
+spieler.Points+= 10;
+
 
         }
 
@@ -3635,6 +3639,7 @@ inventory.putIfAbsent("Python Rüstung", 1);
 
                         
             Award("W", 1, "Hades Blades", "Hades Blades \nerhalten", "Textrpg\\Images\\weapons\\Hades Blades.png");
+            spieler.Points+= 10;
 inventory.putIfAbsent("Hades Blades", 1);
             
                     }
@@ -3665,6 +3670,8 @@ inventory.putIfAbsent("Hades Blades", 1);
 
                         Award("W", 1, "Fell des Löwen", "Fell des \nLöwen erhalten", "Textrpg\\Images\\Shields\\Fell des Löwen.png");
                         inventory.putIfAbsent("Fell des Löwen", 1);
+                        spieler.Points+= 10;
+
                         
                                 }
 
@@ -3808,6 +3815,8 @@ inventory.putIfAbsent("Hades Blades", 1);
                                                                         mainTextPanel.setVisible(true);
                                                                         Award("W", 1, "Neptuns Rüstug", "Neptuns Rüstung \nerhalten", "Textrpg\\Images\\Shields\\Neptuns Rüstung.png");
                                                                         inventory.putIfAbsent("Neptuns Rüstung", 1);
+                                                                        spieler.Points+= 10;
+
                                                                         spieler.karma += 4;
 
                                                                             mainTextArea.setText("\" Wie ich es erwartet habe. Du bist wahrlich stark, mit dieser Stärke wirst du auch meinem Bruder gegenüber treten können\"\n\nDu verschonst deinen Gegner\nBeim Verlassen des Tempels bist du auf einmal wieder an der Oberfläsche vom Wasser. Du schwimmst an Land.");
