@@ -61,9 +61,9 @@ public class Shop {
         new Color(25,255,255),
         new Color(255,120,0),
         new Color(120,0,150),
-        new Color(120,0,150),
-        new Color(120,0,150),
-        new Color(120,0,150),
+        new Color(255,180,0),
+        new Color(255,220,0),
+        new Color(255,0,150),
 
     };
 
@@ -113,7 +113,7 @@ public class Shop {
                 "Textrpg\\Images\\weapons\\The Warrior.png",
                 "Textrpg\\Images\\weapons\\Artemis Pfeil.png",
                 "Textrpg\\Images\\weapons\\Lichtbogen.png",
-                "Textrpg\\Images\\weapons\\Hases Blades.png",
+                "Textrpg\\Images\\weapons\\Hades Blades.png",
 
             };
 
