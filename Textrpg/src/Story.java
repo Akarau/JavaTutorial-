@@ -6042,10 +6042,114 @@ for (int xi = 0; xi<= 120; xi++){
         String element;
         
 
-            element = spieler.enemyMain_Element;
-            spieler.enemyAtacked = true;
+        element = spieler.enemyMain_Element;
+        spieler.enemyAtacked = true;
 
-            Attack(element);
+        if (spieler.Main_Element.charAt(2) == 'C' && spieler.Main_Element.charAt(3) == 'o'){
+
+            if (spieler.enemyMain_Element == "Gravity" || spieler.enemySecond_Element == "Gravity" || spieler.enemyThird_Element == "Gravity" || spieler.enemyLast_Element == "Gravity" ){
+                element = "Gravity";
+            }
+            if (spieler.enemyMain_Element == "Void" || spieler.enemySecond_Element == "Void" || spieler.enemyThird_Element == "Void" || spieler.enemyLast_Element == "Void" ){
+                element = "Void";
+            }
+        }
+
+        if (spieler.Main_Element.charAt(2) == 'C' && spieler.Main_Element.charAt(3) == 'r'){
+
+            if (spieler.enemyMain_Element == "Feuer" || spieler.enemySecond_Element == "Feuer" || spieler.enemyThird_Element == "Feuer" || spieler.enemyLast_Element == "Feuer" ){
+                element = "Feuer";
+            }
+            if (spieler.enemyMain_Element == "Wasser" || spieler.enemySecond_Element == "Wasser" || spieler.enemyThird_Element == "Wasser" || spieler.enemyLast_Element == "Wasser" ){
+                element = "Wasser";
+            }
+        }
+
+        if (spieler.Main_Element.charAt(2) == 'E' && spieler.Main_Element.charAt(3) == 'r'){
+
+            System.out.println("Test0");
+            if (spieler.enemyMain_Element == "Crystal" || spieler.enemySecond_Element == "Crystal" || spieler.enemyThird_Element == "Crystal" || spieler.enemyLast_Element == "Crystal" ){
+                element = "Crystal";
+                System.out.println("Test0-");
+
+            }
+
+            if (spieler.enemyMain_Element == "Wasser" || spieler.enemySecond_Element == "Wasser" || spieler.enemyThird_Element == "Wasser" || spieler.enemyLast_Element == "Wasser" ){
+                element = "Wasser";
+            }
+        }
+
+        if (spieler.Main_Element.charAt(2) == 'F' && spieler.Main_Element.charAt(3) == 'e'){
+
+            if (spieler.enemyMain_Element == "Wasser" || spieler.enemySecond_Element == "Wasser" || spieler.enemyThird_Element == "Wasser" || spieler.enemyLast_Element == "Wasser" ){
+                element = "Wasser";
+            }
+            if (spieler.enemyMain_Element == "Erde" || spieler.enemySecond_Element == "Erde" || spieler.enemyThird_Element == "Erde" || spieler.enemyLast_Element == "Erde" ){
+                element = "Erde";
+            }
+        }
+
+        if (spieler.Main_Element.charAt(2) == 'G' && spieler.Main_Element.charAt(3) == 'r'){
+
+            if (spieler.enemyMain_Element == "Cosmic" || spieler.enemySecond_Element == "Cosmic" || spieler.enemyThird_Element == "Cosmic" || spieler.enemyLast_Element == "Cosmic" ){
+                element = "Cosmic";
+            }
+            if (spieler.enemyMain_Element == "Void" || spieler.enemySecond_Element == "Void" || spieler.enemyThird_Element == "Void" || spieler.enemyLast_Element == "Void" ){
+                element = "Void";
+            }
+        }
+
+        if (spieler.Main_Element.charAt(2) == 'L' && spieler.Main_Element.charAt(3) == 'i'){
+
+            if (spieler.enemyMain_Element == "Lunar" || spieler.enemySecond_Element == "Lunar" || spieler.enemyThird_Element == "Lunar" || spieler.enemyLast_Element == "Lunar" ){
+                element = "Lunar";
+            }
+            if (spieler.enemyMain_Element == "Crystal" || spieler.enemySecond_Element == "Crystal" || spieler.enemyThird_Element == "Crystal" || spieler.enemyLast_Element == "Crystal" ){
+                element = "Crystal";
+            }
+
+
+            if (spieler.Main_Element.charAt(2) == 'L' && spieler.Main_Element.charAt(3) == 'u'){
+
+                if (spieler.enemyMain_Element == "Licht" || spieler.enemySecond_Element == "Licht" || spieler.enemyThird_Element == "Licht" || spieler.enemyLast_Element == "Licht" ){
+                    element = "Licht";
+                }
+
+            }
+
+            if (spieler.Main_Element.charAt(2) == 'V' && spieler.Main_Element.charAt(3) == 'o'){
+
+                if (spieler.enemyMain_Element == "Cosmic" || spieler.enemySecond_Element == "Cosmic" || spieler.enemyThird_Element == "Cosmic" || spieler.enemyLast_Element == "Cosmic" ){
+                    element = "Cosmic";
+                }
+                if (spieler.enemyMain_Element == "Gravity" || spieler.enemySecond_Element == "Gravity" || spieler.enemyThird_Element == "Gravity" || spieler.enemyLast_Element == "Gravity" ){
+                    element = "Gravity";
+                }
+            }
+
+        }
+
+
+        if (spieler.Main_Element.charAt(2) == 'W' && spieler.Main_Element.charAt(3) == 'a'){
+
+            if (spieler.enemyMain_Element == "Erde" || spieler.enemySecond_Element == "Erde" || spieler.enemyThird_Element == "Erde" || spieler.enemyLast_Element == "Erde" ){
+                element = "Erde";
+            }
+        }
+
+        if (spieler.Main_Element.charAt(2) == 'W' && spieler.Main_Element.charAt(3) == 'i'){
+
+            if (spieler.enemyMain_Element == "Erde" || spieler.enemySecond_Element == "Erde" || spieler.enemyThird_Element == "Erde" || spieler.enemyLast_Element == "Erde" ){
+                element = "Erde";
+            }
+            if (spieler.enemyMain_Element == "Licht" || spieler.enemySecond_Element == "Licht" || spieler.enemyThird_Element == "Licht" || spieler.enemyLast_Element == "Licht" ){
+                element = "Licht";
+            }
+        }
+
+
+        System.out.println(spieler.enemyMain_Element);
+        Attack(element);
 
         
     }
@@ -8081,7 +8185,7 @@ achievementDif.setVisible(false);
      
         
      
-     nextPosition1="Anfangpart2";
+     nextPosition1="Hades Kampf";
      
      nextPosition2="";
      nextPosition3="";
