@@ -14,10 +14,10 @@ public class Enemy {
         "(Wilder) Eber",
         "(Wütender) Bär",
         "(Zorniger) Stier",
-        "(Ghost) Hirsch",
-        "(Ghost) Eber",
-        "(Ghost) Bär",
-        "(Ghost) Stier",
+        "(Geist) Hirsch",
+        "(Geist) Eber",
+        "(Geist) Bär",
+        "(Geist) Stier",
         "Gladiator lvl 1",
         "Gladiator lvl 2",
         "Gladiator lvl 3",
@@ -59,9 +59,9 @@ public class Enemy {
         400,
         400,
         400,
-        200,
-        220,
-        240,
+        400,
+        450,
+        500,
         300,
         335,
         335,
@@ -96,9 +96,9 @@ public class Enemy {
         40,
         40,
         40,
-        10,
-        12,
-        14,
+        40,
+        45,
+        50,
         15,
         18,
         18,
@@ -406,11 +406,13 @@ public class Enemy {
         "Hermes",
         "Poseidon",
         "Ares",
+        "Zeus",
+        "Kronos",
     };
 
 
     int bossesHP[] = {
-        14,
+        400,
         240,
         360,
         400,
@@ -419,11 +421,13 @@ public class Enemy {
         150,
         400,
         400,
+        1250,
+        1500,
 
     };
 
     int bossesPower[] = {
-        40,
+        70,
         22,
         40,
         22,
@@ -432,6 +436,8 @@ public class Enemy {
         25,
         24,
         (int) (Math.random()* 10 * Math.random() * 9),
+        100,
+        125,
 
     };
 
@@ -445,6 +451,8 @@ public class Enemy {
         new Color(255,135,0),
         new Color(255,135,0),
         new Color(255,135,0),
+        new Color(255,255,255),
+        new Color(255,45,0),
 
     };
 
@@ -459,6 +467,8 @@ public class Enemy {
         "Licht",
         "Wasser",
         "Erde",
+        "Licht",
+        "Lunar",
 
     };
 
@@ -473,9 +483,12 @@ public class Enemy {
         "Ancient",
         "Licht",
         "",
+        "Wind",
+        "Feuer",
 
 
     };
+    
 
     String boss_Third_Materias[] = {
         "Ancient",
@@ -487,6 +500,8 @@ public class Enemy {
         "",
         "Wind",
         "",
+        "Erde",
+        "Ancient",
 
 
     };
@@ -501,6 +516,8 @@ public class Enemy {
         "",
         "",
         "",
+        "Gravity",
+        "Void",
 
 
     };
@@ -515,6 +532,8 @@ public class Enemy {
         "Hermes++",
         "",
         "",
+        "Schwierig",
+        "hard",
 
     };
 
@@ -528,6 +547,8 @@ public class Enemy {
         new Color(255,135,0),
         new Color(255,135,0),
         new Color(255,135,0),
+        new Color(255,255,255),
+        new Color(255,45,0),
 
     };
 

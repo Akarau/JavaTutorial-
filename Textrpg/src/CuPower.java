@@ -7,9 +7,10 @@ public class CuPower {
 
 
       int Gold = 50000;
-      int Power = 500;
+      int Power = 50;
       int Points = 50;
-      int Health = 100;
+      int Health = 5;
+      int HealthB;
       int karma = 0;
       int MaxHealth;
       int damageMade;
@@ -30,6 +31,8 @@ public class CuPower {
      float hpBoost = 1.5f;
 
      // Enemy //
+     String file;
+     int index;
      String currentEnemy;
      int CurrentEnemyPower = 200;
      int currentEnemyHP = 2600;
@@ -46,6 +49,9 @@ public class CuPower {
      Boolean HermesK = false;
      Boolean AresK = false;
 
+
+     Boolean goodEnd = false;
+     Boolean badEnd = false;
      // Enemy //
 
      // Wait //

@@ -14,6 +14,8 @@ public class Shop {
         "Lichtbogen",
         "Standard Shield",
         "Aqua Shield",
+        "Python Rüstung",
+        "Neptuns Rüstung",
         "Schnelle Rüstung",
         "Heal Elixir",
         "Heal Potion",
@@ -111,16 +113,24 @@ public class Shop {
             String schilder[] = {
                 "Standard Shield",
                 "Aqua Shield",
+                "Python Rüstung",
+                "Neptuns Rüstung",
+
             };
 
             Color[] shieldsColor = {
                 new Color(255,0,160),
                 new Color(20,50,255),
+                new Color(20,50,255),
+                new Color(20,50,255),
+
             };
         
         
             float[] shieldsEffect = {
         1.05f,
+        1.10f,
+        1.10f,
         1.10f,
 
             };
@@ -128,17 +138,25 @@ public class Shop {
             int[] shieldsPreis = {
                 100,
                 250,
-                
+                0,
+                0,
+
                     };
         
                     String[] inf2 = {
                         " -Gibt 5% mehr HP",
-                        " -Gibt 10% mehr HP                                                                                  -Gibt 10% weniger Wasser Schaden ",
+                        " -Gibt 10% mehr HP",
+                        " -Gibt 10% mehr HP",
+                        " -Gibt 20% mehr HP",
+
                     };
         
                     String[] i2 = {
                         "Textrpg\\Images\\Shields\\Standard shield.png",
                         "Textrpg\\Images\\Shields\\Aqua shield.png",
+                        "Textrpg\\Images\\Shields\\Python Rüstung.png",
+                        "Textrpg\\Images\\Shields\\Neptuns Rüstung.png",
+
                     };
 
 

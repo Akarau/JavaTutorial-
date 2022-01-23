@@ -1333,7 +1333,11 @@ for (int s = 0; s < scl.schilder.length; s++) {
     shieldB.setActionCommand(scl.schilder[s] + "I");
     choose_Element.setActionCommand("Shield_Equip");
     shieldB.setBorder(new LineBorder(Color.white));
-    shieldB.setName(scl.schilder[s]);
+    shieldB.setName("Shield");
+
+    if (s > 1){
+        shieldB.setName("Special_Shield");
+    }
 
 
     JLabel si = new JLabel();
@@ -1705,6 +1709,11 @@ for (int s2 = 0; s2 < scl.schilder.length; s2++) {
     shieldB.setActionCommand(scl.schilder[s2] + "B");
     shieldB.setBorder(new LineBorder(Color.white));
     shieldB.setName("Shield");
+
+    if (s2 > 1){
+        shieldB.setName("Special_Shield");
+        shieldB.setVisible(false);
+    }
 
     JLabel si = new JLabel();
     si.setForeground(colors2[c]);
@@ -2586,6 +2595,10 @@ ePlayButton.setActionCommand("ePlayButton1");
                 shop.getComponent(s).setVisible(false);         
         }
 
+        if (shop.getComponent(s).getName().equals("Special_Shield")){
+            shop.getComponent(s).setVisible(false);         
+    }
+
         if (shop.getComponent(s).getName().equals("Boost")){
             shop.getComponent(s).setVisible(false);         
     }
@@ -2594,6 +2607,9 @@ ePlayButton.setActionCommand("ePlayButton1");
         shop.getComponent(s).setVisible(true);              
 }
         
+if (shop.getComponent(s).getName().equals("Special_Sword")){
+    shop.getComponent(s).setVisible(false);         
+}
 
              }
          }
@@ -2602,11 +2618,19 @@ ePlayButton.setActionCommand("ePlayButton1");
             commbox.setVisible(false);
 
             chosen_Main_Element.setVisible(false);
-             for (int s = 0; s < scl.schilder.length + scl.schwerte.length + scl.boosts.length; s++){
+             for (int s = 0; s < scl.items.length; s++){
 
             if (shop.getComponent(s).getName().equals("Sword")){
                 shop.getComponent(s).setVisible(false);         
         }
+
+        if (shop.getComponent(s).getName().equals("Special_Sword")){
+            shop.getComponent(s).setVisible(false);         
+        }
+
+        if (shop.getComponent(s).getName().equals("Special_Shield")){
+            shop.getComponent(s).setVisible(false);         
+    }
 
         if (shop.getComponent(s).getName().equals("Boost")){
             shop.getComponent(s).setVisible(false);         
@@ -2633,13 +2657,24 @@ ePlayButton.setActionCommand("ePlayButton1");
                 if (shop.getComponent(s).getName().equals("Shield")){
                     shop.getComponent(s).setVisible(false);              
             }
+
+            if (shop.getComponent(s).getName().equals("Special_Shield")){
+                shop.getComponent(s).setVisible(false);         
+        }
+
             if (shop.getComponent(s).getName().equals("Sword")){
                 shop.getComponent(s).setVisible(false);         
+        }
+
+        if (shop.getComponent(s).getName().equals("Special_Sword")){
+            shop.getComponent(s).setVisible(false);         
         }
 
         if (shop.getComponent(s).getName().equals("Boost")){
             shop.getComponent(s).setVisible(true);         
     }
+
+    
         
 
              }
@@ -3579,6 +3614,8 @@ endFight();
             mainTextPanel.setVisible(true);
 optionsPanel.setVisible(true);
 mainTextArea.setText("Du schlägst der Medusa den Kopf ab. Daraufhin gehst du zu Polydektes.\"Du hast die Medusa getötet? Na dann gib ihn mir doch.\" sagt Polydektes genervt.\nDu fragst ihn wo der nächste Tempel ist.\n\n\"Warum sollte ich dir das verraten? Nur weil du mir den Kopf der Medusa gegeben hast? Da musst du mir schon mehr geben!\"");
+Award("W", 1, "Python Rüstug", "Python Rüstung \nerhalten", "Textrpg\\Images\\Shields\\Python Rüstung.png");
+inventory.putIfAbsent("Python Rüstung", 1);
 
 
 option1button.setText("weiter");
@@ -3595,7 +3632,7 @@ nextPosition2 = "";
             optionsPanel.setVisible(true);
             mainTextArea.setText("\"Herzlichen, herzlichen Glückwunsch! Du hast also gewonnen. Los komm töte mi…\"\n\nDu hast Hades den Kopf abgehackt, du bist wieder an der Oberfläche.");
             
-            
+            spieler.karma -= 4;
             option1button.setText("weiter");
             option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
             option2button.setText("");
@@ -3756,8 +3793,10 @@ nextPosition2 = "";
                                                                         endFight();
                                                                         optionsPanel.setVisible(true);
                                                                         mainTextPanel.setVisible(true);
-                                                
-                                                                        
+                                                                        Award("W", 1, "Neptuns Rüstug", "Neptuns Rüstung \nerhalten", "Textrpg\\Images\\Shields\\Neptuns Rüstung.png");
+                                                                        inventory.putIfAbsent("Neptuns Rüstung", 1);
+                                                                        spieler.karma += 4;
+
                                                                             mainTextArea.setText("\" Wie ich es erwartet habe. Du bist wahrlich stark, mit dieser Stärke wirst du auch meinem Bruder gegenüber treten können\"\n\nDu verschonst deinen Gegner\nBeim Verlassen des Tempels bist du auf einmal wieder an der Oberfläsche vom Wasser. Du schwimmst an Land.");
                                                                             
                                                                             
@@ -3800,6 +3839,75 @@ nextPosition2 = "";
             
                                                                         
                                                                                 }
+
+                                                                                if (nextPosition1 == "Zeus Kampf"){
+                                                                                    endFight();
+                                                                                    optionsPanel.setVisible(true);
+                                                                                    mainTextPanel.setVisible(true);
+                                                            
+                                                                                    if(spieler.karma == -4 || spieler.karma == 4){
+                                                                                        mainTextArea.setText("\"Nun hast du es also geschafft, du hast den Olymp gestürzt. Was willst du als nächstes tun? \nIch frage mich dennoch, warum du das getan hast. Du hast den Auftrag dieses alten Mannes angenommen, obwohl du nicht weißt, ob er gut oder böse ist. Für ihn hast du getötet.\"");
+
+                                                                                    }
+
+                                                                                    if(spieler.karma == -12){
+                                                                                        mainTextArea.setText("\"Du Mistkerl hast also tatsächlich gewonnen.\nBist zufrieden? War es das Wert?\nDu hast so viele von uns getötet, aber wofür?\n\nFür einen alten Mann, den du kaum kennst und von dem du nicht weißt, ob er gut oder böse ist.\"");
+
+                                                                                    }
+
+                                                                                    if(spieler.karma >= 8){
+                                                                                        mainTextArea.setText("\"Du bist stark das muss ich dir lassen, ich hatte kaum eine Chance.\nUnd ich muss dir danken, dass du die Anderen verschont hast.\nJedoch verstehe ich nicht ganz. Du hast den Auftrag dieses alten Mannes angenommen ohne zu wissen, ob er gut oder böse ist.\"");
+
+                                                                                    }
+                                                                                        
+                                                                                        
+                                                                                    option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));
+                                                                                    option2button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+                                                                                    option1button.setText("weiter");
+                                                                                    option2button.setText("");
+                                                                                    option3button.setText("");
+                                                                                    nextPosition1 = "End5";
+                                                                                    nextPosition2 = "";
+                                                                                    nextPosition3 = "";
+                        
+                                                                                    
+                                                                                            }
+
+                                                                                            if (nextPosition1 == "Kronos Kampf"){
+                                                                                                endFight();
+                                                                                                optionsPanel.setVisible(true);
+                                                                                                mainTextPanel.setVisible(true);
+                                                                        
+                                                                                                
+                                                                                                    mainTextArea.setText("\"Wie ist das möglich? Ich habe verloren. Neeeeein!\"\n\nKronos bricht zusammen, er ist besiegt\n\n\nGeschichte von Jost geschrieben");
+                                                                                                                
+                                                                                                    
+                                                                                               
+                                    
+                                                                                                if (spieler.badEnd == true){
+                                                                                                    option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));
+                                                                                                    option2button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+                                                                                                    option1button.setText("Spiele beenden");
+                                                                                                    option2button.setText("");
+                                                                                                    option3button.setText("");
+                                                                                                    
+                                                                                                    nextPosition1 = "Beenden";
+                                                                                                    nextPosition2 = "";
+                                                                                                    nextPosition3 = "";
+                                                                                                }
+                                                                                                else{
+                                                                                                    option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));
+                                                                                                    option2button.setFont(new Font("Times new Roman", Font.PLAIN, 25));
+                                                                                                    option1button.setText("Spiel beenden");
+                                                                                                    option2button.setText("Schlechtes Ending spielen");
+                                                                                                    option3button.setText("");
+                                                                                                    
+                                                                                                    nextPosition1 = "Beenden";
+                                                                                                    nextPosition2 = "Bad_End";
+                                                                                                    nextPosition3 = "";
+                                                                                                }
+                                                                                                
+                                                                                                        }
                                 
     }
 
@@ -5521,6 +5629,304 @@ for (int xi = 0; xi<= 120; xi++){
         }
             }
 
+            if (main_element != null && main_element.charAt(2) == 'W' && main_element.charAt(3) == 'a' && main_element.charAt(4) == 's' || second_element != null && second_element.charAt(2) == 'W' && second_element.charAt(3) == 'a' && second_element.charAt(4) == 's'){
+                for (int xi = 0; xi<= 120; xi++){
+                    fighting_options.setBounds(38, 480 + xi*5, 1200, 300);
+                    Thread.sleep(spieler.t1);
+                        }
+        
+                        Thread.sleep(spieler.t2);    
+    
+                        elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Wasser.png").getImage().getScaledInstance(370, 365, Image.SCALE_AREA_AVERAGING)));
+
+                elementImage.setBounds(500,80,400,400);
+    
+            elementImage.setVisible(true);
+    
+    
+                for (int i = 0; i< 200; i++){
+                    elementImage.setBounds(500,80 + i,400,400);
+                    Thread.sleep(spieler.t1);
+                }
+    
+                enemyImage.setEnabled(false);
+                elementImage.setVisible(false);
+    
+                if (spieler.currentEnemyHP > 0){
+                    Thread.sleep(spieler.t1 * 10);
+    
+                    damg = spieler.Power;
+                    damageText.setText("" + spieler.Power+ "");
+                    damageText.setForeground(new Color(255,255,255));
+                    enemyImage.setEnabled(false);
+                    damageText.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Wasser.png").getImage().getScaledInstance(35, 35, Image.SCALE_AREA_AVERAGING)));
+    
+    
+    
+                    if (spieler.enemyMain_Element == "Feuer" || spieler.enemyMain_Element == "Erde" ){
+    
+                        damageText.setText("" + spieler.Power *2 + "");
+                        damageText.setForeground(new Color(255,50,0));
+                        damg = spieler.Power *2;
+                        enemyImage.setEnabled(false);
+                     damageText.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Wasser.png").getImage().getScaledInstance(35, 35, Image.SCALE_AREA_AVERAGING)));
+    
+    
+                    }
+    
+                    if (spieler.enemyMain_Element == "Wasser"){
+                        damageText.setText("" + spieler.Power /2 + "");
+                        damageText.setForeground(new Color(255,200,30));
+                        damg = spieler.Power /2;
+                        enemyImage.setEnabled(false);
+                     damageText.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Wasser.png").getImage().getScaledInstance(35, 35, Image.SCALE_AREA_AVERAGING)));
+    
+    
+                    }
+    
+                    Thread.sleep(spieler.t2);
+                   
+                    damageText.setBounds(900, 480, 600, 80);
+                    damageText.setVisible(true);
+    
+                    for (int z = 0; z<= 200;z++){
+                        damageText.setBounds(900, 480 - z, 600, 80);
+                        Thread.sleep(spieler.damageTextAnimation);
+                    }
+    
+    
+                    chosen_Main_Element.setVisible(false);
+                    damageText.setText(damg + " Element Schaden");
+                    enemyImage.setEnabled(true);
+    
+                    Thread.sleep(spieler.t2 * 5);
+    
+    enemyImage.setEnabled(true);
+    
+    
+                Thread.sleep(spieler.t2);
+    
+                spieler.currentEnemyHP -= damg;
+                enemyInfoHP.setText("         "+spieler.currentEnemyHP);
+                if (spieler.currentEnemyHP <= 0){
+                    spieler.currentEnemyHP = 0;
+                   enemyInfoHP.setText("             0");
+                }
+    Thread.sleep(spieler.t2);
+                if (spieler.powerBoost != 1 && spieler.currentEnemyHP > 0 ){
+                    boostDamageText.setBounds(900,480,600,80);
+                    boostDamageText.setText("BoostDamage");
+                    boostDamageText.setIcon(new ImageIcon(new ImageIcon(spieler.powerBoostIcon).getImage().getScaledInstance(35, 35, Image.SCALE_AREA_AVERAGING)));
+                    boostDamageText.setVisible(true);
+                    enemyImage.setEnabled(false);
+                    for (int z = 0; z<= 200;z++){
+                        boostDamageText.setBounds(900, 480 - z/2, 600, 80);
+                        Thread.sleep(spieler.boostDamageTextAnimation);
+                    }
+                    for (int power = 0; power <=  damg * spieler.powerBoost - damg; power++){
+                        if (spieler.powerBoost != 1 && spieler.currentEnemyHP >= 0 ){
+                        boostDamageText.setText("+ "+ power);
+                        Thread.sleep((power * spieler.t1));
+                        extradamg++;
+                        spieler.currentEnemyHP -= extradamg;
+    extradamg = 0;
+                        }
+    
+                        
+    
+    
+                    }
+    
+    
+    
+    Thread.sleep(spieler.t3 * 4);
+    damageText.setVisible(false);
+    
+                    boostDamageText.setVisible(false);
+                    elementImage.setBounds(400,240,400,400);
+                    spieler.currentEnemyHP++;
+    
+                    Thread.sleep(spieler.t3);
+                    elementImage.setVisible(false);
+                    damageText.setVisible(false);
+                    enemyInfoHP.setText("         "+spieler.currentEnemyHP);
+    enemyImage.setEnabled(true);
+    
+                }
+            }
+            damageText.setVisible(false);
+            Thread.sleep(spieler.t3 * 2);
+            setSpecialWeapon("W");
+            specialCombat();
+    
+            enemyAttack();
+    
+            if (spieler.currentEnemyHP <= 0){
+                spieler.currentEnemyHP = 0;
+                enemyInfoHP.setText("             0");
+                endEnemy();
+                
+                }
+    
+    
+    for (int xi = 0; xi<= 120; xi++){
+        fighting_options.setBounds(38, 1080 - xi*5, 1200, 300);
+        Thread.sleep(spieler.t1);
+            }
+                }
+
+
+                if (main_element != null && main_element.charAt(2) == 'W' && main_element.charAt(3) == 'i' && main_element.charAt(4) == 'n' || second_element != null && second_element.charAt(2) == 'W' && second_element.charAt(3) == 'i' && second_element.charAt(4) == 'n'){
+                    for (int xi = 0; xi<= 120; xi++){
+                        fighting_options.setBounds(38, 480 + xi*5, 1200, 300);
+                        Thread.sleep(spieler.t1);
+                            }
+            
+                            Thread.sleep(spieler.t2);    
+        
+                            elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Wind.png").getImage().getScaledInstance(200, 200, Image.SCALE_AREA_AVERAGING)));
+    
+                    elementImage.setBounds(200,280,400,400);
+        
+                elementImage.setVisible(true);
+        
+        
+                    for (int i = 0; i< 400; i++){
+                        elementImage.setBounds(200 + (i/2),280,400,400);
+                        Thread.sleep(spieler.t1 * 2);
+                    }
+
+                    for (int i = 0; i< 70; i++){
+                        elementImage.setBounds(400 + (i*4),280,400,400);
+                        Thread.sleep(spieler.t1);
+                    }
+        
+                    enemyImage.setEnabled(false);
+                    elementImage.setVisible(false);
+        
+                    if (spieler.currentEnemyHP > 0){
+                        Thread.sleep(spieler.t1 * 10);
+        
+                        damg = spieler.Power;
+                        damageText.setText("" + spieler.Power+ "");
+                        damageText.setForeground(new Color(255,255,255));
+                        enemyImage.setEnabled(false);
+                        damageText.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Wind.png").getImage().getScaledInstance(35, 35, Image.SCALE_AREA_AVERAGING)));
+        
+        
+        
+                        if (spieler.enemyMain_Element == "Feuer" || spieler.enemyMain_Element == "Crystal" ){
+        
+                            damageText.setText("" + spieler.Power *2 + "");
+                            damageText.setForeground(new Color(255,50,0));
+                            damg = spieler.Power *2;
+                            enemyImage.setEnabled(false);
+                         damageText.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Strong\\Wind.png").getImage().getScaledInstance(35, 35, Image.SCALE_AREA_AVERAGING)));
+        
+        
+                        }
+        
+                        if (spieler.enemyMain_Element == "Licht" || spieler.enemyMain_Element == "Wind" ){
+                            damageText.setText("" + spieler.Power /2 + "");
+                            damageText.setForeground(new Color(255,200,30));
+                            damg = spieler.Power /2;
+                            enemyImage.setEnabled(false);
+                         damageText.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente_Weak\\Wind.png").getImage().getScaledInstance(35, 35, Image.SCALE_AREA_AVERAGING)));
+        
+        
+                        }
+        
+                        Thread.sleep(spieler.t2);
+                       
+                        damageText.setBounds(900, 480, 600, 80);
+                        damageText.setVisible(true);
+        
+                        for (int z = 0; z<= 200;z++){
+                            damageText.setBounds(900, 480 - z, 600, 80);
+                            Thread.sleep(spieler.damageTextAnimation);
+                        }
+        
+        
+                        chosen_Main_Element.setVisible(false);
+                        damageText.setText(damg + " Element Schaden");
+                        enemyImage.setEnabled(true);
+        
+                        Thread.sleep(spieler.t2 * 5);
+        
+        enemyImage.setEnabled(true);
+        
+        
+                    Thread.sleep(spieler.t2);
+        
+                    spieler.currentEnemyHP -= damg;
+                    enemyInfoHP.setText("         "+spieler.currentEnemyHP);
+                    if (spieler.currentEnemyHP <= 0){
+                        spieler.currentEnemyHP = 0;
+                       enemyInfoHP.setText("             0");
+                    }
+        Thread.sleep(spieler.t2);
+                    if (spieler.powerBoost != 1 && spieler.currentEnemyHP > 0 ){
+                        boostDamageText.setBounds(900,480,600,80);
+                        boostDamageText.setText("BoostDamage");
+                        boostDamageText.setIcon(new ImageIcon(new ImageIcon(spieler.powerBoostIcon).getImage().getScaledInstance(35, 35, Image.SCALE_AREA_AVERAGING)));
+                        boostDamageText.setVisible(true);
+                        enemyImage.setEnabled(false);
+                        for (int z = 0; z<= 200;z++){
+                            boostDamageText.setBounds(900, 480 - z/2, 600, 80);
+                            Thread.sleep(spieler.boostDamageTextAnimation);
+                        }
+                        for (int power = 0; power <=  damg * spieler.powerBoost - damg; power++){
+                            if (spieler.powerBoost != 1 && spieler.currentEnemyHP >= 0 ){
+                            boostDamageText.setText("+ "+ power);
+                            Thread.sleep((power * spieler.t1));
+                            extradamg++;
+                            spieler.currentEnemyHP -= extradamg;
+        extradamg = 0;
+                            }
+        
+                            
+        
+        
+                        }
+        
+        
+        
+        Thread.sleep(spieler.t3 * 4);
+        damageText.setVisible(false);
+        
+                        boostDamageText.setVisible(false);
+                        elementImage.setBounds(400,240,400,400);
+                        spieler.currentEnemyHP++;
+        
+                        Thread.sleep(spieler.t3);
+                        elementImage.setVisible(false);
+                        damageText.setVisible(false);
+                        enemyInfoHP.setText("         "+spieler.currentEnemyHP);
+        enemyImage.setEnabled(true);
+        
+                    }
+                }
+                damageText.setVisible(false);
+                Thread.sleep(spieler.t3 * 2);
+                setSpecialWeapon("W");
+                specialCombat();
+        
+                enemyAttack();
+        
+                if (spieler.currentEnemyHP <= 0){
+                    spieler.currentEnemyHP = 0;
+                    enemyInfoHP.setText("             0");
+                    endEnemy();
+                    
+                    }
+        
+        
+        for (int xi = 0; xi<= 120; xi++){
+            fighting_options.setBounds(38, 1080 - xi*5, 1200, 300);
+            Thread.sleep(spieler.t1);
+                }
+                    }
+    
 
             spieler.damageMade += damg + (damg * spieler.powerBoost - damg);
             if (spieler.damageMade >= 2500 && spieler.kämpfer == false){
@@ -5652,6 +6058,20 @@ for (int xi = 0; xi<= 120; xi++){
 
                 Thread.sleep(spieler.t3);
                 damageText.setVisible(false);
+
+                if (spieler.Health <= 0){
+                    spieler.Health = spieler.HealthB;
+                    playerInfoHP.setText("          " +spieler.Health);
+                    mainTextPanel.setVisible(true);
+                    fighting_options.setVisible(false);
+                    mainTextArea.setText("Du hast verloren.\n\nKampf wieder gestellt");
+                    endFight();
+                    Thread.sleep(2000);
+                    spawnEnemy(spieler.file, spieler.index);
+                    setSpecialWeapon("W");
+                    mainTextPanel.setVisible(false);
+                    fighting_options.setVisible(true);
+                }
             }
     
 
@@ -5766,7 +6186,7 @@ for (int xi = 0; xi<= 120; xi++){
             damageText.setForeground(new Color(255,255,255));
             ci = "Textrpg\\Images\\Elemente\\Erde.png";
 
-            if (spieler.Main_Element.charAt(2) == 'F' && spieler.Main_Element.charAt(3) == 'e'|| spieler.Main_Element.charAt(2) == 'W' && spieler.Main_Element.charAt(3) == 'i'){
+            if (spieler.Main_Element.charAt(2) == 'W' && spieler.Main_Element.charAt(3) == 'a'|| spieler.Main_Element.charAt(2) == 'W' && spieler.Main_Element.charAt(3) == 'i'){
 
                 damageText.setForeground(new Color(255,50,0));
                 damg2 = spieler.CurrentEnemyPower *2;
@@ -5942,6 +6362,70 @@ for (int xi = 0; xi<= 120; xi++){
 
         animateEnemyAttack(ci,damg2);
     }
+
+    if (element == "Wasser") {
+           
+        Thread.sleep(spieler.t1 * 10);
+
+        damg2 = spieler.CurrentEnemyPower;
+        damageText.setForeground(new Color(255,255,255));
+        ci = "Textrpg\\Images\\Elemente\\Wasser.png";
+
+        if (spieler.Main_Element.charAt(2) == 'F' && spieler.Main_Element.charAt(3) == 'e'|| spieler.Main_Element.charAt(2) == 'E' && spieler.Main_Element.charAt(3) == 'r'){
+
+            damageText.setForeground(new Color(255,50,0));
+            damg2 = spieler.CurrentEnemyPower *2;
+
+         ci = "Textrpg\\Images\\Elemente_Strong\\Wasser.png";
+
+
+        }
+
+        if (spieler.Main_Element.charAt(2) == 'W' && spieler.Main_Element.charAt(3) == 'a'){
+            damageText.setForeground(new Color(255,200,30));
+            damg2 = spieler.CurrentEnemyPower /2;
+
+         ci = "Textrpg\\Images\\Elemente_Weak\\Wasser.png";
+
+
+        }
+    System.out.println("Enemy used Gravity");
+    System.out.println("You lost " + spieler.CurrentEnemyPower + " HP");
+
+    animateEnemyAttack(ci,damg2);
+}
+
+if (element == "Wind") {
+           
+    Thread.sleep(spieler.t1 * 10);
+
+    damg2 = spieler.CurrentEnemyPower;
+    damageText.setForeground(new Color(255,255,255));
+    ci = "Textrpg\\Images\\Elemente\\Wind.png";
+
+    if (spieler.Main_Element.charAt(2) == 'F' && spieler.Main_Element.charAt(3) == 'e'|| spieler.Main_Element.charAt(2) == 'C' && spieler.Main_Element.charAt(3) == 'r'){
+
+        damageText.setForeground(new Color(255,50,0));
+        damg2 = spieler.CurrentEnemyPower *2;
+
+     ci = "Textrpg\\Images\\Elemente_Strong\\Wind.png";
+
+
+    }
+
+    if (spieler.Main_Element.charAt(2) == 'L' && spieler.Main_Element.charAt(3) == 'i' || spieler.Main_Element.charAt(2) == 'W' && spieler.Main_Element.charAt(3) == 'i'){
+        damageText.setForeground(new Color(255,200,30));
+        damg2 = spieler.CurrentEnemyPower /2;
+
+     ci = "Textrpg\\Images\\Elemente_Weak\\Wind.png";
+
+
+    }
+System.out.println("Enemy used Gravity");
+System.out.println("You lost " + spieler.CurrentEnemyPower + " HP");
+
+animateEnemyAttack(ci,damg2);
+}
 
     }
 
@@ -6342,6 +6826,38 @@ moon_Artemis.setVisible(false);
         }
        
 
+        if (nextPosition1 == "Medusa Fight"){
+            specialEnemyP.setVisible(true);
+            specialEnemyP2.setVisible(true);
+            specialEnemyI.setVisible(true);
+            specialEnemyT.setVisible(true);
+
+            specialEnemyP.setBounds(400, 40, (int) (1.25 * spieler.currentEnemyHP), 40);
+            specialEnemyP.setBackground(en.bossesColors[2]);
+            specialEnemyI.setBounds((int) (385 +(1.2 * spieler.currentEnemyHP)), 0, 265, 120);
+            specialEnemyT.setBounds((int) (385 +(1.2 * spieler.currentEnemyHP)), 100, 250, 40);
+            specialEnemyI.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Shields\\Python Rüstung.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));       
+            specialEnemyT.setForeground(new Color(255,205,40));
+            specialEnemyT.setText("Python Rüstung");
+moon_Artemis.setVisible(false);
+        }
+
+        if (nextPosition1 == "Poseidon Kampf"){
+            specialEnemyP.setVisible(true);
+            specialEnemyP2.setVisible(true);
+            specialEnemyI.setVisible(true);
+            specialEnemyT.setVisible(true);
+
+            specialEnemyP.setBounds(400, 40, (int) (1.25 * spieler.currentEnemyHP), 40);
+            specialEnemyP.setBackground(en.bossesColors[2]);
+            specialEnemyI.setBounds((int) (385 +(1.2 * spieler.currentEnemyHP)), 0, 265, 120);
+            specialEnemyT.setBounds((int) (385 +(1.2 * spieler.currentEnemyHP)), 100, 250, 40);
+            specialEnemyI.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Shields\\Neptuns Rüstung.png").getImage().getScaledInstance(60, 60, Image.SCALE_AREA_AVERAGING)));       
+            specialEnemyT.setForeground(new Color(255,205,40));
+            specialEnemyT.setText("Python Rüstung");
+moon_Artemis.setVisible(false);
+        }
+
     }
 
 }
@@ -6416,6 +6932,21 @@ public void specialCombat() throws InterruptedException{
 
     }
 
+    if (nextPosition1 == "Zeus Kampf" && spieler.reflection == false && spieler.currentEnemyHP > 0){
+        if (Math.random() > 0.3){
+            specialEffectText.setEnabled(true);
+            specialEffectText.setVisible(true);
+            specialEffectText.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\BossesI\\Zeus_Rage.png")
+                    .getImage().getScaledInstance(40, 35, Image.SCALE_AREA_AVERAGING)));
+                    specialEffectText.setText("25% mehr Schaden");
+                    spieler.Health -= (0.25 * spieler.CurrentEnemyPower);
+                    enemyInfoHP.setText("          " +spieler.currentEnemyHP);     
+                    Thread.sleep(spieler.t3 * 15);
+        specialEffectText.setVisible(false);
+        specialEffectText2.setVisible(false);
+        }
+     }
+
 }
 
 
@@ -6428,6 +6959,8 @@ public void specialCombat() throws InterruptedException{
         if (File == "Enemies"){
             standardE();
 
+            spieler.file = "Enemies";
+            spieler.index = Index;
             enemyImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Enemies\\" + en.enemies[Index] + ".png").getImage().getScaledInstance(370, 365, Image.SCALE_AREA_AVERAGING)));
             enemyInfoImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Enemies\\" + en.enemies[Index] + ".png").getImage().getScaledInstance(140, 120, Image.SCALE_AREA_AVERAGING)));
 //HP = en.enemiesHP[Index];
@@ -6452,7 +6985,7 @@ if (en.enemy_Third_Materias[Index]!= null){
 
 }
 
-
+System.out.println(spieler.enemyMain_Element);
 
 
 elementImage.setBounds(500,280,400,400);
@@ -6494,6 +7027,9 @@ fightPlayButton.setVisible(true);
 
         if (File == "Bosses"){
             standardE();
+
+            spieler.file = "Bosses";
+            spieler.index = Index;
 
             enemyImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Bosses\\" + en.bosses[Index] + ".png").getImage().getScaledInstance(370, 365, Image.SCALE_AREA_AVERAGING)));
             enemyInfoImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Bosses\\" + en.bosses[Index] + ".png").getImage().getScaledInstance(100, 100, Image.SCALE_AREA_AVERAGING)));
@@ -7456,7 +7992,7 @@ achievementDif.setVisible(false);
      
         
      
-     nextPosition1="After Gladiators";
+     nextPosition1="Poseidon Kampf";
      
      nextPosition2="";
      nextPosition3="";
@@ -7670,6 +8206,7 @@ achievementDif.setVisible(false);
             optionsPanel.setVisible(false);
             spawnEnemy("Bosses", 1);
 
+            spieler.HealthB = spieler.Health;
             setSpecialWeapon("W");
 
 
@@ -7940,6 +8477,7 @@ break;
             
             // Bandit einfügen 
             spawnEnemy("Enemies", 19);
+            spieler.HealthB = spieler.Health;
             optionsPanel.setVisible(false);
             mainTextPanel.setVisible(false);
                         
@@ -7954,6 +8492,7 @@ break;
             //Bandit einfügen
 
             spawnEnemy("Enemies", 20);
+            spieler.HealthB = spieler.Health;
             optionsPanel.setVisible(false);
             mainTextPanel.setVisible(false);
                         
@@ -8392,7 +8931,8 @@ nextPosition3 = "";
                             optionsPanel.setVisible(false);
                             mainTextPanel.setVisible(false);
                             spawnEnemy("Enemies", 24);
-                                                   
+                            spieler.HealthB = spieler.Health;
+
                                                 
                                     option1button.setText("Kampf beginnen");
                                     option2button.setText("zurück");
@@ -8409,7 +8949,8 @@ nextPosition3 = "";
                                     optionsPanel.setVisible(false);
                                     mainTextPanel.setVisible(false);
                                     spawnEnemy("Enemies", 25);
-                                                           
+                                    spieler.HealthB = spieler.Health;
+          
                                                         
                                             option1button.setText("Kampf beginnen");
                                             option2button.setText("zurück");
@@ -8426,7 +8967,8 @@ nextPosition3 = "";
                                             optionsPanel.setVisible(false);
                                             mainTextPanel.setVisible(false);
                                             spawnEnemy("Enemies", 26);
-                                                                   
+                                            spieler.HealthB = spieler.Health;
+             
                                                                 
                                                     option1button.setText("Kampf beginnen");
                                                     option2button.setText("zurück");
@@ -8443,7 +8985,8 @@ nextPosition3 = "";
                                                     optionsPanel.setVisible(false);
                                                     mainTextPanel.setVisible(false);
                                                     spawnEnemy("Enemies", 27);
-                                                                           
+                                                    spieler.HealthB = spieler.Health;
+                   
                                                                         
                                                             option1button.setText("Kampf beginnen");
                                                             option2button.setText("zurück");
@@ -8460,7 +9003,8 @@ nextPosition3 = "";
                                                             optionsPanel.setVisible(false);
                                                             mainTextPanel.setVisible(false);
                                                             spawnEnemy("Enemies", 28);
-                                                                                   
+                                                            spieler.HealthB = spieler.Health;
+                  
                                                                                 
                                                                     option1button.setText("Kampf beginnen");
                                                                     option2button.setText("zurück");
@@ -8477,7 +9021,8 @@ nextPosition3 = "";
                                                                     optionsPanel.setVisible(false);
                                                                     mainTextPanel.setVisible(false);
                                                                     spawnEnemy("Enemies", 29);
-                                                                                           
+                                                                    spieler.HealthB = spieler.Health;
+               
                                                                                         
                                                                             option1button.setText("Kampf beginnen");
                                                                             option2button.setText("zurück");
@@ -8494,7 +9039,8 @@ nextPosition3 = "";
                             optionsPanel.setVisible(false);
                             mainTextPanel.setVisible(false);
                             spawnEnemy("Enemies", 9);
-                                                   
+                            spieler.HealthB = spieler.Health;
+           
                         
                         nextPosition1 = "StoryR_6++";
                         nextPosition2 = "StoryR_6";
@@ -8514,7 +9060,8 @@ nextPosition3 = "";
                                     optionsPanel.setVisible(false);
                                     mainTextPanel.setVisible(false);
                                     spawnEnemy("Enemies", 10);
-                                                                   
+                                    spieler.HealthB = spieler.Health;
+                     
                                 
                                 nextPosition1 = "StoryR_6+++";
                                 
@@ -8532,7 +9079,8 @@ nextPosition3 = "";
                                             optionsPanel.setVisible(false);
                                             mainTextPanel.setVisible(false);
                                             spawnEnemy("Enemies", 11);
-                                                                           
+                                            spieler.HealthB = spieler.Health;
+                  
                                         
                                         nextPosition1 = "StoryR_6++++";
                                         
@@ -8550,7 +9098,8 @@ nextPosition3 = "";
                                                     optionsPanel.setVisible(false);
                                                     mainTextPanel.setVisible(false);
                                                     spawnEnemy("Enemies", 12);
-                                                                                   
+                                                    spieler.HealthB = spieler.Health;
+                       
                                                 
                                                 nextPosition1 = "StoryR_6+++++";
                                                 
@@ -8568,7 +9117,8 @@ nextPosition3 = "";
                                                     optionsPanel.setVisible(false);
                                                     mainTextPanel.setVisible(false);
                                                     spawnEnemy("Enemies", 13);
-                                                                                   
+                                                    spieler.HealthB = spieler.Health;
+                      
                                                 
                                                 nextPosition1 = "StoryR_6++++++";
                                                 
@@ -8586,7 +9136,8 @@ nextPosition3 = "";
                                                     optionsPanel.setVisible(false);
                                                     mainTextPanel.setVisible(false);
                                                     spawnEnemy("Enemies", 14);
-                                                                                   
+                                                    spieler.HealthB = spieler.Health;
+                       
                                                 
                                                 nextPosition1 = "StoryR_6+++++++";
                                                 
@@ -8644,6 +9195,8 @@ nextPosition3 = "";
                                                                                                    
                                                                                 
                                                                     spawnEnemy("Bosses", 8);
+                                                                    spieler.HealthB = spieler.Health;
+
                                                                             option1button.setText("weiter");
                                                                             option2button.setText("");
                                                                             option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));        
@@ -8718,7 +9271,8 @@ nextPosition3 = "";
                                                                     optionsPanel.setVisible(false);
                                                                     mainTextPanel.setVisible(false);
 spawnEnemy("Bosses", 3);                                                                                                   
-                                                                
+spieler.HealthB = spieler.Health;
+                                              
                                                                 nextPosition1 = "StoryR_6++++++++++";
                                                                 
                                                                             option1button.setText("weiter");
@@ -8842,6 +9396,8 @@ spawnEnemy("Bosses", 3);
                                     optionsPanel.setVisible(false);
                                     mainTextPanel.setVisible(false);
                            spawnEnemy("Enemies", 21);
+                           spieler.HealthB = spieler.Health;
+
                                     mainTextArea.setText(" Auf dem Boden sind überall Schlangen auf einmal. \n\nEs kommen aus allen Ecken Gorgonen!");
                             
                             
@@ -8864,6 +9420,8 @@ spawnEnemy("Bosses", 3);
                                     optionsPanel.setVisible(false);
                                     mainTextPanel.setVisible(false);
                            spawnEnemy("Enemies", 22);
+                           spieler.HealthB = spieler.Health;
+
                                     mainTextArea.setText(" Auf dem Boden sind überall Schlangen auf einmal. \n\nEs kommen aus allen Ecken Gorgonen!");
                             
                             
@@ -8885,6 +9443,8 @@ spawnEnemy("Bosses", 3);
                                         optionsPanel.setVisible(false);
                                         mainTextPanel.setVisible(false);
                                spawnEnemy("Enemies", 23);
+                               spieler.HealthB = spieler.Health;
+
                                         mainTextArea.setText(" Auf dem Boden sind überall Schlangen auf einmal. \n\nEs kommen aus allen Ecken Gorgonen!");
                                 
                                 
@@ -9208,6 +9768,8 @@ spieler.PolydektesK = false;
                                                         optionsPanel.setVisible(false);
                                                         mainTextPanel.setVisible(false);
                                                         spawnEnemy("Enemies", 16);
+                                                        spieler.HealthB = spieler.Health;
+
                                                         option3button.setText("");
                                                         option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
                                                         option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
@@ -9220,6 +9782,8 @@ spieler.PolydektesK = false;
                                                         optionsPanel.setVisible(false);
                                                         mainTextPanel.setVisible(false);
                                                         spawnEnemy("Enemies", 17);
+                                                        spieler.HealthB = spieler.Health;
+
                                                         option3button.setText("");
                                                         option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
                                                         option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
@@ -9233,6 +9797,8 @@ spieler.PolydektesK = false;
                                                         optionsPanel.setVisible(false);
                                                         mainTextPanel.setVisible(false);
                                                         spawnEnemy("Enemies", 18);
+                                                        spieler.HealthB = spieler.Health;
+
                                                         option3button.setText("");
                                                         option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
                                                         option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
@@ -9262,6 +9828,9 @@ spieler.PolydektesK = false;
                                                         mainTextPanel.setVisible(false);
 
                                                         spawnEnemy("Bosses", 7);
+                                                        setSpecialWeapon("W");
+                                                        spieler.HealthB = spieler.Health;
+
                                                         option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
                                                         option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
                                             
@@ -9290,6 +9859,8 @@ spieler.PolydektesK = false;
                                                         optionsPanel.setVisible(false);
                                                         mainTextPanel.setVisible(false);
                                                         spawnEnemy("Enemies", 5);
+                                                        spieler.HealthB = spieler.Health;
+
                                                         mainTextArea.setText(" Innerhalb von wenigen Sekunden befindest du dich auf einmal in einem dunklen Gebiet, überall fliegen die Seelen der verstorbenen herum.\n\n Einige erscheinen vor dir.\n\n Es sind die, die du getötet hast.");
                                                         nextPosition2 = "Story7L";
 
@@ -9308,6 +9879,8 @@ spieler.PolydektesK = false;
                                                         optionsPanel.setVisible(false);
                                                         mainTextPanel.setVisible(false);
                                                         spawnEnemy("Enemies", 6);
+                                                        spieler.HealthB = spieler.Health;
+
                                                         mainTextArea.setText(" Innerhalb von wenigen Sekunden befindest du dich auf einmal in einem dunklen Gebiet, überall fliegen die Seelen der verstorbenen herum.\n\n Einige erscheinen vor dir.\n\n Es sind die, die du getötet hast.");
 
                                                         option1button.setText("weiter");
@@ -9322,6 +9895,8 @@ spieler.PolydektesK = false;
                                                         case "Story7L_4":; 
 
                                                         spawnEnemy("Enemies", 7);
+                                                        spieler.HealthB = spieler.Health;
+
                                                         optionsPanel.setVisible(false);
                                                         mainTextPanel.setVisible(false);
                                                       //  mainTextArea.setText(" \"Applaus, Applaus. Sehr gut wie du die die du bereits getötet, nochmal tötest.\"\"Ich bin Hades, der Gott der Unterwelt, und ein Bruder von Zeus. Du fragst dich vielleicht was du hier macht, nun gut das war ich! Ich wollte dass du nochmal gegen die Leute die du getötet hast kämpfst und dein nächster Gegner bin ich.\"");
@@ -9342,6 +9917,8 @@ spieler.PolydektesK = false;
                                                         optionsPanel.setVisible(false);
                                                         mainTextPanel.setVisible(false);
                                                         spawnEnemy("Enemies", 8);
+                                                        spieler.HealthB = spieler.Health;
+
                                                         option1button.setText("weiter");
                                                         option2button.setText("zurück");
                                                         option3button.setText("");
@@ -9375,6 +9952,8 @@ spieler.PolydektesK = false;
                                                         optionsPanel.setVisible(false);
                                                         mainTextPanel.setVisible(false);
                                                         spawnEnemy("Bosses", 4);
+                                                        spieler.HealthB = spieler.Health;
+
                                                         mainTextArea.setText("\"Herzlichen, herzlichen Glückwunsch! Du hast also gewonnen. Los komm töte mi…\"\n\nDu hast Hades den Kopf abgehackt, du bist wieder an der Oberfläche.");
                                                         mainTextArea.setText(" \"Applaus, Applaus. Sehr gut wie du die die du bereits getötet, nochmal tötest.\"Ich bin Hades, der Gott der Unterwelt, und ein Bruder von Zeus. Du fragst dich vielleicht was du hier macht, nun gut das war ich! Ich wollte dass du nochmal gegen die Leute die du getötet hast kämpfst und dein nächster Gegner bin ich.\"");
 
@@ -9479,6 +10058,8 @@ spieler.PolydektesK = false;
                                                         nextPosition1 = "Hydra Kampf";
 
                                                         spawnEnemy("Enemies", 15);
+                                                        spieler.HealthB = spieler.Health;
+
                                                         option3button.setText("");
                                                         option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
                                                         option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
@@ -9492,6 +10073,8 @@ spieler.PolydektesK = false;
                                                         mainTextPanel.setVisible(false); 
 
                                                         spawnEnemy("Bosses", 5);
+                                                        spieler.HealthB = spieler.Health;
+
                                                         option3button.setText("");
                                                         option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));        
                                                         option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
@@ -9522,6 +10105,9 @@ nextPosition2 = "";
                                                 mainTextPanel.setVisible(false);
                                         
 spawnEnemy("Bosses", 0);
+setSpecialWeapon("W");
+spieler.HealthB = spieler.Health;
+
                                                 nextPosition2 = "";
                                         
                                                     option1button.setText("weiter");
@@ -9582,6 +10168,8 @@ spawnEnemy("Bosses", 0);
             optionsPanel.setVisible(false);
 
             spawnEnemy("Bosses", 2);
+            spieler.HealthB = spieler.Health;
+
             setSpecialWeapon("W");
 
 
@@ -9637,6 +10225,8 @@ spawnEnemy("Bosses", 0);
             optionsPanel.setVisible(false);
 
             spawnEnemy("Enemies", 1);
+            spieler.HealthB = spieler.Health;
+
            // nextPosition1 = "Zweiter Gegner Kampf";
             ;break;
 
@@ -9645,6 +10235,8 @@ spawnEnemy("Bosses", 0);
             optionsPanel.setVisible(false);
 
             spawnEnemy("Enemies", 2);
+            spieler.HealthB = spieler.Health;
+
          //   nextPosition1 = "Dritter Gegner Kampf";
             ;break;
 
@@ -9653,6 +10245,8 @@ spawnEnemy("Bosses", 0);
             optionsPanel.setVisible(false);
 
             spawnEnemy("Enemies", 3);
+            spieler.HealthB = spieler.Health;
+
          //   nextPosition1 = "Vierter Gegner Kampf";
             ;break;
 
@@ -9661,6 +10255,8 @@ spawnEnemy("Bosses", 0);
             optionsPanel.setVisible(false);
 
             spawnEnemy("Enemies", 4);
+            spieler.HealthB = spieler.Health;
+
           //  nextPosition1 = "Anfangpart8";
             ;break;
 
@@ -9684,34 +10280,37 @@ spawnEnemy("Bosses", 0);
             
             
             case "End":
-            
+            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+            option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
             mainTextArea.setText("Nach ein paar Tagen geschieht es, Zeus lädt dich Zeus in den Olymp ein. Du nimmst die Einladung an.\n\nPlötzlich bist du in einem Palast, aus Wolken. Vor dir ist eine Tür. Du öffnest sie \n\nDu läufst zwischen verschiedenen Göttern her.");
             
             option1button.setText("weiter");
             option2button.setText("");
             nextPosition1 = "End2";
-
+nextPosition2 = "";
             ;break; 
 
             case "End2":
-            
+            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+            option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
             if (spieler.karma <0){
-                mainTextArea.setText("Hasserfüllt und ängstlich schauen sie dich an\n\nDu gehst an ihnen vorbei auf die nächste Tür zu.\n Du öffnest sie");
+                mainTextArea.setText("Hasserfüllt und ängstlich schauen sie dich an\n\nDu gehst an ihnen vorbei auf die nächste Tür zu.\nDu öffnest sie");
 
             }
             else{
-                mainTextArea.setText("Lächelnd schauen sie dich an\n\nDu gehst an ihnen vorbei auf die nächste Tür zu.\n Du öffnest sie");
+                mainTextArea.setText("Lächelnd schauen sie dich an\n\nDu gehst an ihnen vorbei auf die nächste Tür zu.\nDu öffnest sie");
             }
             
             option1button.setText("weiter");
             option2button.setText("zurück");
             nextPosition1 = "End3";
-            nextPosition1 = "End";
+            nextPosition2 = "End";
 
             ;break; 
 
             case "End3":
-            
+            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+            option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
             if (spieler.karma <0){
                 mainTextArea.setText("\"Du kleiner Mistkerl, wie kannst du es wagen, meine Kinder getötet zu haben?\"");
 
@@ -9723,32 +10322,272 @@ spawnEnemy("Bosses", 0);
             option1button.setText("weiter");
             option2button.setText("zurück");
             nextPosition1 = "End4";
-            nextPosition1 = "End2";
+            nextPosition2 = "End2";
 
             ;break; 
 
 
             case "End4":
-            
+            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));
+            option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
                 mainTextArea.setText("\"Jetzt stehen wir uns endlich Angesicht zu Angesicht gegenüber. Gott oder Mensch wer wied gewinnen?\"");
 
             
-            option1button.setText("weiter");
+            option1button.setText("Kampf beginnen");
             option2button.setText("zurück");
             nextPosition1 = "Zeus Kampf";
-            nextPosition1 = "End3";
+            nextPosition2 = "End3";
 
             ;break; 
 
             case "Zeus Kampf":
             
-            
+            optionsPanel.setVisible(false);
+            mainTextPanel.setVisible(false);
+            nextPosition1 = "Zeus Kampf";
+            spawnEnemy("Bosses", 9);
+            spieler.HealthB = spieler.Health;
+
             option1button.setText("weiter");
             option2button.setText("zurück");
-            nextPosition1 = "Zeus Kampf";
-            nextPosition1 = "End2";
 
             ;break; 
+
+            case "End5":
+            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+            option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+            mainTextArea.setText("\"Genug geredet!\"\n\nDu schaust dich um. Wer hat da geredet? Ihr wart doch alleine.\n\nDa bemerkst du den alten Mann, der dir den Auftrag aufgegeben hat");
+
+        
+        option1button.setText("weiter");
+        option2button.setText("");
+        nextPosition1 = "End6";
+        nextPosition2 = "";
+
+        ;break;
+
+        case "End6":
+        option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+        option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+            mainTextArea.setText("\"Ich muss mich bei dir bedanken, du hast tatsächlich den Auftrag von mir ausgeführt, ohne ihn hinterzufragen.\n\nDu bist ein Narr, als wenn irgendein darhergelaufener alter Mann von dir möcht, dass du den Olymp stürzt.\"");
+
+        
+        option1button.setText("weiter");
+        option2button.setText("zurück");
+        nextPosition1 = "End7";
+        nextPosition2 = "End5";
+
+        ;break;
+
+        case "End7":
+        option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+        option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+        mainTextArea.setText("\"Wer bist du?\"\n\nFragt Zeus.");
+
+        
+        option1button.setText("weiter");
+        option2button.setText("zurück");
+        nextPosition1 = "End8";
+        nextPosition2 = "End6";
+
+        ;break;
+
+
+        case "End8":
+        option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+        option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+        mainTextArea.setText("\"Nah, nah, nah. Ich bin echt enttäuscht von dir, dass du mich nicht wiedererkennst.\nDabei bin ich doch dein Vater\"\n\nZeus schaut erschrocken auf.\n\n\"Kronos?! Wie ist das möglich? Ich habe dich doch weggesperrt?\"");
+
+        
+        option1button.setText("weiter");
+        option2button.setText("zurück");
+        nextPosition1 = "End9";
+        nextPosition2 = "End7";
+
+        ;break;
+
+        case "End9":
+        option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+        option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+        mainTextArea.setText("\"Tja scheinbar wohl nicht gut genug, ich konnte fliehen. Allerdings bin ich deswegen geschwächt\"");
+
+        
+        option1button.setText("weiter");
+        option2button.setText("zurück");
+        nextPosition1 = "End10";
+        nextPosition2 = "End8";
+
+        ;break;
+
+        case "End10":
+        option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+        option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+        mainTextArea.setText("Kronos geht auf Zeus zu.\n\"Deswegen musste ich jemand anderen finden, der das für mich tut.\nUnd das Schicksal war auf meiner Seite. Ich konnte einen Idioten finden, der das wirklich tut.\"\nEr blickt kurz zu dir rüber und richtet seine Hand auf Zeus");
+
+        
+        option1button.setText("weiter");
+        option2button.setText("zurück");
+        nextPosition1 = "End11";
+        nextPosition2 = "End9";
+
+        ;break;
+
+        
+        case "End11":
+        option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+        option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+        if (spieler.karma > 0){
+            mainTextArea.setText("\"Schnell töte ihn!\" ruft Zeus.");
+
+        }
+        else{
+            mainTextArea.setText("Du bekommst ein unangenehmes Gefühl.\n\nDu stürmst mit gezogener Waffe auf Kronos zu.");
+
+        }
+
+        
+        option1button.setText("weiter");
+        option2button.setText("zurück");
+        nextPosition1 = "End12";
+        nextPosition2 = "End10";
+
+        ;break;
+
+        case "End12":
+        option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+        option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+        mainTextArea.setText("\"Zu spät!\" \nKronos erzieht Zeus seine gesamte kraft und tötet ihn dann.\nKronos wird auf einmal zu einem gigantischen Titanen, tief schwarz und mit einem vulkanischen Muster überzogen.\n\nDu bricht vor Verzweiflung zusammen");
+
+        
+        option1button.setText("weiter");
+        option2button.setText("zurück");
+        nextPosition1 = "End13";
+        nextPosition2 = "End11";
+
+        ;break;
+
+        case "End13":
+        option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+        option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+
+        if(spieler.karma <= -8){
+            mainTextArea.setText("Vernichtet den gesamten Tempel und tötet übrig gebliebenen Götter.\nDann greift er nach dir, du versuchst zu fliehen allerdings scheiterst du.");
+
+        }
+        else{
+            mainTextArea.setText("Jedoch erscheinen die restlichen Gottheiten.\n\n\"Legen wir unsere Konflikte mal bei Seiten umd machen dieses Monster fertig!\"");
+
+        }
+
+        
+        option1button.setText("weiter");
+        option2button.setText("zurück");
+        nextPosition1 = "End14";
+        nextPosition2 = "End12";
+
+        ;break;
+
+        case "End14":
+        option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));
+        option2button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+
+        if(spieler.karma <= -8){
+mainTextArea.setText("\"Dich brauche ich nicht mehr\"\nDer Druck um deinen Körper wird stärker.\nKronos zerquetscht dich.\n\nEnde.\n\n\nGeschichte von Jost geschrieben");
+if (spieler.goodEnd == true){
+    option1button.setText("Spiel beenden");
+    option2button.setText("");
+    nextPosition1 = "Beenden";
+    nextPosition2 = "";
+    option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));
+}
+
+if (spieler.goodEnd == false){
+    option1button.setText("Spiel beenden");
+    option2button.setText("Gutes Ending spielen");
+    nextPosition1 = "Beenden";
+    nextPosition2 = "Good_End";
+    option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));
+    option2button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+}
+
+spieler.badEnd = true;
+        }
+
+        else{
+        mainTextArea.setText("Deine Entschlossenheit kommt zurück. Du stehst wieder auf, da hörst du.\n\"Hey, wir wollen auch noch helfen\"nWieder siehst du dich um, eine Armee aus Zyklopen hat das Schlacht Feld betreten.\nEiner der Zyklopen wirft dir deinen Schwert und deine Rüstung rüber.\"Die wirst du brauchen\"\nIhr macht euch bereit für den Kampf und stürmt auf Kronos zu.");
+            option1button.setText("weiter");
+            option2button.setText("");
+            nextPosition1 = "End15";
+            nextPosition2 = "Good_End";
+            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));
+            option2button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+            spieler.goodEnd = true;
+
+        }
+
+        
+
+
+        ;break;
+
+        case "End15":
+        option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));
+        option2button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+
+        
+
+        
+        mainTextArea.setText("\"Egal wie viele ihr seid, ich werde euch dennoch töten.\"");
+            option1button.setText("weiter");
+            option2button.setText("");
+            nextPosition1 = "Kronos Kampf";
+            nextPosition2 = "End14";
+            option1button.setFont(new Font("Times new Roman", Font.PLAIN, 35));
+            option2button.setFont(new Font("Times new Roman", Font.PLAIN, 30));
+
+
+        ;break;
+
+        case "Kronos Kampf":
+        optionsPanel.setVisible(false);
+        mainTextPanel.setVisible(false);
+        nextPosition1 = "Kronos Kampf";
+        spawnEnemy("Bosses", 10);
+        spieler.HealthB = spieler.Health;
+
+        option1button.setText("weiter");
+        option2button.setText("zurück");
+
+        ;break;
+
+        
+        case "Good_End":
+        option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+        option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+        spieler.karma = 12;
+
+        mainTextArea.setText("\"Zu spät!\" \nKronos erzieht Zeus seine gesamte kraft und tötet ihn dann.\nKronos wird auf einmal zu einem gigantischen Titanen, tief schwarz und mit einem vulkanischen Muster überzogen.\n\nDu bricht vor Verzweiflung zusammen");
+
+        option1button.setText("weiter");
+        option2button.setText("zurück");
+        nextPosition1 = "End13";
+        nextPosition2 = "End11";
+
+        ;break;
+
+        case "Bad_End":
+        option1button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+        option2button.setFont(new Font("Times new Roman", Font.PLAIN, 40));
+        spieler.karma = -12;
+
+        mainTextArea.setText("\"Zu spät!\" \nKronos erzieht Zeus seine gesamte kraft und tötet ihn dann.\nKronos wird auf einmal zu einem gigantischen Titanen, tief schwarz und mit einem vulkanischen Muster überzogen.\n\nDu bricht vor Verzweiflung zusammen");
+
+        option1button.setText("weiter");
+        option2button.setText("zurück");
+        nextPosition1 = "End13";
+        nextPosition2 = "End11";
+
+        ;break;
             
     
             case "AuftragannehmenNein":DerAnfangende();break;
