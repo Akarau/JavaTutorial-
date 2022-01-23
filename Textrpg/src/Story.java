@@ -1995,11 +1995,9 @@ boostB.add(si);
                     animateElement(spieler.Main_Element,null,(byte) 1);
                 }
                 if (at == 2){
-                    System.out.println("at = 2");;
                     animateElement(null,spieler.Second_Element,(byte) 2);
                 }
                 if (at == 3){
-                    System.out.println("at = 2");;
                     animateElement(null,null,(byte) 3);
                 }
             }
@@ -2082,7 +2080,6 @@ achievements.setVisible(false);
     public void actionPerformed(java.awt.event.ActionEvent e) {
 
         if (e.getActionCommand() == "startname") {
-            System.out.println("startname");
             l.setVisible(!l.isVisible());
 
         }
@@ -2090,7 +2087,6 @@ achievements.setVisible(false);
 
         if (e.getActionCommand() == "Sword_Equip") {
 
-            System.out.println("D");
             for (int s = 0; s < scl.schwerte.length; s++){
 if (scl.schwerte[s] == chosen_Main_Element_Name.getText() ){
     playerInfoPower.setForeground(scl.weaponsColor[s]);
@@ -2138,7 +2134,6 @@ if (scl.schwerte[s] == chosen_Main_Element_Name.getText() ){
 
                     if (e.getActionCommand() == "Boost_Use") {
 
-                        System.out.println("D");
                         for (int s = 0; s < scl.boosts.length; s++){
             if (scl.boosts[s] == chosen_Main_Element_Name.getText()){
                                         
@@ -2196,6 +2191,7 @@ if (scl.boosts[s] == "Reflection" && chosen_Main_Element_Name.getText() == "Refl
                     }
 
         if (e.getActionCommand() == "eInventar") {
+            commbox.setVisible(false);
            openInv();
 
     }
@@ -2233,7 +2229,6 @@ if (scl.boosts[s] == "Reflection" && chosen_Main_Element_Name.getText() == "Refl
 
                 for (int o = scl.schwerte.length; o < (scl.items.length - scl.boosts.length); o++){
                     if (inventory.containsKey(scl.items[o])){
-                        System.out.println("SW");
                         inventarPanel.getComponent(o).setVisible(true);
                     }
                     
@@ -2255,7 +2250,6 @@ if (scl.boosts[s] == "Reflection" && chosen_Main_Element_Name.getText() == "Refl
 
                 for (int o = (scl.schwerte.length + scl.schilder.length); o < scl.items.length; o++){
                     if (inventory.containsKey(scl.items[o])){
-                        System.out.println("SW");
                         inventarPanel.getComponent(o).setVisible(true);
                         choose_Element.setText(" gekauft ");
 
@@ -2274,7 +2268,6 @@ if (scl.boosts[s] == "Reflection" && chosen_Main_Element_Name.getText() == "Refl
 
 
                 if (scl.schwerte[s] == chosen_Main_Element_Name.getText()){
-                System.out.println(chosen_Main_Element_Name.getText());
                 if (!inventory.containsKey(chosen_Main_Element_Name.getText())){
 
                     if (spieler.Gold >= scl.weaponsPreis[s]){
@@ -2292,7 +2285,6 @@ if (scl.boosts[s] == "Reflection" && chosen_Main_Element_Name.getText() == "Refl
             for (int s = 0; s < scl.schilder.length; s++){
 
                 if (scl.schilder[s] == chosen_Main_Element_Name.getText()){
-                System.out.println(chosen_Main_Element_Name.getText());
                 if (!inventory.containsKey(chosen_Main_Element_Name.getText())){
 
                     if (spieler.Gold >= scl.shieldsPreis[s]){
@@ -2311,12 +2303,10 @@ if (scl.boosts[s] == "Reflection" && chosen_Main_Element_Name.getText() == "Refl
             for (int s = 0; s < scl.boosts.length; s++){
 
                 if (scl.boosts[s] == chosen_Main_Element_Name.getText()){
-                System.out.println(chosen_Main_Element_Name.getText());
 
                     if (spieler.Gold >= scl.boostsPreis[s]){
                         spieler.Gold -= scl.boostsPreis[s];
                         inventory.put(scl.boosts[s], 1);
-                        System.out.println(inventory.get(scl.boosts[s] + 1));
                    //     chosen_Main_Element_Name.setText(chosen_Main_Element_Name.getText() +"[" + inventory.get(scl.boosts[s]) + "]");
                         choose_Element.setText(" gekauft ");
 
@@ -2335,7 +2325,6 @@ if (scl.boosts[s] == "Reflection" && chosen_Main_Element_Name.getText() == "Refl
         }
 
         if (e.getActionCommand() == "PowerUpgrade") {
-            System.out.println("PowerUpgrade");
             if (spieler.Points >= 1) {
                 spieler.Power++;
                 i5.setText("    Power: " + spieler.Power + " ");
@@ -2345,6 +2334,7 @@ if (scl.boosts[s] == "Reflection" && chosen_Main_Element_Name.getText() == "Refl
         }
 
         if (e.getActionCommand() == "eAchievements") {
+            commbox.setVisible(false);
             chosen_Main_Element.setVisible(false);
             achievements.setVisible(!achievements.isVisible());
             iPanel.setVisible(achievements.isVisible());
@@ -2421,7 +2411,6 @@ commbox.setVisible(false);
         }
 
         if (e.getActionCommand() == "option2") {
-            System.out.println("option2");
             optionsmenu.setVisible(!optionsmenu.isVisible());
             options_c.setVisible(!options_c.isVisible());
             colors_R.setVisible(!colors_R.isVisible());
@@ -2531,6 +2520,8 @@ ePlayButton.setActionCommand("ePlayButton1");
 
 
         if (e.getActionCommand().equals("eShop")) {
+            commbox.setVisible(false);
+            System.out.println("Münzen: " + spieler.Gold);
             eshop_weapons.setActionCommand("eShop_weapons");
             eshop_shields.setActionCommand("eShop_Shields");
             eshop_boosts.setActionCommand("eShop_Boosts");
@@ -3169,7 +3160,6 @@ at = 1;
                     String message;
 
                     message = "        The Day";
-                    System.out.println(message.toCharArray());
                     // System.out.println(message.length());
                     Thread.sleep(1000);
                     l.setText("");
@@ -3967,7 +3957,6 @@ elementImage.setVisible(false);
 
             elementImage.setVisible(false);
 
-            System.out.println("Ancient=Main");
             for (int t = 1; t<4; t++){
                 elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Elemente\\Ancient.png").getImage().getScaledInstance(370, 365, Image.SCALE_AREA_AVERAGING)));
 
@@ -4977,7 +4966,6 @@ elementImage.setVisible(false);
                            enemyImage.setEnabled(true);
 
                
-                           System.out.println("Feuer=Main");
                                                                          
                               
                                            Thread.sleep(spieler.t1);
@@ -5515,7 +5503,6 @@ elementImage.setVisible(false);
 
         elementImage.setVisible(true);
 
-            System.out.println("Lunar=Main");
 
             for (int i = 0; i< 73; i++){
                 elementImage.setIcon(new ImageIcon(new ImageIcon("Textrpg\\Images\\Animation_Void\\" + i + ".png").getImage().getScaledInstance(370, 365, Image.SCALE_AREA_AVERAGING)));
@@ -6067,10 +6054,8 @@ for (int xi = 0; xi<= 120; xi++){
 
         if (spieler.Main_Element.charAt(2) == 'E' && spieler.Main_Element.charAt(3) == 'r'){
 
-            System.out.println("Test0");
             if (spieler.enemyMain_Element == "Crystal" || spieler.enemySecond_Element == "Crystal" || spieler.enemyThird_Element == "Crystal" || spieler.enemyLast_Element == "Crystal" ){
                 element = "Crystal";
-                System.out.println("Test0-");
 
             }
 
@@ -6148,7 +6133,6 @@ for (int xi = 0; xi<= 120; xi++){
         }
 
 
-        System.out.println(spieler.enemyMain_Element);
         Attack(element);
 
         
@@ -6255,7 +6239,6 @@ reducedDamgeText.setVisible(false);
     public void Attack(String element) throws InterruptedException {
         int damg2;
         String ci;
-        System.out.println(element + " @");
 
         if (element == "Ancient") {
 
@@ -6325,7 +6308,6 @@ reducedDamgeText.setVisible(false);
 
         if (element == "Erde") {
             Thread.sleep(spieler.t1 * 10);
-            System.out.println("Erdeg");
 
             damg2 = spieler.CurrentEnemyPower;
             damageText.setForeground(new Color(255,255,255));
@@ -6411,8 +6393,6 @@ reducedDamgeText.setVisible(false);
 
 
                 }
-            System.out.println("Enemy used Gravity");
-            System.out.println("You lost " + spieler.CurrentEnemyPower + " HP");
 
             animateEnemyAttack(ci,damg2);
         }
@@ -6502,8 +6482,6 @@ reducedDamgeText.setVisible(false);
 
 
             }
-        System.out.println("Enemy used Gravity");
-        System.out.println("You lost " + spieler.CurrentEnemyPower + " HP");
 
         animateEnemyAttack(ci,damg2);
     }
@@ -6534,8 +6512,6 @@ reducedDamgeText.setVisible(false);
 
 
         }
-    System.out.println("Enemy used Gravity");
-    System.out.println("You lost " + spieler.CurrentEnemyPower + " HP");
 
     animateEnemyAttack(ci,damg2);
 }
@@ -6566,8 +6542,6 @@ if (element == "Wind") {
 
 
     }
-System.out.println("Enemy used Gravity");
-System.out.println("You lost " + spieler.CurrentEnemyPower + " HP");
 
 animateEnemyAttack(ci,damg2);
 }
@@ -6646,12 +6620,10 @@ animateEnemyAttack(ci,damg2);
     
 
     public void startb() throws InterruptedException {
-        System.out.println("Startb");
         int i;
 
         Thread.sleep(spieler.thread1);
 
-        System.out.println("D");
         commbox.setText(
                 "                                                                                                                                                                                                                            ");
         commbox.setVisible(true);
@@ -7171,7 +7143,6 @@ if (en.enemy_Third_Materias[Index]!= null){
 
 }
 
-System.out.println(spieler.enemyMain_Element);
 
 
 elementImage.setBounds(500,280,400,400);
@@ -7958,98 +7929,6 @@ i2.setForeground(new Color(255,215,0));
     }
 
     
-
-   public void artemisCombat() throws InterruptedException{
-
-    moon_Artemis.setVisible(true);
-
-    Thread.sleep(2000);
-
-    panel3.setVisible(true);
-    System.out.println("Startb");
-    int i;
-
-    for (i = 1; i < 200; i++) {
-        Thread.sleep(4);
-        panel3.setBackground(new Color(i /8, i /8, i/8));
-        System.out.println("i: " + i);
-
-    
-}
-
-Thread.sleep(200);
-
-for (i = 1; i < 230; i++) {
-    Thread.sleep(0);
-    panel3.setBackground(new Color(i+ 25, i+ 25, i+ 25));
-    System.out.println("i: " + i);
-
-
-}
-
-Thread.sleep(200);
-
-
-/*
-for (i = 1; i < 230; i++) {
-Thread.sleep(0);
-panel3.setBackground(new Color(i+ 25, i+ 25, i+ 25));
-System.out.println("i: " + i);
-
-
-}
-
-Thread.sleep(200);
-
-
-
-for (i = 1; i < 230; i++) {
-Thread.sleep(0);
-panel3.setBackground(new Color(i+ 25, i+ 25, i+ 25));
-System.out.println("i: " + i);
-
-
-}
-
-*/
-
-for (i = 1; i < 255; i++) {
-    Thread.sleep(4);
-    panel3.setBackground(new Color(255 - (i), 255 -(i), 255 - (i)));
-    System.out.println("i: " + i);
-
-}
-
-Thread.sleep(300);
-panel3.setVisible(false);
-    /*
-    for (int t = 0; t<3; t++){
-        panel3.setVisible(true);
-        panel3.setBackground(new Color(0, 0, 0));
-
-    for (i = 1; i < 51; i++) {
-        Thread.sleep(4);
-        panel3.setBackground(new Color(i * 5, i * 5, i * 5));
-        System.out.println("i: " + i);
-
-    }
-}
-
-    panel3.setVisible(true);
-    for (i = 1; i < 60; i++) {
-        Thread.sleep(8);
-        panel3.setBackground(new Color(255 - (i+195), 255 -(i+195), 255 - (i+195)));
-        System.out.println("i: " + i);
-
-   }
-
-   Thread.sleep(200);
-
-   panel3.setVisible(false);
-*/
-
-
-    }
 
 
 
@@ -9038,7 +8917,6 @@ nextPosition3 = "";
             break;
 
             case "StoryR_5;":; 
-            System.out.println(spieler.karma);
 
             if (spieler.karma == 4){
              //   spieler.karma = 8;
