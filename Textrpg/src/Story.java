@@ -3116,23 +3116,23 @@ at = 1;
 
                 if (i >= 99 && i <= 99) {
                      Thread.sleep(500);
-                    l.setText("Loading: 99%.");
+                    l.setText("Loading: 99.1%");
                      Thread.sleep(500);
-                    l.setText("Loading: 99%..");
+                    l.setText("Loading: 99.2%");
                      Thread.sleep(500);
-                    l.setText("Loading: 99%...");
+                    l.setText("Loading: 99.3%");
                      Thread.sleep(500);
-                    l.setText("Loading: 99%.");
+                    l.setText("Loading: 99.4%");
                      Thread.sleep(500);
-                    l.setText("Loading: 99%..");
+                    l.setText("Loading: 99.5%");
                      Thread.sleep(500);
-                    l.setText("Loading: 99%...");
+                    l.setText("Loading: 99.6%");
                      Thread.sleep(500);
-                    l.setText("Loading: 99%.");
+                    l.setText("Loading: 99.7%");
                      Thread.sleep(500);
-                    l.setText("Loading: 99%..");
+                    l.setText("Loading: 99.8%");
                      Thread.sleep(500);
-                    l.setText("Loading: 99%...");
+                    l.setText("Loading: 99.9%");
                      Thread.sleep(2000);
                     l.setText("Loading: 100%");
 
@@ -8075,7 +8075,7 @@ achievementDif.setVisible(false);
      
         
      
-     nextPosition1="Anfangpart2";
+     nextPosition1="Medusa Fight";
      
      nextPosition2="";
      nextPosition3="";
