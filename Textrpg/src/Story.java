@@ -8075,7 +8075,7 @@ achievementDif.setVisible(false);
      
         
      
-     nextPosition1="Medusa Fight";
+     nextPosition1="Anfangpart2";
      
      nextPosition2="";
      nextPosition3="";
